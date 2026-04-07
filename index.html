@@ -2,112 +2,122 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>BODA SNACKS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BODA SNACKS</title>
 
 <style>
 body {
  margin: 0;
  font-family: Arial, sans-serif;
+ background: #000;
  color: #fff;
- background: #111;
 }
 
+/* HEADER */
 header {
  position: fixed;
- width: 100%;
  top: 0;
- left: 0;
- background: transparent;
+ width: 100%;
+ background: #000;
+ padding: 15px 30px;
  display: flex;
  justify-content: space-between;
- align-items: center;
- padding: 15px 30px;
  z-index: 1000;
- height: 80px;
 }
 
-header h1 {
-    display: none;
-}
-
-/* BUTTON STYLE */
-.btn {
- background: #d4af37;
- color: #000;
- padding: 10px 18px;
+header a {
+ color: #fff;
  text-decoration: none;
- border-radius: 6px;
- font-weight: bold;
-
+ margin-left: 20px;
 }
-
- .kontakt-btn {
-  background: #d4af37;
-  color: #000;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-
-  position: absolute;
-  right: 80px;
-  top: 20px;
- }
 
 /* HERO */
 .hero {
- min-height: auto;
- background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
-             url('hero.jpg') center/cover no-repeat;
  display: flex;
- align-items: flex-start;
- padding: 120px 40px 80px;
+ flex-wrap: wrap;
+ align-items: center;
+ padding: 120px 20px 40px;
+ background: #000;
 }
 
-.hero-content {
- max-width: 600px;
+/* TEXT LINKS */
+.hero-text {
+ flex: 1;
+ min-width: 300px;
+ max-width: 500px;
 }
 
-.hero h2 {
- font-size: 50px;
- margin: 0 0 10px;
-}
-
-.hero p {
- font-size: 20px;
+.hero-text h1 {
+ font-size: 40px;
  margin-bottom: 20px;
 }
 
-/* WHATSAPP BUTTON */
-.whatsapp {
- position: fixed;
- bottom: 20px;
- right: 20px;
- background: #25D366;
- color: white;
- padding: 15px 20px;
- border-radius: 50px;
- text-decoration: none;
- font-weight: bold;
- box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.hero-text p {
+ font-size: 16px;
+ line-height: 1.5;
 }
 
-/* SECTION */
-section {
- padding: 80px 20px;
+/* BUTTON */
+.btn {
+ display: inline-block;
+ background: #d4af37;
+ color: #000;
+ padding: 12px 20px;
+ border-radius: 6px;
+ text-decoration: none;
+ font-weight: bold;
+ margin-top: 20px;
+}
+
+/* BILD RECHTS */
+.hero-image {
+ flex: 1;
+ min-width: 300px;
  text-align: center;
 }
 
+.hero-image img {
+ width: 100%;
+ max-width: 500px;
+}
+
+/* FEATURES */
 .features {
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
+ background: #111;
+ padding: 40px 20px;
 }
 
 .feature {
- max-width: 300px;
- margin: 20px;
+ max-width: 250px;
+ margin: 15px;
+}
+
+/* SECTION */
+section {
+ padding: 60px 20px;
+ text-align: center;
+}
+
+/* FOOTER */
+footer {
+ background: #111;
+ padding: 40px 20px;
+ font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+ .hero {
+   flex-direction: column;
+   text-align: center;
+ }
+
+ .hero-text h1 {
+   font-size: 28px;
+ }
 }
 </style>
 </head>
@@ -115,122 +125,92 @@ section {
 <body>
 
 <header>
+ <div><strong>BODA SNACKS</strong></div>
+ <div>
+   <a href="#kontakt">Kontakt</a>
+ </div>
+</header>
 
-<a href="mailto:info@boda-snacks.de?subject=Anfrage BODA Snacks&body=Hallo,%20ich%20interessiere%20mich%20für%20einen%20Snackautomaten.%20Bitte%20melden%20Sie%20sich." class="kontakt-btn">
- Kontakt
-</a></header>
-
+<!-- HERO -->
 <div class="hero">
- <div class="hero-content">
- 
- 
-   <a href="https://wa.me/491778675852" class="btn hero-btn">Jetzt anfragen</a>
+
+ <div class="hero-text">
+   <h1>Snack- & Getränkeautomaten<br>für Ihr Unternehmen</h1>
+
+   <p>
+     Steigern Sie die Zufriedenheit Ihrer Mitarbeiter – ganz ohne Aufwand.<br><br>
+     Wir kümmern uns um Aufstellung, Befüllung und Wartung.<br><br>
+     <strong style="color:#d4af37;">Keine Investitionskosten für Sie.</strong>
+   </p>
+
+   <a href="https://wa.me/491778676852" class="btn">
+     Jetzt unverbindlich anfragen
+   </a>
+ </div>
+
+ <div class="hero-image">
+   <img src="hero.jpg" alt="Snackautomat">
+ </div>
+
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+ <div class="feature">
+   <h3 style="color:#d4af37;">24/7 Verfügbarkeit</h3>
+   <p>Rund um die Uhr Snacks & Getränke.</p>
+ </div>
+
+ <div class="feature">
+   <h3 style="color:#d4af37;">Kein Aufwand</h3>
+   <p>Wir kümmern uns um alles.</p>
+ </div>
+
+ <div class="feature">
+   <h3 style="color:#d4af37;">Mehr Zufriedenheit</h3>
+   <p>Motivierte Mitarbeiter durch bessere Versorgung.</p>
  </div>
 </div>
 
-<section>
- <h2>Warum BODA SNACKS?</h2>
- <div class="features">
-   <div class="feature">
-     <h3 style="color:#d4af37;">24/7 Verfügbarkeit</h3>
-     <p>Rund um die Uhr Snacks & Getränke.</p>
-   </div>
-
-   <div class="feature">
-     <h3 style="color:#d4af37;">Kein Aufwand</h3>
-     <p>Wir kümmern uns um alles.</p>
-   </div>
-
-   <div class="feature">
-     <h3 style="color:#d4af37;">Mehr Zufriedenheit</h3>
-     <p>Motivierte Mitarbeiter durch bessere Versorgung.</p>
-   </div>
- </div>
-</section>
-
+<!-- KONTAKT -->
 <section id="kontakt">
- <h2 style="color:#d4af37;">Kontakt</h2>
- <p>Telefon: <a href="tel:+4972317703719">+49 7231 7703719</a></p>
- <p>Email: <a href="mailto:kontakt@boda-snacks.de">kontakt@boda-snacks.de</a></p>
+ <h2>Kontakt</h2>
+ <p>Telefon: 0177 8675852</p>
+ <p>Email: kontakt@boda-snacks.de</p>
 </section>
+
 <!-- FOOTER -->
-<footer style="text-align:center; padding:30px; background:#000;">
- <a href="#impressum" style="color:#d4af37; margin-right:15px;">Impressum</a>
- <a href="#datenschutz" style="color:#d4af37;">Datenschutz</a>
-</footer>
-
-<!-- IMPRESSUM -->
-<section id="impressum" style="padding:60px 20px; background:#000; color:white;">
- <h2 style="color:#d4af37;">Impressum</h2>
-
- <p><strong>Angaben gemäß § 5 TMG:</strong></p>
-
- <p>
- Andreas Boda<br>
- Erlenweg 34<br>
- 75175 Pforzheim
- </p>
-
- <p>
- Telefon: 0177 8675852<br>
- E-Mail: kontakt@boda-snacks.de
- </p>
-
- <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong></p>
-
- <p>
- Andreas Boda<br>
- Erlenweg 34<br>
- 75175 Pforzheim
- </p>
-
- <p><strong>Haftung für Inhalte:</strong><br>
- Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
- </p>
-
- <p><strong>Haftung für Links:</strong><br>
- Unsere Website enthält ggf. Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
- </p>
-</section>
-
-<!-- DATENSCHUTZ -->
-<section id="datenschutz" style="padding:60px 20px; background:#000; color:white;">
- <h2 style="color:#d4af37;">Datenschutzerklärung</h2>
-
- <h3>1. Allgemeine Hinweise</h3>
- <p>Der Schutz Ihrer persönlichen Daten ist uns wichtig. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften.</p>
-
- <h3>2. Datenerfassung auf dieser Website</h3>
-
- <p><strong>a) Kontaktaufnahme</strong><br>
- Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert.</p>
-
- <p><strong>b) Server-Log-Dateien</strong><br>
- Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch übermittelt.</p>
-
- <h3>3. Zweck der Datenverarbeitung</h3>
- <p>Die Verarbeitung erfolgt zur Bearbeitung von Anfragen und zur technischen Bereitstellung der Website.</p>
-
- <h3>4. Ihre Rechte</h3>
- <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer gespeicherten Daten.</p>
-
- <h3>5. Verantwortlicher</h3>
- <p>
- Andreas Boda<br>
- Erlenweg 34<br>
- 75175 Pforzheim<br>
- E-Mail: kontakt@boda-snacks.de
- </p>
-</section>
- 
 <footer>
- <p>© 2026 BODA SNACKS</p>
-</footer>
 
-<!-- WHATSAPP FLOAT BUTTON -->
-<a href="https://wa.me/491778675852" class="whatsapp" target="_blank">
- Jetzt anfragen
-</a>
+<h3>Impressum</h3>
+<p>
+Andreas Boda<br>
+Erlenweg 34<br>
+75175 Pforzheim<br><br>
+
+Telefon: 0177 8675852<br>
+E-Mail: kontakt@boda-snacks.de
+</p>
+
+<h3>Haftung für Inhalte</h3>
+<p>
+Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
+Für die Richtigkeit, Vollständigkeit und Aktualität können wir keine Gewähr übernehmen.
+</p>
+
+<h3>Haftung für Links</h3>
+<p>
+Unsere Website enthält Links zu externen Websites.
+Für deren Inhalte sind ausschließlich die Betreiber verantwortlich.
+</p>
+
+<h3>Datenschutz</h3>
+<p>
+Diese Website speichert keine personenbezogenen Daten.
+Kontakt erfolgt freiwillig per E-Mail oder WhatsApp.
+</p>
+
+</footer>
 
 </body>
 </html>
