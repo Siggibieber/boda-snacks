@@ -3,171 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>BODA SNACKS</title>
 
 <style>
 body {
- margin: 0;
- font-family: Arial, sans-serif;
- background: #000;
- color: #fff;
+   margin: 0;
+   font-family: Arial, sans-serif;
+   background: #111;
+   color: #fff;
 }
 
 /* HEADER */
 header {
- position: fixed;
- width: 100%;
- top: 0;
- background: rgba(0,0,0,0.9);
- padding: 15px 30px;
- z-index: 1000;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   background: #000;
+   padding: 15px 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 1000;
+}
+
+header h1 {
+   color: #d4af37;
+   margin: 0;
+}
+
+header a {
+   color: #fff;
+   margin-left: 20px;
+   text-decoration: none;
 }
 
 /* HERO */
 .hero {
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 120px 60px 60px;
- gap: 40px;
+   height: 90vh;
+   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+               url('hero.jpg') center/cover no-repeat;
+   display: flex;
+   align-items: center;
+   padding: 120px 40px 40px;
 }
 
-/* TEXT LINKS */
-.hero-text {
- max-width: 500px;
+.hero-content {
+   max-width: 600px;
 }
 
-.hero h1 {
- font-size: 42px;
- margin-bottom: 20px;
+.hero h2 {
+   font-size: 50px;
+   margin-bottom: 20px;
 }
 
 .hero p {
- font-size: 18px;
- line-height: 1.6;
+   font-size: 20px;
+   margin-bottom: 20px;
 }
 
 /* BUTTON */
 .btn {
- display: inline-block;
- margin-top: 20px;
- background: #d4af37;
- color: #000;
- padding: 12px 22px;
- border-radius: 6px;
- text-decoration: none;
- font-weight: bold;
+   background: #d4af37;
+   color: #000;
+   padding: 12px 20px;
+   border-radius: 6px;
+   text-decoration: none;
+   font-weight: bold;
 }
 
-/* BILD RECHTS */
-.hero-img img {
- width: 100%;
- max-width: 500px;
- border-radius: 10px;
-}
-
-/* FEATURES */
+/* FEATURES (KEIN schwarzer Balken mehr!) */
 .features {
- display: flex;
- justify-content: center;
- gap: 40px;
- padding: 60px 20px;
- background: #111;
- text-align: center;
+   display: flex;
+   justify-content: space-around;
+   background: #1a1a1a;
+   padding: 40px 20px;
+   text-align: center;
 }
 
-.feature {
- max-width: 250px;
+.feature h3 {
+   color: #d4af37;
 }
 
 /* SECTION */
 section {
- padding: 60px 20px;
- text-align: center;
+   padding: 60px 20px;
+   text-align: center;
+}
+
+h2 {
+   color: #d4af37;
+   margin-bottom: 30px;
+}
+
+/* CARDS */
+.cards {
+   display: flex;
+   gap: 20px;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.card {
+   background: #222;
+   padding: 20px;
+   border-radius: 10px;
+   max-width: 300px;
+}
+
+/* KONTAKT */
+#kontakt {
+   background: #181818;
 }
 
 /* FOOTER */
 footer {
- background: #111;
- padding: 40px 20px;
- font-size: 14px;
-}
-
- .hero-img img {
-   max-width: 100%;
- }
+   text-align: center;
+   padding: 20px;
+   background: #000;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
- <strong>BODA SNACKS</strong>
+   <h1>BODA SNACKS</h1>
+   <div>
+       <a href="#vorteile">Vorteile</a>
+       <a href="#kontakt">Kontakt</a>
+   </div>
 </header>
 
-<!-- HERO -->
-<div class="hero">
-
- <div class="hero-text">
-   <h1>Snack- & Getränkeautomaten<br>für Ihr Unternehmen</h1>
-
-   <p>
-     Steigern Sie die Zufriedenheit Ihrer Mitarbeiter – ganz ohne Aufwand.<br><br>
-     Wir kümmern uns um Aufstellung, Befüllung und Wartung.<br><br>
-     <strong style="color:#d4af37;">Keine Investitionskosten für Sie.</strong>
-   </p>
-
-   <a href="https://wa.me/491778676852" class="btn">
-     Jetzt unverbindlich anfragen
-   </a>
- </div>
-
- <div class="hero-img">
-   <img src="hero.jpg" alt="Snack Automat">
- </div>
-
-</div>
-
-<!-- FEATURES -->
-<div class="features">
- <div class="feature">
-   <h3 style="color:#d4af37;">24/7 Verfügbarkeit</h3>
-   <p>Rund um die Uhr Snacks & Getränke.</p>
- </div>
-
- <div class="feature">
-   <h3 style="color:#d4af37;">Kein Aufwand</h3>
-   <p>Wir kümmern uns um alles.</p>
- </div>
-
- <div class="feature">
-   <h3 style="color:#d4af37;">Mehr Zufriedenheit</h3>
-   <p>Motivierte Mitarbeiter durch bessere Versorgung.</p>
- </div>
-</div>
-
-<!-- KONTAKT -->
-<section>
- <h2>Kontakt</h2>
- <p>Telefon: 0177 8675852</p>
- <p>Email: kontakt@boda-snacks.de</p>
+<section class="hero">
+   <div class="hero-content">
+       <h2>Du hast den Hunger –<br>wir die Snacks</h2>
+       <p>Moderne Snack- & Getränkeautomaten für Unternehmen – komplett ohne Aufwand.</p>
+       <a href="#kontakt" class="btn">Standort anfragen</a>
+   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
- <h3>Impressum</h3>
- <p>
- Andreas Boda<br>
- Erlenweg 34<br>
- 75175 Pforzheim
- </p>
+<div class="features">
+   <div class="feature">
+       <h3>24/7 Verfügbarkeit</h3>
+       <p>Rund um die Uhr Snacks & Getränke.</p>
+   </div>
+   <div class="feature">
+       <h3>Kein Aufwand</h3>
+       <p>Wir kümmern uns um alles.</p>
+   </div>
+   <div class="feature">
+       <h3>Mehr Zufriedenheit</h3>
+       <p>Motivierte Mitarbeiter.</p>
+   </div>
+</div>
 
- <h3>Datenschutz</h3>
- <p>
- Diese Website speichert keine personenbezogenen Daten.
- </p>
+<section id="vorteile">
+   <h2>Warum BODA SNACKS?</h2>
+   <div class="cards">
+       <div class="card">
+           <h3>Keine Kosten</h3>
+           <p>Keine Investition nötig.</p>
+       </div>
+       <div class="card">
+           <h3>Full Service</h3>
+           <p>Wartung & Befüllung inklusive.</p>
+       </div>
+       <div class="card">
+           <h3>Mehr Produktivität</h3>
+           <p>Zufriedene Mitarbeiter arbeiten besser.</p>
+       </div>
+   </div>
+</section>
+
+<section id="kontakt">
+   <h2>Kontakt</h2>
+   <p>Telefon: +49 7231 7703719</p>
+   <p>Email: kontakt@boda-snacks.de</p>
+</section>
+
+<footer>
+   <p>© 2026 BODA SNACKS</p>
 </footer>
 
 </body>
