@@ -19,7 +19,7 @@ header {
  position: fixed;
  width: 100%;
  top: 0;
- background: rgba(0,0,0,0.9);
+ background: rgba(0,0,0,0.25);
  padding: 15px 30px;
  z-index: 1000;
 }
@@ -131,8 +131,13 @@ footer {
    </a>
  </div>
 
- <div class="hero-img">
-   <img src="hero.jpg" alt="Snack Automat">
+ .hero {
+ min-height:100vh;
+ background: url("hero.jpg") center/cover no-repeat;
+ display: flex;
+ align-items: center;
+ padding: 120px 60px;
+ }
  </div>
 
 </div>
