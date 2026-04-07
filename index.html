@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>BODA SNACKS</title>
 
 <style>
@@ -16,83 +17,68 @@ body {
 /* HEADER */
 header {
  position: fixed;
- top: 0;
  width: 100%;
- background: #000;
+ top: 0;
+ background: rgba(0,0,0,0.9);
  padding: 15px 30px;
- display: flex;
- justify-content: space-between;
  z-index: 1000;
-}
-
-header a {
- color: #fff;
- text-decoration: none;
- margin-left: 20px;
 }
 
 /* HERO */
 .hero {
  display: flex;
- flex-wrap: wrap;
  align-items: center;
- padding: 120px 20px 40px;
- background: #000;
+ justify-content: space-between;
+ padding: 120px 60px 60px;
+ gap: 40px;
 }
 
 /* TEXT LINKS */
 .hero-text {
- flex: 1;
- min-width: 300px;
  max-width: 500px;
 }
 
-.hero-text h1 {
- font-size: 40px;
+.hero h1 {
+ font-size: 42px;
  margin-bottom: 20px;
 }
 
-.hero-text p {
- font-size: 16px;
- line-height: 1.5;
+.hero p {
+ font-size: 18px;
+ line-height: 1.6;
 }
 
 /* BUTTON */
 .btn {
  display: inline-block;
+ margin-top: 20px;
  background: #d4af37;
  color: #000;
- padding: 12px 20px;
+ padding: 12px 22px;
  border-radius: 6px;
  text-decoration: none;
  font-weight: bold;
- margin-top: 20px;
 }
 
 /* BILD RECHTS */
-.hero-image {
- flex: 1;
- min-width: 300px;
- text-align: center;
-}
-
-.hero-image img {
+.hero-img img {
  width: 100%;
  max-width: 500px;
+ border-radius: 10px;
 }
 
 /* FEATURES */
 .features {
  display: flex;
- flex-wrap: wrap;
  justify-content: center;
+ gap: 40px;
+ padding: 60px 20px;
  background: #111;
- padding: 40px 20px;
+ text-align: center;
 }
 
 .feature {
  max-width: 250px;
- margin: 15px;
 }
 
 /* SECTION */
@@ -109,14 +95,14 @@ footer {
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
  .hero {
    flex-direction: column;
    text-align: center;
  }
 
- .hero-text h1 {
-   font-size: 28px;
+ .hero-img img {
+   max-width: 100%;
  }
 }
 </style>
@@ -125,10 +111,7 @@ footer {
 <body>
 
 <header>
- <div><strong>BODA SNACKS</strong></div>
- <div>
-   <a href="#kontakt">Kontakt</a>
- </div>
+ <strong>BODA SNACKS</strong>
 </header>
 
 <!-- HERO -->
@@ -148,8 +131,8 @@ footer {
    </a>
  </div>
 
- <div class="hero-image">
-   <img src="hero.jpg" alt="Snackautomat">
+ <div class="hero-img">
+   <img src="hero.jpg" alt="Snack Automat">
  </div>
 
 </div>
@@ -173,7 +156,7 @@ footer {
 </div>
 
 <!-- KONTAKT -->
-<section id="kontakt">
+<section>
  <h2>Kontakt</h2>
  <p>Telefon: 0177 8675852</p>
  <p>Email: kontakt@boda-snacks.de</p>
@@ -181,35 +164,17 @@ footer {
 
 <!-- FOOTER -->
 <footer>
+ <h3>Impressum</h3>
+ <p>
+ Andreas Boda<br>
+ Erlenweg 34<br>
+ 75175 Pforzheim
+ </p>
 
-<h3>Impressum</h3>
-<p>
-Andreas Boda<br>
-Erlenweg 34<br>
-75175 Pforzheim<br><br>
-
-Telefon: 0177 8675852<br>
-E-Mail: kontakt@boda-snacks.de
-</p>
-
-<h3>Haftung für Inhalte</h3>
-<p>
-Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
-Für die Richtigkeit, Vollständigkeit und Aktualität können wir keine Gewähr übernehmen.
-</p>
-
-<h3>Haftung für Links</h3>
-<p>
-Unsere Website enthält Links zu externen Websites.
-Für deren Inhalte sind ausschließlich die Betreiber verantwortlich.
-</p>
-
-<h3>Datenschutz</h3>
-<p>
-Diese Website speichert keine personenbezogenen Daten.
-Kontakt erfolgt freiwillig per E-Mail oder WhatsApp.
-</p>
-
+ <h3>Datenschutz</h3>
+ <p>
+ Diese Website speichert keine personenbezogenen Daten.
+ </p>
 </footer>
 
 </body>
