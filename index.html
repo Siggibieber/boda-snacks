@@ -25,39 +25,37 @@ header {
  z-index: 1000;
 }
 
-header a {
- color: #fff;
- text-decoration: none;
- margin-left: 20px;
-}
-
 /* HERO */
 .hero {
- display: flex;
- flex-wrap: wrap;
- align-items: center;
- padding: 120px 20px 40px;
+ position: relative;
+ padding: 140px 20px 60px;
  background: #000;
+ overflow: hidden;
 }
 
-/* TEXT LINKS */
-.hero-text {
- flex: 1;
- min-width: 300px;
+/* BILD RECHTS */
+.hero::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 60%;
+ height: 100%;
+ background: url('hero.jpg') center right / contain no-repeat;
+ opacity: 0.9;
+}
+
+/* TEXT */
+.hero-content {
+ position: relative;
+ z-index: 2;
  max-width: 500px;
 }
 
-.hero-text h1 {
+.hero h1 {
  font-size: 40px;
- margin-bottom: 20px;
 }
 
-.hero-text p {
- font-size: 16px;
- line-height: 1.5;
-}
-
-/* BUTTON */
 .btn {
  display: inline-block;
  background: #d4af37;
@@ -69,25 +67,13 @@ header a {
  margin-top: 20px;
 }
 
-/* BILD RECHTS */
-.hero-image {
- flex: 1;
- min-width: 300px;
- text-align: center;
-}
-
-.hero-image img {
- width: 100%;
- max-width: 500px;
-}
-
 /* FEATURES */
 .features {
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
+ padding: 40px;
  background: #111;
- padding: 40px 20px;
 }
 
 .feature {
@@ -110,12 +96,12 @@ footer {
 
 /* MOBILE */
 @media (max-width: 768px) {
- .hero {
-   flex-direction: column;
-   text-align: center;
+ .hero::before {
+   width: 100%;
+   opacity: 0.3;
  }
 
- .hero-text h1 {
+ .hero h1 {
    font-size: 28px;
  }
 }
@@ -125,16 +111,12 @@ footer {
 <body>
 
 <header>
- <div><strong>BODA SNACKS</strong></div>
- <div>
-   <a href="#kontakt">Kontakt</a>
- </div>
+ <strong>BODA SNACKS</strong>
 </header>
 
-<!-- HERO -->
 <div class="hero">
+ <div class="hero-content">
 
- <div class="hero-text">
    <h1>Snack- & Getränkeautomaten<br>für Ihr Unternehmen</h1>
 
    <p>
@@ -146,15 +128,10 @@ footer {
    <a href="https://wa.me/491778676852" class="btn">
      Jetzt unverbindlich anfragen
    </a>
- </div>
 
- <div class="hero-image">
-   <img src="hero.jpg" alt="Snackautomat">
  </div>
-
 </div>
 
-<!-- FEATURES -->
 <div class="features">
  <div class="feature">
    <h3 style="color:#d4af37;">24/7 Verfügbarkeit</h3>
@@ -172,42 +149,24 @@ footer {
  </div>
 </div>
 
-<!-- KONTAKT -->
-<section id="kontakt">
+<section>
  <h2>Kontakt</h2>
  <p>Telefon: 0177 8675852</p>
  <p>Email: kontakt@boda-snacks.de</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
 
 <h3>Impressum</h3>
 <p>
 Andreas Boda<br>
 Erlenweg 34<br>
-75175 Pforzheim<br><br>
-
-Telefon: 0177 8675852<br>
-E-Mail: kontakt@boda-snacks.de
-</p>
-
-<h3>Haftung für Inhalte</h3>
-<p>
-Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
-Für die Richtigkeit, Vollständigkeit und Aktualität können wir keine Gewähr übernehmen.
-</p>
-
-<h3>Haftung für Links</h3>
-<p>
-Unsere Website enthält Links zu externen Websites.
-Für deren Inhalte sind ausschließlich die Betreiber verantwortlich.
+75175 Pforzheim
 </p>
 
 <h3>Datenschutz</h3>
 <p>
 Diese Website speichert keine personenbezogenen Daten.
-Kontakt erfolgt freiwillig per E-Mail oder WhatsApp.
 </p>
 
 </footer>
