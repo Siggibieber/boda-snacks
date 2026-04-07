@@ -7,182 +7,209 @@
 
 <style>
 body {
-   margin: 0;
-   font-family: Arial, sans-serif;
-   background: #111;
-   color: #fff;
+ margin: 0;
+ font-family: Arial, sans-serif;
+ background: #000;
+ color: #fff;
 }
 
 /* HEADER */
 header {
-   position: fixed;
-   top: 0;
-   width: 100%;
-   background: #000;
-   padding: 15px 40px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   z-index: 1000;
-}
-
-header h1 {
-   color: #d4af37;
-   margin: 0;
+ position: fixed;
+ top: 0;
+ width: 100%;
+ background: #000;
+ padding: 15px 30px;
+ display: flex;
+ justify-content: space-between;
+ z-index: 1000;
 }
 
 header a {
-   color: #fff;
-   margin-left: 20px;
-   text-decoration: none;
+ color: #fff;
+ text-decoration: none;
+ margin-left: 20px;
 }
 
 /* HERO */
 .hero {
-   height: 90vh;
-   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-               url('hero.jpg') center/cover no-repeat;
-   display: flex;
-   align-items: center;
-   padding: 120px 40px 40px;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ padding: 120px 20px 40px;
+ background: #000;
 }
 
-.hero-content {
-   max-width: 600px;
+/* TEXT LINKS */
+.hero-text {
+ flex: 1;
+ min-width: 300px;
+ max-width: 500px;
 }
 
-.hero h2 {
-   font-size: 50px;
-   margin-bottom: 20px;
+.hero-text h1 {
+ font-size: 40px;
+ margin-bottom: 20px;
 }
 
-.hero p {
-   font-size: 20px;
-   margin-bottom: 20px;
+.hero-text p {
+ font-size: 16px;
+ line-height: 1.5;
 }
 
 /* BUTTON */
 .btn {
-   background: #d4af37;
-   color: #000;
-   padding: 12px 20px;
-   border-radius: 6px;
-   text-decoration: none;
-   font-weight: bold;
+ display: inline-block;
+ background: #d4af37;
+ color: #000;
+ padding: 12px 20px;
+ border-radius: 6px;
+ text-decoration: none;
+ font-weight: bold;
+ margin-top: 20px;
 }
 
-/* FEATURES (KEIN schwarzer Balken mehr!) */
+/* BILD RECHTS */
+.hero-image {
+ flex: 1;
+ min-width: 300px;
+ text-align: center;
+}
+
+.hero-image img {
+ width: 100%;
+ max-width: 500px;
+}
+
+/* FEATURES */
 .features {
-   display: flex;
-   justify-content: space-around;
-   background: #1a1a1a;
-   padding: 40px 20px;
-   text-align: center;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ background: #111;
+ padding: 40px 20px;
 }
 
-.feature h3 {
-   color: #d4af37;
+.feature {
+ max-width: 250px;
+ margin: 15px;
 }
 
 /* SECTION */
 section {
-   padding: 60px 20px;
-   text-align: center;
-}
-
-h2 {
-   color: #d4af37;
-   margin-bottom: 30px;
-}
-
-/* CARDS */
-.cards {
-   display: flex;
-   gap: 20px;
-   justify-content: center;
-   flex-wrap: wrap;
-}
-
-.card {
-   background: #222;
-   padding: 20px;
-   border-radius: 10px;
-   max-width: 300px;
-}
-
-/* KONTAKT */
-#kontakt {
-   background: #181818;
+ padding: 60px 20px;
+ text-align: center;
 }
 
 /* FOOTER */
 footer {
+ background: #111;
+ padding: 40px 20px;
+ font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+ .hero {
+   flex-direction: column;
    text-align: center;
-   padding: 20px;
-   background: #000;
+ }
+
+ .hero-text h1 {
+   font-size: 28px;
+ }
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
-   <h1>BODA SNACKS</h1>
-   <div>
-       <a href="#vorteile">Vorteile</a>
-       <a href="#kontakt">Kontakt</a>
-   </div>
+ <div><strong>BODA SNACKS</strong></div>
+ <div>
+   <a href="#kontakt">Kontakt</a>
+ </div>
 </header>
 
-<section class="hero">
-   <div class="hero-content">
-       <h2>Du hast den Hunger –<br>wir die Snacks</h2>
-       <p>Moderne Snack- & Getränkeautomaten für Unternehmen – komplett ohne Aufwand.</p>
-       <a href="#kontakt" class="btn">Standort anfragen</a>
-   </div>
-</section>
+<!-- HERO -->
+<div class="hero">
 
-<div class="features">
-   <div class="feature">
-       <h3>24/7 Verfügbarkeit</h3>
-       <p>Rund um die Uhr Snacks & Getränke.</p>
-   </div>
-   <div class="feature">
-       <h3>Kein Aufwand</h3>
-       <p>Wir kümmern uns um alles.</p>
-   </div>
-   <div class="feature">
-       <h3>Mehr Zufriedenheit</h3>
-       <p>Motivierte Mitarbeiter.</p>
-   </div>
+ <div class="hero-text">
+   <h1>Snack- & Getränkeautomaten<br>für Ihr Unternehmen</h1>
+
+   <p>
+     Steigern Sie die Zufriedenheit Ihrer Mitarbeiter – ganz ohne Aufwand.<br><br>
+     Wir kümmern uns um Aufstellung, Befüllung und Wartung.<br><br>
+     <strong style="color:#d4af37;">Keine Investitionskosten für Sie.</strong>
+   </p>
+
+   <a href="https://wa.me/491778676852" class="btn">
+     Jetzt unverbindlich anfragen
+   </a>
+ </div>
+
+ <div class="hero-image">
+   <img src="hero.jpg" alt="Snackautomat">
+ </div>
+
 </div>
 
-<section id="vorteile">
-   <h2>Warum BODA SNACKS?</h2>
-   <div class="cards">
-       <div class="card">
-           <h3>Keine Kosten</h3>
-           <p>Keine Investition nötig.</p>
-       </div>
-       <div class="card">
-           <h3>Full Service</h3>
-           <p>Wartung & Befüllung inklusive.</p>
-       </div>
-       <div class="card">
-           <h3>Mehr Produktivität</h3>
-           <p>Zufriedene Mitarbeiter arbeiten besser.</p>
-       </div>
-   </div>
-</section>
+<!-- FEATURES -->
+<div class="features">
+ <div class="feature">
+   <h3 style="color:#d4af37;">24/7 Verfügbarkeit</h3>
+   <p>Rund um die Uhr Snacks & Getränke.</p>
+ </div>
 
+ <div class="feature">
+   <h3 style="color:#d4af37;">Kein Aufwand</h3>
+   <p>Wir kümmern uns um alles.</p>
+ </div>
+
+ <div class="feature">
+   <h3 style="color:#d4af37;">Mehr Zufriedenheit</h3>
+   <p>Motivierte Mitarbeiter durch bessere Versorgung.</p>
+ </div>
+</div>
+
+<!-- KONTAKT -->
 <section id="kontakt">
-   <h2>Kontakt</h2>
-   <p>Telefon: +49 7231 7703719</p>
-   <p>Email: kontakt@boda-snacks.de</p>
+ <h2>Kontakt</h2>
+ <p>Telefon: 0177 8675852</p>
+ <p>Email: kontakt@boda-snacks.de</p>
 </section>
 
+<!-- FOOTER -->
 <footer>
-   <p>© 2026 BODA SNACKS</p>
+
+<h3>Impressum</h3>
+<p>
+Andreas Boda<br>
+Erlenweg 34<br>
+75175 Pforzheim<br><br>
+
+Telefon: 0177 8675852<br>
+E-Mail: kontakt@boda-snacks.de
+</p>
+
+<h3>Haftung für Inhalte</h3>
+<p>
+Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
+Für die Richtigkeit, Vollständigkeit und Aktualität können wir keine Gewähr übernehmen.
+</p>
+
+<h3>Haftung für Links</h3>
+<p>
+Unsere Website enthält Links zu externen Websites.
+Für deren Inhalte sind ausschließlich die Betreiber verantwortlich.
+</p>
+
+<h3>Datenschutz</h3>
+<p>
+Diese Website speichert keine personenbezogenen Daten.
+Kontakt erfolgt freiwillig per E-Mail oder WhatsApp.
+</p>
+
 </footer>
 
 </body>
