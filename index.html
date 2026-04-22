@@ -73,17 +73,17 @@ body {
  margin-bottom: 60px;
  min-height: 100vh;
  
- background:
+ background-image:
    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.25)),
-   url("hero.jpg") center/cover no-repeat;
+   url("hero.jpg");
 
  background-size: cover;
  background-position: center 25%;
+ background-repeat: no-repeat;
  
  display: flex;
  align-items: center;
  justify-content: flex-start;
- padding: 40px 20px;
  
  padding: 40px 15px;
  
@@ -191,15 +191,15 @@ footer {
 /* MOBILE */
 @media (max-width: 680px) { 
 .hero {
- background:
-   linear-gradient(to bottom,
-     rgba(0,0,0,0.0) 0%
-     rgba(0,0,0,0.2) 60%
-     rgba(0,0,0,0.4) 100%
-   ),
-   url("hero-mobile.jpg") center 20% / cover no-repeat;
+ min-height: 75vh;
+ 
+ background-image:
+   linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.4)),
+   url("hero-mobile.jpg");
+ background-size: cover;
+ background-position: center 20%;
+ background-repeat: no-repeat;
 
- min-height: 45vh;
  padding: 40px 15px 20px;
 
  display: flex;
