@@ -21,7 +21,52 @@
  padding: 8px 14px !important;
  max-width: 75% !important;
 }
- 
+
+.zero-box {
+ position: absolute;
+ top: 120px;
+ right: 80px;
+ margin: 0;
+
+ background: rgba(0,0,0,0.85);
+ border: 2px solid #d4af37;
+ border-radius: 15px;
+ padding: 25px;
+ text-align: center;
+ color: white;
+
+ box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+ opacity: 0;
+ transform: translateX(150px);
+ animation: slideIn 0.8s ease-out forwards;
+}
+
+.zero-box h1 {
+ color: #d4af37;
+ font-size: 48px;
+ margin: 0;
+}
+
+.zero-box p {
+ font-weight: bold;
+ margin: 5px 0;
+}
+
+.zero-box span {
+ display: block;
+ margin-top: 10px;
+ font-size: 14px;
+}
+
+@keyframes slideIn {
+ to {
+   opacity: 1;
+   transform: translateX(0);
+ }
+}
+
+  
  .whatsapp-hinweis {
  front-size: 10px !important;
  text-align: center;
@@ -102,6 +147,8 @@ body {
  margin-top: 80px;
  margin-bottom: 60px;
  min-height: 100vh;
+
+ position: relative;
  
  background-image:
    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.25)),
@@ -408,11 +455,18 @@ footer {
    <p>Wir kümmern uns um alles.</p>
  </div>
 
- <div class="feature">
+  <div class="feature">
    <h3 style="color:#d4af37;">Mehr Zufriedenheit</h3>
    <p>Motivierte Mitarbeiter durch bessere Versorgung.</p>
  </div>
 </section>
+
+
+ <div class="zero-box">
+ <h1>0€</h1>
+ <p>FÜR IHR UNTERNEHEM</p>
+ <span>KOMPLETTSERVICE OHNE AUFWAND FÜR SIE</span>
+ </div>
 
 <section class="contact">
  <h2>Kontakt</h2>
