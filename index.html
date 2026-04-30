@@ -24,22 +24,17 @@
 
 .zero-box {
  position: absolute;
- top: 50px;
- left: 50px;
- background: red !important;
- z-index: 999999;
-}
-
- background: red !important;
- z-index: 9999;
+ top: 120px;
+ right: 80px;
+ background: rgba(0,0,0,0.85);
  border: 2px solid #d4af37;
  border-radius: 15px;
  padding: 25px;
- text-align: center;
  color: white;
 
+ z-index: 10;
  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-
+ 
  opacity: 0;
  transform: translateX(600px);
  animation: slideIn 0.8s ease-out forwards;
@@ -63,10 +58,15 @@
 }
 
 @keyframes slideIn {
- to {
+ from {
    opacity: 1;
    transform: translateX(0);
  }
+ to {
+  opacity: 1;
+  transform: translateX(0);
+ }
+ 
 }
 
   
