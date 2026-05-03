@@ -9,160 +9,151 @@
 
 /* RESET */
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
 }
 
 /* BODY */
 body {
-font-family: Arial, sans-serif;
-background: #000000;
-color: #ffffff;
-line-height: 1.6;
+ font-family: Arial, sans-serif;
+ background: #121212;
+ color: #f5f5f5;
+ line-height: 1.6;
 }
 
 /* HEADER */
 .header {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-padding: 15px 20px;
-z-index: 1000;
-text-align: right;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ padding: 15px 20px;
+ z-index: 1000;
 }
 
 .btn-gold {
-background: #d4af37;
-color: black;
-padding: 10px 18px;
-border-radius: 25px;
-text-decoration: none;
-font-weight: bold;
+ background: #ffd700;
+ color: black;
+ padding: 10px 18px;
+ border-radius: 25px;
+ text-decoration: none;
+ font-weight: bold;
 }
 
 /* HERO */
 .hero {
-min-height: 100vh;
-position: relative;
+ min-height: 100vh;
+ position: relative;
 
-background:
-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-url("hero.jpg");
+ background:
+   linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+   url("hero.jpg");
 
-background-size: cover;
-background-position: center;
+ background-size: cover;
+ background-position: center;
 }
 
-/* HERO BOX */
+/* ZERO BOX */
 .zero-box {
-position: absolute;
-top: 120px;
-right: 80px;
+ position: absolute;
+ top: 120px;
+ right: 80px;
 
-background: #000000;
-border: 2px solid #d4af37;
-border-radius: 15px;
-padding: 25px;
+ background: rgba(0,0,0,0.9);
+ border: 2px solid #d4af37;
+ border-radius: 15px;
+ padding: 25px;
+ color: white;
 
-box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+ box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 
-opacity: 0;
-transform: translateX(300px);
-animation: slideIn 0.8s ease-out forwards;
+ opacity: 0;
+ transform: translateX(300px);
+ animation: slideIn 0.8s ease-out forwards;
 }
 
 .zero-box h1 {
-color: #d4af37;
-font-size: 48px;
+ color: #d4af37;
+ font-size: 48px;
 }
 
 .zero-box p {
-font-weight: bold;
+ font-weight: bold;
 }
 
 .zero-box span {
-font-size: 14px;
+ font-size: 14px;
 }
 
 /* ANIMATION */
 @keyframes slideIn {
-to {
-opacity: 1;
-transform: translateX(0);
-}
+ to {
+   opacity: 1;
+   transform: translateX(0);
+ }
 }
 
 /* FEATURES */
 .features {
-padding: 60px 20px;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-text-align: center;
-background: #000000;
+ background: #000000;
+ padding: 60px 20px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ text-align: center;
 }
 
 .feature {
-max-width: 250px;
-margin: 20px;
-}
-
-/* BOXEN */
-.box {
-background: #000000;
-border: 1px solid #222;
-border-radius: 12px;
-padding: 30px;
-max-width: 800px;
-margin: 40px auto;
+ max-width: 250px;
+ margin: 20px;
 }
 
 /* CONTACT */
 .contact {
-text-align: center;
+ padding: 60px 20px;
+ text-align: center;
 }
 
 /* LEGAL */
+.legal {
+ max-width: 800px;
+ margin: 50px auto;
+ padding: 20px;
+ line-height: 1.6;
+ text-align: center;
+}
+
 .legal h2 {
-color: #d4af37;
-margin-top: 30px;
+ color: #ffd700;
+ margin-top: 40px;
 }
 
 .legal hr {
-border: none;
-height: 1px;
-background: #222;
-margin: 30px auto;
-width: 80%;
+ border: none;
+ height: 1px;
+ background: linear-gradient(to right, transparent, #444, transparent);
+ margin: 30px auto;
+ width: 80%;
 }
 
 /* FOOTER */
 footer {
-background: #000;
-padding: 30px;
-text-align: center;
+ background: #000;
+ padding: 30px;
+ text-align: center;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
 
-.hero {
-background:
-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url("hero-mobile.jpg");
-background-size: cover;
-background-position: center;
-}
-
-.zero-box {
-position: relative;
-top: auto;
-right: auto;
-margin: 30px auto;
-text-align: center;
-}
+ .zero-box {
+   position: relative;
+   top: auto;
+   right: auto;
+   margin: 30px auto;
+   text-align: center;
+ }
 
 }
 
@@ -172,124 +163,92 @@ text-align: center;
 <body>
 
 <header class="header">
-<a href="https://wa.me/+491778675852" class="btn-gold">
-Jetzt per WhatsApp anfragen
-</a>
+ <a href="https://wa.me/+491778675852" class="btn-gold">
+   Jetzt per WhatsApp anfragen
+ </a>
 </header>
 
 <section class="hero">
 
-<div class="zero-box">
-<h1>0€</h1>
-<p>FÜR IHR UNTERNEHMEN</p>
-<span>KOMPLETTSERVICE OHNE AUFWAND</span>
-</div>
+ <div class="zero-box">
+   <h1>0€</h1>
+   <p>FÜR IHR UNTERNEHMEN</p>
+   <span>KOMPLETTSERVICE OHNE AUFWAND</span>
+ </div>
 
 </section>
 
 <section class="features">
+ <div class="feature">
+   <h3 style="color:#d4af37;">24/7 Verfügbarkeit</h3>
+   <p>Rund um die Uhr Snacks & Getränke</p>
+ </div>
 
-<div class="feature">
-<h3 style="color:#d4af37;">24/7 Verfügbarkeit</h3>
-<p>Rund um die Uhr Snacks & Getränke</p>
-</div>
+ <div class="feature">
+   <h3 style="color:#d4af37;">Kein Aufwand</h3>
+   <p>Wir kümmern uns um alles</p>
+ </div>
 
-<div class="feature">
-<h3 style="color:#d4af37;">Kein Aufwand</h3>
-<p>Wir kümmern uns um alles</p>
-</div>
+ <div class="feature">
+   <h3 style="color:#d4af37;">Mehr Zufriedenheit</h3>
+   <p>Motivierte Mitarbeiter</p>
+ </div>
+</section>
 
-<div class="feature">
-<h3 style="color:#d4af37;">Mehr Zufriedenheit</h3>
-<p>Motivierte Mitarbeiter</p>
-</div>
+<section class="contact">
+ <h2>Kontakt</h2>
+ <p>Telefon: +49 7231 7703719</p>
+ <p>Email: kontakt@boda-snacks.de</p>
+</section>
+
+<section class="legal">
+
+ <h2>Impressum</h2>
+
+ <p>
+ Andreas Boda<br>
+ Erlenweg 34<br>
+ 75175 Pforzheim<br>
+ Deutschland
+ </p>
+
+ <p>
+ E-Mail: kontakt@boda-snacks.de
+ </p>
+
+ <p>
+ Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br>
+ Andreas Boda
+ </p>
+
+ <hr>
+
+ <h2>Datenschutz</h2>
+
+ <p><strong>Allgemeine Hinweise</strong><br>
+ Der Schutz Ihrer persönlichen Daten ist uns wichtig. Die Nutzung dieser Website ist in der Regel ohne Angabe personenbezogener Daten möglich.
+ </p>
+
+ <p><strong>Datenerfassung</strong><br>
+ Beim Besuch dieser Website werden automatisch technische Daten erfasst (Browser, Uhrzeit etc.).
+ </p>
+
+ <p><strong>Hosting</strong><br>
+ Diese Website wird bei GitHub gehostet. Server-Log-Dateien werden automatisch erfasst.
+ </p>
+
+ <p><strong>Kontaktaufnahme</strong><br>
+ Wenn Sie uns per E-Mail kontaktieren, werden Ihre Daten zur Bearbeitung gespeichert.
+ </p>
+
+ <p><strong>Ihre Rechte</strong><br>
+ Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten.
+ </p>
 
 </section>
 
-<!-- KONTAKT -->
-<div class="box contact">
-<h2 style="color:#d4af37;">Kontakt</h2>
-<p>Telefon: +49 7231 7703719</p>
-<p>Email: kontakt@boda-snacks.de</p>
-</div>
-
-<!-- LEGAL -->
-<div class="box legal">
-
-<h2>Impressum</h2>
-
-<p>
-Andreas Boda<br>
-Erlenweg 34<br>
-75175 Pforzheim<br>
-Deutschland
-</p>
-
-<p>
-Telefon: +49 7231 7703719<br>
-E-Mail: kontakt@boda-snacks.de
-</p>
-
-<p>
-Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br>
-Andreas Boda
-</p>
-
-<hr>
-
-<h2>Datenschutzerklärung</h2>
-
-<h2>Verantwortlicher</h2>
-<p>
-Andreas Boda<br>
-Erlenweg 34<br>
-75175 Pforzheim<br>
-Deutschland<br><br>
-Telefon: +49 7231 7703719<br>
-E-Mail: kontakt@boda-snacks.de
-</p>
-
-<p><strong>1. Allgemeine Hinweise</strong><br>
-Personenbezogene Daten werden vertraulich und entsprechend der gesetzlichen Vorschriften behandelt.
-</p>
-
-<p><strong>2. Datenerfassung</strong><br>
-Beim Besuch werden automatisch Daten durch IT-Systeme erfasst.
-</p>
-
-<p><strong>3. Server-Log-Dateien</strong></p>
-
-<ul>
-<li>Browsertyp</li>
-<li>Betriebssystem</li>
-<li>Referrer URL</li>
-<li>IP-Adresse</li>
-</ul>
-
-<p><strong>4. Hosting</strong><br>
-Hosting erfolgt über GitHub Pages (USA).
-</p>
-
-<p><strong>5. Kontaktaufnahme</strong><br>
-Daten werden zur Bearbeitung gespeichert.
-</p>
-
-<p><strong>6. Rechtsgrundlage</strong><br>
-Art. 6 Abs. 1 lit. f DSGVO
-</p>
-
-<p><strong>7. Ihre Rechte</strong></p>
-
-<ul>
-<li>Auskunft</li>
-<li>Löschung</li>
-<li>Berichtigung</li>
-</ul>
-
-</div>
-
 <footer>
-© 2026 BODA SNACKS
+ © 2026 BODA SNACKS
 </footer>
 
 </body>
