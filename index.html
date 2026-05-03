@@ -1,236 +1,107 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
- 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BODA SNACKS</title>
 
 <style>
+
+/* RESET */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+/* BODY */
+body {
+ font-family: Arial, sans-serif;
+ background: #121212;
+ color: #f5f5f5;
+ line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ padding: 15px 20px;
+ z-index: 1000;
+}
+
+.btn-gold {
+ background: #ffd700;
+ color: black;
+ padding: 10px 18px;
+ border-radius: 25px;
+ text-decoration: none;
+ font-weight: bold;
+}
+
+/* HERO */
+.hero {
+ min-height: 100vh;
+ position: relative;
+
+ background:
+   linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+   url("hero.jpg");
+
+ background-size: cover;
+ background-position: center;
+}
+
+/* ZERO BOX */
 .zero-box {
  position: absolute;
  top: 120px;
  right: 80px;
- background: rgba(0,0,0,0.85);
+
+ background: rgba(0,0,0,0.9);
  border: 2px solid #d4af37;
  border-radius: 15px;
  padding: 25px;
  color: white;
- z-index: 10;
- box-shadow: 0 10px 30px rgba(0,0,0,0.5);
- 
+
+ box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+
  opacity: 0;
- transform: translateX(600px);
+ transform: translateX(300px);
  animation: slideIn 0.8s ease-out forwards;
 }
 
 .zero-box h1 {
  color: #d4af37;
  font-size: 48px;
- margin: 0;
 }
 
 .zero-box p {
  font-weight: bold;
- margin: 5px 0;
 }
 
 .zero-box span {
- display: block;
- margin-top: 10px;
  font-size: 14px;
 }
 
+/* ANIMATION */
 @keyframes slideIn {
- from {
-   opacity: 0;
-   transform: translateX(600px);
- }
- 
  to {
-  opacity: 1;
-  transform: translateX(0);
+   opacity: 1;
+   transform: translateX(0);
  }
-}
- 
- .whatsapp-hinweis {
- front-size: 10px !important;
- text-align: center;
- margin-top: 6px;
- max-width: 260px;
- margin-left: auto;
- margin-right: auto;
- } 
- }
- 
-body {
- margin: 0;
- font-family: Arial, sans-serif;
- background: #121212 !important;
- color: #f5f5f5;
- line-height: 1.5;
-}
- a[href^="tel"] {
-  color: white;
-  text-decoration: none;
- }
-
-/* HEADER */
-.header {
- position: relative;
- width: 100%;
- top: 0;
- left: 0;
- background: transparent;
- padding: 10px 20px;
- z-index: 1000;
-
- display: flex;
- justify-content: space-between;
- align-items: center;
-}
-
- .header-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
- }
-
- .header-right {
-  position: absolute;
-  top: 10px;
-  right: 120px;
-  display: flex;
-  gap: 10px;
-  alig-items: center;
- }
-
-  .whatsapp-btn {
-   margin-top: 0px;
-  }
-
- .whatsapp-hinweis {
-  front-size: 12px;
-  color: #aaa;
-  margin: 5px 0 10px;
-  text-align: left;
-  line-height: 1.8;
-  max-width: 260px
- }
-
- .header-left {
-  display: flex;
-  align-items: center;
- }
- 
-.header h1 {
- margin-left: 0;
- font-size: 20px;
-}
-
-/* HERO */
-.hero {
- margin-top: 0px;
- margin-bottom: 0px;
- min-height: 100vh;
- position: relative;
- 
- background-image:
-   linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("hero.jpg");
-
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- 
- display: flex;
- align-items: center;
- justify-content: flex-start;
- 
- padding: 40px 15px;
- 
- position: relative;
-}
-
- .hero-text {
- display: flex;
- flex-direction: column;
- align-items: flex-start;
-}
-
-.whatsapp-btn {
- margin-bottom: 10px;
-}
-
-.email-btn {
- margin-bottom: 15px;
-}
-
-.btn-gold {
- background: #ffd700;
- color: black;
- padding: 12px 20px;
- border-radius: 25px;
- font-weight: bold;
- text-decoration: none;
- display: inline-block;
-}
-
-.whatsapp-hinweis {
- font-size: 10px;
- color: #fff;
- text-align: center;
- max-width: 350px;
- margin: 6px auto;
- line-height: 1.3;
-} 
- 
-.hero-text {
- max-width: 500px;
- margin: 0 auto;
- text-align: left;
-}
-
-.hero h1 {
- font-size: 48px;
- margin-bottom: 20px;
-}
-
- .cta-button {
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 0px;
-
-  background: #f4c542;
-  color: #000;
-  padding: 12px 20px;
-  border-radius: 8px;
-   text-decoration: none;
-  font-weight: bold;
- }
-
-.hero p {
- font-size: 20px;
- margin-bottom: 20px;
-}
-
-.btn {
- background: #d4af37;
- color: black;
- padding: 15px 25px;
- text-decoration: none;
- font-weight: bold;
- border-radius: 6px;
 }
 
 /* FEATURES */
 .features {
+ background: #111;
+ padding: 60px 20px;
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
  text-align: center;
- padding: 40px 30px;
- background: #111;
- margin-top: 0px
 }
 
 .feature {
@@ -238,282 +109,146 @@ body {
  margin: 20px;
 }
 
-/* KONTAKT */
+/* CONTACT */
 .contact {
- text-align: center;
  padding: 60px 20px;
+ text-align: center;
+}
+
+/* LEGAL */
+.legal {
+ max-width: 800px;
+ margin: 50px auto;
+ padding: 20px;
+ line-height: 1.6;
+ text-align: center;
+}
+
+.legal h2 {
+ color: #ffd700;
+ margin-top: 40px;
+}
+
+.legal hr {
+ border: none;
+ height: 1px;
+ background: linear-gradient(to right, transparent, #444, transparent);
+ margin: 30px auto;
+ width: 80%;
 }
 
 /* FOOTER */
 footer {
- text-align: center;
- padding: 30px;
  background: #000;
- font-size: 14px;
+ padding: 30px;
+ text-align: center;
 }
 
 /* MOBILE */
-@media (max-width: 768px) { 
-.hero {
- min-height: 75vh;
- 
- background-image:
-   linear-gradient(
-    rgba(0,0,0,0.0) 0%, 
-    rgba(0,0,0,0.1) 40%,
-    rgba(0,0,0,0.2) 100%
-    ),
-   url("hero-mobile.jpg");
- 
- background-size: cover;
- background-position: center 20%;
- background-repeat: no-repeat;
+@media (max-width: 768px) {
 
- padding: 30px 15px;
+ .zero-box {
+   position: relative;
+   top: auto;
+   right: auto;
+   margin: 30px auto;
+   text-align: center;
+ }
 
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
-
- background-color: transparent;
 }
 
- .header {
- padding: 10px 15px;
- flex-direction: column;
- align-items: center;
-}
-
- .header {
-  background: transparent !important;
-  padding: 0 !important;
-  height: auto !important;
-  min-height: 0 !important;
- }
-
- .header-right {
-  display: none !important;
- }
-
- .btn-gold {
-  box-shadow: none !important;
-  front-size: 9.5px !important;
-  padding: 5px 8px !important;
-  max-width: 65% !important;
-  border-radius: 16px !important;
- }
-
- .hero h1 {
-  front-size: 26px;
-  text-align: center;
-  margin-top: 110px !important;
- }
-
- .hero p {
-  front-size: 11px !important;
-  text-align: center;
-  opacity: 0.5 !important;
-  margin-top: 20px !important;
- }
-
- .hero {
-  margin-top: 80px !important;
-  padding-top: 100px !important;
- }
-
- .btn-gold {
-  width: auto;
-  display: inline-block;
-  text-align: center;
-  padding: 12px 18px;
-  front-size: 14px;
-  white-space: normal;
-  line-height: 1.4;
-  margin: 5px;
- }
-
- .email-btn {
-  margin-left: 12px;
-  background: #ffffff;
-  color: #000000;
- }
-
- .hero-content {
-  background: rgba(0,0,0,0.5);
-  border-radius: 10px;
-  max-widht: 90%;
-  margin: 0 auto;
-  padding: 20px;
- }
- 
- img {
-  max-width: 100%;
-  height: auto;
- }
-
- footer {
-  front-size: 12px;
-  padding: 20px;
- }
- 
- }
- 
- .btn-gold {
-  background:#ffd700;
-  color: black;
-  padding: 12px 20px;
-  border-radius: 25px;
-  font-weight: bold;
-  text-decoration: none
-  display: inline-block;
- }
-
-.btn-gold:hover {
- background: #e6b800;
-}
-
- .legal {
-     text-align: center;
-     max-width: 700px;
-     margin: 50px auto;
-     line-height: 1.6;
- }
- .legal h2 {
-     margin-top: 40px;
-     color: #ffd700;
- }
- .legal p {
-     margin: 10px 0;
- }
- 
- .legal hr {
-  border: none;
-  height: 1px;
-  background: linear-gradient(to right, transparent, #444,transparent);
-  margin: 30px auto;
-  with: 80%;
- }
- 
 </style>
- 
 </head>
 
 <body>
 
 <header class="header">
- 
- <div class="header-left">
-  
-  <a href="https://wa.me/+491778675852" class="btn-gold whatsapp-btn">
-     Jetzt per WhatsApp anfragen
-   </a>
-
- <p class="whatsapp-hinweis">
-  Mit Klick auf "WhatsApp" erklären Sie sich mit der Datenübertragung an WhatsApp<br>
-  (Meta Platforms Ireland Ltd.) einverstanden.
- </p>
- </div>
-  
- <div class="header-right">
- <a href="mailto:kontakt@boda-snacks.de" class="btn-gold email-btn">
-  E-Mail
-</a>
-
- </div>
- </header>
+ <a href="https://wa.me/+491778675852" class="btn-gold">
+   Jetzt per WhatsApp anfragen
+ </a>
+</header>
 
 <section class="hero">
- 
- <div class="hero-text">
-   
+
+ <div class="zero-box">
+   <h1>0€</h1>
+   <p>FÜR IHR UNTERNEHMEN</p>
+   <span>KOMPLETTSERVICE OHNE AUFWAND</span>
  </div>
 
- <div class="zero-box hidden">
- <h1>0€</h1>
- <p>FÜR IHR UNTERNEHEM</p>
- <span>KOMPLETTSERVICE OHNE AUFWAND FÜR SIE</span>
- </div>
- 
 </section>
 
 <section class="features">
  <div class="feature">
    <h3 style="color:#d4af37;">24/7 Verfügbarkeit</h3>
-   <p>Rund um die Uhr Snacks & Getränke.</p>
+   <p>Rund um die Uhr Snacks & Getränke</p>
  </div>
 
  <div class="feature">
    <h3 style="color:#d4af37;">Kein Aufwand</h3>
-   <p>Wir kümmern uns um alles.</p>
+   <p>Wir kümmern uns um alles</p>
  </div>
 
-  <div class="feature">
+ <div class="feature">
    <h3 style="color:#d4af37;">Mehr Zufriedenheit</h3>
-   <p>Motivierte Mitarbeiter durch bessere Versorgung.</p>
+   <p>Motivierte Mitarbeiter</p>
  </div>
 </section>
 
 <section class="contact">
  <h2>Kontakt</h2>
- <p>Telefon: <a href="tel:+49 7231 7703719">+49 7231 7703719</a></p>
+ <p>Telefon: +49 7231 7703719</p>
  <p>Email: kontakt@boda-snacks.de</p>
 </section>
 
 <section class="legal">
 
-<h2>Impressum</h2>
+ <h2>Impressum</h2>
 
-<p>
-Andreas Boda<br>
-Erlenweg 34<br>
-75175 Pforzheim<br>
-Deutschland
-</p>
+ <p>
+ Andreas Boda<br>
+ Erlenweg 34<br>
+ 75175 Pforzheim<br>
+ Deutschland
+ </p>
 
-<p>
-E-Mail: kontakt@boda-snacks.de
-</p>
+ <p>
+ E-Mail: kontakt@boda-snacks.de
+ </p>
 
-<p>
-Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br>
-Andreas Boda
-</p>
+ <p>
+ Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br>
+ Andreas Boda
+ </p>
 
-<hr>
+ <hr>
 
-<h2>Datenschutz</h2>
+ <h2>Datenschutz</h2>
 
-<p><strong>Allgemeine Hinweise</strong><br>
-Der Schutz Ihrer persönlichen Daten ist uns wichtig. Die Nutzung dieser Website ist in der Regel ohne Angabe personenbezogener Daten möglich.
-</p>
+ <p><strong>Allgemeine Hinweise</strong><br>
+ Der Schutz Ihrer persönlichen Daten ist uns wichtig. Die Nutzung dieser Website ist in der Regel ohne Angabe personenbezogener Daten möglich.
+ </p>
 
-<p><strong>Datenerfassung auf dieser Website</strong><br>
-Beim Besuch dieser Website werden automatisch Informationen durch den Hosting-Anbieter erfasst. Dies sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).
-</p>
+ <p><strong>Datenerfassung</strong><br>
+ Beim Besuch dieser Website werden automatisch technische Daten erfasst (Browser, Uhrzeit etc.).
+ </p>
 
-<p><strong>Hosting</strong><br>
-Diese Website wird bei GitHub (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website werden Server-Log-Dateien erfasst.
-</p>
+ <p><strong>Hosting</strong><br>
+ Diese Website wird bei GitHub gehostet. Server-Log-Dateien werden automatisch erfasst.
+ </p>
 
-<p><strong>Kontaktaufnahme</strong><br>
-Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage gespeichert.
-</p>
+ <p><strong>Kontaktaufnahme</strong><br>
+ Wenn Sie uns per E-Mail kontaktieren, werden Ihre Daten zur Bearbeitung gespeichert.
+ </p>
 
-<p><strong>Rechtsgrundlage</strong><br>
-Die Verarbeitung Ihrer Daten erfolgt auf Grundlage von Art. 6 Abs. 1 DSGVO.
-</p>
-
-<p><strong>Ihre Rechte</strong><br>
-Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Außerdem haben Sie ein Recht auf Berichtigung oder Löschung dieser Daten.
-</p>
-
-<p><strong>Beschwerderecht</strong><br>
-Im Falle datenschutzrechtlicher Verstöße steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
-</p>
+ <p><strong>Ihre Rechte</strong><br>
+ Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten.
+ </p>
 
 </section>
+
 <footer>
- © 2026 BODA SNACKS GbR
+ © 2026 BODA SNACKS
 </footer>
 
 </body>
