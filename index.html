@@ -22,14 +22,6 @@ color: #ffffff;
 line-height: 1.6;
 }
 
-.container {
-  background-color: #000000;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 10px;
-}
-
 /* HEADER */
 .header {
 position: absolute;
@@ -42,7 +34,7 @@ text-align: right;
 }
 
 .btn-gold {
-background: #ffcc00;
+background: #d4af37;
 color: black;
 padding: 10px 18px;
 border-radius: 25px;
@@ -56,26 +48,25 @@ min-height: 100vh;
 position: relative;
 
 background:
-linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
 url("hero.jpg");
 
 background-size: cover;
 background-position: center;
 }
 
-/* ZERO BOX */
+/* HERO BOX */
 .zero-box {
 position: absolute;
 top: 120px;
 right: 80px;
 
-background: rgba(0,0,0,0.9);
+background: #000000;
 border: 2px solid #d4af37;
 border-radius: 15px;
 padding: 25px;
-color: white;
 
-box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 
 opacity: 0;
 transform: translateX(300px);
@@ -110,7 +101,7 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 text-align: center;
-background: #121212;
+background: #000000;
 }
 
 .feature {
@@ -118,15 +109,14 @@ max-width: 250px;
 margin: 20px;
 }
 
-/* HELLE KARTEN */
-.card {
-background: #1a1a1a;
-color: #eee;
+/* BOXEN */
+.box {
+background: #000000;
+border: 1px solid #222;
+border-radius: 12px;
+padding: 30px;
 max-width: 800px;
 margin: 40px auto;
-padding: 30px;
-border-radius: 12px;
-border: 1px solid #2a2a2a;
 }
 
 /* CONTACT */
@@ -143,13 +133,13 @@ margin-top: 30px;
 .legal hr {
 border: none;
 height: 1px;
-background: linear-gradient(to right, transparent, #444, transparent);
+background: #222;
 margin: 30px auto;
 width: 80%;
 }
 
 /* FOOTER */
-.footer {
+footer {
 background: #000;
 padding: 30px;
 text-align: center;
@@ -157,6 +147,14 @@ text-align: center;
 
 /* MOBILE */
 @media (max-width: 768px) {
+
+.hero {
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url("hero-mobile.jpg");
+background-size: cover;
+background-position: center;
+}
 
 .zero-box {
 position: relative;
@@ -208,20 +206,17 @@ Jetzt per WhatsApp anfragen
 
 </section>
 
-<!-- HELLE KONTAKT BOX -->
-<div class="card contact">
-<h2>Kontakt</h2>
+<!-- KONTAKT -->
+<div class="box contact">
+<h2 style="color:#d4af37;">Kontakt</h2>
 <p>Telefon: +49 7231 7703719</p>
 <p>Email: kontakt@boda-snacks.de</p>
 </div>
 
-<!-- HELLE LEGAL BOX -->
-<div class="card legal">
+<!-- LEGAL -->
+<div class="box legal">
 
 <h2>Impressum</h2>
-
-
-  <h2>Impressum</h2>
 
 <p>
 Andreas Boda<br>
@@ -245,81 +240,56 @@ Andreas Boda
 <h2>Datenschutzerklärung</h2>
 
 <h2>Verantwortlicher</h2>
-  <p>
-    Andreas Boda<br>
-    Erlenweg 34<br>
-    75175 Pforzheim<br>
-    Deutschland<br><br>
+<p>
+Andreas Boda<br>
+Erlenweg 34<br>
+75175 Pforzheim<br>
+Deutschland<br><br>
+Telefon: +49 7231 7703719<br>
+E-Mail: kontakt@boda-snacks.de
+</p>
 
-    Telefon: +49 7231 7703719<br>
-    E-Mail: kontakt@boda-snacks.de
-    </p>
-  
 <p><strong>1. Allgemeine Hinweise</strong><br>
-Der Schutz Ihrer persönlichen Daten ist uns wichtig. Personenbezogene Daten werden vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung behandelt.
+Personenbezogene Daten werden vertraulich und entsprechend der gesetzlichen Vorschriften behandelt.
 </p>
 
-<p><strong>2. Datenerfassung auf dieser Website</strong><br>
-Beim Besuch dieser Website werden automatisch Informationen erfasst. Diese Daten werden automatisch durch unsere IT-Systeme erfasst.
+<p><strong>2. Datenerfassung</strong><br>
+Beim Besuch werden automatisch Daten durch IT-Systeme erfasst.
 </p>
 
-<p><strong>3. Server-Log-Dateien</strong><br>
-Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch übermittelt. Dies sind:
-</p>
+<p><strong>3. Server-Log-Dateien</strong></p>
 
 <ul>
-<li>Browsertyp und Browserversion</li>
-<li>verwendetes Betriebssystem</li>
+<li>Browsertyp</li>
+<li>Betriebssystem</li>
 <li>Referrer URL</li>
-<li>Hostname des zugreifenden Rechners</li>
-<li>Uhrzeit der Serveranfrage</li>
 <li>IP-Adresse</li>
 </ul>
 
-<p>
-Diese Daten werden nicht mit anderen Datenquellen zusammengeführt.
-</p>
-
 <p><strong>4. Hosting</strong><br>
-Diese Website wird bei GitHub Pages gehostet. Anbieter ist GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA. Beim Besuch der Website werden Daten über Server-Log-Dateien erfasst.
+Hosting erfolgt über GitHub Pages (USA).
 </p>
 
 <p><strong>5. Kontaktaufnahme</strong><br>
-Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben inklusive der von Ihnen angegebenen Kontaktdaten zur Bearbeitung der Anfrage gespeichert.
+Daten werden zur Bearbeitung gespeichert.
 </p>
 
 <p><strong>6. Rechtsgrundlage</strong><br>
-Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse ergibt sich aus der technisch fehlerfreien Darstellung und Optimierung der Website.
+Art. 6 Abs. 1 lit. f DSGVO
 </p>
 
-<p><strong>7. Speicherdauer</strong><br>
-Personenbezogene Daten werden nur so lange gespeichert, wie dies zur Erreichung der hier genannten Zwecke erforderlich ist.
-</p>
-
-<p><strong>8. Ihre Rechte</strong><br>
-Sie haben jederzeit das Recht auf:
-</p>
+<p><strong>7. Ihre Rechte</strong></p>
 
 <ul>
-<li>Auskunft über Ihre gespeicherten Daten</li>
-<li>Berichtigung unrichtiger Daten</li>
-<li>Löschung Ihrer Daten</li>
-<li>Einschränkung der Verarbeitung</li>
-<li>Datenübertragbarkeit</li>
+<li>Auskunft</li>
+<li>Löschung</li>
+<li>Berichtigung</li>
 </ul>
-
-<p>
-Sie können sich jederzeit bei einer Aufsichtsbehörde beschweren.
-</p>
-
-<p><strong>9. SSL- bzw. TLS-Verschlüsselung</strong><br>
-Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung.
-</p>
 
 </div>
 
 <footer>
-© 2026 BODA SNACKS GbR
+© 2026 BODA SNACKS
 </footer>
 
 </body>
