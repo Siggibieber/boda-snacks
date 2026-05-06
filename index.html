@@ -3,131 +3,425 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BODA SNACKS</title>
+
+<title>BODA SNACKS | Snack- & Getränkeautomaten</title>
+
+<meta name="description" content="Kostenlose Snack- und Getränkeautomaten für Unternehmen. Komplettservice ohne Aufwand. BODA SNACKS.">
 
 <style>
 
-/* RESET */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body {
-font-family: Arial, sans-serif;
-background: #000;
-color: #fff;
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#0d0d0d;
+color:#ffffff;
+line-height:1.6;
+overflow-x:hidden;
 }
 
 /* HEADER */
-.header {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-padding: 15px 20px;
-text-align: right;
-z-index: 10;
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+padding:18px 30px;
+
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(8px);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+border-bottom:1px solid rgba(255,215,0,0.15);
 }
 
-.btn {
-background: #d4af37;
-color: black;
-padding: 10px 18px;
-border-radius: 25px;
-text-decoration: none;
-font-weight: bold;
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#ffd700;
+letter-spacing:1px;
+}
+
+.logo span{
+color:#ffffff;
+}
+
+.header-buttons{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.btn{
+background:#ffd700;
+color:#000;
+padding:13px 22px;
+border-radius:30px;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+display:inline-block;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+background:#ffdf33;
+}
+
+.meta-hinweis{
+font-size:11px;
+color:#cfcfcf;
+margin-top:6px;
+max-width:300px;
+line-height:1.4;
 }
 
 /* HERO */
-.hero {
-position: relative;
-min-height: 100vh;
-background: url("hero.jpg") center/cover no-repeat;
+
+.hero{
+position:relative;
+min-height:100vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.55),
+rgba(0,0,0,0.55)
+),
+url("hero.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+display:flex;
+align-items:center;
+padding:140px 60px 80px;
+overflow:hidden;
 }
 
-/* Overlay für sauberen Übergang */
-.hero::after {
-content: "";
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 60%;
-background: linear-gradient(to bottom, transparent, #000);
+.hero-content{
+max-width:750px;
+z-index:2;
 }
 
-/* HERO CONTENT */
-.hero-content {
-position: relative;
-z-index: 2;
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 20px;
+.hero-logo{
+font-size:60px;
+font-weight:bold;
+line-height:1;
+margin-bottom:15px;
 }
 
-.hero-content h1 {
-font-size: 48px;
-color: #d4af37;
+.hero-logo .gold{
+color:#ffd700;
 }
 
-.hero-content p {
-margin-top: 10px;
-font-size: 20px;
+.hero h1{
+font-size:64px;
+line-height:1.05;
+margin-bottom:25px;
+max-width:850px;
+}
+
+.hero h1 span{
+color:#ffd700;
+}
+
+.hero p{
+font-size:24px;
+color:#f1f1f1;
+margin-bottom:35px;
+max-width:700px;
+}
+
+.hero-list{
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+margin-top:25px;
+}
+
+.hero-list div{
+font-size:18px;
+color:#ffffff;
+}
+
+/* ZERO BOX */
+
+.zero-box{
+position:absolute;
+right:60px;
+top:180px;
+
+background:rgba(0,0,0,0.82);
+border:2px solid #ffd700;
+
+padding:30px;
+border-radius:24px;
+
+max-width:340px;
+
+box-shadow:0 0 40px rgba(255,215,0,0.25);
+
+text-align:center;
+}
+
+.zero-box h2{
+font-size:110px;
+line-height:1;
+color:#ffd700;
+margin-bottom:10px;
+}
+
+.zero-box h3{
+font-size:42px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.zero-box p{
+font-size:20px;
+font-weight:bold;
+background:#ffd700;
+color:#000;
+padding:14px;
+border-radius:12px;
+}
+
+/* TRENNUNG */
+
+.divider{
+height:2px;
+background:linear-gradient(to right, transparent, #ffd700, transparent);
+margin:0;
 }
 
 /* FEATURES */
-.features {
-padding: 60px 20px;
-text-align: center;
-background: #000;
+
+.features{
+padding:90px 40px;
+background:#111111;
 }
 
-.feature {
-margin: 20px 0;
+.features h2{
+text-align:center;
+font-size:48px;
+margin-bottom:60px;
 }
 
-.feature h3 {
-color: #d4af37;
+.features-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+max-width:1400px;
+margin:auto;
 }
 
-/* CONTACT */
-.contact {
-text-align: center;
-padding: 60px 20px;
+.feature-card{
+background:#1a1a1a;
+border:1px solid rgba(255,215,0,0.2);
+padding:35px;
+border-radius:18px;
+
+transition:0.3s;
+}
+
+.feature-card:hover{
+transform:translateY(-5px);
+border-color:#ffd700;
+}
+
+.feature-icon{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.feature-card h3{
+color:#ffd700;
+font-size:28px;
+margin-bottom:15px;
+}
+
+.feature-card p{
+font-size:17px;
+color:#d6d6d6;
+}
+
+/* FÜR WEN */
+
+.target{
+padding:90px 40px;
+background:#0d0d0d;
+}
+
+.target h2{
+text-align:center;
+font-size:48px;
+margin-bottom:60px;
+}
+
+.target-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.target-box{
+background:#151515;
+padding:30px;
+border-radius:16px;
+text-align:center;
+border:1px solid rgba(255,215,0,0.12);
+}
+
+.target-box h3{
+color:#ffd700;
+margin-bottom:10px;
+}
+
+/* KONTAKT */
+
+.contact{
+padding:90px 30px;
+text-align:center;
+background:#111;
+}
+
+.contact h2{
+font-size:48px;
+margin-bottom:25px;
+}
+
+.contact p{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.contact a{
+color:#ffd700;
+text-decoration:none;
 }
 
 /* LEGAL */
-.legal {
-padding: 40px 20px;
-max-width: 800px;
-margin: auto;
+
+.legal{
+padding:80px 25px;
+background:#0a0a0a;
 }
 
-.legal h2 {
-color: #d4af37;
-margin-top: 20px;
+.legal-container{
+max-width:1100px;
+margin:auto;
+}
+
+.legal h2{
+font-size:38px;
+margin-bottom:25px;
+color:#ffd700;
+}
+
+.legal h3{
+margin-top:35px;
+margin-bottom:15px;
+color:#ffd700;
+}
+
+.legal p{
+margin-bottom:16px;
+color:#dddddd;
+}
+
+.legal ul{
+padding-left:20px;
+margin-bottom:20px;
+}
+
+.legal li{
+margin-bottom:10px;
+color:#dddddd;
 }
 
 /* FOOTER */
-footer {
-text-align: center;
-padding: 30px;
+
+footer{
+background:#000;
+padding:30px;
+text-align:center;
+font-size:14px;
+color:#888;
+border-top:1px solid rgba(255,215,0,0.15);
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
 
-.hero {
-background: url("hero-mobile.jpg") center/cover no-repeat;
+@media(max-width:950px){
+
+header{
+padding:15px;
+flex-direction:column;
+gap:15px;
 }
 
-.hero-content h1 {
-font-size: 32px;
+.hero{
+padding:180px 25px 80px;
+text-align:center;
+justify-content:center;
+}
+
+.hero-content{
+max-width:100%;
+}
+
+.hero-logo{
+font-size:40px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.hero-list{
+justify-content:center;
+}
+
+.zero-box{
+position:relative;
+top:auto;
+right:auto;
+margin:50px auto 0;
+max-width:100%;
+}
+
+.zero-box h2{
+font-size:75px;
+}
+
+.zero-box h3{
+font-size:28px;
+}
+
+.features h2,
+.target h2,
+.contact h2{
+font-size:34px;
 }
 
 }
@@ -137,50 +431,191 @@ font-size: 32px;
 
 <body>
 
-<header class="header">
-<a href="https://wa.me/491778675852" class="btn">Jetzt anfragen</a>
+<header>
+
+<div class="logo">
+BODA <span>SNACKS</span>
+</div>
+
+<div>
+
+<div class="header-buttons">
+
+<a href="https://wa.me/491778675852" class="btn">
+Jetzt unverbindlich anfragen
+</a>
+
+<a href="mailto:kontakt@boda-snacks.de" class="btn">
+E-Mail
+</a>
+
+</div>
+
+<p class="meta-hinweis">
+Mit Klick auf „WhatsApp“ erklären Sie sich damit einverstanden,
+dass Daten an WhatsApp bzw. Meta Platforms Ireland Ltd. übertragen werden.
+</p>
+
+</div>
+
 </header>
 
 <section class="hero">
 
 <div class="hero-content">
-<div>
-<h1>0€</h1>
-<p>FÜR IHR UNTERNEHMEN</p>
-<p>Komplettservice ohne Aufwand</p>
+
+<div class="hero-logo">
+BODA <span class="gold">SNACKS</span>
 </div>
+
+<h1>
+Kostenlose Snack- &
+<span>Getränkeautomaten</span>
+für Ihr Unternehmen
+</h1>
+
+<p>
+Mehr Zufriedenheit. Kein Aufwand.
+0€ Investition für Ihr Unternehmen.
+</p>
+
+<a href="https://wa.me/491778675852" class="btn">
+Jetzt unverbindlich anfragen
+</a>
+
+<div class="hero-list">
+
+<div>✔ Wir stellen</div>
+<div>✔ Wir befüllen</div>
+<div>✔ Wir warten</div>
+<div>✔ Sie zahlen nichts</div>
+
+</div>
+
+</div>
+
+<div class="zero-box">
+
+<h2>0€</h2>
+
+<h3>
+FÜR IHR<br>
+UNTERNEHMEN
+</h3>
+
+<p>
+KOMPLETTSERVICE<br>
+OHNE AUFWAND FÜR SIE
+</p>
+
 </div>
 
 </section>
 
+<div class="divider"></div>
+
 <section class="features">
 
-<div class="feature">
+<h2>Ihre Vorteile</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<div class="feature-icon">⏰</div>
 <h3>24/7 Verfügbarkeit</h3>
-<p>Rund um die Uhr Snacks & Getränke</p>
+<p>
+Ihre Mitarbeiter haben rund um die Uhr Zugriff
+auf Snacks und Getränke.
+</p>
 </div>
 
-<div class="feature">
+<div class="feature-card">
+<div class="feature-icon">💰</div>
+<h3>0€ Investition</h3>
+<p>
+Keine Anschaffungskosten.
+Keine versteckten Gebühren.
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🔧</div>
 <h3>Kein Aufwand</h3>
-<p>Wir kümmern uns um alles</p>
+<p>
+Wir übernehmen Befüllung,
+Wartung und Organisation.
+</p>
 </div>
 
-<div class="feature">
+<div class="feature-card">
+<div class="feature-icon">📈</div>
 <h3>Mehr Zufriedenheit</h3>
-<p>Motivierte Mitarbeiter</p>
+<p>
+Bessere Versorgung sorgt für motivierte
+Mitarbeiter und höhere Zufriedenheit.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="target">
+
+<h2>Für wen ist das geeignet?</h2>
+
+<div class="target-grid">
+
+<div class="target-box">
+<h3>Büros</h3>
+<p>Snacks direkt am Arbeitsplatz.</p>
+</div>
+
+<div class="target-box">
+<h3>Werkstätten</h3>
+<p>Versorgung für Mitarbeiter vor Ort.</p>
+</div>
+
+<div class="target-box">
+<h3>Fitnessstudios</h3>
+<p>Snacks & Getränke für Mitglieder.</p>
+</div>
+
+<div class="target-box">
+<h3>Autohäuser</h3>
+<p>Mehr Komfort für Kunden und Mitarbeiter.</p>
+</div>
+
 </div>
 
 </section>
 
 <section class="contact">
+
 <h2>Kontakt</h2>
-<p>Telefon: +49 7231 7703719</p>
-<p>Email: kontakt@boda-snacks.de</p>
+
+<p>
+Telefon:
+<a href="tel:+4972317703719">
++49 7231 7703719
+</a>
+</p>
+
+<p>
+E-Mail:
+<a href="mailto:kontakt@boda-snacks.de">
+kontakt@boda-snacks.de
+</a>
+</p>
+
 </section>
 
 <section class="legal">
 
+<div class="legal-container">
+
 <h2>Impressum</h2>
+
 <p>
 Andreas Boda<br>
 Erlenweg 34<br>
@@ -194,18 +629,122 @@ E-Mail: kontakt@boda-snacks.de
 </p>
 
 <p>
-Verantwortlich nach § 18 MStV: Andreas Boda
+Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br>
+Andreas Boda
 </p>
 
-<h2>Datenschutz</h2>
+<h2>Datenschutzerklärung</h2>
+
+<h3>1. Allgemeine Hinweise</h3>
+
 <p>
-Beim Besuch der Website werden automatisch Daten durch den Provider erfasst (Server-Log-Dateien).
+Der Schutz Ihrer personenbezogenen Daten ist uns wichtig.
+Diese Website kann grundsätzlich ohne Angabe personenbezogener Daten genutzt werden.
 </p>
+
+<h3>2. Hosting</h3>
+
+<p>
+Diese Website wird über GitHub Pages bereitgestellt.
+Anbieter ist GitHub Inc., 88 Colin P. Kelly Jr. Street,
+San Francisco, CA 94107, USA.
+Beim Besuch der Website können technische Zugriffsdaten
+(Server-Log-Dateien) verarbeitet werden.
+</p>
+
+<h3>3. Server-Log-Dateien</h3>
+
+<p>
+Beim Aufruf dieser Website werden automatisch Informationen
+durch den Hosting-Anbieter erfasst:
+</p>
+
+<ul>
+<li>Browsertyp und Browserversion</li>
+<li>Verwendetes Betriebssystem</li>
+<li>Referrer-URL</li>
+<li>Hostname des zugreifenden Rechners</li>
+<li>Uhrzeit der Serveranfrage</li>
+<li>IP-Adresse</li>
+</ul>
+
+<p>
+Diese Daten dienen ausschließlich der technischen Bereitstellung
+und Sicherheit der Website.
+</p>
+
+<h3>4. Kontaktaufnahme</h3>
+
+<p>
+Wenn Sie uns per E-Mail oder WhatsApp kontaktieren,
+werden Ihre Angaben zwecks Bearbeitung Ihrer Anfrage gespeichert.
+</p>
+
+<h3>5. WhatsApp</h3>
+
+<p>
+Bei Nutzung des WhatsApp-Buttons werden Daten
+an WhatsApp bzw. Meta Platforms Ireland Ltd. übertragen.
+Dabei können personenbezogene Daten außerhalb der EU verarbeitet werden.
+</p>
+
+<p>
+Weitere Informationen:
+https://www.whatsapp.com/legal/privacy-policy-eea
+</p>
+
+<h3>6. Rechtsgrundlagen</h3>
+
+<p>
+Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 DSGVO,
+insbesondere auf Grundlage berechtigter Interessen
+sowie zur Bearbeitung von Kontaktanfragen.
+</p>
+
+<h3>7. Ihre Rechte</h3>
+
+<p>
+Sie haben jederzeit das Recht auf:
+</p>
+
+<ul>
+<li>Auskunft über gespeicherte Daten</li>
+<li>Berichtigung unrichtiger Daten</li>
+<li>Löschung Ihrer Daten</li>
+<li>Einschränkung der Verarbeitung</li>
+<li>Widerspruch gegen die Verarbeitung</li>
+<li>Datenübertragbarkeit</li>
+</ul>
+
+<h3>8. Beschwerderecht</h3>
+
+<p>
+Sie haben das Recht,
+sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
+</p>
+
+<h3>9. SSL-/TLS-Verschlüsselung</h3>
+
+<p>
+Diese Website nutzt aus Sicherheitsgründen
+eine SSL-/TLS-Verschlüsselung.
+</p>
+
+<h3>10. Haftungsausschluss</h3>
+
+<p>
+Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir
+keine Haftung für externe Links.
+Für den Inhalt verlinkter Seiten
+sind ausschließlich deren Betreiber verantwortlich.
+</p>
+
+</div>
 
 </section>
 
 <footer>
-© 2026 BODA SNACKS
+© 2026 BODA SNACKS — Alle Rechte vorbehalten
 </footer>
 
 </body>
