@@ -36,15 +36,16 @@ top:0;
 left:0;
 width:100%;
 z-index:999;
-padding:10px 20px;
+padding:18px 30px;
 
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(8px);
 
 display:flex;
 justify-content:space-between;
 align-items:center;
 
-border-bottom:none;
+border-bottom:1px solid rgba(255,215,0,0.15);
 }
 
 .logo{
@@ -92,7 +93,7 @@ line-height:1.4;
 
 .hero{
 position:relative;
-min-height:100dvh;
+min-height:100vh;
 
 background:
 linear-gradient(
@@ -102,12 +103,14 @@ rgba(0,0,0,0.55)
 url("hero.jpg");
 
 background-size:cover;
-background-position: 55% top;
+background-position:center;
 background-repeat:no-repeat;
 
 display:flex;
-align-items:flex-start;
-padding:220px 60px 80px;
+align-items:center;
+
+padding:160px 60px 80px;
+
 overflow:visible;
 }
 
@@ -157,57 +160,88 @@ font-size:18px;
 color:#ffffff;
 }
 
-/* ZERO BOX */
+/* OFFER BOX */
 
-.zero-box{
+.offer-box{
 position:absolute;
 
-  top:120px !important;
-  left:50%;
+right:70px;
+top:160px;
 
-    transform:translateX(-50%);
+width:340px;
 
-  background:rgba(0,0,0,0.82);
-  border:2px solid #ffd700;
+background:rgba(10,10,10,0.88);
 
-  padding:35px 40px;
-  border-radius:24px;
+border:2px solid #ffd700;
+border-radius:28px;
 
-  width:340px;
-  max-width:85%;
-  
-  text-align:center;
-  z-index:5;
+padding:35px 30px;
 
-  box-shadow:0 0 35px rgba(0,0,0,0.6);
+backdrop-filter:blur(6px);
 
-  animation:slideIn 1s ease forwards;
-  }
+box-shadow:
+0 0 30px rgba(255,215,0,0.28);
 
-.zero-box h2{
-font-size:110px;
+z-index:5;
+
+opacity:0;
+transform:translateX(80px);
+
+animation:slideIn 1s ease forwards;
+animation-delay:0.3s;
+}
+
+.offer-price{
+font-size:100px;
+font-weight:900;
 line-height:1;
+
+text-align:center;
+
 color:#ffd700;
-margin-bottom:10px;
+
+text-shadow:
+0 0 10px rgba(255,215,0,0.4);
 }
 
-.zero-box h3{
+.offer-title{
+margin-top:10px;
+
 font-size:42px;
-line-height:1.1;
-margin-bottom:20px;
+font-weight:800;
+
+line-height:1.05;
+
+text-align:center;
 }
 
-.zero-box p{
-font-size:20px;
-font-weight:bold;
+.offer-service{
+margin-top:25px;
+
 background:#ffd700;
 color:#000;
-padding:14px;
-border-radius:12px;
+
+padding:18px;
+
+border-radius:18px;
+
+font-size:24px;
+font-weight:800;
+
+line-height:1.25;
+
+text-align:center;
 }
 
-  
-  
+@keyframes slideIn{
+
+to{
+opacity:1;
+transform:translateX(0);
+}
+
+}
+
 /* TRENNUNG */
 
 .divider{
@@ -270,9 +304,8 @@ color:#d6d6d6;
 /* FÜR WEN */
 
 .target{
-padding:90px 40px 160px;
+padding:90px 40px;
 background:#0d0d0d;
-overflow:visible;
 }
 
 .target h2{
@@ -305,7 +338,7 @@ margin-bottom:10px;
 /* KONTAKT */
 
 .contact{
-padding:90px 30px 140px;
+padding:90px 30px;
 text-align:center;
 background:#111;
 }
@@ -411,20 +444,31 @@ font-size:18px;
 justify-content:center;
 }
 
-.zero-box{
+.offer-box{
+
 position:relative;
-top:auto;
+
 right:auto;
-margin:50px auto 0;
-max-width:100%;
+top:auto;
+
+margin:50px auto 0 auto;
+
+width:100%;
+max-width:360px;
+
 }
 
-.zero-box h2{
-font-size:75px;
+.offer-price{
+font-size:72px;
 }
 
-.zero-box h3{
-font-size:28px;
+.offer-title{
+font-size:30px;
+}
+
+.offer-service{
+font-size:19px;
+padding:16px;
 }
 
 .features h2,
@@ -435,25 +479,6 @@ font-size:34px;
 
 }
 
-@keyframes slideIn{
-
-  0%{
-    opacity:0;
-    left:120%;
-    top:50%;
-    transform:translate(-50%,-50%);
-  }
-
-  100%{
-    opacity:1;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-  }
-
-}
-
-  
 </style>
 </head>
 
@@ -492,6 +517,25 @@ dass Daten an WhatsApp bzw. Meta Platforms Ireland Ltd. übertragen werden.
 
 <div class="hero-content">
 
+<div class="hero-logo">
+BODA <span class="gold">SNACKS</span>
+</div>
+
+<h1>
+Kostenlose Snack- &
+<span>Getränkeautomaten</span>
+für Ihr Unternehmen
+</h1>
+
+<p>
+Mehr Zufriedenheit. Kein Aufwand.
+0€ Investition für Ihr Unternehmen.
+</p>
+
+<a href="https://wa.me/491778675852" class="btn">
+Jetzt unverbindlich anfragen
+</a>
+
 <div class="hero-list">
 
 <div>✔ Wir stellen</div>
@@ -501,23 +545,23 @@ dass Daten an WhatsApp bzw. Meta Platforms Ireland Ltd. übertragen werden.
 
 </div>
 
-<div style="height:120px;"></div>
-  
 </div>
 
-<div class="zero-box">
+<div class="offer-box">
 
-<h2>0€</h2>
+<div class="offer-price">
+0€
+</div>
 
-<h3>
+<div class="offer-title">
 FÜR IHR<br>
 UNTERNEHMEN
-</h3>
+</div>
 
-<p>
+<div class="offer-service">
 KOMPLETTSERVICE<br>
 OHNE AUFWAND FÜR SIE
-</p>
+</div>
 
 </div>
 
@@ -565,6 +609,36 @@ Wartung und Organisation.
 Bessere Versorgung sorgt für motivierte
 Mitarbeiter und höhere Zufriedenheit.
 </p>
+</div>
+
+</div>
+
+</section>
+
+<section class="target">
+
+<h2>Für wen ist das geeignet?</h2>
+
+<div class="target-grid">
+
+<div class="target-box">
+<h3>Büros</h3>
+<p>Snacks direkt am Arbeitsplatz.</p>
+</div>
+
+<div class="target-box">
+<h3>Werkstätten</h3>
+<p>Versorgung für Mitarbeiter vor Ort.</p>
+</div>
+
+<div class="target-box">
+<h3>Fitnessstudios</h3>
+<p>Snacks & Getränke für Mitglieder.</p>
+</div>
+
+<div class="target-box">
+<h3>Autohäuser</h3>
+<p>Mehr Komfort für Kunden und Mitarbeiter.</p>
 </div>
 
 </div>
