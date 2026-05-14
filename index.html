@@ -1,5 +1,746 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>BODA SNACKS</title>
 
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#050505;
+color:#ffffff;
+overflow-x:hidden;
+line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:22px 40px;
+
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(255,215,0,0.08);
+}
+
+.logo{
+font-size:30px;
+font-weight:900;
+letter-spacing:1px;
+color:#ffd700;
+}
+
+.logo span{
+color:#fff;
+}
+
+.header-buttons{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.btn{
+background:#ffd700;
+color:#000;
+padding:14px 24px;
+border-radius:40px;
+text-decoration:none;
+font-weight:800;
+transition:0.25s;
+display:inline-block;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+background:#ffe347;
+}
+
+/* HERO */
+
+.hero{
+min-height:100svh;
+
+display:flex;
+align-items:center;
+
+padding:170px 70px 100px;
+
+background:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+url("hero.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.hero-content{
+max-width:760px;
+}
+
+.hero-badge{
+display:inline-block;
+
+padding:10px 18px;
+margin-bottom:25px;
+
+background:rgba(255,215,0,0.12);
+
+border:1px solid rgba(255,215,0,0.3);
+border-radius:40px;
+
+font-size:14px;
+font-weight:700;
+color:#ffd700;
+}
+
+.hero h1{
+font-size:72px;
+line-height:1.05;
+margin-bottom:25px;
+font-weight:900;
+}
+
+.hero h1 span{
+color:#ffd700;
+}
+
+.hero p{
+font-size:24px;
+max-width:700px;
+color:#ececec;
+margin-bottom:35px;
+}
+
+.hero-features{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin-bottom:40px;
+}
+
+.hero-features div{
+padding:12px 18px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,215,0,0.12);
+border-radius:14px;
+
+font-size:16px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.btn-outline{
+background:transparent;
+color:#fff;
+
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.btn-outline:hover{
+background:#111;
+}
+
+/* SECTION */
+
+section{
+padding:100px 40px;
+}
+
+.section-title{
+text-align:center;
+font-size:52px;
+margin-bottom:70px;
+font-weight:900;
+}
+
+.section-title span{
+color:#ffd700;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:28px;
+
+max-width:1400px;
+margin:auto;
+}
+
+.card{
+background:#101010;
+
+border:1px solid rgba(255,215,0,0.08);
+border-radius:22px;
+
+padding:35px;
+
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:rgba(255,215,0,0.35);
+}
+
+.card-icon{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:15px;
+color:#ffd700;
+}
+
+.card p{
+color:#dddddd;
+font-size:17px;
+}
+
+/* TARGET */
+
+.target-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
+
+max-width:1200px;
+margin:auto;
+}
+
+.target-box{
+background:#111;
+
+padding:35px 25px;
+
+border-radius:20px;
+
+text-align:center;
+
+border:1px solid rgba(255,215,0,0.08);
+
+transition:0.25s;
+}
+
+.target-box:hover{
+transform:translateY(-4px);
+border-color:rgba(255,215,0,0.35);
+}
+
+.target-box h3{
+font-size:26px;
+margin-bottom:12px;
+color:#ffd700;
+}
+
+.target-box p{
+color:#ddd;
+}
+
+/* STEPS */
+
+.steps{
+background:#0b0b0b;
+}
+
+.steps-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+
+max-width:1200px;
+margin:auto;
+}
+
+.step{
+background:#111;
+
+padding:40px;
+
+border-radius:22px;
+
+border:1px solid rgba(255,215,0,0.08);
+
+text-align:center;
+}
+
+.step-number{
+width:70px;
+height:70px;
+
+margin:auto auto 25px;
+
+border-radius:50%;
+
+background:#ffd700;
+color:#000;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:28px;
+font-weight:900;
+}
+
+.step h3{
+margin-bottom:15px;
+font-size:28px;
+color:#ffd700;
+}
+
+/* CONTACT */
+
+.contact{
+background:#111;
+text-align:center;
+}
+
+.contact-box{
+max-width:900px;
+margin:auto;
+
+background:#0c0c0c;
+
+border:1px solid rgba(255,215,0,0.15);
+
+padding:60px 30px;
+
+border-radius:28px;
+}
+
+.contact h2{
+font-size:56px;
+margin-bottom:25px;
+}
+
+.contact p{
+font-size:22px;
+margin-bottom:14px;
+}
+
+.contact a{
+color:#ffd700;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* LEGAL */
+
+.legal{
+background:#080808;
+}
+
+.legal-container{
+max-width:1100px;
+margin:auto;
+}
+
+.legal h2{
+font-size:42px;
+margin-bottom:25px;
+color:#ffd700;
+}
+
+.legal h3{
+margin-top:35px;
+margin-bottom:15px;
+color:#ffd700;
+}
+
+.legal p,
+.legal li{
+color:#d8d8d8;
+margin-bottom:14px;
+}
+
+.legal ul{
+padding-left:20px;
+}
+
+/* FOOTER */
+
+footer{
+padding:35px;
+text-align:center;
+background:#000;
+color:#888;
+
+border-top:1px solid rgba(255,215,0,0.08);
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+header{
+padding:18px 18px;
+flex-direction:column;
+gap:16px;
+}
+
+.logo{
+font-size:28px;
+}
+
+.header-buttons{
+width:100%;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+width:100%;
+text-align:center;
+}
+
+.hero{
+padding:240px 25px 100px;
+
+background:
+linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
+url("hero-mobile.jpg");
+
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.hero-features{
+flex-direction:column;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.section-title{
+font-size:38px;
+}
+
+.contact h2{
+font-size:40px;
+}
+
+.contact p{
+font-size:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+BODA <span>SNACKS</span>
+</div>
+
+<div class="header-buttons">
+
+<a href="https://wa.me/491778675852" class="btn">
+WhatsApp Anfrage
+</a>
+
+<a href="mailto:kontakt@boda-snacks.de" class="btn btn-outline">
+E-Mail Kontakt
+</a>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-badge">
+KOSTENLOS FÜR UNTERNEHMEN
+</div>
+
+<h1>
+Moderne <span>Snackautomaten</span><br>
+für Unternehmen
+</h1>
+
+<p>
+24/7 Versorgung für Mitarbeiter und Kunden —
+komplett ohne Aufwand für Sie.
+</p>
+
+<div class="hero-features">
+
+<div>✔ Keine Investitionskosten</div>
+<div>✔ Befüllung & Wartung inklusive</div>
+<div>✔ Moderne Premium-Automaten</div>
+
+</div>
+
+<div class="hero-buttons">
+
+<a href="https://wa.me/491778675852" class="btn">
+Jetzt unverbindlich anfragen
+</a>
+
+<a href="#kontakt" class="btn btn-outline">
+Mehr erfahren
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VORTEILE -->
+
+<section>
+
+<h2 class="section-title">
+Ihre <span>Vorteile</span>
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">⏰</div>
+<h3>24/7 Verfügbarkeit</h3>
+<p>
+Ihre Mitarbeiter haben jederzeit Zugriff
+auf Snacks und Getränke.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">💰</div>
+<h3>Keine Kosten</h3>
+<p>
+Keine Investition, keine versteckten Gebühren,
+kein Risiko.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🔧</div>
+<h3>Kein Aufwand</h3>
+<p>
+Wir übernehmen Befüllung,
+Wartung und Organisation.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">📈</div>
+<h3>Mehr Zufriedenheit</h3>
+<p>
+Bessere Versorgung sorgt für motivierte
+Mitarbeiter und Kunden.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FÜR WEN -->
+
+<section>
+
+<h2 class="section-title">
+Für wen ist das <span>geeignet?</span>
+</h2>
+
+<div class="target-grid">
+
+<div class="target-box">
+<h3>Büros</h3>
+<p>Snacks direkt am Arbeitsplatz.</p>
+</div>
+
+<div class="target-box">
+<h3>Werkstätten</h3>
+<p>Versorgung für Mitarbeiter vor Ort.</p>
+</div>
+
+<div class="target-box">
+<h3>Fitnessstudios</h3>
+<p>Snacks & Getränke für Mitglieder.</p>
+</div>
+
+<div class="target-box">
+<h3>Autohäuser</h3>
+<p>Mehr Komfort für Kunden und Mitarbeiter.</p>
+</div>
+
+<div class="target-box">
+<h3>Lagerhallen</h3>
+<p>Perfekt für Schichtbetrieb und Pausen.</p>
+</div>
+
+<div class="target-box">
+<h3>Praxen</h3>
+<p>Komfort für Mitarbeiter und Besucher.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABLAUF -->
+
+<section class="steps">
+
+<h2 class="section-title">
+So einfach <span>funktioniert’s</span>
+</h2>
+
+<div class="steps-grid">
+
+<div class="step">
+
+<div class="step-number">1</div>
+
+<h3>Anfrage senden</h3>
+
+<p>
+Kontaktieren Sie uns per WhatsApp,
+Telefon oder E-Mail.
+</p>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">2</div>
+
+<h3>Standort prüfen</h3>
+
+<p>
+Wir prüfen gemeinsam,
+welcher Automat optimal passt.
+</p>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">3</div>
+
+<h3>Automat aufstellen</h3>
+
+<p>
+Wir kümmern uns um Lieferung,
+Befüllung und Wartung.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- KONTAKT -->
+
+<section class="contact" id="kontakt">
+
+<div class="contact-box">
+
+<h2>Kontakt</h2>
+
+<p>
+Telefon:
+<a href="tel:+4972317703719">
++49 7231 7703719
+</a>
+</p>
+
+<p>
+E-Mail:
+<a href="mailto:kontakt@boda-snacks.de">
+kontakt@boda-snacks.de
+</a>
+</p>
+
+<p>
+WhatsApp:
+<a href="https://wa.me/491778675852">
+Direkt schreiben
+</a>
+</p>
+
+</div>
+
+</section>
+
+<!-- LEGAL -->
+
+<section class="legal">
+
+<div class="legal-container">
+
+<h2>Impressum</h2>
+
+<p>
+Andreas Boda<br>
+Erlenweg 34<br>
+75175 Pforzheim<br>
+Deutschland
+</p>
+
+<p>
+Telefon: +49 7231 7703719<br>
+E-Mail: kontakt@boda-snacks.de
+</p>
+  
 <p>
 Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br>
 Andreas Boda
