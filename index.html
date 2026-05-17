@@ -87,7 +87,7 @@ background:#ffe347;
 /* HERO */
 
 .hero{
-min-height:120svh;
+min-height:100svh;
 
 display:flex;
 align-items:center;
@@ -436,20 +436,27 @@ flex-wrap:wrap;
 }
 
 .btn{
-width:100%;
+display:inline-block;
+width:auto;
 text-align:center;
+padding:12px 22px;
+}
+
+.hero-content{
+  text-align:center;
+  padding:0 20px;
 }
 
 .hero{
-min-height:115vh;
-padding:150px 25px 120px;
+min-height:100vh;
+padding:120px 25px 100px;
 
 background:
 linear-gradient(rgba(0,0,0,0.03), rgba(0,0,0,0.03)),
 url("hero-mobile.jpg");
 
-background-position:70% bottom;
-background-size:contain;
+background-position:center bottom;
+background-size:cover;
 background-repeat:no-repeat;
 
 background-color:#000;
@@ -480,7 +487,7 @@ font-size:40px;
 }
 
 .contact p{
-font-size:18px;
+font-size:16px;
 }
 
 }
