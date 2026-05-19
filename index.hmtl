@@ -131,12 +131,8 @@ padding:
 display:flex;
 align-items:center;
 
-background:
-linear-gradient(
-rgba(0,0,0,0.45),
-rgba(0,0,0,0.88)
-),
-url("hero.jpg");
+background:#111;
+
 
 background-size:cover;
 background-position:center center;
