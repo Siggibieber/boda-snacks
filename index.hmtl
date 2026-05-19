@@ -900,7 +900,7 @@ komplett kostenlos aufgestellt.
 <a href="tel:072317703719"
 class="boda-hero-btn primary">
 
-<div class="boda-btn-icon">📞</div>
+<div class="boda-btn-icon">TEL</div>
 
 <div class="boda-btn-text">
 
@@ -919,7 +919,7 @@ Jetzt anrufen
 <a href="#kontakt"
 class="boda-hero-btn secondary">
 
-<div class="boda-btn-icon">✉️</div>
+<div class="boda-btn-icon">MAIL</div>
 
 <div class="boda-btn-text">
 
@@ -1110,7 +1110,7 @@ Direkt schreiben
 <a href="tel:072317703719"
 class="boda-mobile-call">
 
-📞 07231 7703719
+TEL 07231 7703719
 
 </a>
 
