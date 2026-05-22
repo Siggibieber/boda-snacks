@@ -22,12 +22,18 @@ html{
 scroll-behavior:smooth;
 }
 
+html, body{
+  overflow-x:hidden;
+}
+  
 body{
 font-family:Arial,sans-serif;
 background:#050505;
 color:white;
 overflow-x:hidden;
 line-height:1.6;
+
+overscroll-behavior:none;
 }
 
 /* =========================
@@ -304,6 +310,9 @@ gap:16px;
 
 position:relative;
 transform:none;
+
+-webkit-transform:translateZ(0);
+-webkit-backface-visibility:hidden;
   
 height:60px;
 
