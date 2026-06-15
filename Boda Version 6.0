@@ -661,7 +661,7 @@ Geeignet für
 <div class="grid-3">
 
 <div class="card">
-<h3>🏢 Büros</h3>
+<h3> Büros</h3>
 <p>
 Ideal für Unternehmen mit Mitarbeitern,
 Besuchern und regelmäßigem Kundenverkehr.
@@ -669,7 +669,7 @@ Besuchern und regelmäßigem Kundenverkehr.
 </div>
 
 <div class="card">
-<h3>🔧 Werkstätten</h3>
+<h3> Werkstätten</h3>
 <p>
 Snacks und Getränke direkt vor Ort für
 Mitarbeiter und Kunden.
@@ -677,7 +677,7 @@ Mitarbeiter und Kunden.
 </div>
 
 <div class="card">
-<h3>🏭 Industriebetriebe</h3>
+<h3> Industriebetriebe</h3>
 <p>
 Perfekt für Schichtbetrieb und größere Teams
 mit hohem Versorgungsbedarf.
@@ -685,7 +685,7 @@ mit hohem Versorgungsbedarf.
 </div>
 
 <div class="card">
-<h3>📦 Lagerhallen</h3>
+<h3> Lagerhallen</h3>
 <p>
 Kurze Wege und schnelle Versorgung direkt
 am Arbeitsplatz.
@@ -693,7 +693,7 @@ am Arbeitsplatz.
 </div>
 
 <div class="card">
-<h3>🚗 Autohäuser</h3>
+<h3> Autohäuser</h3>
 <p>
 Wartebereiche und Kundenservice sinnvoll
 ergänzen und aufwerten.
@@ -701,7 +701,7 @@ ergänzen und aufwerten.
 </div>
 
 <div class="card">
-<h3>💪 Fitnessstudios</h3>
+<h3> Fitnessstudios</h3>
 <p>
 Getränke und Snacks direkt für Mitglieder
 und Besucher verfügbar.
@@ -845,6 +845,79 @@ komplettem Rundum-Service.
 <a href="#kontakt" class="btn-primary">
 Jetzt kostenlose Standortprüfung starten
 </a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FAQ
+========================= -->
+
+<section id="faq">
+
+<div class="container">
+
+<h2 class="section-title">
+Häufige <span class="gold">Fragen</span>
+</h2>
+
+<div class="grid-3">
+
+<div class="card">
+<h3>Kostet der Snackautomat etwas?</h3>
+<p>
+Nein. Die Aufstellung des Automaten erfolgt
+kostenlos. Es entstehen keine Anschaffungs-
+kosten für Ihr Unternehmen.
+</p>
+</div>
+
+<div class="card">
+<h3>Wer übernimmt die Wartung?</h3>
+<p>
+BODA Snacks übernimmt Befüllung, Wartung,
+Reparaturen und den technischen Service.
+</p>
+</div>
+
+<div class="card">
+<h3>Welche Standorte sind geeignet?</h3>
+<p>
+Besonders geeignet sind Büros,
+Werkstätten, Lagerhallen,
+Industriebetriebe und Fitnessstudios.
+</p>
+</div>
+
+<div class="card">
+<h3>Welche Produkte gibt es?</h3>
+<p>
+Je nach Standort bieten wir Snacks,
+Süßwaren, Kaltgetränke und weitere
+Produkte nach Absprache an.
+</p>
+</div>
+
+<div class="card">
+<h3>Wie läuft die Standortprüfung ab?</h3>
+<p>
+Wir prüfen kostenlos und unverbindlich,
+ob sich ein Snackautomat an Ihrem
+Standort lohnt.
+</p>
+</div>
+
+<div class="card">
+<h3>Wie schnell kann aufgestellt werden?</h3>
+<p>
+Nach erfolgreicher Prüfung erfolgt die
+Aufstellung in der Regel innerhalb
+weniger Wochen.
+</p>
+</div>
 
 </div>
 
