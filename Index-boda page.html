@@ -515,27 +515,27 @@ Kontakt
 type="text"
 placeholder="Firma"
 required
-style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;">
+style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;"
 
 
 <input
 type="text"
 placeholder="Ansprechpartner"
 required
-style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;">
+style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;"
 
 
 <input
 type="email"
 placeholder="E-Mail"
 required
-style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;">
+style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;"
 
 
 <input
 type="tel"
 placeholder="Telefon"
-style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;">
+style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;"
 
 
 <textarea
@@ -571,7 +571,7 @@ padding:60px 20px;
 text-align:center;
 border-top:1px solid rgba(212,175,55,0.2);
 background:#090909;
-">
+"
 
 
 <h3 style="color:#d4af37;margin-bottom:15px;">
@@ -616,34 +616,7 @@ box-shadow:0 0 25px rgba(0,0,0,0.4);
 💬
 </a>
 
-<!-- COOKIE BANNER -->
 
-<div id="cookie-banner">
-<p>
-🍪 Diese Website verwendet Cookies und ähnliche Technologien.
-Weitere Informationen finden Sie in unserer Datenschutzerklärung.
-</p>
-
-<button onclick="acceptCookies()">Akzeptieren</button>
-<button onclick="declineCookies()">Ablehnen</button>
-</div>
-
-<script>
-function acceptCookies(){
-localStorage.setItem("cookieConsent","accepted");
-document.getElementById("cookie-banner").style.display="none";
-}
-
-function declineCookies(){
-localStorage.setItem("cookieConsent","declined");
-document.getElementById("cookie-banner").style.display="none";
-}
-
-if(localStorage.getItem("cookieConsent")){
-document.getElementById("cookie-banner").style.display="none";
-}
-</script>
-  
 <!-- =======================
 MOBILE OPTIMIERUNG
 ======================= -->
@@ -678,47 +651,6 @@ font-size:52px;
 font-size:42px;
 }
 
-}
-
-#cookie-banner{
-position:fixed;
-bottom:20px;
-left:20px;
-right:20px;
-max-width:700px;
-margin:auto;
-background:#111;
-border:1px solid rgba(212,175,55,0.4);
-border-radius:18px;
-padding:20px;
-z-index:10000;
-box-shadow:0 0 30px rgba(0,0,0,0.5);
-text-align:center;
-}
-
-#cookie-banner p{
-margin-bottom:15px;
-line-height:1.6;
-color:#ddd;
-}
-
-#cookie-banner button{
-padding:12px 22px;
-margin:5px;
-border:none;
-border-radius:30px;
-cursor:pointer;
-font-weight:bold;
-}
-
-#cookie-banner button:first-of-type{
-background:#d4af37;
-color:black;
-}
-
-#cookie-banner button:last-of-type{
-background:#333;
-color:white;
 }
 
 </style>
