@@ -1497,13 +1497,19 @@ transform:scale(1);
 </div>
 
 <script>
-if(localStorage.getItem('bodaCookiesAccepted')){
-   document.getElementById('cookie-banner').style.display='none';
+
+if(localStorage.getItem('cookieChoice')){
+ document.getElementById('cookie-banner').style.display='none';
 }
 
-document.getElementById('cookie-accept').addEventListener('click',function(){
-   localStorage.setItem('bodaCookiesAccepted','true');
-   document.getElementById('cookie-banner').style.display='none';
+document.getElementById('cookie-accept').addEventListener('click', function(){
+ localStorage.setItem('cookieChoice','accepted');
+ document.getElementById('cookie-banner').style.display='none';
+});
+
+document.getElementById('cookie-decline').addEventListener('click', function(){
+ localStorage.setItem('cookieChoice','declined');
+ document.getElementById('cookie-banner').style.display='none';
 });
 
 </script>
