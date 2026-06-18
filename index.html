@@ -1432,5 +1432,30 @@ transform:scale(1);
 
 </style>
 
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#111;color:#fff;padding:15px;z-index:99999;box-shadow:0 -2px 10px rgba(0,0,0,.3);">
+ <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
+   <div>
+     🍪 Diese Website verwendet Cookies und Google Analytics zur Analyse der Website-Nutzung.
+   </div>
+
+   <div>
+     <button id="cookie-accept" style="background:#d4af37;color:#000;border:none;padding:10px 18px;border-radius:6px;cursor:pointer;font-weight:bold;">
+       Akzeptieren
+     </button>
+   </div>
+ </div>
+</div>
+
+<script>
+if(localStorage.getItem('bodaCookiesAccepted')){
+   document.getElementById('cookie-banner').style.display='none';
+}
+
+document.getElementById('cookie-accept').addEventListener('click',function(){
+   localStorage.setItem('bodaCookiesAccepted','true');
+   document.getElementById('cookie-banner').style.display='none';
+});
+</script>
+ 
 </body>
 </html>
