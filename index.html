@@ -4,13 +4,58 @@
 <head>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ"></script>
 <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
 
- gtag('config', 'G-6RJ6RX8XWZ');
+function loadAnalytics() {
+
+ const script1 = document.createElement('script');
+ script1.async = true;
+ script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ';
+ document.head.appendChild(script1);
+
+ script1.onload = function() {
+
+   window.dataLayer = window.dataLayer || [];
+
+   function gtag(){
+     dataLayer.push(arguments);
+   }
+
+   window.gtag = gtag;
+
+   gtag('js', new Date());
+
+   gtag('config', 'G-6RJ6RX8XWZ');
+ };
+}
+
+if(localStorage.getItem('bodaCookiesAccepted') === 'true'){
+  document.getElementById('cookie-banner').style.display='none';
+  loadAnalytics();
+}
+
+if(localStorage.getItem('bodaCookiesAccepted') === 'false'){
+  document.getElementById('cookie-banner').style.display='none';
+}
+
+document.getElementById('cookie-accept').addEventListener('click',function(){
+
+  localStorage.setItem('bodaCookiesAccepted','true');
+
+  document.getElementById('cookie-banner').style.display='none';
+
+  loadAnalytics();
+
+});
+
+document.getElementById('cookie-decline').addEventListener('click',function(){
+
+  localStorage.setItem('bodaCookiesAccepted','false');
+
+  document.getElementById('cookie-banner').style.display='none';
+
+});
+
 </script>
   
 <meta charset="UTF-8">
