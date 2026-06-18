@@ -6,16 +6,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BODA Snacks | Snackautomaten für Unternehmen</title>
+<title>BODA Snacks | Kostenlose Snackautomaten für Unternehmen</title>
 
-<meta name="description" content="Kostenlose Snackautomaten für Unternehmen in Pforzheim, Karlsruhe, Stuttgart und Umgebung. Vollservice ohne Aufwand.">
-<meta name="keywords" content="Snackautomat, Snackautomaten, Pforzheim, Karlsruhe, Stuttgart, Automatenservice, BODA Snacks">
+<meta name="description" content="Kostenlose Snackautomaten für Unternehmen. Vollservice ohne Aufwand. BODA Snacks versorgt Mitarbeiter, Kunden und Besucher rund um die Uhr.">
+
+<meta name="keywords" content="Snackautomaten, Snackautomat, BODA Snacks, Automatenservice, Pforzheim, Karlsruhe, Stuttgart">
+
 <meta name="author" content="BODA Snacks">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta property="og:title" content="BODA Snacks">
+<meta property="og:description" content="Kostenlose Snackautomaten für Unternehmen">
+<meta property="og:type" content="website">
 
 <style>
+
+/* =========================
+RESET
+========================= */
 
 *{
 margin:0;
@@ -28,7 +35,7 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 background:#050505;
 color:white;
 overflow-x:hidden;
@@ -40,19 +47,23 @@ max-width:1300px;
 margin:auto;
 }
 
-/* =======================
-NAVIGATION
-======================= */
+.gold{
+color:#d4af37;
+}
 
-.header{
+/* =========================
+HEADER
+========================= */
+
+header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-z-index:999;
-background:rgba(0,0,0,0.85);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(212,175,55,0.15);
+background:rgba(0,0,0,.88);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(212,175,55,.15);
+z-index:9999;
 }
 
 .navbar{
@@ -62,11 +73,11 @@ align-items:center;
 padding:18px 0;
 }
 
-.logo{
-font-size:30px;
-font-weight:bold;
-color:#d4af37;
-letter-spacing:2px;
+.logo img{
+height:90px;
+filter:
+drop-shadow(0 0 15px rgba(212,175,55,.4))
+drop-shadow(0 0 35px rgba(212,175,55,.25));
 }
 
 .nav-links{
@@ -75,10 +86,10 @@ gap:30px;
 }
 
 .nav-links a{
-color:white;
 text-decoration:none;
-font-weight:600;
-transition:0.3s;
+color:white;
+font-weight:700;
+transition:.3s;
 }
 
 .nav-links a:hover{
@@ -88,20 +99,26 @@ color:#d4af37;
 .cta-nav{
 background:#d4af37;
 color:black;
-padding:12px 22px;
+padding:12px 24px;
 border-radius:50px;
-text-decoration:none;
 font-weight:bold;
+text-decoration:none;
+transition:.3s;
 }
 
-/* =======================
+.cta-nav:hover{
+transform:translateY(-3px);
+}
+
+/* =========================
 HERO
-======================= */
+========================= */
 
 .hero{
 min-height:100vh;
 display:flex;
 align-items:center;
+padding-top:120px;
 position:relative;
 overflow:hidden;
 }
@@ -109,12 +126,25 @@ overflow:hidden;
 .hero::before{
 content:"";
 position:absolute;
+width:900px;
+height:900px;
+right:-250px;
+top:-250px;
+background:radial-gradient(circle,#d4af37 0%,transparent 70%);
+opacity:.08;
+}
+
+/* GOLD PARTICLE */
+
+.hero::after{
+content:"";
+position:absolute;
+left:-300px;
+bottom:-300px;
 width:700px;
 height:700px;
 background:radial-gradient(circle,#d4af37 0%,transparent 70%);
-opacity:0.08;
-right:-200px;
-top:-100px;
+opacity:.05;
 }
 
 .hero-grid{
@@ -125,21 +155,41 @@ align-items:center;
 }
 
 .hero h1{
-font-size:clamp(48px,7vw,90px);
+font-size:clamp(52px,7vw,92px);
 line-height:1;
 margin-bottom:25px;
+font-weight:900;
 }
 
-.gold{
-color:#d4af37;
+/* =========================
+PREMIUM SLOGAN
+========================= */
+
+.hero-slogan{
+font-size:clamp(30px,4vw,56px);
+font-weight:900;
+line-height:1.1;
+margin-bottom:30px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.hero-slogan .gold{
+text-shadow:
+0 0 15px rgba(212,175,55,.5),
+0 0 35px rgba(212,175,55,.3);
 }
 
 .hero p{
 font-size:22px;
-line-height:1.7;
-color:#d7d7d7;
+line-height:1.8;
+color:#d4d4d4;
 margin-bottom:35px;
 }
+
+/* =========================
+BUTTONS
+========================= */
 
 .buttons{
 display:flex;
@@ -155,6 +205,12 @@ border-radius:50px;
 text-decoration:none;
 font-weight:bold;
 font-size:18px;
+transition:.3s;
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 0 25px rgba(212,175,55,.4);
 }
 
 .btn-secondary{
@@ -165,42 +221,102 @@ border-radius:50px;
 text-decoration:none;
 font-weight:bold;
 font-size:18px;
+transition:.3s;
 }
 
-.hero-image{
-display:flex;
-justify-content:center;
-align-items:center;
+.btn-secondary:hover{
+background:#d4af37;
+color:black;
 }
+
+/* =========================
+LOGO PREMIUM CARD
+========================= */
 
 .hero-card{
-width:100%;
-max-width:420px;
 height:600px;
-background:linear-gradient(145deg,#111,#1a1a1a);
-border-radius:30px;
-border:1px solid rgba(212,175,55,0.25);
-box-shadow:0 0 50px rgba(212,175,55,0.15);
+border-radius:35px;
+background:linear-gradient(145deg,#101010,#1a1a1a);
+border:1px solid rgba(212,175,55,.2);
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:34px;
-font-weight:bold;
-color:#d4af37;
+position:relative;
+overflow:hidden;
+box-shadow:0 0 50px rgba(212,175,55,.15);
 }
 
-/* =======================
+.hero-card::before{
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+border-radius:50%;
+border:2px solid rgba(212,175,55,.25);
+animation:spin 25s linear infinite;
+}
+
+.hero-card::after{
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+background:radial-gradient(circle,
+rgba(212,175,55,.25),
+transparent 70%);
+}
+
+.hero-card img{
+width:80%;
+max-width:340px;
+position:relative;
+z-index:2;
+animation:floatLogo 4s ease-in-out infinite;
+filter:
+drop-shadow(0 0 20px rgba(212,175,55,.4))
+drop-shadow(0 0 45px rgba(212,175,55,.25));
+}
+
+@keyframes floatLogo{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+@keyframes spin{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+/* =========================
 SECTIONS
-======================= */
+========================= */
 
 section{
 padding:120px 0;
 }
 
 .section-title{
-text-align:center;
 font-size:58px;
-margin-bottom:60px;
+text-align:center;
+margin-bottom:70px;
+font-weight:900;
 }
 
 .grid-3{
@@ -209,38 +325,148 @@ grid-template-columns:repeat(3,1fr);
 gap:30px;
 }
 
+/* =========================
+PREMIUM CARDS
+========================= */
+
 .card{
-background:#121212;
+background:linear-gradient(145deg,#111,#181818);
 padding:35px;
 border-radius:25px;
-border:1px solid rgba(212,175,55,0.15);
-transition:0.3s;
+border:1px solid rgba(212,175,55,.15);
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(212,175,55,.08),
+transparent
+);
+transition:.7s;
+}
+
+.card:hover::before{
+left:100%;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 border-color:#d4af37;
+box-shadow:
+0 0 20px rgba(212,175,55,.15),
+0 0 40px rgba(212,175,55,.08);
 }
 
 .card h3{
 color:#d4af37;
-margin-bottom:15px;
 font-size:26px;
+margin-bottom:18px;
 }
 
 .card p{
-line-height:1.8;
-color:#d8d8d8;
+line-height:1.9;
+color:#d5d5d5;
 }
 
-</style>
-  
-</head>
-<body>
-  
-/* =======================
+/* =========================
 WARUM BODA SNACKS
-======================= */
+========================= */
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="navbar">
+
+<div class="logo">
+<img src="Logo.jpg" alt="BODA Snacks">
+</div>
+
+<div class="nav-links">
+<a href="#vorteile">Vorteile</a>
+<a href="#ablauf">Ablauf</a>
+<a href="#standorte">Standorte</a>
+<a href="#kontakt">Kontakt</a>
+</div>
+
+<a href="#kontakt" class="cta-nav">
+Standort prüfen
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+<h1>
+Kostenlose <span class="gold">Snackautomaten</span><br>
+für Unternehmen
+</h1>
+
+<div class="hero-slogan">
+DU HAST DEN <span class="gold">HUNGER.</span><br>
+WIR DIE <span class="gold">SNACKS.</span>
+</div>
+
+<p>
+Bieten Sie Ihren Mitarbeitern,
+Kunden und Besuchern jederzeit
+Snacks und Getränke an –
+ohne Anschaffungskosten,
+ohne Aufwand und mit komplettem
+Rundum-Service.
+</p>
+
+<div class="buttons">
+
+<a href="#kontakt" class="btn-primary">
+Kostenlose Standortprüfung
+</a>
+
+<a href="#vorteile" class="btn-secondary">
+Mehr erfahren
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<img src="Logo.jpg" alt="BODA Snacks">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <section id="vorteile">
 
@@ -256,58 +482,59 @@ Warum <span class="gold">BODA Snacks</span>?
 <h3>Keine Anschaffungskosten</h3>
 <p>
 Wir stellen den Snackautomaten kostenlos zur Verfügung.
-Keine Investition, kein Risiko, kein Aufwand.
+Keine Investition, kein Risiko und keine versteckten Kosten.
 </p>
 </div>
 
 <div class="card">
 <h3>Kompletter Service</h3>
 <p>
-Befüllung, Wartung und Betreuung übernehmen wir.
-Sie kümmern sich um Ihr Geschäft – wir um den Automaten.
+Befüllung, Wartung und technische Betreuung übernehmen
+wir vollständig für Sie.
 </p>
 </div>
 
 <div class="card">
 <h3>24/7 Verfügbarkeit</h3>
 <p>
-Mitarbeiter, Kunden und Besucher haben jederzeit Zugriff
-auf Snacks und Getränke.
+Snacks und Getränke jederzeit verfügbar –
+auch außerhalb klassischer Pausenzeiten.
 </p>
 </div>
 
 <div class="card">
-<h3>Mehr Mitarbeiterzufriedenheit</h3>
+<h3>Mitarbeiterzufriedenheit</h3>
 <p>
-Kurze Wege, schnelle Versorgung und ein moderner
-Service direkt im Unternehmen.
+Ein moderner Service direkt vor Ort steigert Komfort
+und Zufriedenheit im Arbeitsalltag.
 </p>
 </div>
 
 <div class="card">
 <h3>Regionale Betreuung</h3>
 <p>
-Persönlicher Ansprechpartner aus der Region.
-Schnelle Reaktionszeiten und direkter Kontakt.
+Persönlicher Ansprechpartner aus der Region
+mit schnellen Reaktionszeiten.
 </p>
 </div>
 
 <div class="card">
-<h3>Individuelle Befüllung</h3>
+<h3>Individuelles Sortiment</h3>
 <p>
-Wir passen das Sortiment an die Wünsche Ihrer
+Wir passen die Befüllung an die Wünsche Ihrer
 Mitarbeiter und Kunden an.
 </p>
 </div>
 
 </div>
+
 </div>
+
 </section>
 
-
-<!-- =======================
+<!-- =========================
 SO FUNKTIONIERT'S
-======================= -->
+========================= -->
 
 <section id="ablauf">
 
@@ -322,8 +549,9 @@ So funktioniert's
 <div class="card">
 <h3>1. Anfrage</h3>
 <p>
-Kontaktieren Sie uns unverbindlich über Telefon,
-WhatsApp oder E-Mail.
+Kontaktieren Sie uns unverbindlich per Telefon,
+WhatsApp oder E-Mail. Gemeinsam besprechen wir
+Ihre Anforderungen.
 </p>
 </div>
 
@@ -331,50 +559,96 @@ WhatsApp oder E-Mail.
 <h3>2. Standortprüfung</h3>
 <p>
 Wir prüfen kostenlos, ob sich ein Snackautomat
-an Ihrem Standort lohnt.
+an Ihrem Standort wirtschaftlich lohnt.
 </p>
 </div>
 
 <div class="card">
-<h3>3. Aufstellung</h3>
+<h3>3. Planung</h3>
 <p>
-Lieferung, Einrichtung und Inbetriebnahme
-erfolgen durch uns.
+Gemeinsam legen wir Standort, Sortiment und
+Versorgungskonzept fest.
 </p>
 </div>
 
 <div class="card">
-<h3>4. Befüllung</h3>
+<h3>4. Aufstellung</h3>
 <p>
-Der Automat wird regelmäßig mit Snacks und
-Getränken versorgt.
+Lieferung, Aufbau und Inbetriebnahme erfolgen
+komplett durch BODA Snacks.
 </p>
 </div>
 
 <div class="card">
-<h3>5. Wartung</h3>
+<h3>5. Befüllung & Service</h3>
 <p>
-Technische Betreuung und Service übernehmen wir
-vollständig.
+Wir kümmern uns regelmäßig um Befüllung,
+Wartung und technische Betreuung.
 </p>
 </div>
 
 <div class="card">
 <h3>6. Entspannt profitieren</h3>
 <p>
-Sie erhalten einen modernen Service für Mitarbeiter
-und Kunden – ohne Aufwand.
+Ihre Mitarbeiter, Kunden und Besucher profitieren
+von einer modernen Rundumversorgung.
 </p>
 </div>
 
 </div>
+
 </div>
+
 </section>
 
+<!-- =========================
+TRUST SECTION
+========================= -->
 
-<!-- =======================
+<section>
+
+<div class="container">
+
+<div class="card"
+style="
+text-align:center;
+max-width:1000px;
+margin:auto;
+padding:60px;
+">
+
+<h2
+style="
+font-size:48px;
+margin-bottom:25px;
+color:#d4af37;
+">
+Rundum-Service ohne Aufwand
+</h2>
+
+<p
+style="
+font-size:22px;
+line-height:1.9;
+max-width:800px;
+margin:auto;
+color:#d7d7d7;
+">
+Von der kostenlosen Aufstellung bis zur
+regelmäßigen Befüllung übernehmen wir den
+kompletten Service. Sie erhalten einen modernen
+Snackautomaten ohne Anschaffungskosten,
+ohne Personalaufwand und ohne Risiko.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
 GEEIGNET FÜR
-======================= -->
+========================= -->
 
 <section id="standorte">
 
@@ -387,59 +661,64 @@ Geeignet für
 <div class="grid-3">
 
 <div class="card">
-<h3>Büros</h3>
+<h3> Büros</h3>
 <p>
 Ideal für Unternehmen mit Mitarbeitern,
-Besuchern und Kundenverkehr.
+Besuchern und regelmäßigem Kundenverkehr.
 </p>
 </div>
 
 <div class="card">
-<h3>Werkstätten</h3>
+<h3> Werkstätten</h3>
 <p>
-Snacks und Getränke direkt vor Ort für Mitarbeiter
-und Kunden.
+Snacks und Getränke direkt vor Ort für
+Mitarbeiter und Kunden.
 </p>
 </div>
 
 <div class="card">
-<h3>Industriebetriebe</h3>
+<h3> Industriebetriebe</h3>
 <p>
-Perfekt für Schichtbetrieb und größere Teams.
+Perfekt für Schichtbetrieb und größere Teams
+mit hohem Versorgungsbedarf.
 </p>
 </div>
 
 <div class="card">
-<h3>Lagerhallen</h3>
+<h3> Lagerhallen</h3>
 <p>
-Schnelle Versorgung ohne zusätzliche Wege.
+Kurze Wege und schnelle Versorgung direkt
+am Arbeitsplatz.
 </p>
 </div>
 
 <div class="card">
-<h3>Autohäuser</h3>
+<h3> Autohäuser</h3>
 <p>
-Wartebereich und Kundenservice aufwerten.
+Wartebereiche und Kundenservice sinnvoll
+ergänzen und aufwerten.
 </p>
 </div>
 
 <div class="card">
-<h3>Fitnessstudios</h3>
+<h3> Fitnessstudios</h3>
 <p>
-Getränke und Snacks direkt für Mitglieder verfügbar.
+Getränke und Snacks direkt für Mitglieder
+und Besucher verfügbar.
 </p>
 </div>
 
 </div>
+
 </div>
+
 </section>
 
+<!-- =========================
+BODA IN ZAHLEN
+========================= -->
 
-<!-- =======================
-ZAHLEN
-======================= -->
-
-<section>
+<section id="zahlen">
 
 <div class="container">
 
@@ -449,28 +728,206 @@ BODA Snacks in Zahlen
 
 <div class="grid-3">
 
-<div class="card">
-<h3>100%</h3>
-<p>Vollservice ohne Aufwand für den Betreiber.</p>
+<div class="card"
+style="text-align:center;">
+
+<h3 style="
+font-size:60px;
+margin-bottom:15px;
+text-shadow:
+0 0 15px rgba(212,175,55,.35);
+">
+100%
+</h3>
+
+<p>
+Vollservice ohne Aufwand
+für den Betreiber.
+</p>
+
 </div>
 
-<div class="card">
-<h3>24/7</h3>
-<p>Verfügbarkeit für Mitarbeiter und Kunden.</p>
+<div class="card"
+style="text-align:center;">
+
+<h3 style="
+font-size:60px;
+margin-bottom:15px;
+text-shadow:
+0 0 15px rgba(212,175,55,.35);
+">
+24/7
+</h3>
+
+<p>
+Verfügbarkeit für Mitarbeiter,
+Kunden und Besucher.
+</p>
+
 </div>
 
-<div class="card">
-<h3>Kostenlos</h3>
-<p>Keine Anschaffungs- oder Wartungskosten.</p>
+<div class="card"
+style="text-align:center;">
+
+<h3 style="
+font-size:60px;
+margin-bottom:15px;
+text-shadow:
+0 0 15px rgba(212,175,55,.35);
+">
+0 €
+</h3>
+
+<p>
+Keine Anschaffungs-
+oder Wartungskosten.
+</p>
+
 </div>
 
 </div>
+
 </div>
+
 </section>
 
-<!-- =======================
-KOSTENLOSE STANDORTPRÜFUNG
-======================= -->
+<!-- =========================
+PREMIUM CTA SECTION
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="card"
+style="
+max-width:1100px;
+margin:auto;
+padding:70px;
+text-align:center;
+background:
+linear-gradient(
+145deg,
+rgba(212,175,55,.08),
+#121212
+);
+">
+
+<h2
+style="
+font-size:52px;
+margin-bottom:25px;
+">
+
+DU HAST DEN <span class="gold">HUNGER.</span><br>
+WIR DIE <span class="gold">SNACKS.</span>
+
+</h2>
+
+<p
+style="
+font-size:24px;
+line-height:1.8;
+max-width:850px;
+margin:auto;
+margin-bottom:35px;
+">
+
+Bieten Sie Ihren Mitarbeitern,
+Kunden und Besuchern jederzeit
+eine moderne Versorgung mit Snacks
+und Getränken – ohne Aufwand,
+ohne Investition und mit
+komplettem Rundum-Service.
+
+</p>
+
+<a href="#kontakt" class="btn-primary">
+Jetzt kostenlose Standortprüfung starten
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FAQ
+========================= -->
+
+<section id="faq">
+
+<div class="container">
+
+<h2 class="section-title">
+Häufige <span class="gold">Fragen</span>
+</h2>
+
+<div class="grid-3">
+
+<div class="card">
+<h3>Kostet der Snackautomat etwas?</h3>
+<p>
+Nein. Die Aufstellung des Automaten erfolgt
+kostenlos. Es entstehen keine Anschaffungs-
+kosten für Ihr Unternehmen.
+</p>
+</div>
+
+<div class="card">
+<h3>Wer übernimmt die Wartung?</h3>
+<p>
+BODA Snacks übernimmt Befüllung, Wartung,
+Reparaturen und den technischen Service.
+</p>
+</div>
+
+<div class="card">
+<h3>Welche Standorte sind geeignet?</h3>
+<p>
+Besonders geeignet sind Büros,
+Werkstätten, Lagerhallen,
+Industriebetriebe und Fitnessstudios.
+</p>
+</div>
+
+<div class="card">
+<h3>Welche Produkte gibt es?</h3>
+<p>
+Je nach Standort bieten wir Snacks,
+Süßwaren, Kaltgetränke und weitere
+Produkte nach Absprache an.
+</p>
+</div>
+
+<div class="card">
+<h3>Wie läuft die Standortprüfung ab?</h3>
+<p>
+Wir prüfen kostenlos und unverbindlich,
+ob sich ein Snackautomat an Ihrem
+Standort lohnt.
+</p>
+</div>
+
+<div class="card">
+<h3>Wie schnell kann aufgestellt werden?</h3>
+<p>
+Nach erfolgreicher Prüfung erfolgt die
+Aufstellung in der Regel innerhalb
+weniger Wochen.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+KONTAKT
+========================= -->
 
 <section id="kontakt">
 
@@ -480,17 +937,44 @@ KOSTENLOSE STANDORTPRÜFUNG
 Kostenlose <span class="gold">Standortprüfung</span>
 </h2>
 
-<div class="card" style="max-width:900px;margin:auto;text-align:center;">
+<div
+class="card"
+style="
+max-width:1000px;
+margin:auto;
+text-align:center;
+padding:60px;
+">
 
-<p style="font-size:22px;margin-bottom:35px;line-height:1.8;">
-Sie möchten wissen, ob sich ein Snackautomat an Ihrem
-Standort lohnt?
+<h3
+style="
+font-size:38px;
+margin-bottom:25px;
+color:#d4af37;
+">
+Snackautomat kostenlos prüfen lassen
+</h3>
 
-Wir prüfen Ihren Standort kostenlos und unverbindlich.
+<p
+style="
+font-size:22px;
+line-height:1.8;
+max-width:800px;
+margin:auto;
+margin-bottom:35px;
+color:#d8d8d8;
+">
+
+Sie möchten wissen, ob sich ein Snackautomat
+an Ihrem Standort lohnt?
+
+Wir prüfen Ihren Standort kostenlos,
+unverbindlich und persönlich.
+
 </p>
 
 <a href="#formular" class="btn-primary">
-Jetzt anfragen
+Jetzt Anfrage senden
 </a>
 
 </div>
@@ -499,20 +983,25 @@ Jetzt anfragen
 
 </section>
 
-
-<!-- =======================
+<!-- =========================
 KONTAKTFORMULAR
-======================= -->
+========================= -->
 
 <section id="formular">
 
 <div class="container">
 
 <h2 class="section-title">
-Kontakt
+Kontaktformular
 </h2>
 
-<div class="card" style="max-width:900px;margin:auto;">
+<div
+class="card"
+style="
+max-width:950px;
+margin:auto;
+padding:50px;
+">
 
 <form>
 
@@ -520,41 +1009,88 @@ Kontakt
 type="text"
 placeholder="Firma"
 required
-style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;">
-
+style="
+width:100%;
+padding:18px;
+margin-bottom:15px;
+border:none;
+border-radius:14px;
+font-size:16px;
+background:#1b1b1b;
+color:white;
+">
 
 <input
 type="text"
 placeholder="Ansprechpartner"
 required
-style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;">
-
+style="
+width:100%;
+padding:18px;
+margin-bottom:15px;
+border:none;
+border-radius:14px;
+font-size:16px;
+background:#1b1b1b;
+color:white;
+">
 
 <input
 type="email"
 placeholder="E-Mail"
 required
-style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;">
-
+style="
+width:100%;
+padding:18px;
+margin-bottom:15px;
+border:none;
+border-radius:14px;
+font-size:16px;
+background:#1b1b1b;
+color:white;
+">
 
 <input
 type="tel"
 placeholder="Telefon"
-style="width:100%;padding:18px;margin-bottom:15px;border:none;border-radius:12px;">
-
+style="
+width:100%;
+padding:18px;
+margin-bottom:15px;
+border:none;
+border-radius:14px;
+font-size:16px;
+background:#1b1b1b;
+color:white;
+">
 
 <textarea
 placeholder="Ihre Nachricht"
 rows="6"
-style="width:100%;padding:18px;margin-bottom:20px;border:none;border-radius:12px;">
-</textarea>
+style="
+width:100%;
+padding:18px;
+margin-bottom:25px;
+border:none;
+border-radius:14px;
+font-size:16px;
+background:#1b1b1b;
+color:white;
+resize:vertical;
+"></textarea>
 
 <button
 type="submit"
 class="btn-primary"
-style="border:none;cursor:pointer;">
+style="
+border:none;
+cursor:pointer;
+width:100%;
+font-size:18px;
+">
 
 Anfrage senden
+
 </button>
 
 </form>
@@ -565,38 +1101,188 @@ Anfrage senden
 
 </section>
 
+<!-- =========================
+PREMIUM KONTAKT CTA
+========================= -->
 
-<!-- =======================
+<section>
+
+<div class="container">
+
+<div
+class="card"
+style="
+max-width:1100px;
+margin:auto;
+text-align:center;
+padding:70px;
+">
+
+<h2
+style="
+font-size:50px;
+margin-bottom:25px;
+">
+
+Bereit für Ihren
+<span class="gold">Snackautomaten?</span>
+
+</h2>
+
+<p
+style="
+font-size:22px;
+line-height:1.8;
+max-width:850px;
+margin:auto;
+margin-bottom:35px;
+color:#d8d8d8;
+">
+
+Profitieren Sie von einem modernen
+Verpflegungsangebot für Mitarbeiter,
+Kunden und Besucher – ohne Investition
+und ohne laufenden Aufwand.
+
+</p>
+
+<a
+href="#formular"
+class="btn-primary">
+
+Kostenlose Anfrage starten
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
 FOOTER
-======================= -->
+========================= -->
 
 <footer
 style="
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
-border-top:1px solid rgba(212,175,55,0.2);
 background:#090909;
+border-top:1px solid rgba(212,175,55,.2);
 ">
 
-
-<h3 style="color:#d4af37;margin-bottom:15px;">
+<h3
+style="
+font-size:32px;
+color:#d4af37;
+margin-bottom:15px;
+">
 BODA Snacks
 </h3>
 
-<p style="color:#bdbdbd;margin-bottom:10px;">
+<p
+style="
+color:#cfcfcf;
+margin-bottom:20px;
+font-size:18px;
+">
 Snackautomaten für Unternehmen
 </p>
 
-<p style="color:#8d8d8d;">
-© 2026 BODA Snacks
+<p style="color:#999;margin-top:10px;">
+Pforzheim • Karlsruhe • Stuttgart • Enzkreis
 </p>
+
+<div
+style="
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin-bottom:25px;
+">
+
+<a
+href="impressum.html"
+style="
+color:#d4af37;
+text-decoration:none;
+font-weight:bold;
+">
+Impressum
+</a>
+
+<a
+href="datenschutz.html"
+style="
+color:#d4af37;
+text-decoration:none;
+font-weight:bold;
+">
+Datenschutz
+</a>
+
+</div>
+
+<p
+style="
+color:#888;
+font-size:14px;
+">
+© 2026 BODA Snacks · Alle Rechte vorbehalten
+</p>
+
+<section>
+
+<div class="container">
+
+<div class="card"
+style="
+max-width:1000px;
+margin:auto;
+text-align:center;
+padding:50px;
+">
+
+<h2 style="
+font-size:42px;
+color:#d4af37;
+margin-bottom:25px;
+">
+Kontakt
+</h2>
+
+<p style="font-size:20px;line-height:2;">
+
+<strong>BODA Snacks GbR</strong><br>
+
+Andreas Boda & Sandra Boda<br><br>
+
+Erlenweg 34<br>
+75175 Pforzheim<br><br>
+
+<a href="tel:+4972317703719" style="color:white;text-decoration:none;">
+☎ +49 7231 7703719
+</a>
+<br><br>
+
+<a href="mailto:info@boda-snacks.de" style="color:white;text-decoration:none;">
+✉ info@boda-snacks.de
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 </footer>
 
-
-<!-- =======================
+<!-- =========================
 WHATSAPP BUTTON
-======================= -->
+========================= -->
 
 <a
 href="https://wa.me/49123456789"
@@ -605,26 +1291,27 @@ style="
 position:fixed;
 right:25px;
 bottom:25px;
-width:65px;
-height:65px;
+width:70px;
+height:70px;
 border-radius:50%;
 background:#25D366;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:30px;
+font-size:34px;
 text-decoration:none;
-z-index:9999;
-box-shadow:0 0 25px rgba(0,0,0,0.4);
+z-index:99999;
+box-shadow:
+0 0 20px rgba(37,211,102,.4),
+0 0 40px rgba(37,211,102,.25);
+animation:whatsappPulse 2s infinite;
 ">
-
 💬
 </a>
 
-
-<!-- =======================
+<!-- =========================
 MOBILE OPTIMIERUNG
-======================= -->
+========================= -->
 
 <style>
 
@@ -636,8 +1323,12 @@ text-align:center;
 }
 
 .hero-card{
-height:450px;
+height:420px;
 margin:auto;
+}
+
+.hero-card img{
+max-width:240px;
 }
 
 .grid-3{
@@ -652,26 +1343,37 @@ display:none;
 font-size:52px;
 }
 
+.hero-slogan{
+font-size:34px;
+}
+
 .section-title{
 font-size:42px;
+}
+
+.buttons{
+justify-content:center;
+}
+
+.logo img{
+height:55px;
 }
 
 }
 
 </style>
 
-
-<!-- =======================
-SCROLL ANIMATIONEN
-======================= -->
+<!-- =========================
+ANIMATIONEN
+========================= -->
 
 <script>
 
-const cards = document.querySelectorAll('.card');
+const cards=document.querySelectorAll('.card');
 
-const observer = new IntersectionObserver((entries)=>{
+const observer=new IntersectionObserver((entries)=>{
 
-entries.forEach(entry=>{
+entries.forEach((entry)=>{
 
 if(entry.isIntersecting){
 
@@ -684,11 +1386,11 @@ entry.target.style.transform='translateY(0px)';
 
 });
 
-cards.forEach(card=>{
+cards.forEach((card)=>{
 
 card.style.opacity='0';
 card.style.transform='translateY(40px)';
-card.style.transition='all 0.8s ease';
+card.style.transition='all .8s ease';
 
 observer.observe(card);
 
@@ -696,6 +1398,29 @@ observer.observe(card);
 
 </script>
 
-</body>
+<!-- =========================
+WHATSAPP PULSE
+========================= -->
 
+<style>
+
+@keyframes whatsappPulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+</style>
+
+</body>
 </html>
