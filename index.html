@@ -437,6 +437,38 @@ color:#d5d5d5;
 WARUM BODA SNACKS
 ========================= */
 
+.automatenbild {
+   position: relative;
+   display: inline-block;
+   overflow: hidden;
+   border-radius: 20px;
+}
+
+.automatenbild::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: -150%;
+   width: 60%;
+   height: 100%;
+   background: linear-gradient(
+       90deg,
+       transparent,
+       rgba(212,175,55,0.15),
+       rgba(255,215,0,0.45),
+       rgba(212,175,55,0.15),
+       transparent
+   );
+   transform: skewX(-25deg);
+   animation: goldSweep 10s infinite;
+}
+
+@keyframes goldSweep {
+   0% {left: -150%;}
+   30% {left: 150%;}
+   100% {left: 150%;}
+}
+
 </style>
 
 </head>
@@ -587,6 +619,10 @@ Mitarbeiter und Kunden an.
 
 </section>
 
+<div class="automatenbild">
+   <img src="bilder/boda-automat.jpg" alt="BODA Snacks Automat">
+</div>
+ 
 <!-- =========================
 SO FUNKTIONIERT'S
 ========================= -->
