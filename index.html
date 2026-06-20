@@ -1441,6 +1441,7 @@ display:none;
 .hero h1{
 font-size:36px;
 line-height:1.1;
+word-break:break-word;
 }
 
 .hero-slogan{
@@ -1460,13 +1461,15 @@ height:55px;
 }
 
 .buttons{
+ display:flex;
  flex-direction:column;
  align-items:center;
  gap:15px;
 }
 
- .btn{
-  width:90%;
+ .btn-primary,
+ .btn-secondary{
+  width:100%;
   max-width:320px;
   text-align:center;
   padding:18px 20px;
