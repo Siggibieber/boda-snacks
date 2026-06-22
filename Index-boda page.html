@@ -92,6 +92,8 @@ drop-shadow(0 0 35px rgba(212,175,55,.25));
 width:320px;
 height:320px;
 
+animation: floatLogo 10s ease-in-out infinite;
+  
 object-fit:cover;
 
 border-radius:50%;
@@ -147,11 +149,16 @@ z-index:0;
 
 .boda-particles span{
 position:absolute;
-width:3px;
-height:3px;
+width:8px;
+height:8px;
 background:#d4af37;
 border-radius:50%;
-opacity:.2;
+opacity:.8;
+
+box-shadow:
+  0 0 8px #d4af37,
+  0 0 15px #d4af37;
+
 animation:bodaFloat linear infinite;
 }
 
@@ -162,6 +169,21 @@ transform:translateY(110vh);
 to{
 transform:translateY(-10vh);
 }
+
+@keyframes floatLogo {
+   0% {
+       transform: translateY(0px);
+   }
+
+   50% {
+       transform: translateY(-12px);
+   }
+
+   100% {
+       transform: translateY(0px);
+   }
+}
+  
 }
 
 /* =====================
@@ -300,16 +322,24 @@ z-index:2;
 <body>
 <div class="boda-particles">
 
-
-
-
-
-
-
-
+<span style="left:5%;animation-duration:12s;"></span>
+<span style="left:12%;animation-duration:18s;"></span>
+<span style="left:20%;animation-duration:10s;"></span>
+<span style="left:28%;animation-duration:15s;"></span>
+<span style="left:35%;animation-duration:13s;"></span>
+<span style="left:42%;animation-duration:17s;"></span>
+<span style="left:50%;animation-duration:11s;"></span>
+<span style="left:58%;animation-duration:14s;"></span>
+<span style="left:65%;animation-duration:19s;"></span>
+<span style="left:72%;animation-duration:12s;"></span>
+<span style="left:80%;animation-duration:16s;"></span>
+<span style="left:88%;animation-duration:10s;"></span>
+<span style="left:95%;animation-duration:15s;"></span>
 
 </div>
+
 <header>
+
 <div class="container">
 <div class="navbar">
 <div class="logo">
