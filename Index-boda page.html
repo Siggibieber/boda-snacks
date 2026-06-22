@@ -735,8 +735,13 @@ Die Menschen hinter
 <span class="gold">BODA Snacks</span>
 </h2>
 <div class="team-card">
+
 <div class="team-image">
-<img src="teamfoto.jpg" alt="Andreas und Sandra Boda">
+<img
+src="teamfoto.jpg"
+alt="Andreas und Sandra Boda"
+draggable="false">
+
 </div>
 <div class="team-content">
 <h3>
@@ -903,6 +908,31 @@ position:relative;
 
 }
 
+.team-image::after{
+
+content:"© BODA Snacks";
+
+position:absolute;
+
+bottom:15px;
+right:15px;
+
+background:rgba(0,0,0,.65);
+
+padding:8px 12px;
+
+border-radius:8px;
+
+font-size:14px;
+font-weight:700;
+
+color:#d4af37;
+
+z-index:10;
+
+pointer-events:none;
+}
+
 .team-image::before{
 
 content:"";
@@ -934,6 +964,14 @@ position:relative;
 
 z-index:2;
 
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+user-select:none;
+
+-webkit-user-drag:none;
+
+pointer-events:auto;
 }
 
 .team-content h3{
@@ -955,7 +993,7 @@ line-height:1.9;
 color:#d6d6d6;
 
 margin-bottom:20px;
-
+  
 }
 
 /* =====================================
@@ -1906,5 +1944,41 @@ text-align:center;
 }
 
 </style>
+
+<script>
+
+// Rechtsklick sperren
+document.addEventListener('contextmenu', function(e){
+   e.preventDefault();
+});
+
+// Bilder ziehen verhindern
+document.addEventListener('dragstart', function(e){
+   e.preventDefault();
+});
+
+// Text markieren verhindern
+document.addEventListener('selectstart', function(e){
+   e.preventDefault();
+});
+
+// Tastenkombinationen für Speichern / Quelltext erschweren
+document.addEventListener('keydown', function(e){
+
+   if (
+       e.keyCode == 123 || // F12
+       (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
+       (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J
+       (e.ctrlKey && e.keyCode == 85) || // Ctrl+U
+       (e.ctrlKey && e.keyCode == 83) // Ctrl+S
+   ){
+       e.preventDefault();
+   }
+
+});
+
+</script>
+
+
 </body>
 </html>
