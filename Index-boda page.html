@@ -1060,11 +1060,19 @@ class="btn-primary">
 </div>
 
 <!-- RECHTS -->
+
 <div class="contact-form">
 
 <form
 action="https://formsubmit.co/info@boda-snacks.de"
 method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input
+type="hidden"
+name="_subject"
+value="Neue Standortanfrage von boda-snacks.de">
 
 <input
 type="text"
@@ -1112,6 +1120,7 @@ Standort kostenlos prüfen
 </form>
 
 </div>
+  
 </section>
 <!-- =====================================
 ABSCHLUSS CTA
@@ -1250,17 +1259,31 @@ font-size:16px;
 .checkbox{
 
 display:flex;
-
-gap:10px;
-
 align-items:flex-start;
+gap:12px;
+
+margin:20px 0;
 
 font-size:14px;
-
-line-height:1.6;
+line-height:1.5;
 
 color:#ccc;
 
+}
+
+.checkbox input{
+
+width:18px;
+height:18px;
+  
+margin-top:2px;
+flex-shrink:0;
+
+}
+
+.checkbox span{
+
+flex:1;
 }
 
 .contact-form button{
@@ -1268,7 +1291,11 @@ color:#ccc;
 border:none;
 
 cursor:pointer;
+width:100%;
+max-width:500px;
 
+margin:auto;
+display:block;
 }
 
 .final-cta{
@@ -1624,7 +1651,7 @@ font-size:14px;
 WHATSAPP
 ===================================== */
 
-whatsapp-btn{
+.whatsapp-btn{
 
 position:fixed;
 
@@ -1655,7 +1682,7 @@ box-shadow:
 0 0 40px rgba(37,211,102,.25);
 
 animation:
-whatsappPulse 2s infinite;
+whatsappPulse 10s infinite;
 }
 
 @keyframes whatsappPulse{
