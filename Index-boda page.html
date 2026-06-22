@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="google-site-verification" content="mFVqozf9tg6y5G925TAwAbQ3GHP4HVvhNa5zhucLtms" />  
-<title>BODA SNACKS</title>
-
+<title>Kostenlose Snackautomaten für Unternehmen | BODA Snacks</title>
+<meta name="description" content="Kostenlose Snackautomaten für Unternehmen. Vollservice ohne Aufwand. BODA Snacks versorgt Mitarbeiter, Kunden und Besucher rund um die Uhr.">
+<meta name="keywords" content="Snackautomat, Snackautomaten, BODA Snacks, Automatenservice, Pforzheim, Karlsruhe, Stuttgart">
+<meta name="author" content="BODA Snacks">
+<meta property="og:title" content="Snackautomaten für Unternehmen | BODA Snacks">
+<meta property="og:description" content="Kostenlose Snackautomaten mit Rundum-Service.">
+<meta property="og:type" content="website">
 <style>
-
-/* =========================
-RESET
-========================= */
 
 *{
 margin:0;
@@ -23,712 +22,1589 @@ html{
 scroll-behavior:smooth;
 }
 
-html, body{
-  overflow-x:hidden;
-}
-  
 body{
-font-family:Arial,sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 background:#050505;
-color:white;
+color:#fff;
 overflow-x:hidden;
-line-height:1.6;
 }
 
-/* =========================
+.container{
+width:90%;
+max-width:1300px;
+margin:auto;
+}
+
+.gold{
+color:#d4af37;
+}
+
+/* =====================
+ULTRA PREMIUM BACKGROUND
+===================== */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+background:
+radial-gradient(circle at 15% 20%, rgba(212,175,55,.08), transparent 30%),
+radial-gradient(circle at 80% 70%, rgba(212,175,55,.05), transparent 35%);
+z-index:-2;
+}
+
+/* =====================
 HEADER
-========================= */
+===================== */
 
-.boda-header{
-
-position:absolute;
+header{
+position:fixed;
 top:0;
 left:0;
 width:100%;
+background:rgba(0,0,0,.88);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(212,175,55,.15);
+z-index:9999;
+}
 
-z-index:100;
-
-padding:20px 24px;
-
+.navbar{
 display:flex;
-justify-content:flex-end;
+justify-content:space-between;
+align-items:center;
+padding:12px 0;
+}
 
+.logo img{
+height:85px;
+width:85px;
+object-fit:cover;
+border-radius:50%;
+
+filter:
+drop-shadow(0 0 15px rgba(212,175,55,.4))
+drop-shadow(0 0 35px rgba(212,175,55,.25));
+}
+
+.hero-card img{
+
+width:320px;
+height:320px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:4px solid #d4af37;
+
+box-shadow:
+0 0 30px rgba(212,175,55,.4),
+0 0 60px rgba(212,175,55,.2);
+
+z-index:2;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#d4af37;
+}
+
+.cta-nav{
+background:#d4af37;
+color:#000;
+padding:12px 24px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* =====================
+PARTIKEL
+===================== */
+
+.boda-particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
 pointer-events:none;
-
+overflow:hidden;
+z-index:0;
 }
 
-.boda-header-buttons{
-
-display:flex;
-flex-direction:column;
-gap:12px;
-
-margin-top:90px;
-
-pointer-events:auto;
-
+.boda-particles span{
+position:absolute;
+width:3px;
+height:3px;
+background:#d4af37;
+border-radius:50%;
+opacity:.2;
+animation:bodaFloat linear infinite;
 }
 
-.boda-header-btn{
+@keyframes bodaFloat{
+from{
+transform:translateY(110vh);
+}
+to{
+transform:translateY(-10vh);
+}
+}
 
+/* =====================
+HERO
+===================== */
+
+.hero{
+min-height:100vh;
 display:flex;
 align-items:center;
-justify-content:center;
-width:85%;
-margin-top:-60px;
-padding:14px 20px;
+padding-top:120px;
+position:relative;
+overflow:hidden;
+}
 
+.hero::before{
+content:"";
+position:absolute;
+width:1100px;
+height:1100px;
+right:-250px;
+top:-250px;
+background:
+radial-gradient(circle,
+rgba(212,175,55,.35),
+transparent 70%);
+opacity:.12;
+animation:heroGlow 10s ease-in-out infinite;
+}
+
+@keyframes heroGlow{
+
+0%{
+transform:scale(1);
+opacity:.08;
+}
+
+50%{
+transform:scale(1.15);
+opacity:.16;
+}
+
+100%{
+transform:scale(1);
+opacity:.08;
+}
+
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:clamp(52px,7vw,92px);
+line-height:1;
+font-weight:900;
+margin-bottom:25px;
+}
+
+.hero-slogan{
+font-size:clamp(30px,4vw,56px);
+font-weight:900;
+line-height:1.1;
+margin-bottom:30px;
+}
+
+.hero p{
+font-size:22px;
+line-height:1.8;
+color:#d4d4d4;
+margin-bottom:35px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+background:#d4af37;
+color:#000;
+padding:18px 35px;
 border-radius:50px;
-
 text-decoration:none;
-
-font-size:18px;
-font-weight:600;
-
-transition:0.2s ease;
-
-backdrop-filter:blur(10px);
-
+font-weight:bold;
 }
 
-.boda-header-btn:active{
-transform:scale(0.97);
+.btn-secondary{
+border:2px solid #d4af37;
+color:white;
+padding:18px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.boda-header-btn.gold{
+.hero-card{
+height:600px;
+border-radius:35px;
+background:linear-gradient(145deg,#101010,#1a1a1a);
+border:1px solid rgba(212,175,55,.2);
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+overflow:hidden;
+box-shadow:0 0 50px rgba(212,175,55,.15);
+}
+
+.hero-card img{
+
+width:320px;
+height:320px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:4px solid #d4af37;
+
+box-shadow:
+0 0 30px rgba(212,175,55,.4),
+0 0 60px rgba(212,175,55,.2);
+
+z-index:2;
+}
+
+
+</style>
+</head>
+<body>
+<div class="boda-particles">
+
+
+
+
+
+
+
+
+
+</div>
+<header>
+<div class="container">
+<div class="navbar">
+<div class="logo">
+<img src="logo.jpg" alt="BODA Snacks">
+</div>
+<div class="nav-links">
+<a href="#vorteile">Vorteile</a>
+<a href="#ablauf">Ablauf</a>
+<a href="#referenzen">Referenzen</a>
+<a href="#kontakt">Kontakt</a>
+</div>
+<a href="#kontakt" class="cta-nav">
+Standort prüfen
+</a>
+</div>
+</div>
+</header>
+<section class="hero">
+<div class="container">
+<div class="hero-grid">
+<div>
+<h1>
+Kostenlose <span class="gold">Snackautomaten</span><br>
+für Unternehmen
+</h1>
+<div class="hero-slogan">
+DU HAST DEN <span class="gold">HUNGER.</span><br>
+WIR DIE <span class="gold">SNACKS.</span>
+</div>
+<p>
+Bieten Sie Ihren Mitarbeitern, Kunden und Besuchern jederzeit Snacks und Getränke an – ohne Anschaffungskosten und mit komplettem Rundum-Service.
+</p>
+<div class="buttons">
+<a href="#kontakt" class="btn-primary">
+Kostenlose Standortprüfung
+</a>
+<a href="#vorteile" class="btn-secondary">
+Mehr erfahren
+</a>
+</div>
+</div>
+<div class="hero-card">
+<img src="logo.jpg" alt="BODA Snacks">
+</div>
+</div>
+</div>
+</section>
+
+<!-- =====================================
+VORTEILE
+===================================== -->
+<section id="vorteile">
+<div class="container">
+<h2 class="section-title">
+Warum <span class="gold">BODA Snacks</span>?
+</h2>
+<div class="grid-3">
+<div class="card">
+<h3>Keine Anschaffungskosten</h3>
+<p>
+Wir stellen den Snackautomaten kostenlos zur Verfügung.
+Keine Investition, kein Risiko und keine versteckten Kosten.
+</p>
+</div>
+<div class="card">
+<h3>Kompletter Service</h3>
+<p>
+Befüllung, Wartung und technische Betreuung übernehmen
+wir vollständig für Sie.
+</p>
+</div>
+<div class="card">
+<h3>24/7 Verfügbarkeit</h3>
+<p>
+Snacks und Getränke jederzeit verfügbar –
+auch außerhalb klassischer Pausenzeiten.
+</p>
+</div>
+<div class="card">
+<h3>Mitarbeiterzufriedenheit</h3>
+<p>
+Ein moderner Service direkt vor Ort steigert Komfort
+und Zufriedenheit im Arbeitsalltag.
+</p>
+</div>
+<div class="card">
+<h3>Regionale Betreuung</h3>
+<p>
+Persönlicher Ansprechpartner aus der Region
+mit schnellen Reaktionszeiten.
+</p>
+</div>
+<div class="card">
+<h3>Individuelles Sortiment</h3>
+<p>
+Wir passen die Befüllung an die Wünsche Ihrer
+Mitarbeiter und Kunden an.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================
+AUTOMATENBILD
+===================================== -->
+<section>
+<div class="container">
+<div class="automatenbild">
+<img src="boda-automat.jpg" alt="BODA Snacks Automat">
+</div>
+</div>
+</section>
+<!-- =====================================
+ABLAUF
+===================================== -->
+<section id="ablauf">
+<div class="container">
+<h2 class="section-title">
+So funktioniert's
+</h2>
+<div class="grid-3">
+<div class="card">
+<h3>1. Anfrage</h3>
+<p>
+Kontaktieren Sie uns unverbindlich per Telefon,
+WhatsApp oder E-Mail.
+</p>
+</div>
+<div class="card">
+<h3>2. Standortprüfung</h3>
+<p>
+Wir prüfen kostenlos, ob sich ein Snackautomat
+an Ihrem Standort wirtschaftlich lohnt.
+</p>
+</div>
+<div class="card">
+<h3>3. Planung</h3>
+<p>
+Gemeinsam definieren wir Standort,
+Sortiment und Versorgungskonzept.
+</p>
+</div>
+<div class="card">
+<h3>4. Aufstellung</h3>
+<p>
+Lieferung, Aufbau und Inbetriebnahme
+übernehmen wir komplett.
+</p>
+</div>
+<div class="card">
+<h3>5. Service</h3>
+<p>
+Regelmäßige Befüllung, Wartung und
+technische Betreuung inklusive.
+</p>
+</div>
+<div class="card">
+<h3>6. Profitieren</h3>
+<p>
+Ihre Mitarbeiter, Kunden und Besucher
+profitieren rund um die Uhr.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================
+PREMIUM CTA
+===================================== -->
+<section>
+<div class="container">
+<div class="premium-box">
+<h2>
+DU HAST DEN <span class="gold">HUNGER.</span><br>
+WIR DIE <span class="gold">SNACKS.</span>
+</h2>
+<p>
+Moderne Snackversorgung für Unternehmen –
+ohne Investition, ohne Aufwand und mit
+persönlichem Rundum-Service.
+</p>
+<a href="#kontakt" class="btn-primary">
+Kostenlose Standortprüfung starten
+</a>
+</div>
+</div>
+</section>
+<style>
+
+/* =====================================
+PREMIUM CARDS
+===================================== */
+
+section{
+padding:120px 0;
+}
+
+.section-title{
+font-size:58px;
+text-align:center;
+margin-bottom:70px;
+font-weight:900;
+}
+
+.grid-3{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+background:linear-gradient(145deg,#111,#181818);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(212,175,55,.15);
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(212,175,55,.10),
+transparent
+);
+transition:.8s;
+}
+
+.card:hover::before{
+left:100%;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#d4af37;
+box-shadow:
+0 0 25px rgba(212,175,55,.15),
+0 0 50px rgba(212,175,55,.08);
+}
+
+.card h3{
+color:#d4af37;
+font-size:26px;
+margin-bottom:18px;
+}
+
+.card p{
+line-height:1.9;
+color:#d5d5d5;
+}
+
+/* =====================================
+AUTOMATENBILD
+===================================== */
+
+.automatenbild{
+position:relative;
+overflow:hidden;
+border-radius:25px;
+}
+
+.automatenbild img{
+width:100%;
+display:block;
+border-radius:25px;
+}
+
+.automatenbild::after{
+content:"";
+position:absolute;
+top:0;
+left:-150%;
+width:60%;
+height:100%;
 
 background:
 linear-gradient(
-180deg,
-#d4af37 0%,
-#b8860b 100%
+90deg,
+transparent,
+rgba(212,175,55,.15),
+rgba(255,215,0,.45),
+rgba(212,175,55,.15),
+transparent
 );
 
-border:
-2px solid rgba(255,255,255,0.15);
+transform:skewX(-25deg);
 
-color:white;
-
-box-shadow:
-0 10px 26px rgba(212,175,55,0.25);
-
-border-radius:18px;
-
-width:260px;
-
-white-space:nowrap;
+animation:goldSweep 10s infinite;
 }
-  
-.boda-header-btn.dark{
 
-background:
-rgba(0,0,0,0.58);
+@keyframes goldSweep{
 
-border:
-1px solid rgba(212,175,55,0.35);
+0%{
+left:-150%;
+}
 
-color:white;
+30%{
+left:150%;
+}
+
+100%{
+left:150%;
+}
 
 }
 
-.whatsapp-hinweis{
+/* =====================================
+PREMIUM BOX
+===================================== */
 
-margin-top:8px;
+.premium-box{
 
-font-size:11px;
+max-width:1100px;
 
-color:rgba(255,255,255,0.65);
+margin:auto;
+
+padding:70px;
 
 text-align:center;
 
-max-width:260px;
-
-line-height:1.3;
-}
-
-/* =========================
-HERO
-========================= */
-
-.boda-hero{
-
-position:relative;
-overflow-x:hidden;
-
-min-height:100vh;
-
-padding:
-100px 40px 60px;
-
-display:flex;
-align-items:flex-start;
-justify-content:center;
-
-padding-top:140px;
-padding-bottom:100px;
+border-radius:35px;
 
 background:
 linear-gradient(
-rgba(0,0,0,0.02),
-rgba(0,0,0,0.18)
-),
-url("hero.jpg");
+145deg,
+rgba(212,175,55,.08),
+#121212
+);
 
-background-size:cover;
-background-position:top center;
-background-repeat:no-repeat;
+border:1px solid rgba(212,175,55,.15);
 
 }
 
-.boda-hero::before{
+.premium-box h2{
+
+font-size:56px;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+.premium-box p{
+
+font-size:24px;
+
+line-height:1.8;
+
+max-width:850px;
+
+margin:auto;
+
+margin-bottom:35px;
+
+color:#d8d8d8;
+
+}
+
+</style>
+
+<!-- =====================================
+TEAM BODA
+===================================== -->
+<section id="team">
+<div class="container">
+<h2 class="section-title">
+Die Menschen hinter
+<span class="gold">BODA Snacks</span>
+</h2>
+<div class="team-card">
+<div class="team-image">
+<img src="teamfoto.jpg" alt="Andreas und Sandra Boda">
+</div>
+<div class="team-content">
+<h3>
+Andreas & Sandra Boda
+</h3>
+<p>
+Als Familienunternehmen stehen wir für
+persönliche Betreuung, schnelle Reaktionszeiten
+und direkten Kontakt.
+
+Von der kostenlosen Standortprüfung bis zur
+regelmäßigen Befüllung erhalten Sie bei uns
+alles aus einer Hand.
+
+</p>
+<p>
+Unser Ziel ist es, Unternehmen eine moderne
+Versorgung mit Snacks und Getränken zu bieten –
+einfach, zuverlässig und ohne Aufwand.
+
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================
+BODA IN ZAHLEN
+===================================== -->
+<section id="zahlen">
+<div class="container">
+<h2 class="section-title">
+BODA Snacks in Zahlen
+</h2>
+<div class="grid-3">
+<div class="card stats-card">
+<h3>100%</h3>
+<p>
+Vollservice ohne Aufwand
+für Ihr Unternehmen
+</p>
+</div>
+<div class="card stats-card">
+<h3>24/7</h3>
+<p>
+Snacks und Getränke
+jederzeit verfügbar
+</p>
+</div>
+<div class="card stats-card">
+<h3>0 €</h3>
+<p>
+Keine Anschaffungs-
+oder Wartungskosten
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================
+KUNDENSTIMMEN
+===================================== -->
+<section id="referenzen">
+<div class="container">
+<h2 class="section-title">
+Kundenstimmen
+</h2>
+<div class="grid-3">
+<div class="card">
+<p>
+„Professionelle Betreuung,
+zuverlässiger Service und
+immer gut gefüllte Automaten.“
+
+</p>
+<br>
+<strong>
+Unternehmen aus Pforzheim
+</strong>
+</div>
+<div class="card">
+<p>
+„Unsere Mitarbeiter nutzen den
+Snackautomaten täglich.
+Absolut unkompliziert.“
+
+</p>
+<br>
+<strong>
+Industriebetrieb
+</strong>
+</div>
+<div class="card">
+<p>
+„Von der Aufstellung bis zur
+Befüllung läuft alles reibungslos.“
+
+</p>
+<br>
+<strong>
+Regionaler Standort
+</strong>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================
+VERTRAUENSBEREICH
+===================================== -->
+<section>
+<div class="container">
+<div class="trust-box">
+<h2>
+Warum Unternehmen
+BODA Snacks
+vertrauen
+
+</h2>
+<p>
+Persönlicher Ansprechpartner,
+schnelle Reaktionszeiten,
+regelmäßige Befüllung,
+moderne Automaten
+und ein Service,
+der sich um alles kümmert.
+
+</p>
+</div>
+</div>
+</section>
+<style>
+
+/* =====================================
+TEAM SECTION
+===================================== */
+
+.team-card{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+background:
+linear-gradient(
+145deg,
+#101010,
+#181818
+);
+
+border-radius:35px;
+
+padding:60px;
+
+border:1px solid rgba(212,175,55,.15);
+
+}
+
+.team-image{
+
+position:relative;
+
+}
+
+.team-image::before{
 
 content:"";
 
 position:absolute;
-inset:0;
 
-background:
-radial-gradient(
-circle at top right,
-rgba(212,175,55,0.18),
-transparent 35%
-);
+inset:-15px;
 
-z-index:1;
-
-}
-
-.boda-hero-content{
-
-position:relative;
-z-index:2;
-
-max-width:760px;
-
-}
-
-.boda-badge{
-
-display:inline-block;
-
-padding:8px 14px;
-margin-bottom:24px;
-
-background:
-rgba(255,215,0,0.10);
-
-border:
-1px solid rgba(255,215,0,0.25);
-
-border-radius:50px;
-
-font-size:11px;
-font-weight:700;
-
-color:#ffd700;
-
-}
-
-.boda-script{
-
-font-size:34px;
-font-style:italic;
-
-line-height:1.4;
-
-margin-bottom:28px;
-
-color:#f4cd67;
-
-}
-
-.boda-hero h1{
-
-font-size:78px;
-line-height:0.95;
-
-font-weight:900;
-letter-spacing:-2px;
-
-text-transform:uppercase;
-
-margin-bottom:30px;
-
-}
-
-.boda-hero h1 span{
-color:#ffd700;
-}
-
-.boda-hero-text{
-
-font-size:24px;
-line-height:1.6;
-
-max-width:700px;
-
-color:#ececec;
-
-margin-bottom:40px;
-
-}
-
-/* =========================
-FEATURES
-========================= */
-
-.boda-features{
-
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-
-margin-bottom:10px;
-
-}
-
-.boda-feature{
-
-padding:8px 12px;
-
-background:
-rgba(255,255,255,0.05);
-
-border:
-1px solid rgba(255,215,0,0.15);
-
-border-radius:16px;
-
-font-size:14px;
-font-weight:600;
-
-backdrop-filter:blur(10px);
-
-}
-
-/* =========================
-HERO BUTTONS
-========================= */
-
-.boda-hero-buttons{
-
-display:flex;
-flex-direction:column;
-
-gap:12px;
-width:100%;
-max-width:500px;
-
-align-items:center;
-
-margin-left:-550px;
-  
-padding-top:165px;
-top:0;
-
-z-index:5;
-position:relative;
-
-}
-
-.boda-hero-btn{
-
-display:flex;
-align-items:center;
-justify-content:center;
-gap:16px;
-
-position:relative;
-transform:none;
-
--webkit-transform:translateZ(0);
--webkit-backface-visibility:hidden;
-  
-height:60px;
-
-width:270px;
-
-  
-border-radius:28px;
-
-text-decoration:none;
-
-transition:0.2s ease;
-}
-
-.boda-hero-btn:active{
-transform:scale(0.97);
-}
-
-.boda-hero-btn.primary{
+border-radius:30px;
 
 background:
 linear-gradient(
-180deg,
-#f5d36f 0%,
-#d4af37 100%
+135deg,
+rgba(212,175,55,.25),
+transparent
 );
 
-box-shadow:
-0 14px 36px rgba(212,175,55,0.30),
-inset 0 1px 0 rgba(255,255,255,0.45);
-
-border-bottom:
-4px solid rgba(0,0,0,0.20);
-
-color:black;
+filter:blur(20px);
 
 }
 
-.boda-hero-btn.secondary{
+.team-image img{
 
-min-width:270px;
-padding:14px 20px;
+width:100%;
 
-background:
-rgba(0,0,0,0.58);
+border-radius:25px;
 
-border:
-2px solid rgba(212,175,55,0.45);
+position:relative;
 
-backdrop-filter:
-blur(12px);
-
-box-shadow:
-0 10px 26px rgba(0,0,0,0.28);
-
-color:white;
+z-index:2;
 
 }
 
-.boda-btn-icon{
-font-size:34px;
-}
+.team-content h3{
 
-.boda-btn-text{
+font-size:42px;
 
-display:flex;
-flex-direction:column;
+margin-bottom:25px;
 
-line-height:0.85;
+color:#d4af37;
 
 }
 
-.boda-btn-title{
+.team-content p{
 
-font-size:22px;
-font-weight:900;
+font-size:20px;
 
-text-transform:uppercase;
+line-height:1.9;
 
-}
-
-.boda-btn-sub{
-
-font-size:10px;
-font-weight:600;
-
-opacity:0.8;
-
-margin-top:-3;
-line-height:1;
-
-}
-
-/* =========================
-SECTION
-========================= */
-
-section{
-padding:60px 40px;
-}
-
-.boda-title{
-
-text-align:center;
-
-font-size:54px;
-font-weight:900;
-
-margin-bottom:70px;
-}
-
-.boda-title span{
-color:#ffd700;
-}
-
-/* =========================
-CARDS
-========================= */
-
-.boda-cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
-
-gap:28px;
-
-max-width:1400px;
-margin:auto;
-
-}
-
-.boda-card{
-
-background:#101010;
-
-padding:36px;
-
-border-radius:24px;
-
-border:
-1px solid rgba(255,215,0,0.08);
-
-transition:0.25s ease;
-
-}
-
-.boda-card:hover{
-
-transform:translateY(-6px);
-
-border-color:
-rgba(255,215,0,0.35);
-
-}
-
-.boda-card-icon{
-
-font-size:52px;
+color:#d6d6d6;
 
 margin-bottom:20px;
 
 }
 
-.boda-card h3{
+/* =====================================
+STATS
+===================================== */
 
-font-size:28px;
-
-margin-bottom:14px;
-
-color:#ffd700;
-
-}
-
-.boda-card p{
-
-font-size:17px;
-
-color:#dddddd;
-
-}
-
-/* =========================
-TARGET GRID
-========================= */
-
-.boda-target-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
-
-gap:22px;
-
-max-width:1300px;
-margin:auto;
-
-}
-
-.boda-target-box{
-
-background:#101010;
-
-padding:34px 24px;
-
-border-radius:22px;
+.stats-card{
 
 text-align:center;
 
-border:
-1px solid rgba(255,215,0,0.08);
+}
 
-transition:0.25s ease;
+.stats-card h3{
+
+font-size:64px;
+
+text-shadow:
+0 0 20px rgba(212,175,55,.4);
 
 }
 
-.boda-target-box:hover{
+/* =====================================
+TRUST BOX
+===================================== */
 
-transform:translateY(-5px);
+.trust-box{
 
-border-color:
-rgba(255,215,0,0.35);
+max-width:1100px;
 
-}
+margin:auto;
 
-.boda-target-box h3{
+padding:70px;
 
-font-size:26px;
+text-align:center;
 
-margin-bottom:12px;
+border-radius:35px;
 
-color:#ffd700;
+background:
+linear-gradient(
+145deg,
+rgba(212,175,55,.08),
+#121212
+);
 
-}
-
-.boda-target-box p{
-
-color:#dddddd;
-
-}
-
-/* =========================
-STEPS
-========================= */
-
-.boda-steps{
-
-background:#0a0a0a;
-
-padding-top:0px;
+border:1px solid rgba(212,175,55,.15);
 
 }
 
-.boda-steps-grid{
+.trust-box h2{
+
+font-size:52px;
+
+margin-bottom:25px;
+
+}
+
+.trust-box p{
+
+font-size:24px;
+
+line-height:1.8;
+
+max-width:850px;
+
+margin:auto;
+
+color:#d8d8d8;
+
+}
+
+/* =====================================
+MOBILE
+===================================== */
+
+@media(max-width:1000px){
+
+.team-card{
+
+grid-template-columns:1fr;
+
+padding:35px;
+
+}
+
+.team-content{
+
+text-align:center;
+
+}
+
+}
+
+</style>
+
+<!-- =====================================
+KONTAKT
+===================================== -->
+<section id="kontakt">
+<div class="container">
+<h2 class="section-title">
+Kostenlose
+<span class="gold">Standortprüfung</span>
+</h2>
+<div class="contact-wrapper">
+<!-- LINKS -->
+<div class="contact-info">
+<h3>
+Jetzt unverbindlich anfragen
+</h3>
+<p>
+Sie möchten wissen, ob sich ein Snackautomat
+an Ihrem Standort lohnt?
+
+Wir prüfen Ihren Standort kostenlos,
+unverbindlich und persönlich.
+
+</p>
+<div class="contact-item">
+📞 Telefon
+
+<a href="tel:+4972317703719">
++49 7231 7703719
+</a>
+</div>
+<div class="contact-item">
+📧 E-Mail
+
+<a href="mailto:info@boda-snacks.de">
+info@boda-snacks.de
+</a>
+</div>
+<div class="contact-item">
+📍 Standort
+
+Pforzheim · Karlsruhe · Stuttgart · Enzkreis
+
+<div class="contact-buttons">
+
+<a
+href="https://wa.me/4972317703719"
+target="_blank"
+class="btn-primary">
+
+💬 WhatsApp starten
+
+</a>
+</div>
+
+<!-- RECHTS -->
+<div class="contact-form">
+
+<form
+action="https://formsubmit.co/info@boda-snacks.de"
+method="POST">
+
+<input
+type="text"
+name="Name"
+placeholder="Ihr Name"
+required>
+
+<input
+type="email"
+name="E-Mail"
+placeholder="Ihre E-Mail"
+required>
+
+<input
+type="tel"
+name="Telefon"
+placeholder="Telefon (optional)">
+
+<textarea
+name="Nachricht"
+placeholder="Ihre Nachricht"
+rows="6"
+required></textarea>
+
+<label class="checkbox">
+
+<input
+type="checkbox"
+required>
+
+<span>
+Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu.
+</span>
+
+</label>
+
+<button
+type="submit"
+class="btn-primary">
+
+Standort kostenlos prüfen
+
+</button>
+
+</form>
+
+</div>
+</section>
+<!-- =====================================
+ABSCHLUSS CTA
+===================================== -->
+<section>
+<div class="container">
+<div class="final-cta">
+<h2>
+Bereit für Ihren
+Snackautomaten?
+
+</h2>
+<p>
+Bieten Sie Mitarbeitern,
+Kunden und Besuchern
+eine moderne Versorgung
+mit Snacks und Getränken –
+ohne Investition,
+ohne Aufwand
+und mit persönlichem Service.
+
+</p>
+Jetzt kostenlose Standortprüfung starten
+
+</a>
+</div>
+</div>
+</section>
+<style>
+
+/* =====================================
+KONTAKT
+===================================== */
+
+.contact-wrapper{
 
 display:grid;
 
-grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:1fr 1fr;
 
-gap:24px;
-
-max-width:1300px;
-margin:auto;
+gap:40px;
 
 }
 
-.boda-step{
+.contact-info,
+.contact-form{
 
 background:
-rgba(16,16,16,0.92);
-
-backdrop-filter:
-blur(14px);
+linear-gradient(
+145deg,
+#111,
+#181818
+);
 
 padding:40px;
 
-border-radius:24px;
-
-border:
-1px solid rgba(255,215,0,0.08);
-
-text-align:center;
-
-transition:0.25s ease;
-
-}
-
-.boda-step:hover{
-
-transform:translateY(-5px);
-
-border-color:
-rgba(255,215,0,0.35);
-
-}
-
-.boda-step-number{
-
-width:72px;
-height:72px;
-
-margin:auto auto 24px;
-
-border-radius:50%;
-
-background:#ffd700;
-
-color:black;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:28px;
-font-weight:900;
-
-box-shadow:
-0 0 22px rgba(255,215,0,0.55);
-
-}
-
-.boda-step h3{
-
-font-size:28px;
-
-margin-bottom:14px;
-
-color:#ffd700;
-
-}
-
-.boda-step p{
-
-color:#dddddd;
-
-}
-
-/* =========================
-CONTACT
-========================= */
-
-.boda-contact{
-
-background:#101010;
-
-}
-
-.boda-contact-box{
-
-max-width:900px;
-margin:auto;
-
-padding:60px 30px;
-
 border-radius:30px;
 
-background:#0c0c0c;
-
-border:
-1px solid rgba(255,215,0,0.15);
-
-text-align:center;
+border:1px solid rgba(212,175,55,.15);
 
 }
 
-.boda-contact-box h2{
+.contact-info h3{
+
+font-size:36px;
+
+margin-bottom:20px;
+
+color:#d4af37;
+
+}
+
+.contact-info p{
+
+font-size:18px;
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+color:#d7d7d7;
+
+}
+
+.contact-item{
+
+margin-bottom:25px;
+
+line-height:1.8;
+
+}
+
+.contact-item a{
+
+color:white;
+
+text-decoration:none;
+
+}
+
+.contact-buttons{
+
+margin-top:30px;
+
+}
+
+.contact-form form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+border-radius:14px;
+
+background:#1b1b1b;
+
+color:white;
+
+font-size:16px;
+
+}
+
+.checkbox{
+
+display:flex;
+
+gap:10px;
+
+align-items:flex-start;
+
+font-size:14px;
+
+line-height:1.6;
+
+color:#ccc;
+
+}
+
+.contact-form button{
+
+border:none;
+
+cursor:pointer;
+
+}
+
+.final-cta{
+
+max-width:1100px;
+
+margin:auto;
+
+padding:70px;
+
+text-align:center;
+
+border-radius:35px;
+
+background:
+linear-gradient(
+145deg,
+rgba(212,175,55,.08),
+#121212
+);
+
+border:1px solid rgba(212,175,55,.15);
+
+}
+
+.final-cta h2{
 
 font-size:54px;
 
-margin-bottom:24px;
+margin-bottom:25px;
 
 }
 
-.boda-contact-box p{
+.final-cta p{
 
-font-size:22px;
+font-size:24px;
 
-margin-bottom:14px;
+line-height:1.8;
+
+max-width:850px;
+
+margin:auto;
+
+margin-bottom:35px;
+
+color:#d8d8d8;
 
 }
 
-.boda-contact-box a{
+/* =====================================
+MOBILE
+===================================== */
 
-color:#ffd700;
+@media(max-width:1000px){
+
+.contact-wrapper{
+
+grid-template-columns:1fr;
+
+}
+
+.final-cta h2{
+
+font-size:38px;
+
+}
+
+.final-cta p{
+
+font-size:20px;
+
+}
+
+}
+
+</style>
+
+<!-- =====================================
+FOOTER
+===================================== -->
+<footer class="footer">
+<div class="container">
+<h3>
+BODA Snacks
+</h3>
+<p class="footer-subtitle">
+Snackautomaten für Unternehmen
+</p>
+<p class="footer-region">
+Pforzheim • Karlsruhe • Stuttgart • Enzkreis
+</p>
+<div class="footer-links">
+<a href="Impressum.html">
+Impressum
+</a>
+<a href="Datenschutz.html">
+Datenschutz
+</a>
+</div>
+<p class="footer-copy">
+© 2026 BODA Snacks GbR · Alle Rechte vorbehalten
+</p>
+</div>
+</footer>
+<!-- =====================================
+WHATSAPP BUTTON
+===================================== -->
+<a
+href="https://wa.me/4972317703719"
+target="_blank"
+class="whatsapp-btn">
+
+💬
+</a>
+
+<!-- =====================================
+COOKIE BANNER
+===================================== -->
+<div id="cookie-banner">
+<div class="cookie-inner">
+<div>
+🍪 Diese Website verwendet Cookies und Google Analytics zur Analyse der Website-Nutzung.
+
+</div>
+<div class="cookie-buttons">
+<button id="cookie-accept">
+Akzeptieren
+
+</button>
+<button id="cookie-decline">
+Ablehnen
+
+</button>
+</div>
+</div>
+</div>
+<!-- =====================================
+SCRIPTS
+===================================== -->
+<script>
+
+/* COOKIE */
+
+function loadAnalytics(){
+
+const script=document.createElement('script');
+
+script.async=true;
+
+script.src='https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ';
+
+document.head.appendChild(script);
+
+script.onload=function(){
+
+window.dataLayer=window.dataLayer||[];
+
+function gtag(){
+dataLayer.push(arguments);
+}
+
+window.gtag=gtag;
+
+gtag('js',new Date());
+
+gtag('config','G-6RJ6RX8XWZ');
+
+};
+
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+
+const banner=document.getElementById('cookie-banner');
+
+const saved=localStorage.getItem('bodaCookiesAccepted');
+
+if(saved==='true'){
+
+banner.style.display='none';
+
+loadAnalytics();
+
+}
+
+if(saved==='false'){
+
+banner.style.display='none';
+
+}
+
+document.getElementById('cookie-accept')
+.addEventListener('click',()=>{
+
+localStorage.setItem(
+'bodaCookiesAccepted',
+'true'
+);
+
+banner.style.display='none';
+
+loadAnalytics();
+
+});
+
+document.getElementById('cookie-decline')
+.addEventListener('click',()=>{
+
+localStorage.setItem(
+'bodaCookiesAccepted',
+'false'
+);
+
+banner.style.display='none';
+
+});
+
+});
+
+/* SCROLL ANIMATION */
+
+const observer=
+new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show-card');
+
+}
+
+});
+
+});
+
+document.querySelectorAll(
+'.card,.team-card,.trust-box,.premium-box,.final-cta'
+).forEach((el)=>{
+
+observer.observe(el);
+
+});
+
+</script>
+<style>
+
+/* =====================================
+SCROLL ANIMATION
+===================================== */
+
+.card,
+.team-card,
+.trust-box,
+.premium-box,
+.final-cta{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:
+opacity .8s ease,
+transform .8s ease;
+
+}
+
+.show-card{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* =====================================
+FOOTER
+===================================== */
+
+.footer{
+
+padding:80px 20px;
+
+text-align:center;
+
+background:#090909;
+
+border-top:1px solid rgba(212,175,55,.15);
+
+}
+
+.footer h3{
+
+font-size:34px;
+
+color:#d4af37;
+
+margin-bottom:15px;
+
+}
+
+.footer-subtitle{
+
+font-size:20px;
+
+color:#d0d0d0;
+
+margin-bottom:10px;
+
+}
+
+.footer-region{
+
+color:#999;
+
+margin-bottom:25px;
+
+}
+
+.footer-links{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+margin-bottom:25px;
+
+}
+
+.footer-links a{
+
+color:#d4af37;
 
 text-decoration:none;
 
@@ -736,793 +1612,206 @@ font-weight:bold;
 
 }
 
-/* =========================
-FOOTER
-========================= */
+.footer-copy{
 
-footer{
+color:#777;
 
-padding:35px;
-
-text-align:center;
-
-background:#000;
-
-color:#888;
-
-border-top:
-1px solid rgba(255,215,0,0.08);
+font-size:14px;
 
 }
 
-.whatsapp-btn{
+/* =====================================
+WHATSAPP
+===================================== */
 
-background:
-linear-gradient(180deg,#d4f37 0%,#b8860b 100%) !important;
+whatsapp-btn{
 
-border:
-2px solid rgba(255,255,255,0.15);
+position:fixed;
 
-color:white !important;
+right:25px;
+bottom:25px;
 
-border-radius:18px;
+width:72px;
+height:72px;
 
-width:260px;
+border-radius:50%;
 
-white-space:nowrap;
-
-box-shadow:
-0 10px 26px rgba(212,175,55,0.25);
-}
-
-/* =========================
-MOBILE
-========================= */
-
-.boda-mobile-call{
-display:none;
-}
-  
-@media (max-width:768px){
-
-/* =========================
-HEADER
-========================= */
-
-.boda-header{
-padding:16px;
-}
-
-.boda-header-buttons{
-width:100%;
-}
-
-.boda-header-btn{
-
-width:100%;
-height:48px;
-
-padding:12px 18px;
-
-font-size:15px;
-
-margin-top:0;
-
-border-radius:16px;
-}
-
-/* =========================
-HERO
-========================= */
-
-.boda-hero{
-
-min-height:100svh;
-
-padding:180px 20px 40px;
+background:#25D366;
 
 display:flex;
+justify-content:center;
 align-items:center;
 
-background:
-linear-gradient(
-to bottom,
-rgba(0,0,0,0.05),
-rgba(0,0,0,0.35)
-),
-url("mobil-hero.jpg");
+font-size:34px;
 
-background-size:cover;
-background-position:30% top;
-background-repeat:no-repeat;
+color:white;
+
+text-decoration:none;
+
+z-index:99999;
+
+box-shadow:
+0 0 20px rgba(37,211,102,.4),
+0 0 40px rgba(37,211,102,.25);
+
+animation:
+whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
 
 }
 
-.boda-hero-content{
+/* =====================================
+COOKIE BANNER
+===================================== */
+
+#cookie-banner{
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
 width:100%;
+
+background:#111;
+
+padding:15px;
+
+z-index:999999;
+
+border-top:
+1px solid rgba(212,175,55,.2);
+
 }
 
-/* =========================
-TEXT
-========================= */
+.cookie-inner{
 
-.boda-badge{
+max-width:1200px;
 
-font-size:10px;
-
-padding:6px 12px;
-
-margin-bottom:16px;
-}
-
-.boda-script{
-
-font-size:14px;
-
-line-height:1.3;
-
-margin-bottom:16px;
-}
-
-.boda-hero h1{
-
-font-size:42px;
-
-line-height:0.95;
-
-letter-spacing:-2px;
-
-margin-bottom:18px;
-}
-
-.boda-hero-text{
-
-font-size:16px;
-
-line-height:1.5;
-
-color:#e5e5e5;
-
-margin-bottom:24px;
-
-max-width:100%;
-}
-
-/* =========================
-FEATURES
-========================= */
-
-.boda-features{
-
-flex-direction:column;
-
-gap:10px;
-
-margin-bottom:26px;
-}
-
-.boda-feature{
-
-font-size:14px;
-
-padding:12px 14px;
-
-border-radius:14px;
-}
-
-/* =========================
-BUTTONS
-========================= */
-
-.boda-hero-buttons{
+margin:auto;
 
 display:flex;
-flex-direction:column;
 
-width:100%;
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.cookie-buttons{
+
+display:flex;
 
 gap:10px;
 
-align-items:flex-start;
-
-margin-top:340px;
-padding-left:30px;
 }
 
-.boda-hero-btn{
+#cookie-accept{
 
-width:72%;
-max-width:240px;
+background:#d4af37;
 
-height:52px;
+color:#000;
 
-margin:0;
-margin-right:20px;
-border-radius:22px;
+border:none;
 
-gap:10px;
+padding:10px 18px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+
 }
 
-.whatsapp-btn{
+#cookie-decline{
 
-position:absolute;
+background:#333;
 
-top:5px;
-left:50%;
+color:white;
 
-transform:translateX(-50%);
+border:none;
 
-width:65%;
+padding:10px 18px;
 
-max-width:200px;
+border-radius:8px;
 
-height:42px;
+cursor:pointer;
 
-font-size:14px;
-
-border-radius:22px;
-
-z-index:999;
-
-transition:0.3s ease;
 }
 
-.whatsapp-btn:hover{
-transform:translateX(-50%) scale(1.03);
+/* =====================================
+MOBILE
+===================================== */
+
+@media(max-width:1000px){
+
+.nav-links{
+display:none;
 }
 
-.whatsapp-hinweis{
-position:absolute;
-left:50%;
-transform:translateX(-50%);
-font-size:8px;
-top:38px;
-color:rgba(255,255,255,0.70);
-text-align:center;
-font-weight:500;
-}
-
-.boda-btn-icon{
-font-size:24px;
-}
-
-.boda-btn-title{
-
-font-size:15px;
-line-height:1;
-}
-
-.boda-btn-sub{
-
-font-size:11px;
-}
-
-/* =========================
-SECTIONS
-========================= */
-
-section{
-padding:60px 20px;
-}
-
-.boda-title{
-
-font-size:34px;
-
-line-height:1.1;
-
-margin-bottom:36px;
-}
-
-/* =========================
-CARDS
-========================= */
-
-.boda-cards,
-.boda-target-grid,
-.boda-steps-grid{
-
+.hero-grid{
 grid-template-columns:1fr;
-
-gap:18px;
+text-align:center;
 }
 
-.boda-card,
-.boda-target-box,
-.boda-step{
-
-padding:26px;
+.hero-card{
+height:420px;
 }
 
-.boda-card h3,
-.boda-target-box h3,
-.boda-step h3{
-
-font-size:22px;
+.hero-card img{
+max-width:240px;
 }
 
-.boda-card p,
-.boda-target-box p,
-.boda-step p{
-
-font-size:15px;
-line-height:1.5;
+.grid-3{
+grid-template-columns:1fr;
 }
 
-/* =========================
-CONTACT
-========================= */
-
-.boda-contact-box{
-
-padding:40px 22px;
-
-border-radius:22px;
+.section-title{
+font-size:40px;
 }
 
-.boda-contact-box h2{
+.hero h1{
+font-size:42px;
+}
 
+.hero-slogan{
 font-size:34px;
-
-margin-bottom:18px;
 }
 
-.boda-contact-box p{
-
-font-size:16px;
+.buttons{
+flex-direction:column;
+align-items:center;
 }
 
-/* =========================
-BOTTOM CALL BUTTON
-========================= */
-
-.boda-mobile-call{
-
-left:14px;
-right:14px;
-bottom:14px;
-
-height:62px;
-
-font-size:18px;
-
-border-radius:18px;
+.btn-primary,
+.btn-secondary{
+width:100%;
+max-width:320px;
+text-align:center;
 }
 
 }
 
 </style>
-  
-</head>
-
-<body>
-
-<header class="boda-header">
-
-<div class="boda-header-buttons">
-
-<a href="https://wa.me/491778675852"
-class="boda-header-btn gold whatsapp-btn">
-WhatsApp Anfrage
-</a>
-
-<div class="whatsapp-hinweis">
-Es gelten die Datenschutzrichtlinien von WhatsApp.
-</div>
-
-</div>
-
-</header>
-  
-<section class="boda-hero">
-
-<div class="boda-hero-content">
-
-<div class="boda-hero-buttons">
-
-<a href="tel:072317703719"
-class="boda-hero-btn primary">
-
-<div class="boda-btn-icon">📞</div>
-
-<div class="boda-btn-text">
-
-<div class="boda-btn-title">
-JETZT ANRUFEN
-</div>
-
-<div class="boda-btn-sub">
-07231 7703719
-</div>
-
-</div>
-
-</a>
-
-<a href="mailto:kontakt@boda-snacks.de"
-class="boda-hero-btn secondary">
-
-<div class="boda-btn-icon">✉️</div>
-
-<div class="boda-btn-text">
-
-<div class="boda-btn-title">
-E-MAIL ANFRAGE
-</div>
-
-<div class="boda-btn-sub" style="font-size:10px;">
-kontakt@boda-snacks.de
-</div>
-
-</div>
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="boda-title">
-Ihre <span>Vorteile</span>
-</h2>
-
-<div class="boda-cards">
-
-<div class="boda-card">
-<div class="boda-card-icon">⏰</div>
-<h3>24/7 Verfügbarkeit</h3>
-<p>Ihre Mitarbeiter haben jederzeit Zugriff auf Snacks und Getränke.</p>
-</div>
-
-<div class="boda-card">
-<div class="boda-card-icon">💰</div>
-<h3>Keine Kosten</h3>
-<p>Keine Investition, keine versteckten Gebühren oder Risiken.</p>
-</div>
-
-<div class="boda-card">
-<div class="boda-card-icon">🔧</div>
-<h3>Kein Aufwand</h3>
-<p>Wir übernehmen Befüllung, Wartung und Organisation.</p>
-</div>
-
-<div class="boda-card">
-<div class="boda-card-icon">📈</div>
-<h3>Mehr Zufriedenheit</h3>
-<p>Bessere Versorgung sorgt für motivierte Mitarbeiter und Kunden.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="boda-title">
-Perfekt <span>für diese Unternehmen</span>
-</h2>
-
-<div class="boda-target-grid">
-
-<div class="boda-target-box">
-<h3>Büros</h3>
-<p>Snacks direkt am Arbeitsplatz.</p>
-</div>
-
-<div class="boda-target-box">
-<h3>Werkstätten</h3>
-<p>Versorgung für Mitarbeiter vor Ort.</p>
-</div>
-
-<div class="boda-target-box">
-<h3>Fitnessstudios</h3>
-<p>Snacks & Getränke für Mitglieder.</p>
-</div>
-
-<div class="boda-target-box">
-<h3>Autohäuser</h3>
-<p>Mehr Komfort für Kunden und Mitarbeiter.</p>
-</div>
-
-<div class="boda-target-box">
-<h3>Lagerhallen</h3>
-<p>Perfekt für Schichtbetrieb und Pausen.</p>
-</div>
-
-<div class="boda-target-box">
-<h3>Praxen</h3>
-<p>Komfort für Mitarbeiter und Besucher.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="boda-steps">
-
-<h2 class="boda-title">
-So einfach <span>funktioniert’s</span>
-</h2>
-
-<div class="boda-steps-grid">
-
-<div class="boda-step">
-
-<div class="boda-step-number">1</div>
-
-<h3>Anfrage senden</h3>
-
-<p>
-Kontaktieren Sie uns per WhatsApp,
-Telefon oder E-Mail.
-</p>
-
-</div>
-
-<div class="boda-step">
-
-<div class="boda-step-number">2</div>
-
-<h3>Standort prüfen</h3>
-
-<p>
-Wir prüfen gemeinsam,
-welcher Automat optimal passt.
-</p>
-
-</div>
-
-<div class="boda-step">
-
-<div class="boda-step-number">3</div>
-
-<h3>Automat aufstellen</h3>
-
-<p>
-Wir kümmern uns um Lieferung,
-Befüllung und Wartung.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="boda-contact" id="kontakt">
-
-<div class="boda-contact-box">
-
-<h2>Kontakt</h2>
-
-<p>
-Telefon:
-<a href="tel:+4972317703719">
-+49 7231 7703719
-</a>
-</p>
-
-<p>
-E-Mail:
-<a href="mailto:kontakt@boda-snacks.de">
-kontakt@boda-snacks.de
-</a>
-</p>
-
-<p>
-WhatsApp:
-<a href="https://wa.me/491778675852">
-Direkt schreiben
-</a>
-</p>
-
-</div>
-
-</section>
-
-<a href="tel:072317703719"
-class="boda-mobile-call">
-
-📞 07231 7703719
-
-</a>
-
-<details>
-  
-  <summary>Impressum</summary>
-
-<p>
-BODA Snacks GbR<br>
-
-Vertreten durch die Gesellschafter<br>
-Andreas Boda<br>
-Sandra Boda<br>
-
-Erlenweg 34<br>
-75175 Pforzheim<br>
-Deutschland
-</p>
-
-<p>
-Telefon:
-<a href="tel:+4972317703719">+49 7231 7703719</a><br>
-
-E-Mail:
-<a href="mailto:kontakt@boda-snacks.de">
-kontakt@boda-snacks.de
-</a>
-</p>
-
-<p>
-Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
-</p>
-
-<p>
-Andreas Boda<br>
-Erlenweg 34<br>
-75175 Pforzheim<br>
-Deutschland
-</p>
-
-<p>
-Kleinunternehmer gemäß § 19 UStG
-</p>
-  
-</details>
-  
-<details>
-
-<summary>Datenschutzerklärung</summary>
-  
-<h2>Datenschutzerklärung</h2>
-  
-<p>
-Der Schutz Ihrer persönlichen Daten ist uns wichtig. 
-Personenbezogene Daten werden auf dieser Website nur im technisch notwendigen Umfang verarbeitet.
-</p>
-
-<h3>1. Allgemeine Hinweise</h3>
-
-<p>
-Der Schutz Ihrer personenbezogenen Daten ist uns wichtig.
-Diese Website kann grundsätzlich ohne Angabe personenbezogener Daten genutzt werden.
-</p>
-
-<h3>2. Hosting</h3>
-
-<p>
-Diese Website wird über GitHub Pages bereitgestellt.
-Anbieter ist GitHub Inc., 88 Colin P. Kelly Jr. Street,
-San Francisco, CA 94107, USA.
-Beim Besuch der Website können technische Zugriffsdaten notwendige Daten wie IP-Adresse,
-Browserinformation, Datum und Uhrzeit des Zugriffs (Server-Log-Dateien) verarbeitet werden.
-</p>
-
-<h3>3. Server-Log-Dateien</h3>
-
-<p>
-Der Hosting-Anbieter erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser automatisch übermittelt. 
-</p>
-
-<p>
-Beim Aufruf dieser Website werden automatisch Informationen
-durch den Hosting-Anbieter erfasst:
-</p>
-
-<ul>
-<li>Browsertyp und Browserversion</li>
-<li>Verwendetes Betriebssystem</li>
-<li>Referrer-URL</li>
-<li>Hostname des zugreifenden Rechners</li>
-<li>Uhrzeit der Serveranfrage</li>
-<li>IP-Adresse</li>
-</ul>
-
-<p>
-Diese Daten dienen ausschließlich der technischen Bereitstellung
-und Sicherheit der Website.
-</p>
-
-<h3>4. Kontaktaufnahme</h3>
-
-<p>
-Wenn Sie uns per E-Mail oder WhatsApp kontaktieren,
-werden Ihre Angaben zwecks Bearbeitung Ihrer Anfrage gespeichert.
-</p>
-
-<h3>5. Kontakt über WhatsApp</h3>
-
-<p>
-Bei Nutzung des WhatsApp-Buttons werden Daten
-an WhatsApp bzw. Meta Platforms Ireland Ltd. übertragen.
-Dabei können personenbezogene Daten außerhalb der EU verarbeitet werden.
-</p>
-<h3>4. Kontakt über WhatsApp</h3>
-
-<p>
-Wenn Sie uns über WhatsApp kontaktieren, werden die von Ihnen mitgeteilten Daten (z. B. Telefonnummer und Nachrichteninhalte) zur Bearbeitung Ihrer Anfrage verarbeitet.
-</p>
-
-<p>
-Die Kommunikation erfolgt über den Dienst WhatsApp der WhatsApp Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.
-Dabei kann eine Datenübertragung an Server der Meta Platforms Inc. in den USA nicht ausgeschlossen werden.
-</p>
-
-<p>
-Die Kontaktaufnahme erfolgt freiwillig durch den Nutzer.
-</p>
-
-<h3>5. SSL- bzw. TLS-Verschlüsselung</h3>
-
-<p>
-Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Dadurch werden übermittelte Daten geschützt.
-</p>
-
-<p>
-Weitere Informationen:
-https://www.whatsapp.com/legal/privacy-policy-eea
-</p>
-
-<h3>6. Rechtsgrundlagen</h3>
-
-<p>
-Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 DSGVO,
-insbesondere auf Grundlage berechtigter Interessen
-sowie zur Bearbeitung von Kontaktanfragen.
-</p>
-
-<h3>7. Ihre Rechte</h3>
-
-<p>
-Sie haben jederzeit das Recht auf:
-</p>
-
-<ul>
-<li>Auskunft über gespeicherte Daten</li>
-<li>Berichtigung unrichtiger Daten</li>
-<li>Löschung Ihrer Daten</li>
-<li>Einschränkung der Verarbeitung</li>
-<li>Widerspruch gegen die Verarbeitung</li>
-<li>Datenübertragbarkeit</li>
-</ul>
-
-<p>
-Bei Fragen zur Verarbeitung personenbezogener Daten können Sie uns jederzeit kontaktieren.
-</p>
-
-<h3>8. Beschwerderecht</h3>
-
-<p>
-Sie haben das Recht,
-sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
-</p>
-
-<h3>9. SSL-/TLS-Verschlüsselung</h3>
-
-<p>
-Diese Website nutzt aus Sicherheitsgründen
-eine SSL-/TLS-Verschlüsselung.
-Dadurch werden übermittelte Daten geschützt.
-</p>
-
-<h3>10. Haftungsausschluss</h3>
-
-<p>
-Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir
-keine Haftung für externe Links.
-Für den Inhalt verlinkter Seiten
-sind ausschließlich deren Betreiber verantwortlich.
-</p>
-
-</details>
-
-<footer>
-© 2026 BODA SNACKS GbR— Alle Rechte vorbehalten
-</footer>
-
 </body>
 </html>
