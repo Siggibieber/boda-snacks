@@ -1,12 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
- <url>
-   <loc>https://boda-snacks.de/</loc>
- </url>
+  <url>
+    <loc>https://boda-snacks.de/</loc>
+  </url>
 
- <url>
-   <loc>https://boda-snacks.de/automatenservice-pforzheim.html</loc>
- </url>
+  <url>
+    <loc>https://boda-snacks.de/automatenservice-pforzheim.html</loc>
+  </url>
+
+  <url>
+    <loc>https://boda-snacks.de/snackautomaten-pforzheim.html</loc>
+  </url>
+
+  <url>
+    <loc>https://boda-snacks.de/snackautomaten-boeblingen.html</loc>
+  </url>
+
+  <url>
+    <loc>https://boda-snacks.de/snackautomaten-calw.html</loc>
+  </url>
+
+  <url>
+    <loc>https://boda-snacks.de/snackautomaten-karlsruhe.html</loc>
+  </url>
+
+  <url>
+    <loc>https://boda-snacks.de/snackautomaten-ludwigsburg.html</loc>
+  </url>
+
+  <url>
+    <loc>https://boda-snacks.de/snackautomaten-stuttgart.html</loc>
+  </url>
+
+  <url>
+    <loc>https://boda-snacks.de/getraenke-snackautomaten-holzgerlingen.html</loc>
+  </url>
+
+  <url>
+    <loc>https://boda-snacks.de/Datenschutz.html</loc>
+  </url>
+
+  <url>
+    <loc>https://boda-snacks.de/Impressum.html</loc>
+  </url>
 
 </urlset>
