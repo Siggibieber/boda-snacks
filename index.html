@@ -528,6 +528,10 @@ border:1px solid rgba(212,175,55,.15);
 transition:.4s;
 position:relative;
 overflow:hidden;
+
+display:flex;
+flex-direction:column;
+min-height:380px;
 }
 
 .card::before{
@@ -568,6 +572,7 @@ margin-bottom:18px;
 .card p{
 line-height:1.9;
 color:#d5d5d5;
+margin-bottom:30px;
 }
 
 /* =====================================
@@ -1479,6 +1484,11 @@ color:#d8d8d8;
 
    position:relative;
    z-index:5;
+}
+
+.card .btn-primary{
+  margin-top:auto;
+  align-self:flex-start;
 }
 
 /* =====================================
