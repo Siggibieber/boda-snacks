@@ -491,6 +491,46 @@ profitieren rund um die Uhr.
     </div>
 
 </section>
+
+<section class="warum-boda">
+    <div class="container">
+
+        <span class="section-tag">WARUM BODA SNACKS?</span>
+
+        <h2>Persönlicher Service statt anonymer Großanbieter.</h2>
+
+        <p class="intro">
+            Wir sind ein regionaler Automatenservice aus Pforzheim. Unser Ziel ist
+            eine langfristige Zusammenarbeit mit Unternehmen, die Wert auf
+            Zuverlässigkeit, kurze Wege und einen persönlichen Ansprechpartner legen.
+        </p>
+
+        <div class="warum-grid">
+
+            <div class="warum-card">
+                <h3>Persönlicher Ansprechpartner</h3>
+                <p>Keine Hotline – Sie sprechen direkt mit uns.</p>
+            </div>
+
+            <div class="warum-card">
+                <h3>Regelmäßige Befüllung</h3>
+                <p>Wir kontrollieren und befüllen Ihren Automaten zuverlässig.</p>
+            </div>
+
+            <div class="warum-card">
+                <h3>Flexible Lösungen</h3>
+                <p>Wir passen Sortiment und Service an Ihr Unternehmen an.</p>
+            </div>
+
+            <div class="warum-card">
+                <h3>Regional vor Ort</h3>
+                <p>Kurze Wege ermöglichen schnelle Reaktionszeiten.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 <!-- =====================================
 PREMIUM CTA
 ===================================== -->
@@ -715,6 +755,61 @@ color:#d8d8d8;
     display: block;
     border-radius: 18px;
     box-shadow: 0 15px 40px rgba(0,0,0,.35);
+}
+
+.warum-boda{
+    padding:90px 20px;
+    background:#0f0f0f;
+    text-align:center;
+}
+
+.section-tag{
+    color:#d4af37;
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:.9rem;
+}
+
+.warum-boda h2{
+    color:#fff;
+    margin:15px 0 20px;
+    font-size:2.2rem;
+}
+
+.intro{
+    max-width:800px;
+    margin:0 auto 50px;
+    color:#cfcfcf;
+    line-height:1.8;
+}
+
+.warum-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+.warum-card{
+    background:#181818;
+    padding:30px;
+    border-radius:18px;
+    border:1px solid rgba(212,175,55,.25);
+    transition:.3s;
+}
+
+.warum-card:hover{
+    transform:translateY(-6px);
+    border-color:#d4af37;
+}
+
+.warum-card h3{
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+.warum-card p{
+    color:#ddd;
+    line-height:1.7;
 }
 </style>
 
