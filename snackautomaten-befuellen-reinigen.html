@@ -1428,6 +1428,9 @@ FAQ SCHEMA
 KONTAKT
 ===================================== -->
   
+<section id="kontakt">
+<div class="container">
+<div class="contact-wrapper">
 <div class="contact-info">
 
 <h3>
@@ -1553,7 +1556,6 @@ Standort kostenlos prüfen
 </div>
 </div>
 </div>
-</div>
   
 </section>
 
@@ -1613,8 +1615,10 @@ KONTAKT
 
 .contact-wrapper{
 
-display:flex;
-max-width:900px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+max-width:1200px;
 margin:0 auto;
 }
 
@@ -2075,7 +2079,6 @@ transform .8s ease;
 opacity:1;
 
 transform:translateY(0);
-
 }
 
 /* =====================================
