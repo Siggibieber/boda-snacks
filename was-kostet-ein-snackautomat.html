@@ -2289,7 +2289,221 @@ Pforzheim · Karlsruhe · Enzkreis · Stuttgart
 </div>
 
 </footer>
+<!-- =====================================
+COOKIE BANNER
+===================================== -->
+<div id="cookie-banner">
+    <div class="cookie-inner">
 
+        <div class="cookie-text">
+            🍪 Diese Website verwendet Cookies und Google Analytics zur Analyse der Website-Nutzung.
+        </div>
+
+        <div class="cookie-buttons">
+
+            <button id="cookie-accept">
+                Akzeptieren
+            </button>
+
+            <button id="cookie-decline">
+                Ablehnen
+            </button>
+
+        </div>
+
+    </div>
+</div>
+  <script>
+
+function loadAnalytics(){
+
+    const script=document.createElement("script");
+
+    script.async=true;
+
+    script.src="https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ";
+
+    document.head.appendChild(script);
+
+    script.onload=function(){
+
+        window.dataLayer=window.dataLayer||[];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        window.gtag=gtag;
+
+        gtag("js",new Date());
+
+        gtag("config","G-6RJ6RX8XWZ");
+
+    };
+
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    const banner=document.getElementById("cookie-banner");
+
+    const saved=localStorage.getItem("bodaCookiesAccepted");
+
+    if(saved==="true"){
+        banner.style.display="none";
+        loadAnalytics();
+    }
+
+    if(saved==="false"){
+        banner.style.display="none";
+    }
+
+    document.getElementById("cookie-accept").onclick=function(){
+
+        localStorage.setItem("bodaCookiesAccepted","true");
+
+        banner.style.display="none";
+
+        loadAnalytics();
+
+    };
+
+    document.getElementById("cookie-decline").onclick=function(){
+
+        localStorage.setItem("bodaCookiesAccepted","false");
+
+        banner.style.display="none";
+
+    };
+
+});
+
+</script>
+  <style>
+
+#cookie-banner{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    background:#111;
+
+    border-top:1px solid rgba(212,175,55,.25);
+
+    padding:18px;
+
+    z-index:999999;
+
+}
+
+.cookie-inner{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.cookie-text{
+
+    color:#fff;
+
+    line-height:1.6;
+
+    flex:1;
+
+}
+
+.cookie-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+#cookie-accept{
+
+    background:#d4af37;
+
+    color:#000;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+#cookie-decline{
+
+    background:#333;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+#cookie-accept:hover{
+
+    background:#e6c24a;
+
+}
+
+#cookie-decline:hover{
+
+    background:#555;
+
+}
+
+@media(max-width:768px){
+
+    .cookie-inner{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .cookie-buttons{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
+
+</style>
 </body>
 
 </html>
