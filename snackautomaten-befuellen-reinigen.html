@@ -1704,12 +1704,6 @@ width:auto;
 max-width:none;
 }
 
-.contact-form button{
-
-width:100%;
-margin-top:15px;
-}
-
 .contact-form input,
 .contact-form textarea{
 
@@ -2073,97 +2067,124 @@ opacity:1;
 transform:translateY(0);
 }
 
+
 /* =====================================
 FOOTER
 ===================================== */
 
 .footer{
 
-background:#090909;
+    background:linear-gradient(180deg,#090909,#050505);
 
-border-top:1px solid rgba(212,175,55,.15);
+    border-top:1px solid rgba(212,175,55,.15);
 
-padding:80px 20px 50px;
+    padding:90px 20px 50px;
 
-text-align:center;
+    text-align:center;
+
+}
+  
+.footer .container{
+
+max-width:900px;
+
+margin:0 auto;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
 
 }
 
 .footer h3{
 
-font-size:36px;
+    font-size:40px;
 
-color:#d4af37;
+    color:#d4af37;
 
-margin-bottom:15px;
+    font-weight:800;
 
-font-weight:800;
+    margin-bottom:15px;
 
 }
 
 .footer-subtitle{
 
-font-size:20px;
+    font-size:20px;
 
-color:#d9d9d9;
+    color:#e0e0e0;
 
-margin-bottom:12px;
+    margin-bottom:15px;
+
+    line-height:1.6;
 
 }
 
 .footer-region{
 
-color:#9d9d9d;
+    color:#9f9f9f;
 
-margin-bottom:35px;
+    line-height:1.8;
 
-line-height:1.8;
+    margin-bottom:40px;
 
 }
 
 .footer-links{
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-flex-wrap:wrap;
+    align-items:center;
 
-gap:18px 30px;
+    flex-wrap:wrap;
 
-margin-bottom:35px;
+    gap:18px 35px;
+
+    margin-bottom:40px;
 
 }
 
 .footer-links a{
 
-color:#d4af37;
+    color:#d4af37;
 
-text-decoration:none;
+    text-decoration:none;
 
-font-weight:600;
+    font-weight:600;
 
-transition:.3s;
+    transition:.3s;
 
 }
 
 .footer-links a:hover{
 
-color:#fff;
+    color:#ffffff;
 
 }
 
 .footer-copy{
 
-color:#777;
+    width:100%;
 
-font-size:14px;
+    border-top:1px solid rgba(255,255,255,.08);
 
-padding-top:20px;
+    padding-top:25px;
 
-border-top:1px solid rgba(255,255,255,.08);
+    color:#777;
+
+    font-size:14px;
+
+    line-height:1.7;
+
 }
 
+.footer p{
+ margin:0;
+}
 
 /* =====================================
 WHATSAPP
