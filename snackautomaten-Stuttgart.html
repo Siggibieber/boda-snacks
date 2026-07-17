@@ -373,8 +373,8 @@ Mehr erfahren
 
 <div class="hero-card">
 
-    <video id="heroVideo" autoplay muted loop playsinline>
-        <source src="hero.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline>
+        <source src="videos/hero.mp4" type="video/mp4">
         Dein Browser unterstützt keine Videos.
     </video>
 
@@ -446,9 +446,12 @@ this
 
 </div>
 
-<div class="konfi-media">
-    <img id="konfi-image" src="kaffee.jpg" alt="Kaffeeautomat">
-</div>
+<div class="konfi-preview">
+
+<img
+id="konfi-image"
+src="kaffee.jpg"
+alt="Kaffeeautomat">
 
 <h3 id="konfi-title">
 Kaffeeautomaten
@@ -2099,7 +2102,20 @@ document.querySelectorAll(
 ).forEach((el)=>{
 
 observer.observe(el);
+
 });
+
+function changeKonfi(image,title,text){
+
+document.getElementById("konfi-image").src=image;
+document.getElementById("konfi-title").innerHTML=title;
+document.getElementById("konfi-description").innerHTML=text;
+
+document.querySelectorAll(".konfi-btn").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+event.target.classList.add("active");
 
 }
   
@@ -2566,10 +2582,6 @@ event.target.classList.add("active");
   
 </script>
 
-<script>
-const video = document.getElementById("heroVideo");
-video.playbackRate = 0.6;
-</script>
-  
+
 </body>
 </html>
