@@ -453,7 +453,7 @@ this
 
     <button id="playBtn" onclick="playVideo()">▶</button>
 
-    <video id="konfi-video" style="display:none;" controls>
+   <video id="konfi-video" style="display:none;" autoplay muted playsinline>
         <source src="boda-kaffee.mp4" type="video/mp4">
     </video>
 </div>
@@ -2134,6 +2134,13 @@ function playVideo() {
     const video = document.getElementById("konfi-video");
     video.style.display = "block";
     video.play();
+  const video = document.getElementById("konfi-video");
+
+video.onended = function () {
+    video.style.display = "none";
+    document.getElementById("konfi-image").style.display = "block";
+    document.getElementById("playBtn").style.display = "block";
+};
 }
   
 </script>
