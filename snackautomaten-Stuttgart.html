@@ -373,7 +373,7 @@ Mehr erfahren
 
 <div class="hero-card">
 
-    <video autoplay muted loop playsinline>
+    <video id="heroVideo" autoplay muted loop playsinline>
         <source src="hero.mp4" type="video/mp4">
         Dein Browser unterstützt keine Videos.
     </video>
@@ -2582,6 +2582,10 @@ event.target.classList.add("active");
   
 </script>
 
-
+<script>
+const video = document.getElementById("heroVideo");
+video.playbackRate = 0.6;
+</script>
+  
 </body>
 </html>
