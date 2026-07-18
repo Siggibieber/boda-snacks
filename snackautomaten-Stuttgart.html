@@ -373,8 +373,8 @@ Mehr erfahren
 
 <div class="hero-card">
 
-    <video autoplay muted loop playsinline>
-        <source src="videos/hero.mp4" type="video/mp4">
+    <video id="heroVideo" autoplay muted loop playsinline>
+        <source src="hero.mp4" type="video/mp4">
         Dein Browser unterstützt keine Videos.
     </video>
 
@@ -448,10 +448,15 @@ this
 
 <div class="konfi-preview">
 
-<img
-id="konfi-image"
-src="kaffee.jpg"
-alt="Kaffeeautomat">
+<div class="konfi-media">
+    <img id="konfi-image" src="kaffee.jpg" alt="Kaffeeautomat">
+
+    <button id="playBtn" onclick="playVideo()">▶</button>
+
+    <video id="konfi-video" style="display:none;" controls>
+        <source src="boda-kaffee.mp4" type="video/mp4">
+    </video>
+</div>
 
 <h3 id="konfi-title">
 Kaffeeautomaten
@@ -2107,7 +2112,10 @@ observer.observe(el);
 
 function changeKonfi(image,title,text){
 
-document.getElementById("konfi-image").src=image;
+const video = document.getElementById("konfi-image");
+video.src = image;
+video.load();
+video.play();
 document.getElementById("konfi-title").innerHTML=title;
 document.getElementById("konfi-description").innerHTML=text;
 
@@ -2117,6 +2125,15 @@ btn.classList.remove("active");
 
 event.target.classList.add("active");
 
+}
+
+function playVideo() {
+    document.getElementById("konfi-image").style.display = "none";
+    document.getElementById("playBtn").style.display = "none";
+
+    const video = document.getElementById("konfi-video");
+    video.style.display = "block";
+    video.play();
 }
   
 </script>
@@ -2582,6 +2599,10 @@ event.target.classList.add("active");
   
 </script>
 
-
+<script>
+const video = document.getElementById("heroVideo");
+video.playbackRate = 0.6;
+</script>
+  
 </body>
 </html>
