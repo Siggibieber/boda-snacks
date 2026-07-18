@@ -366,9 +366,9 @@ Mehr erfahren
 </div>
 
 <div class="hero-trust">
-✓ Persönlicher Ansprechpartner
-✓ Regionale Betreuung
-✓ Kostenlose Standortprüfung
+<span>✔ Bereits ab 98 € / Monat</span>
+<span>✔ Full-Service inklusive</span>
+<span>✔ Kostenlose Standortprüfung</span>
 </div>
 
 <div class="hero-card">
@@ -651,6 +651,103 @@ profitieren rund um die Uhr.
 
     </div>
 </section>
+<!-- =====================================
+PREISE
+===================================== -->
+<section id="preise">
+<div class="container">
+
+<h2 class="section-title">
+Transparente <span class="gold">Preise</span>
+</h2>
+
+<div class="trust-box">
+
+<h2>
+Snackautomaten bereits <span class="gold">ab 98 € / Monat*</span>
+</h2>
+
+<p>
+Viele Unternehmen denken bei Snackautomaten zuerst an hohe Anschaffungskosten oder teure Leasingverträge.
+Mit <strong>BODA Snacks</strong> erhalten Sie eine moderne Full-Service-Lösung bereits ab <strong>98 € pro Monat</strong>.
+</p>
+
+<div class="price-grid">
+
+<div class="price-card">
+<h3>✔ Im Preis enthalten</h3>
+
+<ul>
+<li>Persönliche Beratung</li>
+<li>Kostenlose Standortprüfung</li>
+<li>Lieferung & Aufstellung</li>
+<li>Regelmäßige Befüllung</li>
+<li>Wartung & technischer Service</li>
+<li>Persönlicher Ansprechpartner</li>
+</ul>
+
+</div>
+
+<div class="price-card">
+
+<h3>Kauf vs. Leasing vs. BODA Snacks</h3>
+
+<table class="price-table">
+
+<tr>
+<th></th>
+<th>Kauf</th>
+<th>Leasing</th>
+<th>BODA Snacks</th>
+</tr>
+
+<tr>
+<td>Anschaffung</td>
+<td>Hohe Investition</td>
+<td>Monatliche Leasingrate</td>
+<td><strong>ab 98 €/Monat</strong></td>
+</tr>
+
+<tr>
+<td>Wartung</td>
+<td>Zusätzliche Kosten</td>
+<td>Je nach Vertrag</td>
+<td>✔ inklusive</td>
+</tr>
+
+<tr>
+<td>Service</td>
+<td>Eigenverantwortung</td>
+<td>Teilweise inklusive</td>
+<td>✔ inklusive</td>
+</tr>
+
+<tr>
+<td>Persönlicher Ansprechpartner</td>
+<td>–</td>
+<td>–</td>
+<td>✔ Ja</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<p style="margin-top:35px;font-size:15px;color:#bbb;">
+*Der Einstiegspreis gilt für ausgewählte Lösungen. Das konkrete Angebot richtet sich nach Unternehmensgröße, Standort, Automatenmodell und gewünschtem Serviceumfang.
+</p>
+
+<a href="#kontakt" class="btn-primary" style="margin-top:35px;">
+Jetzt kostenloses Angebot anfordern
+</a>
+
+</div>
+
+</div>
+</section>
+
 <!-- =====================================
 PREMIUM CTA
 ===================================== -->
@@ -1873,6 +1970,75 @@ font-size:20px;
 
 }
 
+/* =====================================
+PREISE
+===================================== */
+
+.price-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+margin-top:50px;
+}
+
+.price-card{
+background:#181818;
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(212,175,55,.2);
+}
+
+.price-card h3{
+color:#d4af37;
+margin-bottom:25px;
+font-size:28px;
+}
+
+.price-card ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.price-card li{
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+font-size:18px;
+}
+
+.price-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.price-table th,
+.price-table td{
+padding:14px;
+text-align:center;
+border:1px solid rgba(212,175,55,.15);
+}
+
+.price-table th{
+background:#d4af37;
+color:#111;
+font-weight:700;
+}
+
+.price-table td{
+background:#151515;
+}
+
+@media(max-width:1000px){
+
+.price-grid{
+grid-template-columns:1fr;
+}
+
+.price-table{
+font-size:14px;
+}
+
+}
 </style>
 
 <!-- =====================================
