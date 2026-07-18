@@ -1689,29 +1689,41 @@ ABSCHLUSS CTA
 ===================================== -->
 <section>
 <div class="container">
-<div class="final-cta">
+
+<div class="final-video">
+
+<video autoplay muted loop playsinline>
+    <source src="kaffee-croissant.mp4" type="video/mp4">
+</video>
+
+<div class="video-overlay">
+
 <h2>
 Bereit für Ihren
-Snackautomaten?
-
+<span class="gold">Snackautomaten?</span>
 </h2>
+
 <p>
-Bieten Sie Mitarbeitern,
-Kunden und Besuchern
-eine moderne Versorgung
-mit Snacks und Getränken
-ohne Aufwand
-und mit persönlichem Service.
+Frischer Kaffee, leckere Snacks und kalte Getränke –
+bereits <strong>ab 98 € pro Monat</strong> inklusive persönlichem Rundum-Service.
 </p>
 
+<div class="hero-trust">
+<span>✔ Bereits ab 98 € / Monat</span>
+<span>✔ Persönlicher Full-Service</span>
+<span>✔ Kostenlose Standortprüfung</span>
+</div>
+
 <a href="#kontakt" class="btn-primary">
-  Jetzt kostenlose Standortprüfung starten
+Jetzt kostenlose Standortprüfung starten
 </a>
 
+</div>
 
 </div>
+
 </div>
-</section>
+</section>  
 <style>
 
 /* =====================================
@@ -2037,6 +2049,114 @@ grid-template-columns:1fr;
 
 .price-table{
 font-size:14px;
+}
+
+}
+
+/* =====================================
+VIDEO CTA
+===================================== */
+
+.final-video{
+
+position:relative;
+
+height:650px;
+
+border-radius:35px;
+
+overflow:hidden;
+
+border:1px solid rgba(212,175,55,.2);
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.5);
+
+}
+
+.final-video video{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.video-overlay{
+
+position:absolute;
+
+inset:0;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+background:linear-gradient(
+rgba(0,0,0,.45),
+rgba(0,0,0,.65)
+);
+
+}
+
+.video-overlay h2{
+
+font-size:60px;
+
+margin-bottom:25px;
+
+}
+
+.video-overlay p{
+
+font-size:24px;
+
+max-width:850px;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+color:#eee;
+
+}
+
+.video-overlay .hero-trust{
+
+justify-content:center;
+
+margin-bottom:35px;
+
+}
+
+@media(max-width:1000px){
+
+.final-video{
+
+height:450px;
+
+}
+
+.video-overlay h2{
+
+font-size:36px;
+
+}
+
+.video-overlay p{
+
+font-size:18px;
+
 }
 
 }
@@ -2767,9 +2887,17 @@ event.target.classList.add("active");
 </script>
 
 <script>
-const video = document.getElementById("heroVideo");
-video.playbackRate = 0.6;
+const heroVideo = document.getElementById("heroVideo");
+if (heroVideo) {
+    heroVideo.playbackRate = 0.6;
+}
+
+const finalVideo = document.querySelector(".final-video video");
+if (finalVideo) {
+    finalVideo.playbackRate = 0.7;
+}
 </script>
+
   
 </body>
 </html>
