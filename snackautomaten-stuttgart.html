@@ -1995,11 +1995,14 @@ margin-top:50px;
 }
 
 .price-card{
-background:#181818;
-padding:35px;
-border-radius:25px;
-border:1px solid rgba(212,175,55,.2);
+    background:#181818;
+    padding:35px;
+    border-radius:25px;
+    border:1px solid rgba(212,175,55,.2);
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
 }
+
 
 .price-card h3{
 color:#d4af37;
@@ -2020,8 +2023,9 @@ font-size:18px;
 }
 
 .price-table{
-width:100%;
-border-collapse:collapse;
+    width:100%;
+    min-width:700px;
+    border-collapse:collapse;
 }
 
 .price-table th,
@@ -2158,7 +2162,6 @@ font-size:36px;
 font-size:18px;
 
 }
-
 }
 </style>
 
@@ -2384,28 +2387,19 @@ observer.observe(el);
 
 function changeKonfi(image,title,text){
 
-const video = document.getElementById("konfi-image");
-video.src = image;
-video.load();
-video.play();
-document.getElementById("konfi-title").innerHTML=title;
-document.getElementById("konfi-description").innerHTML=text;
+    const img = document.getElementById("konfi-image");
 
-document.querySelectorAll(".konfi-btn").forEach(btn=>{
-btn.classList.remove("active");
-});
+    img.src = image;
 
-event.target.classList.add("active");
+    document.getElementById("konfi-title").innerHTML = title;
+    document.getElementById("konfi-description").innerHTML = text;
 
-}
+    document.querySelectorAll(".konfi-btn").forEach(btn=>{
+        btn.classList.remove("active");
+    });
 
-function playVideo() {
-    document.getElementById("konfi-image").style.display = "none";
-    document.getElementById("playBtn").style.display = "none";
+    event.target.classList.add("active");
 
-    const video = document.getElementById("konfi-video");
-    video.style.display = "block";
-    video.play();
 }
   
 </script>
@@ -2858,10 +2852,37 @@ height:auto;
     background:#d4af37;
     color:#000;
 }
+html,
+body{
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+img,
+video{
+    max-width:100%;
+    height:auto;
+}
+
+.konfi-media,
+.konfi-preview,
+.final-video{
+    overflow:hidden;
+}
+
+/* ==========================
+MOBILE FIXES
+========================== */
 
 html,
 body{
+    width:100%;
+    max-width:100%;
     overflow-x:hidden;
+}
+
+*{
+    box-sizing:border-box;
 }
 
 img,
@@ -2872,9 +2893,9 @@ video{
 }
 
 .container{
+    width:min(90%,1300px);
     overflow:hidden;
 }
-
 </style>
 
 <script>
