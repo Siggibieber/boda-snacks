@@ -2925,16 +2925,29 @@ event.target.classList.add("active");
   
 </script>
 
-<script>
-const heroVideo = document.getElementById("heroVideo");
-if (heroVideo) {
-    heroVideo.playbackRate = 0.6;
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-const finalVideo = document.querySelector(".final-video video");
-if (finalVideo) {
-    finalVideo.playbackRate = 0.7;
-}
+    const heroVideo = document.getElementById("heroVideo");
+
+    if (heroVideo) {
+        heroVideo.muted = true;
+        heroVideo.playsInline = true;
+        heroVideo.playbackRate = 0.6;
+
+        heroVideo.play().catch(() => {});
+    }
+
+    const finalVideo = document.querySelector(".final-video video");
+
+    if (finalVideo) {
+        finalVideo.muted = true;
+        finalVideo.playsInline = true;
+        finalVideo.playbackRate = 0.7;
+
+        finalVideo.play().catch(() => {});
+    }
+});
+
 </script>
 
   
