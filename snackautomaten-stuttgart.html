@@ -675,7 +675,8 @@ Mit <strong>BODA Snacks</strong> erhalten Sie eine moderne Full-Service-Lösung 
 <div class="price-grid">
 
     <div class="price-card">
-        <h3>✔ Im Preis enthalten</h3>
+
+        <h3>✓ Im Preis enthalten</h3>
 
         <ul>
             <li>Persönliche Beratung</li>
@@ -685,74 +686,67 @@ Mit <strong>BODA Snacks</strong> erhalten Sie eine moderne Full-Service-Lösung 
             <li>Wartung & technischer Service</li>
             <li>Persönlicher Ansprechpartner</li>
         </ul>
+
     </div>
 
     <div class="price-card">
 
-        <h3>Kauf vs. Leasing vs. BODA Snacks</h3>
+        <h3>Warum BODA Snacks?</h3>
 
         <table class="price-table">
 
-            <thead>
+            <tr>
+                <th>Leistung</th>
+                <th>Kauf</th>
+                <th>Leasing</th>
+                <th>BODA</th>
+            </tr>
 
-                <tr>
-                    <th>Leistung</th>
-                    <th>Kauf</th>
-                    <th>Leasing</th>
-                    <th>BODA</th>
-                </tr>
+            <tr>
+                <td>Anschaffung</td>
+                <td>Hohe Investition</td>
+                <td>Monatliche Rate</td>
+                <td><strong>Ab 98 €/Monat</strong></td>
+            </tr>
 
-            </thead>
+            <tr>
+                <td>Wartung</td>
+                <td>Zusatzkosten</td>
+                <td>Je nach Vertrag</td>
+                <td><strong>Inklusive</strong></td>
+            </tr>
 
-            <tbody>
+            <tr>
+                <td>Lieferung</td>
+                <td>Selbst organisieren</td>
+                <td>Teilweise</td>
+                <td><strong>Inklusive</strong></td>
+            </tr>
 
-                <tr>
-                    <td>Anschaffung</td>
-                    <td>❌ Hohe Investition</td>
-                    <td>⚠️ Leasingrate</td>
-                    <td>✅ ab 98 €</td>
-                </tr>
+            <tr>
+                <td>Befüllung</td>
+                <td>Selbst</td>
+                <td>Selbst</td>
+                <td><strong>Inklusive</strong></td>
+            </tr>
 
-                <tr>
-                    <td>Wartung</td>
-                    <td>❌ Zusatzkosten</td>
-                    <td>⚠️ Je nach Vertrag</td>
-                    <td>✅ Inklusive</td>
-                </tr>
+            <tr>
+                <td>Technischer Service</td>
+                <td>Eigenverantwortung</td>
+                <td>Teilweise</td>
+                <td><strong>Inklusive</strong></td>
+            </tr>
 
-                <tr>
-                    <td>Lieferung</td>
-                    <td>❌ Selbst organisieren</td>
-                    <td>⚠️ Teilweise</td>
-                    <td>✅ Inklusive</td>
-                </tr>
+            <tr>
+                <td>Ansprechpartner</td>
+                <td>—</td>
+                <td>Hotline</td>
+                <td><strong>Persönlich</strong></td>
+            </tr>
 
-                <tr>
-                    <td>Befüllung</td>
-                    <td>❌ Selbst</td>
-                    <td>❌ Selbst</td>
-                    <td>✅ Inklusive</td>
-                </tr>
+        </table>
 
-                <tr>
-                    <td>Technischer Service</td>
-                    <td>❌ Eigenverantwortung</td>
-                    <td>⚠️ Teilweise</td>
-                    <td>✅ Inklusive</td>
-                </tr>
-
-                <tr>
-                    <td>Ansprechpartner</td>
-                    <td>❌ —</td>
-                    <td>⚠️ Hotline</td>
-                    <td>✅ Persönlich</td>
-                </tr>
-
-</tbody>
-
-</table>
-
-</div>
+    </div>
 
 </div>
 
@@ -2019,22 +2013,24 @@ PREISE
 .price-table{
     width:100%;
     border-collapse:collapse;
-    table-layout:fixed;
+    margin-top:25px;
+    overflow:hidden;
+    border-radius:18px;
 }
 
 .price-table th{
     background:#d4af37;
     color:#111;
-    padding:16px;
+    padding:18px;
     font-size:18px;
+    font-weight:700;
 }
 
 .price-table td{
-    padding:16px;
-    border:1px solid rgba(212,175,55,.15);
+    padding:18px;
+    border-bottom:1px solid rgba(255,255,255,.08);
     text-align:center;
-    background:#151515;
-    font-size:16px;
+    background:#1b1b1b;
 }
 
 .price-table td:first-child{
@@ -2043,30 +2039,33 @@ PREISE
     color:#fff;
 }
 
-.price-table th{
-    background:#d4af37;
-    color:#111;
-    font-weight:700;
+.price-table tr:hover td{
+    background:#222;
 }
 
-.price-table td{
-    background:#151515;
+.price-table td:last-child{
+    color:#d4af37;
+    font-weight:700;
 }
   
 @media(max-width:1000px){
 
-.price-grid{
-    display:flex;
-    flex-direction:column;
-    gap:25px;
-}
+    .price-grid{
+        display:flex;
+        flex-direction:column;
+        gap:25px;
+    }
 
-.price-card{
-    width:100%;
-}
+    .price-card{
+        width:100%;
+    }
 
-.price-table{
-    width:100%;
+    .price-table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
 }
 
 .price-table table{
