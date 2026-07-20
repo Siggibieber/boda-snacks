@@ -2045,14 +2045,34 @@ font-weight:700;
 background:#151515;
 }
 
+
 @media(max-width:1000px){
 
 .price-grid{
-grid-template-columns:1fr;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.price-card{
+    width:100%;
 }
 
 .price-table{
-font-size:14px;
+    width:100%;
+}
+
+.price-table table{
+    width:100%;
+    min-width:0;
+    table-layout:fixed;
+}
+
+.price-table th,
+.price-table td{
+    padding:8px;
+    font-size:13px;
+    word-break:break-word;
 }
 
 }
