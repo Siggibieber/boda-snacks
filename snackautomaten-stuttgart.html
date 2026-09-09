@@ -1685,30 +1685,29 @@ ABSCHLUSS CTA
 
 <div class="final-video">
 
-<video autoplay muted loop playsinline>
-    <source src="kaffee-croissant.mp4" type="video/mp4">
-</video>
+<img
+src="boda-automat.jpg"
+alt="Moderner Snack- und Getränkeautomat von BODA Snacks">
 
 <div class="video-overlay">
 
 <h2>
-Bereit für Ihren
-<span class="gold">Snackautomaten?</span>
+Bereit für eine bessere
+<span class="gold">Pausenversorgung?</span>
 </h2>
 
 <p>
-Frischer Kaffee, leckere Snacks und kalte Getränke –
-mit einem Versorgungskonzept, das zu Ihrem Standort und Ihren Anforderungen passt.
+Snacks und Getränke direkt im Unternehmen: Wir prüfen kostenlos, welches Automatenkonzept für Ihren Standort in Stuttgart sinnvoll und wirtschaftlich ist.
 </p>
 
 <div class="hero-trust">
-<span>✔ Transparentes Angebot vor der Entscheidung</span>
-<span>✔ Persönlicher Service nach Vereinbarung</span>
-<span>✔ Kostenlose Standortprüfung</span>
+<span>✔ Kein Rätselraten: klares Konzept vor der Entscheidung</span>
+<span>✔ Persönliche Ansprechpartner aus der Region</span>
+<span>✔ Sortiment und Service passend geplant</span>
 </div>
 
 <a href="#kontakt" class="btn-primary">
-Jetzt kostenlose Standortprüfung starten
+Kostenloses Angebot für Stuttgart anfragen
 </a>
 
 </div>
@@ -2071,7 +2070,7 @@ box-shadow:
 
 }
 
-.final-video video{
+.final-video img{
 
 width:100%;
 
@@ -2935,15 +2934,6 @@ document.addEventListener("DOMContentLoaded", () => {
         heroVideo.play().catch(() => {});
     }
 
-    const finalVideo = document.querySelector(".final-video video");
-
-    if (finalVideo) {
-        finalVideo.muted = true;
-        finalVideo.playsInline = true;
-        finalVideo.playbackRate = 0.7;
-
-        finalVideo.play().catch(() => {});
-    }
 });
   
 </script>
