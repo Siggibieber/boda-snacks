@@ -69,6 +69,11 @@
       .foot a { color:var(--gold); font-weight:bold; text-decoration:none; }
       @media (max-width:900px) { .links { display:none; } .hero-grid,.intro,.contact { grid-template-columns:1fr; } .hero { padding-top:48px; text-align:center; } .actions { justify-content:center; } .hero-image { order:-1; } .hero-image img { max-width:330px; } .checks { grid-template-columns:1fr; } .grid { grid-template-columns:1fr 1fr; } .faq { grid-template-columns:1fr; } .heading { margin-left:0; text-align:left; } .cta { text-align:left; } }
       @media (max-width:560px) { .nav { height:74px; } .logo img { width:48px; height:48px; } .nav .btn { min-height:42px; padding:10px 14px; font-size:.82rem; } .hero { padding:35px 0; } .actions { display:grid; grid-template-columns:1fr; } .btn { width:100%; } .grid { grid-template-columns:1fr; } section { padding:58px 0; } .intro,.cta,.contact-info,.form { padding:24px 20px; } }
+    .team { display:grid; grid-template-columns:.8fr 1.2fr; gap:34px; align-items:center; padding:38px; background:linear-gradient(145deg,#191917,#0e0e0e); border:1px solid rgba(212,175,55,.3); border-radius:28px; }
+    .team-photo { width:100%; height:390px; display:block; object-fit:cover; object-position:65% center; border:1px solid rgba(212,175,55,.25); border-radius:20px; }
+    .team h2 { font-size:clamp(2rem,3.5vw,3rem); line-height:1.1; }
+    .team p { color:var(--muted); margin-top:16px; font-size:1.06rem; }
+    @media (max-width:900px) { .team { grid-template-columns:1fr; } .team-photo { height:280px; object-position:65% 40%; } }
     </style>
   </head>
   <body>
@@ -176,6 +181,19 @@
   </div>
 </div>
 </section>
+<section id="team">
+  <div class="container">
+    <div class="team">
+      <img class="team-photo" src="teamfoto(2).jpg" alt="Sandra und Andreas Boda von BODA Snacks">
+      <div>
+        <h2>Die Menschen hinter <span class="gold">BODA Snacks</span></h2>
+        <p>Wir sind Andreas und Sandra Boda. Als regionales Familienunternehmen stehen wir für direkten Kontakt, kurze Wege und eine Betreuung, bei der Sie wissen, wer sich kümmert.</p>
+        <p>Von der ersten Standortprüfung bis zur regelmäßigen Versorgung haben Sie bei uns feste Ansprechpartner – persönlich, zuverlässig und ohne anonyme Hotline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="faq">
   <div class="container">
     <div class="heading">
