@@ -19,10 +19,10 @@
       .contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:start}.contact-info{background:#111;border:1px solid #d4af3738;border-radius:22px;padding:30px}.contact-info h3{font-size:1.7rem}.contact-info p{color:var(--mu);margin:12px 0 24px}.contact-info a{color:var(--g);font-weight:bold}.item{margin-top:16px}.form{background:#111;border:1px solid #d4af3738;border-radius:22px;padding:30px}.form input,.form textarea{width:100%;background:#090909;color:#fff;border:1px solid #ffffff2c;border-radius:10px;padding:14px;margin-bottom:12px;font:inherit}.consent{display:flex;gap:10px;color:#bbb;font-size:.9rem;margin:5px 0 18px}.consent input{width:auto;margin:4px 0 0}.consent a{color:var(--g)}button.btn{border:0;cursor:pointer;font:inherit}footer{background:#090909;border-top:1px solid #d4af3729;padding:48px 0;text-align:center;color:#aaa}.foot{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:18px 0}.foot a{color:var(--g);font-weight:bold;text-decoration:none}
       @media(max-width:900px){.links{display:none}.hero-grid,.intro,.contact{grid-template-columns:1fr}.hero{text-align:center;padding-top:48px}.actions{justify-content:center}.hero-image{order:-1}.hero-image img{max-width:330px}.checks{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.faq{grid-template-columns:1fr}.heading{text-align:left;margin-left:0}.cta{text-align:left}.cta .actions{justify-content:flex-start}}@media(max-width:560px){.nav{height:74px}.logo img{width:48px;height:48px}.nav .btn{min-height:42px;padding:10px 14px;font-size:.82rem}.hero{padding:35px 0}.actions{display:grid;grid-template-columns:1fr}.btn{width:100%}.grid{grid-template-columns:1fr}section{padding:58px 0}.intro,.cta,.contact-info,.form{padding:24px 20px}}
     .team { display:grid; grid-template-columns:.8fr 1.2fr; gap:34px; align-items:center; padding:38px; background:linear-gradient(145deg,#191917,#0e0e0e); border:1px solid rgba(212,175,55,.3); border-radius:28px; }
-    .team-badge { display:grid; place-items:center; min-height:190px; border:1px solid rgba(212,175,55,.25); border-radius:20px; color:var(--gold); font-size:1.2rem; font-weight:800; text-align:center; padding:20px; }
+    .team-photo { width:100%; height:390px; display:block; object-fit:cover; object-position:65% center; border:1px solid rgba(212,175,55,.25); border-radius:20px; }
     .team h2 { font-size:clamp(2rem,3.5vw,3rem); line-height:1.1; }
     .team p { color:var(--muted); margin-top:16px; font-size:1.06rem; }
-    @media (max-width:900px) { .team { grid-template-columns:1fr; } .team-badge { min-height:110px; } }
+    @media (max-width:900px) { .team { grid-template-columns:1fr; } .team-photo { height:280px; object-position:65% 40%; } }
     </style>
   </head>
   <body>
@@ -132,7 +132,7 @@
 <section id="team">
   <div class="container">
     <div class="team">
-      <div class="team-badge">BODA Snacks<br>persönlich geführt</div>
+      <img class="team-photo" src="teamfoto(2).jpg" alt="Sandra und Andreas Boda von BODA Snacks">
       <div>
         <h2>Die Menschen hinter <span class="gold">BODA Snacks</span></h2>
         <p>Wir sind Andreas und Sandra Boda. Als regionales Familienunternehmen stehen wir für direkten Kontakt, kurze Wege und eine Betreuung, bei der Sie wissen, wer sich kümmert.</p>
