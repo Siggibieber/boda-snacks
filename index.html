@@ -1,2433 +1,2632 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Snackautomaten für Ihr Unternehmen | BODA Snacks</title>
-<meta name="description" content="Snack- und Getränkeautomaten für Ihr Unternehmen. Vollservice ohne Aufwand. BODA Snacks versorgt Mitarbeiter, Kunden und Besucher rund um die Uhr.">
-<meta name="author" content="BODA Snacks">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Getränke & Snackautomaten für Ihr Unternehmen | BODA Snacks">
-<meta property="og:description" content="Persönlicher Automatenservice für Unternehmen – mit Standortprüfung, Aufstellung und Rundum-Service.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://boda-snacks.de/">
-<meta property="og:locale" content="de_DE">
-
-<link rel="canonical" href="https://boda-snacks.de/">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "BODA Snacks",
-  "url": "https://boda-snacks.de/",
-  "logo": "https://boda-snacks.de/logo.jpg",
-  "email": "kontakt@boda-snacks.de",
-  "telephone": "+49 7231 7703719",
-  "description": "Regionaler Automatenservice für Snack- und Getränkeautomaten mit persönlichem Rundum-Service für Unternehmen.",
-  "areaServed": ["Pforzheim", "Karlsruhe", "Stuttgart", "Enzkreis", "Böblingen", "Calw"],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer service",
-    "telephone": "+49 7231 7703719",
-    "email": "kontakt@boda-snacks.de",
-    "availableLanguage": "de"
-  }
-}
-</script>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#050505;
-color:#fff;
-overflow-x:hidden;
-}
-
-:root{
---button-gold:#b8954f;
---button-gold-hover:#c6a15b;
---button-ink:#111;
-}
-
-.container{
-width:90%;
-max-width:1300px;
-margin:auto;
-}
-
-.gold{
-color:#d4af37;
-}
-
-.sr-only{
-position:absolute;
-width:1px;
-height:1px;
-padding:0;
-margin:-1px;
-overflow:hidden;
-clip:rect(0,0,0,0);
-white-space:nowrap;
-border:0;
-}
-
-/* =====================
-ULTRA PREMIUM BACKGROUND
-===================== */
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-pointer-events:none;
-background:
-radial-gradient(circle at 15% 20%, rgba(212,175,55,.01), transparent 8%),
-radial-gradient(circle at 80% 70%, rgba(212,175,55,.008), transparent 10%);
-z-index:-2;
-}
-
-/* =====================
-HEADER
-===================== */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:rgba(0,0,0,.88);
-backdrop-filter:blur(20px);
-border-bottom:1px solid rgba(212,175,55,.15);
-z-index:9999;
-}
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:12px 0;
-}
-
-.logo img{
-height:85px;
-width:85px;
-object-fit:cover;
-border-radius:50%;
-
-filter:
-drop-shadow(0 0 15px rgba(212,175,55,.4))
-drop-shadow(0 0 35px rgba(212,175,55,.25));
-}
-
-.hero-card img{
-
-width:320px;
-height:320px;
-
-animation: floatLogo 3s ease-in-out infinite;
-  
-object-fit:cover;
-
-border-radius:50%;
-
-border:4px solid #d4af37;
-
-box-shadow:
-0 0 30px rgba(212,175,55,.4),
-0 0 60px rgba(212,175,55,.2);
-
-z-index:2;
-}
-
-.nav-links{
-display:flex;
-gap:30px;
-}
-
-.nav-links a{
-color:white;
-text-decoration:none;
-font-weight:700;
-transition:.3s;
-}
-
-.nav-links a:hover{
-color:#d4af37;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible{
-outline:3px solid var(--button-gold-hover);
-outline-offset:3px;
-}
-
-.cta-nav{
-background:var(--button-gold);
-color:var(--button-ink);
-padding:11px 18px;
-border-radius:10px;
-font-weight:700;
-text-decoration:none;
-transition:background .2s ease, transform .2s ease;
-}
-
-.cta-nav:hover{
-background:var(--button-gold-hover);
-transform:translateY(-1px);
-}
-
-/* =====================
-PARTIKEL
-===================== */
-
-/* =====================
-HERO
-===================== */
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-padding-top:120px;
-position:relative;
-overflow:hidden;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:1100px;
-height:1100px;
-right:-250px;
-top:-250px;
-background:radial-gradient(circle,
-rgba(212,175,55,.35),
-transparent 70%);
-opacity:.12;
-animation:heroGlow 3s ease-in-out infinite;
-
-pointer-events: none;
-}
-
-@keyframes floatLogo {
-
-0%{
-   transform:translateY(0px);
-}
-
-50%{
-   transform:translateY(-12px);
-}
-
-100%{
-   transform:translateY(0px);
-}
-
-}
-
-@keyframes heroGlow{
-
-0%{
-transform:scale(1);
-opacity:.08;
-}
-
-50%{
-transform:scale(1.15);
-opacity:.16;
-}
-
-100%{
-transform:scale(1);
-opacity:.08;
-}
-
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.hero h1{
-font-size:clamp(42px,5.8vw,72px);
-line-height:1.05;
-font-weight:900;
-margin-bottom:25px;
-}
-
-.hero-slogan{
-font-size:clamp(24px,3vw,42px);
-font-weight:900;
-line-height:1.15;
-margin-bottom:30px;
-}
-
-.hero p{
-font-size:22px;
-line-height:1.8;
-color:#d4d4d4;
-margin-bottom:35px;
-}
-
-.buttons{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn-primary{
-background:var(--button-gold);
-color:var(--button-ink);
-padding:15px 26px;
-border-radius:10px;
-border:1px solid var(--button-gold);
-text-decoration:none;
-font-weight:700;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-line-height:1.2;
-box-shadow:0 8px 22px rgba(0,0,0,.22);
-transition:background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
-}
-
-.btn-primary:hover{
-background:var(--button-gold-hover);
-border-color:var(--button-gold-hover);
-transform:translateY(-2px);
-box-shadow:0 12px 28px rgba(0,0,0,.28);
-}
-
-.btn-secondary{
-border:1px solid rgba(184,149,79,.8);
-background:transparent;
-color:#f5f5f5;
-padding:15px 26px;
-border-radius:10px;
-text-decoration:none;
-font-weight:700;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-line-height:1.2;
-transition:background .2s ease, border-color .2s ease, transform .2s ease;
-}
-
-.btn-secondary:hover{
-background:#171717;
-border-color:var(--button-gold-hover);
-transform:translateY(-2px);
-}
-
-.hero-card{
-height:600px;
-border-radius:35px;
-background:linear-gradient(145deg,#101010,#1a1a1a);
-border:1px solid rgba(212,175,55,.2);
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-overflow:visible;
-box-shadow:0 0 50px rgba(212,175,55,.15);
-}
-
-.hero-card img{
-
-width:320px;
-height:320px;
-
-object-fit:cover;
-
-border-radius:50%;
-
-border:4px solid #d4af37;
-
-box-shadow:
-0 0 30px rgba(212,175,55,.4),
-0 0 60px rgba(212,175,55,.2);
-
-z-index:2;
-}
-
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Snackautomaten für Unternehmen mit Vollservice | BODA Snacks</title>
+  <meta name="description" content="Snack- und Getränkeautomaten für Ihr Unternehmen: BODA Snacks übernimmt Aufstellung, Befüllung und Betreuung. Jetzt Standort in Pforzheim und der Region kostenlos prüfen lassen.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://boda-snacks.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://boda-snacks.de/">
+  <meta property="og:title" content="Gute Pausen. Ganz einfach. | BODA Snacks">
+  <meta property="og:description" content="Snack- und Getränkeautomaten für Unternehmen. Persönlich geplant und rundum betreut – von BODA Snacks aus Pforzheim.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"BODA Snacks","legalName":"BODA Snacks GbR","url":"https://boda-snacks.de/","logo":"https://boda-snacks.de/logo.jpg","email":"kontakt@boda-snacks.de","telephone":"+4972317703719","areaServed":["Pforzheim","Enzkreis","Karlsruhe","Stuttgart","Böblingen","Calw"],"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+4972317703719","email":"kontakt@boda-snacks.de","availableLanguage":"de"}}
+  </script>
+  <style>
+    :root { color-scheme:light; --ink:#202821; --muted:#596159; --gold:#88601f; --gold-fill:#dbb86e; --gold-hover:#cdA456; --paper:#fff; --soft:#f5f7f5; --line:#dce2dc; --green:#244b39; --radius:20px; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:105px; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.65; -webkit-text-size-adjust:100%; }
+    img { display:block; max-width:100%; height:auto; }
+    a { color:inherit; text-underline-offset:4px; }
+    button,input,select,textarea { font:inherit; }
+    button,a,input,select,textarea,summary { -webkit-tap-highlight-color:transparent; }
+    button { cursor:pointer; }
+    :focus-visible { outline:3px solid #346b50; outline-offset:4px; }
+    [hidden] { display:none!important; }
+    h1,h2,h3,p,figure { margin:0; }
+    h1,h2,h3 { line-height:1.12; }
+    h1 { font-size:clamp(2.5rem,4.8vw,4.25rem); letter-spacing:-.045em; font-weight:750; }
+    h2 { font-size:clamp(2rem,3.3vw,2.8rem); letter-spacing:-.035em; }
+    h3 { font-size:1.25rem; letter-spacing:-.02em; }
+    p { color:var(--muted); }
+    .wrap { width:min(1180px,calc(100% - 64px)); margin-inline:auto; }
+    .section { padding-block:88px; }
+    .soft { background:var(--soft); }
+    .eyebrow { display:block; margin-bottom:18px; color:var(--gold); font-size:.8125rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    .section-head { max-width:660px; margin-bottom:38px; }
+    .section-head p { margin-top:18px; font-size:1.0625rem; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:52px; padding:13px 22px; border:1px solid transparent; border-radius:9px; background:var(--gold-fill); color:#24271f; font-size:.9375rem; font-weight:700; text-align:center; text-decoration:none; line-height:1.45; transition:background .18s,box-shadow .18s; }
+    .btn:hover { background:var(--gold-hover); box-shadow:0 4px 14px #20282112; }
+    .btn.secondary { background:#fff; border-color:#cbd3cb; }
+    .btn.secondary:hover { background:#f1f4f1; }
+    .text-link { display:inline-flex; align-items:center; gap:10px; font-weight:700; color:var(--green); }
+    .skip-link { position:fixed; left:20px; top:-100px; padding:12px 18px; background:#fff; z-index:120; }
+    .skip-link:focus { top:10px; }
+    .site-header { position:sticky; top:0; z-index:30; background:#fffffff5; border-bottom:1px solid var(--line); backdrop-filter:blur(14px); }
+    .nav-bar { display:flex; align-items:center; justify-content:space-between; gap:28px; min-height:88px; flex-wrap:wrap; }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+    .brand img { width:52px; height:52px; border-radius:50%; }
+    .brand-name { display:block; font-size:1.1rem; line-height:1.25; letter-spacing:.045em; font-weight:750; }
+    .brand-tag { display:block; font-size:.75rem; color:var(--muted); letter-spacing:.02em; margin-top:3px; }
+    .navigation { display:flex; align-items:center; gap:26px; }
+    .navigation a:not(.btn) { font-size:.9375rem; text-decoration:none; font-weight:600; }
+    .navigation a:not(.btn):hover { color:var(--gold); }
+    .navigation .btn { min-height:44px; padding:10px 16px; }
+    .menu-toggle { display:none; min-height:44px; padding:8px 12px; color:var(--ink); background:#fff; border:1px solid var(--line); border-radius:8px; }
+    .hero { padding:64px 0 52px; }
+    .hero-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:65px; align-items:center; }
+    .hero-title-accent { display:block; color:var(--green); }
+    .hero-intro { margin-top:24px; font-size:1.125rem; line-height:1.75; max-width:535px; }
+    .hero-intro strong { color:var(--ink); font-weight:600; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .hero-note { margin-top:15px; font-size:.875rem; }
+    .hero-visual { position:relative; border-radius:26px; background:#edf0eb; padding:12px; }
+    .hero-image-frame { overflow:hidden; border-radius:18px; }
+    .hero-photo { width:100%; height:516px; object-fit:cover; object-position:55% 48%; transform:scale(1.18); }
+    .hero-caption { padding:9px 6px 0; text-align:center; font-size:.75rem; color:#5b635b; line-height:1.5; }
+    .service-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:25px; margin-top:48px; padding-top:24px; border-top:1px solid var(--line); }
+    .service-strip p { display:flex; gap:12px; align-items:center; font-size:.9375rem; color:var(--ink); font-weight:600; }
+    .check { color:var(--green); font-size:1.1rem; flex-shrink:0; }
+    .benefits { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+    .benefit { padding:28px 0 0; border-top:2px solid #c8d2c7; }
+    .benefit .num { display:block; color:var(--gold); font-size:.875rem; font-weight:700; margin-bottom:18px; }
+    .benefit p { margin-top:14px; }
+    .solutions { display:grid; grid-template-columns:1.1fr 1fr; gap:24px; }
+    .solution-card { display:flex; flex-direction:column; gap:20px; padding:34px; border:1px solid var(--line); border-radius:var(--radius); }
+    .solution-card.primary { background:#f3f7f3; border-color:#d5dfd4; }
+    .solution-card .label { font-size:.8125rem; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.09em; }
+    .solution-card h3 { font-size:1.7rem; }
+    .solution-card ul { margin:0 0 6px; padding-left:20px; color:var(--muted); }
+    .solution-card .text-link { margin-top:auto; align-self:flex-start; }
+    .small-links { display:flex; flex-wrap:wrap; gap:12px 24px; margin-top:23px; font-size:.875rem; color:var(--muted); }
+    .cost-layout { display:grid; grid-template-columns:1fr 1fr; gap:65px; align-items:start; }
+    .cost-layout .intro { margin:22px 0; font-size:1.0625rem; }
+    .cost-table { padding:10px 28px; background:#fff; border:1px solid var(--line); border-radius:var(--radius); }
+    .cost-row { padding:21px 0; border-bottom:1px solid var(--line); }
+    .cost-row:last-child { border-bottom:0; }
+    .cost-row strong { display:block; margin-bottom:5px; }
+    .cost-row p { font-size:.9375rem; }
+    .steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; counter-reset:steps; }
+    .step { counter-increment:steps; position:relative; padding-top:20px; border-top:1px solid var(--line); }
+    .step::before { content:"0" counter(steps); display:block; margin-bottom:22px; color:var(--gold); font-size:1.125rem; font-weight:700; }
+    .step p { margin-top:14px; }
+    .team-layout { display:grid; grid-template-columns:.83fr 1.17fr; gap:70px; align-items:center; }
+    .team-image { width:100%; max-width:370px; border-radius:var(--radius); }
+    .team-copy p { margin-top:22px; }
+    .signature { margin-top:26px; padding-top:21px; border-top:1px solid #d7dfd7; }
+    .signature strong { display:block; font-size:1.05rem; }
+    .signature span { color:var(--muted); font-size:.875rem; }
+    .region { margin-top:22px; font-size:.9375rem; }
+    .faq-layout { display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; }
+    .faq { border-top:1px solid var(--line); }
+    .faq details { border-bottom:1px solid var(--line); }
+    .faq summary { display:flex; align-items:center; justify-content:space-between; gap:24px; cursor:pointer; padding:23px 0; list-style:none; font-weight:700; line-height:1.45; }
+    .faq summary::-webkit-details-marker { display:none; }
+        /* =========================================
+       HÄUFIGE FRAGEN – AUFKLAPPBARE ANTWORTEN
+       ========================================= */
+
+    /* Pluszeichen bei geschlossener Frage */
+    .faq summary::after {
+      content: "+";
+      font-size: 1.5rem;
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    /* Minuszeichen bei geöffneter Frage */
+    .faq details[open] summary::after {
+      content: "−";
+    }
+
+    /* Abstand unter dem Antworttext */
+    .faq details p {
+      padding: 0 28px 23px 0;
+    }
+
+
+    /* =========================================
+       KONTAKTBEREICH – HINTERGRUND UND AUFBAU
+       ========================================= */
+
+    .contact-section {
+      background: #edf3ed;
+    }
+
+    /* Links Kontakttext, rechts Formular */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .83fr 1.17fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .contact-copy p {
+      margin-top: 22px;
+    }
+
+
+    /* =========================================
+       KONTAKTDATEN – TELEFON, E-MAIL, WHATSAPP
+       ========================================= */
+
+    .contact-links {
+      margin-top: 34px;
+      display: grid;
+      gap: 20px;
+    }
+
+    /* Kleine Beschriftung über den Kontaktdaten */
+    .contact-links small {
+      display: block;
+      color: var(--muted);
+      font-size: .8125rem;
+    }
+
+    .contact-links a {
+      font-size: 1.125rem;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-links .whatsapp {
+      font-size: .9375rem;
+      font-weight: 600;
+    }
+
+
+    /* =========================================
+       FORMULAR – WEISSE FLÄCHE
+       ========================================= */
+
+    .contact-form {
+      background: #fff;
+      padding: 32px;
+      border: 1px solid #d7e0d6;
+      border-radius: var(--radius);
+    }
+
+    .form-top {
+      margin-bottom: 24px;
+    }
+
+    .form-top h3 {
+      font-size: 1.375rem;
+    }
+
+    .form-top p {
+      margin-top: 7px;
+      font-size: .875rem;
+    }
+
+
+    /* =========================================
+       FORMULAR – ANORDNUNG DER FELDER
+       ========================================= */
+
+    /* Auf großen Bildschirmen zwei Spalten */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    /* Dieses Feld erstreckt sich über beide Spalten */
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+
+    /* =========================================
+       FORMULAR – BESCHRIFTUNGEN
+       ========================================= */
+
+    label.field-label {
+      display: block;
+      font-size: .875rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    /* Zusatz „optional“ neben einer Beschriftung */
+    .optional {
+      font-size: .8125rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+
+    /* =========================================
+       FORMULAR – EINGABEFELDER
+       ========================================= */
+
+    input:not([type=checkbox]):not([type=hidden]),
+    select,
+    textarea {
+      width: 100%;
+      min-width: 0;
+      min-height: 48px;
+
+      border: 1px solid #b8c4b8;
+      border-radius: 7px;
+
+      padding: 10px 12px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    /* Nachrichtenfeld lässt sich nach unten vergrößern */
+    textarea {
+      resize: vertical;
+    }
+
+    /* Beispieltexte in noch leeren Feldern */
+    input::placeholder,
+    textarea::placeholder {
+      color: #70796f;
+      opacity: 1;
+    }
+
+
+    /* =========================================
+       FORMULAR – DATENSCHUTZHINWEIS
+       ========================================= */
+
+    .privacy-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+
+      margin-block: 20px;
+
+      color: var(--muted);
+      font-size: .8125rem;
+      line-height: 1.65;
+    }
+
+    /* Ankreuzfeld */
+    .privacy-check input {
+      width: 19px;
+      height: 19px;
+      flex-shrink: 0;
+
+      margin: 3px 0 0;
+      accent-color: var(--green);
+    }
+
+
+    /* =========================================
+       FORMULAR – ABSENDEBUTTON UND RÜCKMELDUNG
+       ========================================= */
+
+    .contact-form button[type=submit] {
+      width: 100%;
+    }
+
+    .form-status {
+      margin-top: 14px;
+      font-size: .875rem;
+      color: var(--green);
+    }
+
+
+    /* =========================================
+       FUSSBEREICH – GRUNDFLÄCHE
+       ========================================= */
+
+    .site-footer {
+      padding: 48px 0 30px;
+      background: #fff;
+    }
+
+    /* Oberer Teil: Marke und weiterführende Links */
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 30px;
+      padding-bottom: 28px;
+    }
+
+    .footer-slogan {
+      margin-top: 12px;
+      max-width: 360px;
+      font-size: .9375rem;
+    }
+
+
+    /* =========================================
+       FUSSBEREICH – WEITERFÜHRENDE LINKS
+       ========================================= */
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px 24px;
+      justify-content: flex-end;
+      max-width: 520px;
+
+      font-size: .875rem;
+    }
+
+
+    /* =========================================
+       FUSSBEREICH – COPYRIGHT UND RECHTLICHES
+       ========================================= */
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      gap: 16px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+
+      font-size: .8125rem;
+      color: var(--muted);
+    }
+
+    .footer-legal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    /* Button, der optisch wie ein Textlink aussieht */
+    .link-button {
+      border: 0;
+      background: none;
+      padding: 0;
+
+      text-decoration: underline;
+      text-underline-offset: 4px;
+
+      color: inherit;
+      font-size: inherit;
+    }
+
+
+    /* =========================================
+       COOKIE-EINSTELLUNGEN – FENSTER
+       ========================================= */
+
+    .cookie-panel {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 80;
+
+      width: min(460px, calc(100% - 40px));
+      max-height: calc(100dvh - 40px);
+      overflow: auto;
+
+      padding: 24px;
+      border: 1px solid #bdc9bb;
+      border-radius: 16px;
+
+      background: #fff;
+      box-shadow: 0 12px 60px #20301d29;
+    }
+
+    .cookie-panel h2 {
+      font-size: 1.125rem;
+      letter-spacing: 0;
+    }
+
+    .cookie-panel p {
+      font-size: .875rem;
+      margin-top: 10px;
+    }
+
+
+    /* =========================================
+       COOKIE-EINSTELLUNGEN – BUTTONS
+       ========================================= */
+
+    .cookie-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    /* Beide Auswahlmöglichkeiten gleichwertig gestalten */
+    .cookie-actions button {
+      min-height: 48px;
+      padding: 10px;
+
+      background: #f2f5f1;
+      border: 1px solid #b8c4b6;
+      border-radius: 7px;
+
+      font-size: .875rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .cookie-actions button:hover {
+      background: #e3eadf;
+    }
+
+    .cookie-close {
+      display: block;
+      margin-top: 15px;
+      font-size: .8125rem;
+    }
+        /* =========================================
+       GROSSE BILDSCHIRME – AB 1500 PIXEL
+       ========================================= */
+
+    @media (min-width: 1500px) {
+
+      .hero {
+        padding-top: 78px;
+      }
+
+    }
+
+
+    /* =========================================
+       KLEINERE BILDSCHIRME – BIS 1050 PIXEL
+       ========================================= */
+
+    @media (max-width: 1050px) {
+
+      /* Abstand zwischen nebeneinanderstehenden Bereichen */
+      .hero-grid,
+      .cost-layout,
+      .contact-layout {
+        gap: 34px;
+      }
+
+      .navigation {
+        gap: 17px;
+      }
+
+      /* Kleine Zusatzzeile neben dem Logo ausblenden */
+      .brand-tag {
+        display: none;
+      }
+
+      .team-layout,
+      .faq-layout {
+        gap: 40px;
+      }
+
+    }
+
+
+    /* =========================================
+       TABLETS UND SCHMALE FENSTER – BIS 850 PIXEL
+       ========================================= */
+
+    @media (max-width: 850px) {
+
+      /* Seitenabstand: links und rechts jeweils 20 Pixel */
+      .wrap {
+        width: calc(100% - 40px);
+      }
+
+      .section {
+        padding-block: 64px;
+      }
+
+
+      /* Navigation und Logo */
+
+      .nav-bar {
+        min-height: 76px;
+        gap: 12px;
+        padding-block: 10px;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+      }
+
+      .navigation {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        gap: 14px 24px;
+        padding: 10px 0;
+      }
+
+      /* Menübutton anzeigen, wenn JavaScript verfügbar ist */
+      .js .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+
+      /* Einstiegsbereich */
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 5.8vw, 3.25rem);
+      }
+
+      .hero-photo {
+        height: 435px;
+      }
+
+      .hero-intro {
+        font-size: 1rem;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+
+      /* Vorteile und Leistungen */
+
+      .service-strip {
+        gap: 18px;
+      }
+
+      .service-strip p {
+        align-items: flex-start;
+        font-size: .875rem;
+      }
+
+      .benefits {
+        gap: 24px;
+      }
+
+      .solution-card {
+        padding: 26px;
+      }
+
+      .steps {
+        gap: 25px;
+      }
+
+
+      /* Kontakt und Fragen untereinander anordnen */
+
+      .contact-layout,
+      .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .contact-links {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 24px;
+      }
+
+      .contact-links .whatsapp {
+        grid-column: 1 / -1;
+      }
+
+      .contact-copy {
+        max-width: 650px;
+      }
+
+      .faq-layout .section-head {
+        margin-bottom: 0;
+      }
+
+    }
+
+
+    /* =========================================
+       HANDYANSICHT – BIS 600 PIXEL
+       ========================================= */
+
+    @media (max-width: 600px) {
+
+      /* Abstand beim Springen zu einem Seitenabschnitt */
+      html {
+        scroll-padding-top: 90px;
+      }
+
+      /* Seitenabstand: links und rechts jeweils 18 Pixel */
+      .wrap {
+        width: calc(100% - 36px);
+      }
+
+      /* Abstand oberhalb und unterhalb der Abschnitte */
+      .section {
+        padding-block: 54px;
+      }
+
+
+      /* Überschriften auf dem Handy */
+
+      h1 {
+        font-size: 2.65rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+
+      /* Einstiegsbereich */
+
+      .hero {
+        padding: 35px 0 32px;
+      }
+
+      /* Diese Bereiche erhalten nur noch eine Spalte */
+      .hero-grid,
+      .solutions,
+      .cost-layout,
+      .team-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero .eyebrow {
+        font-size: .75rem;
+        margin-bottom: 15px;
+      }
+
+      .hero-intro {
+        font-size: 1.0625rem;
+        margin-top: 20px;
+      }
+
+
+      /* Buttons im Einstiegsbereich */
+
+      .hero-actions {
+        margin-top: 23px;
+      }
+
+      /* Zweiten Button auf dem Handy als ruhigen Textlink zeigen */
+      .hero-actions .secondary {
+        background: transparent;
+        border: 0;
+        min-height: 40px;
+        padding: 7px;
+        text-decoration: underline;
+      }
+
+      .hero-note {
+        font-size: .8125rem;
+        text-align: center;
+        margin-top: 7px;
+      }
+
+
+      /* Automatenbild */
+
+      .hero-visual {
+        padding: 8px;
+        border-radius: 19px;
+      }
+
+      .hero-image-frame {
+        border-radius: 13px;
+      }
+
+      .hero-photo {
+        height: 340px;
+        object-position: 50% 48%;
+      }
+
+      .hero-caption {
+        font-size: .75rem;
+        padding-block: 7px 1px;
+      }
+
+
+      /* Kurze Vorteilsliste unter dem Einstieg */
+
+      .service-strip {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 28px;
+        padding-top: 23px;
+      }
+
+      .service-strip p {
+        font-size: .9375rem;
+      }
+
+
+      /* Vorteile und Ablauf */
+
+      .benefits,
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .benefit {
+        padding-top: 20px;
+      }
+
+      .benefit .num {
+        margin-bottom: 10px;
+      }
+
+      .benefit p,
+      .step p {
+        margin-top: 10px;
+      }
+
+      .step::before {
+        margin-bottom: 12px;
+      }
+
+
+      /* Angebotskarten und Kostenübersicht */
+
+      .solution-card {
+        padding: 27px 24px;
+      }
+
+      .cost-table {
+        padding: 6px 22px;
+      }
+
+
+      /* Teamvorstellung */
+
+      .team-image {
+        max-width: 320px;
+        margin-inline: auto;
+      }
+
+      /* Auf dem Handy steht der Teamtext vor dem Foto */
+      .team-copy {
+        order: -1;
+      }
+
+      .section-head {
+        margin-bottom: 30px;
+      }
+
+
+      /* Kontakt und Formular */
+
+      .contact-links {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .contact-form {
+        padding: 24px 20px;
+      }
+
+      /* Alle Formularfelder untereinander */
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+
+      /* Fußbereich */
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-nav {
+        justify-content: flex-start;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+
+      /* Cookie-Fenster mit kleineren Außenabständen */
+
+      .cookie-panel {
+        bottom: 12px;
+        left: 12px;
+        width: calc(100% - 24px);
+        padding: 20px;
+      }
+
+    }
+
+
+    /* =========================================
+       SEHR KLEINE HANDYS – BIS 360 PIXEL
+       ========================================= */
+
+    @media (max-width: 360px) {
+
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      .brand-name {
+        font-size: 1rem;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .hero-photo {
+        height: 300px;
+      }
+
+    }
+
+
+    /* =========================================
+       BARRIEREARMUT – REDUZIERTE BEWEGUNG
+       Berücksichtigt die Geräteeinstellung.
+       ========================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+
+    }
+
+
+    /* =========================================
+       DRUCKANSICHT
+       ========================================= */
+
+    @media print {
+
+      /* Bedienelemente beim Drucken ausblenden */
+      .site-header,
+      .cookie-panel,
+      .contact-form,
+      .menu-toggle {
+        display: none !important;
+      }
+
+      .section {
+        padding-block: 24px;
+      }
+
+      .hero-photo {
+        height: 340px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+    }
+
+  </style>
 </head>
 <body>
 
-<header>
+  <!-- =========================================
+       SPRUNGLINK FÜR TASTATURBEDIENUNG
+       ========================================= -->
 
-<div class="container">
-<div class="navbar">
-<div class="logo">
-<img src="logo.jpg" alt="BODA Snacks">
-</div>
-<div class="nav-links">
-<a href="#vorteile">Vorteile</a>
-<a href="#ablauf">Ablauf</a>
-<a href="#loesungen">Lösungen</a>
-<a href="#kontakt">Kontakt</a>
-</div>
-<a href="#kontakt" class="cta-nav">
-Standort prüfen
-</a>
-</div>
-</div>
-</header>
-<section class="hero">
-<div class="container">
-<div class="hero-grid">
-<div>
-<h1>
-<span class="gold"> Getränke & Snackautomaten </span><br>
-für Ihr Unternehmen
-</h1>
-<div class="hero-slogan">
-DU HAST DEN <span class="gold">HUNGER.</span><br>
-WIR DIE <span class="gold">SNACKS.</span>
-</div>
-<p>
-Bieten Sie Ihren Mitarbeitern, Kunden und Besuchern jederzeit Snacks und Getränke an – mit komplettem Rundum-Service.
-</p>
-<div class="buttons">
-<a href="#kontakt" class="btn-primary">
-kostenlose Standortprüfung
-</a>
-<a href="#vorteile" class="btn-secondary">
-Mehr erfahren
-</a>
-</div>
-</div>
-<div class="hero-card">
-<img src="logo.jpg" alt="BODA Snacks">
-</div>
-</div>
-</div>
-</section>
+  <a class="skip-link" href="#inhalt">
+    Zum Inhalt springen
+  </a>
 
-<!-- Vergleich -->
-<section id="vorteile" class="comparison">
-    <div class="container">
 
-        <h2>Warum BODA Snacks?</h2>
-        <p class="comparison-subtitle">
-            Sparen Sie Zeit, vermeiden Sie hohe Investitionen und bieten Sie Ihren
-            Mitarbeitern eine professionelle Versorgung – wir kümmern uns um den Rest.
-        </p>
+  <!-- =========================================
+       KOPFBEREICH – LOGO UND NAVIGATION
+       ========================================= -->
 
-        <div class="comparison-table">
+  <header class="site-header">
 
-            <div class="comparison-column left">
-                <h3>Eigenbewirtschaftung</h3>
+    <div class="wrap nav-bar">
 
-                <div class="comparison-item">❌ Anschaffung eines Automaten</div>
-                <div class="comparison-item">❌ Einkauf und Nachfüllung organisieren</div>
-                <div class="comparison-item">❌ Wartung und Reparaturen selbst koordinieren</div>
-                <div class="comparison-item">❌ Zeitaufwand für Mitarbeiter</div>
-                <div class="comparison-item">❌ Laufende Organisation und Verantwortung</div>
+      <!-- Logo und Firmenname -->
+      <a
+        class="brand"
+        href="#inhalt"
+        aria-label="BODA Snacks – Startseite"
+      >
+        <img
+          src="boda-logo-web.webp"
+          alt=""
+          width="52"
+          height="52"
+          decoding="async"
+        >
 
-            </div>
+        <span>
+          <span class="brand-name">
+            BODA SNACKS
+          </span>
 
-            <div class="comparison-column right">
-                <h3>Mit BODA Snacks</h3>
+          <span class="brand-tag">
+            Ihr Automatenservice aus Pforzheim
+          </span>
+        </span>
+      </a>
 
-                <div class="comparison-item">✅ Keine Anschaffungskosten</div>
-                <div class="comparison-item">✅ Kompletter Rundum-Service</div>
-                <div class="comparison-item">✅ Befüllung, Wartung und Reinigung inklusive</div>
-                <div class="comparison-item">✅ Individuelle Servicegebühr – angepasst an Unternehmensgröße und Nutzung</div>
-                <div class="comparison-item">✅ Persönlicher Ansprechpartner und schnelle Betreuung</div>
 
-            </div>
+      <!-- Menübutton für Tablet und Handy -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-controls="navigation"
+        aria-expanded="false"
+      >
+        Menü
+        <span aria-hidden="true">☰</span>
+      </button>
 
-        </div>
 
-        <div class="comparison-note">
-            <strong>Faire Preise statt Standardlösungen.</strong><br>
-            Unsere Servicegebühr richtet sich nach der Größe Ihres Unternehmens,
-            der Nutzung und der gewünschten Ausstattung. So erhalten Sie eine
-            wirtschaftliche Lösung, die wirklich zu Ihrem Betrieb passt.
-        </div>
+      <!-- Links zu den Seitenabschnitten -->
+      <nav
+        class="navigation"
+        id="navigation"
+        aria-label="Hauptnavigation"
+      >
+        <a href="#loesungen">
+          Lösungen
+        </a>
 
-    </div>
-</section>
+        <a href="#kosten">
+          Kosten &amp; Service
+        </a>
 
-<!-- =====================================
-AUTOMATENBILD
-===================================== -->
-<section>
-<div class="container">
-<div class="automatenbild">
-<img src="boda-automat.jpg" alt="BODA Snacks Automat" loading="lazy" decoding="async">
-</div>
-</div>
-</section>
-<!-- =====================================
-ABLAUF
-===================================== -->
-<section id="ablauf">
-<div class="container">
-<h2 class="section-title">
-So funktioniert's
-</h2>
-<div class="grid-3">
-<div class="card">
-<h3>1. Anfrage</h3>
-<p>
-Kontaktieren Sie uns unverbindlich per Telefon,
-WhatsApp oder E-Mail.
-</p>
-</div>
-<div class="card">
-<h3>2. Standortprüfung</h3>
-<p>
-Wir prüfen kostenlos, ob sich ein Snackautomat
-an Ihrem Standort wirtschaftlich lohnt.
-</p>
-</div>
-<div class="card">
-<h3>3. Planung</h3>
-<p>
-Gemeinsam definieren wir Standort,
-Sortiment und Versorgungskonzept.
-</p>
-</div>
-<div class="card">
-<h3>4. Aufstellung</h3>
-<p>
-Lieferung, Aufbau und Inbetriebnahme
-übernehmen wir komplett.
-</p>
-</div>
-<div class="card">
-<h3>5. Service</h3>
-<p>
-Regelmäßige Befüllung, Wartung und
-technische Betreuung inklusive.
-</p>
-</div>
-<div class="card">
-<h3>6. Profitieren</h3>
-<p>
-Ihre Mitarbeiter, Kunden und Besucher
-profitieren rund um die Uhr.
-</p>
-</div>
-</div>
-</div>
-</section>
+        <a href="#team">
+          Über uns
+        </a>
 
-<!-- Automatenbild -->
-
-<section class="automatenbild">
-
-    <div class="container">
-
-        <img src="befuellung-flughafen.jpg" alt="Snack- und Getränkeautomat von BODA Snacks" loading="lazy" decoding="async">
+        <a class="btn" href="#kontakt">
+          Standort prüfen
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
 
     </div>
 
-</section>
+  </header>
 
-<section class="warum-boda">
-    <div class="container">
 
-        <span class="section-tag">WARUM BODA SNACKS?</span>
+  <!-- =========================================
+       HAUPTINHALT DER WEBSITE
+       ========================================= -->
 
-        <h2>Persönlicher Service statt anonymer Großanbieter.</h2>
+  <main id="inhalt">
 
-        <p class="intro">
-            Wir sind ein regionaler Automatenservice aus Pforzheim. Unser Ziel ist
-            eine langfristige Zusammenarbeit mit Unternehmen, die Wert auf
-            Zuverlässigkeit, kurze Wege und einen persönlichen Ansprechpartner legen.
-        </p>
 
-        <div class="warum-grid">
+    <!-- =========================================
+         EINSTIEGSBEREICH – TEXT UND AUTOMATENBILD
+         ========================================= -->
 
-            <div class="warum-card">
-                <h3>Persönlicher Ansprechpartner</h3>
-                <p>Keine Hotline – Sie sprechen direkt mit uns.</p>
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+    >
+
+      <div class="wrap">
+
+        <div class="hero-grid">
+
+          <!-- Linke Seite: Überschrift und Beschreibung -->
+          <div>
+
+            <span class="eyebrow">
+              Snackautomaten für Unternehmen
+            </span>
+
+            <h1 id="hero-title">
+              Gute Pausen.<br>
+              <span class="hero-title-accent">
+                Ganz einfach.
+              </span>
+            </h1>
+
+            <p class="hero-intro">
+              <strong>
+                Snacks und gekühlte Getränke direkt im Betrieb.
+              </strong>
+              Wir stellen den passenden Automaten auf und kümmern
+              uns um Befüllung, Reinigung und technische Betreuung.
+            </p>
+
+
+            <!-- Buttons im Einstiegsbereich -->
+            <div class="hero-actions">
+
+              <a href="#kontakt" class="btn">
+                Standort kostenlos prüfen
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a href="#loesungen" class="btn secondary">
+                Lösungen ansehen
+              </a>
+
             </div>
 
-            <div class="warum-card">
-                <h3>Regelmäßige Befüllung</h3>
-                <p>Wir kontrollieren und befüllen Ihren Automaten zuverlässig.</p>
+            <p class="hero-note">
+              Unverbindlich anfragen. Persönlich beraten lassen.
+            </p>
+
+          </div>
+
+
+          <!-- Rechte Seite: Automatenbild -->
+          <figure class="hero-visual">
+
+            <div class="hero-image-frame">
+
+              <img
+                class="hero-photo"
+                src="boda-automat-web.webp"
+                alt="Illustration eines Snack- und Getränkeautomaten in einem Aufenthaltsbereich"
+                width="1122"
+                height="1402"
+                fetchpriority="high"
+                decoding="async"
+              >
+
             </div>
 
-            <div class="warum-card">
-                <h3>Flexible Lösungen</h3>
-                <p>Wir passen Sortiment und Service an Ihr Unternehmen an.</p>
-            </div>
+            <figcaption class="hero-caption">
+              Beispielillustration · Automat und Ausstattung
+              nach Vereinbarung
+            </figcaption>
 
-            <div class="warum-card">
-                <h3>Regional vor Ort</h3>
-                <p>Kurze Wege ermöglichen schnelle Reaktionszeiten.</p>
-            </div>
+          </figure>
 
         </div>
 
+
+        <!-- Drei kurze Vorteile unter dem Einstiegsbereich -->
+        <div
+          class="service-strip"
+          aria-label="Ihre Vorteile auf einen Blick"
+        >
+
+          <p>
+            <span class="check" aria-hidden="true">✓</span>
+            Aufstellung ohne Automatenkauf
+          </p>
+
+          <p>
+            <span class="check" aria-hidden="true">✓</span>
+            Befüllung &amp; Betreuung aus einer Hand
+          </p>
+
+          <p>
+            <span class="check" aria-hidden="true">✓</span>
+            Persönlicher Kontakt aus der Region
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         VORTEILE – ENTLASTUNG FÜR DEN BETRIEB
+         ========================================= -->
+
+    <section
+      class="section soft"
+      id="vorteile"
+      aria-labelledby="vorteile-title"
+    >
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <span class="eyebrow">
+            Mehr für Ihr Team. Weniger Organisation.
+          </span>
+
+          <h2 id="vorteile-title">
+            Sie haben den Betrieb.<br>
+            Wir kümmern uns um die Snacks.
+          </h2>
+
+        </div>
+
+
+        <div class="benefits">
+
+          <!-- Vorteil 1 -->
+          <article class="benefit">
+
+            <span class="num">
+              01 / Kurze Wege
+            </span>
+
+            <h3>
+              Die Pause bleibt eine Pause.
+            </h3>
+
+            <p>
+              Ein Getränk, etwas Süßes oder ein herzhafter Snack:
+              Ihr Team versorgt sich direkt vor Ort, ohne einen
+              zusätzlichen Einkaufsweg.
+            </p>
+
+          </article>
+
+
+          <!-- Vorteil 2 -->
+          <article class="benefit">
+
+            <span class="num">
+              02 / Entlastung im Alltag
+            </span>
+
+            <h3>
+              Kein eigener Nachfüllplan.
+            </h3>
+
+            <p>
+              Einkauf, Befüllung, Reinigung und technische Betreuung
+              übernehmen wir. Sie behalten den Kopf frei für Ihr
+              Tagesgeschäft.
+            </p>
+
+          </article>
+
+
+          <!-- Vorteil 3 -->
+          <article class="benefit">
+
+            <span class="num">
+              03 / Passendes Sortiment
+            </span>
+
+            <h3>
+              Was Ihr Team gerne mag.
+            </h3>
+
+            <p>
+              Wir stimmen die Auswahl mit Ihnen ab und passen sie
+              an die Nachfrage an. Gerät, Sortiment und Zahlungsarten
+              planen wir passend zum Standort.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         UNSERE LÖSUNGEN – SNACKS UND KAFFEE
+         ========================================= -->
+
+    <section
+      class="section"
+      id="loesungen"
+      aria-labelledby="loesungen-title"
+    >
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <span class="eyebrow">
+            Unsere Lösungen
+          </span>
+
+          <h2 id="loesungen-title">
+            Die richtige Versorgung.<br>
+            Für Ihren Arbeitsalltag.
+          </h2>
+
+          <p>
+            Ob Büro, Produktion, Werkstatt oder Lager:
+            Entscheidend ist, wie viele Menschen Ihr Angebot
+            tatsächlich nutzen.
+          </p>
+
+        </div>
+
+
+        <div class="solutions">
+
+          <!-- Angebot 1: Snacks und Getränke -->
+          <article class="solution-card primary">
+
+            <span class="label">
+              Snacks &amp; gekühlte Getränke
+            </span>
+
+            <h3>
+              Eine gute Pause beginnt direkt vor Ort.
+            </h3>
+
+            <p>
+              Ein Snack- und Getränkeautomat bündelt die kleine
+              Stärkung für zwischendurch an einem festen Platz
+              in Ihrem Betrieb.
+            </p>
+
+            <ul>
+              <li>
+                Snacks und Getränke nach gemeinsamer Auswahl
+              </li>
+
+              <li>
+                Passende Größe und Ausstattung für Ihren Standort
+              </li>
+
+              <li>
+                Aufstellung, Befüllung, Reinigung und Betreuung
+              </li>
+            </ul>
+
+            <a href="#kontakt" class="text-link">
+              Snackversorgung anfragen
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+
+          <!-- Angebot 2: Kaffee -->
+          <article class="solution-card" id="kaffee">
+
+            <span class="label">
+              Kaffee für Unternehmen
+            </span>
+
+            <h3>
+              Und dazu einen guten Kaffee.
+            </h3>
+
+            <p>
+              Ergänzen Sie Ihre Snackversorgung mit einer Kaffeelösung.
+              Gemeinsam klären wir Bedarf, Getränkeauswahl und die
+              passende Betreuung.
+            </p>
+
+            <ul>
+              <li>
+                Auswahl nach Teamgröße und täglichem Bedarf
+              </li>
+
+              <li>
+                Getränkeangebot passend zu Ihrem Unternehmen
+              </li>
+
+              <li>
+                Persönliche Beratung zu Gerät und Service
+              </li>
+            </ul>
+
+            <a
+              href="https://kaffee.boda-snacks.de/"
+              class="text-link"
+            >
+              Kaffeelösungen entdecken
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+        </div>
+
+
+        <!-- Links zu bestehenden Unterseiten -->
+        <div class="small-links">
+
+          <a href="kombi-snackautomat-fuer-unternehmen-mieten.html">
+            Mehr zu Kombiautomaten
+          </a>
+
+          <a href="lebensmittelautomat-fuer-unternehmen.html">
+            Weitere Lebensmittelautomaten
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+        <!-- =========================================
+         KOSTEN UND LEISTUNGSUMFANG
+         ========================================= -->
+
+    <section
+      class="section soft"
+      id="kosten"
+      aria-labelledby="kosten-title"
+    >
+
+      <div class="wrap cost-layout">
+
+        <!-- Linke Seite: Erklärung des Kostenmodells -->
+        <div>
+
+          <span class="eyebrow">
+            Kosten &amp; Leistungsumfang
+          </span>
+
+          <h2 id="kosten-title">
+            Ein klares Angebot.<br>
+            Bevor Sie entscheiden.
+          </h2>
+
+          <p class="intro">
+            Sie müssen keinen Automaten kaufen. Für die Versorgung
+            erstellen wir ein individuelles Angebot – abhängig von
+            Standort, Nutzung, Ausstattung und Serviceumfang.
+          </p>
+
+          <p>
+            Die Standortprüfung ist kostenlos. Eine laufende
+            Servicegebühr und die Produktpreise werden im
+            Angebot konkret benannt.
+          </p>
+
+          <!-- Link zur bestehenden Kostenseite -->
+          <p style="margin-top: 24px">
+
+            <a
+              href="was-kostet-ein-snackautomat.html"
+              class="text-link"
+            >
+              Mehr zu den Kosten
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </p>
+
+        </div>
+
+
+        <!-- Rechte Seite: Leistungen und Voraussetzungen -->
+        <div class="cost-table">
+
+          <!-- Leistungen von BODA Snacks -->
+          <div class="cost-row">
+
+            <strong>
+              Das übernehmen wir
+            </strong>
+
+            <p>
+              Planung, Aufstellung, regelmäßige Befüllung,
+              Reinigung sowie Wartung und technische Betreuung
+              im vereinbarten Umfang.
+            </p>
+
+          </div>
+
+
+          <!-- Voraussetzungen am Standort -->
+          <div class="cost-row">
+
+            <strong>
+              Das klären wir mit Ihnen
+            </strong>
+
+            <p>
+              Stellfläche, Stromanschluss, Zugänglichkeit und
+              die voraussichtliche Nutzung in Ihrem Betrieb.
+            </p>
+
+          </div>
+
+
+          <!-- Inhalte des individuellen Angebots -->
+          <div class="cost-row">
+
+            <strong>
+              Das steht in Ihrem Angebot
+            </strong>
+
+            <p>
+              Servicegebühr, Sortiment, Produktpreise,
+              Zahlungsarten und Vertragsbedingungen –
+              passend zu Ihrem Standort.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ABLAUF – IN DREI SCHRITTEN ZUM AUTOMATEN
+         ========================================= -->
+
+    <section
+      class="section"
+      id="ablauf"
+      aria-labelledby="ablauf-title"
+    >
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <span class="eyebrow">
+            So kommen wir zusammen
+          </span>
+
+          <h2 id="ablauf-title">
+            In drei Schritten<br>
+            zur besseren Pause.
+          </h2>
+
+        </div>
+
+
+        <!-- Die Nummerierung wird automatisch per CSS erzeugt -->
+        <div class="steps">
+
+          <!-- Schritt 1 -->
+          <article class="step">
+
+            <h3>
+              Standort prüfen
+            </h3>
+
+            <p>
+              Sie nennen uns Ihren Standort und die ungefähre
+              Teamgröße. Gemeinsam prüfen wir, ob und wie ein
+              Automat sinnvoll ist.
+            </p>
+
+          </article>
+
+
+          <!-- Schritt 2 -->
+          <article class="step">
+
+            <h3>
+              Angebot besprechen
+            </h3>
+
+            <p>
+              Wir stimmen Gerät, Sortiment und Service mit Ihnen
+              ab. Sie erhalten ein konkretes Angebot als
+              Entscheidungsgrundlage.
+            </p>
+
+          </article>
+
+
+          <!-- Schritt 3 -->
+          <article class="step">
+
+            <h3>
+              Aufstellen &amp; betreuen
+            </h3>
+
+            <p>
+              Nach Ihrer Zusage organisieren wir die Aufstellung
+              und übernehmen die vereinbarte laufende Betreuung.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         TEAMVORSTELLUNG – ANDREAS UND SANDRA
+         ========================================= -->
+
+    <section
+      class="section soft"
+      id="team"
+      aria-labelledby="team-title"
+    >
+
+      <div class="wrap team-layout">
+
+        <!-- Teamfoto -->
+        <img
+          class="team-image"
+          src="boda-team-web.webp"
+          alt="Sandra und Andreas Boda von BODA Snacks"
+          width="480"
+          height="640"
+          loading="lazy"
+          decoding="async"
+        >
+
+
+        <!-- Vorstellungstext -->
+        <div class="team-copy">
+
+          <span class="eyebrow">
+            Die Menschen hinter BODA Snacks
+          </span>
+
+          <h2 id="team-title">
+            Zwei Ansprechpartner.<br>
+            Ein direkter Draht.
+          </h2>
+
+          <p>
+            Wir sind Andreas und Sandra Boda aus Pforzheim.
+            Mit BODA Snacks bieten wir Unternehmen in der
+            Region eine persönlich betreute Snack- und
+            Getränkeversorgung.
+          </p>
+
+          <p>
+            Wir besprechen Ihre Anforderungen direkt mit Ihnen.
+            Dabei zählt für uns, dass Automat, Sortiment und
+            Service zum Alltag in Ihrem Unternehmen passen.
+          </p>
+
+
+          <!-- Namen und Funktion -->
+          <div class="signature">
+
+            <strong>
+              Andreas &amp; Sandra Boda
+            </strong>
+
+            <span>
+              Gesellschafter der BODA Snacks GbR
+            </span>
+
+          </div>
+
+
+          <!-- Betreuungsregion -->
+          <p class="region">
+            Für Unternehmen in Pforzheim, im Enzkreis sowie
+            im Raum Karlsruhe, Stuttgart, Böblingen und Calw.
+            Die Betreuung Ihres Standorts klären wir persönlich.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+        <!-- =========================================
+         HÄUFIGE FRAGEN
+         ========================================= -->
+
+    <section
+      class="section"
+      id="fragen"
+      aria-labelledby="fragen-title"
+    >
+
+      <div class="wrap faq-layout">
+
+        <!-- Überschrift des Fragenbereichs -->
+        <div class="section-head">
+
+          <span class="eyebrow">
+            Gut zu wissen
+          </span>
+
+          <h2 id="fragen-title">
+            Noch eine Frage?<br>
+            Hier wird es konkret.
+          </h2>
+
+        </div>
+
+
+        <!-- Fragen lassen sich durch Anklicken öffnen -->
+        <div class="faq">
+
+          <!-- Frage 1: Teamgröße -->
+          <details>
+
+            <summary>
+              Ab welcher Teamgröße ist ein Automat sinnvoll?
+            </summary>
+
+            <p>
+              Die Zahl der Mitarbeiter allein reicht für eine
+              Entscheidung nicht aus. Wir betrachten die tägliche
+              Anwesenheit, Arbeitszeiten, vorhandene Verpflegung
+              und die erwartete Nutzung. Genau dafür ist die
+              kostenlose Standortprüfung da.
+            </p>
+
+          </details>
+
+
+          <!-- Frage 2: Kosten -->
+          <details>
+
+            <summary>
+              Ist die Automatenversorgung kostenlos?
+            </summary>
+
+            <p>
+              Die Standortprüfung ist kostenlos und unverbindlich.
+              Für die laufende Versorgung erstellen wir ein
+              individuelles Angebot mit Servicegebühr und
+              Produktpreisen. So kennen Sie die Bedingungen
+              vor einer Beauftragung.
+            </p>
+
+          </details>
+
+
+          <!-- Frage 3: Betreuung -->
+          <details>
+
+            <summary>
+              Wer kümmert sich um Befüllung und Störungen?
+            </summary>
+
+            <p>
+              Befüllung, Reinigung und technische Betreuung
+              übernehmen wir im vereinbarten Serviceumfang.
+              Bei einer Störung melden Sie sich direkt bei uns.
+              Erreichbarkeit und Serviceleistungen halten wir
+              im Angebot beziehungsweise Vertrag fest.
+            </p>
+
+          </details>
+
+
+          <!-- Frage 4: Sortiment -->
+          <details>
+
+            <summary>
+              Können Mitarbeiter bei der Auswahl mitreden?
+            </summary>
+
+            <p>
+              Ja. Wir stimmen das Sortiment mit Ihnen ab und
+              berücksichtigen Wünsche sowie die tatsächliche
+              Nachfrage. Was sich gut verkauft, kann bleiben;
+              die übrige Auswahl passen wir gemeinsam an.
+            </p>
+
+          </details>
+
+
+          <!-- Frage 5: Zahlungsarten -->
+          <details>
+
+            <summary>
+              Sind Karte und kontaktloses Bezahlen möglich?
+            </summary>
+
+            <p>
+              Die Zahlungsarten hängen vom gewählten Automaten
+              und seiner Ausstattung ab. Wir klären vorab,
+              welche Möglichkeiten für Ihren Standort verfügbar
+              sind, und nehmen diese in das Angebot auf.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         KONTAKT – KOSTENLOSE STANDORTPRÜFUNG
+         ========================================= -->
+
+    <section
+      class="section contact-section"
+      id="kontakt"
+      aria-labelledby="kontakt-title"
+    >
+
+      <div class="wrap contact-layout">
+
+        <!-- Linke Seite: Text und Kontaktdaten -->
+        <div class="contact-copy">
+
+          <span class="eyebrow">
+            Kostenlose Standortprüfung
+          </span>
+
+          <h2 id="kontakt-title">
+            Passt ein Automat<br>
+            zu Ihrem Betrieb?
+          </h2>
+
+          <p>
+            Erzählen Sie uns kurz von Ihrem Standort.
+            Wir besprechen mit Ihnen, welche Versorgung
+            infrage kommt und wie ein passendes Angebot
+            aussehen kann.
+          </p>
+
+          <p>
+            <strong>
+              Die Anfrage ist kostenlos und unverbindlich.
+            </strong>
+            Sie beauftragen damit noch keine Aufstellung.
+          </p>
+
+
+          <!-- Direkte Kontaktmöglichkeiten -->
+          <div class="contact-links">
+
+            <!-- Telefon -->
+            <div>
+
+              <small>
+                Direkt anrufen
+              </small>
+
+              <a href="tel:+4972317703719">
+                07231 7703719
+              </a>
+
+            </div>
+
+
+            <!-- E-Mail -->
+            <div>
+
+              <small>
+                Eine E-Mail schreiben
+              </small>
+
+              <a href="mailto:kontakt@boda-snacks.de">
+                kontakt@boda-snacks.de
+              </a>
+
+            </div>
+
+
+            <!-- WhatsApp -->
+            <a
+              class="whatsapp"
+              href="https://wa.me/491778675852"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Lieber per WhatsApp? Nachricht schreiben ↗
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             RECHTE SEITE – ANFRAGEFORMULAR
+             ===================================== -->
+
+        <form
+          class="contact-form"
+          id="standort-form"
+          action="https://formsubmit.co/kontakt@boda-snacks.de"
+          method="POST"
+        >
+
+          <!-- Formularüberschrift -->
+          <div class="form-top">
+
+            <h3>
+              Ihr Standort in wenigen Angaben
+            </h3>
+
+            <p>
+              Mit * markierte Angaben benötigen wir für Ihre Anfrage.
+            </p>
+
+          </div>
+
+
+          <!-- =================================
+               TECHNISCHE FORMULAREINSTELLUNGEN
+               Für Besucher nicht sichtbar.
+               ================================= -->
+
+          <!-- CAPTCHA bleibt wie bisher deaktiviert -->
+          <input
+            type="hidden"
+            name="_captcha"
+            value="false"
+          >
+
+          <!-- Betreff der eingehenden Anfrage -->
+          <input
+            type="hidden"
+            name="_subject"
+            value="Neue Standortanfrage von boda-snacks.de"
+          >
+
+          <!-- Weiterleitung nach erfolgreichem Versand -->
+          <input
+            type="hidden"
+            name="_next"
+            value="https://boda-snacks.de/danke.html"
+          >
+
+          <!-- Darstellung der Anfrage in der E-Mail -->
+          <input
+            type="hidden"
+            name="_template"
+            value="table"
+          >
+
+          <!-- Verstecktes Feld als zusätzlicher Spamschutz -->
+          <input
+            type="text"
+            name="_honey"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="display: none"
+          >
+
+
+          <!-- =================================
+               SICHTBARE FORMULARFELDER
+               ================================= -->
+
+          <div class="form-grid">
+
+            <!-- Name: Pflichtfeld -->
+            <div class="field">
+
+              <label class="field-label" for="name">
+                Ihr Name *
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                maxlength="150"
+              >
+
+            </div>
+
+
+            <!-- Unternehmen: freiwillige Angabe -->
+            <div class="field">
+
+              <label class="field-label" for="firma">
+                Unternehmen
+                <span class="optional">(optional)</span>
+              </label>
+
+              <input
+                id="firma"
+                name="Unternehmen"
+                autocomplete="organization"
+                maxlength="180"
+              >
+
+            </div>
+
+
+            <!-- E-Mail: Pflichtfeld -->
+            <div class="field">
+
+              <label class="field-label" for="email">
+                E-Mail *
+              </label>
+
+              <!-- name="email" wird vom Formulardienst benötigt -->
+              <input
+                id="email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+                maxlength="254"
+              >
+
+            </div>
+
+
+            <!-- Telefonnummer: freiwillige Angabe -->
+            <div class="field">
+
+              <label class="field-label" for="telefon">
+                Telefon
+                <span class="optional">(optional)</span>
+              </label>
+
+              <input
+                id="telefon"
+                type="tel"
+                name="Telefon"
+                autocomplete="tel"
+                maxlength="40"
+              >
+
+            </div>
+
+
+            <!-- Standort: Pflichtfeld -->
+            <div class="field">
+
+              <label class="field-label" for="standort">
+                PLZ / Ort des Standorts *
+              </label>
+
+              <input
+                id="standort"
+                name="Standort"
+                placeholder="z. B. 75175 Pforzheim"
+                required
+                maxlength="180"
+              >
+
+            </div>
+
+
+            <!-- Tägliche Nutzerzahl: freiwillige Angabe -->
+            <div class="field">
+
+              <label class="field-label" for="teamgroesse">
+                Personen vor Ort
+                <span class="optional">(optional)</span>
+              </label>
+
+              <select
+                id="teamgroesse"
+                name="Personen pro Tag"
+              >
+                <option value="">
+                  Bitte auswählen
+                </option>
+
+                <option>Unter 30</option>
+                <option>30–49</option>
+                <option>50–99</option>
+                <option>100–199</option>
+                <option>200 oder mehr</option>
+                <option>Noch nicht bekannt</option>
+              </select>
+
+            </div>
+
+
+            <!-- Nachricht über die gesamte Formularbreite -->
+            <div class="field full">
+
+              <label class="field-label" for="nachricht">
+                Was wünschen Sie sich?
+                <span class="optional">(optional)</span>
+              </label>
+
+              <textarea
+                id="nachricht"
+                name="Nachricht"
+                rows="3"
+                maxlength="5000"
+                placeholder="Snacks, Getränke oder Kaffee? Gibt es bereits eine Versorgung?"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================
+               DATENSCHUTZHINWEIS
+               ================================= -->
+
+          <label class="privacy-check">
+
+            <input
+              type="checkbox"
+              name="Datenschutzhinweis gelesen"
+              required
+            >
+
+            <span>
+              Ich habe die
+              <a
+                href="datenschutz.html"
+                target="_blank"
+                rel="noopener"
+              >Datenschutzerklärung</a>
+              gelesen. Meine Angaben werden zur Bearbeitung
+              der Anfrage über den Formulardienst FormSubmit
+              übermittelt. *
+            </span>
+
+          </label>
+
+
+          <!-- =================================
+               ABSENDEBUTTON
+               ================================= -->
+
+          <button class="btn" type="submit">
+            Standort kostenlos prüfen lassen
+            <span aria-hidden="true">↗</span>
+          </button>
+
+
+          <!-- Rückmeldung für den Vorschau-Modus -->
+          <p
+            class="form-status"
+            id="form-status"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+    <!-- =========================================
+       FUSSBEREICH – MARKE UND WEITERE LINKS
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <div class="wrap">
+
+      <div class="footer-top">
+
+        <!-- Firmenname und Slogan -->
+        <div>
+
+          <strong class="brand-name">
+            BODA SNACKS
+          </strong>
+
+          <p class="footer-slogan">
+            Du hast den Hunger, wir die Snacks.<br>
+            Ihr Automatenservice aus Pforzheim.
+          </p>
+
+        </div>
+
+
+        <!-- Weiterführende Links -->
+        <nav
+          class="footer-nav"
+          aria-label="Weitere Informationen"
+        >
+
+          <a href="#loesungen">
+            Unsere Lösungen
+          </a>
+
+          <a href="#ablauf">
+            So funktioniert’s
+          </a>
+
+          <a href="automatenservice-pforzheim.html">
+            Service in Pforzheim
+          </a>
+
+          <a href="was-kostet-ein-snackautomat.html">
+            Kosten &amp; Planung
+          </a>
+
+        </nav>
+
+      </div>
+
+
+      <!-- =====================================
+           COPYRIGHT UND RECHTLICHE LINKS
+           ===================================== -->
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 BODA Snacks GbR
+        </span>
+
+        <div class="footer-legal">
+
+          <a href="impressum.html">
+            Impressum
+          </a>
+
+          <a href="datenschutz.html">
+            Datenschutz
+          </a>
+
+          <!-- Wird durch JavaScript eingeblendet -->
+          <button
+            class="link-button"
+            type="button"
+            id="cookie-settings"
+            hidden
+          >
+            Cookie-Einstellungen
+          </button>
+
+        </div>
+
+      </div>
+
     </div>
-</section>
-<!-- =====================================
-PREMIUM CTA
-===================================== -->
-<section>
-<div class="container">
-<div class="premium-box">
-<h2>
-DU HAST DEN <span class="gold">HUNGER.</span><br>
-WIR DIE <span class="gold">SNACKS.</span>
-</h2>
-<p>
-Moderne Snackversorgung für Unternehmen –
-ohne Aufwand und mit
-persönlichem Rundum-Service.
-</p>
-<a href="#kontakt" class="btn-primary">
-Kostenlose Standortprüfung starten
-</a>
-</div>
-</div>
-</section>
-<style>
-
-/* =====================================
-PREMIUM CARDS
-===================================== */
-
-section{
-padding:120px 0;
-}
-
-.section-title{
-font-size:58px;
-text-align:center;
-margin-bottom:70px;
-font-weight:900;
-}
-
-.grid-3{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.card{
-background:linear-gradient(145deg,#111,#181818);
-padding:35px;
-border-radius:25px;
-border:1px solid rgba(212,175,55,.15);
-transition:.4s;
-position:relative;
-overflow:hidden;
-
-display:flex;
-flex-direction:column;
-min-height:380px;
-}
-
-.card::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(212,175,55,.10),
-transparent
-);
-transition:.8s;
-}
-
-.card:hover::before{
-left:100%;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#d4af37;
-box-shadow:
-0 0 25px rgba(212,175,55,.15),
-0 0 50px rgba(212,175,55,.08);
-}
-
-.card h3{
-color:#d4af37;
-font-size:26px;
-margin-bottom:18px;
-}
-
-.card p{
-line-height:1.9;
-color:#d5d5d5;
-margin-bottom:30px;
-}
-
-/* =====================================
-AUTOMATENBILD
-===================================== */
 
-.automatenbild{
-position:relative;
-overflow:hidden;
-border-radius:25px;
+  </footer>
 
-max-width:900px;
-margin:0 auto;
-}
 
-.automatenbild img{
-width:100%;
-display:block;
-border-radius:25px;
-}
+  <!-- =========================================
+       COOKIE-FENSTER – DATENSCHUTZEINSTELLUNGEN
+       Die Steuerung folgt im JavaScript-Block.
+       ========================================= -->
 
-.automatenbild::after{
-content:"";
-position:absolute;
-top:0;
-left:-150%;
-width:60%;
-height:100%;
+  <aside
+    class="cookie-panel"
+    id="cookie-panel"
+    aria-labelledby="cookie-title"
+    hidden
+  >
 
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(212,175,55,.15),
-rgba(255,215,0,.45),
-rgba(212,175,55,.15),
-transparent
-);
+    <!-- Überschrift -->
+    <h2 id="cookie-title">
+      Ihre Datenschutzeinstellungen
+    </h2>
 
-transform:skewX(-25deg);
 
-animation:goldSweep 10s infinite;
-}
+    <!-- Erklärung zur optionalen Analyse -->
+    <p>
+      Mit Ihrer Zustimmung verwenden wir Google Analytics,
+      um die Nutzung unserer Website auszuwerten.
+      Ohne Zustimmung bleibt die Analyse ausgeschaltet.
+      Sie können Ihre Auswahl jederzeit über
+      „Cookie-Einstellungen“ ändern.
+    </p>
 
-@keyframes goldSweep{
 
-0%{
-left:-150%;
-}
+    <!-- Link zur Datenschutzerklärung -->
+    <p>
+      <a href="datenschutz.html">
+        Informationen zum Datenschutz
+      </a>
+    </p>
 
-30%{
-left:150%;
-}
 
-100%{
-left:150%;
-}
+    <!-- Gleichwertige Auswahlmöglichkeiten -->
+    <div class="cookie-actions">
 
-}
+      <button
+        id="cookie-decline"
+        type="button"
+      >
+        Ohne Analyse
+      </button>
 
-/* =====================================
-PREMIUM BOX
-===================================== */
+      <button
+        id="cookie-accept"
+        type="button"
+      >
+        Analyse erlauben
+      </button>
 
-.premium-box{
+    </div>
 
-max-width:1100px;
 
-margin:auto;
+    <!-- Beim erneuten Öffnen bestehende Auswahl beibehalten -->
+    <button
+      class="link-button cookie-close"
+      id="cookie-close"
+      type="button"
+      hidden
+    >
+      Schließen, Auswahl beibehalten
+    </button>
 
-padding:70px;
+  </aside>
+    <!-- =========================================
+       JAVASCRIPT – FUNKTIONEN DER WEBSITE
+       ========================================= -->
 
-text-align:center;
+  <script>
+    (() => {
+      'use strict';
 
-border-radius:35px;
 
-background:
-linear-gradient(
-145deg,
-rgba(212,175,55,.08),
-#121212
-);
+      /* =========================================
+         GRUNDEINSTELLUNGEN
+         ========================================= */
 
-border:1px solid rgba(212,175,55,.15);
+      // Aktiviert unter anderem die Darstellung des Mobilmenüs.
+      document.documentElement.classList.add('js');
 
-}
+      // Lokal geöffnete Dateien laufen im Vorschau-Modus.
+      // Auch data-preview="true" am HTML-Element aktiviert ihn.
+      const preview =
+        document.documentElement.dataset.preview === 'true' ||
+        location.protocol === 'file:';
 
-.premium-box h2{
 
-font-size:56px;
+      /* =========================================
+         NAVIGATION – ELEMENTE UND BILDSCHIRMBREITE
+         ========================================= */
 
-line-height:1.1;
-
-margin-bottom:25px;
-
-}
-
-.premium-box p{
-
-font-size:24px;
-
-line-height:1.8;
-
-max-width:850px;
-
-margin:auto;
-
-margin-bottom:35px;
-
-color:#d8d8d8;
-
-}
-.automatenbild {
-    padding: 60px 20px;
-    background: #111;
-}
-
-.automatenbild .container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.automatenbild img {
-    width: 100%;
-    display: block;
-    border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(0,0,0,.35);
-}
-
-.warum-boda{
-    padding:90px 20px;
-    background:#0f0f0f;
-    text-align:center;
-}
-
-.section-tag{
-    color:#d4af37;
-    font-weight:700;
-    letter-spacing:2px;
-    font-size:.9rem;
-}
-
-.warum-boda h2{
-    color:#fff;
-    margin:15px 0 20px;
-    font-size:2.2rem;
-}
-
-.intro{
-    max-width:800px;
-    margin:0 auto 50px;
-    color:#cfcfcf;
-    line-height:1.8;
-}
-
-.warum-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
-}
-
-.warum-card{
-    background:#181818;
-    padding:30px;
-    border-radius:18px;
-    border:1px solid rgba(212,175,55,.25);
-    transition:.3s;
-}
-
-.warum-card:hover{
-    transform:translateY(-6px);
-    border-color:#d4af37;
-}
-
-.warum-card h3{
-    color:#d4af37;
-    margin-bottom:15px;
-}
-
-.warum-card p{
-    color:#ddd;
-    line-height:1.7;
-}
-</style>
-
-<!-- =====================================
-TEAM BODA
-===================================== -->
-<section id="team">
-<div class="container">
-<h2 class="section-title">
-Die Menschen hinter
-<span class="gold">BODA Snacks</span>
-</h2>
-<div class="team-card">
-
-<div class="team-image">
-<img
-src="teamfoto.jpg"
-alt="Andreas und Sandra Boda"
-loading="lazy"
-decoding="async"
-draggable="false">
-
-</div>
-<div class="team-content">
-<h3>
-Andreas & Sandra Boda
-</h3>
-<p>
-Als Familienunternehmen stehen wir für
-persönliche Betreuung, schnelle Reaktionszeiten
-und direkten Kontakt.
-
-Von der kostenlosen Standortprüfung bis zur
-regelmäßigen Befüllung erhalten Sie bei uns
-alles aus einer Hand.
-
-</p>
-<p>
-Unser Ziel ist es, Unternehmen eine moderne
-Versorgung mit Snacks und Getränken zu bieten –
-einfach, zuverlässig und ohne Aufwand.
-
-</p>
-</div>
-</div>
-</div>
-</section>
-<!-- =====================================
-BODA IN ZAHLEN
-===================================== -->
-<section id="zahlen">
-<div class="container">
-<h2 class="section-title">
-BODA Snacks in Zahlen
-</h2>
-<div class="grid-3">
-<div class="card stats-card">
-<h3>100%</h3>
-<p>
-Vollservice ohne Aufwand
-für Ihr Unternehmen
-</p>
-</div>
-<div class="card stats-card">
-<h3>24/7</h3>
-<p>
-Snacks und Getränke
-jederzeit verfügbar
-</p>
-</div>
-<div class="card stats-card">
-<h3>Persönlich</h3>
-<p>
-Schnelle Betreuung 
-aus Ihrer Region
-</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- =====================================
-VERTRAUENSBEREICH
-===================================== -->
-<section>
-<div class="container">
-<div class="trust-box">
-<h2>
-Warum Unternehmen
-BODA Snacks
-vertrauen
-
-</h2>
-<p>
-Persönlicher Ansprechpartner,
-schnelle Reaktionszeiten,
-regelmäßige Befüllung,
-moderne Automaten
-und ein Service,
-der sich um alles kümmert.
-
-</p>
-</div>
-</div>
-</section>
-<style>
-
-/* =====================================
-TEAM SECTION
-===================================== */
+      const navigation = document.getElementById('navigation');
+      const toggle = document.querySelector('.menu-toggle');
 
-.team-card{
+      // Muss zur Grenze von 850 Pixeln im CSS passen.
+      const mobile = matchMedia('(max-width:850px)');
 
-display:grid;
 
-grid-template-columns:1fr 1fr;
+      /* =========================================
+         NAVIGATION – MENÜ SCHLIESSEN
+         ========================================= */
 
-gap:60px;
+      const closeMenu = () => {
+        navigation.hidden = mobile.matches;
+        toggle.setAttribute('aria-expanded', 'false');
+      };
 
-align-items:center;
+      // Richtigen Zustand beim Laden herstellen.
+      closeMenu();
 
-background:
-linear-gradient(
-145deg,
-#101010,
-#181818
-);
+      // Bei Wechsel zwischen Handy- und Desktopbreite anpassen.
+      mobile.addEventListener('change', closeMenu);
 
-border-radius:35px;
 
-padding:60px;
+      /* =========================================
+         NAVIGATION – MENÜBUTTON
+         ========================================= */
 
-border:1px solid rgba(212,175,55,.15);
+      toggle.addEventListener('click', () => {
+        const open =
+          toggle.getAttribute('aria-expanded') !== 'true';
 
-}
+        toggle.setAttribute('aria-expanded', String(open));
+        navigation.hidden = !open;
+      });
 
-.team-image{
 
-position:relative;
+      /* =========================================
+         NAVIGATION – NACH LINKKLICK SCHLIESSEN
+         ========================================= */
 
-}
+      navigation.addEventListener('click', event => {
+        if (event.target.closest('a')) {
+          closeMenu();
+        }
+      });
 
-.team-image::after{
 
-content:"© BODA Snacks";
+      /* =========================================
+         NAVIGATION – ESC-TASTE
+         ========================================= */
 
-position:absolute;
+      document.addEventListener('keydown', event => {
+        if (
+          event.key === 'Escape' &&
+          mobile.matches &&
+          !navigation.hidden
+        ) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
 
-bottom:15px;
-right:15px;
 
-background:rgba(0,0,0,.65);
+      /* =========================================
+         FORMULAR – VORSCHAU OHNE ECHTEN VERSAND
+         ========================================= */
 
-padding:8px 12px;
+      const form = document.getElementById('standort-form');
+      const status = document.getElementById('form-status');
 
-border-radius:8px;
+      form.addEventListener('submit', event => {
+        if (preview) {
+          event.preventDefault();
 
-font-size:14px;
-font-weight:700;
+          status.hidden = false;
+          status.textContent =
+            'Vorschau: Die Angaben sind vollständig. ' +
+            'Es wurde keine Anfrage versendet.';
+        }
+      });
 
-color:#d4af37;
 
-z-index:10;
+      /* =========================================
+         ANALYTICS UND COOKIE-EINSTELLUNGEN
+         ========================================= */
 
-pointer-events:none;
-}
+      // Bestehende Google-Analytics-ID von BODA Snacks.
+      const analyticsId = 'G-6RJ6RX8XWZ';
 
-.team-image::before{
+      // Name des lokal gespeicherten Einwilligungseintrags.
+      const consentKey = 'boda-consent-v2';
 
-content:"";
+      const panel = document.getElementById('cookie-panel');
+      const settings = document.getElementById('cookie-settings');
+      const close = document.getElementById('cookie-close');
 
-position:absolute;
+      let consent = null;
+      let analyticsLoaded = false;
+      let reopened = false;
 
-inset:-15px;
 
-border-radius:30px;
+      /* =========================================
+         GESPEICHERTE AUSWAHL LESEN
+         Nach 180 Tagen wird erneut gefragt.
+         ========================================= */
 
-background:
-linear-gradient(
-135deg,
-rgba(212,175,55,.25),
-transparent
-);
+      const readConsent = () => {
+        try {
+          const saved = JSON.parse(
+            localStorage.getItem(consentKey)
+          );
 
-filter:blur(20px);
+          if (
+            saved &&
+            typeof saved.analytics === 'boolean' &&
+            Number.isFinite(saved.at) &&
+            Date.now() - saved.at < 180 * 86400000
+          ) {
+            return saved;
+          }
 
-}
+        } catch (_) {
+          // Die Seite bleibt auch bei blockiertem Speicher nutzbar.
+        }
+
+        return null;
+      };
+
 
-.team-image img{
+      /* =========================================
+         GOOGLE ANALYTICS LADEN
+         Wird nur nach Zustimmung aufgerufen.
+         ========================================= */
 
-width:100%;
+      const loadAnalytics = () => {
 
-border-radius:25px;
+        // In der Vorschau nichts laden.
+        // Bereits geladenes Analytics nicht doppelt einbinden.
+        if (preview || analyticsLoaded) {
+          return;
+        }
 
-position:relative;
+        analyticsLoaded = true;
+        window['ga-disable-' + analyticsId] = false;
 
-z-index:2;
+        window.dataLayer = window.dataLayer || [];
 
--webkit-user-select:none;
--moz-user-select:none;
--ms-user-select:none;
-user-select:none;
+        window.gtag = function () {
+          window.dataLayer.push(arguments);
+        };
 
--webkit-user-drag:none;
+        window.gtag('js', new Date());
 
-pointer-events:auto;
-}
+        window.gtag('config', analyticsId, {
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
 
-.team-content h3{
+        const script = document.createElement('script');
 
-font-size:42px;
+        script.async = true;
+        script.id = 'boda-analytics';
+        script.src =
+          'https://www.googletagmanager.com/gtag/js?id=' +
+          analyticsId;
 
-margin-bottom:25px;
+        document.head.appendChild(script);
+      };
 
-color:#d4af37;
 
-}
+      /* =========================================
+         ERREICHBARE ANALYTICS-COOKIES LÖSCHEN
+         Andere Cookies bleiben unangetastet.
+         ========================================= */
 
-.team-content p{
+      const eraseAnalyticsCookies = () => {
+        const hostname = location.hostname;
 
-font-size:20px;
+        const domains = [
+          '',
+          hostname,
+          '.' + hostname,
+          'boda-snacks.de',
+          '.boda-snacks.de'
+        ];
 
-line-height:1.9;
+        document.cookie.split(';').forEach(cookie => {
+          const name = cookie.split('=')[0].trim();
 
-color:#d6d6d6;
+          if (
+            name === '_ga' ||
+            name.startsWith('_ga_') ||
+            name === '_gid' ||
+            name.startsWith('_gat')
+          ) {
+            domains.forEach(domain => {
+              document.cookie =
+                name +
+                '=; Max-Age=0; path=/' +
+                (domain ? '; domain=' + domain : '') +
+                '; SameSite=Lax';
+            });
+          }
+        });
+      };
 
-margin-bottom:20px;
-  
-}
 
-/* =====================================
-STATS
-===================================== */
+      /* =========================================
+         AUSWAHL SPEICHERN UND ANWENDEN
+         true  = Analyse erlaubt
+         false = Analyse abgelehnt
+         ========================================= */
 
-.stats-card{
+      const choose = analytics => {
+        consent = {
+          analytics,
+          at: Date.now()
+        };
 
-text-align:center;
+        try {
+          localStorage.setItem(
+            consentKey,
+            JSON.stringify(consent)
+          );
 
-}
+          // Alten Eintrag der bisherigen Startseite entfernen.
+          localStorage.removeItem('bodaCookiesAccepted');
 
-.stats-card h3{
+        } catch (_) {
+          // Aktuelle Auswahl funktioniert auch ohne Speicherung.
+        }
 
-font-size:64px;
+        panel.hidden = true;
 
-text-shadow:
-0 0 20px rgba(212,175,55,.4);
+        if (reopened) {
+          settings.focus();
+        }
 
-}
+        if (analytics) {
+          loadAnalytics();
 
-/* =====================================
-TRUST BOX
-===================================== */
+        } else {
+          window['ga-disable-' + analyticsId] = true;
 
-.trust-box{
+          const hadAnalytics = analyticsLoaded;
 
-max-width:1100px;
+          document.getElementById('boda-analytics')?.remove();
 
-margin:auto;
+          eraseAnalyticsCookies();
 
-padding:70px;
+          // Neuladen beendet bereits geladenen Analytics-Code
+          // nach einem Widerruf.
+          if (hadAnalytics) {
+            location.reload();
+          }
+        }
+      };
 
-text-align:center;
 
-border-radius:35px;
+      /* =========================================
+         COOKIE-BUTTON – ANALYSE ERLAUBEN
+         ========================================= */
 
-background:
-linear-gradient(
-145deg,
-rgba(212,175,55,.08),
-#121212
-);
+      document
+        .getElementById('cookie-accept')
+        .addEventListener('click', () => {
+          choose(true);
+        });
 
-border:1px solid rgba(212,175,55,.15);
 
-}
+      /* =========================================
+         COOKIE-BUTTON – OHNE ANALYSE
+         ========================================= */
 
-.trust-box h2{
+      document
+        .getElementById('cookie-decline')
+        .addEventListener('click', () => {
+          choose(false);
+        });
 
-font-size:52px;
 
-margin-bottom:25px;
+      /* =========================================
+         EINSTELLUNGEN ÜBER DEN FUSSBEREICH ÖFFNEN
+         ========================================= */
 
-}
+      settings.addEventListener('click', () => {
+        reopened = true;
 
-.trust-box p{
+        panel.hidden = false;
+        close.hidden = !consent;
 
-font-size:24px;
+        document.getElementById('cookie-decline').focus();
+      });
 
-line-height:1.8;
 
-max-width:850px;
+      /* =========================================
+         FENSTER SCHLIESSEN, AUSWAHL BEIBEHALTEN
+         ========================================= */
 
-margin:auto;
+      close.addEventListener('click', () => {
+        panel.hidden = true;
+        settings.focus();
+      });
 
-color:#d8d8d8;
-}
 
+      /* =========================================
+         COOKIE-STEUERUNG BEIM SEITENAUFRUF STARTEN
+         In der Vorschau bleibt sie ausgeschaltet.
+         ========================================= */
 
-/* =====================================
-MOBILE
-===================================== */
+      if (!preview) {
+        settings.hidden = false;
+        consent = readConsent();
 
-@media(max-width:1000px){
+        if (!consent) {
 
-.team-card{
+          // Noch keine gültige Auswahl vorhanden.
+          panel.hidden = false;
 
-grid-template-columns:1fr;
+        } else if (consent.analytics) {
 
-padding:35px;
+          // Bereits gespeicherte Zustimmung.
+          loadAnalytics();
 
-}
+        } else {
 
-.team-content{
+          // Bereits gespeicherte Ablehnung.
+          window['ga-disable-' + analyticsId] = true;
+          eraseAnalyticsCookies();
+        }
+      }
 
-text-align:center;
-
-}
-
-}
-
-</style>
-
-<!-- ===============================
-UNSERE LÖSUNGEN
-================================ -->
-<section id="loesungen">
- <div class="container">
-
-   <h2 class="section-title">
-     Unsere <span class="gold">Automatenlösungen</span>
-   </h2>
-
-   <div class="grid-3">
-
-     <div class="card">
-       <h3>🥪 Lebensmittelautomat</h3>
-       <p>
-         Moderne Lebensmittelautomaten für Unternehmen – ideal für die
-         Versorgung Ihrer Mitarbeiter rund um die Uhr.
-       </p>
-       <a href="lebensmittelautomat-fuer-unternehmen.html" class="btn-primary">
-         Mehr erfahren
-       </a>
-     </div>
-
-     <div class="card">
-       <h3>🥤 Snack- & Getränkeautomat</h3>
-       <p>
-         Die vielseitige Lösung für Unternehmen: beliebte Snacks und gekühlte
-         Getränke direkt am Arbeitsplatz – abgestimmt auf Ihren Standort.
-       </p>
-       <a href="#kontakt" class="btn-primary">
-         Standort prüfen
-       </a>
-     </div>
-
-     <div class="card">
-       <h3>🍫 Kombi-Snackautomat</h3>
-       <p>
-         Kombiautomaten mit Snacks, Getränken und vielen weiteren Produkten –
-         flexibel und platzsparend.
-       </p>
-       <a href="kombi-snackautomat-fuer-unternehmen-mieten.html" class="btn-primary">
-         Mehr erfahren
-       </a>
-     </div>
-
-     <div class="card">
-       <h3>📍 Automatenservice Pforzheim</h3>
-       <p>
-         Ihr regionaler Partner für Snack- und Getränkeautomaten in
-         Pforzheim und Umgebung.
-       </p>
-       <a href="automatenservice-pforzheim.html" class="btn-primary">
-         Mehr erfahren
-       </a>
-     </div>
-
-   </div>
-
- </div>
-</section>
-
-<!-- =====================================
-KAFFEELÖSUNGEN
-===================================== -->
-<section id="kaffee">
-<div class="container">
-<div class="trust-box coffee-link-box">
-<span class="section-tag">KAFFEELÖSUNGEN FÜR UNTERNEHMEN</span>
-<h2>
-Mehr als Snacks:<br>
-<span class="gold">Kaffee für Ihr Unternehmen</span>
-</h2>
-<p>
-Ergänzen Sie Ihre Snackversorgung mit einer professionellen Kaffeelösung.
-Individuell geplant, zuverlässig betreut und mit einem persönlichen Ansprechpartner.
-</p>
-<a href="https://kaffee.boda-snacks.de/" class="btn-primary">
-Kaffeelösungen entdecken
-</a>
-</div>
-</div>
-</section>
-
-<!-- =====================================
-KONTAKT
-===================================== -->
-<section id="kontakt">
-<div class="container">
-<h2 class="section-title">
-Kostenlose
-<span class="gold">Standortprüfung</span>
-</h2>
-<div class="contact-wrapper">
-<!-- Mittig -->
-<div class="contact-info">
-<h3>
-Jetzt unverbindlich anfragen
-</h3>
-<p>
-Sie möchten wissen, ob sich ein Snackautomat
-an Ihrem Standort lohnt?
-
-Wir prüfen Ihren Standort kostenlos,
-unverbindlich und persönlich.
-
-</p>
-<div class="contact-item">
-Telefon
-
-<a href="tel:+4972317703719">
-+49 7231 7703719
-</a>
-</div>
-<div class="contact-item">
-E-Mail
-
-<a href="mailto:kontakt@boda-snacks.de">
-kontakt@boda-snacks.de
-</a>
-</div>
-  
-<div class="contact-item">
-Standort
-
-Pforzheim · Karlsruhe · Stuttgart · Enzkreis · Böblingen
-</div>
-  
-<!-- RECHTS -->
-
-<div class="contact-form">
-
-<form
-action="https://formsubmit.co/kontakt@boda-snacks.de"
-method="POST">
-
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="Neue Standortanfrage von boda-snacks.de">
-
-<input type="hidden" name="_autoresponse" value="Vielen Dank für Ihre Anfrage bei BODA Snacks.<br><br>Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 24 Stunden persönlich bei Ihnen.<br><br>Freundliche Grüße<br>Ihr BODA Snacks Team<br>www.boda-snacks.de">
-
-<input type="hidden" name="_next" value="https://boda-snacks.de/danke.html">
-
-<input type="hidden" name="_template" value="table">
-  
-<label class="form-label" for="name">Ihr Name</label>
-<input
-id="name"
-type="text"
-name="Name"
-autocomplete="name"
-required>
-
-<label class="form-label" for="email">Ihre E-Mail</label>
-<input
-id="email"
-type="email"
-name="E-Mail"
-autocomplete="email"
-required>
-
-<label class="form-label" for="telefon">Telefon <span class="gold">(optional)</span></label>
-<input
-id="telefon"
-type="tel"
-name="Telefon"
-autocomplete="tel">
-
-<label class="form-label" for="nachricht">Worum geht es?</label>
-<textarea
-id="nachricht"
-name="Nachricht"
-placeholder="Zum Beispiel: Mitarbeiterzahl, Standort und gewünschte Lösung"
-rows="6"
-required></textarea>
-
-<label class="checkbox">
-
-<input
-type="checkbox"
-name="Datenschutz akzeptiert"
-required>
-
-<span>
-Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu.
-</span>
-
-</label>
-
-<button
-type="submit"
-class="btn-primary">
-
-Standort kostenlos prüfen
-
-</button>
-
-</form>
-</div>
-</div>
-</div>
-</div>
-  
-</section>
-<!-- =====================================
-ABSCHLUSS CTA
-===================================== -->
-<section>
-<div class="container">
-<div class="final-cta">
-<h2>
-Bereit für Ihren
-Snackautomaten?
-
-</h2>
-<p>
-Bieten Sie Mitarbeitern,
-Kunden und Besuchern
-eine moderne Versorgung
-mit Snacks und Getränken
-ohne Aufwand
-und mit persönlichem Service.
-</p>
-
-<a href="#kontakt" class="btn-primary">
-  Jetzt kostenlose Standortprüfung starten
-</a>
-
-
-</div>
-</div>
-</section>
-<style>
-
-/* ==========================================
-   VERGLEICH
-========================================== */  
-
-.comparison{
-    background:#111;
-    padding:90px 20px;
-    color:#fff;
-}
-
-.comparison .container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.comparison h2{
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:15px;
-    color:#d4af37;
-}
-
-.comparison-subtitle{
-    text-align:center;
-    max-width:750px;
-    margin:0 auto 60px;
-    color:#ccc;
-    line-height:1.6;
-}
-
-.comparison-table{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:35px;
-}
-
-.comparison-column{
-    background:#1a1a1a;
-    border:2px solid rgba(212,175,55,.3);
-    border-radius:18px;
-    padding:35px;
-}
-
-.comparison-column.right{
-    border-color:#d4af37;
-    box-shadow:0 0 25px rgba(212,175,55,.15);
-}
-
-.comparison-column h3{
-    color:#d4af37;
-    margin-bottom:25px;
-    text-align:center;
-}
-
-.comparison-item{
-    padding:15px 0;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    line-height:1.5;
-}
-
-.comparison-item:last-child{
-    border-bottom:none;
-}
-
-.comparison-note{
-    margin-top:50px;
-    background:#d4af37;
-    color:#111;
-    padding:30px;
-    border-radius:18px;
-    text-align:center;
-    font-size:1.1rem;
-    line-height:1.7;
-    font-weight:500;
-}
-
-  
-/* =====================================
-KONTAKT
-===================================== */
-
-.contact-wrapper{
-
-display:flex;
-max-width:900px;
-margin:0 auto;
-gap:20px;
-}
-
-.contact-info,
-.contact-form{
-
-flex:1;
-
-background:
-linear-gradient(
-145deg,
-#111,
-#181818
-);
-
-padding:40px;
-
-border-radius:30px;
-
-border:1px solid rgba(212,175,55,.15);
-  
-text-align:center;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-}
-
-.contact-info h3{
-
-font-size:36px;
-
-margin-bottom:20px;
-
-color:#d4af37;
-
-}
-
-.contact-info p{
-
-font-size:18px;
-
-line-height:1.8;
-
-margin-bottom:30px;
-
-color:#d7d7d7;
-
-}
-
-.contact-item{
-
-margin-bottom:25px;
-
-line-height:1.8;
-
-text-align:center;
-display:flex;
-flex-direction:column;
-align-items:center;
-
-}
-
-.contact-item a{
-
-color:white;
-
-text-decoration:none;
-
-}
-
-.contact-buttons{
-
-margin-top:30px;
-
-display:flex;
-
-justify-content:flex-start;
-
-}
-
-.contact-buttons .btn-primary{
-
-display:inline-flex;
-align-items:center;
-justify-content:center;
-
-width:auto;
-max-width:none;
-}
-
-.contact-form form{
-
-display:flex;
-
-flex-direction:column;
-
-gap:15px;
-
-}
-
-.contact-form input,
-.contact-form textarea{
-
-width:100%;
-
-padding:18px;
-
-border:none;
-
-border-radius:14px;
-
-background:#1b1b1b;
-
-color:white;
-
-font-size:16px;
-
-}
-
-.form-label{
-display:block;
-font-size:14px;
-font-weight:700;
-color:#f0f0f0;
-margin:4px 0 -8px;
-}
-
-.checkbox{
-
-display:flex;
-align-items:flex-start;
-gap:12px;
-
-margin:20px 0;
-
-font-size:14px;
-line-height:1.5;
-
-color:#ccc;
-
-}
-
-.checkbox input{
-
-width:18px;
-height:18px;
-  
-margin-top:2px;
-flex-shrink:0;
-
-}
-
-.checkbox span{
-
-flex:1;
-}
-
-.contact-form button{
-
-border:none;
-
-cursor:pointer;
-width:100%;
-max-width:500px;
-
-margin:auto;
-display:block;
-}
-
-.final-cta{
-
-max-width:1100px;
-
-margin:auto;
-
-padding:70px;
-
-text-align:center;
-
-border-radius:35px;
-
-background:
-linear-gradient(
-145deg,
-rgba(212,175,55,.08),
-#121212
-);
-
-border:1px solid rgba(212,175,55,.15);
-
-}
-
-.final-cta h2{
-
-font-size:54px;
-
-margin-bottom:25px;
-
-}
-
-.final-cta p{
-
-font-size:24px;
-line-height:1.8;
-max-width:850px;
-margin:auto;
-margin-bottom:35px;
-color:#d8d8d8;
-}
-
-.final-cta .btn-primary{
-   display:inline-flex;
-   justify-content:center;
-   align-items:center;
-
-   width:auto;
-   max-width:100%;
-
-   white-space:normal;
-   line-height:1.4;
-
-   position:relative;
-   z-index:5;
-}
-
-.card .btn-primary{
-  margin-top:auto;
-  align-self:flex-start;
-}
-
-/* =====================================
-MOBILE
-===================================== */
-
-@media(max-width:1000px){
-
-.contact-wrapper{
-
-flex-direction:column;
-
-}
-
-.final-cta h2{
-
-font-size:38px;
-
-}
-
-.final-cta p{
-
-font-size:20px;
-
-}
-
-}
-
-</style>
-
-<!-- =====================================
-WEITERE LÖSUNGEN
-===================================== -->
-<section>
-<div class="container">
-
-<div class="trust-box">
-
-<h2>
-Weitere <span class="gold">Automatenlösungen</span>
-</h2>
-
-<p>
-Entdecken Sie weitere Informationen zu unseren Snack- und Getränkeautomaten für Ihr Unternehmen.
-</p>
-
-<div class="footer-links" style="margin-top:40px;">
-
-<a href="kombi-snackautomat-fuer-unternehmen-mieten.html">
-Kombi-Snackautomat für Unternehmen mieten
-</a>
-
-<a href="lebensmittelautomat-fuer-unternehmen.html">
-Lebensmittelautomat für Unternehmen
-</a>
-
-<a href="#kontakt">
-Snack- & Getränkeautomat: Standort prüfen
-</a>
-
-<a href="automatenservice-pforzheim.html">
-Automatenservice Pforzheim
-</a>
-
-<a href="was-kostet-ein-snackautomat.html">
-Was kostet ein Snackautomat?
-</a>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- =====================================
-FOOTER
-===================================== -->
-<footer class="footer">
-<div class="container">
-<h3>
-BODA Snacks
-</h3>
-<p class="footer-subtitle">
-Getränke & Snackautomaten für Ihr Unternehmen
-</p>
-<p class="footer-region">
-Pforzheim • Karlsruhe • Stuttgart • Enzkreis • Böblingen • Calw
-</p>
-<div class="footer-links">
-<a href="impressum.html">
-impressum
-</a>
-<a href="datenschutz.html">
-datenschutz
-</a>
-</div>
-  
-<p class="footer-copy">
-© 2026 BODA Snacks GbR · Alle Rechte vorbehalten
-</p>
-</div>
-</footer>
-<!-- =====================================
-WHATSAPP BUTTON
-===================================== -->
-<a href="https://wa.me/491778675852"
-target="_blank"
-rel="noopener noreferrer"
-class="whatsapp-btn">
-<span aria-hidden="true">💬</span><span class="sr-only">BODA Snacks per WhatsApp kontaktieren</span>
-</a>
-
-<!-- =====================================
-COOKIE BANNER
-===================================== -->
-<div id="cookie-banner">
-<div class="cookie-inner">
-<div>
-🍪 Diese Website verwendet Cookies und Google Analytics zur Analyse der Website-Nutzung. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
-
-</div>
-<div class="cookie-buttons">
-<button id="cookie-accept">
-Akzeptieren
-
-</button>
-<button id="cookie-decline">
-Ablehnen
-
-</button>
-</div>
-</div>
-</div>
-<!-- =====================================
-SCRIPTS
-===================================== -->
-<script>
-
-/* COOKIE */
-
-function loadAnalytics(){
-
-const script=document.createElement('script');
-
-script.async=true;
-
-script.src='https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ';
-
-document.head.appendChild(script);
-
-script.onload=function(){
-
-window.dataLayer=window.dataLayer||[];
-
-function gtag(){
-dataLayer.push(arguments);
-}
-
-window.gtag=gtag;
-
-gtag('js',new Date());
-
-gtag('config','G-6RJ6RX8XWZ');
-
-};
-
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-
-const banner=document.getElementById('cookie-banner');
-
-const saved=localStorage.getItem('bodaCookiesAccepted');
-
-if(saved==='true'){
-
-banner.style.display='none';
-
-loadAnalytics();
-
-}
-
-if(saved==='false'){
-
-banner.style.display='none';
-
-}
-
-document.getElementById('cookie-accept')
-.addEventListener('click',()=>{
-
-localStorage.setItem(
-'bodaCookiesAccepted',
-'true'
-);
-
-banner.style.display='none';
-
-loadAnalytics();
-
-});
-
-document.getElementById('cookie-decline')
-.addEventListener('click',()=>{
-
-localStorage.setItem(
-'bodaCookiesAccepted',
-'false'
-);
-
-banner.style.display='none';
-
-});
-
-});
-
-/* SCROLL ANIMATION */
-
-const observer=
-new IntersectionObserver((entries)=>{
-
-entries.forEach((entry)=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add('show-card');
-
-}
-
-});
-
-});
-
-document.querySelectorAll(
-'.card,.team-card,.trust-box,.premium-box,.final-cta'
-).forEach((el)=>{
-
-observer.observe(el);
-
-});
-
-</script>
-<style>
-
-/* =====================================
-SCROLL ANIMATION
-===================================== */
-
-.card,
-.team-card,
-.trust-box,
-.premium-box,
-.final-cta{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:
-opacity .8s ease,
-transform .8s ease;
-
-}
-
-.show-card{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-/* =====================================
-FOOTER
-===================================== */
-
-.footer{
-
-padding:80px 20px;
-
-text-align:center;
-
-background:#090909;
-
-border-top:1px solid rgba(212,175,55,.15);
-
-}
-
-.footer h3{
-
-font-size:34px;
-
-color:#d4af37;
-
-margin-bottom:15px;
-
-}
-
-.footer-subtitle{
-
-font-size:20px;
-
-color:#d0d0d0;
-
-margin-bottom:10px;
-
-}
-
-.footer-region{
-
-color:#999;
-
-margin-bottom:25px;
-
-}
-
-.footer-links{
-
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-flex-wrap:wrap;
-
-margin-bottom:25px;
-
-}
-
-.footer-links a{
-
-color:#d4af37;
-
-text-decoration:none;
-
-font-weight:bold;
-
-}
-
-.footer-copy{
-
-color:#777;
-
-font-size:14px;
-
-}
-
-/* =====================================
-WHATSAPP
-===================================== */
-
-.whatsapp-btn{
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   gap:0px;
-  min-width:65px;
-  min-height:65px;
-
-   background:#25D366;    
-   color:white;
-
-   width:65px;
-   height:65px;
-   padding:0;
-   border-radius:50%;
-
-   font-size:28px;
-   line-height:1;
-   font-weight:700;
-   text-decoration:none;
-
-   box-shadow:
-       0 0 15px rgba(212,175,55,.4),
-       0 0 35px rgba(212,175,55,.2);
-
-   transition:all .3s ease;
-
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  overflow:hidden;
-  z-index:9999;
-}
-
-.whatsapp-btn > span:first-child{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:100%;
-  height:100%;
-  line-height:1;
-  font-size:30px;
-  position:relative;
-  right:13px;
-}
-
-.whatsapp-btn:hover{
-   transform:translateY(-3px);
-
-   box-shadow:
-       0 0 20px rgba(37,211,102,.6),
-       0 0 45px rgba(37,211,102,.3);
-}
-
-.whatsapp-btn::before{
-   content:'';
-   position:relative;
-   top:0;
-   left:-100%;
-   width:100%;
-   height:100%;
-
-   background:linear-gradient(
-       90deg,
-       transparent,
-       rgba(255,255,255,.25),
-       transparent
-   );
-
-   animation:shine 4s infinite;
-}
-
-@keyframes shine{
-   100%{
-       left:200%;
-   }
-}
-
-/* =====================================
-COOKIE BANNER
-===================================== */
-
-#cookie-banner{
-
-position:fixed;
-
-bottom:0;
-
-left:0;
-
-width:100%;
-
-background:#111;
-
-padding:15px;
-
-z-index:999999;
-
-border-top:
-1px solid rgba(212,175,55,.2);
-
-}
-
-.cookie-inner{
-
-max-width:1200px;
-
-margin:auto;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-.cookie-buttons{
-
-display:flex;
-
-gap:10px;
-
-}
-
-#cookie-banner a{
-color:#f5d76e;
-}
-
-#cookie-accept{
-
-background:var(--button-gold);
-
-color:var(--button-ink);
-
-border:1px solid var(--button-gold);
-
-padding:10px 16px;
-
-border-radius:8px;
-
-cursor:pointer;
-
-font-weight:bold;
-
-transition:background .2s ease, transform .2s ease;
-
-}
-
-#cookie-accept:hover{
-
-background:var(--button-gold-hover);
-
-transform:translateY(-1px);
-
-}
-
-/* =====================================
-SECTION RHYTHM
-===================================== */
-
-.hero{
-background:#080808;
-}
-
-#ablauf,
-#zahlen,
-#kontakt{
-background:#0a0a0a;
-}
-
-#team,
-#loesungen,
-#kaffee{
-background:#111;
-}
-
-#zahlen .card,
-#loesungen .card{
-background:linear-gradient(145deg,#151515,#1b1b1b);
-}
-
-#kontakt .contact-info,
-#kontakt .contact-form{
-background:linear-gradient(145deg,#111,#171717);
-}
-
-#cookie-decline{
-
-background:#333;
-
-color:white;
-
-border:none;
-
-padding:10px 18px;
-
-border-radius:8px;
-
-cursor:pointer;
-
-}
-
-/* =====================================
-MOBILE
-===================================== */
-
-@media(max-width:1000px){
-
-.nav-links{
-display:none;
-}
-
-section{
-padding:70px 0;
-}
-
-.hero-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero-card{
-height:300px;
-}
-
-.hero-card img{
-width:180px;
-height:180px;
-}
-
-.grid-3{
-grid-template-columns:1fr;
-}
-
-.section-title{
-font-size:32px;
-line-height:1.2;
-margin-bottom:40px;
-}
-
-.hero h1{
-font-size:34px;
-line-height:1.1;
-}
-
-.hero-slogan{
-font-size:26px;
-line-height:1.2;
-}
-
-.hero p{
-font-size:18px;
-line-height:1.6;
-}
-
-.premium-box h2,
-.final-cta h2,
-.trust-box h2{
-font-size:32px;
-line-height:1.2;
-}
-
-.premium-box,
-.final-cta,
-.trust-box{
-padding:35px 20px;
-}
-
-.team-content h3{
-font-size:30px;
-}
-
-.team-content p{
-font-size:17px;
-}
-
-.card{
-padding:25px;
-}
-
-.card h3{
-font-size:22px;
-}
-
-.contact-info h3{
-font-size:28px;
-}
-
-.buttons{
-display:flex;
-flex-direction:column;
-align-items:center;
-}
-
-.btn-primary,
-.btn-secondary{
-width:100%;
-max-width:420px;
-text-align:center;
-white-space:normal;
-line-height:1.4;
-height:auto;
-}
-
-.locations{
-    max-width:1200px;
-    margin:80px auto;
-    padding:0 20px;
-}
-
-.location-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    margin-top:40px;
-}
-
-.location-grid a{
-    background:#111;
-    color:#fff;
-    padding:20px;
-    text-align:center;
-    text-decoration:none;
-    border:1px solid #d4af37;
-    border-radius:12px;
-    transition:.3s;
-}
-
-.location-grid a:hover{
-    background:#d4af37;
-    color:#000;
-}
-
-}
-
-</style>
-
+    })();
+  </script>
 
 </body>
 </html>
