@@ -979,51 +979,106 @@
        PERSONAL TRUST
        ========================================================= */
 
-    .personal-layout {
+   .people-card {
 
-      display: grid;
+  display: grid;
 
-      grid-template-columns:
-        0.9fr 1.1fr;
+  grid-template-columns:
+    0.9fr 1.1fr;
 
-      gap: 75px;
+  overflow: hidden;
 
-      align-items: center;
+  background: var(--soft);
 
-    }
+  border:
+    1px solid var(--line);
 
-    .personal-card {
+  border-radius: var(--radius);
 
-      padding: 38px;
+}
 
-      background: var(--soft);
 
-      border:
-        1px solid var(--line);
+.people-image {
 
-      border-radius: var(--radius);
+  min-height: 430px;
 
-    }
+  background: #e6ece6;
 
-    .personal-card p {
+}
 
-      margin-top: 0;
 
-      color: var(--muted);
+.people-image img {
 
-    }
+  width: 100%;
+  height: 100%;
 
-    .personal-name {
+  object-fit: cover;
 
-      margin-top: 20px;
+  object-position: center;
 
-      font-weight: 800;
+}
 
-    }
 
-    .personal-name span {
-      color: var(--gold);
-    }
+.people-content {
+
+  padding: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+
+.people-content p {
+
+  margin-top: 0;
+
+  color: var(--muted);
+
+}
+
+
+.personal-name {
+
+  margin-top: 20px;
+
+  font-weight: 800;
+
+}
+
+
+.personal-name span {
+  color: var(--gold);
+}
+
+
+@media (max-width: 980px) {
+
+  .people-card {
+    grid-template-columns: 1fr;
+  }
+
+  .people-image {
+    min-height: 340px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .people-image {
+    min-height: 280px;
+  }
+
+  .people-content {
+    padding: 35px 25px;
+  }
+
+}
 
 
     /* =========================================================
@@ -2626,59 +2681,62 @@
     </section>
 
 
+   <!-- =========================================================
+     PERSONAL TRUST
+     ========================================================= -->
 
-    <!-- =========================================================
-         PERSONAL TRUST
-         ========================================================= -->
+<section class="section">
 
-    <section class="section">
+  <div class="wrap">
 
-      <div class="wrap personal-layout">
+    <div class="people-card">
 
+      <div class="people-image">
 
-        <div>
-
-          <span class="eyebrow">
-            Regional &amp; persönlich
-          </span>
-
-          <h2>
-            BODA Snacks kommt aus Pforzheim.
-          </h2>
-
-          <p class="lead">
-            Bei uns landen Sie nicht in einer anonymen Hotline.
-
-            Sie haben einen direkten Ansprechpartner
-            und wissen, wer sich um Ihren Standort kümmert.
-          </p>
-
-        </div>
-
-
-
-        <div class="personal-card">
-
-          <p>
-            Unser Anspruch ist nicht,
-            möglichst viele Automaten irgendwo aufzustellen.
-
-            Wir möchten Standorte betreuen,
-            bei denen Nutzung, Entfernung und Serviceumfang
-            sinnvoll zusammenpassen.
-          </p>
-
-          <div class="personal-name">
-            Andreas &amp; Sandra ·
-            <span>BODA Snacks</span>
-          </div>
-
-        </div>
-
+        <img
+          src="teamfoto.jpg"
+          alt="Andreas und Sandra Boda von BODA Snacks"
+        >
 
       </div>
 
-    </section>
+
+      <div class="people-content">
+
+        <span class="eyebrow">
+          Regional &amp; persönlich
+        </span>
+
+        <h2>
+          BODA Snacks kommt aus Pforzheim.
+        </h2>
+
+        <p>
+          Wir sind Andreas und Sandra Boda.
+          Bei uns landen Sie nicht in einer anonymen Hotline,
+          sondern haben einen direkten Ansprechpartner.
+        </p>
+
+        <p>
+          Unser Anspruch ist nicht,
+          möglichst viele Automaten irgendwo aufzustellen.
+          Wir möchten Standorte betreuen,
+          bei denen Nutzung, Entfernung und Serviceumfang
+          sinnvoll zusammenpassen.
+        </p>
+
+        <div class="personal-name">
+          Andreas &amp; Sandra ·
+          <span>BODA Snacks</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 
