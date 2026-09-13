@@ -1,886 +1,3449 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Snackautomaten befüllen | Pforzheim & Region | BODA</title>
-
-  <meta name="description" content="BODA Snacks befüllt und reinigt Snack- und Getränkeautomaten für Unternehmen in Pforzheim, Karlsruhe, Böblingen, dem Enzkreis und Stuttgart.">
-
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="BODA Snacks">
-  <meta name="theme-color" content="#d4af37">
-
-  <link rel="canonical" href="https://boda-snacks.de/snackautomaten-befuellen-lassen.html">
-  <link rel="icon" href="favicon.ico">
-
-  <meta property="og:title" content="Snackautomaten befüllen | Pforzheim & Region | BODA Snacks">
-  <meta property="og:description" content="Persönlicher Befüllungs- und Reinigungsservice für Snack- und Getränkeautomaten in Pforzheim und der Region.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://boda-snacks.de/images/snackautomat.jpg">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --gold: #d4af37;
-      --dark: #0d0d0d;
-      --card: #171717;
-      --text: #f3f3f3;
-      --gray: #bdbdbd;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background: var(--dark);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    .container {
-      width: min(1250px, calc(100% - 50px));
-      margin: 0 auto;
-    }
-
-    section {
-      padding: 110px 0;
-    }
-
-    h1 {
-      font-size: clamp(42px, 6vw, 64px);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 26px;
-    }
-
-    h1 span {
-      color: var(--gold);
-    }
-
-    h2 {
-      font-size: clamp(32px, 4vw, 42px);
-      color: var(--gold);
-      line-height: 1.2;
-      margin-bottom: 25px;
-    }
-
-    h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.85;
-      color: #ddd;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 32px;
-      padding: 17px 34px;
-      background: var(--gold);
-      color: #111;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 700;
-      transition: .25s ease;
-      text-align: center;
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 35px rgba(212, 175, 55, .28);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-    }
-
-    .btn-outline:hover {
-      background: var(--gold);
-      color: #111;
-    }
-
-    .hero {
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(0, 0, 0, .74), rgba(0, 0, 0, .74)),
-        url("images/snackautomat-hero.jpg") center / cover;
-    }
-
-    .hero-content {
-      max-width: 780px;
-      padding: 80px 0;
-    }
-
-    .hero-logo {
-      margin-bottom: 24px;
-    }
-
-    .hero-logo img {
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      filter: drop-shadow(0 4px 12px rgba(212, 175, 55, .35));
-    }
-
-    .hero p {
-      font-size: 21px;
-      max-width: 740px;
-    }
-
-    .hero-note {
-      margin-top: 22px;
-      font-size: 16px;
-      color: #f3f3f3;
-      line-height: 1.7;
-    }
-
-    .section-title {
-      max-width: 880px;
-      text-align: center;
-      margin: 0 auto 60px;
-    }
-
-    .cards,
-    .product-grid,
-    .benefit-grid,
-    .area-grid {
-      display: grid;
-      gap: 28px;
-    }
-
-    .cards {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .service-card,
-    .product-card,
-    .area-card,
-    .step,
-    .stat-box {
-      background: var(--card);
-      border: 1px solid rgba(212, 175, 55, .16);
-      border-radius: 18px;
-      transition: .25s ease;
-    }
-
-    .service-card,
-    .product-card,
-    .area-card,
-    .step {
-      padding: 34px;
-    }
-
-    .service-card:hover,
-    .product-card:hover,
-    .area-card:hover,
-    .step:hover,
-    .stat-box:hover {
-      transform: translateY(-7px);
-      border-color: var(--gold);
-      box-shadow: 0 20px 40px rgba(212, 175, 55, .13);
-    }
-
-    .icon,
-    .product-image {
-      font-size: 46px;
-      margin-bottom: 22px;
-    }
-
-    .service-card h3,
-    .product-card h3,
-    .area-card h3,
-    .benefit-grid h3 {
-      color: var(--gold);
-    }
-
-    .about,
-    .service-area {
-      background: #111;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-text p + p {
-      margin-top: 18px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .stat-box {
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    .stat-box h3 {
-      color: var(--gold);
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-
-    .stat-box span {
-      color: #ddd;
-      font-size: 15px;
-    }
-
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-    }
-
-    .step {
-      text-align: center;
-    }
-
-    .number {
-      width: 64px;
-      height: 64px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 22px;
-      background: var(--gold);
-      color: #111;
-      border-radius: 50%;
-      font-size: 25px;
-      font-weight: 700;
-    }
-
-    .products {
-      background: #101010;
-    }
-
-    .product-card {
-      text-align: center;
-    }
-
-    .benefits {
-      background: #0d0d0d;
-    }
-
-    .benefit-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .benefit-grid div {
-      background: var(--card);
-      padding: 32px;
-      border-left: 5px solid var(--gold);
-      border-radius: 12px;
-    }
-
-    .area-grid {
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    }
-
-    .faq {
-      background: #0d0d0d;
-    }
-
-    .faq-box {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    details {
-      background: var(--card);
-      margin-bottom: 16px;
-      padding: 22px;
-      border-radius: 14px;
-      border: 1px solid rgba(212, 175, 55, .15);
-    }
-
-    summary {
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--gold);
-    }
-
-    details p {
-      margin-top: 16px;
-    }
-
-    .contact-section {
-      padding: 100px 0;
-    }
-
-    .contact-box {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 58px 45px;
-      text-align: center;
-      background: linear-gradient(135deg, #171717, #0d0d0d);
-      border: 1px solid rgba(212, 175, 55, .38);
-      border-radius: 24px;
-    }
-
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .contact-buttons .btn {
-      margin-top: 28px;
-    }
-
-    footer {
-      background: #090909;
-      border-top: 1px solid rgba(212, 175, 55, .15);
-      padding: 70px 0 30px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 45px;
-    }
-
-    .footer-grid h3 {
-      color: var(--gold);
-      margin-bottom: 18px;
-    }
-
-    .footer-grid ul {
-      list-style: none;
-    }
-
-    .footer-grid li {
-      margin-bottom: 10px;
-    }
-
-    .footer-grid a {
-      color: #cfcfcf;
-      text-decoration: none;
-    }
-
-    .footer-grid a:hover {
-      color: var(--gold);
-    }
-
-    .copyright {
-      text-align: center;
-      color: #888;
-      border-top: 1px solid rgba(255, 255, 255, .08);
-      margin-top: 45px;
-      padding-top: 24px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 900px) {
-      .about-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Snackautomaten befüllen lassen | BODA Snacks</title>
+
+<meta
+  name="description"
+  content="Sie haben bereits einen Snack- oder Getränkeautomaten? BODA Snacks übernimmt nach Prüfung Befüllung, Reinigung, Sortimentspflege und laufende Betreuung für Unternehmen in Pforzheim und der Region."
+>
+
+<meta name="robots" content="index,follow">
+
+<meta name="theme-color" content="#244b39">
+
+<link
+  rel="canonical"
+  href="https://boda-snacks.de/snackautomaten-befuellen-lassen.html"
+>
+
+
+<!-- OPEN GRAPH -->
+
+<meta
+  property="og:title"
+  content="Snackautomaten befüllen lassen | BODA Snacks"
+>
+
+<meta
+  property="og:description"
+  content="Bestehenden Snack- oder Getränkeautomaten professionell betreuen lassen – mit persönlichem Service aus der Region."
+>
+
+<meta
+  property="og:type"
+  content="website"
+>
+
+<meta
+  property="og:url"
+  content="https://boda-snacks.de/snackautomaten-befuellen-lassen.html"
+>
+
+
+<style>
+
+/* =========================================================
+   BODA SNACKS DESIGN SYSTEM
+   ========================================================= */
+
+:root{
+
+  --ink:#202821;
+  --muted:#596159;
+
+  --green:#244b39;
+  --green-dark:#1c3d2e;
+
+  --gold:#88601f;
+  --gold-fill:#dbb86e;
+  --gold-hover:#cda456;
+
+  --white:#ffffff;
+
+  --soft:#f5f7f5;
+  --soft-2:#edf3ed;
+  --card:#f3f7f3;
+
+  --line:#dce2dc;
+
+  --radius:20px;
+
+  --shadow:
+  0 18px 50px rgba(32,40,33,.08);
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  margin:0;
+
+  background:var(--white);
+
+  color:var(--ink);
+
+  font-family:
+  Arial,
+  Helvetica,
+  sans-serif;
+
+  font-size:16px;
+
+  line-height:1.65;
+
+  -webkit-font-smoothing:antialiased;
+
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+a{
+  color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.wrap{
+
+  width:min(
+    1180px,
+    calc(100% - 64px)
+  );
+
+  margin-inline:auto;
+
+}
+
+.section{
+  padding:100px 0;
+}
+
+.section-soft{
+  background:var(--soft);
+}
+
+.section-contact{
+  background:var(--soft-2);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+
+  background:
+  rgba(255,255,255,.96);
+
+  backdrop-filter:
+  blur(12px);
+
+  border-bottom:
+  1px solid var(--line);
+
+}
+
+.header-inner{
+
+  min-height:82px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:30px;
+
+}
+
+
+/* BRAND */
+
+.brand{
+
+  display:flex;
+
+  flex-direction:column;
+
+  text-decoration:none;
+
+  line-height:1;
+
+}
+
+.brand-main{
+
+  font-size:1.25rem;
+
+  font-weight:800;
+
+  letter-spacing:.02em;
+
+}
+
+.brand-main .snacks{
+  color:var(--gold);
+}
+
+.brand-sub{
+
+  margin-top:8px;
+
+  color:var(--muted);
+
+  font-size:.78rem;
+
+}
+
+
+/* NAVIGATION */
+
+.main-nav{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:28px;
+
+}
+
+.main-nav > a:not(.btn){
+
+  text-decoration:none;
+
+  font-size:.94rem;
+
+  font-weight:700;
+
+}
+
+.main-nav > a:not(.btn):hover{
+  color:var(--green);
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle{
+
+  display:none;
+
+  border:0;
+
+  background:transparent;
+
+  padding:10px;
+
+  color:var(--ink);
+
+  font-weight:800;
+
+  cursor:pointer;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  min-height:48px;
+
+  padding:
+  13px 21px;
+
+  border:
+  1px solid transparent;
+
+  border-radius:9px;
+
+  text-decoration:none;
+
+  font-weight:800;
+
+  font-size:.94rem;
+
+  cursor:pointer;
+
+  transition:
+  transform .2s ease,
+  background .2s ease,
+  border-color .2s ease;
+
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+}
+
+.btn-primary{
+
+  background:var(--gold-fill);
+
+  color:#25271f;
+
+}
+
+.btn-primary:hover{
+  background:var(--gold-hover);
+}
+
+.btn-secondary{
+
+  background:transparent;
+
+  color:var(--ink);
+
+  border-color:#bcc7bd;
+
+}
+
+.btn-secondary:hover{
+  border-color:var(--green);
+}
+
+.btn-dark{
+
+  background:var(--green);
+
+  color:white;
+
+}
+
+.btn-dark:hover{
+  background:var(--green-dark);
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+.eyebrow{
+
+  display:block;
+
+  margin-bottom:14px;
+
+  color:var(--gold);
+
+  font-size:.79rem;
+
+  font-weight:800;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+
+}
+
+h1,
+h2,
+h3{
+
+  margin-top:0;
+
+  color:var(--ink);
+
+  letter-spacing:-.025em;
+
+}
+
+h1{
+
+  margin-bottom:25px;
+
+  font-size:
+  clamp(
+    2.8rem,
+    6vw,
+    5.3rem
+  );
+
+  line-height:.99;
+
+}
+
+h2{
+
+  margin-bottom:24px;
+
+  font-size:
+  clamp(
+    2.05rem,
+    4vw,
+    3.5rem
+  );
+
+  line-height:1.08;
+
+}
+
+h3{
+
+  margin-bottom:11px;
+
+  font-size:1.23rem;
+
+  line-height:1.25;
+
+}
+
+.lead{
+
+  max-width:720px;
+
+  margin:
+  0 0 30px;
+
+  color:var(--muted);
+
+  font-size:
+  clamp(
+    1.05rem,
+    2vw,
+    1.22rem
+  );
+
+}
+
+.section-head{
+
+  max-width:760px;
+
+  margin-bottom:55px;
+
+}
+
+.section-head p{
+
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:1.05rem;
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+
+  padding:
+  90px 0 65px;
+
+}
+
+.hero-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  minmax(0,1.05fr)
+  minmax(370px,.95fr);
+
+  gap:70px;
+
+  align-items:center;
+
+}
+
+.hero-copy strong{
+  color:var(--green);
+}
+
+.hero-actions{
+
+  margin-top:32px;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+
+}
+
+.hero-note{
+
+  margin-top:18px;
+
+  color:var(--muted);
+
+  font-size:.9rem;
+
+}
+
+
+/* HERO IMAGE */
+
+.hero-visual{
+
+  position:relative;
+
+  overflow:hidden;
+
+  min-height:500px;
+
+  padding:35px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:#edf0eb;
+
+  border-radius:var(--radius);
+
+}
+
+.hero-visual::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:340px;
+  height:340px;
+
+  top:-150px;
+  right:-130px;
+
+  background:
+  rgba(219,184,110,.28);
+
+  border-radius:50%;
+
+}
+
+.hero-visual img{
+
+  position:relative;
+
+  z-index:2;
+
+  width:100%;
+
+  max-height:430px;
+
+  object-fit:cover;
+
+  border-radius:14px;
+
+}
+
+.hero-badge{
+
+  position:absolute;
+
+  z-index:3;
+
+  left:28px;
+  bottom:28px;
+
+  padding:12px 16px;
+
+  background:white;
+
+  border:
+  1px solid var(--line);
+
+  border-radius:10px;
+
+  box-shadow:var(--shadow);
+
+  font-weight:800;
+
+  font-size:.88rem;
+
+}
+
+.hero-badge span{
+  color:var(--gold);
+}
+
+
+/* =========================================================
+   TRUST
+   ========================================================= */
+
+.trust-row{
+
+  margin-top:70px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  border-top:
+  1px solid var(--line);
+
+  border-bottom:
+  1px solid var(--line);
+
+}
+
+.trust-item{
+
+  padding:
+  22px 20px 22px 0;
+
+  font-weight:700;
+
+}
+
+.trust-item + .trust-item{
+
+  padding-left:28px;
+
+  border-left:
+  1px solid var(--line);
+
+}
+
+.check{
+
+  margin-right:7px;
+
+  color:var(--green);
+
+  font-weight:900;
+
+}
+
+
+/* =========================================================
+   CUSTOMER PROBLEM
+   ========================================================= */
+
+.problem-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  .85fr 1.15fr;
+
+  gap:80px;
+
+  align-items:start;
+
+}
+
+.problem-copy{
+
+  position:sticky;
+
+  top:130px;
+
+}
+
+.problem-copy p{
+  color:var(--muted);
+}
+
+.problem-list{
+
+  border-top:
+  1px solid var(--line);
+
+}
+
+.problem-item{
+
+  display:grid;
+
+  grid-template-columns:
+  65px 1fr;
+
+  gap:20px;
+
+  padding:29px 0;
+
+  border-bottom:
+  1px solid var(--line);
+
+}
+
+.problem-number{
+
+  color:var(--gold);
+
+  font-size:.8rem;
+
+  font-weight:800;
+
+}
+
+.problem-item p{
+
+  margin:0;
+
+  color:var(--muted);
+
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.service-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:22px;
+
+}
+
+.service-card{
+
+  padding:34px;
+
+  background:white;
+
+  border:
+  1px solid var(--line);
+
+  border-radius:var(--radius);
+
+}
+
+.service-label{
+
+  display:block;
+
+  margin-bottom:26px;
+
+  color:var(--gold);
+
+  font-size:.77rem;
+
+  font-weight:800;
+
+  letter-spacing:.1em;
+
+}
+
+.service-card p{
+
+  margin:0;
+
+  color:var(--muted);
+
+}
+
+
+/* =========================================================
+   HONEST CHECK
+   ========================================================= */
+
+.check-box{
+
+  padding:58px;
+
+  background:var(--green);
+
+  border-radius:var(--radius);
+
+  color:white;
+
+}
+
+.check-box h2{
+  color:white;
+}
+
+.check-box .eyebrow{
+  color:var(--gold-fill);
+}
+
+.check-box > p{
+
+  max-width:760px;
+
+  color:
+  rgba(255,255,255,.8);
+
+}
+
+.check-grid{
+
+  margin-top:44px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  border-top:
+  1px solid rgba(255,255,255,.18);
+
+}
+
+.check-item{
+
+  padding:
+  27px 23px 0 0;
+
+}
+
+.check-item + .check-item{
+
+  padding-left:24px;
+
+  border-left:
+  1px solid rgba(255,255,255,.18);
+
+}
+
+.check-item strong{
+
+  display:block;
+
+  margin-bottom:7px;
+
+}
+
+.check-item span{
+
+  color:
+  rgba(255,255,255,.7);
+
+  font-size:.91rem;
+
+}
+
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.steps{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  border-top:
+  1px solid var(--line);
+
+}
+
+.step{
+
+  padding:
+  34px 34px 0 0;
+
+}
+
+.step + .step{
+
+  padding-left:34px;
+
+  border-left:
+  1px solid var(--line);
+
+}
+
+.step-number{
+
+  display:block;
+
+  margin-bottom:25px;
+
+  color:var(--gold);
+
+  font-size:.77rem;
+
+  font-weight:800;
+
+  letter-spacing:.1em;
+
+}
+
+.step p{
+
+  margin:0;
+
+  color:var(--muted);
+
+}
+
+
+/* =========================================================
+   PERSONAL TRUST
+   ========================================================= */
+
+.people-card{
+
+  display:grid;
+
+  grid-template-columns:
+  .9fr 1.1fr;
+
+  overflow:hidden;
+
+  background:var(--soft);
+
+  border:
+  1px solid var(--line);
+
+  border-radius:var(--radius);
+
+}
+
+.people-image{
+
+  min-height:450px;
+
+  background:#e6ece6;
+
+}
+
+.people-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+}
+
+.people-content{
+
+  padding:55px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+}
+
+.people-content p{
+  color:var(--muted);
+}
+
+.signature{
+
+  margin-top:13px;
+
+  font-weight:800;
+
+}
+
+.signature span{
+  color:var(--gold);
+}
+
+
+/* =========================================================
+   SERVICE AREA
+   ========================================================= */
+
+.area-layout{
+
+  display:grid;
+
+  grid-template-columns:
+  .9fr 1.1fr;
+
+  gap:75px;
+
+  align-items:center;
+
+}
+
+.area-list{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+}
+
+.area-chip{
+
+  padding:
+  11px 15px;
+
+  background:white;
+
+  border:
+  1px solid var(--line);
+
+  border-radius:999px;
+
+  font-weight:700;
+
+  font-size:.91rem;
+
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faq-layout{
+
+  display:grid;
+
+  grid-template-columns:
+  .75fr 1.25fr;
+
+  gap:85px;
+
+}
+
+.faq-list{
+
+  border-top:
+  1px solid var(--line);
+
+}
+
+details{
+
+  border-bottom:
+  1px solid var(--line);
+
+}
+
+summary{
+
+  position:relative;
+
+  padding:
+  23px 45px 23px 0;
+
+  cursor:pointer;
+
+  list-style:none;
+
+  font-weight:800;
+
+}
+
+summary::-webkit-details-marker{
+  display:none;
+}
+
+summary::after{
+
+  content:"+";
+
+  position:absolute;
+
+  right:5px;
+  top:18px;
+
+  color:var(--gold);
+
+  font-size:1.55rem;
+
+  font-weight:400;
+
+}
+
+details[open] summary::after{
+  content:"–";
+}
+
+details p{
+
+  margin:
+  -2px 0 25px;
+
+  color:var(--muted);
+
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  .85fr 1.15fr;
+
+  gap:80px;
+
+  align-items:start;
+
+}
+
+.contact-copy p{
+  color:var(--muted);
+}
+
+.contact-links{
+
+  margin-top:35px;
+
+  display:grid;
+
+}
+
+.contact-link{
+
+  padding:16px 0;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  border-bottom:
+  1px solid #ccd7cc;
+
+  text-decoration:none;
+
+  font-weight:800;
+
+}
+
+.contact-link span:first-child{
+  color:var(--muted);
+}
+
+
+/* FORM */
+
+.contact-form{
+
+  padding:34px;
+
+  background:white;
+
+  border:
+  1px solid #d5dfd5;
+
+  border-radius:var(--radius);
+
+  box-shadow:
+  0 15px 40px rgba(36,75,57,.06);
+
+}
+
+.contact-form h3{
+
+  margin-bottom:7px;
+
+  font-size:1.45rem;
+
+}
+
+.form-description{
+
+  margin:
+  0 0 27px;
+
+  color:var(--muted);
+
+  font-size:.91rem;
+
+}
+
+.form-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:18px;
+
+}
+
+.field{
+
+  display:grid;
+
+  gap:7px;
+
+}
+
+.field-full{
+  grid-column:1 / -1;
+}
+
+label{
+
+  font-size:.87rem;
+
+  font-weight:800;
+
+}
+
+input,
+select,
+textarea{
+
+  width:100%;
+
+  padding:
+  13px 14px;
+
+  border:
+  1px solid #cbd6cb;
+
+  border-radius:9px;
+
+  background:white;
+
+  color:var(--ink);
+
+  outline:none;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+  border-color:var(--green);
+
+  box-shadow:
+  0 0 0 3px rgba(36,75,57,.08);
+
+}
+
+textarea{
+
+  min-height:125px;
+
+  resize:vertical;
+
+}
+
+.privacy-check{
+
+  margin:
+  22px 0;
+
+  display:flex;
+
+  gap:11px;
+
+  align-items:flex-start;
+
+  color:var(--muted);
+
+  font-size:.86rem;
+
+}
+
+.privacy-check input{
+
+  width:auto;
+
+  margin-top:4px;
+
+}
+
+.privacy-check a{
+
+  color:var(--green);
+
+  font-weight:700;
+
+}
+
+.form-submit{
+
+  width:100%;
+
+  border:0;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer{
+
+  padding:
+  65px 0 30px;
+
+  background:white;
+
+  border-top:
+  1px solid var(--line);
+
+}
+
+.footer-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1.3fr .75fr .75fr;
+
+  gap:60px;
+
+}
+
+.footer-brand{
+  max-width:380px;
+}
+
+.footer-brand p{
+
+  margin-top:18px;
+
+  color:var(--muted);
+
+}
+
+.footer-title{
+
+  margin-bottom:15px;
+
+  color:var(--muted);
+
+  font-size:.8rem;
+
+  font-weight:800;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+
+}
+
+.footer-links{
+
+  display:grid;
+
+  gap:9px;
+
+}
+
+.footer-links a{
+
+  text-decoration:none;
+
+  font-weight:700;
+
+}
+
+.footer-links a:hover{
+  color:var(--green);
+}
+
+.footer-bottom{
+
+  margin-top:55px;
+
+  padding-top:24px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:25px;
+
+  color:var(--muted);
+
+  font-size:.85rem;
+
+  border-top:
+  1px solid var(--line);
+
+}
+
+.footer-bottom-links{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:20px;
+
+}
+
+.footer-bottom a{
+  text-decoration:none;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible{
+
+  outline:
+  3px solid var(--gold-fill);
+
+  outline-offset:4px;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:980px){
+
+  .section{
+    padding:80px 0;
+  }
+
+
+  .menu-toggle{
+    display:block;
+  }
+
+
+  .main-nav{
+
+    display:none;
+
+    position:absolute;
+
+    top:82px;
+
+    left:0;
+    right:0;
+
+    padding:25px 32px;
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    background:white;
+
+    border-bottom:
+    1px solid var(--line);
+
+  }
+
+
+  .main-nav.open{
+    display:flex;
+  }
+
+
+  .hero-grid,
+  .problem-grid,
+  .people-card,
+  .area-layout,
+  .faq-layout,
+  .contact-grid{
+
+    grid-template-columns:1fr;
+
+    gap:55px;
+
+  }
+
+
+  .problem-copy{
+    position:static;
+  }
+
+
+  .service-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+
+  .check-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+
+  .check-item:nth-child(3){
+
+    padding-left:0;
+
+    border-left:0;
+
+  }
+
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+
+  .step{
+
+    padding:30px 0;
+
+    border-bottom:
+    1px solid var(--line);
+
+  }
+
+
+  .step + .step{
+
+    padding-left:0;
+
+    border-left:0;
+
+  }
+
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  .wrap{
+
+    width:min(
+      calc(100% - 34px),
+      1180px
+    );
+
+  }
+
+
+  .section{
+    padding:67px 0;
+  }
+
+
+  .header-inner{
+    min-height:72px;
+  }
+
+
+  .main-nav{
+    top:72px;
+  }
+
+
+  .brand-main{
+    font-size:1.08rem;
+  }
+
+
+  .brand-sub{
+    font-size:.68rem;
+  }
+
+
+  .hero{
+
+    padding:
+    65px 0 55px;
+
+  }
+
+
+  h1{
+
+    font-size:
+    clamp(
+      2.5rem,
+      12vw,
+      4rem
+    );
+
+  }
+
+
+  h2{
+
+    font-size:
+    clamp(
+      2rem,
+      9vw,
+      2.8rem
+    );
+
+  }
+
+
+  .hero-actions{
+    display:grid;
+  }
+
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+
+  .hero-visual{
+    min-height:360px;
+  }
+
+
+  .trust-row{
+    grid-template-columns:1fr;
+  }
+
+
+  .trust-item{
+    padding:17px 0;
+  }
+
+
+  .trust-item + .trust-item{
+
+    padding-left:0;
+
+    border-left:0;
+
+    border-top:
+    1px solid var(--line);
+
+  }
+
+
+  .problem-item{
+
+    grid-template-columns:
+    48px 1fr;
+
+  }
+
+
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  .check-box{
+    padding:35px 25px;
+  }
+
+
+  .check-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  .check-item{
+
+    padding:22px 0;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.18);
+
+  }
+
+
+  .check-item + .check-item{
+
+    padding-left:0;
+
+    border-left:0;
+
+  }
+
+
+  .people-image{
+    min-height:300px;
+  }
+
+
+  .people-content{
+    padding:35px 25px;
+  }
+
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  .field-full{
+    grid-column:auto;
+  }
+
+
+  .contact-form{
+    padding:24px;
+  }
+
+
+  .contact-link{
+
+    flex-direction:column;
+
+    gap:3px;
+
+  }
+
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  .footer-bottom{
+    flex-direction:column;
+  }
+
+}
+
+</style>
+
+
+
+<!-- =========================================================
+     SERVICE SCHEMA
+     ========================================================= -->
+
+<script type="application/ld+json">
+
+{
+  "@context":"https://schema.org",
+
+  "@type":"Service",
+
+  "name":"Snackautomaten befüllen und betreuen",
+
+  "serviceType":"Befüllungs- und Automatenservice",
+
+  "provider":{
+    "@type":"Organization",
+    "name":"BODA Snacks GbR",
+    "url":"https://boda-snacks.de/"
+  },
+
+  "areaServed":[
+    "Pforzheim",
+    "Enzkreis",
+    "Karlsruhe",
+    "Stuttgart",
+    "Böblingen",
+    "Calw"
+  ],
+
+  "description":
+  "Befüllung, Reinigung, Sortimentspflege und laufende Betreuung bestehender Snack- und Getränkeautomaten nach Prüfung und individueller Vereinbarung."
+
+}
+
+</script>
+
+
+
+<!-- =========================================================
+     FAQ SCHEMA
+     ========================================================= -->
+
+<script type="application/ld+json">
+
+{
+  "@context":"https://schema.org",
+
+  "@type":"FAQPage",
+
+  "mainEntity":[
+
+    {
+      "@type":"Question",
+      "name":"Können Sie unseren bestehenden Snackautomaten befüllen?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Das hängt vom vorhandenen Automaten, dem Standort und dem gewünschten Serviceumfang ab. BODA Snacks prüft die Voraussetzungen zunächst und bespricht anschließend, welche Betreuung übernommen werden kann."
       }
+    },
 
-      .footer-grid {
-        text-align: center;
+    {
+      "@type":"Question",
+      "name":"Übernimmt BODA Snacks auch die Reinigung?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Reinigung kann Bestandteil des vereinbarten Betreuungskonzepts sein. Der konkrete Umfang wird vor Beginn des Services abgestimmt."
+      }
+    },
+
+    {
+      "@type":"Question",
+      "name":"Kann das Sortiment angepasst werden?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Ja. Bei der von BODA Snacks betreuten Warenversorgung kann das Sortiment gemeinsam abgestimmt und anhand der Nachfrage angepasst werden."
       }
     }
 
-    @media (max-width: 600px) {
-      .container {
-        width: min(100% - 38px, 1250px);
-      }
+  ]
 
-      section {
-        padding: 75px 0;
-      }
+}
 
-      .hero-content {
-        padding: 70px 0;
-      }
+</script>
 
-      .hero p {
-        font-size: 18px;
-      }
-
-      .hero-note {
-        font-size: 15px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-box {
-        padding: 38px 22px;
-      }
-
-      .contact-buttons {
-        flex-direction: column;
-      }
-
-      .contact-buttons .btn {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
+
 
 <body>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-
-        <div class="hero-logo">
-          <img src="logo.jpg" alt="BODA Snacks Logo">
-        </div>
-
-        <h1>
-          Ihr Snackautomat.<br>
-          <span>Immer gefüllt.</span><br>
-          Immer sauber.
-        </h1>
-
-        <p>
-          BODA Snacks hält Ihren bestehenden Snack- oder Getränkeautomaten zuverlässig gefüllt, sauber und attraktiv – mit persönlicher Betreuung für Unternehmen in Pforzheim, Karlsruhe, dem Enzkreis und der Region Stuttgart.
-        </p>
-
-        <p class="hero-note">
-          ✓ Persönlicher Ansprechpartner &nbsp; ✓ Kein Organisationsaufwand &nbsp; ✓ Unverbindliche Anfrage
-        </p>
-
-        <a href="https://boda-snacks.de/#kontakt" class="btn">
-          Kostenlose Einschätzung anfragen
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="leistungen">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Ihr Automat läuft. Wir kümmern uns um den Rest.</h2>
-        <p>
-          Sie behalten einen gepflegten, gut bestückten Automaten – ohne Bestellungen, MHD-Listen oder die Suche nach einem Techniker. Wir übernehmen die regelmäßige Betreuung vor Ort.
-        </p>
-      </div>
-
-      <div class="cards">
-
-        <div class="service-card">
-          <div class="icon">🥨</div>
-          <h3>Regelmäßige Befüllung</h3>
-          <p>Wir kontrollieren den Bestand und füllen fehlende Produkte zuverlässig nach. Leere Fächer gehören der Vergangenheit an.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🧼</div>
-          <h3>Professionelle Reinigung</h3>
-          <p>Jeder Automat wird regelmäßig gereinigt. Saubere Geräte sorgen für einen besseren Eindruck und mehr Hygiene.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🥤</div>
-          <h3>Individuelles Sortiment</h3>
-          <p>Ob Süßwaren, Getränke, Energy Drinks oder gesunde Snacks – wir passen das Sortiment an Ihr Unternehmen an.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">📦</div>
-          <h3>MHD-Kontrolle</h3>
-          <p>Bei jeder Befüllung prüfen wir die Mindesthaltbarkeit und tauschen Ware rechtzeitig aus.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">📈</div>
-          <h3>Sortimentsoptimierung</h3>
-          <p>Beliebte Produkte werden häufiger nachgefüllt. Weniger gefragte Artikel ersetzen wir auf Wunsch.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🤝</div>
-          <h3>Persönlicher Service</h3>
-          <p>Keine Hotline. Sie haben einen festen Ansprechpartner, der Ihren Standort kennt.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="about">
-    <div class="container">
-      <div class="about-grid">
-
-        <div class="about-text">
-          <h2>Weniger Reklamationen. Weniger Aufwand. Besserer Eindruck.</h2>
-
-          <p>
-            Ein Automat ist nur dann ein Mehrwert, wenn er gefüllt, sauber und funktionsfähig ist. Leere Fächer, verschmutzte Geräte oder ein unpassendes Sortiment kosten Zeit – und nerven Mitarbeiter und Besucher.
-          </p>
-
-          <p>
-            Genau hier setzt BODA Snacks an. Wir übernehmen die komplette Betreuung Ihres Snack- oder Getränkeautomaten – von der regelmäßigen Befüllung über die Reinigung bis hin zur kontinuierlichen Optimierung des Sortiments.
-          </p>
-
-          <p>
-            Unser Ziel: Ihr Automat hinterlässt jederzeit einen professionellen Eindruck und versorgt Ihre Mitarbeiter zuverlässig mit frischen Snacks und gekühlten Getränken.
-          </p>
-
-          <a href="https://boda-snacks.de/#kontakt" class="btn">
-            Kostenlose Beratung anfragen
-          </a>
-        </div>
-
-        <div class="stats">
-          <div class="stat-box">
-            <h3>100%</h3>
-            <span>Persönlicher Service</span>
-          </div>
-
-          <div class="stat-box">
-            <h3>Regional</h3>
-            <span>Pforzheim & Umgebung</span>
-          </div>
-
-          <div class="stat-box">
-            <h3>Flexibel</h3>
-            <span>Individuelle Befüllung</span>
-          </div>
-
-          <div class="stat-box">
-            <h3>Sauber</h3>
-            <span>Regelmäßige Reinigung</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="process">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>So funktioniert unser Service</h2>
-        <p>In wenigen Schritten sorgen wir dafür, dass Ihr Snackautomat zuverlässig versorgt ist.</p>
-      </div>
-
-      <div class="timeline">
-
-        <div class="step">
-          <div class="number">1</div>
-          <h3>Kontakt aufnehmen</h3>
-          <p>Sie senden uns kurz Ihre Anfrage oder rufen uns an.</p>
-        </div>
-
-        <div class="step">
-          <div class="number">2</div>
-          <h3>Bedarf klären</h3>
-          <p>Wir besprechen Standort, Automat, Nutzung und die passende Betreuung.</p>
-        </div>
-
-        <div class="step">
-          <div class="number">3</div>
-          <h3>Service starten</h3>
-          <p>Wir übernehmen Befüllung, Reinigung und die vereinbarten Kontrollen.</p>
-        </div>
-
-        <div class="step">
-          <div class="number">4</div>
-          <h3>Langfristig betreuen</h3>
-          <p>Wir passen den Service und das Sortiment an den tatsächlichen Verbrauch an.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="products">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Was wir bei jedem Serviceeinsatz im Blick haben</h2>
-        <p>Nicht nur nachfüllen: Wir prüfen, was an Ihrem Standort wirklich funktioniert – damit der Automat genutzt wird und dauerhaft einen guten Eindruck macht.</p>
-      </div>
-
-      <div class="product-grid">
-
-        <div class="product-card">
-          <div class="product-image">📦</div>
-          <h3>Füllstand & Sortiment</h3>
-          <p>Gefragte Produkte bleiben verfügbar. Was liegen bleibt, passen wir gemeinsam mit Ihnen an.</p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🧼</div>
-          <h3>Hygiene & MHD</h3>
-          <p>Wir kontrollieren Sauberkeit und Mindesthaltbarkeit bei jedem vereinbarten Serviceeinsatz.</p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🔍</div>
-          <h3>Funktion & Eindruck</h3>
-          <p>Wir prüfen den Automaten sichtbar mit – damit kleine Auffälligkeiten nicht zu einem dauerhaften Ärgernis werden.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="benefits">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Für Unternehmen, die keine Automatenverwaltung betreiben wollen</h2>
-      </div>
-
-      <div class="benefit-grid">
-
-        <div>
-          <h3>Versorgung ohne Leerlauf</h3>
-          <p>Mitarbeiter finden verlässlich Snacks und Getränke vor – auch dann, wenn Pausen kurz sind oder Schichten laufen.</p>
-        </div>
-
-        <div>
-          <h3>Keine Zusatzaufgabe fürs Team</h3>
-          <p>Sie müssen weder Waren bestellen noch reinigen, nachfüllen oder einzelnen Problemen hinterherlaufen.</p>
-        </div>
-
-        <div>
-          <h3>Passend zu Ihrem Verbrauch</h3>
-          <p>Die Serviceintervalle richten sich nach Ihrem tatsächlichen Verbrauch. So bleibt der Automat versorgt, ohne unnötige Fahrten zu verursachen.</p>
-        </div>
-
-        <div>
-          <h3>Persönlicher Ansprechpartner</h3>
-          <p>Bei Fragen oder Änderungswünschen erreichen Sie direkt Ihren Ansprechpartner – ohne Hotline oder lange Wartezeiten.</p>
-        </div>
-
-      </div>
-
-      <div style="text-align:center;">
-        <a href="https://boda-snacks.de/#kontakt" class="btn">
-          Kostenlose Standortprüfung starten
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="service-area">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Unser Einsatzgebiet</h2>
-        <p>BODA Snacks betreut Unternehmen in Pforzheim, Karlsruhe, dem Enzkreis, Stuttgart, Böblingen und Calw. Wir kommen direkt zu Ihrem Standort.</p>
-      </div>
-
-      <div class="area-grid">
-
-        <div class="area-card">
-          <h3>Pforzheim</h3>
-          <p>Regelmäßiger Automatenservice für Unternehmen jeder Größe.</p>
-        </div>
-
-        <div class="area-card">
-          <h3>Karlsruhe</h3>
-          <p>Zuverlässige Befüllung und Reinigung Ihrer Automaten.</p>
-        </div>
-
-        <div class="area-card">
-          <h3>Enzkreis</h3>
-          <p>Persönlicher Service mit kurzen Reaktionszeiten.</p>
-        </div>
-
-        <div class="area-card">
-          <h3>Stuttgart</h3>
-          <p>Individuelle Betreuung für Firmen und Betriebe.</p>
-        </div>
-
-        <div class="area-card">
-          <h3>Böblingen</h3>
-          <p>Professioneller Automatenservice direkt vor Ort.</p>
-        </div>
-
-        <div class="area-card">
-          <h3>Calw</h3>
-          <p>Flexible Serviceintervalle nach Ihrem Bedarf.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="faq">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Häufig gestellte Fragen</h2>
-      </div>
-
-      <div class="faq-box">
-
-        <details>
-          <summary>Wie oft werden Snackautomaten befüllt?</summary>
-          <p>Je nach Verbrauch wöchentlich, zweiwöchentlich oder nach individueller Vereinbarung.</p>
-        </details>
-
-        <details>
-          <summary>Übernehmen Sie auch die Reinigung?</summary>
-          <p>Ja. Jeder Serviceeinsatz beinhaltet eine Kontrolle und Reinigung des Automaten.</p>
-        </details>
-
-        <details>
-          <summary>Kann das Sortiment angepasst werden?</summary>
-          <p>Selbstverständlich. Gemeinsam stellen wir das passende Sortiment für Ihr Unternehmen zusammen.</p>
-        </details>
-
-        <details>
-          <summary>Welche Automaten betreuen Sie?</summary>
-          <p>Wir betreuen Snackautomaten, Getränkeautomaten und kombinierte Verkaufsautomaten verschiedener Hersteller.</p>
-        </details>
-
-        <details>
-          <summary>Ist die Beratung kostenlos?</summary>
-          <p>Ja. Die Erstberatung und die Besichtigung Ihres Standorts sind unverbindlich.</p>
-        </details>
-
-        <details>
-          <summary>Wie schnell erhalten wir eine Rückmeldung?</summary>
-          <p>Wir melden uns in der Regel innerhalb von 24 Stunden und klären mit Ihnen kurz, ob und wie wir Ihren Automaten sinnvoll betreuen können.</p>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt" class="contact-section">
-    <div class="container">
-      <div class="contact-box">
-
-        <h2>Wir prüfen Ihren Automatenservice kostenlos und unverbindlich.</h2>
-
-        <p>
-          Sie haben bereits einen Automaten und möchten, dass er zuverlässig läuft? Sagen Sie uns kurz Standort und Bedarf. Wir melden uns persönlich bei Ihnen.
-        </p>
-
-        <div class="contact-buttons">
-          <a href="https://boda-snacks.de/#kontakt" class="btn">
-            Kostenlose Standortprüfung starten
-          </a>
-
-          <a href="tel:+4972317703719" class="btn btn-outline">
-            Anrufen
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-grid">
-
-      <div>
-        <h3>BODA Snacks</h3>
-        <p>Ihr regionaler Partner für Snackautomaten, Getränkeautomaten sowie professionelle Befüllung und Reinigung.</p>
-      </div>
-
-      <div>
-        <h3>Leistungen</h3>
-        <ul>
-          <li><a href="https://boda-snacks.de/">Snackautomaten</a></li>
-          <li><a href="https://boda-snacks.de/">Getränkeautomaten</a></li>
-          <li><a href="https://boda-snacks.de/snackautomaten-befuellen-lassen.html">Befüllungsservice</a></li>
-          <li><a href="https://boda-snacks.de/snackautomaten-befuellen-lassen.html">Reinigungsservice</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Kontakt</h3>
-        <ul>
-          <li><a href="tel:+4972317703719">+49 7231 7703719</a></li>
-          <li><a href="mailto:kontakt@boda-snacks.de">kontakt@boda-snacks.de</a></li>
-          <li><a href="https://boda-snacks.de/#kontakt">Kontaktformular</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="datenschutz.html">Datenschutz</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="container copyright">
-      © 2026 BODA Snacks GbR · Alle Rechte vorbehalten.
-    </div>
-  </footer>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BODA Snacks",
-    "url": "https://boda-snacks.de",
-    "telephone": "+49 7231 7703719",
-    "email": "kontakt@boda-snacks.de",
-    "description": "Professionelle Befüllung und Reinigung von Snack- und Getränkeautomaten.",
-    "areaServed": [
-      "Pforzheim",
-      "Karlsruhe",
-      "Enzkreis",
-      "Stuttgart",
-      "Böblingen",
-      "Calw"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Snackautomaten befüllen und reinigen",
-    "serviceType": "Automatenservice",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "BODA Snacks"
-    },
-    "areaServed": [
-      "Pforzheim",
-      "Karlsruhe",
-      "Enzkreis",
-      "Stuttgart",
-      "Böblingen",
-      "Calw"
-    ]
-  }
-  </script>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+<div class="wrap header-inner">
+
+
+<a
+  href="index.html"
+  class="brand"
+  aria-label="BODA Snacks Startseite"
+>
+
+<span class="brand-main">
+BODA <span class="snacks">SNACKS</span>
+</span>
+
+<span class="brand-sub">
+Ihr Automatenservice aus Pforzheim
+</span>
+
+</a>
+
+
+
+<button
+  class="menu-toggle"
+  id="menuToggle"
+  type="button"
+  aria-label="Menü öffnen"
+  aria-expanded="false"
+>
+Menü ☰
+</button>
+
+
+
+<nav
+  class="main-nav"
+  id="mainNav"
+  aria-label="Hauptnavigation"
+>
+
+<a href="#service">
+Unser Service
+</a>
+
+<a href="#pruefung">
+Übernahme prüfen
+</a>
+
+<a href="#faq">
+FAQ
+</a>
+
+<a
+  href="#anfrage"
+  class="btn btn-primary"
+>
+Automat prüfen lassen ↗
+</a>
+
+</nav>
+
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="hero">
+
+<div class="wrap">
+
+
+<div class="hero-grid">
+
+
+<div>
+
+
+<span class="eyebrow">
+Befüllungsservice für bestehende Automaten
+</span>
+
+
+<h1>
+Sie haben den Automaten.
+<br>
+Wir kümmern uns um den Betrieb.
+</h1>
+
+
+<p class="lead hero-copy">
+
+Ihr Unternehmen besitzt bereits einen Snack- oder
+Getränkeautomaten, aber Einkauf, Befüllung und laufende
+Betreuung kosten zu viel Zeit?
+
+<strong>
+Dann prüfen wir, ob BODA Snacks die Versorgung
+für Ihren Standort übernehmen kann.
+</strong>
+
+</p>
+
+
+
+<div class="hero-actions">
+
+<a
+  href="#anfrage"
+  class="btn btn-primary"
+>
+Bestehenden Automaten prüfen lassen ↗
+</a>
+
+<a
+  href="#service"
+  class="btn btn-secondary"
+>
+Unseren Service ansehen
+</a>
+
+</div>
+
+
+
+<p class="hero-note">
+Kostenlose Erstanfrage · unverbindlich · persönlicher Ansprechpartner
+</p>
+
+</div>
+
+
+
+<div class="hero-visual">
+
+<img
+  src="images/snackautomat-hero.jpg"
+  alt="Snackautomat im Unternehmen"
+>
+
+<div class="hero-badge">
+BODA <span>SNACKS</span> · Befüllung &amp; Betreuung
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="trust-row">
+
+
+<div class="trust-item">
+
+<span class="check">✓</span>
+
+Für bereits vorhandene Automaten
+
+</div>
+
+
+<div class="trust-item">
+
+<span class="check">✓</span>
+
+Service nach individueller Prüfung
+
+</div>
+
+
+<div class="trust-item">
+
+<span class="check">✓</span>
+
+Direkter Ansprechpartner aus der Region
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROBLEM / VALUE
+     ========================================================= -->
+
+<section class="section section-soft">
+
+<div class="wrap problem-grid">
+
+
+<div class="problem-copy">
+
+<span class="eyebrow">
+Der Automat ist nicht das Problem
+</span>
+
+<h2>
+Der laufende Betrieb kostet Zeit.
+</h2>
+
+<p>
+Ein vorhandener Automat kann eine gute Versorgungslösung sein.
+
+Aber nur, wenn sich jemand zuverlässig um Ware,
+Sauberkeit und den laufenden Betrieb kümmert.
+</p>
+
+</div>
+
+
+
+<div class="problem-list">
+
+
+<article class="problem-item">
+
+<span class="problem-number">
+01
+</span>
+
+<div>
+
+<h3>
+Ware muss bestellt werden
+</h3>
+
+<p>
+Snacks und Getränke müssen beschafft, gelagert
+und rechtzeitig zum Automaten gebracht werden.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="problem-item">
+
+<span class="problem-number">
+02
+</span>
+
+<div>
+
+<h3>
+Fächer müssen kontrolliert werden
+</h3>
+
+<p>
+Ein Automat mit leeren Fächern erfüllt seinen Zweck
+nur noch eingeschränkt und sorgt schnell für Frust.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="problem-item">
+
+<span class="problem-number">
+03
+</span>
+
+<div>
+
+<h3>
+Sortiment muss gepflegt werden
+</h3>
+
+<p>
+Produkte, die niemand kauft, blockieren Kapazität.
+Gefragte Artikel sollten dagegen ausreichend verfügbar sein.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="problem-item">
+
+<span class="problem-number">
+04
+</span>
+
+<div>
+
+<h3>
+Sauberkeit muss stimmen
+</h3>
+
+<p>
+Ein gepflegter Automat macht einen besseren Eindruck
+und gehört zu einer vernünftigen laufenden Betreuung.
+</p>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICE
+     ========================================================= -->
+
+<section
+  class="section"
+  id="service"
+>
+
+<div class="wrap">
+
+
+<div class="section-head">
+
+<span class="eyebrow">
+Unser Befüllungsservice
+</span>
+
+<h2>
+Wir übernehmen die Aufgaben,
+die im Alltag liegen bleiben.
+</h2>
+
+<p>
+Welche Leistungen tatsächlich übernommen werden,
+stimmen wir nach Prüfung Ihres vorhandenen Automaten
+und Standorts mit Ihnen ab.
+</p>
+
+</div>
+
+
+
+<div class="service-grid">
+
+
+<article class="service-card">
+
+<span class="service-label">
+01 / BEFÜLLUNG
+</span>
+
+<h3>
+Regelmäßige Warenversorgung
+</h3>
+
+<p>
+Wir prüfen den Bedarf und können die vereinbarte
+regelmäßige Befüllung mit Snacks und Getränken übernehmen.
+</p>
+
+</article>
+
+
+
+<article class="service-card">
+
+<span class="service-label">
+02 / SORTIMENT
+</span>
+
+<h3>
+Produkte passend zur Nachfrage
+</h3>
+
+<p>
+Bei der von uns betreuten Warenversorgung kann die
+Produktauswahl auf Standort und tatsächliche Nachfrage
+abgestimmt werden.
+</p>
+
+</article>
+
+
+
+<article class="service-card">
+
+<span class="service-label">
+03 / MHD
+</span>
+
+<h3>
+Mindesthaltbarkeit im Blick
+</h3>
+
+<p>
+Bei der von uns gelieferten Ware berücksichtigen wir
+im Rahmen der vereinbarten Betreuung auch die Kontrolle
+der Mindesthaltbarkeit.
+</p>
+
+</article>
+
+
+
+<article class="service-card">
+
+<span class="service-label">
+04 / REINIGUNG
+</span>
+
+<h3>
+Gepflegter Automat
+</h3>
+
+<p>
+Die regelmäßige Reinigung kann Bestandteil des
+Betreuungskonzepts sein und wird vorab mit Ihnen festgelegt.
+</p>
+
+</article>
+
+
+
+<article class="service-card">
+
+<span class="service-label">
+05 / KONTROLLE
+</span>
+
+<h3>
+Auffälligkeiten erkennen
+</h3>
+
+<p>
+Im Rahmen unserer Serviceeinsätze behalten wir den
+sichtbaren Zustand des Automaten im Blick und informieren
+Sie über festgestellte Auffälligkeiten.
+</p>
+
+</article>
+
+
+
+<article class="service-card">
+
+<span class="service-label">
+06 / ANSPRECHPARTNER
+</span>
+
+<h3>
+Direkter Kontakt
+</h3>
+
+<p>
+Sie haben bei Fragen zur Versorgung einen persönlichen
+Ansprechpartner statt einer anonymen Bestellroutine.
+</p>
+
+</article>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HONEST CHECK
+     ========================================================= -->
+
+<section
+  class="section"
+  id="pruefung"
+>
+
+<div class="wrap">
+
+
+<div class="check-box">
+
+
+<span class="eyebrow">
+Vor der Übernahme
+</span>
+
+
+<h2>
+Nicht jeder vorhandene Automat
+passt automatisch zu unserem Service.
+</h2>
+
+
+<p>
+Und genau deshalb prüfen wir zuerst.
+
+Das ist für Sie und für uns besser,
+als voreilig einen Service zu versprechen,
+der später technisch oder wirtschaftlich nicht sinnvoll funktioniert.
+</p>
+
+
+
+<div class="check-grid">
+
+
+<div class="check-item">
+
+<strong>
+Automat
+</strong>
+
+<span>
+Hersteller, Modell, Zustand und technische Ausstattung.
+</span>
+
+</div>
+
+
+
+<div class="check-item">
+
+<strong>
+Standort
+</strong>
+
+<span>
+Entfernung, Zugänglichkeit und Bedingungen vor Ort.
+</span>
+
+</div>
+
+
+
+<div class="check-item">
+
+<strong>
+Nutzung
+</strong>
+
+<span>
+Personenanzahl, Verbrauch und erforderliche Serviceintervalle.
+</span>
+
+</div>
+
+
+
+<div class="check-item">
+
+<strong>
+Leistungsumfang
+</strong>
+
+<span>
+Welche Aufgaben Sie konkret an uns übergeben möchten.
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROCESS
+     ========================================================= -->
+
+<section class="section section-soft">
+
+<div class="wrap">
+
+
+<div class="section-head">
+
+<span class="eyebrow">
+So starten wir
+</span>
+
+<h2>
+Drei Schritte statt komplizierter Übergabe.
+</h2>
+
+<p>
+Sie geben uns die Eckdaten Ihres Automaten.
+Wir prüfen die Möglichkeiten und besprechen anschließend
+den passenden Service.
+</p>
+
+</div>
+
+
+
+<div class="steps">
+
+
+<article class="step">
+
+<span class="step-number">
+01 / ANFRAGE
+</span>
+
+<h3>
+Automat beschreiben
+</h3>
+
+<p>
+Sie teilen uns Standort, Automatentyp und
+den gewünschten Serviceumfang mit.
+</p>
+
+</article>
+
+
+
+<article class="step">
+
+<span class="step-number">
+02 / PRÜFUNG
+</span>
+
+<h3>
+Übernahme klären
+</h3>
+
+<p>
+Wir prüfen Gerät, Nutzung, Standort und die
+mögliche wirtschaftliche Betreuung.
+</p>
+
+</article>
+
+
+
+<article class="step">
+
+<span class="step-number">
+03 / SERVICE
+</span>
+
+<h3>
+Betreuung vereinbaren
+</h3>
+
+<p>
+Wenn alles passt, legen wir Leistungen,
+Intervalle und Konditionen gemeinsam fest.
+</p>
+
+</article>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PERSONAL TRUST
+     ========================================================= -->
+
+<section class="section">
+
+<div class="wrap">
+
+
+<div class="people-card">
+
+
+<div class="people-image">
+
+<img
+  src="teamfoto.jpg"
+  alt="Andreas und Sandra Boda von BODA Snacks"
+>
+
+</div>
+
+
+
+<div class="people-content">
+
+<span class="eyebrow">
+Persönlicher Automatenservice
+</span>
+
+<h2>
+Sie wissen,
+wer Ihren Standort betreut.
+</h2>
+
+<p>
+BODA Snacks wird von Andreas und Sandra Boda geführt.
+
+Gerade bei einem laufenden Befüllungsservice ist uns
+ein direkter Kontakt wichtig: Wir lernen Ihren Standort
+kennen und stimmen Änderungen persönlich mit Ihnen ab.
+</p>
+
+<p>
+Unser Anspruch ist kein anonymer Massenservice,
+sondern eine Versorgung, die im Alltag zuverlässig funktioniert.
+</p>
+
+<div class="signature">
+Andreas &amp; Sandra ·
+<span>BODA Snacks</span>
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICE AREA
+     ========================================================= -->
+
+<section class="section section-soft">
+
+<div class="wrap area-layout">
+
+
+<div>
+
+<span class="eyebrow">
+Regional unterwegs
+</span>
+
+<h2>
+Kurze Wege sind beim Befüllungsservice entscheidend.
+</h2>
+
+<p class="lead">
+Ein Automatenservice funktioniert nur wirtschaftlich,
+wenn Standort, Verbrauch und Tourenplanung zusammenpassen.
+
+Deshalb prüfen wir jede Anfrage auch unter diesem Gesichtspunkt.
+</p>
+
+<a
+  href="#anfrage"
+  class="btn btn-primary"
+>
+Standort prüfen lassen ↗
+</a>
+
+</div>
+
+
+
+<div>
+
+<h3>
+Unser aktueller regionaler Schwerpunkt
+</h3>
+
+<div class="area-list">
+
+<span class="area-chip">
+Pforzheim
+</span>
+
+<span class="area-chip">
+Enzkreis
+</span>
+
+<span class="area-chip">
+Karlsruhe
+</span>
+
+<span class="area-chip">
+Böblingen
+</span>
+
+<span class="area-chip">
+Calw
+</span>
+
+<span class="area-chip">
+Stuttgart
+</span>
+
+</div>
+
+
+<p style="margin-top:25px;color:var(--muted);">
+Auch Standorte außerhalb dieser Orte können interessant sein.
+Entscheidend ist die konkrete Lage und der mögliche Betreuungsumfang.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FAQ
+     ========================================================= -->
+
+<section
+  class="section"
+  id="faq"
+>
+
+<div class="wrap faq-layout">
+
+
+<div>
+
+<span class="eyebrow">
+Häufige Fragen
+</span>
+
+<h2>
+Bestehenden Automaten übernehmen lassen.
+</h2>
+
+<p class="lead">
+Die wichtigsten Fragen,
+bevor wir Ihren Standort prüfen.
+</p>
+
+</div>
+
+
+
+<div class="faq-list">
+
+
+<details open>
+
+<summary>
+Können Sie unseren bestehenden Automaten befüllen?
+</summary>
+
+<p>
+Möglicherweise ja.
+
+Ob wir die Betreuung übernehmen können,
+hängt unter anderem vom Automaten, Standort,
+Zustand und gewünschten Leistungsumfang ab.
+
+Deshalb prüfen wir Ihre Situation zunächst individuell.
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Welche Automaten können Sie betreuen?
+</summary>
+
+<p>
+Wir prüfen Snack-, Getränke- und Kombiautomaten individuell.
+
+Eine pauschale Zusage für jedes Modell oder jeden Hersteller
+wäre unseriös. Senden Sie uns am besten Hersteller,
+Modell und gegebenenfalls ein Foto des Automaten.
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Wie oft wird der Automat befüllt?
+</summary>
+
+<p>
+Das passende Serviceintervall hängt vom tatsächlichen Verbrauch
+und der Kapazität des Automaten ab.
+
+Die Intervalle werden deshalb individuell vereinbart
+und können bei Bedarf angepasst werden.
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Übernehmen Sie auch die Reinigung?
+</summary>
+
+<p>
+Die Reinigung kann Bestandteil unseres vereinbarten
+Betreuungskonzepts sein.
+
+Art und Umfang legen wir vor Beginn des Services gemeinsam fest.
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Kann das Sortiment verändert werden?
+</summary>
+
+<p>
+Ja.
+
+Bei der von uns betreuten Warenversorgung können wir
+gemeinsam eine passende Produktauswahl festlegen und
+diese anhand der tatsächlichen Nachfrage weiterentwickeln.
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Übernehmen Sie auch Reparaturen?
+</summary>
+
+<p>
+Welche technische Betreuung möglich ist,
+hängt vom Automatenmodell und dem vereinbarten Service ab.
+
+Das klären wir vor Vertragsbeginn konkret,
+damit Zuständigkeiten eindeutig geregelt sind.
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Ist die erste Anfrage kostenlos?
+</summary>
+
+<p>
+Ja.
+
+Die erste Prüfung Ihrer Anfrage ist kostenlos und unverbindlich.
+Erst wenn beide Seiten dem konkreten Betreuungskonzept zustimmen,
+entsteht eine Beauftragung.
+</p>
+
+</details>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+     ========================================================= -->
+
+<section
+  class="section section-contact"
+  id="anfrage"
+>
+
+<div class="wrap contact-grid">
+
+
+<div class="contact-copy">
+
+
+<span class="eyebrow">
+Kostenlose Erstprüfung
+</span>
+
+
+<h2>
+Sie haben schon einen Automaten?
+Dann schauen wir ihn uns an.
+</h2>
+
+
+<p class="lead">
+Teilen Sie uns Standort, Automat und gewünschten Service mit.
+
+Wir prüfen, ob eine Betreuung durch BODA Snacks
+für Ihren Standort sinnvoll möglich ist.
+</p>
+
+
+<p>
+Die Anfrage ist kostenlos und unverbindlich.
+Sie beauftragen damit noch keinen Service.
+</p>
+
+
+
+<div class="contact-links">
+
+
+<a
+  href="tel:+4972317703719"
+  class="contact-link"
+>
+
+<span>
+Telefon
+</span>
+
+<strong>
+07231 7703719
+</strong>
+
+</a>
+
+
+
+<a
+  href="mailto:kontakt@boda-snacks.de"
+  class="contact-link"
+>
+
+<span>
+E-Mail
+</span>
+
+<strong>
+kontakt@boda-snacks.de
+</strong>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- FORMULAR -->
+
+<form
+  class="contact-form"
+  action="https://formsubmit.co/kontakt@boda-snacks.de"
+  method="POST"
+>
+
+
+<input
+  type="hidden"
+  name="_subject"
+  value="Anfrage Befüllungsservice bestehender Automat"
+>
+
+
+<input
+  type="hidden"
+  name="_template"
+  value="table"
+>
+
+
+<input
+  type="hidden"
+  name="_next"
+  value="https://boda-snacks.de/danke.html"
+>
+
+
+<h3>
+Bestehenden Automaten prüfen lassen
+</h3>
+
+
+<p class="form-description">
+Mit * gekennzeichnete Felder benötigen wir für die Anfrage.
+</p>
+
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label for="name">
+Ihr Name *
+</label>
+
+<input
+  id="name"
+  name="Name"
+  type="text"
+  autocomplete="name"
+  required
+>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="company">
+Unternehmen
+</label>
+
+<input
+  id="company"
+  name="Unternehmen"
+  type="text"
+  autocomplete="organization"
+>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="email">
+E-Mail *
+</label>
+
+<input
+  id="email"
+  name="E-Mail"
+  type="email"
+  autocomplete="email"
+  required
+>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="phone">
+Telefon
+</label>
+
+<input
+  id="phone"
+  name="Telefon"
+  type="tel"
+  autocomplete="tel"
+>
+
+</div>
+
+
+
+<div class="field field-full">
+
+<label for="location">
+PLZ / Ort des Automaten *
+</label>
+
+<input
+  id="location"
+  name="Standort"
+  type="text"
+  placeholder="z. B. 75175 Pforzheim"
+  required
+>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="machine">
+Automat
+</label>
+
+<input
+  id="machine"
+  name="Automat"
+  type="text"
+  placeholder="Hersteller / Modell, falls bekannt"
+>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="people">
+Personen am Standort
+</label>
+
+<select
+  id="people"
+  name="Personen am Standort"
+>
+
+<option value="">
+Bitte auswählen
+</option>
+
+<option value="unter 25">
+unter 25
+</option>
+
+<option value="25 bis 49">
+25–49
+</option>
+
+<option value="50 bis 99">
+50–99
+</option>
+
+<option value="100 bis 199">
+100–199
+</option>
+
+<option value="200 oder mehr">
+200 oder mehr
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field field-full">
+
+<label for="service">
+Welche Betreuung wünschen Sie?
+</label>
+
+<select
+  id="service"
+  name="Gewünschter Service"
+>
+
+<option value="">
+Bitte auswählen
+</option>
+
+<option value="Befüllung">
+Nur Befüllung
+</option>
+
+<option value="Befüllung und Reinigung">
+Befüllung & Reinigung
+</option>
+
+<option value="Komplette Betreuung">
+Möglichst komplette Betreuung
+</option>
+
+<option value="Noch unklar">
+Noch unklar – bitte beraten
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field field-full">
+
+<label for="message">
+Weitere Informationen
+</label>
+
+<textarea
+  id="message"
+  name="Nachricht"
+  placeholder="Zum Beispiel: Automat ist bereits vorhanden, aktuell wird intern befüllt, ca. 80 Mitarbeiter ..."
+></textarea>
+
+</div>
+
+
+</div>
+
+
+
+<label class="privacy-check">
+
+<input
+  type="checkbox"
+  name="Datenschutzerklärung gelesen"
+  value="Ja"
+  required
+>
+
+<span>
+Ich habe die
+<a href="datenschutz.html">
+Datenschutzerklärung
+</a>
+gelesen. Meine Angaben werden zur Bearbeitung
+meiner Anfrage übermittelt. *
+</span>
+
+</label>
+
+
+
+<button
+  type="submit"
+  class="btn btn-primary form-submit"
+>
+Automatenservice kostenlos prüfen lassen ↗
+</button>
+
+
+</form>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site-footer">
+
+<div class="wrap">
+
+
+<div class="footer-grid">
+
+
+<div class="footer-brand">
+
+
+<a
+  href="index.html"
+  class="brand"
+>
+
+<span class="brand-main">
+BODA <span class="snacks">SNACKS</span>
+</span>
+
+</a>
+
+
+<p>
+Du hast den Hunger, wir die Snacks.
+<br>
+Ihr Automatenservice aus Pforzheim.
+</p>
+
+
+</div>
+
+
+
+<div>
+
+
+<div class="footer-title">
+Leistungen
+</div>
+
+
+<div class="footer-links">
+
+<a href="index.html#loesungen">
+Automatenlösungen
+</a>
+
+<a href="snackautomaten-befuellen-lassen.html">
+Befüllungsservice
+</a>
+
+<a href="was-kostet-ein-snackautomat.html">
+Kosten &amp; Planung
+</a>
+
+<a href="automatenservice-pforzheim.html">
+Automatenservice Pforzheim
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
+<div class="footer-title">
+Kontakt
+</div>
+
+
+<div class="footer-links">
+
+<a href="tel:+4972317703719">
+07231 7703719
+</a>
+
+<a href="mailto:kontakt@boda-snacks.de">
+kontakt@boda-snacks.de
+</a>
+
+<a href="impressum.html">
+Impressum
+</a>
+
+<a href="datenschutz.html">
+Datenschutz
+</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<span>
+© 2026 BODA Snacks GbR
+</span>
+
+
+<div class="footer-bottom-links">
+
+<a href="impressum.html">
+Impressum
+</a>
+
+<a href="datenschutz.html">
+Datenschutz
+</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MOBILE NAVIGATION
+     ========================================================= -->
+
+<script>
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const mainNav =
+document.getElementById("mainNav");
+
+
+if(menuToggle && mainNav){
+
+  menuToggle.addEventListener(
+    "click",
+    function(){
+
+      const open =
+      mainNav.classList.toggle("open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        open ? "true" : "false"
+      );
+
+    }
+  );
+
+
+  mainNav
+  .querySelectorAll("a")
+  .forEach(function(link){
+
+    link.addEventListener(
+      "click",
+      function(){
+
+        mainNav.classList.remove("open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+    );
+
+  });
+
+}
+
+</script>
+
 
 </body>
+
 </html>
