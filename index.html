@@ -322,6 +322,503 @@
 
 
     /* =========================================
+       STANDORT-CHECK – CONVERSION-FUNNEL
+       ========================================= */
+
+    .standort-check-section {
+      background: linear-gradient(135deg, #f5f7f5 0%, #ffffff 72%);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .standort-check-layout {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .standort-check-copy {
+      position: sticky;
+      top: 122px;
+    }
+
+    .standort-check-copy > p {
+      margin-top: 20px;
+      max-width: 520px;
+      font-size: 1.0625rem;
+    }
+
+    .standort-check-benefits {
+      display: grid;
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .standort-check-benefit {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .standort-check-benefit .check-dot {
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #e8f1eb;
+      color: #2f7d4a;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .standort-check-benefit p {
+      font-size: .9375rem;
+      line-height: 1.55;
+    }
+
+    .standort-check-benefit strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+
+    .standort-check-promise {
+      margin-top: 30px;
+      padding: 20px 22px;
+      border-radius: 14px;
+      background: #202821;
+      color: #eef2ee;
+      font-size: .9375rem;
+      line-height: 1.55;
+    }
+
+    .standort-check-promise strong {
+      color: #e2c784;
+    }
+
+    .standort-check-card {
+      background: #fff;
+      border: 1px solid #d7e0d6;
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: 0 18px 55px #20301d12;
+    }
+
+    .standort-progress {
+      margin-bottom: 30px;
+    }
+
+    .standort-progress-bar {
+      height: 5px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e9ede8;
+    }
+
+    .standort-progress-bar span {
+      display: block;
+      width: 25%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--gold-fill);
+      transition: width .25s ease;
+    }
+
+    .standort-progress-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .standort-step {
+      display: none;
+    }
+
+    .standort-step.is-active {
+      display: block;
+    }
+
+    .standort-step-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .standort-step h3 {
+      margin-bottom: 24px;
+      font-size: clamp(1.55rem, 2.5vw, 2.05rem);
+    }
+
+    .standort-step-intro {
+      margin: -12px 0 24px;
+      font-size: .9375rem;
+    }
+
+    .standort-field {
+      margin-bottom: 20px;
+    }
+
+    .standort-field label,
+    .standort-fieldset legend {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: .875rem;
+      font-weight: 700;
+    }
+
+    .standort-field label .optional {
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .standort-fieldset {
+      margin: 4px 0 28px;
+      padding: 0;
+      border: 0;
+    }
+
+    .standort-fieldset.top-space {
+      margin-top: 28px;
+    }
+
+    .standort-options {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .standort-options label,
+    .standort-choice {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .standort-options input,
+    .standort-choice input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .standort-options label span {
+      display: grid;
+      place-items: center;
+      min-height: 50px;
+      padding: 9px 10px;
+      border: 1px solid #cfd7ce;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--ink);
+      font-size: .875rem;
+      font-weight: 700;
+      text-align: center;
+      transition: border-color .18s, background .18s, box-shadow .18s;
+    }
+
+    .standort-options input:focus-visible + span,
+    .standort-choice input:focus-visible + span {
+      outline: 3px solid #346b50;
+      outline-offset: 3px;
+    }
+
+    .standort-options input:checked + span {
+      border-color: var(--gold);
+      background: #fbf7ec;
+      box-shadow: inset 0 0 0 1px var(--gold-fill);
+      color: #5f4512;
+    }
+
+    .standort-choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .standort-choice > span {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 92px;
+      padding: 16px 17px;
+      border: 1px solid #cfd7ce;
+      border-radius: 12px;
+      background: #fff;
+      transition: border-color .18s, background .18s, box-shadow .18s;
+    }
+
+    .standort-choice input:checked + span {
+      border-color: var(--gold);
+      background: #fbf7ec;
+      box-shadow: inset 0 0 0 1px var(--gold-fill);
+    }
+
+    .standort-choice strong {
+      color: var(--ink);
+      font-size: .9375rem;
+    }
+
+    .standort-choice small {
+      margin-top: 4px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .standort-two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .standort-error {
+      margin: -13px 0 18px;
+      color: #8b2f2f;
+      font-size: .8125rem;
+      font-weight: 700;
+    }
+
+    .standort-nav {
+      display: flex;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .standort-nav .btn {
+      flex: 1;
+    }
+
+    .standort-back {
+      background: #fff;
+      border-color: #cbd3cb;
+    }
+
+    .standort-submit {
+      background: #2f7d4a;
+      color: #fff;
+      border-color: #2f7d4a;
+      box-shadow: 0 8px 24px #2f7d4a2e;
+    }
+
+    .standort-submit:hover {
+      background: #27683e;
+      border-color: #27683e;
+      box-shadow: 0 9px 26px #2f7d4a38;
+    }
+
+    .standort-submit-note {
+      margin: 18px 0 0;
+      padding: 13px 15px;
+      border-radius: 9px;
+      background: #f3f5f2;
+      color: var(--muted);
+      font-size: .8125rem;
+      line-height: 1.5;
+    }
+
+    /* =========================================
+       STANDORT-CHECK – VORLÄUFIGES ERGEBNIS
+       ========================================= */
+
+    .standort-result-card {
+      padding: 24px;
+      border: 1px solid #cfe0d3;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #f4faf6 0%, #ffffff 78%);
+      box-shadow: 0 10px 30px #20301d0d;
+      transition: border-color .2s, background .2s;
+    }
+
+    .standort-result-card.is-caution {
+      border-color: #e2c78f;
+      background: linear-gradient(145deg, #fff9ed 0%, #ffffff 78%);
+    }
+
+    .standort-result-top {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .standort-result-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #2f7d4a;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 800;
+      box-shadow: 0 7px 18px #2f7d4a2b;
+    }
+
+    .standort-result-card.is-caution .standort-result-icon {
+      background: #9a6b17;
+      box-shadow: 0 7px 18px #9a6b172b;
+    }
+
+    .standort-result-kicker {
+      display: block;
+      margin-bottom: 4px;
+      color: #2f7d4a;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .standort-result-card.is-caution .standort-result-kicker {
+      color: #8b5d0d;
+    }
+
+    .standort-result-card h4 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    .standort-result-text {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .9375rem;
+      line-height: 1.65;
+    }
+
+    .standort-result-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .standort-result-facts span {
+      padding: 7px 10px;
+      border: 1px solid #dce5dc;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      font-size: .8125rem;
+      font-weight: 700;
+    }
+
+    .standort-result-price {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 12px;
+      background: #202821;
+    }
+
+    .standort-result-price strong {
+      display: block;
+      color: #f2d993;
+      font-size: 1rem;
+    }
+
+    .standort-result-price p {
+      margin-top: 6px;
+      color: #e8ede8;
+      font-size: .875rem;
+      line-height: 1.55;
+    }
+
+    .standort-result-disclaimer {
+      margin-top: 16px;
+      font-size: .78rem;
+      line-height: 1.55;
+      color: #697269;
+    }
+
+    .standort-result-hint {
+      margin-top: 16px;
+      padding: 14px 15px;
+      border-radius: 10px;
+      background: #f7f5ef;
+      color: #565a54;
+      font-size: .84rem;
+      line-height: 1.55;
+    }
+
+    .standort-result-hint strong {
+      color: var(--ink);
+    }
+
+    .standort-result-contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .standort-result-contact a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 14px;
+      border: 1px solid #cbd3cb;
+      border-radius: 9px;
+      background: #fff;
+      color: var(--ink);
+      font-size: .875rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .standort-result-contact a:hover {
+      background: #f3f6f3;
+    }
+
+    .direct-contact-layout {
+      max-width: 780px;
+    }
+
+    @media (max-width: 850px) {
+      .standort-check-layout {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .standort-check-copy {
+        position: static;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .standort-check-card {
+        padding: 24px 20px;
+        border-radius: 18px;
+      }
+
+      .standort-options,
+      .standort-choice-grid,
+      .standort-two-columns,
+      .standort-result-contact {
+        grid-template-columns: 1fr;
+      }
+
+      .standort-nav {
+        flex-direction: column-reverse;
+      }
+
+      .standort-progress-meta {
+        font-size: .6875rem;
+      }
+    }
+
+    /* =========================================
        FUSSBEREICH – GRUNDFLÄCHE
        ========================================= */
 
@@ -1007,7 +1504,7 @@
           Über uns
         </a>
 
-        <a class="btn" href="#kontakt">
+        <a class="btn" href="#standort-check">
           Standort prüfen
           <span aria-hidden="true">↗</span>
         </a>
@@ -1064,8 +1561,8 @@
             <!-- Buttons im Einstiegsbereich -->
             <div class="hero-actions">
 
-              <a href="#kontakt" class="btn">
-                Standort kostenlos prüfen
+              <a href="#standort-check" class="btn">
+                Standort unverbindlich prüfen
                 <span aria-hidden="true">↗</span>
               </a>
 
@@ -1232,6 +1729,387 @@
 
 
     <!-- =========================================
+         STANDORT-CHECK – 4 SCHRITTE MIT SOFORT-EINSCHÄTZUNG
+         ========================================= -->
+
+    <section
+      class="section standort-check-section"
+      id="standort-check"
+      aria-labelledby="standort-check-title"
+    >
+      <div class="wrap standort-check-layout">
+
+        <div class="standort-check-copy">
+          <span class="eyebrow">
+            Unverbindlicher Standort-Check
+          </span>
+
+          <h2 id="standort-check-title">
+            Passt ein Automat<br>
+            zu Ihrem Betrieb?
+          </h2>
+
+          <p>
+            Sie nennen uns kurz die wichtigsten Eckdaten. Wir prüfen
+            persönlich, welche Versorgung für Ihren Standort sinnvoll ist.
+          </p>
+
+          <div class="standort-check-benefits" aria-label="Vorteile des Standort-Checks">
+            <div class="standort-check-benefit">
+              <span class="check-dot" aria-hidden="true">✓</span>
+              <p>
+                <strong>Ehrliche Einschätzung</strong>
+                Nicht jeder Standort braucht dieselbe Lösung.
+              </p>
+            </div>
+
+            <div class="standort-check-benefit">
+              <span class="check-dot" aria-hidden="true">✓</span>
+              <p>
+                <strong>Persönlich geprüft</strong>
+                Ihre Angaben landen direkt bei BODA Snacks – keine automatische Standardberatung.
+              </p>
+            </div>
+
+            <div class="standort-check-benefit">
+              <span class="check-dot" aria-hidden="true">✓</span>
+              <p>
+                <strong>Ohne Verpflichtung</strong>
+                Die Anfrage ist noch keine Beauftragung.
+              </p>
+            </div>
+          </div>
+
+          <div class="standort-check-promise">
+            <strong>Unser Prinzip:</strong><br>
+            Sie schicken uns die Eckdaten. Wir sagen Ihnen ehrlich,
+            ob und wie ein Automat an Ihrem Standort sinnvoll ist.
+          </div>
+        </div>
+
+        <form
+          class="standort-check-card"
+          id="standort-form"
+          action="https://formsubmit.co/kontakt@boda-snacks.de"
+          method="POST"
+        >
+          <div class="standort-progress" aria-label="Fortschritt der Standortprüfung">
+            <div class="standort-progress-bar" aria-hidden="true">
+              <span id="standort-progress-bar"></span>
+            </div>
+            <div class="standort-progress-meta">
+              <span id="standort-step-text">Schritt 1 von 4</span>
+              <span>Standort-Check</span>
+            </div>
+          </div>
+
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Neue Standortprüfung von boda-snacks.de">
+          <input type="hidden" name="_next" value="https://boda-snacks.de/danke.html">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="Vorläufige Einschätzung" id="check-ergebnis-input" value="">
+          <input
+            type="text"
+            name="_honey"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="display:none"
+          >
+
+          <div class="standort-step is-active" data-standort-step="0">
+            <span class="standort-step-label">01 · Ihr Standort</span>
+            <h3>Wo soll die Versorgung entstehen?</h3>
+
+            <div class="standort-field">
+              <label for="check-firma">
+                Unternehmen <span class="optional">(optional)</span>
+              </label>
+              <input
+                id="check-firma"
+                name="Unternehmen"
+                type="text"
+                autocomplete="organization"
+                maxlength="180"
+                placeholder="z. B. Muster GmbH"
+              >
+            </div>
+
+            <div class="standort-field">
+              <label for="check-standort">PLZ / Ort des Standorts *</label>
+              <input
+                id="check-standort"
+                name="Standort"
+                type="text"
+                autocomplete="postal-code"
+                maxlength="180"
+                required
+                placeholder="z. B. 75175 Pforzheim"
+              >
+            </div>
+
+            <div class="standort-field">
+              <label for="check-personen">Wie viele Personen sind ungefähr regelmäßig vor Ort? *</label>
+              <input
+                id="check-personen"
+                name="Personen vor Ort"
+                type="number"
+                inputmode="numeric"
+                min="1"
+                max="5000"
+                step="1"
+                required
+                placeholder="z. B. 45"
+              >
+            </div>
+
+            <button class="btn standort-next" type="button">
+              Weiter zur Versorgung
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="standort-step" data-standort-step="1">
+            <span class="standort-step-label">02 · Bedarf</span>
+            <h3>Was wünschen Sie sich?</h3>
+            <p class="standort-step-intro">
+              Mehrfachauswahl möglich.
+            </p>
+
+            <div class="standort-choice-grid" aria-describedby="versorgung-error">
+              <label class="standort-choice">
+                <input type="checkbox" name="Versorgungswunsch" value="Snacks & Getränke">
+                <span>
+                  <strong>Snacks &amp; Getränke</strong>
+                  <small>Versorgung direkt im Betrieb</small>
+                </span>
+              </label>
+
+              <label class="standort-choice">
+                <input type="checkbox" name="Versorgungswunsch" value="Kaffee">
+                <span>
+                  <strong>Kaffee</strong>
+                  <small>Kaffeelösung für Ihr Team</small>
+                </span>
+              </label>
+
+              <label class="standort-choice">
+                <input type="checkbox" name="Versorgungswunsch" value="Kombination">
+                <span>
+                  <strong>Kombination</strong>
+                  <small>Snack, Getränke &amp; Kaffee</small>
+                </span>
+              </label>
+
+              <label class="standort-choice">
+                <input type="checkbox" name="Versorgungswunsch" value="Beratung gewünscht">
+                <span>
+                  <strong>Noch unsicher</strong>
+                  <small>Wir beraten zur passenden Lösung</small>
+                </span>
+              </label>
+            </div>
+
+            <p class="standort-error" id="versorgung-error" role="alert" hidden>
+              Bitte wählen Sie mindestens eine Option aus.
+            </p>
+
+            <fieldset class="standort-fieldset top-space">
+              <legend>Gibt es aktuell schon eine Versorgung?</legend>
+              <div class="standort-options">
+                <label>
+                  <input type="radio" name="Bestehende Versorgung" value="Nein">
+                  <span>Nein</span>
+                </label>
+                <label>
+                  <input type="radio" name="Bestehende Versorgung" value="Ja">
+                  <span>Ja</span>
+                </label>
+                <label>
+                  <input type="radio" name="Bestehende Versorgung" value="Teilweise">
+                  <span>Teilweise</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="standort-nav">
+              <button class="btn standort-back" type="button">← Zurück</button>
+              <button class="btn standort-next" type="button">
+                Weiter
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="standort-step" data-standort-step="2">
+            <span class="standort-step-label">03 · Erste Einschätzung</span>
+            <h3>So könnte Ihre Lösung aussehen.</h3>
+
+            <div class="standort-result-card" id="standort-result-card" aria-live="polite">
+              <div class="standort-result-top">
+                <span class="standort-result-icon" id="standort-result-icon" aria-hidden="true">✓</span>
+                <div>
+                  <span class="standort-result-kicker" id="standort-result-kicker">Vorläufiges Ergebnis</span>
+                  <h4 id="standort-result-title">Das sieht grundsätzlich passend aus.</h4>
+                </div>
+              </div>
+
+              <p class="standort-result-text" id="standort-result-text">
+                Auf Basis Ihrer Angaben geben wir Ihnen hier eine erste Orientierung.
+              </p>
+
+              <div class="standort-result-facts" aria-label="Ihre Angaben">
+                <span id="standort-result-personen">– Personen</span>
+                <span id="standort-result-versorgung">Versorgung nach Wunsch</span>
+                <span id="standort-result-bestand">Bestand offen</span>
+              </div>
+
+              <div class="standort-result-price">
+                <strong id="standort-result-price-title">Servicepauschale ab 98 € im Monat</strong>
+                <p id="standort-result-price-text">
+                  Die konkrete Kondition hängt von Standort, Nutzung, Ausstattung
+                  und Serviceumfang ab. Individuelle abweichende Vereinbarungen
+                  sind nach persönlicher Abstimmung möglich.
+                </p>
+              </div>
+
+              <div class="standort-result-hint" id="standort-result-hint" hidden>
+                <strong>Trotzdem interessant?</strong>
+                Schichtbetrieb, zusätzliche Besucher, lange Öffnungszeiten oder eine besonders
+                hohe Nutzung können die Einschätzung verändern. Wenn Sie möchten, prüfen wir
+                Ihren Standort trotzdem persönlich und unverbindlich.
+              </div>
+
+              <p class="standort-result-disclaimer">
+                Diese Einschätzung ist unverbindlich und basiert nur auf den bisher
+                eingegebenen Eckdaten. Vor einer Aufstellung prüfen wir unter anderem
+                Nutzung, Stellfläche, Zugänglichkeit und den gewünschten Service persönlich.
+              </p>
+
+              <div class="standort-result-contact" aria-label="Direkt Kontakt aufnehmen">
+                <a href="mailto:kontakt@boda-snacks.de?subject=Standortpr%C3%BCfung%20BODA%20Snacks">
+                  E-Mail schreiben
+                </a>
+                <a href="tel:+4972317703719">
+                  07231 7703719 anrufen
+                </a>
+              </div>
+            </div>
+
+            <div class="standort-nav">
+              <button class="btn standort-back" type="button">← Angaben ändern</button>
+              <button class="btn standort-next" id="standort-result-next" type="button">
+                Persönlich besprechen
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="standort-step" data-standort-step="3">
+            <span class="standort-step-label">04 · Rückmeldung</span>
+            <h3>Wie dürfen wir Sie erreichen?</h3>
+            <p class="standort-step-intro">
+              Wenn die erste Einschätzung für Sie passt, melden wir uns persönlich und klären die Details.
+            </p>
+
+            <div class="standort-two-columns">
+              <div class="standort-field">
+                <label for="check-name">Ihr Name *</label>
+                <input
+                  id="check-name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  maxlength="150"
+                  required
+                  placeholder="Vor- und Nachname"
+                >
+              </div>
+
+              <div class="standort-field">
+                <label for="check-email">E-Mail *</label>
+                <input
+                  id="check-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  maxlength="254"
+                  required
+                  placeholder="name@unternehmen.de"
+                >
+              </div>
+            </div>
+
+            <div class="standort-field">
+              <label for="check-telefon">
+                Telefon <span class="optional">(optional)</span>
+              </label>
+              <input
+                id="check-telefon"
+                name="Telefon"
+                type="tel"
+                autocomplete="tel"
+                maxlength="40"
+                placeholder="Für einen persönlichen Rückruf"
+              >
+            </div>
+
+            <div class="standort-field">
+              <label for="check-nachricht">
+                Gibt es noch etwas, das wir wissen sollten?
+                <span class="optional">(optional)</span>
+              </label>
+              <textarea
+                id="check-nachricht"
+                name="Weitere Angaben"
+                rows="4"
+                maxlength="5000"
+                placeholder="z. B. Schichtbetrieb, mehrere Gebäude, bestehender Automat ..."
+              ></textarea>
+            </div>
+
+            <label class="privacy-check">
+              <input
+                type="checkbox"
+                name="Datenschutzhinweis gelesen"
+                required
+              >
+              <span>
+                Ich habe die
+                <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>
+                gelesen. Meine Angaben werden zur Bearbeitung der Anfrage
+                über den Formulardienst FormSubmit übermittelt. *
+              </span>
+            </label>
+
+            <div class="standort-submit-note">
+              <strong>Keine Verpflichtung.</strong>
+              Mit dem Absenden beauftragen Sie noch keine Automatenaufstellung.
+            </div>
+
+            <div class="standort-nav">
+              <button class="btn standort-back" type="button">← Zurück</button>
+              <button class="btn standort-submit" type="submit">
+                Persönliche Rückmeldung anfordern
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+
+            <p
+              class="form-status"
+              id="form-status"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================
          UNSERE LÖSUNGEN – SNACKS UND KAFFEE
          ========================================= -->
 
@@ -1296,7 +2174,7 @@
               </li>
             </ul>
 
-            <a href="#kontakt" class="text-link">
+            <a href="#standort-check" class="text-link">
               Snackversorgung anfragen
               <span aria-hidden="true">↗</span>
             </a>
@@ -1755,7 +2633,7 @@
 
 
     <!-- =========================================
-         KONTAKT – KOSTENLOSE STANDORTPRÜFUNG
+         DIREKTER KONTAKT – ALTERNATIVE ZUM STANDORT-CHECK
          ========================================= -->
 
     <section
@@ -1763,68 +2641,34 @@
       id="kontakt"
       aria-labelledby="kontakt-title"
     >
-
-      <div class="wrap contact-layout">
-
-        <!-- Linke Seite: Text und Kontaktdaten -->
+      <div class="wrap direct-contact-layout">
         <div class="contact-copy">
-
           <span class="eyebrow">
-            Kostenlose Standortprüfung
+            Lieber direkt sprechen?
           </span>
 
           <h2 id="kontakt-title">
-            Passt ein Automat<br>
-            zu Ihrem Betrieb?
+            Wir sind persönlich<br>
+            für Sie erreichbar.
           </h2>
 
           <p>
-            Erzählen Sie uns kurz von Ihrem Standort.
-            Wir besprechen mit Ihnen, welche Versorgung
-            infrage kommt und wie ein passendes Angebot
-            aussehen kann.
+            Sie möchten Ihren Standort lieber direkt mit uns besprechen?
+            Rufen Sie an oder schreiben Sie uns. Für die strukturierte Prüfung
+            können Sie jederzeit den Standort-Check oben nutzen.
           </p>
 
-          <p>
-            <strong>
-              Die Anfrage ist kostenlos und unverbindlich.
-            </strong>
-            Sie beauftragen damit noch keine Aufstellung.
-          </p>
-
-
-          <!-- Direkte Kontaktmöglichkeiten -->
           <div class="contact-links">
-
-            <!-- Telefon -->
             <div>
-
-              <small>
-                Direkt anrufen
-              </small>
-
-              <a href="tel:+4972317703719">
-                07231 7703719
-              </a>
-
+              <small>Direkt anrufen</small>
+              <a href="tel:+4972317703719">07231 7703719</a>
             </div>
 
-
-            <!-- E-Mail -->
             <div>
-
-              <small>
-                Eine E-Mail schreiben
-              </small>
-
-              <a href="mailto:kontakt@boda-snacks.de">
-                kontakt@boda-snacks.de
-              </a>
-
+              <small>Eine E-Mail schreiben</small>
+              <a href="mailto:kontakt@boda-snacks.de">kontakt@boda-snacks.de</a>
             </div>
 
-
-            <!-- WhatsApp -->
             <a
               class="whatsapp"
               href="https://wa.me/491778675852"
@@ -1833,278 +2677,16 @@
             >
               Lieber per WhatsApp? Nachricht schreiben ↗
             </a>
-
           </div>
 
+          <p style="margin-top:28px">
+            <a href="#standort-check" class="btn">
+              Standort unverbindlich prüfen
+              <span aria-hidden="true">↑</span>
+            </a>
+          </p>
         </div>
-
-
-        <!-- =====================================
-             RECHTE SEITE – ANFRAGEFORMULAR
-             ===================================== -->
-
-        <form
-          class="contact-form"
-          id="standort-form"
-          action="https://formsubmit.co/kontakt@boda-snacks.de"
-          method="POST"
-        >
-
-          <!-- Formularüberschrift -->
-          <div class="form-top">
-
-            <h3>
-              Ihr Standort in wenigen Angaben
-            </h3>
-
-            <p>
-              Mit * markierte Angaben benötigen wir für Ihre Anfrage.
-            </p>
-
-          </div>
-
-
-          <!-- =================================
-               TECHNISCHE FORMULAREINSTELLUNGEN
-               Für Besucher nicht sichtbar.
-               ================================= -->
-
-          <!-- CAPTCHA bleibt wie bisher deaktiviert -->
-          <input
-            type="hidden"
-            name="_captcha"
-            value="false"
-          >
-
-          <!-- Betreff der eingehenden Anfrage -->
-          <input
-            type="hidden"
-            name="_subject"
-            value="Neue Standortanfrage von boda-snacks.de"
-          >
-
-          <!-- Weiterleitung nach erfolgreichem Versand -->
-          <input
-            type="hidden"
-            name="_next"
-            value="https://boda-snacks.de/danke.html"
-          >
-
-          <!-- Darstellung der Anfrage in der E-Mail -->
-          <input
-            type="hidden"
-            name="_template"
-            value="table"
-          >
-
-          <!-- Verstecktes Feld als zusätzlicher Spamschutz -->
-          <input
-            type="text"
-            name="_honey"
-            tabindex="-1"
-            autocomplete="off"
-            aria-hidden="true"
-            style="display: none"
-          >
-
-
-          <!-- =================================
-               SICHTBARE FORMULARFELDER
-               ================================= -->
-
-          <div class="form-grid">
-
-            <!-- Name: Pflichtfeld -->
-            <div class="field">
-
-              <label class="field-label" for="name">
-                Ihr Name *
-              </label>
-
-              <input
-                id="name"
-                name="name"
-                autocomplete="name"
-                required
-                maxlength="150"
-              >
-
-            </div>
-
-
-            <!-- Unternehmen: freiwillige Angabe -->
-            <div class="field">
-
-              <label class="field-label" for="firma">
-                Unternehmen
-                <span class="optional">(optional)</span>
-              </label>
-
-              <input
-                id="firma"
-                name="Unternehmen"
-                autocomplete="organization"
-                maxlength="180"
-              >
-
-            </div>
-
-
-            <!-- E-Mail: Pflichtfeld -->
-            <div class="field">
-
-              <label class="field-label" for="email">
-                E-Mail *
-              </label>
-
-              <!-- name="email" wird vom Formulardienst benötigt -->
-              <input
-                id="email"
-                type="email"
-                name="email"
-                autocomplete="email"
-                required
-                maxlength="254"
-              >
-
-            </div>
-
-
-            <!-- Telefonnummer: freiwillige Angabe -->
-            <div class="field">
-
-              <label class="field-label" for="telefon">
-                Telefon
-                <span class="optional">(optional)</span>
-              </label>
-
-              <input
-                id="telefon"
-                type="tel"
-                name="Telefon"
-                autocomplete="tel"
-                maxlength="40"
-              >
-
-            </div>
-
-
-            <!-- Standort: Pflichtfeld -->
-            <div class="field">
-
-              <label class="field-label" for="standort">
-                PLZ / Ort des Standorts *
-              </label>
-
-              <input
-                id="standort"
-                name="Standort"
-                placeholder="z. B. 75175 Pforzheim"
-                required
-                maxlength="180"
-              >
-
-            </div>
-
-
-            <!-- Tägliche Nutzerzahl: freiwillige Angabe -->
-            <div class="field">
-
-              <label class="field-label" for="teamgroesse">
-                Personen vor Ort
-                <span class="optional">(optional)</span>
-              </label>
-
-              <select
-                id="teamgroesse"
-                name="Personen pro Tag"
-              >
-                <option value="">
-                  Bitte auswählen
-                </option>
-
-                <option>Unter 30</option>
-                <option>30–49</option>
-                <option>50–99</option>
-                <option>100–199</option>
-                <option>200 oder mehr</option>
-                <option>Noch nicht bekannt</option>
-              </select>
-
-            </div>
-
-
-            <!-- Nachricht über die gesamte Formularbreite -->
-            <div class="field full">
-
-              <label class="field-label" for="nachricht">
-                Was wünschen Sie sich?
-                <span class="optional">(optional)</span>
-              </label>
-
-              <textarea
-                id="nachricht"
-                name="Nachricht"
-                rows="3"
-                maxlength="5000"
-                placeholder="Snacks, Getränke oder Kaffee? Gibt es bereits eine Versorgung?"
-              ></textarea>
-
-            </div>
-
-          </div>
-
-
-          <!-- =================================
-               DATENSCHUTZHINWEIS
-               ================================= -->
-
-          <label class="privacy-check">
-
-            <input
-              type="checkbox"
-              name="Datenschutzhinweis gelesen"
-              required
-            >
-
-            <span>
-              Ich habe die
-              <a
-                href="datenschutz.html"
-                target="_blank"
-                rel="noopener"
-              >Datenschutzerklärung</a>
-              gelesen. Meine Angaben werden zur Bearbeitung
-              der Anfrage über den Formulardienst FormSubmit
-              übermittelt. *
-            </span>
-
-          </label>
-
-
-          <!-- =================================
-               ABSENDEBUTTON
-               ================================= -->
-
-          <button class="btn" type="submit">
-            Standort kostenlos prüfen lassen
-            <span aria-hidden="true">↗</span>
-          </button>
-
-
-          <!-- Rückmeldung für den Vorschau-Modus -->
-          <p
-            class="form-status"
-            id="form-status"
-            role="status"
-            aria-live="polite"
-            hidden
-          ></p>
-
-        </form>
-
       </div>
-
     </section>
 
   </main>
@@ -2362,8 +2944,237 @@
 
       const form = document.getElementById('standort-form');
       const status = document.getElementById('form-status');
+      const standortSteps = Array.from(
+        form.querySelectorAll('.standort-step')
+      );
+      const progressBar = document.getElementById('standort-progress-bar');
+      const stepText = document.getElementById('standort-step-text');
+      const versorgungError = document.getElementById('versorgung-error');
+      const personenInput = document.getElementById('check-personen');
+      const resultCard = document.getElementById('standort-result-card');
+      const resultIcon = document.getElementById('standort-result-icon');
+      const resultKicker = document.getElementById('standort-result-kicker');
+      const resultTitle = document.getElementById('standort-result-title');
+      const resultText = document.getElementById('standort-result-text');
+      const resultPersonen = document.getElementById('standort-result-personen');
+      const resultVersorgung = document.getElementById('standort-result-versorgung');
+      const resultBestand = document.getElementById('standort-result-bestand');
+      const resultPriceTitle = document.getElementById('standort-result-price-title');
+      const resultPriceText = document.getElementById('standort-result-price-text');
+      const resultHint = document.getElementById('standort-result-hint');
+      const resultNext = document.getElementById('standort-result-next');
+      const resultInput = document.getElementById('check-ergebnis-input');
+      let currentStandortStep = 0;
+
+      const showStandortStep = (index, shouldScroll = false) => {
+        currentStandortStep = index;
+
+        standortSteps.forEach((step, stepIndex) => {
+          step.classList.toggle('is-active', stepIndex === index);
+        });
+
+        progressBar.style.width =
+          (((index + 1) / standortSteps.length) * 100) + '%';
+
+        stepText.textContent =
+          'Schritt ' + (index + 1) + ' von ' + standortSteps.length;
+
+        if (shouldScroll) {
+          form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+
+      const validateStandortStep = index => {
+        const step = standortSteps[index];
+
+        if (index === 1) {
+          const selectedSupply = step.querySelector(
+            'input[name="Versorgungswunsch"]:checked'
+          );
+
+          versorgungError.hidden = Boolean(selectedSupply);
+
+          if (!selectedSupply) {
+            step.querySelector('input[name="Versorgungswunsch"]')?.focus();
+            return false;
+          }
+        }
+
+        const requiredFields = Array.from(
+          step.querySelectorAll('[required]')
+        );
+
+        for (const field of requiredFields) {
+          if (field.type === 'radio') {
+            const selected = step.querySelector(
+              'input[name="' + field.name + '"]:checked'
+            );
+
+            if (!selected) {
+              field.reportValidity();
+              return false;
+            }
+          } else if (!field.checkValidity()) {
+            field.reportValidity();
+            return false;
+          }
+        }
+
+        return true;
+      };
+
+      const buildStandortResult = () => {
+        const personen = Math.max(1, Number(personenInput.value) || 1);
+        const selectedSupply = Array.from(
+          form.querySelectorAll('input[name="Versorgungswunsch"]:checked')
+        ).map(input => input.value);
+        const existingSupply = form.querySelector(
+          'input[name="Bestehende Versorgung"]:checked'
+        )?.value || 'Noch offen';
+
+        let title = 'Das sieht grundsätzlich passend aus.';
+        let text = '';
+        let resultState = 'positive';
+
+        if (personen <= 25) {
+          resultState = 'reject';
+          title = 'Für diese Teamgröße würden wir aktuell eher abraten.';
+          text =
+            'Bei rund ' + personen + ' Personen ist das Verhältnis zwischen laufender Nutzung ' +
+            'und den monatlichen Fixkosten häufig ungünstig. Eine Servicepauschale ab 98 € im Monat ' +
+            'kann bei geringer Nutzung schnell einen zu großen Anteil an den Gesamtkosten ausmachen. ' +
+            'Wir möchten Ihnen deshalb keine Lösung schönrechnen, die sich voraussichtlich nicht sinnvoll trägt.';
+        } else if (personen < 40) {
+          resultState = 'borderline';
+          title = 'Grenzbereich – das kann passen, sollte aber genauer geprüft werden.';
+          text =
+            'Bei rund ' + personen + ' Personen kann eine kompakte Versorgung sinnvoll sein. ' +
+            'Ob sie wirtschaftlich attraktiv ist, hängt aber stärker von täglicher Anwesenheit, ' +
+            'Arbeitszeiten und tatsächlicher Nutzung ab. Deshalb geben wir hier noch kein grünes Licht, ' +
+            'sondern würden den Standort erst persönlich genauer einschätzen.';
+        } else if (personen < 50) {
+          title = 'Grünes Licht für die weitere Prüfung – kompakt planen.';
+          text =
+            'Für rund ' + personen + ' Personen sehen wir eine gute Grundlage für eine kompakte, ' +
+            'bedarfsgerechte Versorgung. Gerät, Sortiment und Service würden wir anschließend an ' +
+            'die tatsächliche Nutzung und die Gegebenheiten vor Ort anpassen.';
+        } else if (personen < 100) {
+          title = 'Gute Ausgangslage für eine kompakte bis mittlere Lösung.';
+          text =
+            'Bei rund ' + personen + ' Personen ist eine regelmäßig betreute Versorgung ' +
+            'grundsätzlich gut vorstellbar. Größe, Sortiment und Zahlungsarten würden wir ' +
+            'an Nutzung und Arbeitsalltag Ihres Standorts anpassen.';
+        } else if (personen < 250) {
+          title = 'Gute Ausgangslage für eine leistungsfähigere Versorgung.';
+          text =
+            'Bei rund ' + personen + ' Personen lohnt es sich, Kapazität, Sortiment und ' +
+            'Nachfüllrhythmus genauer zu planen. Je nach Arbeitszeiten und Nutzung kann eine ' +
+            'größere oder breiter ausgestattete Lösung sinnvoll sein.';
+        } else {
+          title = 'Größerer Standort – hier lohnt sich eine genaue Kapazitätsplanung.';
+          text =
+            'Bei rund ' + personen + ' Personen würden wir Kapazität, Sortimentsbreite und ' +
+            'gegebenenfalls mehrere Versorgungspunkte prüfen. Die genaue Lösung stimmen wir ' +
+            'mit den tatsächlichen Laufwegen und Nutzungszeiten ab.';
+        }
+
+        const caution = resultState !== 'positive';
+        const rejected = resultState === 'reject';
+        const borderline = resultState === 'borderline';
+        const greenLight = personen >= 40;
+
+        resultCard.classList.toggle('is-caution', caution);
+        resultIcon.textContent = caution ? '!' : '✓';
+        resultKicker.textContent = rejected
+          ? 'Ehrliche Einschätzung'
+          : borderline
+            ? 'Noch kein grünes Licht'
+            : 'Grünes Licht für die weitere Prüfung';
+        resultPriceTitle.textContent = 'Servicepauschale ab 98 € im Monat';
+        resultPriceText.textContent = rejected
+          ? 'Gerade bei kleinen Teams kann diese monatliche Fixkomponente im Verhältnis zur tatsächlichen Nutzung zu hoch sein. Abweichende oder individuell angepasste Vereinbarungen sind nach persönlicher Prüfung grundsätzlich möglich.'
+          : borderline
+            ? 'In diesem Größenbereich sollte die Servicepauschale besonders zur erwarteten Nutzung passen. Die konkrete Kondition hängt von Standort, Nutzung, Ausstattung und Serviceumfang ab; individuelle Vereinbarungen sind nach Abstimmung möglich.'
+            : 'Die konkrete Kondition hängt von Standort, Nutzung, Ausstattung und Serviceumfang ab. Individuelle abweichende Vereinbarungen sind nach persönlicher Abstimmung möglich.';
+
+        resultHint.hidden = !caution;
+        if (rejected) {
+          resultHint.innerHTML = '<strong>Trotzdem interessant?</strong> Schichtbetrieb, zusätzliche Besucher, lange Öffnungszeiten oder eine besonders hohe Nutzung können die Einschätzung verändern. Wenn Sie möchten, prüfen wir Ihren Standort trotzdem persönlich und unverbindlich.';
+        } else if (borderline) {
+          resultHint.innerHTML = '<strong>Kann trotzdem gut funktionieren.</strong> Bei hoher täglicher Anwesenheit, Schichtbetrieb oder regelmäßiger Nutzung kann auch dieser Größenbereich wirtschaftlich sinnvoll sein. Genau das würden wir mit Ihnen kurz prüfen.';
+        }
+
+        resultNext.classList.toggle('standort-submit', greenLight);
+        resultNext.childNodes[0].nodeValue = rejected
+          ? 'Trotzdem persönlich prüfen lassen '
+          : borderline
+            ? 'Standort genauer prüfen lassen '
+            : 'Persönlich besprechen ';
+
+        const supplyLabel = selectedSupply.length
+          ? selectedSupply.join(' + ')
+          : 'Versorgung nach Wunsch';
+
+        resultTitle.textContent = title;
+        resultText.textContent = text;
+        resultPersonen.textContent = personen + ' Personen';
+        resultVersorgung.textContent = supplyLabel;
+        resultBestand.textContent =
+          existingSupply === 'Noch offen'
+            ? 'Bestehende Versorgung: offen'
+            : 'Bestehende Versorgung: ' + existingSupply;
+
+        const internalAssessment = rejected
+          ? 'Einschätzung: eher nicht wirtschaftlich bei Standardnutzung. '
+          : borderline
+            ? 'Einschätzung: Grenzbereich, persönliche Prüfung empfohlen. '
+            : 'Einschätzung: ab 40 Personen grundsätzlich gute Ausgangslage. ';
+
+        resultInput.value =
+          internalAssessment + title + ' ' + text +
+          ' Servicepauschale ab 98 € im Monat; konkrete Konditionen nach individueller Abstimmung.';
+      };
+
+      form.querySelectorAll('.standort-next').forEach(button => {
+        button.addEventListener('click', () => {
+          if (!validateStandortStep(currentStandortStep)) {
+            return;
+          }
+
+          // Nach Bedarfsauswahl zuerst eine sofortige, unverbindliche
+          // Einschätzung zeigen – noch bevor Kontaktdaten verlangt werden.
+          if (currentStandortStep === 1) {
+            buildStandortResult();
+          }
+
+          if (currentStandortStep < standortSteps.length - 1) {
+            showStandortStep(currentStandortStep + 1, true);
+          }
+        });
+      });
+
+      form.querySelectorAll('.standort-back').forEach(button => {
+        button.addEventListener('click', () => {
+          if (currentStandortStep > 0) {
+            showStandortStep(currentStandortStep - 1, true);
+          }
+        });
+      });
+
+      form.querySelectorAll('input[name="Versorgungswunsch"]').forEach(input => {
+        input.addEventListener('change', () => {
+          versorgungError.hidden = true;
+        });
+      });
+
+      showStandortStep(0);
 
       form.addEventListener('submit', event => {
+        if (!validateStandortStep(standortSteps.length - 1)) {
+          event.preventDefault();
+          return;
+        }
+
         if (preview) {
           event.preventDefault();
 
@@ -2371,6 +3182,14 @@
           status.textContent =
             'Vorschau: Die Angaben sind vollständig. ' +
             'Es wurde keine Anfrage versendet.';
+          return;
+        }
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', {
+            event_category: 'Standort-Check',
+            event_label: 'Hauptseite'
+          });
         }
       });
 
