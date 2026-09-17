@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,9 +18,6 @@
     rel="canonical"
     href="https://boda-snacks.de/snackautomaten-karlsruhe.html"
   >
-
-
-  <!-- OPEN GRAPH -->
 
   <meta
     property="og:title"
@@ -47,12 +42,7 @@
 
   <style>
 
-    /* =========================================================
-       BODA SNACKS DESIGN
-       ========================================================= */
-
     :root {
-
       --ink: #202821;
       --muted: #596159;
 
@@ -74,24 +64,21 @@
 
       --shadow:
         0 18px 50px rgba(32, 40, 33, 0.08);
-
     }
 
-
-    /* =========================================================
-       RESET
-       ========================================================= */
 
     * {
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 105px;
     }
 
-    body {
 
+    body {
       margin: 0;
 
       background: var(--white);
@@ -106,17 +93,20 @@
       line-height: 1.65;
 
       -webkit-font-smoothing: antialiased;
-
     }
+
 
     img {
       display: block;
       max-width: 100%;
+      height: auto;
     }
+
 
     a {
       color: inherit;
     }
+
 
     button,
     input,
@@ -126,28 +116,48 @@
     }
 
 
+    button {
+      cursor: pointer;
+    }
+
+
+    [hidden] {
+      display: none !important;
+    }
+
+
+    :focus-visible {
+      outline:
+        3px solid var(--gold-fill);
+
+      outline-offset: 4px;
+    }
+
+
     /* =========================================================
        LAYOUT
        ========================================================= */
 
-    .wrap {
 
+    .wrap {
       width: min(
         1180px,
         calc(100% - 64px)
       );
 
       margin-inline: auto;
-
     }
+
 
     .section {
       padding: 100px 0;
     }
 
+
     .section-soft {
       background: var(--soft);
     }
+
 
     .section-contact {
       background: var(--soft-2);
@@ -158,10 +168,9 @@
        HEADER
        ========================================================= */
 
+
     .site-header {
-
       position: sticky;
-
       top: 0;
 
       z-index: 1000;
@@ -174,11 +183,10 @@
 
       border-bottom:
         1px solid var(--line);
-
     }
 
-    .header-inner {
 
+    .header-inner {
       min-height: 82px;
 
       display: flex;
@@ -187,14 +195,10 @@
       justify-content: space-between;
 
       gap: 30px;
-
     }
 
 
-    /* BRAND */
-
     .brand {
-
       display: flex;
 
       flex-direction: column;
@@ -202,65 +206,56 @@
       text-decoration: none;
 
       line-height: 1;
-
     }
 
-    .brand-main {
 
+    .brand-main {
       font-size: 1.25rem;
 
       font-weight: 800;
 
       letter-spacing: 0.02em;
-
     }
+
 
     .brand-main .snacks {
       color: var(--gold);
     }
 
-    .brand-sub {
 
+    .brand-sub {
       margin-top: 8px;
 
       color: var(--muted);
 
       font-size: 0.78rem;
-
     }
 
 
-    /* NAVIGATION */
-
     .main-nav {
-
       display: flex;
 
       align-items: center;
 
       gap: 28px;
-
     }
 
-    .main-nav > a:not(.btn) {
 
+    .main-nav > a:not(.btn) {
       text-decoration: none;
 
       font-size: 0.94rem;
 
       font-weight: 700;
-
     }
+
 
     .main-nav > a:not(.btn):hover {
       color: var(--green);
     }
 
 
-    /* MOBILE MENU */
-
     .menu-toggle {
-
       display: none;
 
       padding: 10px;
@@ -274,7 +269,6 @@
       font-weight: 800;
 
       cursor: pointer;
-
     }
 
 
@@ -282,8 +276,8 @@
        BUTTONS
        ========================================================= */
 
-    .btn {
 
+    .btn {
       display: inline-flex;
 
       align-items: center;
@@ -312,37 +306,53 @@
         transform 0.2s ease,
         background 0.2s ease,
         border-color 0.2s ease;
-
     }
+
 
     .btn:hover {
       transform: translateY(-1px);
     }
 
-    .btn-primary {
 
+    .btn-primary {
       background: var(--gold-fill);
 
       color: #25271f;
-
     }
+
 
     .btn-primary:hover {
       background: var(--gold-hover);
     }
 
-    .btn-secondary {
 
+    .btn-secondary {
       background: transparent;
 
       color: var(--ink);
 
       border-color: #bcc7bd;
-
     }
+
 
     .btn-secondary:hover {
       border-color: var(--green);
+    }
+
+
+    .btn-result-positive {
+      background: #2f7d4a !important;
+
+      border-color: #2f7d4a !important;
+
+      color: white !important;
+    }
+
+
+    .btn-result-positive:hover {
+      background: #27683e !important;
+
+      border-color: #27683e !important;
     }
 
 
@@ -350,8 +360,8 @@
        TYPOGRAPHY
        ========================================================= */
 
-    .eyebrow {
 
+    .eyebrow {
       display: block;
 
       margin-bottom: 14px;
@@ -365,23 +375,21 @@
       letter-spacing: 0.12em;
 
       text-transform: uppercase;
-
     }
+
 
     h1,
     h2,
     h3 {
-
       margin-top: 0;
 
       color: var(--ink);
 
       letter-spacing: -0.025em;
-
     }
 
-    h1 {
 
+    h1 {
       margin-bottom: 25px;
 
       font-size:
@@ -392,11 +400,10 @@
         );
 
       line-height: 0.99;
-
     }
 
-    h2 {
 
+    h2 {
       margin-bottom: 24px;
 
       font-size:
@@ -407,21 +414,19 @@
         );
 
       line-height: 1.08;
-
     }
 
-    h3 {
 
+    h3 {
       margin-bottom: 11px;
 
       font-size: 1.23rem;
 
       line-height: 1.25;
-
     }
 
-    .lead {
 
+    .lead {
       max-width: 720px;
 
       margin:
@@ -435,25 +440,22 @@
           2vw,
           1.22rem
         );
-
     }
 
-    .section-head {
 
+    .section-head {
       max-width: 760px;
 
       margin-bottom: 55px;
-
     }
 
-    .section-head p {
 
+    .section-head p {
       margin: 0;
 
       color: var(--muted);
 
       font-size: 1.05rem;
-
     }
 
 
@@ -461,15 +463,14 @@
        HERO
        ========================================================= */
 
-    .hero {
 
+    .hero {
       padding:
         90px 0 65px;
-
     }
 
-    .hero-grid {
 
+    .hero-grid {
       display: grid;
 
       grid-template-columns:
@@ -479,15 +480,15 @@
       gap: 70px;
 
       align-items: center;
-
     }
+
 
     .hero-copy strong {
       color: var(--green);
     }
 
-    .hero-actions {
 
+    .hero-actions {
       margin-top: 32px;
 
       display: flex;
@@ -495,24 +496,19 @@
       flex-wrap: wrap;
 
       gap: 12px;
-
     }
 
-    .hero-note {
 
+    .hero-note {
       margin-top: 18px;
 
       color: var(--muted);
 
       font-size: 0.9rem;
-
     }
 
 
-    /* HERO VISUAL */
-
     .hero-visual {
-
       position: relative;
 
       overflow: hidden;
@@ -529,11 +525,10 @@
       background: #edf0eb;
 
       border-radius: var(--radius);
-
     }
 
-    .hero-visual::before {
 
+    .hero-visual::before {
       content: "";
 
       position: absolute;
@@ -548,11 +543,10 @@
         rgba(219, 184, 110, 0.28);
 
       border-radius: 50%;
-
     }
 
-    .hero-visual img {
 
+    .hero-visual img {
       position: relative;
 
       z-index: 2;
@@ -564,11 +558,10 @@
       object-fit: contain;
 
       border-radius: 14px;
-
     }
 
-    .hero-badge {
 
+    .hero-badge {
       position: absolute;
 
       z-index: 3;
@@ -590,8 +583,8 @@
       font-size: 0.88rem;
 
       font-weight: 800;
-
     }
+
 
     .hero-badge span {
       color: var(--gold);
@@ -602,8 +595,8 @@
        TRUST ROW
        ========================================================= */
 
-    .trust-row {
 
+    .trust-row {
       margin-top: 70px;
 
       display: grid;
@@ -616,35 +609,31 @@
 
       border-bottom:
         1px solid var(--line);
-
     }
 
-    .trust-item {
 
+    .trust-item {
       padding:
         22px 20px 22px 0;
 
       font-weight: 700;
-
     }
 
-    .trust-item + .trust-item {
 
+    .trust-item + .trust-item {
       padding-left: 28px;
 
       border-left:
         1px solid var(--line);
-
     }
 
-    .check {
 
+    .check {
       margin-right: 7px;
 
       color: var(--green);
 
       font-weight: 900;
-
     }
 
 
@@ -652,8 +641,8 @@
        LOCAL INTRO
        ========================================================= */
 
-    .local-box {
 
+    .local-box {
       padding: 55px;
 
       display: grid;
@@ -670,43 +659,42 @@
       color: white;
 
       border-radius: var(--radius);
-
     }
+
 
     .local-box h2 {
       color: white;
     }
 
+
     .local-box .eyebrow {
       color: var(--gold-fill);
     }
 
-    .local-box p {
 
+    .local-box p {
       margin-top: 0;
 
       color:
         rgba(255, 255, 255, 0.8);
-
     }
 
-    .local-points {
 
+    .local-points {
       display: grid;
 
       border-top:
         1px solid rgba(255, 255, 255, 0.18);
-
     }
 
-    .local-point {
 
+    .local-point {
       padding: 17px 0;
 
       border-bottom:
         1px solid rgba(255, 255, 255, 0.18);
-
     }
+
 
     .local-point strong {
       color: white;
@@ -717,19 +705,18 @@
        BENEFITS
        ========================================================= */
 
-    .benefit-grid {
 
+    .benefit-grid {
       display: grid;
 
       grid-template-columns:
         repeat(3, 1fr);
 
       gap: 22px;
-
     }
 
-    .benefit-card {
 
+    .benefit-card {
       padding: 34px;
 
       background: white;
@@ -738,11 +725,10 @@
         1px solid var(--line);
 
       border-radius: var(--radius);
-
     }
 
-    .benefit-number {
 
+    .benefit-number {
       display: block;
 
       margin-bottom: 26px;
@@ -754,15 +740,13 @@
       font-weight: 800;
 
       letter-spacing: 0.1em;
-
     }
 
-    .benefit-card p {
 
+    .benefit-card p {
       margin: 0;
 
       color: var(--muted);
-
     }
 
 
@@ -770,8 +754,8 @@
        LOCATION FIT
        ========================================================= */
 
-    .fit-layout {
 
+    .fit-layout {
       display: grid;
 
       grid-template-columns:
@@ -780,30 +764,28 @@
       gap: 80px;
 
       align-items: start;
-
     }
 
-    .fit-copy {
 
+    .fit-copy {
       position: sticky;
 
       top: 130px;
-
     }
+
 
     .fit-copy p {
       color: var(--muted);
     }
 
-    .fit-list {
 
+    .fit-list {
       border-top:
         1px solid var(--line);
-
     }
 
-    .fit-item {
 
+    .fit-item {
       display: grid;
 
       grid-template-columns:
@@ -815,25 +797,22 @@
 
       border-bottom:
         1px solid var(--line);
-
     }
 
-    .fit-number {
 
+    .fit-number {
       color: var(--gold);
 
       font-size: 0.8rem;
 
       font-weight: 800;
-
     }
 
-    .fit-item p {
 
+    .fit-item p {
       margin: 0;
 
       color: var(--muted);
-
     }
 
 
@@ -841,8 +820,8 @@
        SERVICE
        ========================================================= */
 
-    .service-box {
 
+    .service-box {
       padding: 58px;
 
       background: var(--green);
@@ -850,28 +829,28 @@
       color: white;
 
       border-radius: var(--radius);
-
     }
+
 
     .service-box h2 {
       color: white;
     }
 
+
     .service-box .eyebrow {
       color: var(--gold-fill);
     }
 
-    .service-box > p {
 
+    .service-box > p {
       max-width: 740px;
 
       color:
         rgba(255, 255, 255, 0.8);
-
     }
 
-    .service-grid {
 
+    .service-grid {
       margin-top: 44px;
 
       display: grid;
@@ -881,40 +860,35 @@
 
       border-top:
         1px solid rgba(255, 255, 255, 0.18);
-
     }
+
 
     .service-item {
-
       padding:
         27px 23px 0 0;
-
     }
 
-    .service-item + .service-item {
 
+    .service-item + .service-item {
       padding-left: 24px;
 
       border-left:
         1px solid rgba(255, 255, 255, 0.18);
-
     }
 
-    .service-item strong {
 
+    .service-item strong {
       display: block;
 
       margin-bottom: 7px;
-
     }
 
-    .service-item span {
 
+    .service-item span {
       color:
         rgba(255, 255, 255, 0.7);
 
       font-size: 0.91rem;
-
     }
 
 
@@ -922,8 +896,8 @@
        PROCESS
        ========================================================= */
 
-    .steps {
 
+    .steps {
       display: grid;
 
       grid-template-columns:
@@ -931,27 +905,24 @@
 
       border-top:
         1px solid var(--line);
-
     }
+
 
     .step {
-
       padding:
         34px 34px 0 0;
-
     }
 
-    .step + .step {
 
+    .step + .step {
       padding-left: 34px;
 
       border-left:
         1px solid var(--line);
-
     }
 
-    .step-number {
 
+    .step-number {
       display: block;
 
       margin-bottom: 25px;
@@ -963,15 +934,13 @@
       font-weight: 800;
 
       letter-spacing: 0.1em;
-
     }
 
-    .step p {
 
+    .step p {
       margin: 0;
 
       color: var(--muted);
-
     }
 
 
@@ -979,8 +948,8 @@
        TEAM
        ========================================================= */
 
-    .people-card {
 
+    .people-card {
       display: grid;
 
       grid-template-columns:
@@ -994,29 +963,26 @@
         1px solid var(--line);
 
       border-radius: var(--radius);
-
     }
 
-    .people-image {
 
+    .people-image {
       min-height: 430px;
 
       background: #e6ece6;
-
     }
 
-    .people-image img {
 
+    .people-image img {
       width: 100%;
       height: 100%;
 
       object-fit: cover;
       object-position: center;
-
     }
 
-    .people-content {
 
+    .people-content {
       padding: 55px;
 
       display: flex;
@@ -1024,24 +990,22 @@
       flex-direction: column;
 
       justify-content: center;
-
     }
 
-    .people-content p {
 
+    .people-content p {
       margin-top: 0;
 
       color: var(--muted);
-
     }
 
-    .personal-name {
 
+    .personal-name {
       margin-top: 20px;
 
       font-weight: 800;
-
     }
+
 
     .personal-name span {
       color: var(--gold);
@@ -1052,33 +1016,30 @@
        FAQ
        ========================================================= */
 
-    .faq-layout {
 
+    .faq-layout {
       display: grid;
 
       grid-template-columns:
         0.75fr 1.25fr;
 
       gap: 85px;
-
     }
+
 
     .faq-list {
-
       border-top:
         1px solid var(--line);
-
     }
+
 
     details {
-
       border-bottom:
         1px solid var(--line);
-
     }
 
-    summary {
 
+    summary {
       position: relative;
 
       padding:
@@ -1089,15 +1050,15 @@
       list-style: none;
 
       font-weight: 800;
-
     }
+
 
     summary::-webkit-details-marker {
       display: none;
     }
 
-    summary::after {
 
+    summary::after {
       content: "+";
 
       position: absolute;
@@ -1110,20 +1071,19 @@
       font-size: 1.55rem;
 
       font-weight: 400;
-
     }
+
 
     details[open] summary::after {
       content: "–";
     }
 
-    details p {
 
+    details p {
       margin:
         -2px 0 25px;
 
       color: var(--muted);
-
     }
 
 
@@ -1131,8 +1091,8 @@
        CONTACT
        ========================================================= */
 
-    .contact-grid {
 
+    .contact-grid {
       display: grid;
 
       grid-template-columns:
@@ -1141,23 +1101,22 @@
       gap: 80px;
 
       align-items: start;
-
     }
+
 
     .contact-copy p {
       color: var(--muted);
     }
 
-    .contact-links {
 
+    .contact-links {
       margin-top: 35px;
 
       display: grid;
-
     }
 
-    .contact-link {
 
+    .contact-link {
       padding: 16px 0;
 
       display: flex;
@@ -1172,162 +1131,11 @@
       text-decoration: none;
 
       font-weight: 800;
-
     }
+
 
     .contact-link span:first-child {
       color: var(--muted);
-    }
-
-
-    /* FORM */
-
-    .contact-form {
-
-      padding: 34px;
-
-      background: white;
-
-      border:
-        1px solid #d5dfd5;
-
-      border-radius: var(--radius);
-
-      box-shadow:
-        0 15px 40px rgba(36, 75, 57, 0.06);
-
-    }
-
-    .contact-form h3 {
-
-      margin-bottom: 7px;
-
-      font-size: 1.45rem;
-
-    }
-
-    .form-description {
-
-      margin:
-        0 0 27px;
-
-      color: var(--muted);
-
-      font-size: 0.91rem;
-
-    }
-
-    .form-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 18px;
-
-    }
-
-    .field {
-
-      display: grid;
-
-      gap: 7px;
-
-    }
-
-    .field-full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-
-      font-size: 0.87rem;
-
-      font-weight: 800;
-
-    }
-
-    input,
-    select,
-    textarea {
-
-      width: 100%;
-
-      padding:
-        13px 14px;
-
-      border:
-        1px solid #cbd6cb;
-
-      border-radius: 9px;
-
-      background: white;
-
-      color: var(--ink);
-
-      outline: none;
-
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-
-      border-color: var(--green);
-
-      box-shadow:
-        0 0 0 3px rgba(36, 75, 57, 0.08);
-
-    }
-
-    textarea {
-
-      min-height: 125px;
-
-      resize: vertical;
-
-    }
-
-    .privacy-check {
-
-      margin:
-        22px 0;
-
-      display: flex;
-
-      gap: 11px;
-
-      align-items: flex-start;
-
-      color: var(--muted);
-
-      font-size: 0.86rem;
-
-    }
-
-    .privacy-check input {
-
-      width: auto;
-
-      margin-top: 4px;
-
-    }
-
-    .privacy-check a {
-
-      color: var(--green);
-
-      font-weight: 700;
-
-    }
-
-    .form-submit {
-
-      width: 100%;
-
-      border: 0;
-
     }
 
 
@@ -1335,19 +1143,18 @@
        RELATED
        ========================================================= */
 
-    .related-grid {
 
+    .related-grid {
       display: grid;
 
       grid-template-columns:
         repeat(3, 1fr);
 
       gap: 20px;
-
     }
 
-    .related-card {
 
+    .related-card {
       min-height: 210px;
 
       padding: 30px;
@@ -1366,33 +1173,29 @@
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
-
     }
 
-    .related-card:hover {
 
+    .related-card:hover {
       transform: translateY(-3px);
 
       box-shadow: var(--shadow);
-
     }
 
-    .related-card p {
 
+    .related-card p {
       color: var(--muted);
 
       margin-bottom: 30px;
-
     }
 
-    .related-link {
 
+    .related-link {
       margin-top: auto;
 
       color: var(--gold);
 
       font-weight: 800;
-
     }
 
 
@@ -1400,8 +1203,8 @@
        FOOTER
        ========================================================= */
 
-    .site-footer {
 
+    .site-footer {
       padding:
         65px 0 30px;
 
@@ -1409,11 +1212,10 @@
 
       border-top:
         1px solid var(--line);
-
     }
 
-    .footer-grid {
 
+    .footer-grid {
       display: grid;
 
       grid-template-columns:
@@ -1422,23 +1224,22 @@
         0.75fr;
 
       gap: 60px;
-
     }
+
 
     .footer-brand {
       max-width: 380px;
     }
 
-    .footer-brand p {
 
+    .footer-brand p {
       margin-top: 18px;
 
       color: var(--muted);
-
     }
 
-    .footer-title {
 
+    .footer-title {
       margin-bottom: 15px;
 
       color: var(--muted);
@@ -1450,31 +1251,29 @@
       letter-spacing: 0.08em;
 
       text-transform: uppercase;
-
     }
 
-    .footer-links {
 
+    .footer-links {
       display: grid;
 
       gap: 9px;
-
     }
 
-    .footer-links a {
 
+    .footer-links a {
       text-decoration: none;
 
       font-weight: 700;
-
     }
+
 
     .footer-links a:hover {
       color: var(--green);
     }
 
-    .footer-bottom {
 
+    .footer-bottom {
       margin-top: 55px;
 
       padding-top: 24px;
@@ -1491,18 +1290,17 @@
       color: var(--muted);
 
       font-size: 0.85rem;
-
     }
 
-    .footer-bottom-links {
 
+    .footer-bottom-links {
       display: flex;
 
       flex-wrap: wrap;
 
       gap: 20px;
-
     }
+
 
     .footer-bottom a {
       text-decoration: none;
@@ -1513,8 +1311,8 @@
        WHATSAPP
        ========================================================= */
 
-    .whatsapp-btn {
 
+    .whatsapp-btn {
       position: fixed;
 
       right: 22px;
@@ -1542,7 +1340,6 @@
 
       box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.16);
-
     }
 
 
@@ -1550,8 +1347,8 @@
        COOKIE BANNER
        ========================================================= */
 
-    #cookie-banner {
 
+    #cookie-banner {
       display: none;
 
       position: fixed;
@@ -1577,40 +1374,36 @@
 
       box-shadow:
         0 15px 45px rgba(32, 40, 33, 0.16);
-
     }
 
-    .cookie-inner {
 
+    .cookie-inner {
       display: flex;
 
       align-items: center;
       justify-content: space-between;
 
       gap: 20px;
-
     }
 
-    .cookie-text {
 
+    .cookie-text {
       color: var(--muted);
 
       font-size: 0.88rem;
-
     }
 
-    .cookie-buttons {
 
+    .cookie-buttons {
       display: flex;
 
       flex-shrink: 0;
 
       gap: 8px;
-
     }
 
-    .cookie-buttons button {
 
+    .cookie-buttons button {
       padding: 10px 14px;
 
       border-radius: 8px;
@@ -1621,43 +1414,27 @@
       cursor: pointer;
 
       font-weight: 700;
-
     }
 
-    #cookie-accept {
 
+    #cookie-accept {
       background: var(--gold-fill);
 
       color: var(--ink);
-
     }
 
-    #cookie-decline {
 
+    #cookie-decline {
       background: white;
 
       color: var(--ink);
-
-    }
-
-
-    /* =========================================================
-       ACCESSIBILITY
-       ========================================================= */
-
-    :focus-visible {
-
-      outline:
-        3px solid var(--gold-fill);
-
-      outline-offset: 4px;
-
     }
 
 
     /* =========================================================
        TABLET
        ========================================================= */
+
 
     @media (max-width: 980px) {
 
@@ -1672,7 +1449,6 @@
 
 
       .main-nav {
-
         display: none;
 
         position: absolute;
@@ -1692,7 +1468,6 @@
 
         border-bottom:
           1px solid var(--line);
-
       }
 
 
@@ -1707,11 +1482,9 @@
       .people-card,
       .faq-layout,
       .contact-grid {
-
         grid-template-columns: 1fr;
 
         gap: 55px;
-
       }
 
 
@@ -1736,21 +1509,17 @@
 
 
       .step {
-
         padding: 30px 0;
 
         border-bottom:
           1px solid var(--line);
-
       }
 
 
       .step + .step {
-
         padding-left: 0;
 
         border-left: 0;
-
       }
 
 
@@ -1770,15 +1539,14 @@
        MOBILE
        ========================================================= */
 
+
     @media (max-width: 700px) {
 
       .wrap {
-
         width: min(
           calc(100% - 34px),
           1180px
         );
-
       }
 
 
@@ -1808,34 +1576,28 @@
 
 
       .hero {
-
         padding:
           65px 0 55px;
-
       }
 
 
       h1 {
-
         font-size:
           clamp(
             2.5rem,
             12vw,
             4rem
           );
-
       }
 
 
       h2 {
-
         font-size:
           clamp(
             2rem,
             9vw,
             2.8rem
           );
-
       }
 
 
@@ -1865,14 +1627,12 @@
 
 
       .trust-item + .trust-item {
-
         padding-left: 0;
 
         border-left: 0;
 
         border-top:
           1px solid var(--line);
-
       }
 
 
@@ -1882,10 +1642,8 @@
 
 
       .fit-item {
-
         grid-template-columns:
           48px 1fr;
-
       }
 
 
@@ -1900,21 +1658,17 @@
 
 
       .service-item {
-
         padding: 22px 0;
 
         border-bottom:
           1px solid rgba(255, 255, 255, 0.18);
-
       }
 
 
       .service-item + .service-item {
-
         padding-left: 0;
 
         border-left: 0;
-
       }
 
 
@@ -1928,27 +1682,10 @@
       }
 
 
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-
-      .field-full {
-        grid-column: auto;
-      }
-
-
-      .contact-form {
-        padding: 24px;
-      }
-
-
       .contact-link {
-
         flex-direction: column;
 
         gap: 3px;
-
       }
 
 
@@ -1963,11 +1700,9 @@
 
 
       .cookie-inner {
-
         align-items: stretch;
 
         flex-direction: column;
-
       }
 
 
@@ -1982,12 +1717,926 @@
 
     }
 
+
+    /* =========================================================
+       KARLSRUHE STANDORT-CHECK
+       Gold = normale Aktion
+       Grün = positives Signal ab 40 Personen
+       ========================================================= */
+
+
+    .standort-check-section {
+      background:
+        linear-gradient(
+          135deg,
+          #f5f7f5 0%,
+          #ffffff 74%
+        );
+
+      border-top:
+        1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+    .standort-check-layout {
+      display: grid;
+
+      grid-template-columns:
+        .82fr 1.18fr;
+
+      gap: 64px;
+
+      align-items: start;
+    }
+
+
+    .standort-check-copy {
+      position: sticky;
+
+      top: 120px;
+    }
+
+
+    .standort-check-copy > p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 1.05rem;
+    }
+
+
+    .check-price-box {
+      margin-top: 28px;
+
+      padding: 20px 22px;
+
+      background: var(--green);
+
+      color: white;
+
+      border-radius: 14px;
+    }
+
+
+    .check-price-box strong {
+      display: block;
+
+      color: var(--gold-fill);
+
+      font-size: 1.04rem;
+    }
+
+
+    .check-price-box p {
+      margin: 7px 0 0;
+
+      color:
+        rgba(255,255,255,.82);
+
+      font-size: .88rem;
+    }
+
+
+    .check-price-box details {
+      border: 0;
+    }
+
+
+    .check-price-box summary {
+      padding: 12px 0 0;
+
+      color: #f4dda4;
+
+      font-size: .86rem;
+
+      font-weight: 800;
+
+      text-decoration: underline;
+
+      text-underline-offset: 4px;
+    }
+
+
+    .check-price-box summary::after {
+      content: "";
+    }
+
+
+    .check-price-details {
+      margin-top: 13px;
+
+      padding-top: 13px;
+
+      border-top:
+        1px solid rgba(255,255,255,.18);
+    }
+
+
+    .check-price-details p {
+      margin:
+        0 0 10px;
+    }
+
+
+    .check-price-details p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .check-trust {
+      display: grid;
+
+      gap: 15px;
+
+      margin-top: 28px;
+    }
+
+
+    .check-trust-item {
+      display: grid;
+
+      grid-template-columns:
+        27px 1fr;
+
+      gap: 11px;
+
+      align-items: start;
+    }
+
+
+    .check-trust-icon {
+      width: 25px;
+      height: 25px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #e7f0ea;
+
+      color: #2f7d4a;
+
+      font-weight: 900;
+    }
+
+
+    .check-trust-item p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: .91rem;
+
+      line-height: 1.55;
+    }
+
+
+    .check-trust-item strong {
+      display: block;
+
+      color: var(--ink);
+    }
+
+
+    .standort-check-card {
+      min-width: 0;
+
+      padding: 34px;
+
+      background: white;
+
+      border:
+        1px solid #d5dfd5;
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 15px 40px rgba(36,75,57,.06);
+
+      scroll-margin-top: 110px;
+    }
+
+
+    .check-progress {
+      margin-bottom: 28px;
+    }
+
+
+    .check-progress-track {
+      height: 5px;
+
+      overflow: hidden;
+
+      border-radius: 999px;
+
+      background: #e9ede8;
+    }
+
+
+    .check-progress-bar {
+      display: block;
+
+      width: 25%;
+      height: 100%;
+
+      background: var(--gold-fill);
+
+      border-radius: inherit;
+
+      transition:
+        width .22s ease,
+        background .22s ease;
+    }
+
+
+    .check-progress-meta {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 14px;
+
+      margin-top: 9px;
+
+      color: var(--muted);
+
+      font-size: .74rem;
+
+      font-weight: 800;
+    }
+
+
+    .check-step {
+      display: none;
+    }
+
+
+    .check-step.active {
+      display: block;
+    }
+
+
+    .check-step-label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--gold);
+
+      font-size: .74rem;
+
+      font-weight: 800;
+
+      letter-spacing: .11em;
+
+      text-transform: uppercase;
+    }
+
+
+    .check-step h3 {
+      margin-bottom: 22px;
+
+      font-size:
+        clamp(
+          1.55rem,
+          2.5vw,
+          2rem
+        );
+    }
+
+
+    .check-step-intro {
+      margin:
+        -10px 0 23px;
+
+      color: var(--muted);
+
+      font-size: .92rem;
+    }
+
+
+    .check-field {
+      margin-bottom: 20px;
+    }
+
+
+    .check-field label,
+    .check-fieldset legend {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--ink);
+
+      font-size: .87rem;
+
+      font-weight: 800;
+    }
+
+
+    .check-field .optional,
+    .check-fieldset .optional {
+      color: var(--muted);
+
+      font-size: .8rem;
+
+      font-weight: 400;
+    }
+
+
+    .check-field input:not([type=checkbox]):not([type=radio]),
+    .check-field textarea {
+      width: 100%;
+
+      padding: 13px 14px;
+
+      border:
+        1px solid #cbd6cb;
+
+      border-radius: 9px;
+
+      background: white;
+
+      color: var(--ink);
+
+      outline: none;
+    }
+
+
+    .check-field input:focus,
+    .check-field textarea:focus {
+      border-color: var(--green);
+
+      box-shadow:
+        0 0 0 3px rgba(36,75,57,.08);
+    }
+
+
+    .check-field-note {
+      margin:
+        7px 0 0;
+
+      color: var(--muted);
+
+      font-size: .8rem;
+    }
+
+
+    .check-fieldset {
+      margin:
+        0 0 26px;
+
+      padding: 0;
+
+      border: 0;
+    }
+
+
+    .check-choice-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 11px;
+    }
+
+
+    .check-choice {
+      position: relative;
+
+      cursor: pointer;
+    }
+
+
+    .check-choice input {
+      position: absolute;
+
+      opacity: 0;
+
+      pointer-events: none;
+    }
+
+
+    .check-choice span {
+      min-height: 88px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      padding: 15px 16px;
+
+      border:
+        1px solid #cfd7ce;
+
+      border-radius: 12px;
+
+      background: white;
+
+      transition:
+        border-color .18s,
+        background .18s,
+        box-shadow .18s;
+    }
+
+
+    .check-choice input:checked + span {
+      border-color: var(--gold);
+
+      background: #fbf7ec;
+
+      box-shadow:
+        inset 0 0 0 1px var(--gold-fill);
+    }
+
+
+    .check-choice strong {
+      color: var(--ink);
+
+      font-size: .92rem;
+    }
+
+
+    .check-choice small {
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      line-height: 1.35;
+    }
+
+
+    .check-choice-wide {
+      grid-column:
+        1 / -1;
+    }
+
+
+    .check-choice-wide span {
+      min-height: 68px;
+    }
+
+
+    .check-radio-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 10px;
+    }
+
+
+    .check-radio-grid label {
+      position: relative;
+
+      cursor: pointer;
+    }
+
+
+    .check-radio-grid input {
+      position: absolute;
+
+      opacity: 0;
+    }
+
+
+    .check-radio-grid span {
+      min-height: 48px;
+
+      display: grid;
+
+      place-items: center;
+
+      padding: 8px;
+
+      border:
+        1px solid #cfd7ce;
+
+      border-radius: 9px;
+
+      background: white;
+
+      color: var(--ink);
+
+      font-size: .86rem;
+
+      font-weight: 800;
+    }
+
+
+    .check-radio-grid input:checked + span {
+      border-color: var(--gold);
+
+      background: #fbf7ec;
+
+      color: #5f4512;
+
+      box-shadow:
+        inset 0 0 0 1px var(--gold-fill);
+    }
+
+
+    .check-context {
+      display: grid;
+
+      gap: 9px;
+    }
+
+
+    .check-context label {
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      cursor: pointer;
+
+      font-size: .86rem;
+    }
+
+
+    .check-context input {
+      width: 18px;
+      height: 18px;
+
+      accent-color: #2f7d4a;
+    }
+
+
+    .check-two-columns {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 16px;
+    }
+
+
+    .check-nav {
+      display: flex;
+
+      gap: 11px;
+
+      margin-top: 24px;
+    }
+
+
+    .check-nav .btn {
+      flex: 1;
+    }
+
+
+    .check-error {
+      margin:
+        10px 0 0;
+
+      color: #8b2f2f;
+
+      font-size: .8rem;
+
+      font-weight: 800;
+    }
+
+
+    .check-result-card {
+      padding: 24px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 18px;
+
+      background: white;
+    }
+
+
+    .check-result-head {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 13px;
+    }
+
+
+    .check-result-icon {
+      flex:
+        0 0 42px;
+
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #eef2ee;
+
+      color: var(--ink);
+
+      font-size: 1.15rem;
+
+      font-weight: 900;
+    }
+
+
+    .check-result-kicker {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: var(--gold);
+
+      font-size: .73rem;
+
+      font-weight: 900;
+
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
+    }
+
+
+    .check-result-card h4 {
+      margin: 0;
+
+      color: var(--ink);
+
+      font-size: 1.26rem;
+
+      line-height: 1.28;
+    }
+
+
+    .check-result-text {
+      margin:
+        13px 0 0;
+
+      color: var(--muted);
+    }
+
+
+    .check-result-price {
+      margin-top: 20px;
+
+      padding-top: 16px;
+
+      border-top:
+        1px solid #dde4dd;
+    }
+
+
+    .check-result-price strong {
+      display: block;
+
+      color: var(--ink);
+    }
+
+
+    .check-result-price p {
+      margin:
+        5px 0 0;
+
+      color: var(--muted);
+
+      font-size: .86rem;
+    }
+
+
+    .check-result-extra {
+      margin-top: 16px;
+
+      padding: 13px 15px;
+
+      border-radius: 10px;
+
+      background:
+        rgba(255,255,255,.72);
+
+      color: var(--muted);
+
+      font-size: .86rem;
+    }
+
+
+    .check-result-extra strong {
+      color: var(--ink);
+    }
+
+
+    .check-result-card.negative {
+      border-color: #ead1cc;
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff6f4,
+          #fff
+        );
+    }
+
+
+    .check-result-card.negative .check-result-icon {
+      background: #f2dcd8;
+
+      color: #8b3a32;
+    }
+
+
+    .check-result-card.borderline {
+      border-color: #eadab5;
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff8e8,
+          #fff
+        );
+    }
+
+
+    .check-result-card.borderline .check-result-icon {
+      background: #f4e5c3;
+
+      color: #a56e13;
+    }
+
+
+    .check-result-card.positive {
+      border-color: #cce1d2;
+
+      background:
+        linear-gradient(
+          145deg,
+          #f1f8f3,
+          #fff
+        );
+    }
+
+
+    .check-result-card.positive .check-result-icon {
+      background: #dceee1;
+
+      color: #2f7d4a;
+    }
+
+
+    .check-direct-links {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 18px;
+    }
+
+
+    .check-disclaimer {
+      margin:
+        15px 0 0;
+
+      color: #6a736a;
+
+      font-size: .77rem;
+
+      line-height: 1.55;
+    }
+
+
+    .check-privacy {
+      margin:
+        20px 0;
+
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 10px;
+
+      color: var(--muted);
+
+      font-size: .82rem;
+    }
+
+
+    .check-privacy input {
+      width: auto;
+
+      margin-top: 4px;
+    }
+
+
+    .check-privacy a {
+      color: var(--green);
+
+      font-weight: 700;
+    }
+
+
+    .check-submit-note {
+      margin-top: 8px;
+
+      padding: 12px 14px;
+
+      background: #f3f5f2;
+
+      border-radius: 9px;
+
+      color: var(--muted);
+
+      font-size: .8rem;
+    }
+
+
+    .check-status {
+      margin-top: 12px;
+
+      color: var(--green);
+
+      font-size: .84rem;
+    }
+
+
+    @media(max-width:980px) {
+
+      .standort-check-layout {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+
+      .standort-check-copy {
+        position: static;
+      }
+
+    }
+
+
+    @media(max-width:700px) {
+
+      .standort-check-card {
+        padding: 24px 20px;
+
+        border-radius: 18px;
+      }
+
+
+      .check-choice-grid,
+      .check-two-columns {
+        grid-template-columns: 1fr;
+      }
+
+
+      .check-choice-wide {
+        grid-column: auto;
+      }
+
+
+      .check-nav {
+        flex-direction: column;
+      }
+
+
+      .check-nav .btn,
+      .check-direct-links .btn {
+        width: 100%;
+      }
+
+
+      .check-direct-links {
+        flex-direction: column;
+      }
+
+
+      .check-progress-meta {
+        flex-wrap: wrap;
+
+        gap:
+          4px 10px;
+
+        font-size: .68rem;
+      }
+
+    }
+
   </style>
 
-
-  <!-- =========================================================
-       SERVICE SCHEMA
-       ========================================================= -->
 
   <script type="application/ld+json">
   {
@@ -2009,10 +2658,6 @@
   </script>
 
 
-  <!-- =========================================================
-       FAQ SCHEMA
-       ========================================================= -->
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -2023,7 +2668,7 @@
         "name": "Was kostet ein Snackautomat für Unternehmen in Karlsruhe?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die Kosten hängen von Standort, Nutzung, Automat, Ausstattung, Sortiment und gewünschtem Service ab. Nach einer kostenlosen Standortprüfung erstellt BODA Snacks ein konkretes Angebot."
+          "text": "Die laufende Servicepauschale beginnt bei BODA Snacks ab 98 Euro im Monat. Die konkrete Kondition hängt von Standort, Nutzung, Ausstattung und Serviceumfang ab. Snacks und Getränke werden beim Kauf am Automaten separat bezahlt."
         }
       },
       {
@@ -2031,7 +2676,7 @@
         "name": "Ab wie vielen Mitarbeitern ist ein Snackautomat sinnvoll?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Eine starre Mindestzahl gibt es nicht. Entscheidend sind unter anderem tägliche Anwesenheit, Arbeitszeiten, vorhandene Versorgung und die erwartete Nutzung."
+          "text": "Die Mitarbeiterzahl ist ein erster Richtwert. Bis etwa 25 regelmäßig anwesende Personen prüfen wir besonders kritisch. Zwischen 26 und 39 Personen ist eine individuelle Prüfung sinnvoll. Ab etwa 40 regelmäßig anwesenden Personen sehen wir grundsätzlich eine gute Ausgangslage. Schichtbetrieb, Besucher und tatsächliche Nutzung können die Einschätzung verändern."
         }
       },
       {
@@ -2046,10 +2691,6 @@
   }
   </script>
 
-
-  <!-- =========================================================
-       BREADCRUMB
-       ========================================================= -->
 
   <script type="application/ld+json">
   {
@@ -2078,936 +2719,290 @@
 <body>
 
 
-  <!-- =========================================================
-       HEADER
-       ========================================================= -->
+<header class="site-header">
 
-  <header class="site-header">
-
-    <div class="wrap header-inner">
+  <div class="wrap header-inner">
 
 
-      <a
-        href="index.html"
-        class="brand"
-        aria-label="BODA Snacks Startseite"
-      >
+    <a
+      href="index.html"
+      class="brand"
+      aria-label="BODA Snacks Startseite"
+    >
 
-        <span class="brand-main">
-          BODA <span class="snacks">SNACKS</span>
-        </span>
+      <span class="brand-main">
+        BODA <span class="snacks">SNACKS</span>
+      </span>
 
-        <span class="brand-sub">
-          Ihr Automatenservice aus Pforzheim
-        </span>
+      <span class="brand-sub">
+        Ihr Automatenservice aus Pforzheim
+      </span>
 
+    </a>
+
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+    >
+      Menü ☰
+    </button>
+
+
+    <nav
+      class="main-nav"
+      id="mainNav"
+      aria-label="Hauptnavigation"
+    >
+
+      <a href="#geeignet">
+        Für wen geeignet?
       </a>
 
+      <a href="#service">
+        Service
+      </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Menü öffnen"
-        aria-expanded="false"
+      <a href="#faq">
+        FAQ
+      </a>
+
+      <a
+        href="#standort-check"
+        class="btn btn-primary"
       >
-        Menü ☰
-      </button>
+        Standort prüfen ↗
+      </a>
+
+    </nav>
 
 
-      <nav
-        class="main-nav"
-        id="mainNav"
-        aria-label="Hauptnavigation"
-      >
+  </div>
 
-        <a href="#geeignet">
-          Für wen geeignet?
-        </a>
+</header>
 
-        <a href="#service">
-          Service
-        </a>
 
-        <a href="#faq">
-          FAQ
-        </a>
 
-        <a
-          href="#anfrage"
-          class="btn btn-primary"
-        >
-          Standort prüfen ↗
-        </a>
+<main>
 
-      </nav>
+
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+
+
+  <section class="hero">
+
+    <div class="wrap">
+
+
+      <div class="hero-grid">
+
+
+        <div>
+
+
+          <span class="eyebrow">
+            Snackautomaten für Unternehmen in Karlsruhe
+          </span>
+
+
+          <h1>
+            Gute Pausen.
+            <br>
+            Direkt im Betrieb.
+          </h1>
+
+
+          <p class="lead hero-copy">
+
+            Sie suchen eine unkomplizierte Snack- und Getränkeversorgung
+            für Ihren Betrieb in Karlsruhe?
+
+            <strong>
+              BODA Snacks plant die passende Automatenlösung
+              und übernimmt auf Wunsch auch den laufenden Service.
+            </strong>
+
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a
+              href="#standort-check"
+              class="btn btn-primary"
+            >
+              Standort kostenlos prüfen ↗
+            </a>
+
+            <a
+              href="#geeignet"
+              class="btn btn-secondary"
+            >
+              Passt ein Automat zu uns?
+            </a>
+
+          </div>
+
+
+          <p class="hero-note">
+            Standortprüfung kostenlos · Servicepauschale ab 98 € im Monat · unverbindlich
+          </p>
+
+
+        </div>
+
+
+
+        <div class="hero-visual">
+
+          <img
+            src="boda-automat.jpg"
+            alt="Snack- und Getränkeautomat von BODA Snacks"
+          >
+
+          <div class="hero-badge">
+            BODA <span>SNACKS</span> · Karlsruhe &amp; Umgebung
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="trust-row">
+
+
+        <div class="trust-item">
+
+          <span class="check">
+            ✓
+          </span>
+
+          Kein eigener Automatenkauf erforderlich
+
+        </div>
+
+
+        <div class="trust-item">
+
+          <span class="check">
+            ✓
+          </span>
+
+          Sortiment passend zum Standort
+
+        </div>
+
+
+        <div class="trust-item">
+
+          <span class="check">
+            ✓
+          </span>
+
+          Persönlicher Ansprechpartner
+
+        </div>
+
+
+      </div>
 
 
     </div>
 
-  </header>
+  </section>
 
 
 
-  <main>
+  <!-- =========================================================
+       KARLSRUHE
+       ========================================================= -->
 
 
-    <!-- =========================================================
-         HERO
-         ========================================================= -->
+  <section class="section">
 
-    <section class="hero">
+    <div class="wrap">
 
-      <div class="wrap">
 
-
-        <div class="hero-grid">
-
-
-          <div>
-
-            <span class="eyebrow">
-              Snackautomaten für Unternehmen in Karlsruhe
-            </span>
-
-
-            <h1>
-              Gute Pausen.
-              <br>
-              Direkt im Betrieb.
-            </h1>
-
-
-            <p class="lead hero-copy">
-
-              Sie suchen eine unkomplizierte Snack- und Getränkeversorgung
-              für Ihren Betrieb in Karlsruhe?
-
-              <strong>
-                BODA Snacks plant die passende Automatenlösung
-                und übernimmt auf Wunsch auch den laufenden Service.
-              </strong>
-
-            </p>
-
-
-            <div class="hero-actions">
-
-              <a
-                href="#anfrage"
-                class="btn btn-primary"
-              >
-                Standort kostenlos prüfen ↗
-              </a>
-
-              <a
-                href="#geeignet"
-                class="btn btn-secondary"
-              >
-                Passt ein Automat zu uns?
-              </a>
-
-            </div>
-
-
-            <p class="hero-note">
-              Kostenlos · unverbindlich · persönliche Betreuung aus der Region
-            </p>
-
-          </div>
-
-
-
-          <div class="hero-visual">
-
-            <img
-              src="boda-automat.jpg"
-              alt="Snack- und Getränkeautomat von BODA Snacks"
-            >
-
-            <div class="hero-badge">
-              BODA <span>SNACKS</span> · Karlsruhe &amp; Umgebung
-            </div>
-
-          </div>
-
-
-        </div>
-
-
-
-        <div class="trust-row">
-
-
-          <div class="trust-item">
-
-            <span class="check">
-              ✓
-            </span>
-
-            Kein eigener Automatenkauf erforderlich
-
-          </div>
-
-
-          <div class="trust-item">
-
-            <span class="check">
-              ✓
-            </span>
-
-            Sortiment passend zum Standort
-
-          </div>
-
-
-          <div class="trust-item">
-
-            <span class="check">
-              ✓
-            </span>
-
-            Persönlicher Ansprechpartner
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         KARLSRUHE
-         ========================================================= -->
-
-    <section class="section">
-
-      <div class="wrap">
-
-
-        <div class="local-box">
-
-
-          <div>
-
-            <span class="eyebrow">
-              Karlsruhe
-            </span>
-
-            <h2>
-              Nicht irgendein Automat.
-              Eine Versorgung, die zum Betrieb passt.
-            </h2>
-
-          </div>
-
-
-
-          <div>
-
-            <p>
-              Büro, Produktion, Lager, Werkstatt oder Kundenbereich:
-              Die Anforderungen an eine Automatenversorgung
-              können sehr unterschiedlich sein.
-
-              Deshalb prüfen wir Ihren konkreten Standort,
-              bevor wir eine Lösung empfehlen.
-            </p>
-
-
-            <div class="local-points">
-
-
-              <div class="local-point">
-                <strong>
-                  Wie viele Personen sind tatsächlich vor Ort?
-                </strong>
-              </div>
-
-
-              <div class="local-point">
-                <strong>
-                  Welche Arbeits- und Pausenzeiten gibt es?
-                </strong>
-              </div>
-
-
-              <div class="local-point">
-                <strong>
-                  Welche Versorgung besteht bereits?
-                </strong>
-              </div>
-
-
-              <div class="local-point">
-                <strong>
-                  Welche Automatenlösung passt zur Nutzung?
-                </strong>
-              </div>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         BENEFITS
-         ========================================================= -->
-
-    <section class="section section-soft">
-
-      <div class="wrap">
-
-
-        <div class="section-head">
-
-          <span class="eyebrow">
-            Was Ihr Betrieb davon hat
-          </span>
-
-          <h2>
-            Versorgung direkt am Arbeitsplatz.
-          </h2>
-
-          <p>
-            Der eigentliche Mehrwert entsteht nicht durch den Automaten selbst,
-            sondern durch eine unkomplizierte Versorgung direkt im Betrieb.
-          </p>
-
-        </div>
-
-
-
-        <div class="benefit-grid">
-
-
-          <article class="benefit-card">
-
-            <span class="benefit-number">
-              01 / KURZE WEGE
-            </span>
-
-            <h3>
-              Snacks und Getränke vor Ort
-            </h3>
-
-            <p>
-              Mitarbeiter können sich direkt am Standort versorgen,
-              ohne für jede kleine Pause das Betriebsgelände verlassen zu müssen.
-            </p>
-
-          </article>
-
-
-
-          <article class="benefit-card">
-
-            <span class="benefit-number">
-              02 / FLEXIBEL
-            </span>
-
-            <h3>
-              Auch bei unterschiedlichen Arbeitszeiten
-            </h3>
-
-            <p>
-              Eine Automatenversorgung kann auch außerhalb
-              klassischer Kantinen- oder Ladenöffnungszeiten verfügbar sein.
-            </p>
-
-          </article>
-
-
-
-          <article class="benefit-card">
-
-            <span class="benefit-number">
-              03 / SERVICE
-            </span>
-
-            <h3>
-              Weniger Organisation
-            </h3>
-
-            <p>
-              Im vereinbarten Versorgungskonzept übernehmen wir
-              die laufende Betreuung, damit daraus keine neue interne Aufgabe wird.
-            </p>
-
-          </article>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         STANDORT EIGNUNG
-         ========================================================= -->
-
-    <section
-      class="section"
-      id="geeignet"
-    >
-
-      <div class="wrap fit-layout">
-
-
-        <div class="fit-copy">
-
-          <span class="eyebrow">
-            Standortprüfung
-          </span>
-
-          <h2>
-            Wann passt ein Snackautomat zu Ihrem Betrieb?
-          </h2>
-
-          <p>
-            Eine starre Mindestzahl an Mitarbeitern wäre zu einfach gedacht.
-
-            Wir betrachten tägliche Anwesenheit,
-            Arbeitszeiten, vorhandene Versorgung,
-            Stellfläche und erwartete Nutzung.
-          </p>
-
-          <a
-            href="#anfrage"
-            class="btn btn-primary"
-          >
-            Standort kostenlos prüfen ↗
-          </a>
-
-        </div>
-
-
-
-        <div class="fit-list">
-
-
-          <article class="fit-item">
-
-            <span class="fit-number">
-              01
-            </span>
-
-            <div>
-
-              <h3>
-                Büro &amp; Verwaltung
-              </h3>
-
-              <p>
-                Zusätzliche Versorgung für Mitarbeiter
-                direkt innerhalb des Unternehmens.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="fit-item">
-
-            <span class="fit-number">
-              02
-            </span>
-
-            <div>
-
-              <h3>
-                Produktion &amp; Werkstatt
-              </h3>
-
-              <p>
-                Besonders interessant bei kurzen Pausen,
-                Schichtbetrieb oder fehlender Kantinenversorgung.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="fit-item">
-
-            <span class="fit-number">
-              03
-            </span>
-
-            <div>
-
-              <h3>
-                Lager &amp; Logistik
-              </h3>
-
-              <p>
-                Ein zentraler Versorgungspunkt für
-                unterschiedliche Arbeits- und Pausenzeiten.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="fit-item">
-
-            <span class="fit-number">
-              04
-            </span>
-
-            <div>
-
-              <h3>
-                Kunden- &amp; Wartebereiche
-              </h3>
-
-              <p>
-                Je nach Standort kann eine Automatenversorgung
-                zusätzlich für Besucher oder Kunden sinnvoll sein.
-              </p>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         SERVICE
-         ========================================================= -->
-
-    <section
-      class="section"
-      id="service"
-    >
-
-      <div class="wrap">
-
-
-        <div class="service-box">
-
-
-          <span class="eyebrow">
-            BODA Vollservice
-          </span>
-
-
-          <h2>
-            Der Automat soll versorgen.
-            Nicht Arbeit machen.
-          </h2>
-
-
-          <p>
-            Welche Leistungen für Ihren Standort sinnvoll sind,
-            stimmen wir gemeinsam mit Ihnen ab.
-
-            Der konkrete Leistungsumfang steht fest,
-            bevor Sie sich entscheiden.
-          </p>
-
-
-
-          <div class="service-grid">
-
-
-            <div class="service-item">
-
-              <strong>
-                Planung
-              </strong>
-
-              <span>
-                Standort, Automat, Sortiment und Ausstattung abstimmen.
-              </span>
-
-            </div>
-
-
-
-            <div class="service-item">
-
-              <strong>
-                Aufstellung
-              </strong>
-
-              <span>
-                Organisation der vereinbarten Automatenlösung.
-              </span>
-
-            </div>
-
-
-
-            <div class="service-item">
-
-              <strong>
-                Befüllung
-              </strong>
-
-              <span>
-                Regelmäßige Versorgung passend zur tatsächlichen Nutzung.
-              </span>
-
-            </div>
-
-
-
-            <div class="service-item">
-
-              <strong>
-                Betreuung
-              </strong>
-
-              <span>
-                Reinigung und technische Betreuung nach Vereinbarung.
-              </span>
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         ABLAUF
-         ========================================================= -->
-
-    <section class="section section-soft">
-
-      <div class="wrap">
-
-
-        <div class="section-head">
-
-          <span class="eyebrow">
-            So funktioniert's
-          </span>
-
-          <h2>
-            Drei Schritte bis zur passenden Lösung.
-          </h2>
-
-          <p>
-            Für die erste Prüfung benötigen wir nur
-            wenige Informationen zu Ihrem Unternehmen und Standort.
-          </p>
-
-        </div>
-
-
-
-        <div class="steps">
-
-
-          <article class="step">
-
-            <span class="step-number">
-              01 / ANFRAGE
-            </span>
-
-            <h3>
-              Standort beschreiben
-            </h3>
-
-            <p>
-              Sie nennen uns Standort,
-              ungefähre Personenanzahl und Ihren Versorgungswunsch.
-            </p>
-
-          </article>
-
-
-
-          <article class="step">
-
-            <span class="step-number">
-              02 / PRÜFUNG
-            </span>
-
-            <h3>
-              Bedarf gemeinsam klären
-            </h3>
-
-            <p>
-              Wir besprechen Nutzung,
-              Arbeitszeiten, Stellfläche, Sortiment und Service.
-            </p>
-
-          </article>
-
-
-
-          <article class="step">
-
-            <span class="step-number">
-              03 / ANGEBOT
-            </span>
-
-            <h3>
-              Konkrete Lösung erhalten
-            </h3>
-
-            <p>
-              Sie erhalten ein individuelles Angebot
-              mit den vereinbarten Leistungen und Konditionen.
-            </p>
-
-          </article>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         TEAM
-         ========================================================= -->
-
-    <section class="section">
-
-      <div class="wrap">
-
-
-        <div class="people-card">
-
-
-          <div class="people-image">
-
-            <img
-              src="teamfoto.jpg"
-              alt="Andreas und Sandra Boda von BODA Snacks"
-            >
-
-          </div>
-
-
-
-          <div class="people-content">
-
-            <span class="eyebrow">
-              Persönlich betreut
-            </span>
-
-            <h2>
-              Sie wissen,
-              wer sich kümmert.
-            </h2>
-
-            <p>
-              Wir sind Andreas und Sandra Boda
-              und führen BODA Snacks persönlich aus Pforzheim.
-            </p>
-
-            <p>
-              Auch bei Standorten in Karlsruhe haben Sie
-              einen direkten Ansprechpartner statt einer anonymen Hotline.
-
-              Wir möchten nur Standorte betreuen,
-              bei denen Nutzung, Entfernung und Serviceumfang
-              vernünftig zusammenpassen.
-            </p>
-
-            <div class="personal-name">
-              Andreas &amp; Sandra ·
-              <span>BODA Snacks</span>
-            </div>
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         FAQ
-         ========================================================= -->
-
-    <section
-      class="section section-soft"
-      id="faq"
-    >
-
-      <div class="wrap faq-layout">
+      <div class="local-box">
 
 
         <div>
 
           <span class="eyebrow">
-            Häufige Fragen
+            Karlsruhe
           </span>
 
           <h2>
-            Snackautomaten in Karlsruhe.
+            Nicht irgendein Automat.
+            Eine Versorgung, die zum Betrieb passt.
           </h2>
-
-          <p class="lead">
-            Die wichtigsten Fragen vor Ihrer Standortprüfung.
-          </p>
 
         </div>
 
 
 
-        <div class="faq-list">
+        <div>
+
+          <p>
+
+            Büro, Produktion, Lager, Werkstatt oder Kundenbereich:
+            Die Anforderungen an eine Automatenversorgung
+            können sehr unterschiedlich sein.
+
+            Deshalb prüfen wir Ihren konkreten Standort,
+            bevor wir eine Lösung empfehlen.
+
+          </p>
 
 
-          <details open>
-
-            <summary>
-              Was kostet ein Snackautomat in Karlsruhe?
-            </summary>
-
-            <p>
-              Die Kosten hängen unter anderem von Standort,
-              Nutzung, Automatenmodell, Ausstattung,
-              Sortiment und gewünschtem Service ab.
-
-              Nach der kostenlosen Standortprüfung
-              erhalten Sie ein konkretes Angebot.
-            </p>
-
-          </details>
+          <div class="local-points">
 
 
+            <div class="local-point">
 
-          <details>
+              <strong>
+                Wie viele Personen sind tatsächlich vor Ort?
+              </strong>
 
-            <summary>
-              Ab wie vielen Mitarbeitern ist ein Automat sinnvoll?
-            </summary>
-
-            <p>
-              Eine feste Mindestzahl gibt es nicht.
-
-              Entscheidend sind unter anderem tägliche Anwesenheit,
-              Arbeitszeiten, vorhandene Versorgung und die erwartete Nutzung.
-            </p>
-
-          </details>
+            </div>
 
 
+            <div class="local-point">
 
-          <details>
+              <strong>
+                Welche Arbeits- und Pausenzeiten gibt es?
+              </strong>
 
-            <summary>
-              Muss unser Unternehmen den Automaten kaufen?
-            </summary>
-
-            <p>
-              Bei unserem Versorgungskonzept ist kein eigener
-              Automatenkauf durch Ihr Unternehmen erforderlich.
-
-              Die konkreten Bedingungen erhalten Sie
-              vor einer Beauftragung im Angebot.
-            </p>
-
-          </details>
+            </div>
 
 
+            <div class="local-point">
 
-          <details>
+              <strong>
+                Welche Versorgung besteht bereits?
+              </strong>
 
-            <summary>
-              Wer kümmert sich um die Befüllung?
-            </summary>
-
-            <p>
-              Die regelmäßige Kontrolle und Befüllung
-              übernehmen wir im vereinbarten Serviceumfang.
-            </p>
-
-          </details>
+            </div>
 
 
+            <div class="local-point">
 
-          <details>
+              <strong>
+                Welche Automatenlösung passt zur Nutzung?
+              </strong>
 
-            <summary>
-              Kann das Sortiment angepasst werden?
-            </summary>
-
-            <p>
-              Ja.
-
-              Die Produktauswahl wird mit Ihnen abgestimmt
-              und kann anhand der tatsächlichen Nachfrage
-              weiter angepasst werden.
-            </p>
-
-          </details>
+            </div>
 
 
-
-          <details>
-
-            <summary>
-              Ist Kartenzahlung möglich?
-            </summary>
-
-            <p>
-              Welche Zahlungsarten möglich sind,
-              hängt vom eingesetzten Automaten
-              und dessen technischer Ausstattung ab.
-
-              Das klären wir im Rahmen der Planung.
-            </p>
-
-          </details>
+          </div>
 
 
         </div>
@@ -3015,83 +3010,633 @@
 
       </div>
 
-    </section>
+
+    </div>
+
+  </section>
 
 
 
-    <!-- =========================================================
-         KONTAKT
-         ========================================================= -->
-
-    <section
-      class="section section-contact"
-      id="anfrage"
-    >
-
-      <div class="wrap contact-grid">
+  <!-- =========================================================
+       STANDORT-CHECK KARLSRUHE
+       ========================================================= -->
 
 
-        <div class="contact-copy">
+  <section
+    class="section standort-check-section"
+    id="standort-check"
+  >
 
-          <span class="eyebrow">
-            Kostenlose Standortprüfung
-          </span>
-
-
-          <h2>
-            Passt ein Snackautomat zu Ihrem Betrieb in Karlsruhe?
-          </h2>
+    <div class="wrap standort-check-layout">
 
 
-          <p class="lead">
-            Schicken Sie uns ein paar Eckdaten.
+      <div class="standort-check-copy">
 
-            Wir prüfen Ihren Standort und besprechen
-            mit Ihnen eine passende Versorgungslösung.
-          </p>
+
+        <span class="eyebrow">
+          Standort-Check Karlsruhe
+        </span>
+
+
+        <h2>
+          Passt ein Automat<br>
+          zu Ihrem Betrieb?
+        </h2>
+
+
+        <p>
+
+          Nennen Sie uns kurz Standort, Teamgröße und Bedarf.
+
+          Sie erhalten schon vor Ihren Kontaktdaten eine erste
+          ehrliche Orientierung.
+
+        </p>
+
+
+        <div class="check-price-box">
+
+
+          <strong>
+            Servicepauschale ab 98 € im Monat
+          </strong>
 
 
           <p>
-            Die Anfrage ist kostenlos und unverbindlich.
-            Sie beauftragen damit noch keine Automatenaufstellung.
+
+            Für die laufende Versorgung.
+
+            Die konkrete Kondition hängt von Standort,
+            Nutzung, Ausstattung und Serviceumfang ab.
+
           </p>
 
 
+          <details>
 
-          <div class="contact-links">
+            <summary>
+              So setzen sich die Kosten zusammen
+            </summary>
 
 
-            <a
-              href="tel:+4972317703719"
-              class="contact-link"
-            >
+            <div class="check-price-details">
 
-              <span>
-                Telefon
-              </span>
+
+              <p>
+
+                <strong>
+                  Für Ihr Unternehmen:
+                </strong>
+
+                <br>
+
+                Servicepauschale ab 98 € im Monat sowie Stellfläche
+                und Strom.
+
+              </p>
+
+
+              <p>
+
+                <strong>
+                  Für die Nutzer:
+                </strong>
+
+                <br>
+
+                Snacks und Getränke werden beim Kauf am Automaten
+                separat bezahlt.
+
+              </p>
+
+
+              <p>
+
+                <strong>
+                  Individuelle Lösungen:
+                </strong>
+
+                <br>
+
+                Je nach Standort, Nutzung und Leistungsumfang können
+                abweichende Vereinbarungen persönlich abgestimmt werden.
+
+              </p>
+
+
+            </div>
+
+
+          </details>
+
+
+        </div>
+
+
+
+        <div class="check-trust">
+
+
+          <div class="check-trust-item">
+
+            <span class="check-trust-icon">
+              ✓
+            </span>
+
+            <p>
 
               <strong>
-                07231 7703719
+                Ehrliche Vorprüfung
               </strong>
 
-            </a>
+              Nicht jeder Standort bekommt automatisch grünes Licht.
+
+            </p>
+
+          </div>
 
 
+          <div class="check-trust-item">
 
-            <a
-              href="mailto:kontakt@boda-snacks.de"
-              class="contact-link"
-            >
+            <span class="check-trust-icon">
+              ✓
+            </span>
 
-              <span>
-                E-Mail
-              </span>
+            <p>
 
               <strong>
-                kontakt@boda-snacks.de
+                Ergebnis vor Kontaktdaten
               </strong>
 
-            </a>
+              Sie sehen zuerst unsere erste Einschätzung.
+
+            </p>
+
+          </div>
+
+
+          <div class="check-trust-item">
+
+            <span class="check-trust-icon">
+              ✓
+            </span>
+
+            <p>
+
+              <strong>
+                Persönlich statt anonym
+              </strong>
+
+              Die endgültige Bewertung besprechen wir mit Ihnen direkt.
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <form
+        class="standort-check-card"
+        id="karlsruhe-check-form"
+        action="https://formsubmit.co/kontakt@boda-snacks.de"
+        method="POST"
+      >
+
+
+        <input
+          type="hidden"
+          name="_captcha"
+          value="false"
+        >
+
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="Neue Standortprüfung Karlsruhe"
+        >
+
+
+        <input
+          type="hidden"
+          name="_template"
+          value="table"
+        >
+
+
+        <input
+          type="hidden"
+          name="_next"
+          value="https://boda-snacks.de/danke.html"
+        >
+
+
+        <input
+          type="hidden"
+          name="Automatische Orientierung"
+          id="karlsruhe-result-hidden"
+          value=""
+        >
+
+
+        <input
+          type="text"
+          name="_honey"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          style="display:none"
+        >
+
+
+
+        <div class="check-progress">
+
+
+          <div class="check-progress-track">
+
+            <span
+              class="check-progress-bar"
+              id="karlsruhe-progress-bar"
+            ></span>
+
+          </div>
+
+
+          <div class="check-progress-meta">
+
+            <span id="karlsruhe-progress-text">
+              Schritt 1 von 4
+            </span>
+
+            <span>
+              Standort → Bedarf → Ergebnis → Kontakt
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- SCHRITT 1 -->
+
+
+        <div
+          class="check-step active"
+          data-step="0"
+        >
+
+
+          <span class="check-step-label">
+            01 · Ihr Standort
+          </span>
+
+
+          <h3 tabindex="-1">
+            Wo soll die Versorgung entstehen?
+          </h3>
+
+
+          <p class="check-step-intro">
+            Zwei Angaben reichen für die erste Einschätzung.
+          </p>
+
+
+          <div class="check-field">
+
+
+            <label for="karlsruhe-location">
+              PLZ / Ort des Standorts *
+            </label>
+
+
+            <input
+              id="karlsruhe-location"
+              name="Standort"
+              type="text"
+              required
+              maxlength="180"
+              value="Karlsruhe"
+              placeholder="z. B. 76131 Karlsruhe"
+            >
+
+
+          </div>
+
+
+
+          <div class="check-field">
+
+
+            <label for="karlsruhe-people">
+              Wie viele Personen sind regelmäßig vor Ort? *
+            </label>
+
+
+            <input
+              id="karlsruhe-people"
+              name="Personen vor Ort"
+              type="number"
+              inputmode="numeric"
+              min="1"
+              max="5000"
+              step="1"
+              required
+              placeholder="z. B. 45"
+            >
+
+
+            <p class="check-field-note">
+              Eine ungefähre Zahl reicht.
+            </p>
+
+
+          </div>
+
+
+          <button
+            type="button"
+            class="btn btn-primary check-next"
+          >
+            Weiter zum Bedarf ↗
+          </button>
+
+
+        </div>
+
+
+
+        <!-- SCHRITT 2 -->
+
+
+        <div
+          class="check-step"
+          data-step="1"
+        >
+
+
+          <span class="check-step-label">
+            02 · Ihr Bedarf
+          </span>
+
+
+          <h3 tabindex="-1">
+            Was wünschen Sie sich?
+          </h3>
+
+
+
+          <fieldset class="check-fieldset">
+
+
+            <legend>
+              Versorgung auswählen *
+            </legend>
+
+
+            <div class="check-choice-grid">
+
+
+              <label class="check-choice">
+
+
+                <input
+                  type="checkbox"
+                  name="Versorgungswunsch"
+                  value="Snacks & Getränke"
+                >
+
+
+                <span>
+
+                  <strong>
+                    Snacks &amp; Getränke
+                  </strong>
+
+                  <small>
+                    Versorgung direkt im Betrieb
+                  </small>
+
+                </span>
+
+
+              </label>
+
+
+
+              <label class="check-choice">
+
+
+                <input
+                  type="checkbox"
+                  name="Versorgungswunsch"
+                  value="Kaffee"
+                >
+
+
+                <span>
+
+                  <strong>
+                    Kaffee
+                  </strong>
+
+                  <small>
+                    Kaffeelösung für Ihr Team
+                  </small>
+
+                </span>
+
+
+              </label>
+
+
+
+              <label class="check-choice check-choice-wide">
+
+
+                <input
+                  type="checkbox"
+                  name="Versorgungswunsch"
+                  value="Beratung gewünscht"
+                >
+
+
+                <span>
+
+                  <strong>
+                    Noch unsicher
+                  </strong>
+
+                  <small>
+                    Wir beraten zur passenden Lösung
+                  </small>
+
+                </span>
+
+
+              </label>
+
+
+            </div>
+
+
+            <p
+              class="check-error"
+              id="karlsruhe-supply-error"
+              hidden
+            >
+              Bitte wählen Sie mindestens eine Option.
+            </p>
+
+
+          </fieldset>
+
+
+
+          <fieldset class="check-fieldset">
+
+
+            <legend>
+
+              Arbeitsmodell
+
+              <span class="optional">
+                (optional)
+              </span>
+
+            </legend>
+
+
+            <div class="check-radio-grid">
+
+
+              <label>
+
+                <input
+                  type="radio"
+                  name="Arbeitsmodell"
+                  value="Bürozeiten"
+                >
+
+                <span>
+                  Bürozeiten
+                </span>
+
+              </label>
+
+
+              <label>
+
+                <input
+                  type="radio"
+                  name="Arbeitsmodell"
+                  value="Schichtbetrieb"
+                >
+
+                <span>
+                  Schicht
+                </span>
+
+              </label>
+
+
+              <label>
+
+                <input
+                  type="radio"
+                  name="Arbeitsmodell"
+                  value="Gemischt"
+                >
+
+                <span>
+                  Gemischt
+                </span>
+
+              </label>
+
+
+            </div>
+
+
+          </fieldset>
+
+
+
+          <fieldset class="check-fieldset">
+
+
+            <legend>
+
+              Was trifft zusätzlich zu?
+
+              <span class="optional">
+                (optional)
+              </span>
+
+            </legend>
+
+
+            <div class="check-context">
+
+
+              <label>
+
+                <input
+                  type="checkbox"
+                  name="Standortbesonderheiten"
+                  value="Zusätzliche Besucher oder Kunden"
+                >
+
+                Zusätzliche Besucher oder Kunden
+
+              </label>
+
+
+              <label>
+
+                <input
+                  type="checkbox"
+                  name="Standortbesonderheiten"
+                  value="Lange Öffnungs- oder Betriebszeiten"
+                >
+
+                Lange Öffnungs- oder Betriebszeiten
+
+              </label>
+
+
+            </div>
+
+
+          </fieldset>
+
+
+
+          <div class="check-nav">
+
+
+            <button
+              type="button"
+              class="btn btn-secondary check-back"
+            >
+              ← Zurück
+            </button>
+
+
+            <button
+              type="button"
+              class="btn btn-primary check-next"
+            >
+              Ergebnis anzeigen ↗
+            </button>
 
 
           </div>
@@ -3101,225 +3646,235 @@
 
 
 
-        <form
-          class="contact-form"
-          action="https://formsubmit.co/kontakt@boda-snacks.de"
-          method="POST"
+        <!-- SCHRITT 3 -->
+
+
+        <div
+          class="check-step"
+          data-step="2"
         >
 
 
-          <input
-            type="hidden"
-            name="_subject"
-            value="Neue Standortanfrage Karlsruhe"
-          >
+          <span class="check-step-label">
+            03 · Erste Orientierung
+          </span>
 
 
-          <input
-            type="hidden"
-            name="_template"
-            value="table"
-          >
-
-
-          <input
-            type="hidden"
-            name="_next"
-            value="https://boda-snacks.de/danke.html"
-          >
-
-
-          <h3>
-            Standort kostenlos prüfen lassen
+          <h3 tabindex="-1">
+            Unsere erste Einschätzung
           </h3>
 
 
-          <p class="form-description">
-            Mit * gekennzeichnete Angaben benötigen wir für Ihre Anfrage.
+
+          <div
+            class="check-result-card"
+            id="karlsruhe-result-card"
+          >
+
+
+            <div class="check-result-head">
+
+
+              <span
+                class="check-result-icon"
+                id="karlsruhe-result-icon"
+              >
+                ?
+              </span>
+
+
+              <div>
+
+
+                <span
+                  class="check-result-kicker"
+                  id="karlsruhe-result-kicker"
+                >
+                  Erste Orientierung
+                </span>
+
+
+                <h4 id="karlsruhe-result-title">
+                  Standort wird bewertet
+                </h4>
+
+
+              </div>
+
+
+            </div>
+
+
+
+            <p
+              class="check-result-text"
+              id="karlsruhe-result-text"
+            ></p>
+
+
+
+            <div class="check-result-price">
+
+
+              <strong>
+                Servicepauschale ab 98 € im Monat
+              </strong>
+
+
+              <p id="karlsruhe-result-price">
+
+                Die konkrete Kondition hängt von Standort,
+                Nutzung, Ausstattung und Serviceumfang ab.
+
+              </p>
+
+
+            </div>
+
+
+
+            <div
+              class="check-result-extra"
+              id="karlsruhe-result-extra"
+              hidden
+            ></div>
+
+
+
+            <div class="check-direct-links">
+
+
+              <a
+                href="mailto:kontakt@boda-snacks.de"
+                class="btn btn-secondary"
+              >
+                E-Mail schreiben
+              </a>
+
+
+              <a
+                href="tel:+4972317703719"
+                class="btn btn-secondary"
+              >
+                Direkt anrufen
+              </a>
+
+
+            </div>
+
+
+
+            <p class="check-disclaimer">
+
+              Diese automatische Orientierung ist noch keine verbindliche
+              Standort- oder Wirtschaftlichkeitszusage.
+
+              Die endgültige Einschätzung erfolgt nach persönlicher Prüfung.
+
+            </p>
+
+
+          </div>
+
+
+
+          <div class="check-nav">
+
+
+            <button
+              type="button"
+              class="btn btn-secondary check-back"
+            >
+              ← Angaben ändern
+            </button>
+
+
+            <button
+              type="button"
+              class="btn btn-primary check-next"
+              id="karlsruhe-result-next"
+            >
+              Persönlich prüfen lassen ↗
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- SCHRITT 4 -->
+
+
+        <div
+          class="check-step"
+          data-step="3"
+        >
+
+
+          <span class="check-step-label">
+            04 · Persönliche Rückmeldung
+          </span>
+
+
+          <h3 tabindex="-1">
+            Wie dürfen wir Sie erreichen?
+          </h3>
+
+
+          <p class="check-step-intro">
+
+            Wir besprechen Ihren Standort in Karlsruhe persönlich
+            und sagen Ihnen, welche Lösung sinnvoll ist.
+
           </p>
 
 
 
-          <div class="form-grid">
+          <div class="check-two-columns">
 
 
-            <div class="field">
+            <div class="check-field">
 
-              <label for="name">
+
+              <label for="karlsruhe-name">
                 Ihr Name *
               </label>
 
+
               <input
-                id="name"
+                id="karlsruhe-name"
                 name="Name"
                 type="text"
                 autocomplete="name"
                 required
+                maxlength="150"
               >
+
 
             </div>
 
 
 
-            <div class="field">
-
-              <label for="company">
-                Unternehmen
-              </label>
-
-              <input
-                id="company"
-                name="Unternehmen"
-                type="text"
-                autocomplete="organization"
-              >
-
-            </div>
+            <div class="check-field">
 
 
-
-            <div class="field">
-
-              <label for="email">
+              <label for="karlsruhe-email">
                 E-Mail *
               </label>
 
+
               <input
-                id="email"
+                id="karlsruhe-email"
                 name="E-Mail"
                 type="email"
                 autocomplete="email"
                 required
+                maxlength="254"
               >
 
-            </div>
-
-
-
-            <div class="field">
-
-              <label for="phone">
-                Telefon
-              </label>
-
-              <input
-                id="phone"
-                name="Telefon"
-                type="tel"
-                autocomplete="tel"
-              >
-
-            </div>
-
-
-
-            <div class="field field-full">
-
-              <label for="location">
-                Standort *
-              </label>
-
-              <input
-                id="location"
-                name="Standort"
-                type="text"
-                value="Karlsruhe"
-                required
-              >
-
-            </div>
-
-
-
-            <div class="field">
-
-              <label for="people">
-                Personen vor Ort
-              </label>
-
-              <select
-                id="people"
-                name="Personen vor Ort"
-              >
-
-                <option value="">
-                  Bitte auswählen
-                </option>
-
-                <option value="unter 25">
-                  unter 25
-                </option>
-
-                <option value="25 bis 49">
-                  25–49
-                </option>
-
-                <option value="50 bis 99">
-                  50–99
-                </option>
-
-                <option value="100 bis 199">
-                  100–199
-                </option>
-
-                <option value="200 oder mehr">
-                  200 oder mehr
-                </option>
-
-              </select>
-
-            </div>
-
-
-
-            <div class="field">
-
-              <label for="worktime">
-                Arbeitsmodell
-              </label>
-
-              <select
-                id="worktime"
-                name="Arbeitsmodell"
-              >
-
-                <option value="">
-                  Bitte auswählen
-                </option>
-
-                <option value="Bürozeiten">
-                  Bürozeiten
-                </option>
-
-                <option value="Schichtbetrieb">
-                  Schichtbetrieb
-                </option>
-
-                <option value="Gemischt">
-                  Gemischt
-                </option>
-
-                <option value="Sonstiges">
-                  Sonstiges
-                </option>
-
-              </select>
-
-            </div>
-
-
-
-            <div class="field field-full">
-
-              <label for="message">
-                Ihre Nachricht
-              </label>
-
-              <textarea
-                id="message"
-                name="Nachricht"
-                placeholder="Zum Beispiel: ca. 80 Mitarbeiter, zwei Schichten, bisher keine Automatenversorgung ..."
-              ></textarea>
 
             </div>
 
@@ -3328,7 +3883,95 @@
 
 
 
-          <label class="privacy-check">
+          <div class="check-two-columns">
+
+
+            <div class="check-field">
+
+
+              <label for="karlsruhe-company">
+
+                Unternehmen
+
+                <span class="optional">
+                  (optional)
+                </span>
+
+              </label>
+
+
+              <input
+                id="karlsruhe-company"
+                name="Unternehmen"
+                type="text"
+                autocomplete="organization"
+                maxlength="180"
+              >
+
+
+            </div>
+
+
+
+            <div class="check-field">
+
+
+              <label for="karlsruhe-phone">
+
+                Telefon
+
+                <span class="optional">
+                  (optional)
+                </span>
+
+              </label>
+
+
+              <input
+                id="karlsruhe-phone"
+                name="Telefon"
+                type="tel"
+                autocomplete="tel"
+                maxlength="40"
+              >
+
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="check-field">
+
+
+            <label for="karlsruhe-message">
+
+              Ihre Nachricht
+
+              <span class="optional">
+                (optional)
+              </span>
+
+            </label>
+
+
+            <textarea
+              id="karlsruhe-message"
+              name="Weitere Angaben"
+              rows="3"
+              maxlength="5000"
+              placeholder="z. B. besondere Wünsche oder bestehende Versorgung"
+            ></textarea>
+
+
+          </div>
+
+
+
+          <label class="check-privacy">
+
 
             <input
               type="checkbox"
@@ -3337,11 +3980,16 @@
               required
             >
 
+
             <span>
 
               Ich habe die
 
-              <a href="datenschutz.html">
+              <a
+                href="datenschutz.html"
+                target="_blank"
+                rel="noopener"
+              >
                 Datenschutzerklärung
               </a>
 
@@ -3352,230 +4000,1197 @@
 
             </span>
 
+
           </label>
 
 
 
-          <button
-            type="submit"
-            class="btn btn-primary form-submit"
-          >
-            Standort kostenlos prüfen lassen ↗
-          </button>
+          <div class="check-submit-note">
 
+            <strong>
+              Kostenlos und unverbindlich.
+            </strong>
 
-        </form>
+            Sie beauftragen mit dieser Anfrage noch keine Automatenaufstellung.
 
-
-      </div>
-
-    </section>
+          </div>
 
 
 
-    <!-- =========================================================
-         WEITERE INFORMATIONEN
-         ========================================================= -->
-
-    <section class="section">
-
-      <div class="wrap">
+          <div class="check-nav">
 
 
-        <div class="section-head">
-
-          <span class="eyebrow">
-            Weitere Informationen
-          </span>
-
-          <h2>
-            Mehr rund um Ihre Automatenversorgung.
-          </h2>
-
-        </div>
+            <button
+              type="button"
+              class="btn btn-secondary check-back"
+            >
+              ← Zurück
+            </button>
 
 
+            <button
+              type="submit"
+              class="btn btn-primary"
+              id="karlsruhe-submit"
+            >
+              Standortprüfung anfragen ↗
+            </button>
 
-        <div class="related-grid">
 
-
-          <a
-            href="kombi-snackautomat-fuer-unternehmen-mieten.html"
-            class="related-card"
-          >
-
-            <h3>
-              Kombi-Snackautomat
-            </h3>
-
-            <p>
-              Snacks und gekühlte Getränke
-              in einer kombinierten Automatenlösung.
-            </p>
-
-            <span class="related-link">
-              Mehr erfahren →
-            </span>
-
-          </a>
+          </div>
 
 
 
-          <a
-            href="was-kostet-ein-snackautomat.html"
-            class="related-card"
-          >
-
-            <h3>
-              Kosten &amp; Planung
-            </h3>
-
-            <p>
-              Erfahren Sie, welche Faktoren
-              Service und Kosten beeinflussen.
-            </p>
-
-            <span class="related-link">
-              Kosten ansehen →
-            </span>
-
-          </a>
-
-
-
-          <a
-            href="snackautomaten-befuellen-lassen.html"
-            class="related-card"
-          >
-
-            <h3>
-              Automat schon vorhanden?
-            </h3>
-
-            <p>
-              Unser Befüllungs- und Betreuungsservice
-              für bereits vorhandene Automaten.
-            </p>
-
-            <span class="related-link">
-              Befüllungsservice →
-            </span>
-
-          </a>
+          <p
+            class="check-status"
+            id="karlsruhe-status"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
 
 
         </div>
 
 
-      </div>
-
-    </section>
+      </form>
 
 
-  </main>
+    </div>
+
+
+  </section>
 
 
 
   <!-- =========================================================
-       FOOTER
+       BENEFITS
        ========================================================= -->
 
-  <footer class="site-footer">
+
+  <section class="section section-soft">
 
     <div class="wrap">
 
 
-      <div class="footer-grid">
+      <div class="section-head">
 
 
-        <div class="footer-brand">
+        <span class="eyebrow">
+          Was Ihr Betrieb davon hat
+        </span>
 
-          <a
-            href="index.html"
-            class="brand"
-          >
 
-            <span class="brand-main">
-              BODA <span class="snacks">SNACKS</span>
-            </span>
+        <h2>
+          Versorgung direkt am Arbeitsplatz.
+        </h2>
 
-          </a>
+
+        <p>
+
+          Der eigentliche Mehrwert entsteht nicht durch den Automaten selbst,
+          sondern durch eine unkomplizierte Versorgung direkt im Betrieb.
+
+        </p>
+
+
+      </div>
+
+
+
+      <div class="benefit-grid">
+
+
+        <article class="benefit-card">
+
+
+          <span class="benefit-number">
+            01 / KURZE WEGE
+          </span>
+
+
+          <h3>
+            Snacks und Getränke vor Ort
+          </h3>
 
 
           <p>
-            Du hast den Hunger, wir die Snacks.
-            <br>
-            Ihr Automatenservice aus Pforzheim.
+
+            Mitarbeiter können sich direkt am Standort versorgen,
+            ohne für jede kleine Pause das Betriebsgelände verlassen zu müssen.
+
           </p>
 
+
+        </article>
+
+
+
+        <article class="benefit-card">
+
+
+          <span class="benefit-number">
+            02 / FLEXIBEL
+          </span>
+
+
+          <h3>
+            Auch bei unterschiedlichen Arbeitszeiten
+          </h3>
+
+
+          <p>
+
+            Eine Automatenversorgung kann auch außerhalb
+            klassischer Kantinen- oder Ladenöffnungszeiten verfügbar sein.
+
+          </p>
+
+
+        </article>
+
+
+
+        <article class="benefit-card">
+
+
+          <span class="benefit-number">
+            03 / SERVICE
+          </span>
+
+
+          <h3>
+            Weniger Organisation
+          </h3>
+
+
+          <p>
+
+            Im vereinbarten Versorgungskonzept übernehmen wir
+            die laufende Betreuung, damit daraus keine neue interne Aufgabe wird.
+
+          </p>
+
+
+        </article>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================================================
+       STANDORT EIGNUNG
+       ========================================================= -->
+
+
+  <section
+    class="section"
+    id="geeignet"
+  >
+
+    <div class="wrap fit-layout">
+
+
+      <div class="fit-copy">
+
+
+        <span class="eyebrow">
+          Standortprüfung
+        </span>
+
+
+        <h2>
+          Wann passt ein Snackautomat zu Ihrem Betrieb?
+        </h2>
+
+
+        <p>
+
+          Eine starre Mindestzahl an Mitarbeitern wäre zu einfach gedacht.
+
+          Wir betrachten tägliche Anwesenheit,
+          Arbeitszeiten, vorhandene Versorgung,
+          Stellfläche und erwartete Nutzung.
+
+        </p>
+
+
+        <a
+          href="#standort-check"
+          class="btn btn-primary"
+        >
+          Standort kostenlos prüfen ↗
+        </a>
+
+
+      </div>
+
+
+
+      <div class="fit-list">
+
+
+        <article class="fit-item">
+
+
+          <span class="fit-number">
+            01
+          </span>
+
+
+          <div>
+
+
+            <h3>
+              Büro &amp; Verwaltung
+            </h3>
+
+
+            <p>
+
+              Zusätzliche Versorgung für Mitarbeiter
+              direkt innerhalb des Unternehmens.
+
+            </p>
+
+
+          </div>
+
+
+        </article>
+
+
+
+        <article class="fit-item">
+
+
+          <span class="fit-number">
+            02
+          </span>
+
+
+          <div>
+
+
+            <h3>
+              Produktion &amp; Werkstatt
+            </h3>
+
+
+            <p>
+
+              Besonders interessant bei kurzen Pausen,
+              Schichtbetrieb oder fehlender Kantinenversorgung.
+
+            </p>
+
+
+          </div>
+
+
+        </article>
+
+
+
+        <article class="fit-item">
+
+
+          <span class="fit-number">
+            03
+          </span>
+
+
+          <div>
+
+
+            <h3>
+              Lager &amp; Logistik
+            </h3>
+
+
+            <p>
+
+              Ein zentraler Versorgungspunkt für
+              unterschiedliche Arbeits- und Pausenzeiten.
+
+            </p>
+
+
+          </div>
+
+
+        </article>
+
+
+
+        <article class="fit-item">
+
+
+          <span class="fit-number">
+            04
+          </span>
+
+
+          <div>
+
+
+            <h3>
+              Kunden- &amp; Wartebereiche
+            </h3>
+
+
+            <p>
+
+              Je nach Standort kann eine Automatenversorgung
+              zusätzlich für Besucher oder Kunden sinnvoll sein.
+
+            </p>
+
+
+          </div>
+
+
+        </article>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================================================
+       SERVICE
+       ========================================================= -->
+
+
+  <section
+    class="section"
+    id="service"
+  >
+
+    <div class="wrap">
+
+
+      <div class="service-box">
+
+
+        <span class="eyebrow">
+          BODA Vollservice
+        </span>
+
+
+        <h2>
+          Der Automat soll versorgen.
+          Nicht Arbeit machen.
+        </h2>
+
+
+        <p>
+
+          Welche Leistungen für Ihren Standort sinnvoll sind,
+          stimmen wir gemeinsam mit Ihnen ab.
+
+          Der konkrete Leistungsumfang steht fest,
+          bevor Sie sich entscheiden.
+
+        </p>
+
+
+
+        <div class="service-grid">
+
+
+          <div class="service-item">
+
+
+            <strong>
+              Planung
+            </strong>
+
+
+            <span>
+              Standort, Automat, Sortiment und Ausstattung abstimmen.
+            </span>
+
+
+          </div>
+
+
+
+          <div class="service-item">
+
+
+            <strong>
+              Aufstellung
+            </strong>
+
+
+            <span>
+              Organisation der vereinbarten Automatenlösung.
+            </span>
+
+
+          </div>
+
+
+
+          <div class="service-item">
+
+
+            <strong>
+              Befüllung
+            </strong>
+
+
+            <span>
+              Regelmäßige Versorgung passend zur tatsächlichen Nutzung.
+            </span>
+
+
+          </div>
+
+
+
+          <div class="service-item">
+
+
+            <strong>
+              Betreuung
+            </strong>
+
+
+            <span>
+              Reinigung und technische Betreuung nach Vereinbarung.
+            </span>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================================================
+       ABLAUF
+       ========================================================= -->
+
+
+  <section class="section section-soft">
+
+    <div class="wrap">
+
+
+      <div class="section-head">
+
+
+        <span class="eyebrow">
+          So funktioniert's
+        </span>
+
+
+        <h2>
+          Drei Schritte bis zur passenden Lösung.
+        </h2>
+
+
+        <p>
+
+          Für die erste Prüfung benötigen wir nur
+          wenige Informationen zu Ihrem Unternehmen und Standort.
+
+        </p>
+
+
+      </div>
+
+
+
+      <div class="steps">
+
+
+        <article class="step">
+
+
+          <span class="step-number">
+            01 / ANFRAGE
+          </span>
+
+
+          <h3>
+            Standort beschreiben
+          </h3>
+
+
+          <p>
+
+            Sie nennen uns Standort,
+            ungefähre Personenanzahl und Ihren Versorgungswunsch.
+
+          </p>
+
+
+        </article>
+
+
+
+        <article class="step">
+
+
+          <span class="step-number">
+            02 / PRÜFUNG
+          </span>
+
+
+          <h3>
+            Bedarf gemeinsam klären
+          </h3>
+
+
+          <p>
+
+            Wir besprechen Nutzung,
+            Arbeitszeiten, Stellfläche, Sortiment und Service.
+
+          </p>
+
+
+        </article>
+
+
+
+        <article class="step">
+
+
+          <span class="step-number">
+            03 / ANGEBOT
+          </span>
+
+
+          <h3>
+            Konkrete Lösung erhalten
+          </h3>
+
+
+          <p>
+
+            Sie erhalten ein individuelles Angebot
+            mit den vereinbarten Leistungen und Konditionen.
+
+          </p>
+
+
+        </article>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================================================
+       TEAM
+       ========================================================= -->
+
+
+  <section class="section">
+
+    <div class="wrap">
+
+
+      <div class="people-card">
+
+
+        <div class="people-image">
+
+
+          <img
+            src="teamfoto.jpg"
+            alt="Andreas und Sandra Boda von BODA Snacks"
+          >
+
+
         </div>
 
 
 
-        <div>
+        <div class="people-content">
 
-          <div class="footer-title">
-            BODA Snacks
+
+          <span class="eyebrow">
+            Persönlich betreut
+          </span>
+
+
+          <h2>
+            Sie wissen,
+            wer sich kümmert.
+          </h2>
+
+
+          <p>
+
+            Wir sind Andreas und Sandra Boda
+            und führen BODA Snacks persönlich aus Pforzheim.
+
+          </p>
+
+
+          <p>
+
+            Auch bei Standorten in Karlsruhe haben Sie
+            einen direkten Ansprechpartner statt einer anonymen Hotline.
+
+            Wir möchten nur Standorte betreuen,
+            bei denen Nutzung, Entfernung und Serviceumfang
+            vernünftig zusammenpassen.
+
+          </p>
+
+
+          <div class="personal-name">
+
+            Andreas &amp; Sandra ·
+
+            <span>
+              BODA Snacks
+            </span>
+
           </div>
 
-
-          <div class="footer-links">
-
-            <a href="index.html">
-              Startseite
-            </a>
-
-            <a href="index.html#loesungen">
-              Unsere Lösungen
-            </a>
-
-            <a href="was-kostet-ein-snackautomat.html">
-              Kosten &amp; Planung
-            </a>
-
-            <a href="snackautomaten-befuellen-lassen.html">
-              Befüllungsservice
-            </a>
-
-          </div>
 
         </div>
 
 
-
-        <div>
-
-          <div class="footer-title">
-            Kontakt
-          </div>
+      </div>
 
 
-          <div class="footer-links">
+    </div>
 
-            <a href="tel:+4972317703719">
-              07231 7703719
-            </a>
 
-            <a href="mailto:kontakt@boda-snacks.de">
-              kontakt@boda-snacks.de
-            </a>
+  </section>
 
-            <a href="impressum.html">
-              Impressum
-            </a>
 
-            <a href="datenschutz.html">
-              Datenschutz
-            </a>
 
-            <a
-              href="#"
-              id="cookieSettings"
-            >
-              Cookie-Einstellungen
-            </a>
+  <!-- =========================================================
+       FAQ
+       ========================================================= -->
 
-          </div>
+
+  <section
+    class="section section-soft"
+    id="faq"
+  >
+
+    <div class="wrap faq-layout">
+
+
+      <div>
+
+
+        <span class="eyebrow">
+          Häufige Fragen
+        </span>
+
+
+        <h2>
+          Snackautomaten in Karlsruhe.
+        </h2>
+
+
+        <p class="lead">
+          Die wichtigsten Fragen vor Ihrer Standortprüfung.
+        </p>
+
+
+      </div>
+
+
+
+      <div class="faq-list">
+
+
+        <details open>
+
+
+          <summary>
+            Was kostet ein Snackautomat in Karlsruhe?
+          </summary>
+
+
+          <p>
+
+            Die laufende Servicepauschale beginnt bei BODA Snacks
+            ab 98 € im Monat.
+
+            Die konkrete Kondition hängt von Standort, Nutzung,
+            Ausstattung und Serviceumfang ab.
+
+            Snacks und Getränke werden beim Kauf am Automaten
+            separat bezahlt.
+
+          </p>
+
+
+        </details>
+
+
+
+        <details>
+
+
+          <summary>
+            Ab wie vielen Mitarbeitern ist ein Automat sinnvoll?
+          </summary>
+
+
+          <p>
+
+            Die Mitarbeiterzahl ist ein erster Richtwert, aber nicht das einzige Kriterium.
+
+            Bis etwa 25 regelmäßig anwesende Personen prüfen wir besonders kritisch,
+            weil die laufenden Fixkosten im Verhältnis zur Nutzung schnell unattraktiv
+            werden können.
+
+            Zwischen 26 und 39 Personen ist eine individuelle Prüfung sinnvoll.
+
+            Ab etwa 40 regelmäßig anwesenden Personen sehen wir grundsätzlich
+            eine gute Ausgangslage.
+
+            Schichtbetrieb, zusätzliche Besucher und die tatsächliche Nutzung können
+            die Einschätzung verändern.
+
+          </p>
+
+
+        </details>
+
+
+
+        <details>
+
+
+          <summary>
+            Muss unser Unternehmen den Automaten kaufen?
+          </summary>
+
+
+          <p>
+
+            Bei unserem Versorgungskonzept ist kein eigener
+            Automatenkauf durch Ihr Unternehmen erforderlich.
+
+            Die konkreten Bedingungen erhalten Sie
+            vor einer Beauftragung im Angebot.
+
+          </p>
+
+
+        </details>
+
+
+
+        <details>
+
+
+          <summary>
+            Wer kümmert sich um die Befüllung?
+          </summary>
+
+
+          <p>
+
+            Die regelmäßige Kontrolle und Befüllung
+            übernehmen wir im vereinbarten Serviceumfang.
+
+          </p>
+
+
+        </details>
+
+
+
+        <details>
+
+
+          <summary>
+            Kann das Sortiment angepasst werden?
+          </summary>
+
+
+          <p>
+
+            Ja.
+
+            Die Produktauswahl wird mit Ihnen abgestimmt
+            und kann anhand der tatsächlichen Nachfrage
+            weiter angepasst werden.
+
+          </p>
+
+
+        </details>
+
+
+
+        <details>
+
+
+          <summary>
+            Ist Kartenzahlung möglich?
+          </summary>
+
+
+          <p>
+
+            Welche Zahlungsarten möglich sind,
+            hängt vom eingesetzten Automaten
+            und dessen technischer Ausstattung ab.
+
+            Das klären wir im Rahmen der Planung.
+
+          </p>
+
+
+        </details>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================================================
+       DIREKTER KONTAKT
+       ========================================================= -->
+
+
+  <section
+    class="section section-contact"
+    id="anfrage"
+  >
+
+    <div class="wrap">
+
+
+      <div class="section-head">
+
+
+        <span class="eyebrow">
+          Lieber direkt sprechen?
+        </span>
+
+
+        <h2>
+          Standort in Karlsruhe<br>
+          persönlich besprechen.
+        </h2>
+
+
+        <p>
+
+          Sie möchten den Standort-Check überspringen?
+
+          Rufen Sie uns an oder schreiben Sie uns direkt.
+
+        </p>
+
+
+      </div>
+
+
+
+      <div class="contact-links">
+
+
+        <a
+          href="tel:+4972317703719"
+          class="contact-link"
+        >
+
+          <span>
+            Telefon
+          </span>
+
+          <strong>
+            07231 7703719
+          </strong>
+
+        </a>
+
+
+
+        <a
+          href="mailto:kontakt@boda-snacks.de"
+          class="contact-link"
+        >
+
+          <span>
+            E-Mail
+          </span>
+
+          <strong>
+            kontakt@boda-snacks.de
+          </strong>
+
+        </a>
+
+
+      </div>
+
+
+
+      <p style="margin-top:30px">
+
+
+        <a
+          href="#standort-check"
+          class="btn btn-primary"
+        >
+          Standort unverbindlich prüfen ↗
+        </a>
+
+
+      </p>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================================================
+       WEITERE INFORMATIONEN
+       ========================================================= -->
+
+
+  <section class="section">
+
+    <div class="wrap">
+
+
+      <div class="section-head">
+
+
+        <span class="eyebrow">
+          Weitere Informationen
+        </span>
+
+
+        <h2>
+          Mehr rund um Ihre Automatenversorgung.
+        </h2>
+
+
+      </div>
+
+
+
+      <div class="related-grid">
+
+
+        <a
+          href="kombi-snackautomat-fuer-unternehmen-mieten.html"
+          class="related-card"
+        >
+
+
+          <h3>
+            Kombi-Snackautomat
+          </h3>
+
+
+          <p>
+
+            Snacks und gekühlte Getränke
+            in einer kombinierten Automatenlösung.
+
+          </p>
+
+
+          <span class="related-link">
+            Mehr erfahren →
+          </span>
+
+
+        </a>
+
+
+
+        <a
+          href="was-kostet-ein-snackautomat.html"
+          class="related-card"
+        >
+
+
+          <h3>
+            Kosten &amp; Planung
+          </h3>
+
+
+          <p>
+
+            Erfahren Sie, welche Faktoren
+            Service und Kosten beeinflussen.
+
+          </p>
+
+
+          <span class="related-link">
+            Kosten ansehen →
+          </span>
+
+
+        </a>
+
+
+
+        <a
+          href="snackautomaten-befuellen-lassen.html"
+          class="related-card"
+        >
+
+
+          <h3>
+            Automat schon vorhanden?
+          </h3>
+
+
+          <p>
+
+            Unser Befüllungs- und Betreuungsservice
+            für bereits vorhandene Automaten.
+
+          </p>
+
+
+          <span class="related-link">
+            Befüllungsservice →
+          </span>
+
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+
+<footer class="site-footer">
+
+  <div class="wrap">
+
+
+    <div class="footer-grid">
+
+
+      <div class="footer-brand">
+
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <span class="brand-main">
+            BODA <span class="snacks">SNACKS</span>
+          </span>
+
+        </a>
+
+
+        <p>
+
+          Du hast den Hunger, wir die Snacks.
+
+          <br>
+
+          Ihr Automatenservice aus Pforzheim.
+
+        </p>
+
+
+      </div>
+
+
+
+      <div>
+
+
+        <div class="footer-title">
+          BODA Snacks
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <a href="index.html">
+            Startseite
+          </a>
+
+
+          <a href="index.html#loesungen">
+            Unsere Lösungen
+          </a>
+
+
+          <a href="was-kostet-ein-snackautomat.html">
+            Kosten &amp; Planung
+          </a>
+
+
+          <a href="snackautomaten-befuellen-lassen.html">
+            Befüllungsservice
+          </a>
+
 
         </div>
 
@@ -3584,22 +5199,44 @@
 
 
 
-      <div class="footer-bottom">
-
-        <span>
-          © 2026 BODA Snacks GbR
-        </span>
+      <div>
 
 
-        <div class="footer-bottom-links">
+        <div class="footer-title">
+          Kontakt
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <a href="tel:+4972317703719">
+            07231 7703719
+          </a>
+
+
+          <a href="mailto:kontakt@boda-snacks.de">
+            kontakt@boda-snacks.de
+          </a>
+
 
           <a href="impressum.html">
             Impressum
           </a>
 
+
           <a href="datenschutz.html">
             Datenschutz
           </a>
+
+
+          <a
+            href="#"
+            id="cookieSettings"
+          >
+            Cookie-Einstellungen
+          </a>
+
 
         </div>
 
@@ -3609,324 +5246,1607 @@
 
     </div>
 
-  </footer>
 
 
-
-  <!-- =========================================================
-       WHATSAPP
-       ========================================================= -->
-
-  <a
-    href="https://wa.me/491778675852"
-    target="_blank"
-    rel="noopener"
-    class="whatsapp-btn"
-    aria-label="BODA Snacks über WhatsApp kontaktieren"
-  >
-    💬
-  </a>
+    <div class="footer-bottom">
 
 
+      <span>
+        © 2026 BODA Snacks GbR
+      </span>
 
-  <!-- =========================================================
-       COOKIE BANNER
-       ========================================================= -->
 
-  <div id="cookie-banner">
+      <div class="footer-bottom-links">
 
-    <div class="cookie-inner">
 
-      <div class="cookie-text">
+        <a href="impressum.html">
+          Impressum
+        </a>
 
-        Wir verwenden Google Analytics nur mit Ihrer Zustimmung,
-        um die Nutzung unserer Website besser zu verstehen.
 
-        Weitere Informationen finden Sie in unserer
         <a href="datenschutz.html">
-          Datenschutzerklärung
-        </a>.
+          Datenschutz
+        </a>
+
 
       </div>
 
-
-      <div class="cookie-buttons">
-
-        <button
-          type="button"
-          id="cookie-decline"
-        >
-          Ablehnen
-        </button>
-
-        <button
-          type="button"
-          id="cookie-accept"
-        >
-          Akzeptieren
-        </button>
-
-      </div>
 
     </div>
+
 
   </div>
 
 
-
-  <!-- =========================================================
-       MOBILE NAVIGATION
-       ========================================================= -->
-
-  <script>
-
-    const menuToggle =
-      document.getElementById("menuToggle");
-
-    const mainNav =
-      document.getElementById("mainNav");
-
-
-    if (menuToggle && mainNav) {
-
-      menuToggle.addEventListener(
-        "click",
-        function () {
-
-          const open =
-            mainNav.classList.toggle("open");
-
-          menuToggle.setAttribute(
-            "aria-expanded",
-            open ? "true" : "false"
-          );
-
-        }
-      );
-
-
-      mainNav
-        .querySelectorAll("a")
-        .forEach(function (link) {
-
-          link.addEventListener(
-            "click",
-            function () {
-
-              mainNav.classList.remove("open");
-
-              menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-              );
-
-            }
-          );
-
-        });
-
-    }
-
-  </script>
+</footer>
 
 
 
-  <!-- =========================================================
-       COOKIE / ANALYTICS
-       ========================================================= -->
-
-  <script>
-
-    const CONSENT_KEY =
-      "boda-consent-v2";
-
-    const CONSENT_MAX_AGE =
-      180 * 24 * 60 * 60 * 1000;
+<!-- =========================================================
+     WHATSAPP
+     ========================================================= -->
 
 
-    function loadAnalytics() {
-
-      if (window.bodaAnalyticsLoaded) {
-        return;
-      }
-
-      window.bodaAnalyticsLoaded = true;
-
-
-      const script =
-        document.createElement("script");
-
-      script.async = true;
-
-      script.src =
-        "https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ";
-
-      document.head.appendChild(script);
+<a
+  href="https://wa.me/491778675852"
+  target="_blank"
+  rel="noopener"
+  class="whatsapp-btn"
+  aria-label="BODA Snacks über WhatsApp kontaktieren"
+>
+  💬
+</a>
 
 
-      window.dataLayer =
-        window.dataLayer || [];
 
-      window.gtag =
-        function () {
-          dataLayer.push(arguments);
-        };
+<!-- =========================================================
+     COOKIE BANNER
+     ========================================================= -->
 
 
-      gtag(
-        "js",
-        new Date()
-      );
+<div id="cookie-banner">
 
-      gtag(
-        "config",
-        "G-6RJ6RX8XWZ"
+  <div class="cookie-inner">
+
+
+    <div class="cookie-text">
+
+      Wir verwenden Google Analytics nur mit Ihrer Zustimmung,
+      um die Nutzung unserer Website besser zu verstehen.
+
+      Weitere Informationen finden Sie in unserer
+
+      <a href="datenschutz.html">
+        Datenschutzerklärung
+      </a>.
+
+    </div>
+
+
+    <div class="cookie-buttons">
+
+
+      <button
+        type="button"
+        id="cookie-decline"
+      >
+        Ablehnen
+      </button>
+
+
+      <button
+        type="button"
+        id="cookie-accept"
+      >
+        Akzeptieren
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     MOBILE NAVIGATION
+     ========================================================= -->
+
+
+<script>
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+
+const mainNav =
+document.getElementById("mainNav");
+
+
+if (
+  menuToggle &&
+  mainNav
+) {
+
+  menuToggle.addEventListener(
+    "click",
+    function () {
+
+      const open =
+      mainNav.classList.toggle("open");
+
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        open ? "true" : "false"
       );
 
     }
+  );
 
 
-    function getConsent() {
+  mainNav
+    .querySelectorAll("a")
+    .forEach(
+      function (link) {
 
-      try {
-
-        const raw =
-          localStorage.getItem(CONSENT_KEY);
-
-        if (!raw) {
-          return null;
-        }
-
-
-        const consent =
-          JSON.parse(raw);
-
-
-        if (
-          !consent.timestamp ||
-          Date.now() - consent.timestamp > CONSENT_MAX_AGE
-        ) {
-
-          localStorage.removeItem(CONSENT_KEY);
-
-          return null;
-
-        }
-
-
-        return consent;
-
-      } catch {
-
-        return null;
-
-      }
-
-    }
-
-
-    function saveConsent(status) {
-
-      localStorage.setItem(
-        CONSENT_KEY,
-        JSON.stringify({
-          analytics: status,
-          timestamp: Date.now()
-        })
-      );
-
-    }
-
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      function () {
-
-        const banner =
-          document.getElementById("cookie-banner");
-
-        const accept =
-          document.getElementById("cookie-accept");
-
-        const decline =
-          document.getElementById("cookie-decline");
-
-        const settings =
-          document.getElementById("cookieSettings");
-
-
-        const consent =
-          getConsent();
-
-
-        if (!consent) {
-
-          banner.style.display =
-            "block";
-
-        } else if (
-          consent.analytics === "accepted"
-        ) {
-
-          loadAnalytics();
-
-        }
-
-
-        accept.addEventListener(
+        link.addEventListener(
           "click",
           function () {
 
-            saveConsent(
-              "accepted"
+            mainNav.classList.remove("open");
+
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
             );
-
-            banner.style.display =
-              "none";
-
-            loadAnalytics();
 
           }
         );
-
-
-        decline.addEventListener(
-          "click",
-          function () {
-
-            saveConsent(
-              "declined"
-            );
-
-            banner.style.display =
-              "none";
-
-          }
-        );
-
-
-        if (settings) {
-
-          settings.addEventListener(
-            "click",
-            function (event) {
-
-              event.preventDefault();
-
-              banner.style.display =
-                "block";
-
-            }
-          );
-
-        }
 
       }
     );
 
-  </script>
+}
+
+</script>
+
+
+
+<!-- =========================================================
+     COOKIE / ANALYTICS
+     ========================================================= -->
+
+
+<script>
+
+
+const CONSENT_KEY =
+"boda-consent-v2";
+
+
+const CONSENT_MAX_AGE =
+180 * 24 * 60 * 60 * 1000;
+
+
+
+function loadAnalytics() {
+
+
+  if (
+    window.bodaAnalyticsLoaded
+  ) {
+
+    return;
+
+  }
+
+
+  window.bodaAnalyticsLoaded =
+  true;
+
+
+  const script =
+  document.createElement(
+    "script"
+  );
+
+
+  script.async =
+  true;
+
+
+  script.src =
+  "https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ";
+
+
+  document.head.appendChild(
+    script
+  );
+
+
+  window.dataLayer =
+  window.dataLayer || [];
+
+
+  window.gtag =
+  function () {
+
+    dataLayer.push(
+      arguments
+    );
+
+  };
+
+
+  gtag(
+    "js",
+    new Date()
+  );
+
+
+  gtag(
+    "config",
+    "G-6RJ6RX8XWZ"
+  );
+
+
+}
+
+
+
+function getConsent() {
+
+
+  try {
+
+
+    const raw =
+    localStorage.getItem(
+      CONSENT_KEY
+    );
+
+
+    if (!raw) {
+
+      return null;
+
+    }
+
+
+    const consent =
+    JSON.parse(raw);
+
+
+    if (
+      !consent.timestamp ||
+      Date.now() -
+      consent.timestamp >
+      CONSENT_MAX_AGE
+    ) {
+
+
+      localStorage.removeItem(
+        CONSENT_KEY
+      );
+
+
+      return null;
+
+    }
+
+
+    return consent;
+
+
+  }
+
+
+  catch {
+
+
+    return null;
+
+
+  }
+
+
+}
+
+
+
+function saveConsent(status) {
+
+
+  localStorage.setItem(
+    CONSENT_KEY,
+    JSON.stringify({
+      analytics: status,
+      timestamp: Date.now()
+    })
+  );
+
+
+}
+
+
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+
+    const banner =
+    document.getElementById(
+      "cookie-banner"
+    );
+
+
+    const accept =
+    document.getElementById(
+      "cookie-accept"
+    );
+
+
+    const decline =
+    document.getElementById(
+      "cookie-decline"
+    );
+
+
+    const settings =
+    document.getElementById(
+      "cookieSettings"
+    );
+
+
+    const consent =
+    getConsent();
+
+
+    if (!consent) {
+
+
+      banner.style.display =
+      "block";
+
+
+    }
+
+
+    else if (
+      consent.analytics ===
+      "accepted"
+    ) {
+
+
+      loadAnalytics();
+
+
+    }
+
+
+
+    accept.addEventListener(
+      "click",
+      function () {
+
+
+        saveConsent(
+          "accepted"
+        );
+
+
+        banner.style.display =
+        "none";
+
+
+        loadAnalytics();
+
+
+      }
+    );
+
+
+
+    decline.addEventListener(
+      "click",
+      function () {
+
+
+        saveConsent(
+          "declined"
+        );
+
+
+        banner.style.display =
+        "none";
+
+
+      }
+    );
+
+
+
+    if (settings) {
+
+
+      settings.addEventListener(
+        "click",
+        function (event) {
+
+
+          event.preventDefault();
+
+
+          banner.style.display =
+          "block";
+
+
+        }
+      );
+
+
+    }
+
+
+  }
+);
+
+
+</script>
+
+
+
+<!-- =========================================================
+     STANDORT-CHECK LOGIK
+     ========================================================= -->
+
+
+<script>
+
+
+(() => {
+
+
+  "use strict";
+
+
+  const form =
+  document.getElementById(
+    "karlsruhe-check-form"
+  );
+
+
+  if (!form) {
+
+    return;
+
+  }
+
+
+  const preview =
+  location.protocol === "file:";
+
+
+  const steps =
+  Array.from(
+    form.querySelectorAll(
+      ".check-step"
+    )
+  );
+
+
+  const progressBar =
+  document.getElementById(
+    "karlsruhe-progress-bar"
+  );
+
+
+  const progressText =
+  document.getElementById(
+    "karlsruhe-progress-text"
+  );
+
+
+  const peopleInput =
+  document.getElementById(
+    "karlsruhe-people"
+  );
+
+
+  const supplyInputs =
+  Array.from(
+    form.querySelectorAll(
+      'input[name="Versorgungswunsch"]'
+    )
+  );
+
+
+  const supplyError =
+  document.getElementById(
+    "karlsruhe-supply-error"
+  );
+
+
+  const resultCard =
+  document.getElementById(
+    "karlsruhe-result-card"
+  );
+
+
+  const resultIcon =
+  document.getElementById(
+    "karlsruhe-result-icon"
+  );
+
+
+  const resultKicker =
+  document.getElementById(
+    "karlsruhe-result-kicker"
+  );
+
+
+  const resultTitle =
+  document.getElementById(
+    "karlsruhe-result-title"
+  );
+
+
+  const resultText =
+  document.getElementById(
+    "karlsruhe-result-text"
+  );
+
+
+  const resultPrice =
+  document.getElementById(
+    "karlsruhe-result-price"
+  );
+
+
+  const resultExtra =
+  document.getElementById(
+    "karlsruhe-result-extra"
+  );
+
+
+  const resultNext =
+  document.getElementById(
+    "karlsruhe-result-next"
+  );
+
+
+  const submitButton =
+  document.getElementById(
+    "karlsruhe-submit"
+  );
+
+
+  const resultHidden =
+  document.getElementById(
+    "karlsruhe-result-hidden"
+  );
+
+
+  const status =
+  document.getElementById(
+    "karlsruhe-status"
+  );
+
+
+  let currentStep =
+  0;
+
+
+  let positiveResult =
+  false;
+
+
+  form.noValidate =
+  true;
+
+
+
+  function showStep(
+    index,
+    focusHeading = false
+  ) {
+
+
+    currentStep =
+    index;
+
+
+    steps.forEach(
+      (
+        step,
+        stepIndex
+      ) => {
+
+
+        step.classList.toggle(
+          "active",
+          stepIndex === index
+        );
+
+
+      }
+    );
+
+
+    progressBar.style.width =
+    (
+      (
+        (index + 1) /
+        steps.length
+      ) *
+      100
+    ) +
+    "%";
+
+
+    progressText.textContent =
+    "Schritt " +
+    (index + 1) +
+    " von " +
+    steps.length;
+
+
+    progressBar.style.background =
+    index === 2 &&
+    positiveResult
+      ? "#2f7d4a"
+      : "var(--gold-fill)";
+
+
+    if (focusHeading) {
+
+
+      const heading =
+      steps[index]
+      .querySelector("h3");
+
+
+      if (heading) {
+
+
+        heading.focus({
+          preventScroll: true
+        });
+
+
+      }
+
+
+      form.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+
+    }
+
+
+  }
+
+
+
+  function validateStep(index) {
+
+
+    const step =
+    steps[index];
+
+
+    if (index === 1) {
+
+
+      const selected =
+      supplyInputs.some(
+        input =>
+        input.checked
+      );
+
+
+      if (!selected) {
+
+
+        supplyError.hidden =
+        false;
+
+
+        supplyInputs[0].focus();
+
+
+        return false;
+
+
+      }
+
+
+    }
+
+
+    const requiredFields =
+    Array.from(
+      step.querySelectorAll(
+        "[required]"
+      )
+    );
+
+
+    for (
+      const field of
+      requiredFields
+    ) {
+
+
+      if (
+        !field.checkValidity()
+      ) {
+
+
+        field.reportValidity();
+
+
+        return false;
+
+
+      }
+
+
+    }
+
+
+    return true;
+
+
+  }
+
+
+
+  supplyInputs.forEach(
+    input => {
+
+
+      input.addEventListener(
+        "change",
+        () => {
+
+
+          supplyError.hidden =
+          true;
+
+
+
+          if (
+            input.checked &&
+            input.value ===
+            "Beratung gewünscht"
+          ) {
+
+
+            supplyInputs.forEach(
+              other => {
+
+
+                if (
+                  other !== input
+                ) {
+
+
+                  other.checked =
+                  false;
+
+
+                }
+
+
+              }
+            );
+
+
+          }
+
+
+          else if (
+            input.checked &&
+            input.value !==
+            "Beratung gewünscht"
+          ) {
+
+
+            const unsure =
+            supplyInputs.find(
+              item =>
+              item.value ===
+              "Beratung gewünscht"
+            );
+
+
+            if (unsure) {
+
+
+              unsure.checked =
+              false;
+
+
+            }
+
+
+          }
+
+
+        }
+      );
+
+
+    }
+  );
+
+
+
+  function buildResult() {
+
+
+    const people =
+    Math.max(
+      1,
+      Number(
+        peopleInput.value
+      ) || 1
+    );
+
+
+    const supply =
+    supplyInputs
+    .filter(
+      input =>
+      input.checked
+    )
+    .map(
+      input =>
+      input.value
+    );
+
+
+    const workModel =
+    form.querySelector(
+      'input[name="Arbeitsmodell"]:checked'
+    )?.value ||
+    "Nicht angegeben";
+
+
+    const context =
+    Array.from(
+      form.querySelectorAll(
+        'input[name="Standortbesonderheiten"]:checked'
+      )
+    )
+    .map(
+      input =>
+      input.value
+    );
+
+
+    let state =
+    "";
+
+
+    let kicker =
+    "";
+
+
+    let title =
+    "";
+
+
+    let text =
+    "";
+
+
+    let price =
+    "";
+
+
+    let extra =
+    "";
+
+
+
+    /* =====================================================
+       BIS 25 PERSONEN
+       ===================================================== */
+
+
+    if (
+      people <= 25
+    ) {
+
+
+      state =
+      "negative";
+
+
+      positiveResult =
+      false;
+
+
+      kicker =
+      "Ehrliche Einschätzung";
+
+
+      title =
+      "Für diese Teamgröße würden wir zunächst eher kritisch prüfen.";
+
+
+      text =
+      "Bei rund " +
+      people +
+      " regelmäßig anwesenden Personen kann die monatliche " +
+      "Fixkostenstruktur im Verhältnis zur tatsächlichen Nutzung " +
+      "schnell unattraktiv werden. Eine Servicepauschale ab " +
+      "98 € im Monat kann sich bei geringer Nutzung vergleichsweise " +
+      "stark auswirken. Wir möchten Ihnen deshalb keine Lösung " +
+      "schönrechnen, die am Ende nicht sinnvoll funktioniert.";
+
+
+      price =
+      "Gerade bei kleinen Teams muss die laufende Pauschale zur " +
+      "tatsächlichen Nutzung passen. Individuelle Vereinbarungen " +
+      "können nach persönlicher Prüfung trotzdem möglich sein.";
+
+
+      extra =
+      "<strong>Trotzdem Interesse?</strong> " +
+      "Schichtbetrieb, zusätzliche Besucher, lange Betriebszeiten " +
+      "oder eine besonders hohe Nutzung können die Einschätzung " +
+      "verändern. Sie können uns deshalb selbstverständlich trotzdem " +
+      "kontaktieren.";
+
+
+    }
+
+
+
+    /* =====================================================
+       26 BIS 39 PERSONEN
+       ===================================================== */
+
+
+    else if (
+      people < 40
+    ) {
+
+
+      state =
+      "borderline";
+
+
+      positiveResult =
+      false;
+
+
+      kicker =
+      "Noch kein grünes Licht";
+
+
+      title =
+      "Grenzbereich – das kann funktionieren, sollte aber genauer geprüft werden.";
+
+
+      text =
+      "Bei rund " +
+      people +
+      " regelmäßig anwesenden Personen kann eine kompakte Versorgung " +
+      "sinnvoll sein. Ob sie wirtschaftlich attraktiv ist, hängt " +
+      "stärker von Anwesenheit, Arbeitszeiten und tatsächlicher Nutzung ab. " +
+      "Deshalb würden wir Ihren Standort in Karlsruhe zunächst genauer prüfen.";
+
+
+      price =
+      "In diesem Größenbereich sollte die Servicepauschale besonders " +
+      "gut zur erwarteten Nutzung passen. Die konkrete Kondition wird " +
+      "deshalb individuell abgestimmt.";
+
+
+      extra =
+      "<strong>Kann trotzdem gut passen.</strong> " +
+      "Hohe tägliche Anwesenheit, Schichtbetrieb oder zusätzliche " +
+      "Nachfrage können den Standort deutlich interessanter machen.";
+
+
+    }
+
+
+
+    /* =====================================================
+       40 BIS 49
+       ===================================================== */
+
+
+    else if (
+      people < 50
+    ) {
+
+
+      state =
+      "positive";
+
+
+      positiveResult =
+      true;
+
+
+      kicker =
+      "Grünes Licht für die weitere Prüfung";
+
+
+      title =
+      "Eine kompakte Automatenversorgung ist gut vorstellbar.";
+
+
+      text =
+      "Für rund " +
+      people +
+      " regelmäßig anwesende Personen sehen wir grundsätzlich " +
+      "eine gute Ausgangslage für eine kompakte und bedarfsgerechte " +
+      "Versorgung. Gerät, Sortiment und Serviceumfang würden wir " +
+      "an die tatsächliche Nutzung am Standort in Karlsruhe anpassen.";
+
+
+      price =
+      "Die Servicepauschale beginnt ab 98 € im Monat. Die konkrete " +
+      "Kondition richtet sich nach Standort, Nutzung, Ausstattung " +
+      "und Serviceumfang.";
+
+
+      extra =
+      "<strong>Gute Ausgangslage.</strong> " +
+      "Im persönlichen Gespräch prüfen wir noch Stellfläche, " +
+      "Arbeitszeiten und die erwartete Nutzung.";
+
+
+    }
+
+
+
+    /* =====================================================
+       50 BIS 99
+       ===================================================== */
+
+
+    else if (
+      people < 100
+    ) {
+
+
+      state =
+      "positive";
+
+
+      positiveResult =
+      true;
+
+
+      kicker =
+      "Grünes Licht für die weitere Prüfung";
+
+
+      title =
+      "Gute Ausgangslage für eine regelmäßig betreute Versorgung.";
+
+
+      text =
+      "Bei rund " +
+      people +
+      " regelmäßig anwesenden Personen ist eine Snack- und " +
+      "Getränkeversorgung grundsätzlich gut vorstellbar. Größe, " +
+      "Sortiment und Zahlungsarten stimmen wir auf die tatsächliche " +
+      "Nutzung in Ihrem Betrieb ab.";
+
+
+      price =
+      "Die Servicepauschale beginnt ab 98 € im Monat. Je nach Standort " +
+      "und Leistungsumfang wird die konkrete Kondition individuell festgelegt.";
+
+
+      extra =
+      "<strong>Nächster Schritt:</strong> " +
+      "Wir prüfen mit Ihnen Stellfläche, Arbeitszeiten und gewünschtes Sortiment.";
+
+
+    }
+
+
+
+    /* =====================================================
+       100 BIS 249
+       ===================================================== */
+
+
+    else if (
+      people < 250
+    ) {
+
+
+      state =
+      "positive";
+
+
+      positiveResult =
+      true;
+
+
+      kicker =
+      "Grünes Licht für die weitere Prüfung";
+
+
+      title =
+      "Hier ist eine leistungsfähigere Versorgung gut vorstellbar.";
+
+
+      text =
+      "Bei rund " +
+      people +
+      " regelmäßig anwesenden Personen besteht eine gute Grundlage " +
+      "für eine leistungsfähigere Automatenversorgung. Kapazität, " +
+      "Sortiment und Befüllrhythmus würden wir passend zu Pausenzeiten " +
+      "und tatsächlicher Nachfrage planen.";
+
+
+      price =
+      "Die Servicepauschale beginnt ab 98 € im Monat. Bei größeren " +
+      "Standorten wird der konkrete Serviceumfang individuell kalkuliert.";
+
+
+      extra =
+      "<strong>Interessanter Standort.</strong> " +
+      "Im nächsten Schritt klären wir Kapazität, Pausenzeiten und Produktauswahl.";
+
+
+    }
+
+
+
+    /* =====================================================
+       AB 250
+       ===================================================== */
+
+
+    else {
+
+
+      state =
+      "positive";
+
+
+      positiveResult =
+      true;
+
+
+      kicker =
+      "Grünes Licht für die weitere Prüfung";
+
+
+      title =
+      "Hier sollte die Versorgung größer geplant werden.";
+
+
+      text =
+      "Bei rund " +
+      people +
+      " regelmäßig anwesenden Personen würden wir Kapazität, " +
+      "Sortimentsbreite und gegebenenfalls mehrere Versorgungspunkte " +
+      "prüfen. Entscheidend sind Laufwege, Arbeitszeiten und die " +
+      "Verteilung der Mitarbeiter.";
+
+
+      price =
+      "Die konkrete Servicepauschale und das Versorgungskonzept " +
+      "würden wir für diesen Standort individuell kalkulieren.";
+
+
+      extra =
+      "<strong>Größerer Standort.</strong> " +
+      "Hier lohnt sich eine persönliche Planung besonders.";
+
+
+    }
+
+
+
+    /* =====================================================
+       ZUSATZANGABEN
+       ===================================================== */
+
+
+    if (
+      workModel ===
+      "Schichtbetrieb"
+    ) {
+
+
+      text +=
+      " Den angegebenen Schichtbetrieb berücksichtigen wir bei " +
+      "der endgültigen Bewertung ausdrücklich.";
+
+
+    }
+
+
+
+    if (
+      context.includes(
+        "Zusätzliche Besucher oder Kunden"
+      )
+    ) {
+
+
+      text +=
+      " Zusätzliche Besucher oder Kunden können die tatsächliche " +
+      "Nutzung erhöhen.";
+
+
+    }
+
+
+
+    if (
+      context.includes(
+        "Lange Öffnungs- oder Betriebszeiten"
+      )
+    ) {
+
+
+      text +=
+      " Längere Betriebszeiten können ebenfalls für eine höhere " +
+      "Nutzung sprechen.";
+
+
+    }
+
+
+
+    /* =====================================================
+       ERGEBNIS AUSGEBEN
+       ===================================================== */
+
+
+    resultCard.className =
+    "check-result-card " +
+    state;
+
+
+    resultIcon.textContent =
+    state === "positive"
+      ? "✓"
+      : "!";
+
+
+    resultKicker.textContent =
+    kicker;
+
+
+    resultTitle.textContent =
+    title;
+
+
+    resultText.textContent =
+    text;
+
+
+    resultPrice.textContent =
+    price;
+
+
+    resultExtra.innerHTML =
+    extra;
+
+
+    resultExtra.hidden =
+    false;
+
+
+
+    /* =====================================================
+       BUTTONFARBE
+       AB 40 PERSONEN GRÜN
+       ===================================================== */
+
+
+    resultNext.classList.toggle(
+      "btn-result-positive",
+      positiveResult
+    );
+
+
+    submitButton.classList.toggle(
+      "btn-result-positive",
+      positiveResult
+    );
+
+
+
+    if (
+      people <= 25
+    ) {
+
+
+      resultNext.textContent =
+      "Trotzdem persönlich prüfen lassen ↗";
+
+
+      submitButton.textContent =
+      "Trotzdem Standortprüfung anfragen ↗";
+
+
+    }
+
+
+    else if (
+      people < 40
+    ) {
+
+
+      resultNext.textContent =
+      "Standort genauer prüfen lassen ↗";
+
+
+      submitButton.textContent =
+      "Standortprüfung anfragen ↗";
+
+
+    }
+
+
+    else {
+
+
+      resultNext.textContent =
+      "Persönlich besprechen ↗";
+
+
+      submitButton.textContent =
+      "Standortprüfung anfragen ↗";
+
+
+    }
+
+
+
+    resultHidden.value =
+    kicker +
+    " | " +
+    title +
+    " | " +
+    text +
+    " | Versorgung: " +
+    supply.join(" + ") +
+    " | Arbeitsmodell: " +
+    workModel +
+    " | Servicepauschale ab 98 € im Monat.";
+
+
+  }
+
+
+
+  function nextStep() {
+
+
+    if (
+      !validateStep(
+        currentStep
+      )
+    ) {
+
+
+      return;
+
+
+    }
+
+
+    if (
+      currentStep === 1
+    ) {
+
+
+      buildResult();
+
+
+    }
+
+
+    if (
+      currentStep <
+      steps.length - 1
+    ) {
+
+
+      showStep(
+        currentStep + 1,
+        true
+      );
+
+
+    }
+
+
+  }
+
+
+
+  form
+  .querySelectorAll(
+    ".check-next"
+  )
+  .forEach(
+    button => {
+
+
+      button.addEventListener(
+        "click",
+        nextStep
+      );
+
+
+    }
+  );
+
+
+
+  form
+  .querySelectorAll(
+    ".check-back"
+  )
+  .forEach(
+    button => {
+
+
+      button.addEventListener(
+        "click",
+        () => {
+
+
+          if (
+            currentStep > 0
+          ) {
+
+
+            showStep(
+              currentStep - 1,
+              true
+            );
+
+
+          }
+
+
+        }
+      );
+
+
+    }
+  );
+
+
+
+  form.addEventListener(
+    "keydown",
+    event => {
+
+
+      if (
+        event.key ===
+        "Enter" &&
+
+        event.target.matches(
+          'input:not([type="checkbox"]):not([type="radio"])'
+        ) &&
+
+        currentStep <
+        steps.length - 1
+      ) {
+
+
+        event.preventDefault();
+
+
+        nextStep();
+
+
+      }
+
+
+    }
+  );
+
+
+
+  form.addEventListener(
+    "submit",
+    event => {
+
+
+      if (
+        currentStep <
+        steps.length - 1
+      ) {
+
+
+        event.preventDefault();
+
+
+        nextStep();
+
+
+        return;
+
+
+      }
+
+
+
+      if (
+        !validateStep(
+          steps.length - 1
+        )
+      ) {
+
+
+        event.preventDefault();
+
+
+        return;
+
+
+      }
+
+
+
+      buildResult();
+
+
+
+      if (preview) {
+
+
+        event.preventDefault();
+
+
+        status.hidden =
+        false;
+
+
+        status.textContent =
+        "Vorschau: Die Angaben sind vollständig. " +
+        "Es wurde keine Anfrage versendet.";
+
+
+      }
+
+
+    }
+  );
+
+
+
+  showStep(0);
+
+
+})();
+
+
+</script>
 
 
 </body>
-
 </html>
