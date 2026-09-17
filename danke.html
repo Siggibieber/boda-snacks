@@ -3,122 +3,631 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vielen Dank | BODA Snacks</title>
+
+<title>Vielen Dank für Ihre Anfrage | BODA Snacks</title>
+
+<meta
+  name="robots"
+  content="noindex,follow"
+>
+
+<meta
+  name="theme-color"
+  content="#ffffff"
+>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+
+:root{
+  --ink:#202821;
+  --muted:#596159;
+
+  --green:#244b39;
+
+  --gold:#88601f;
+  --gold-fill:#dbb86e;
+  --gold-hover:#cda456;
+
+  --white:#ffffff;
+  --soft:#f5f7f5;
+  --line:#dce2dc;
+
+  --radius:24px;
+
+  --shadow:
+  0 20px 60px rgba(32,40,33,.10);
 }
+
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+
+html{
+  min-height:100%;
+}
+
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#050505;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:30px;
+  margin:0;
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:40px 24px;
+
+  background:
+  linear-gradient(
+    145deg,
+    #f5f7f5,
+    #ffffff 65%
+  );
+
+  color:var(--ink);
+
+  font-family:
+  Arial,
+  Helvetica,
+  sans-serif;
+
+  line-height:1.65;
+
+  -webkit-font-smoothing:antialiased;
 }
 
-.box{
-max-width:750px;
-background:linear-gradient(145deg,#111,#1a1a1a);
-padding:60px;
-border-radius:30px;
-text-align:center;
-border:1px solid rgba(212,175,55,.2);
-box-shadow:0 0 40px rgba(212,175,55,.15);
+
+.thank-you{
+  width:min(760px,100%);
+
+  padding:
+  54px
+  48px;
+
+  background:var(--white);
+
+  border:
+  1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow);
+
+  text-align:center;
 }
 
-img{
-width:140px;
-height:140px;
-border-radius:50%;
-border:4px solid #d4af37;
-margin-bottom:30px;
+
+.brand{
+  display:inline-flex;
+
+  flex-direction:column;
+
+  margin-bottom:32px;
+
+  text-decoration:none;
+
+  line-height:1;
 }
+
+
+.brand-main{
+  color:#000;
+
+  font-size:1.5rem;
+  font-weight:800;
+
+  letter-spacing:.02em;
+}
+
+
+.brand-main .snacks{
+  color:var(--gold);
+}
+
+
+.brand-sub{
+  margin-top:8px;
+
+  color:var(--muted);
+
+  font-size:.78rem;
+}
+
+
+.success-icon{
+  width:72px;
+  height:72px;
+
+  margin:
+  0 auto
+  28px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:50%;
+
+  background:#edf5ef;
+
+  color:#2f7d4a;
+
+  font-size:2rem;
+  font-weight:900;
+}
+
+
+.eyebrow{
+  display:block;
+
+  margin-bottom:12px;
+
+  color:var(--gold);
+
+  font-size:.78rem;
+  font-weight:800;
+
+  letter-spacing:.11em;
+
+  text-transform:uppercase;
+}
+
 
 h1{
-font-size:48px;
-color:#d4af37;
-margin-bottom:25px;
+  margin:
+  0
+  0
+  22px;
+
+  color:var(--ink);
+
+  font-size:
+  clamp(
+    2rem,
+    5vw,
+    3.4rem
+  );
+
+  line-height:1.08;
+
+  letter-spacing:-.03em;
 }
 
-p{
-font-size:20px;
-line-height:1.8;
-color:#d8d8d8;
-margin-bottom:20px;
+
+.lead{
+  max-width:620px;
+
+  margin:
+  0 auto
+  28px;
+
+  color:var(--muted);
+
+  font-size:
+  clamp(
+    1.05rem,
+    2vw,
+    1.18rem
+  );
 }
+
+
+.info-box{
+  margin:
+  30px
+  auto;
+
+  padding:
+  24px;
+
+  max-width:610px;
+
+  background:var(--soft);
+
+  border:
+  1px solid var(--line);
+
+  border-radius:16px;
+
+  text-align:left;
+}
+
+
+.info-row{
+  display:grid;
+
+  grid-template-columns:
+  32px
+  1fr;
+
+  gap:12px;
+
+  padding:
+  14px
+  0;
+
+  border-bottom:
+  1px solid var(--line);
+}
+
+
+.info-row:first-child{
+  padding-top:0;
+}
+
+
+.info-row:last-child{
+  padding-bottom:0;
+
+  border-bottom:0;
+}
+
+
+.info-icon{
+  color:#2f7d4a;
+
+  font-weight:900;
+}
+
+
+.info-row strong{
+  display:block;
+
+  margin-bottom:2px;
+
+  color:var(--ink);
+}
+
+
+.info-row span,
+.info-row a{
+  color:var(--muted);
+
+  font-size:.94rem;
+}
+
+
+.info-row a{
+  text-decoration:none;
+}
+
+
+.info-row a:hover{
+  color:var(--green);
+
+  text-decoration:underline;
+}
+
+
+.signature{
+  margin-top:26px;
+
+  color:var(--ink);
+
+  font-weight:800;
+}
+
+
+.signature span{
+  color:var(--gold);
+}
+
+
+.actions{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:center;
+
+  gap:12px;
+
+  margin-top:32px;
+}
+
 
 .btn{
-display:inline-block;
-margin-top:20px;
-padding:18px 35px;
-background:linear-gradient(135deg,#d4af37,#f5d76e);
-color:#111;
-font-weight:bold;
-text-decoration:none;
-border-radius:50px;
-transition:.3s;
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  min-height:48px;
+
+  padding:
+  12px
+  22px;
+
+  border:
+  1px solid transparent;
+
+  border-radius:9px;
+
+  background:var(--gold-fill);
+
+  color:#25271f;
+
+  font-size:.94rem;
+  font-weight:800;
+
+  text-decoration:none;
+
+  transition:.18s ease;
 }
+
 
 .btn:hover{
-transform:translateY(-3px);
+  transform:translateY(-1px);
+
+  background:var(--gold-hover);
 }
 
-@media(max-width:768px){
 
-.box{
-padding:35px 25px;
+.btn-secondary{
+  background:#fff;
+
+  color:var(--ink);
+
+  border-color:#bcc7bd;
 }
 
-h1{
-font-size:34px;
+
+.btn-secondary:hover{
+  background:#f5f7f5;
+
+  border-color:var(--green);
 }
 
-p{
-font-size:18px;
+
+.note{
+  max-width:590px;
+
+  margin:
+  28px auto
+  0;
+
+  color:var(--muted);
+
+  font-size:.82rem;
 }
 
+
+@media(max-width:650px){
+
+  body{
+    padding:
+    22px
+    14px;
+  }
+
+  .thank-you{
+    padding:
+    38px
+    22px;
+  }
+
+  .actions{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .info-box{
+    padding:
+    20px
+    18px;
+  }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<div class="box">
 
-<img src="logo.jpg" alt="BODA Snacks">
+<main class="thank-you">
 
-<h1>Vielen Dank für Ihre Anfrage!</h1>
 
-<p>
-Wir freuen uns über Ihr Interesse an <strong>BODA Snacks</strong>.
+<a
+  href="/"
+  class="brand"
+  aria-label="BODA Snacks Startseite"
+>
+
+<span class="brand-main">
+  BODA <span class="snacks">SNACKS</span>
+</span>
+
+<span class="brand-sub">
+  Ihr Automatenservice aus Pforzheim
+</span>
+
+</a>
+
+
+<div
+  class="success-icon"
+  aria-hidden="true"
+>
+  ✓
+</div>
+
+
+<span class="eyebrow">
+  Anfrage erfolgreich übermittelt
+</span>
+
+
+<h1>
+  Vielen Dank für Ihre Anfrage.
+</h1>
+
+
+<p class="lead">
+
+Ihre Angaben sind bei uns eingegangen.
+
+Wir schauen uns Ihren Standort
+und den gewünschten Versorgungsbedarf
+persönlich an und melden uns anschließend
+bei Ihnen zurück.
+
 </p>
 
-<p>
-Ihre Anfrage wurde erfolgreich an uns übermittelt und ist bei uns eingegangen.
-</p>
 
-<p>
-Wir werden Ihr Anliegen sorgfältig prüfen und uns in der Regel innerhalb von <strong>24 Stunden</strong> persönlich bei Ihnen melden.
-</p>
+<div class="info-box">
 
-<p>
-Sollten Sie in der Zwischenzeit Fragen haben, erreichen Sie uns jederzeit telefonisch unter <strong>+49 7231 7703719</strong> oder per E-Mail an <strong>kontakt@boda-snacks.de</strong>.
-</p>
 
-<p><strong>Ihr Team von BODA Snacks GbR</strong></p>
+<div class="info-row">
 
-<a href="index.html" class="btn">
-Zur Startseite
+<div class="info-icon">
+  ✓
+</div>
+
+<div>
+
+<strong>
+  Anfrage eingegangen
+</strong>
+
+<span>
+  Sie müssen nichts weiter tun.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-icon">
+  ✓
+</div>
+
+<div>
+
+<strong>
+  Persönliche Prüfung
+</strong>
+
+<span>
+  Wir prüfen Standort,
+  Bedarf und die passende Versorgung.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-icon">
+  ✓
+</div>
+
+<div>
+
+<strong>
+  Rückmeldung von BODA Snacks
+</strong>
+
+<span>
+  Wir melden uns in der Regel zeitnah persönlich bei Ihnen.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-icon">
+  ☎
+</div>
+
+<div>
+
+<strong>
+  Sie möchten vorher etwas ergänzen?
+</strong>
+
+<span>
+
+Telefon:
+
+<a href="tel:+4972317703719">
+  07231 7703719
+</a>
+
+<br>
+
+E-Mail:
+
+<a href="mailto:kontakt@boda-snacks.de">
+  kontakt@boda-snacks.de
+</a>
+
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="signature">
+
+Andreas &amp; Sandra ·
+<span>BODA Snacks</span>
+
+</div>
+
+
+<div class="actions">
+
+<a
+  href="/"
+  class="btn"
+>
+  Zur Startseite ↗
+</a>
+
+
+<a
+  href="tel:+4972317703719"
+  class="btn btn-secondary"
+>
+  Direkt anrufen
 </a>
 
 </div>
+
+
+<p class="note">
+
+Mit Ihrer Anfrage wurde noch kein Vertrag geschlossen
+und keine Automatenaufstellung beauftragt.
+
+</p>
+
+
+</main>
+
 
 </body>
 </html>
