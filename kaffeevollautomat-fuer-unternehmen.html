@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -10,7 +8,7 @@
 
   <meta
     name="description"
-    content="Kaffeevollautomaten für Unternehmen mit persönlicher Beratung und passendem Service. BODA Snacks plant Ihre Kaffeelösung nach Teamgröße, Verbrauch und Standort. Servicepauschale ab 98 € im Monat."
+    content="Kaffeevollautomaten für Unternehmen in Pforzheim und Umgebung: ohne eigenen Maschinenkauf, mit persönlicher Betreuung. Service ab 98 €/Monat, Verbrauch separat."
   >
 
   <meta name="robots" content="index,follow">
@@ -21,9 +19,6 @@
     href="https://boda-snacks.de/kaffeevollautomat-fuer-unternehmen.html"
   >
 
-
-  <!-- OPEN GRAPH -->
-
   <meta
     property="og:title"
     content="Kaffeevollautomat für Unternehmen | BODA Snacks"
@@ -31,7 +26,7 @@
 
   <meta
     property="og:description"
-    content="Kaffeelösungen für Unternehmen – passend zu Teamgröße, Verbrauch und gewünschtem Service."
+    content="Guter Kaffee im Betrieb. Ohne eigenen Maschinenkauf, mit persönlicher Betreuung aus Pforzheim. Service ab 98 €/Monat, Verbrauch separat."
   >
 
   <meta property="og:type" content="website">
@@ -41,1663 +36,862 @@
     content="https://boda-snacks.de/kaffeevollautomat-fuer-unternehmen.html"
   >
 
-
   <style>
-
-    /* =========================================================
-       BODA SNACKS DESIGN SYSTEM
-       ========================================================= */
-
-    :root{
-
-      --ink:#202821;
-      --muted:#596159;
-
-      --green:#244b39;
-      --green-dark:#1c3d2e;
-
-      --gold:#88601f;
-      --gold-fill:#dbb86e;
-      --gold-hover:#cda456;
-
-      --white:#ffffff;
-
-      --soft:#f5f7f5;
-      --soft-2:#edf3ed;
-      --card:#f3f7f3;
-
-      --line:#dce2dc;
-
-      --radius:20px;
-
-      --shadow:
-        0 18px 50px rgba(32,40,33,.08);
-
+    :root {
+      --ink: #202821;
+      --muted: #596159;
+      --green: #244b39;
+      --green-dark: #1c3d2e;
+      --gold: #88601f;
+      --gold-fill: #dbb86e;
+      --gold-hover: #cda456;
+      --white: #ffffff;
+      --soft: #f5f7f5;
+      --soft-2: #edf3ed;
+      --card: #f3f7f3;
+      --line: #dce2dc;
+      --radius: 20px;
+      --shadow: 0 18px 50px rgba(32,40,33,.08);
     }
 
+    /* GRUNDLAGEN */
 
-    /* =========================================================
-       RESET
-       ========================================================= */
+    * { box-sizing: border-box; }
 
-    *{
-      box-sizing:border-box;
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
 
-    html{
-      scroll-behavior:smooth;
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+
+    .wrap {
+      width: min(1180px, calc(100% - 64px));
+      margin-inline: auto;
     }
 
-    body{
+    .section { padding: 100px 0; }
+    .section-soft { background: var(--soft); }
+    .section-contact { background: var(--soft-2); }
 
-      margin:0;
+    /* KOPFBEREICH */
 
-      background:var(--white);
-
-      color:var(--ink);
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size:16px;
-      line-height:1.65;
-
-      -webkit-font-smoothing:antialiased;
-
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
     }
 
-    img,
-    video{
-      display:block;
-      max-width:100%;
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    a{
-      color:inherit;
+    .brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1;
     }
 
-    button,
-    input,
-    select,
-    textarea{
-      font:inherit;
+    .brand-main {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: .02em;
     }
 
+    .brand-main .snacks { color: var(--gold); }
 
-    /* =========================================================
-       LAYOUT
-       ========================================================= */
-
-    .wrap{
-
-      width:min(
-        1180px,
-        calc(100% - 64px)
-      );
-
-      margin-inline:auto;
-
+    .brand-sub {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .78rem;
     }
 
-    .section{
-      padding:100px 0;
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
     }
 
-    .section-soft{
-      background:var(--soft);
+    .main-nav > a:not(.btn) {
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 700;
     }
 
-    .section-contact{
-      background:var(--soft-2);
+    .main-nav > a:not(.btn):hover { color: var(--green); }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      padding: 10px;
+      font-weight: 800;
+      cursor: pointer;
     }
 
-
-    /* =========================================================
-       HEADER
-       ========================================================= */
-
-    .site-header{
-
-      position:sticky;
-
-      top:0;
-
-      z-index:1000;
-
-      background:
-        rgba(255,255,255,.96);
-
-      backdrop-filter:blur(12px);
-
-      border-bottom:
-        1px solid var(--line);
-
-    }
-
-    .header-inner{
-
-      min-height:82px;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:space-between;
-
-      gap:30px;
-
-    }
-
-
-    /* BRAND */
-
-    .brand{
-
-      display:flex;
-
-      flex-direction:column;
-
-      text-decoration:none;
-
-      line-height:1;
-
-    }
-
-    .brand-main{
-
-      font-size:1.25rem;
-
-      font-weight:800;
-
-      letter-spacing:.02em;
-
-    }
-
-    .brand-main .snacks{
-      color:var(--gold);
-    }
-
-    .brand-sub{
-
-      margin-top:8px;
-
-      color:var(--muted);
-
-      font-size:.78rem;
-
-    }
-
-
-    /* NAVIGATION */
-
-    .main-nav{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:27px;
-
-    }
-
-    .main-nav > a:not(.btn){
-
-      text-decoration:none;
-
-      font-size:.94rem;
-
-      font-weight:700;
-
-    }
-
-    .main-nav > a:not(.btn):hover{
-      color:var(--green);
-    }
-
-
-    /* MOBILE MENU */
-
-    .menu-toggle{
-
-      display:none;
-
-      border:0;
-
-      background:transparent;
-
-      color:var(--ink);
-
-      padding:10px;
-
-      font-weight:800;
-
-      cursor:pointer;
-
-    }
-
-
-    /* =========================================================
-       BUTTONS
-       ========================================================= */
-
-    .btn{
-
-      display:inline-flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      gap:8px;
-
-      min-height:48px;
-
-      padding:13px 21px;
-
-      border:
-        1px solid transparent;
-
-      border-radius:9px;
-
-      text-decoration:none;
-
-      font-weight:800;
-
-      font-size:.94rem;
-
-      cursor:pointer;
-
+    /* BUTTONS */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 13px 21px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: .94rem;
+      cursor: pointer;
       transition:
         transform .2s ease,
         background .2s ease,
         border-color .2s ease;
-
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--gold-fill);
+      color: #25271f;
     }
 
-    .btn-primary{
+    .btn-primary:hover { background: var(--gold-hover); }
 
-      background:var(--gold-fill);
-
-      color:#25271f;
-
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: #bcc7bd;
     }
 
-    .btn-primary:hover{
-      background:var(--gold-hover);
+    .btn-secondary:hover { border-color: var(--green); }
+
+    .btn-dark {
+      background: var(--green);
+      color: white;
     }
 
-    .btn-secondary{
+    .btn-dark:hover { background: var(--green-dark); }
 
-      background:transparent;
+    /* SCHRIFT */
 
-      color:var(--ink);
-
-      border-color:#bcc7bd;
-
+    .eyebrow {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: .79rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
-    .btn-secondary:hover{
-      border-color:var(--green);
+    h1, h2, h3 {
+      margin-top: 0;
+      color: var(--ink);
+      letter-spacing: -.025em;
     }
 
-    .btn-dark{
-
-      background:var(--green);
-
-      color:white;
-
+    h1 {
+      margin-bottom: 25px;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: .99;
     }
 
-    .btn-dark:hover{
-      background:var(--green-dark);
+    h2 {
+      margin-bottom: 24px;
+      font-size: clamp(2.05rem, 4vw, 3.5rem);
+      line-height: 1.08;
     }
 
-
-    /* =========================================================
-       TYPOGRAPHY
-       ========================================================= */
-
-    .eyebrow{
-
-      display:block;
-
-      margin-bottom:14px;
-
-      color:var(--gold);
-
-      font-size:.79rem;
-
-      font-weight:800;
-
-      letter-spacing:.12em;
-
-      text-transform:uppercase;
-
+    h3 {
+      margin-bottom: 11px;
+      font-size: 1.23rem;
+      line-height: 1.25;
     }
 
-    h1,
-    h2,
-    h3{
-
-      margin-top:0;
-
-      color:var(--ink);
-
-      letter-spacing:-.025em;
-
+    .lead {
+      max-width: 720px;
+      margin: 0 0 30px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
     }
 
-    h1{
-
-      margin-bottom:25px;
-
-      font-size:
-        clamp(
-          2.8rem,
-          6vw,
-          5.2rem
-        );
-
-      line-height:.99;
-
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 55px;
     }
 
-    h2{
-
-      margin-bottom:24px;
-
-      font-size:
-        clamp(
-          2.05rem,
-          4vw,
-          3.5rem
-        );
-
-      line-height:1.08;
-
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
     }
 
-    h3{
+    /* EINSTIEG */
 
-      margin-bottom:11px;
+    .hero { padding: 90px 0 65px; }
 
-      font-size:1.23rem;
-
-      line-height:1.25;
-
-    }
-
-    .lead{
-
-      max-width:720px;
-
-      margin:
-        0 0 30px;
-
-      color:var(--muted);
-
-      font-size:
-        clamp(
-          1.05rem,
-          2vw,
-          1.22rem
-        );
-
-    }
-
-    .section-head{
-
-      max-width:760px;
-
-      margin-bottom:55px;
-
-    }
-
-    .section-head p{
-
-      margin:0;
-
-      color:var(--muted);
-
-      font-size:1.05rem;
-
-    }
-
-
-    /* =========================================================
-       HERO
-       ========================================================= */
-
-    .hero{
-
-      padding:
-        90px 0 65px;
-
-    }
-
-    .hero-grid{
-
-      display:grid;
-
+    .hero-grid {
+      display: grid;
       grid-template-columns:
         minmax(0,1.05fr)
         minmax(370px,.95fr);
-
-      gap:70px;
-
-      align-items:center;
-
+      gap: 70px;
+      align-items: center;
     }
 
-    .hero-copy strong{
-      color:var(--green);
+    .hero-copy strong { color: var(--green); }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .hero-actions{
-
-      margin-top:32px;
-
-      display:flex;
-
-      flex-wrap:wrap;
-
-      gap:12px;
-
+    .hero-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .9rem;
     }
 
-    .hero-note{
-
-      margin-top:18px;
-
-      color:var(--muted);
-
-      font-size:.9rem;
-
+    .hero-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      background: #151915;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-
-    /* HERO VIDEO */
-
-    .hero-visual{
-
-      position:relative;
-
-      overflow:hidden;
-
-      min-height:520px;
-
-      background:#151915;
-
-      border-radius:var(--radius);
-
-      box-shadow:var(--shadow);
-
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
-    .hero-video{
-
-      position:absolute;
-
-      inset:0;
-
-      width:100%;
-      height:100%;
-
-      object-fit:cover;
-      object-position:center;
-
-    }
-
-    .hero-visual::after{
-
-      content:"";
-
-      position:absolute;
-
-      inset:0;
-
-      z-index:1;
-
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
       background:
         linear-gradient(
           180deg,
           rgba(0,0,0,.01) 45%,
           rgba(0,0,0,.34) 100%
         );
-
-      pointer-events:none;
-
-    }
-
-    .hero-badge{
-
-      position:absolute;
-
-      z-index:3;
-
-      left:28px;
-      bottom:28px;
-
-      padding:12px 16px;
-
-      background:white;
-
-      border:
-        1px solid var(--line);
-
-      border-radius:10px;
-
-      box-shadow:var(--shadow);
-
-      font-size:.88rem;
-
-      font-weight:800;
-
-    }
-
-    .hero-badge span{
-      color:var(--gold);
-    }
-
-
-    /* =========================================================
-       TRUST
-       ========================================================= */
-
-    .trust-row{
-
-      margin-top:70px;
-
-      display:grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      border-top:
-        1px solid var(--line);
-
-      border-bottom:
-        1px solid var(--line);
-
-    }
-
-    .trust-item{
-
-      padding:
-        22px 20px 22px 0;
-
-      font-weight:700;
-
-    }
-
-    .trust-item + .trust-item{
-
-      padding-left:28px;
-
-      border-left:
-        1px solid var(--line);
-
-    }
-
-    .check{
-
-      margin-right:7px;
-
-      color:var(--green);
-
-      font-weight:900;
-
-    }
-
-
-    /* =========================================================
-       INTRO BOX
-       ========================================================= */
-
-    .intro-box{
-
-      padding:55px;
-
-      display:grid;
-
-      grid-template-columns:
-        .8fr 1.2fr;
-
-      gap:65px;
-
-      align-items:center;
-
-      background:var(--green);
-
-      color:white;
-
-      border-radius:var(--radius);
-
-    }
-
-    .intro-box h2{
-      color:white;
+      pointer-events: none;
     }
-
-    .intro-box .eyebrow{
-      color:var(--gold-fill);
-    }
-
-    .intro-box p{
-
-      margin-top:0;
-
-      color:
-        rgba(255,255,255,.8);
 
+    .hero-badge {
+      position: absolute;
+      z-index: 3;
+      left: 28px;
+      bottom: 28px;
+      padding: 12px 16px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      font-size: .88rem;
+      font-weight: 800;
     }
 
-    .intro-points{
+    .hero-badge span { color: var(--gold); }
 
-      display:grid;
+    /* VORTEILSZEILE */
 
-      border-top:
-        1px solid rgba(255,255,255,.18);
-
+    .trust-row {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
-
-    .intro-point{
 
-      padding:17px 0;
-
-      border-bottom:
-        1px solid rgba(255,255,255,.18);
-
+    .trust-item {
+      padding: 22px 20px 22px 0;
+      font-weight: 700;
     }
 
-    .intro-point strong{
-      color:white;
+    .trust-item + .trust-item {
+      padding-left: 28px;
+      border-left: 1px solid var(--line);
     }
-
-
-    /* =========================================================
-       BENEFITS
-       ========================================================= */
-
-    .benefit-grid{
-
-      display:grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap:22px;
 
+    .check {
+      margin-right: 7px;
+      color: var(--green);
+      font-weight: 900;
     }
 
-    .benefit-card{
-
-      padding:34px;
-
-      background:white;
-
-      border:
-        1px solid var(--line);
-
-      border-radius:var(--radius);
-
+    .intro-box {
+      padding: 55px;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 65px;
+      align-items: center;
+      background: var(--green);
+      color: white;
+      border-radius: var(--radius);
     }
-
-    .benefit-number{
-
-      display:block;
-
-      margin-bottom:26px;
-
-      color:var(--gold);
 
-      font-size:.77rem;
+    .intro-box h2 { color: white; }
+    .intro-box .eyebrow { color: var(--gold-fill); }
 
-      font-weight:800;
-
-      letter-spacing:.1em;
-
+    .intro-box p {
+      margin-top: 0;
+      color: rgba(255,255,255,.8);
     }
-
-    .benefit-card p{
-
-      margin:0;
 
-      color:var(--muted);
-
+    .intro-points {
+      display: grid;
+      border-top: 1px solid rgba(255,255,255,.18);
     }
-
-
-    /* =========================================================
-       BEDARF
-       ========================================================= */
-
-    .fit-layout{
-
-      display:grid;
 
-      grid-template-columns:
-        .85fr 1.15fr;
-
-      gap:80px;
-
-      align-items:start;
-
+    .intro-point {
+      padding: 17px 0;
+      border-bottom: 1px solid rgba(255,255,255,.18);
     }
-
-    .fit-copy{
 
-      position:sticky;
+    .intro-point strong { color: white; }
 
-      top:130px;
+    /* LEISTUNGEN */
 
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
     }
 
-    .fit-copy p{
-      color:var(--muted);
+    .benefit-card {
+      padding: 34px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
     }
 
-    .fit-list{
-
-      border-top:
-        1px solid var(--line);
-
+    .benefit-number {
+      display: block;
+      margin-bottom: 26px;
+      color: var(--gold);
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .1em;
     }
-
-    .fit-item{
-
-      display:grid;
-
-      grid-template-columns:
-        65px 1fr;
 
-      gap:20px;
-
-      padding:29px 0;
-
-      border-bottom:
-        1px solid var(--line);
-
+    .benefit-card p {
+      margin: 0;
+      color: var(--muted);
     }
-
-    .fit-number{
 
-      color:var(--gold);
+    /* BEDARF */
 
-      font-size:.8rem;
-
-      font-weight:800;
-
+    .fit-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 80px;
+      align-items: start;
     }
-
-    .fit-item p{
-
-      margin:0;
-
-      color:var(--muted);
 
+    .fit-copy {
+      position: sticky;
+      top: 130px;
     }
 
+    .fit-copy p { color: var(--muted); }
 
-    /* =========================================================
-       GETRÄNKE
-       ========================================================= */
+    .fit-list { border-top: 1px solid var(--line); }
 
-    .drink-grid{
-
-      display:grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap:16px;
-
-      margin-top:35px;
-
+    .fit-item {
+      display: grid;
+      grid-template-columns: 65px 1fr;
+      gap: 20px;
+      padding: 29px 0;
+      border-bottom: 1px solid var(--line);
     }
-
-    .drink-item{
-
-      padding:22px;
-
-      background:white;
-
-      border:
-        1px solid var(--line);
 
-      border-radius:14px;
-
-      font-weight:800;
-
+    .fit-number {
+      color: var(--gold);
+      font-size: .8rem;
+      font-weight: 800;
     }
-
-
-    /* =========================================================
-       SERVICE
-       ========================================================= */
-
-    .service-box{
-
-      padding:58px;
-
-      background:var(--green);
-
-      color:white;
-
-      border-radius:var(--radius);
 
+    .fit-item p {
+      margin: 0;
+      color: var(--muted);
     }
 
-    .service-box h2{
-      color:white;
-    }
+    /* GETRÄNKE */
 
-    .service-box .eyebrow{
-      color:var(--gold-fill);
+    .drink-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+      margin-top: 35px;
     }
-
-    .service-box > p{
-
-      max-width:760px;
-
-      color:
-        rgba(255,255,255,.8);
 
+    .drink-item {
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      font-weight: 800;
     }
-
-    .service-grid{
-
-      margin-top:44px;
-
-      display:grid;
-
-      grid-template-columns:
-        repeat(4,1fr);
-
-      border-top:
-        1px solid rgba(255,255,255,.18);
 
+    .service-box {
+      padding: 58px;
+      background: var(--green);
+      color: white;
+      border-radius: var(--radius);
     }
 
-    .service-item{
+    .service-box h2 { color: white; }
+    .service-box .eyebrow { color: var(--gold-fill); }
 
-      padding:
-        27px 23px 0 0;
-
+    .service-box > p {
+      max-width: 760px;
+      color: rgba(255,255,255,.8);
     }
-
-    .service-item + .service-item{
 
-      padding-left:24px;
-
-      border-left:
-        1px solid rgba(255,255,255,.18);
-
+    .service-grid {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid rgba(255,255,255,.18);
     }
-
-    .service-item strong{
 
-      display:block;
+    .service-item { padding: 27px 23px 0 0; }
 
-      margin-bottom:7px;
-
+    .service-item + .service-item {
+      padding-left: 24px;
+      border-left: 1px solid rgba(255,255,255,.18);
     }
-
-    .service-item span{
 
-      color:
-        rgba(255,255,255,.7);
-
-      font-size:.91rem;
-
+    .service-item strong {
+      display: block;
+      margin-bottom: 7px;
     }
-
 
-    /* =========================================================
-       ABLAUF
-       ========================================================= */
-
-    .steps{
-
-      display:grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      border-top:
-        1px solid var(--line);
-
+    .service-item span {
+      color: rgba(255,255,255,.7);
+      font-size: .91rem;
     }
-
-    .step{
 
-      padding:
-        34px 34px 0 0;
+    /* ABLAUF */
 
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      border-top: 1px solid var(--line);
     }
 
-    .step + .step{
+    .step { padding: 34px 34px 0 0; }
 
-      padding-left:34px;
-
-      border-left:
-        1px solid var(--line);
-
+    .step + .step {
+      padding-left: 34px;
+      border-left: 1px solid var(--line);
     }
-
-    .step-number{
 
-      display:block;
-
-      margin-bottom:25px;
-
-      color:var(--gold);
-
-      font-size:.77rem;
-
-      font-weight:800;
-
-      letter-spacing:.1em;
-
+    .step-number {
+      display: block;
+      margin-bottom: 25px;
+      color: var(--gold);
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .1em;
     }
-
-    .step p{
-
-      margin:0;
-
-      color:var(--muted);
 
+    .step p {
+      margin: 0;
+      color: var(--muted);
     }
 
+    /* SNACKS UND KAFFEE */
 
-    /* =========================================================
-       SNACKS + KAFFEE
-       ========================================================= */
-
-    .combo-box{
-
-      display:grid;
-
-      grid-template-columns:
-        1.1fr .9fr;
-
-      gap:50px;
-
-      align-items:center;
-
-      padding:55px;
-
-      background:var(--green);
-
-      color:white;
-
-      border-radius:28px;
-
-    }
-
-    .combo-box h2{
-      color:white;
+    .combo-box {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: center;
+      padding: 55px;
+      background: var(--green);
+      color: white;
+      border-radius: 28px;
     }
 
-    .combo-box .eyebrow{
-      color:var(--gold-fill);
-    }
+    .combo-box h2 { color: white; }
+    .combo-box .eyebrow { color: var(--gold-fill); }
+    .combo-box p { color: rgba(255,255,255,.82); }
 
-    .combo-box p{
-      color:rgba(255,255,255,.82);
+    .combo-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
-
-    .combo-actions{
-
-      margin-top:28px;
-
-      display:flex;
-
-      flex-wrap:wrap;
-
-      gap:12px;
 
+    .combo-points {
+      display: grid;
+      gap: 12px;
     }
 
-    .combo-points{
-
-      display:grid;
-
-      gap:12px;
-
+    .combo-point {
+      padding: 15px 18px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 12px;
+      background: rgba(255,255,255,.07);
+      font-weight: 700;
     }
-
-    .combo-point{
 
-      padding:15px 18px;
+    /* TEAM */
 
-      border:
-        1px solid rgba(255,255,255,.18);
-
-      border-radius:12px;
-
-      background:
-        rgba(255,255,255,.07);
-
-      font-weight:700;
-
+    .personal-layout {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 70px;
+      align-items: center;
     }
-
-
-    /* =========================================================
-       PERSONAL
-       ========================================================= */
-
-    /* =========================================================
-   PERSONAL / TEAM
-   ========================================================= */
-
-.personal-layout{
-
-  display:grid;
-
-  grid-template-columns:
-    .95fr 1.05fr;
-
-  gap:70px;
-
-  align-items:center;
-
-}
-
-.team-image{
-
-  overflow:hidden;
-
-  border-radius:var(--radius);
-
-  box-shadow:var(--shadow);
-
-  background:var(--soft);
-
-}
-
-.team-image img{
-
-  width:100%;
-
-  height:100%;
-
-  min-height:520px;
-
-  object-fit:cover;
-
-  object-position:center;
-
-}
-
-.personal-card{
-
-  margin-top:28px;
-
-  padding:32px;
-
-  background:var(--soft);
-
-  border:
-    1px solid var(--line);
-
-  border-radius:var(--radius);
-
-}
 
-.personal-card p{
-
-  margin-top:0;
-
-  color:var(--muted);
-
-}
-
-.personal-name{
-
-  margin-top:20px;
-
-  font-weight:800;
-
-}
-
-.personal-name span{
-  color:var(--gold);
-}
-
-
-    /* =========================================================
-       FAQ
-       ========================================================= */
-
-    .faq-layout{
-
-      display:grid;
-
-      grid-template-columns:
-        .75fr 1.25fr;
-
-      gap:85px;
-
+    .team-image {
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: var(--soft);
     }
 
-    .faq-list{
-
-      border-top:
-        1px solid var(--line);
-
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      object-position: center;
     }
-
-    details{
 
-      border-bottom:
-        1px solid var(--line);
-
+    .personal-card {
+      margin-top: 28px;
+      padding: 32px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
     }
-
-    summary{
-
-      position:relative;
-
-      padding:
-        23px 45px 23px 0;
 
-      cursor:pointer;
-
-      list-style:none;
-
-      font-weight:800;
-
+    .personal-card p {
+      margin-top: 0;
+      color: var(--muted);
     }
 
-    summary::-webkit-details-marker{
-      display:none;
+    .personal-name {
+      margin-top: 20px;
+      font-weight: 800;
     }
-
-    summary::after{
-
-      content:"+";
 
-      position:absolute;
+    .personal-name span { color: var(--gold); }
 
-      right:5px;
-      top:18px;
+    /* HÄUFIGE FRAGEN */
 
-      color:var(--gold);
-
-      font-size:1.55rem;
-
-      font-weight:400;
-
-    }
-
-    details[open] summary::after{
-      content:"–";
+    .faq-layout {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 85px;
     }
-
-    details p{
 
-      margin:
-        -2px 0 25px;
+    .faq-list { border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
 
-      color:var(--muted);
-
+    summary {
+      position: relative;
+      padding: 23px 45px 23px 0;
+      cursor: pointer;
+      list-style: none;
+      font-weight: 800;
     }
-
-
-    /* =========================================================
-       CONTACT
-       ========================================================= */
 
-    .contact-layout{
+    summary::-webkit-details-marker { display: none; }
 
-      display:grid;
-
-      grid-template-columns:
-        .85fr 1.15fr;
-
-      gap:55px;
-
-      align-items:start;
-
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 5px;
+      top: 18px;
+      color: var(--gold);
+      font-size: 1.55rem;
+      font-weight: 400;
     }
-
-    .price-note{
-
-      margin-top:25px;
-
-      padding:22px;
-
-      background:white;
-
-      border:
-        1px solid var(--line);
 
-      border-radius:14px;
+    details[open] summary::after { content: "–"; }
 
+    details p {
+      margin: -2px 0 25px;
+      color: var(--muted);
     }
 
-    .price-note strong{
+    /* KONTAKT */
 
-      display:block;
-
-      margin-bottom:5px;
-
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 55px;
+      align-items: start;
     }
-
-    .contact-links{
-
-      margin-top:28px;
 
-      display:grid;
-
+    .price-note {
+      margin-top: 25px;
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
     }
-
-    .contact-link{
-
-      padding:16px 0;
-
-      display:flex;
-
-      justify-content:space-between;
 
-      gap:20px;
-
-      border-bottom:
-        1px solid #ccd7cc;
-
-      text-decoration:none;
-
-      font-weight:800;
-
+    .price-note strong {
+      display: block;
+      margin-bottom: 5px;
     }
 
-    .contact-link span{
-      color:var(--muted);
+    .contact-links {
+      margin-top: 28px;
+      display: grid;
     }
-
-
-    /* FORM */
-
-    .coffee-form{
-
-      padding:34px;
-
-      background:white;
 
-      border:
-        1px solid var(--line);
-
-      border-radius:var(--radius);
-
-      box-shadow:var(--shadow);
-
+    .contact-link {
+      padding: 16px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid #ccd7cc;
+      text-decoration: none;
+      font-weight: 800;
     }
-
-    .form-grid{
-
-      display:grid;
 
-      grid-template-columns:
-        1fr 1fr;
+    .contact-link span { color: var(--muted); }
 
-      gap:18px;
+    /* FORMULAR */
 
+    .coffee-form {
+      padding: 34px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    .form-field{
-
-      display:grid;
-
-      gap:7px;
-
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
-    .form-field.full{
-      grid-column:1 / -1;
+    .form-field {
+      display: grid;
+      gap: 7px;
     }
-
-    .form-field label{
-
-      font-size:.88rem;
 
-      font-weight:800;
+    .form-field.full { grid-column: 1 / -1; }
 
+    .form-field label {
+      font-size: .88rem;
+      font-weight: 800;
     }
 
     .form-field input,
     .form-field select,
-    .form-field textarea{
-
-      width:100%;
-
-      padding:13px 14px;
-
-      border:
-        1px solid #cbd5cc;
-
-      border-radius:10px;
-
-      background:white;
-
-      color:var(--ink);
-
-      outline:none;
-
+    .form-field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #cbd5cc;
+      border-radius: 10px;
+      background: white;
+      color: var(--ink);
+      outline: none;
     }
 
-    .form-field textarea{
-
-      min-height:120px;
-
-      resize:vertical;
-
+    .form-field textarea {
+      min-height: 120px;
+      resize: vertical;
     }
 
     .form-field input:focus,
     .form-field select:focus,
-    .form-field textarea:focus{
-
-      border-color:var(--gold);
-
-      box-shadow:
-        0 0 0 3px rgba(219,184,110,.24);
-
+    .form-field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(219,184,110,.24);
     }
 
-    .form-privacy{
-
-      margin:20px 0;
-
-      display:flex;
-
-      align-items:flex-start;
-
-      gap:10px;
-
-      color:var(--muted);
-
-      font-size:.86rem;
-
+    .form-privacy {
+      margin: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      font-size: .86rem;
     }
 
-    .form-privacy input{
-
-      width:auto;
-
-      margin-top:4px;
-
-      flex:0 0 auto;
-
+    .form-privacy input {
+      width: auto;
+      margin-top: 4px;
+      flex: 0 0 auto;
     }
 
-    .form-privacy a{
-
-      color:var(--green);
-
-      font-weight:700;
-
+    .form-privacy a {
+      color: var(--green);
+      font-weight: 700;
     }
 
+    /* WEITERE ANGEBOTE */
 
-    /* =========================================================
-       RELATED
-       ========================================================= */
-
-    .related-grid{
-
-      display:grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap:20px;
-
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
     }
 
-    .related-card{
-
-      min-height:210px;
-
-      padding:30px;
-
-      display:flex;
-
-      flex-direction:column;
-
-      text-decoration:none;
-
-      border:
-        1px solid var(--line);
-
-      border-radius:var(--radius);
-
-      transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-
+    .related-card {
+      min-height: 210px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
-    .related-card:hover{
-
-      transform:translateY(-3px);
-
-      box-shadow:var(--shadow);
-
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
     }
 
-    .related-card p{
-
-      margin-bottom:30px;
-
-      color:var(--muted);
-
+    .related-card p {
+      margin-bottom: 30px;
+      color: var(--muted);
     }
 
-    .related-link{
-
-      margin-top:auto;
-
-      color:var(--gold);
-
-      font-weight:800;
-
+    .related-link {
+      margin-top: auto;
+      color: var(--gold);
+      font-weight: 800;
     }
 
+    /* FUSSBEREICH */
 
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    .site-footer{
-
-      padding:
-        65px 0 30px;
-
-      background:white;
-
-      border-top:
-        1px solid var(--line);
-
+    .site-footer {
+      padding: 65px 0 30px;
+      background: white;
+      border-top: 1px solid var(--line);
     }
 
-    .footer-grid{
-
-      display:grid;
-
-      grid-template-columns:
-        1.3fr .75fr .75fr;
-
-      gap:60px;
-
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .75fr .75fr;
+      gap: 60px;
     }
 
-    .footer-brand{
-      max-width:380px;
+    .footer-brand { max-width: 380px; }
+
+    .footer-brand p {
+      margin-top: 18px;
+      color: var(--muted);
     }
 
-    .footer-brand p{
-
-      margin-top:18px;
-
-      color:var(--muted);
-
+    .footer-title {
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
-    .footer-title{
-
-      margin-bottom:15px;
-
-      color:var(--muted);
-
-      font-size:.8rem;
-
-      font-weight:800;
-
-      letter-spacing:.08em;
-
-      text-transform:uppercase;
-
+    .footer-links {
+      display: grid;
+      gap: 9px;
     }
 
-    .footer-links{
-
-      display:grid;
-
-      gap:9px;
-
+    .footer-links a {
+      text-decoration: none;
+      font-weight: 700;
     }
 
-    .footer-links a{
+    .footer-links a:hover { color: var(--green); }
 
-      text-decoration:none;
-
-      font-weight:700;
-
+    .footer-bottom {
+      margin-top: 55px;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .85rem;
     }
 
-    .footer-links a:hover{
-      color:var(--green);
+    .footer-bottom-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
-    .footer-bottom{
+    .footer-bottom a { text-decoration: none; }
 
-      margin-top:55px;
-
-      padding-top:24px;
-
-      display:flex;
-
-      justify-content:space-between;
-
-      gap:25px;
-
-      border-top:
-        1px solid var(--line);
-
-      color:var(--muted);
-
-      font-size:.85rem;
-
+    :focus-visible {
+      outline: 3px solid var(--gold-fill);
+      outline-offset: 4px;
     }
 
-    .footer-bottom-links{
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
 
-      display:flex;
-
-      flex-wrap:wrap;
-
-      gap:20px;
-
-    }
-
-    .footer-bottom a{
-      text-decoration:none;
-    }
-
-
-    /* =========================================================
-       ACCESSIBILITY
-       ========================================================= */
-
-    :focus-visible{
-
-      outline:
-        3px solid var(--gold-fill);
-
-      outline-offset:4px;
-
-    }
-
-    @media (prefers-reduced-motion:reduce){
-
-      html{
-        scroll-behavior:auto;
-      }
-
-      .hero-video{
-        display:none;
-      }
-
-      .hero-visual{
-
+      .hero-visual {
         background:
-          url("kaffeeautomat-boda.png")
+          url("kaffee-video-poster.jpg")
           center / cover no-repeat;
-
       }
-
     }
 
+    /* TABLET */
 
-    /* =========================================================
-       TABLET
-       ========================================================= */
+    @media (max-width: 980px) {
+      .section { padding: 80px 0; }
 
-    @media(max-width:980px){
+      .menu-toggle { display: block; }
 
-      .section{
-        padding:80px 0;
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: 0;
+        right: 0;
+        padding: 25px 32px;
+        flex-direction: column;
+        align-items: stretch;
+        background: white;
+        border-bottom: 1px solid var(--line);
       }
 
-      .menu-toggle{
-        display:block;
-      }
-
-      .main-nav{
-
-        display:none;
-
-        position:absolute;
-
-        top:82px;
-
-        left:0;
-        right:0;
-
-        padding:25px 32px;
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        background:white;
-
-        border-bottom:
-          1px solid var(--line);
-
-      }
-
-      .main-nav.open{
-        display:flex;
-      }
+      .main-nav.open { display: flex; }
 
       .hero-grid,
       .intro-box,
@@ -1705,266 +899,426 @@
       .combo-box,
       .personal-layout,
       .faq-layout,
-      .contact-layout{
-
-        grid-template-columns:1fr;
-
-        gap:55px;
-
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 55px;
       }
 
-      .fit-copy{
-        position:static;
+      .fit-copy { position: static; }
+
+      .benefit-grid { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+
+      .service-item:nth-child(3) {
+        padding-left: 0;
+        border-left: 0;
       }
 
-      .benefit-grid{
-        grid-template-columns:1fr;
+      .steps { grid-template-columns: 1fr; }
+
+      .step {
+        padding: 30px 0;
+        border-bottom: 1px solid var(--line);
       }
 
-      .service-grid{
-        grid-template-columns:1fr 1fr;
+      .step + .step {
+        padding-left: 0;
+        border-left: 0;
       }
 
-      .service-item:nth-child(3){
-
-        padding-left:0;
-
-        border-left:0;
-
-      }
-
-      .steps{
-        grid-template-columns:1fr;
-      }
-
-      .step{
-
-        padding:30px 0;
-
-        border-bottom:
-          1px solid var(--line);
-
-      }
-
-      .step + .step{
-
-        padding-left:0;
-
-        border-left:0;
-
-      }
-
-      .related-grid{
-        grid-template-columns:1fr;
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
+      .related-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
+    /* HANDY */
 
-    /* =========================================================
-       MOBILE
-       ========================================================= */
+    @media (max-width: 700px) {
+      .wrap { width: min(calc(100% - 34px), 1180px); }
+      .section { padding: 67px 0; }
+      .header-inner { min-height: 72px; }
+      .main-nav { top: 72px; }
+      .brand-main { font-size: 1.08rem; }
+      .brand-sub { font-size: .68rem; }
+      .hero { padding: 60px 0 50px; }
+      h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
+      h2 { font-size: clamp(2rem, 9vw, 2.8rem); }
+      .hero-actions { display: grid; }
+      .hero-actions .btn { width: 100%; }
+      .hero-visual { min-height: 390px; }
 
-    @media(max-width:700px){
-
-      .wrap{
-
-        width:min(
-          calc(100% - 34px),
-          1180px
-        );
-
+      .hero-badge {
+        left: 18px;
+        bottom: 18px;
       }
 
-      .section{
-        padding:67px 0;
+      .trust-row { grid-template-columns: 1fr; }
+      .trust-item { padding: 17px 0; }
+
+      .trust-item + .trust-item {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--line);
       }
 
-      .header-inner{
-        min-height:72px;
+      .intro-box { padding: 35px 25px; }
+      .fit-item { grid-template-columns: 48px 1fr; }
+      .drink-grid { grid-template-columns: 1fr; }
+      .service-box { padding: 35px 25px; }
+      .service-grid { grid-template-columns: 1fr; }
+
+      .service-item {
+        padding: 22px 0;
+        border-bottom: 1px solid rgba(255,255,255,.18);
       }
 
-      .main-nav{
-        top:72px;
+      .service-item + .service-item {
+        padding-left: 0;
+        border-left: 0;
       }
 
-      .brand-main{
-        font-size:1.08rem;
+      .combo-box { padding: 35px 25px; }
+      .combo-actions { display: grid; }
+      .combo-actions .btn { width: 100%; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-field.full { grid-column: auto; }
+      .coffee-form { padding: 24px; }
+
+      .contact-link {
+        flex-direction: column;
+        gap: 3px;
       }
 
-      .brand-sub{
-        font-size:.68rem;
-      }
-
-      .hero{
-
-        padding:
-          60px 0 50px;
-
-      }
-
-      h1{
-
-        font-size:
-          clamp(
-            2.5rem,
-            12vw,
-            4rem
-          );
-
-      }
-
-      h2{
-
-        font-size:
-          clamp(
-            2rem,
-            9vw,
-            2.8rem
-          );
-
-      }
-
-      .hero-actions{
-        display:grid;
-      }
-
-      .hero-actions .btn{
-        width:100%;
-      }
-
-      .hero-visual{
-        min-height:390px;
-      }
-
-      .hero-badge{
-
-        left:18px;
-        bottom:18px;
-
-      }
-
-      .trust-row{
-        grid-template-columns:1fr;
-      }
-
-      .trust-item{
-        padding:17px 0;
-      }
-
-      .trust-item + .trust-item{
-
-        padding-left:0;
-
-        border-left:0;
-
-        border-top:
-          1px solid var(--line);
-
-      }
-
-      .intro-box{
-
-        padding:
-          35px 25px;
-
-      }
-
-      .fit-item{
-
-        grid-template-columns:
-          48px 1fr;
-
-      }
-
-      .drink-grid{
-        grid-template-columns:1fr;
-      }
-
-      .service-box{
-
-        padding:
-          35px 25px;
-
-      }
-
-      .service-grid{
-        grid-template-columns:1fr;
-      }
-
-      .service-item{
-
-        padding:22px 0;
-
-        border-bottom:
-          1px solid rgba(255,255,255,.18);
-
-      }
-
-      .service-item + .service-item{
-
-        padding-left:0;
-
-        border-left:0;
-
-      }
-
-      .combo-box{
-
-        padding:
-          35px 25px;
-
-      }
-
-      .combo-actions{
-        display:grid;
-      }
-
-      .combo-actions .btn{
-        width:100%;
-      }
-
-      .form-grid{
-        grid-template-columns:1fr;
-      }
-
-      .form-field.full{
-        grid-column:auto;
-      }
-
-      .coffee-form{
-        padding:24px;
-      }
-
-      .contact-link{
-
-        flex-direction:column;
-
-        gap:3px;
-
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      .footer-bottom{
-        flex-direction:column;
-      }
-
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
     }
-    .team-image img{
-  min-height:380px;
-}
 
+    .team-image img { min-height: 380px; }
+
+    /* ERGÄNZUNGEN DER ÜBERARBEITETEN FASSUNG */
+
+    [id] { scroll-margin-top: 110px; }
+
+    :focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 5px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -100px;
+      z-index: 2000;
+      background: white;
+      padding: 12px 18px;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .hero { padding-top: 64px; }
+    .hero-grid { gap: 54px; }
+    .hero-copy { margin-bottom: 20px; }
+
+    .hero-personal {
+      margin: 16px 0 0;
+      font-size: .95rem;
+      color: var(--muted);
+    }
+
+    .hero-note {
+      max-width: 590px;
+      line-height: 1.6;
+    }
+
+    .hero-note strong { color: var(--ink); }
+
+    .hero-visual {
+      background:
+        #3c3027
+        url("kaffee-video-poster.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-badge {
+      right: 22px;
+      left: 22px;
+      bottom: 22px;
+      width: fit-content;
+      max-width: calc(100% - 44px);
+    }
+
+    .video-toggle {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      z-index: 4;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 9px 12px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: .82rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .video-toggle[hidden] { display: none; }
+
+    .trust-row { margin-top: 44px; }
+    .section { padding: 80px 0; }
+    .section-head { margin-bottom: 34px; }
+
+    .service-note {
+      margin: 28px 0 0 !important;
+      color: rgba(255,255,255,.9) !important;
+      font-size: .94rem !important;
+    }
+
+    /* KOSTENBLOCK */
+
+    .cost-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .cost-card {
+      padding: 34px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .cost-label {
+      display: block;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .cost-amount {
+      margin: 8px 0 4px;
+      font-size: 3.3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.04em;
+    }
+
+    .cost-amount small {
+      font-size: 1rem;
+      letter-spacing: 0;
+      font-weight: 600;
+    }
+
+    .cost-detail {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .cost-detail strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .cost-detail p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cost-card > p { color: var(--muted); }
+
+    .cost-card .btn {
+      margin-top: 12px;
+      width: 100%;
+    }
+
+    .cost-footnote {
+      font-size: .91rem;
+      color: var(--muted);
+    }
+
+    .drink-grid {
+      margin-top: 22px;
+      grid-template-columns: repeat(3,1fr);
+    }
+
+    .drink-item {
+      padding: 12px 14px;
+      font-size: .94rem;
+    }
+
+    .personal-layout { gap: 54px; }
+
+    .personal-card {
+      padding: 24px;
+      margin-top: 22px;
+    }
+
+    .team-image img {
+      height: auto;
+      min-height: 0;
+      aspect-ratio: 1.12;
+      object-fit: cover;
+    }
+
+    .personal-layout .btn { margin-top: 24px; }
+
+    .region-note {
+      font-size: .96rem;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+
+    .contact-layout {
+      grid-template-columns: .85fr 1.15fr;
+      gap: 46px;
+    }
+
+    .request-points {
+      padding-left: 20px;
+      margin: 22px 0;
+      color: var(--muted);
+    }
+
+    .request-points li { margin: 9px 0; }
+
+    .form-intro {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .form-hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .form-optional {
+      margin-top: 20px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .form-optional summary {
+      font-size: .94rem;
+      padding: 16px 30px 16px 0;
+    }
+
+    .form-optional summary::after { top: 9px; }
+    .form-optional .form-grid { padding: 5px 0 22px; }
+    .form-privacy { line-height: 1.5; }
+
+    .form-privacy input {
+      min-width: 18px;
+      min-height: 18px;
+    }
+
+    .form-reassurance {
+      margin: 15px 0 0;
+      color: var(--muted);
+      font-size: .86rem;
+      text-align: center;
+    }
+
+    .honeypot {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .request-success {
+      display: none;
+      grid-column: 1 / -1;
+      border: 2px solid var(--green);
+      border-radius: var(--radius);
+      padding: 28px;
+      background: white;
+    }
+
+    .request-success:target { display: block; }
+    .request-success h3 { margin-bottom: 8px; }
+    .request-success p { margin: 0; }
+    .related-grid { margin-top: 25px; }
+
+    .related-card {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    .related-card p { margin-bottom: 18px; }
+
+    @media (max-width: 980px) {
+      .cost-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero-grid { gap: 35px; }
+      .hero-visual { min-height: 400px; }
+
+      .main-nav {
+        max-height: calc(100dvh - 82px);
+        overflow: auto;
+      }
+    }
+
+    @media (max-width: 700px) {
+      [id] { scroll-margin-top: 92px; }
+      .hero { padding-top: 38px; }
+      .hero-visual { min-height: 290px; }
+
+      .hero-badge {
+        font-size: .76rem;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        max-width: calc(100% - 32px);
+      }
+
+      .hero-actions { margin-top: 24px; }
+      .hero-note { font-size: .86rem; }
+      .section { padding: 55px 0; }
+      .section-head { margin-bottom: 26px; }
+      .cost-card { padding: 25px; }
+      .cost-amount { font-size: 2.8rem; }
+
+      .drink-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .drink-item {
+        font-size: .86rem;
+        padding: 12px 8px;
+      }
+
+      .personal-layout { gap: 30px; }
+      .team-image img { aspect-ratio: 1.16; }
+      .coffee-form { padding: 22px 18px; }
+      .form-grid { gap: 15px; }
+
+      .form-field input,
+      .form-field select,
+      .form-field textarea {
+        font-size: 16px;
+        min-width: 0;
+      }
+
+      .cost-layout > *,
+      .contact-layout > * {
+        min-width: 0;
+      }
+
+      .contact-link strong { overflow-wrap: anywhere; }
+      .main-nav { max-height: calc(100dvh - 72px); }
+    }
   </style>
-
-
-  <!-- STRUCTURED DATA -->
 
   <script type="application/ld+json">
   {
@@ -1985,24 +1339,21 @@
       "Karlsruhe",
       "Böblingen",
       "Calw",
-      "Stuttgart"
+      "Stuttgart",
+      "Ludwigsburg"
     ],
     "url": "https://boda-snacks.de/kaffeevollautomat-fuer-unternehmen.html"
   }
   </script>
-
 </head>
-
 
 <body>
 
+  <a class="skip-link" href="#inhalt">Zum Inhalt</a>
 
-  <!-- =========================================================
-       HEADER
-       ========================================================= -->
+  <!-- KOPFBEREICH -->
 
   <header class="site-header">
-
     <div class="wrap header-inner">
 
       <a
@@ -2010,17 +1361,11 @@
         class="brand"
         aria-label="BODA Snacks Startseite"
       >
-
         <span class="brand-main">
           BODA <span class="snacks">SNACKS</span>
         </span>
-
-        <span class="brand-sub">
-          Snack · Getränke · Kaffee
-        </span>
-
+        <span class="brand-sub">Snack · Getränke · Kaffee</span>
       </a>
-
 
       <button
         class="menu-toggle"
@@ -2033,1237 +1378,727 @@
         Menü
       </button>
 
-
       <nav
         class="main-nav"
         id="mainNav"
         aria-label="Hauptnavigation"
       >
-
-        <a href="#vorteile">
-          Vorteile
+        <a href="#service">Leistungen</a>
+        <a href="#kosten">Kosten</a>
+        <a href="#kombi">Snacks + Kaffee</a>
+        <a href="#faq">FAQ</a>
+        <a href="#anfrage" class="btn btn-primary">
+          Kaffeelösung anfragen →
         </a>
-
-        <a href="#service">
-          Service
-        </a>
-
-        <a href="#kombi">
-          Snacks + Kaffee
-        </a>
-
-        <a href="#faq">
-          FAQ
-        </a>
-
-        <a
-          href="#anfrage"
-          class="btn btn-primary"
-        >
-          Kaffeelösung anfragen ↗
-        </a>
-
       </nav>
 
     </div>
-
   </header>
 
+  <main id="inhalt">
 
-
-  <main>
-
-
-    <!-- =========================================================
-         HERO
-         ========================================================= -->
+    <!-- EINSTIEG -->
 
     <section class="hero">
-
       <div class="wrap">
 
         <div class="hero-grid">
-
-
           <div>
 
             <span class="eyebrow">
               Kaffeevollautomaten für Unternehmen
             </span>
 
-
             <h1>
               Guter Kaffee.<br>
-              Direkt im Betrieb.
+              Weniger Aufwand.
             </h1>
 
-
             <p class="lead hero-copy">
-
-              Sie möchten Ihre Mitarbeiter, Kunden oder Besucher
-              zuverlässig mit Kaffee versorgen?
-
+              Kaffee für Ihr Team, Ihre Kunden und Besucher –
+              direkt im Betrieb.
               <strong>
-                BODA Snacks plant eine Kaffeelösung,
-                die zu Ihrem Standort, Ihrem Verbrauch und
-                Ihrem gewünschten Service passt.
+                Ohne eigenen Maschinenkauf, mit Versorgung
+                und Betreuung nach Ihrem Bedarf.
               </strong>
-
             </p>
 
+            <p class="hero-personal">
+              Persönlich betreut von Andreas &amp; Sandra Boda
+              aus Pforzheim.
+            </p>
 
             <div class="hero-actions">
-
-              <a
-                href="#anfrage"
-                class="btn btn-primary"
-              >
-                Kaffeelösung anfragen ↗
+              <a href="#anfrage" class="btn btn-primary">
+                Kaffeelösung prüfen lassen →
               </a>
 
-
-              <a
-                href="#bedarf"
-                class="btn btn-secondary"
-              >
-                Welche Lösung passt?
+              <a href="#kosten" class="btn btn-secondary">
+                Kosten &amp; Leistungen ansehen
               </a>
-
             </div>
 
-
             <p class="hero-note">
-              Servicepauschale ab 98 € im Monat ·
-              persönliche Beratung · unverbindliche Anfrage
+              <strong>Servicepauschale ab 98 € im Monat.</strong><br>
+              Verbrauchsprodukte separat. Konditionen abhängig
+              von Gerät, Standort, Nutzung und Service.
+              Die Anfrage ist unverbindlich.
             </p>
 
           </div>
 
-
-          <!-- HERO VIDEO -->
-
           <div class="hero-visual">
 
             <video
+              id="coffeeVideo"
               class="hero-video"
-              autoplay
               muted
               loop
               playsinline
               preload="metadata"
-              poster="kaffeeautomat-boda.png"
+              poster="kaffee-video-poster.jpg"
               aria-hidden="true"
             >
-
-              <source
-                src="hero.mp4"
-                type="video/mp4"
-              >
-
+              <source src="hero.mp4" type="video/mp4">
             </video>
 
+            <button
+              id="videoToggle"
+              class="video-toggle"
+              type="button"
+              hidden
+            >
+              Video abspielen
+            </button>
 
             <div class="hero-badge">
               BODA <span>SNACKS</span> · Kaffee für Unternehmen
             </div>
 
           </div>
-
-
         </div>
 
-
-        <!-- TRUST -->
-
-        <div class="trust-row">
+        <div class="trust-row" id="vorteile">
+          <div class="trust-item">
+            <span class="check">✓</span>
+            Kein eigener Maschinenkauf
+          </div>
 
           <div class="trust-item">
-
             <span class="check">✓</span>
-
-            Kein eigener Automatenkauf erforderlich
-
+            Gerät, Versorgung &amp; Service
           </div>
-
 
           <div class="trust-item">
-
             <span class="check">✓</span>
-
-            Lösung passend zum tatsächlichen Bedarf
-
+            Direkter Kontakt aus der Region
           </div>
-
-
-          <div class="trust-item">
-
-            <span class="check">✓</span>
-
-            Persönlicher Ansprechpartner
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         INTRO
-         ========================================================= -->
-
-    <section class="section">
-
-      <div class="wrap">
-
-        <div class="intro-box">
-
-
-          <div>
-
-            <span class="eyebrow">
-              Kaffeelösung statt Standardpaket
-            </span>
-
-
-            <h2>
-              Nicht irgendeine Maschine.
-              Sondern eine Lösung, die zum Betrieb passt.
-            </h2>
-
-          </div>
-
-
-          <div>
-
-            <p>
-
-              Ein Kaffeevollautomat sollte nicht nur gut aussehen.
-              Entscheidend ist, dass Leistung, Getränkeauswahl,
-              täglicher Verbrauch und Service zusammenpassen.
-
-              Deshalb betrachten wir zuerst Ihren tatsächlichen Bedarf,
-              bevor eine konkrete Lösung angeboten wird.
-
-            </p>
-
-
-            <div class="intro-points">
-
-              <div class="intro-point">
-                <strong>
-                  Wie viele Tassen werden ungefähr pro Tag benötigt?
-                </strong>
-              </div>
-
-              <div class="intro-point">
-                <strong>
-                  Welche Kaffeespezialitäten werden gewünscht?
-                </strong>
-              </div>
-
-              <div class="intro-point">
-                <strong>
-                  Gibt es Schichtbetrieb, Besucher oder Stoßzeiten?
-                </strong>
-              </div>
-
-              <div class="intro-point">
-                <strong>
-                  Welcher Serviceumfang passt zum Unternehmen?
-                </strong>
-              </div>
-
-            </div>
-
-          </div>
-
-
         </div>
 
       </div>
-
     </section>
 
+    <!-- LEISTUNGEN -->
 
-
-    <!-- =========================================================
-         VORTEILE
-         ========================================================= -->
-
-    <section
-      class="section section-soft"
-      id="vorteile"
-    >
-
+    <section class="section section-soft" id="service">
       <div class="wrap">
-
 
         <div class="section-head">
-
           <span class="eyebrow">
-            Kaffee im Unternehmen
+            Das übernimmt BODA Snacks
           </span>
 
-
           <h2>
-            Weniger Aufwand.
-            Mehr Komfort im Arbeitsalltag.
+            Ihr Team genießt den Kaffee.<br>
+            Wir kümmern uns um die Lösung.
           </h2>
 
-
           <p>
-
-            Eine gut geplante Kaffeelösung schafft eine feste
-            Versorgung direkt im Betrieb – ohne dass Ihr Unternehmen
-            selbst eine professionelle Maschine kaufen muss.
-
+            Gerät, Verbrauchsprodukte und Betreuung aus einer Hand.
+            Welche Leistungen Sie benötigen und wie oft wir vor Ort
+            sind, legen wir gemeinsam im Angebot fest.
           </p>
-
         </div>
-
 
         <div class="benefit-grid">
 
-
           <article class="benefit-card">
+            <span class="benefit-number">01</span>
 
-            <span class="benefit-number">
-              01
-            </span>
-
-            <h3>
-              Kein eigener Maschinenkauf
-            </h3>
+            <h3>Gerät &amp; Aufstellung</h3>
 
             <p>
-
-              Im Rahmen unseres Versorgungskonzepts ist kein eigener
-              Kauf des Kaffeevollautomaten durch Ihr Unternehmen erforderlich.
-              Die konkreten Bedingungen erhalten Sie im individuellen Angebot.
-
+              Wir wählen den Automaten passend zu Tassenmenge
+              und Getränkeauswahl aus und stimmen Stellplatz,
+              Anschlüsse und Aufstellung mit Ihnen ab.
             </p>
-
           </article>
-
 
           <article class="benefit-card">
+            <span class="benefit-number">02</span>
 
-            <span class="benefit-number">
-              02
-            </span>
-
-            <h3>
-              Passend zum Verbrauch
-            </h3>
+            <h3>Produkte &amp; Versorgung</h3>
 
             <p>
-
-              Gerät und Ausstattung werden nicht allein nach Mitarbeiterzahl,
-              sondern nach tatsächlicher Nutzung und gewünschtem Getränkeangebot
-              geplant.
-
+              Kaffee und weitere Verbrauchsprodukte werden
+              mitgeplant. Liefer- und Befüllungsintervalle
+              richten sich nach der Nutzung und dem vereinbarten
+              Versorgungskonzept.
             </p>
-
           </article>
-
 
           <article class="benefit-card">
+            <span class="benefit-number">03</span>
 
-            <span class="benefit-number">
-              03
-            </span>
-
-            <h3>
-              Persönlicher Service
-            </h3>
+            <h3>Betreuung &amp; Wartung</h3>
 
             <p>
-
-              Je nach vereinbartem Serviceumfang übernehmen wir Betreuung,
-              Versorgung und weitere Leistungen rund um Ihre Kaffeelösung.
-
+              Für Fragen und Störungen haben Sie einen direkten
+              Ansprechpartner. Reinigung, Wartung und technische
+              Betreuung werden im Serviceumfang konkret festgehalten.
             </p>
-
           </article>
-
 
         </div>
 
-      </div>
+        <p class="region-note">
+          Auch die Aufgaben vor Ort stimmen wir klar ab –
+          etwa Nachfüllen oder tägliche Pflege, soweit diese
+          nicht durch den vereinbarten Service abgedeckt sind.
+        </p>
 
+      </div>
     </section>
 
+    <!-- KOSTEN -->
 
+    <section class="section" id="kosten">
+      <div class="wrap cost-layout">
 
-    <!-- =========================================================
-         BEDARF
-         ========================================================= -->
+        <div>
+          <span class="eyebrow">
+            Kosten &amp; Leistungsumfang
+          </span>
 
-    <section
-      class="section"
-      id="bedarf"
-    >
+          <h2>
+            Sie wissen vorher,<br>
+            was Sie bezahlen.
+          </h2>
 
+          <p class="lead">
+            Die Servicepauschale ist ein Teil der Gesamtkosten.
+            Dazu kommen die vereinbarten Verbrauchsprodukte
+            und gegebenenfalls weitere Leistungen.
+          </p>
+
+          <div class="cost-detail">
+            <strong>Kein eigener Maschinenkauf</strong>
+            <p>
+              Sie müssen den Kaffeevollautomaten für unser
+              Versorgungskonzept nicht selbst kaufen.
+            </p>
+          </div>
+
+          <div class="cost-detail">
+            <strong>Ihr Standort wird einzeln kalkuliert</strong>
+            <p>
+              Gerät, täglicher Verbrauch, Ausstattung,
+              Entfernung und Serviceumfang bestimmen das Angebot.
+            </p>
+          </div>
+
+          <div class="cost-detail">
+            <strong>Alle Bedingungen vor Ihrer Zusage</strong>
+            <p>
+              Produktpreise, Abrechnung, Laufzeit, mögliche
+              Zusatzkosten und Aufgaben vor Ort werden im
+              Angebot festgehalten.
+            </p>
+          </div>
+        </div>
+
+        <div class="cost-card">
+
+          <span class="cost-label">Servicepauschale</span>
+
+          <div class="cost-amount">
+            ab 98 € <small>/ Monat</small>
+          </div>
+
+          <p>
+            Die konkrete Pauschale und die darin enthaltenen
+            Leistungen hängen von Ihrem Standort und dem
+            vereinbarten Konzept ab.
+          </p>
+
+          <div class="cost-detail">
+            <strong>Verbrauchsprodukte: separat</strong>
+            <p>
+              Kaffee und weitere Produkte werden zusätzlich
+              berechnet. Preise und Abrechnung stehen im Angebot.
+            </p>
+          </div>
+
+          <div class="cost-detail">
+            <strong>Vor Ort: Platz &amp; Anschlüsse</strong>
+            <p>
+              Ihr Unternehmen stellt den geeigneten Platz und
+              Strom bereit; Wasserbedarf und Anschlüsse klären
+              wir passend zum Gerät.
+            </p>
+          </div>
+
+          <p class="cost-footnote">
+            Für Unternehmen. Die Anfrage ist kostenlos und
+            unverbindlich; die laufende Versorgung ist kostenpflichtig.
+          </p>
+
+          <a href="#anfrage" class="btn btn-primary">
+            Passende Konditionen anfragen →
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BEDARF UND GETRÄNKEAUSWAHL -->
+
+    <section class="section section-soft" id="bedarf">
       <div class="wrap fit-layout">
-
 
         <div class="fit-copy">
 
-          <span class="eyebrow">
-            Welche Lösung passt?
-          </span>
-
+          <span class="eyebrow">Welche Lösung passt?</span>
 
           <h2>
-            Tassen zählen mehr als Mitarbeiter.
+            Ihr Kaffeebedarf<br>
+            gibt die Richtung vor.
           </h2>
 
-
           <p>
-
-            Zwei Unternehmen mit jeweils 100 Beschäftigten können
-            einen völlig unterschiedlichen Kaffeebedarf haben.
-
-            Entscheidend ist, wie intensiv die Maschine tatsächlich
-            genutzt wird.
-
+            Ob Büro, Werkstatt, Produktion oder Kundenbereich:
+            Entscheidend ist, wie viele Getränke tatsächlich
+            gebraucht werden. Eine feste Mitarbeitergrenze
+            wäre dafür zu pauschal.
           </p>
 
-
-          <a
-            href="#anfrage"
-            class="btn btn-secondary"
-          >
-            Bedarf prüfen lassen
+          <a href="#anfrage" class="btn btn-secondary">
+            Bedarf gemeinsam klären →
           </a>
 
         </div>
 
+        <div>
 
-        <div class="fit-list">
+          <div class="fit-list">
 
+            <div class="fit-item">
+              <span class="fit-number">01</span>
+              <div>
+                <h3>Wie viele Tassen am Tag?</h3>
+                <p>
+                  Eine grobe Schätzung reicht. Zum Beispiel:
+                  20 Kaffeetrinker mit je 2 Tassen ergeben
+                  rund 40 Tassen am Tag. Die tatsächliche
+                  Nutzung klären wir gemeinsam.
+                </p>
+              </div>
+            </div>
 
-          <div class="fit-item">
+            <div class="fit-item">
+              <span class="fit-number">02</span>
+              <div>
+                <h3>Wann wird Kaffee gebraucht?</h3>
+                <p>
+                  Gemeinsame Pausen, Schichtbetrieb und
+                  zusätzliche Besucher helfen uns, die
+                  erforderliche Leistung einzuschätzen.
+                </p>
+              </div>
+            </div>
 
-            <span class="fit-number">
-              01
-            </span>
-
-            <div>
-
-              <h3>
-                Tassen pro Tag
-              </h3>
-
-              <p>
-
-                Die erwartete tägliche Tassenmenge ist einer der
-                wichtigsten Faktoren für die Auswahl des passenden Geräts.
-
-              </p>
-
+            <div class="fit-item">
+              <span class="fit-number">03</span>
+              <div>
+                <h3>Was trinkt Ihr Team gern?</h3>
+                <p>
+                  Die Auswahl und mögliche Bezahlfunktionen
+                  richten sich nach dem Gerät. Wir legen
+                  beides vorab mit Ihnen fest.
+                </p>
+              </div>
             </div>
 
           </div>
 
-
-          <div class="fit-item">
-
-            <span class="fit-number">
-              02
-            </span>
-
-            <div>
-
-              <h3>
-                Stoßzeiten
-              </h3>
-
-              <p>
-
-                Wenn viele Mitarbeiter gleichzeitig Pause machen,
-                muss die Maschine auch in kurzer Zeit zuverlässig
-                ausreichend Getränke ausgeben können.
-
-              </p>
-
-            </div>
-
+          <div
+            class="drink-grid"
+            aria-label="Beispiele für Getränke, je nach Gerät"
+          >
+            <div class="drink-item">Espresso</div>
+            <div class="drink-item">Café Crema</div>
+            <div class="drink-item">Cappuccino</div>
+            <div class="drink-item">Latte Macchiato</div>
+            <div class="drink-item">Milchkaffee</div>
+            <div class="drink-item">Heißwasser</div>
           </div>
-
-
-          <div class="fit-item">
-
-            <span class="fit-number">
-              03
-            </span>
-
-            <div>
-
-              <h3>
-                Getränkeauswahl
-              </h3>
-
-              <p>
-
-                Espresso und Café Crema stellen andere Anforderungen
-                als ein breites Angebot mit Cappuccino,
-                Milchkaffee oder Latte Macchiato.
-
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="fit-item">
-
-            <span class="fit-number">
-              04
-            </span>
-
-            <div>
-
-              <h3>
-                Standort
-              </h3>
-
-              <p>
-
-                Büro, Produktion, Werkstatt, Lager oder Kundenbereich:
-                Auch Aufstellort und Nutzerstruktur beeinflussen
-                die passende Lösung.
-
-              </p>
-
-            </div>
-
-          </div>
-
 
         </div>
-
       </div>
-
     </section>
 
+    <!-- ABLAUF -->
 
-
-    <!-- =========================================================
-         GETRÄNKE
-         ========================================================= -->
-
-    <section class="section section-soft">
-
+    <section class="section">
       <div class="wrap">
-
 
         <div class="section-head">
-
-          <span class="eyebrow">
-            Getränkeauswahl
-          </span>
-
+          <span class="eyebrow">So geht es weiter</span>
 
           <h2>
-            Vom schnellen Kaffee
-            bis zum Cappuccino.
+            Vom ersten Gespräch<br>
+            zum Kaffee im Betrieb.
           </h2>
-
-
-          <p>
-
-            Welche Getränke verfügbar sind, hängt vom eingesetzten
-            Kaffeevollautomaten und seiner Ausstattung ab.
-
-            Gemeinsam legen wir fest, welche Auswahl für Ihr Unternehmen
-            sinnvoll ist.
-
-          </p>
-
         </div>
-
-
-        <div class="drink-grid">
-
-          <div class="drink-item">
-            ☕ Espresso
-          </div>
-
-          <div class="drink-item">
-            ☕ Café Crema
-          </div>
-
-          <div class="drink-item">
-            ☕ Cappuccino
-          </div>
-
-          <div class="drink-item">
-            ☕ Latte Macchiato
-          </div>
-
-          <div class="drink-item">
-            ☕ Milchkaffee
-          </div>
-
-          <div class="drink-item">
-            ☕ Heißwasser / Tee
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         SERVICE
-         ========================================================= -->
-
-    <section
-      class="section"
-      id="service"
-    >
-
-      <div class="wrap">
-
-        <div class="service-box">
-
-
-          <span class="eyebrow">
-            BODA Service
-          </span>
-
-
-          <h2>
-            Die Maschine ist nur
-            ein Teil der Lösung.
-          </h2>
-
-
-          <p>
-
-            Entscheidend ist, dass die Versorgung im Alltag funktioniert.
-            Deshalb stimmen wir Gerät, Verbrauchsprodukte und Serviceumfang
-            individuell auf den Standort ab.
-
-          </p>
-
-
-          <div class="service-grid">
-
-
-            <div class="service-item">
-
-              <strong>
-                Planung
-              </strong>
-
-              <span>
-                Auswahl passend zu Standort,
-                Nutzung und täglichem Bedarf.
-              </span>
-
-            </div>
-
-
-            <div class="service-item">
-
-              <strong>
-                Aufstellung
-              </strong>
-
-              <span>
-                Bereitstellung und Abstimmung
-                der passenden Automatenlösung.
-              </span>
-
-            </div>
-
-
-            <div class="service-item">
-
-              <strong>
-                Versorgung
-              </strong>
-
-              <span>
-                Verbrauchsprodukte und Betreuung
-                nach vereinbartem Konzept.
-              </span>
-
-            </div>
-
-
-            <div class="service-item">
-
-              <strong>
-                Service
-              </strong>
-
-              <span>
-                Persönlicher Ansprechpartner
-                bei Fragen rund um die Lösung.
-              </span>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         ABLAUF
-         ========================================================= -->
-
-    <section class="section section-soft">
-
-      <div class="wrap">
-
-
-        <div class="section-head">
-
-          <span class="eyebrow">
-            So gehen wir vor
-          </span>
-
-
-          <h2>
-            Erst verstehen.
-            Dann empfehlen.
-          </h2>
-
-        </div>
-
 
         <div class="steps">
 
-
           <div class="step">
-
-            <span class="step-number">
-              SCHRITT 01
-            </span>
-
-            <h3>
-              Bedarf klären
-            </h3>
-
+            <span class="step-number">SCHRITT 01</span>
+            <h3>Bedarf nennen</h3>
             <p>
-
-              Wir sprechen über Mitarbeiterzahl,
-              Tassenverbrauch, Getränkeauswahl,
-              Standort und gewünschte Betreuung.
-
+              Sie nennen uns Standort und ungefähren
+              Kaffeebedarf. Wir prüfen, ob eine passende
+              Versorgung möglich ist.
             </p>
-
           </div>
 
-
           <div class="step">
-
-            <span class="step-number">
-              SCHRITT 02
-            </span>
-
-            <h3>
-              Lösung planen
-            </h3>
-
+            <span class="step-number">SCHRITT 02</span>
+            <h3>Angebot besprechen</h3>
             <p>
-
-              Auf Basis dieser Angaben wird geprüft,
-              welche Ausstattung und welcher Serviceumfang
-              für Ihren Betrieb sinnvoll sind.
-
+              Wir stimmen Gerät, Getränkeauswahl, Kosten,
+              Vertragsbedingungen und Betreuung mit Ihnen ab.
             </p>
-
           </div>
 
-
           <div class="step">
-
-            <span class="step-number">
-              SCHRITT 03
-            </span>
-
-            <h3>
-              Angebot erhalten
-            </h3>
-
+            <span class="step-number">SCHRITT 03</span>
+            <h3>Aufstellen &amp; betreuen</h3>
             <p>
-
-              Sie erhalten eine transparente individuelle Lösung
-              mit den konkreten Konditionen für Ihren Standort.
-
+              Nach Ihrer Beauftragung organisieren wir
+              die Aufstellung und übernehmen die
+              vereinbarten Leistungen.
             </p>
-
           </div>
-
 
         </div>
-
       </div>
-
     </section>
 
+    <!-- ANDREAS UND SANDRA -->
 
+    <section class="section section-soft">
+      <div class="wrap personal-layout">
 
-    <!-- =========================================================
-         SNACKS + KAFFEE
-         ========================================================= -->
+        <div class="team-image">
+          <img
+            src="teamfoto.jpg"
+            alt="Andreas und Sandra Boda von BODA Snacks"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
 
-    <section
-      class="section"
-      id="kombi"
-    >
+        <div>
 
-      <div class="wrap">
+          <span class="eyebrow">
+            Ihre Ansprechpartner aus Pforzheim
+          </span>
 
+          <h2>
+            Sie sprechen direkt<br>
+            mit Andreas &amp; Sandra.
+          </h2>
 
-        <div class="combo-box">
+          <p class="lead">
+            Wir führen BODA Snacks gemeinsam und besprechen
+            Ihre Versorgung persönlich mit Ihnen.
+            Sie erfahren von uns, welche Lösung für Ihren
+            Betrieb sinnvoll ist – und ob wir Ihren Standort
+            passend betreuen können.
+          </p>
 
-
-          <div>
-
-            <span class="eyebrow">
-              Mehr als Kaffee
-            </span>
-
-
-            <h2>
-              Snacks + Kaffee.
-              Eine Pausenversorgung.
-            </h2>
-
-
+          <div class="personal-card">
             <p>
-
-              Kaffee muss bei BODA Snacks nicht allein stehen.
-
-              Auf Wunsch planen wir Kaffeevollautomat,
-              Snackautomat und Getränkeversorgung gemeinsam
-              für Ihren Standort.
-
+              Ein gutes Angebot muss im Alltag funktionieren:
+              mit passenden Geräten, nachvollziehbaren Kosten
+              und klar verteilten Aufgaben.
             </p>
 
+            <div class="personal-name">
+              Andreas &amp; Sandra Boda ·
+              <span>BODA Snacks GbR</span>
+            </div>
+          </div>
+
+          <p class="region-note">
+            Für Unternehmen in Pforzheim, im Enzkreis sowie
+            im Raum Karlsruhe, Stuttgart, Böblingen, Calw
+            und Ludwigsburg. Die Betreuung Ihres Standorts
+            prüfen wir persönlich.
+          </p>
+
+          <a href="#anfrage" class="btn btn-secondary">
+            Mit uns sprechen →
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KAFFEE UND SNACKS -->
+
+    <section class="section" id="kombi">
+      <div class="wrap">
+        <div class="combo-box">
+
+          <div>
+            <span class="eyebrow">Die Pause komplett machen</span>
+
+            <h2>
+              Kaffee, Snacks<br>
+              &amp; kalte Getränke.
+            </h2>
+
+            <p>
+              Wenn Sie mehr als Kaffee anbieten möchten,
+              planen wir Snackautomat und Getränkeversorgung
+              gemeinsam mit. So bündeln Sie die Abstimmung
+              bei einem Ansprechpartner.
+            </p>
 
             <div class="combo-actions">
 
               <a
                 href="#anfrage"
                 class="btn btn-primary"
+                data-solution="Kaffee + Snackautomat"
               >
-                Kombilösung anfragen ↗
+                Kaffee + Snacks anfragen →
               </a>
-
 
               <a
                 href="index.html#loesungen"
                 class="btn btn-secondary"
-                style="
-                  color:white;
-                  border-color:rgba(255,255,255,.35);
-                "
+                style="color:white;border-color:rgba(255,255,255,.35)"
               >
                 Snacklösungen ansehen
               </a>
 
             </div>
-
           </div>
-
 
           <div class="combo-points">
-
             <div class="combo-point">
-              ✓ Ein Ansprechpartner für die Pausenversorgung
+              ✓ Gemeinsame Planung für Ihren Standort
             </div>
-
             <div class="combo-point">
-              ✓ Snacks, Getränke und Kaffee gemeinsam planen
+              ✓ Getränke und Sortiment passend zum Team
             </div>
-
             <div class="combo-point">
-              ✓ Serviceumfang passend zum Standort abstimmen
+              ✓ Kosten und Service im Angebot nachvollziehbar
             </div>
-
-            <div class="combo-point">
-              ✓ Versorgung individuell nach Nutzung entwickeln
-            </div>
-
           </div>
 
-
         </div>
-
       </div>
-
     </section>
 
-   <!-- =========================================================
-     PERSONAL / TEAM
-     ========================================================= -->
+    <!-- HÄUFIGE FRAGEN -->
 
-<section class="section">
-
-  <div class="wrap personal-layout">
-
-    <div class="team-image">
-
-      <img
-        src="teamfoto.jpg"
-        alt="Andreas und Sandra Boda von BODA Snacks"
-        loading="lazy"
-      >
-
-    </div>
-
-    <div>
-
-      <span class="eyebrow">
-        Persönlich betreut
-      </span>
-
-      <h2>
-        Keine anonyme Automatenlösung.
-      </h2>
-
-      <p class="lead">
-
-        BODA Snacks wird von Andreas und Sandra Boda geführt.
-
-        Bei der Planung sprechen Sie direkt mit uns.
-        Wir schauen zuerst, ob eine Kaffeelösung für Ihren
-        Standort tatsächlich sinnvoll ist.
-
-      </p>
-
-      <div class="personal-card">
-
-        <p>
-
-          Unser Anspruch ist nicht, Ihnen irgendeinen
-          Kaffeevollautomaten hinzustellen.
-
-          Gerät, Verbrauch und Service müssen zusammenpassen.
-
-          Denn nur dann funktioniert die Versorgung
-          auch dauerhaft im Arbeitsalltag.
-
-        </p>
-
-        <div class="personal-name">
-          Andreas &amp; Sandra ·
-          <span>BODA Snacks</span>
-        </div>
-
-      </div>
-
-      <br>
-
-      <a
-        href="#anfrage"
-        class="btn btn-secondary"
-      >
-        Mit BODA sprechen
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-    <!-- =========================================================
-         FAQ
-         ========================================================= -->
-
-    <section
-      class="section section-soft"
-      id="faq"
-    >
-
+    <section class="section section-soft" id="faq">
       <div class="wrap faq-layout">
 
-
         <div>
-
-          <span class="eyebrow">
-            Häufige Fragen
-          </span>
-
+          <span class="eyebrow">Häufige Fragen</span>
 
           <h2>
-            Kaffeevollautomaten
-            für Unternehmen.
+            Das klären wir<br>
+            vor dem Start.
           </h2>
 
-
           <p class="lead">
-
-            Die wichtigsten Punkte vor einer
-            unverbindlichen Beratung.
-
+            Die wichtigsten Antworten zu Kosten,
+            Nutzung und Betreuung.
           </p>
-
         </div>
-
 
         <div class="faq-list">
 
-
-          <details open>
-
+          <details>
             <summary>
-              Was kostet eine Kaffeelösung von BODA Snacks?
+              Ist für 98 € im Monat alles enthalten?
             </summary>
-
             <p>
-
-              Die Servicepauschale beginnt ab 98 € im Monat.
-
-              Die konkrete Kondition hängt unter anderem von
-              Gerät, Verbrauch, Ausstattung, Standort und
-              Serviceumfang ab.
-
-              Produkte beziehungsweise Verbrauchsmaterialien
-              werden separat kalkuliert und im individuellen
-              Angebot transparent ausgewiesen.
-
+              Nein. Die Servicepauschale beginnt ab 98 € im
+              Monat und hängt von Gerät, Standort, Nutzung
+              und Leistungsumfang ab. Kaffee und weitere
+              Verbrauchsprodukte werden separat berechnet.
+              Auch mögliche Zusatzleistungen werden im
+              Angebot ausgewiesen.
             </p>
-
           </details>
-
 
           <details>
-
             <summary>
-              Müssen wir den Kaffeevollautomaten kaufen?
+              Müssen wir die Maschine kaufen oder langfristig mieten?
             </summary>
-
             <p>
-
-              Bei unserem Versorgungskonzept ist kein eigener
-              Maschinenkauf durch Ihr Unternehmen erforderlich.
-
-              Die konkreten Bedingungen erhalten Sie vor einer
-              Beauftragung in Ihrem individuellen Angebot.
-
+              Ein eigener Maschinenkauf ist bei unserem
+              Versorgungskonzept nicht erforderlich.
+              Vertragsmodell, Laufzeit und Kündigungsbedingungen
+              werden im individuellen Angebot festgelegt.
+              Mit Ihrer Anfrage gehen Sie noch keinen Vertrag ein.
             </p>
-
           </details>
-
 
           <details>
-
             <summary>
-              Ab wie vielen Mitarbeitern lohnt sich ein Kaffeevollautomat?
+              Passt die Lösung auch für ein kleineres Team?
             </summary>
-
             <p>
-
-              Eine feste Mitarbeitergrenze wäre zu pauschal.
-
-              Für Kaffee ist vor allem die erwartete Tassenmenge wichtig.
-
-              Auch Besucher, Schichtbetrieb und Stoßzeiten
-              können den tatsächlichen Bedarf deutlich verändern.
-
+              Das prüfen wir anhand der erwarteten Tassenmenge,
+              des Standorts und des gewünschten Services.
+              Eine bestimmte Mitarbeiterzahl allein ist keine
+              Zusage. Wenn Aufwand und Nutzung nicht
+              zusammenpassen, sprechen wir das offen an.
             </p>
-
           </details>
-
 
           <details>
-
             <summary>
-              Welche Getränke sind möglich?
+              Wer füllt nach, reinigt und hilft bei Störungen?
             </summary>
-
             <p>
-
-              Je nach Gerät sind unter anderem Espresso,
-              Café Crema, Cappuccino, Latte Macchiato,
-              Milchkaffee und Heißwasser möglich.
-
-              Die genaue Auswahl wird vorab gemeinsam festgelegt.
-
+              Wir legen vorab fest, welche Versorgung,
+              Reinigung, Wartung und technische Betreuung
+              BODA übernimmt und welche Aufgaben vor Ort
+              verbleiben. Auch Intervalle und das Vorgehen
+              bei einer Störung gehören zur Abstimmung.
             </p>
-
           </details>
-
 
           <details>
-
             <summary>
-              Ist Kartenzahlung oder kontaktloses Bezahlen möglich?
+              Wer bezahlt den Kaffee – Unternehmen oder Nutzer?
             </summary>
-
             <p>
-
-              Das hängt vom eingesetzten Automaten und seiner
-              Ausstattung ab.
-
-              Wenn eine Bezahlfunktion benötigt wird,
-              berücksichtigen wir das bei der Planung.
-
+              Wir besprechen mit Ihnen, wie die Bezüge
+              abgerechnet werden sollen. Eine Bezahlfunktion
+              und die möglichen Zahlungsarten hängen vom
+              Gerät und seiner Ausstattung ab und werden
+              im Angebot festgehalten.
             </p>
-
           </details>
-
 
           <details>
-
             <summary>
-              Können wir Kaffee und Snackautomaten kombinieren?
+              Welche Regionen betreuen Sie?
             </summary>
-
             <p>
-
-              Ja.
-
-              Snack-, Getränke- und Kaffeelösungen können
-              gemeinsam geplant werden.
-
-              Das ist besonders interessant, wenn Sie die
-              gesamte Pausenversorgung Ihres Betriebs
-              möglichst einfach organisieren möchten.
-
+              Unser Ausgangspunkt ist Pforzheim.
+              Wir prüfen Standorte im Enzkreis sowie
+              im Raum Karlsruhe, Stuttgart, Böblingen,
+              Calw und Ludwigsburg. Entfernung, Nutzung
+              und Servicebedarf entscheiden darüber,
+              ob wir eine sinnvolle Betreuung anbieten können.
             </p>
-
           </details>
-
 
         </div>
-
       </div>
-
     </section>
 
+    <!-- ANFRAGE -->
 
-
-    <!-- =========================================================
-         KONTAKT
-         ========================================================= -->
-
-    <section
-      class="section section-contact"
-      id="anfrage"
-    >
-
+    <section class="section section-contact" id="anfrage">
       <div class="wrap contact-layout">
 
+        <div
+          id="anfrage-status"
+          class="request-success"
+          role="status"
+          tabindex="-1"
+        >
+          <h3>Vielen Dank für Ihre Kaffee-Anfrage.</h3>
+          <p>
+            Wir melden uns persönlich bei Ihnen und besprechen
+            die nächsten Schritte. Sie erreichen uns auch unter
+            <a href="tel:+4972317703719">07231 7703719</a>.
+          </p>
+        </div>
 
         <div>
 
-          <span class="eyebrow">
-            Kaffeelösung anfragen
-          </span>
-
+          <span class="eyebrow">Der erste Schritt</span>
 
           <h2>
-            Wie sieht Ihr Bedarf aus?
+            Passt unsere Kaffeelösung<br>
+            zu Ihrem Betrieb?
           </h2>
 
-
           <p class="lead">
-
-            Ein paar Eckdaten reichen für den ersten Schritt.
-
-            Wir melden uns persönlich und besprechen,
-            welche Lösung für Ihren Betrieb infrage kommt.
-
+            Standort und Kontaktdaten reichen für den Anfang.
+            Wenn Sie Ihren Verbrauch noch nicht kennen,
+            klären wir ihn gemeinsam.
           </p>
 
+          <ul class="request-points">
+            <li>
+              Wir prüfen, ob wir Ihren Standort betreuen können.
+            </li>
+            <li>
+              Wir besprechen Gerät, Getränkeauswahl und Service.
+            </li>
+            <li>
+              Sie erhalten die konkreten Konditionen vor
+              einer Beauftragung.
+            </li>
+          </ul>
 
           <div class="price-note">
-
-            <strong>
-              Servicepauschale ab 98 € im Monat
-            </strong>
-
-            Die konkrete Kondition ergibt sich aus
-            Nutzung, Ausstattung und gewünschtem Serviceumfang.
-
-            Produkte und Verbrauchsmaterialien werden
-            separat kalkuliert.
-
+            <strong>Servicepauschale ab 98 € im Monat</strong>
+            Verbrauchsprodukte separat. Die konkrete Kondition
+            hängt von Gerät, Standort, Nutzung und Serviceumfang ab.
           </div>
-
 
           <div class="contact-links">
 
-
-            <a
-              href="tel:+4972317703719"
-              class="contact-link"
-            >
-
-              <span>
-                Telefon
-              </span>
-
-              <strong>
-                07231 7703719
-              </strong>
-
+            <a href="tel:+4972317703719" class="contact-link">
+              <span>Lieber direkt sprechen?</span>
+              <strong>07231 7703719</strong>
             </a>
-
 
             <a
               href="mailto:kontakt@boda-snacks.de"
               class="contact-link"
             >
-
-              <span>
-                E-Mail
-              </span>
-
-              <strong>
-                kontakt@boda-snacks.de
-              </strong>
-
+              <span>E-Mail</span>
+              <strong>kontakt@boda-snacks.de</strong>
             </a>
 
-
           </div>
-
         </div>
 
-
-        <!-- FORMULAR -->
-
         <form
+          id="coffeeForm"
           class="coffee-form"
           action="https://formsubmit.co/kontakt@boda-snacks.de"
           method="POST"
         >
 
-
-          <input
-            type="hidden"
-            name="_captcha"
-            value="false"
-          >
-
+          <input type="hidden" name="_captcha" value="false">
 
           <input
             type="hidden"
@@ -3271,235 +2106,149 @@
             value="Neue Kaffee-Anfrage über boda-snacks.de"
           >
 
-
           <input
             type="hidden"
             name="_next"
-            value="https://boda-snacks.de/danke.html"
+            value="https://boda-snacks.de/kaffeevollautomat-fuer-unternehmen.html#anfrage-status"
           >
 
+          <input type="hidden" name="_template" value="table">
 
-          <input
-            type="hidden"
-            name="_template"
-            value="table"
-          >
+          <div class="honeypot" aria-hidden="true">
+            <label>
+              Dieses Feld bitte leer lassen
+              <input
+                type="text"
+                name="_honey"
+                tabindex="-1"
+                autocomplete="off"
+              >
+            </label>
+          </div>
 
+          <p class="form-intro">
+            <strong>Unverbindlich anfragen.</strong><br>
+            Nur die mit * markierten Angaben sind erforderlich.
+          </p>
 
           <div class="form-grid">
 
-
             <div class="form-field">
-
-              <label for="name">
-                Ihr Name *
-              </label>
-
+              <label for="name">Ihr Name *</label>
               <input
                 id="name"
                 name="Name"
                 type="text"
                 autocomplete="name"
+                maxlength="120"
                 required
               >
-
             </div>
 
-
             <div class="form-field">
-
-              <label for="company">
-                Unternehmen
-              </label>
-
-              <input
-                id="company"
-                name="Unternehmen"
-                type="text"
-                autocomplete="organization"
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="email">
-                E-Mail *
-              </label>
-
+              <label for="email">E-Mail *</label>
               <input
                 id="email"
-                name="E-Mail"
+                name="email"
                 type="email"
                 autocomplete="email"
+                maxlength="254"
                 required
               >
-
             </div>
 
-
             <div class="form-field">
-
-              <label for="phone">
-                Telefon
-              </label>
-
-              <input
-                id="phone"
-                name="Telefon"
-                type="tel"
-                autocomplete="tel"
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="place">
-                PLZ / Ort *
-              </label>
-
+              <label for="place">PLZ / Ort des Standorts *</label>
               <input
                 id="place"
                 name="Standort"
                 type="text"
                 placeholder="z. B. 75175 Pforzheim"
+                maxlength="150"
                 required
               >
-
             </div>
 
-
             <div class="form-field">
-
-              <label for="people">
-                Personen am Standort
-              </label>
-
-              <select
-                id="people"
-                name="Personen am Standort"
-              >
-
-                <option value="">
-                  Bitte auswählen
-                </option>
-
-                <option>
-                  bis 20
-                </option>
-
-                <option>
-                  21–49
-                </option>
-
-                <option>
-                  50–99
-                </option>
-
-                <option>
-                  100–249
-                </option>
-
-                <option>
-                  250+
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="cups">
-                Tassen pro Tag
-              </label>
-
-              <select
-                id="cups"
-                name="Tassen pro Tag"
-              >
-
-                <option value="">
+              <label for="cups">Tassen pro Tag (optional)</label>
+              <select id="cups" name="Tassen pro Tag">
+                <option value="Noch nicht bekannt">
                   Noch nicht bekannt
                 </option>
-
-                <option>
-                  bis 20
-                </option>
-
-                <option>
-                  21–50
-                </option>
-
-                <option>
-                  51–100
-                </option>
-
-                <option>
-                  101–200
-                </option>
-
-                <option>
-                  über 200
-                </option>
-
+                <option>bis 20</option>
+                <option>21–50</option>
+                <option>51–100</option>
+                <option>101–200</option>
+                <option>über 200</option>
               </select>
-
             </div>
-
-
-            <div class="form-field">
-
-              <label for="solution">
-                Gewünschte Lösung
-              </label>
-
-              <select
-                id="solution"
-                name="Gewünschte Lösung"
-              >
-
-                <option>
-                  Kaffeevollautomat
-                </option>
-
-                <option>
-                  Kaffee + Snackautomat
-                </option>
-
-                <option>
-                  Beratung gewünscht
-                </option>
-
-              </select>
-
-            </div>
-
 
             <div class="form-field full">
-
-              <label for="message">
-                Was ist Ihnen wichtig?
+              <label for="solution">
+                Gewünschte Lösung (optional)
               </label>
-
-              <textarea
-                id="message"
-                name="Nachricht"
-                placeholder="Zum Beispiel Getränkeauswahl, Schichtbetrieb, Bezahlfunktion oder gewünschter Service."
-              ></textarea>
-
+              <select id="solution" name="Gewünschte Lösung">
+                <option>Kaffeevollautomat</option>
+                <option>Kaffee + Snackautomat</option>
+                <option>Beratung gewünscht</option>
+              </select>
             </div>
-
 
           </div>
 
+          <details class="form-optional">
+            <summary>Weitere Angaben ergänzen (optional)</summary>
+
+            <div class="form-grid">
+
+              <div class="form-field">
+                <label for="company">Unternehmen</label>
+                <input
+                  id="company"
+                  name="Unternehmen"
+                  type="text"
+                  autocomplete="organization"
+                  maxlength="180"
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="phone">Telefon für einen Rückruf</label>
+                <input
+                  id="phone"
+                  name="Telefon"
+                  type="tel"
+                  autocomplete="tel"
+                  maxlength="60"
+                >
+              </div>
+
+              <div class="form-field full">
+                <label for="people">Personen am Standort</label>
+                <select id="people" name="Personen am Standort">
+                  <option value="">Bitte auswählen</option>
+                  <option>bis 20</option>
+                  <option>21–49</option>
+                  <option>50–99</option>
+                  <option>100–249</option>
+                  <option>250+</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label for="message">Ihre Wünsche</label>
+                <textarea
+                  id="message"
+                  name="Nachricht"
+                  maxlength="5000"
+                  placeholder="Zum Beispiel Getränkeauswahl, Schichtbetrieb, vorhandene Maschine oder gewünschter Service."
+                ></textarea>
+              </div>
+
+            </div>
+          </details>
 
           <label class="form-privacy">
-
             <input
               type="checkbox"
               name="Datenschutz akzeptiert"
@@ -3508,333 +2257,246 @@
             >
 
             <span>
-
               Ich habe die
-
-              <a href="datenschutz.html">
-                Datenschutzerklärung
-              </a>
-
+              <a
+                href="datenschutz.html"
+                target="_blank"
+                rel="noopener"
+              >Datenschutzerklärung</a>
               gelesen. Meine Angaben werden zur Bearbeitung
-              der Anfrage übermittelt. *
-
+              meiner Anfrage über den Formulardienst
+              FormSubmit übermittelt. *
             </span>
-
           </label>
-
 
           <button
             type="submit"
             class="btn btn-primary"
-            style="width:100%;"
+            style="width:100%"
           >
-            Kaffeelösung unverbindlich anfragen ↗
+            Kaffeelösung unverbindlich anfragen →
           </button>
 
+          <p class="form-reassurance">
+            Die Anfrage ist kostenlos. Sie bestellen damit
+            noch keinen Automaten und schließen keinen Vertrag ab.
+          </p>
 
         </form>
 
-
       </div>
-
     </section>
 
-
-
-    <!-- =========================================================
-         INTERNE LINKS
-         ========================================================= -->
+    <!-- WEITERE ANGEBOTE -->
 
     <section class="section">
-
       <div class="wrap">
 
-
-        <div class="section-head">
-
-          <span class="eyebrow">
-            Mehr von BODA Snacks
-          </span>
-
-
-          <h2>
-            Die komplette
-            Pausenversorgung mitdenken.
-          </h2>
-
-        </div>
-
+        <span class="eyebrow">Mehr von BODA Snacks</span>
+        <h2>Ihre Pausenversorgung weiterdenken.</h2>
 
         <div class="related-grid">
 
-
-          <a
-            href="index.html#loesungen"
-            class="related-card"
-          >
-
-            <h3>
-              Snack- &amp; Getränkeautomaten
-            </h3>
-
-            <p>
-
-              Snacks und gekühlte Getränke direkt im Betrieb –
-              inklusive vereinbarter Betreuung.
-
-            </p>
-
-            <span class="related-link">
-              Lösungen ansehen →
-            </span>
-
+          <a href="index.html#loesungen" class="related-card">
+            <h3>Snacks &amp; Getränke</h3>
+            <p>Die passende Versorgung direkt im Betrieb.</p>
+            <span class="related-link">Lösungen ansehen →</span>
           </a>
-
 
           <a
             href="kombi-snackautomat-fuer-unternehmen-mieten.html"
             class="related-card"
           >
-
-            <h3>
-              Kombi-Snackautomat
-            </h3>
-
-            <p>
-
-              Eine kompakte Lösung für Snacks und Getränke
-              an einem gemeinsamen Standort.
-
-            </p>
-
-            <span class="related-link">
-              Mehr erfahren →
-            </span>
-
+            <h3>Kombi-Snackautomat</h3>
+            <p>Snacks und gekühlte Getränke in einem Gerät.</p>
+            <span class="related-link">Mehr erfahren →</span>
           </a>
-
 
           <a
             href="was-kostet-ein-snackautomat.html"
             class="related-card"
           >
-
-            <h3>
-              Kosten &amp; Planung
-            </h3>
-
+            <h3>Kosten &amp; Planung</h3>
             <p>
-
-              Welche Faktoren bei Automatenversorgung,
-              Service und Ausstattung eine Rolle spielen.
-
+              Was die Kalkulation einer Automatenversorgung beeinflusst.
             </p>
-
-            <span class="related-link">
-              Kosten ansehen →
-            </span>
-
+            <span class="related-link">Kosten ansehen →</span>
           </a>
 
-
         </div>
-
       </div>
-
     </section>
-
 
   </main>
 
-
-
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
+  <!-- FUSSBEREICH -->
 
   <footer class="site-footer">
-
     <div class="wrap">
-
 
       <div class="footer-grid">
 
-
         <div class="footer-brand">
 
-          <a
-            href="index.html"
-            class="brand"
-          >
-
+          <a href="index.html" class="brand">
             <span class="brand-main">
               BODA <span class="snacks">SNACKS</span>
             </span>
-
           </a>
 
-
           <p>
-
             Du hast den Hunger, wir die Snacks.<br>
-
-            Snack-, Getränke- und Kaffeelösungen
-            für Unternehmen.
-
+            Snack-, Getränke- und Kaffeelösungen für Unternehmen.
           </p>
 
         </div>
 
-
         <div>
-
-          <div class="footer-title">
-            BODA Snacks
-          </div>
-
+          <div class="footer-title">BODA Snacks</div>
 
           <div class="footer-links">
-
-            <a href="index.html">
-              Startseite
-            </a>
-
-            <a href="index.html#loesungen">
-              Unsere Lösungen
-            </a>
-
+            <a href="index.html">Startseite</a>
+            <a href="index.html#loesungen">Unsere Lösungen</a>
             <a href="kaffeevollautomat-fuer-unternehmen.html">
               Kaffee für Unternehmen
             </a>
-
             <a href="automatenservice-pforzheim.html">
               Automatenservice
             </a>
-
           </div>
-
         </div>
 
-
         <div>
-
-          <div class="footer-title">
-            Kontakt
-          </div>
-
+          <div class="footer-title">Kontakt</div>
 
           <div class="footer-links">
-
-            <a href="tel:+4972317703719">
-              07231 7703719
-            </a>
-
+            <a href="tel:+4972317703719">07231 7703719</a>
             <a href="mailto:kontakt@boda-snacks.de">
               kontakt@boda-snacks.de
             </a>
-
-            <a href="impressum.html">
-              Impressum
-            </a>
-
-            <a href="datenschutz.html">
-              Datenschutz
-            </a>
-
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
           </div>
-
         </div>
 
-
       </div>
-
 
       <div class="footer-bottom">
-
-        <span>
-          © 2026 BODA Snacks GbR
-        </span>
-
+        <span>© 2026 BODA Snacks GbR</span>
 
         <div class="footer-bottom-links">
-
-          <a href="impressum.html">
-            Impressum
-          </a>
-
-          <a href="datenschutz.html">
-            Datenschutz
-          </a>
-
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
         </div>
-
       </div>
 
-
     </div>
-
   </footer>
 
-
-
-  <!-- =========================================================
-       MOBILE MENU
-       ========================================================= -->
+  <!-- FUNKTIONEN -->
 
   <script>
+    (() => {
+      "use strict";
 
-    const menuToggle =
-      document.getElementById("menuToggle");
+      /* Mobiles Menü */
 
-    const mainNav =
-      document.getElementById("mainNav");
+      const menuToggle = document.getElementById("menuToggle");
+      const mainNav = document.getElementById("mainNav");
 
+      function setMenu(open) {
+        mainNav.classList.toggle("open", open);
 
-    if(menuToggle && mainNav){
+        menuToggle.setAttribute(
+          "aria-expanded",
+          String(open)
+        );
 
-      menuToggle.addEventListener(
-        "click",
-        function(){
+        menuToggle.setAttribute(
+          "aria-label",
+          open ? "Menü schließen" : "Menü öffnen"
+        );
+      }
 
-          const open =
-            mainNav.classList.toggle("open");
-
-          menuToggle.setAttribute(
-            "aria-expanded",
-            open ? "true" : "false"
-          );
-
-        }
-      );
-
-
-      mainNav
-        .querySelectorAll("a")
-        .forEach(function(link){
-
-          link.addEventListener(
-            "click",
-            function(){
-
-              mainNav
-                .classList
-                .remove("open");
-
-              menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-              );
-
-            }
-          );
-
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener("click", () => {
+          setMenu(!mainNav.classList.contains("open"));
         });
 
-    }
+        mainNav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            setMenu(false);
+          });
+        });
 
+        document.addEventListener("keydown", event => {
+          if (
+            event.key === "Escape" &&
+            mainNav.classList.contains("open")
+          ) {
+            setMenu(false);
+            menuToggle.focus();
+          }
+        });
+      }
+
+      /* Kombi-Auswahl direkt ins Formular übernehmen */
+
+      const solution = document.getElementById("solution");
+
+      document.querySelectorAll("[data-solution]").forEach(link => {
+        link.addEventListener("click", () => {
+          solution.value = link.dataset.solution;
+        });
+      });
+
+      /* Video mit Pause-Funktion und reduzierter Bewegung */
+
+      const video = document.getElementById("coffeeVideo");
+      const videoToggle = document.getElementById("videoToggle");
+
+      if (video && videoToggle) {
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        );
+
+        function updateVideoButton() {
+          videoToggle.textContent = video.paused
+            ? "Video abspielen"
+            : "Video pausieren";
+        }
+
+        videoToggle.hidden = false;
+
+        video.addEventListener("play", updateVideoButton);
+        video.addEventListener("pause", updateVideoButton);
+
+        videoToggle.addEventListener("click", () => {
+          if (video.paused) {
+            video.play().catch(updateVideoButton);
+          } else {
+            video.pause();
+          }
+        });
+
+        video.addEventListener("error", () => {
+          videoToggle.hidden = true;
+        });
+
+        reducedMotion.addEventListener("change", event => {
+          if (event.matches) {
+            video.pause();
+          }
+        });
+
+        if (!reducedMotion.matches) {
+          video.play().catch(updateVideoButton);
+        }
+
+        updateVideoButton();
+      }
+    })();
   </script>
 
-
 </body>
-
 </html>
