@@ -956,6 +956,122 @@ p{color:var(--muted)}
 }
 
 
+/* KAFFEE CROSSSELL */
+
+.coffee-crosslink{
+  background:#fff;
+}
+
+.coffee-card{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:52px;
+  align-items:center;
+  padding:52px;
+  background:linear-gradient(135deg,#fff 0%,#f7f7f4 100%);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.coffee-card:before{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  right:-120px;
+  top:-135px;
+  border-radius:50%;
+  background:rgba(219,184,110,.20);
+  pointer-events:none;
+}
+
+.coffee-copy,
+.coffee-points{
+  position:relative;
+  z-index:1;
+}
+
+.coffee-copy h2{
+  max-width:760px;
+  margin-bottom:18px;
+}
+
+.coffee-copy>p{
+  max-width:700px;
+  margin:0 0 26px;
+  font-size:1.03rem;
+}
+
+.coffee-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.coffee-points{
+  padding:28px;
+  background:var(--soft-green);
+  border:1px solid #d8e3d8;
+  border-radius:16px;
+}
+
+.coffee-point{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:11px;
+  padding:15px 0;
+  border-bottom:1px solid #d3ddd3;
+}
+
+.coffee-point:first-child{padding-top:0}
+
+.coffee-point:last-child{
+  padding-bottom:0;
+  border-bottom:0;
+}
+
+.coffee-point-icon{
+  width:25px;
+  height:25px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#fff;
+  color:var(--positive);
+  font-weight:900;
+}
+
+.coffee-point strong{
+  display:block;
+  margin-bottom:2px;
+  color:var(--ink);
+}
+
+.coffee-point span{
+  display:block;
+  color:var(--muted);
+  font-size:.88rem;
+  line-height:1.5;
+}
+
+@media(max-width:850px){
+  .coffee-card{
+    grid-template-columns:1fr;
+    gap:30px;
+    padding:38px 30px;
+  }
+}
+
+@media(max-width:650px){
+  .coffee-card{padding:30px 22px}
+  .coffee-actions{display:grid}
+  .coffee-actions .btn{width:100%}
+}
+
+
 /* TEAM */
 
 .team-card{
@@ -1449,6 +1565,10 @@ Für wen geeignet?
 
 <a href="#service">
 Service
+</a>
+
+<a href="#kaffee">
+Kaffee
 </a>
 
 <a href="#faq">
@@ -2915,6 +3035,83 @@ mit den vereinbarten Leistungen und Konditionen.
 
 
 
+<section class="section coffee-crosslink" id="kaffee">
+
+<div class="wrap">
+
+<div class="coffee-card">
+
+<div class="coffee-copy">
+
+<span class="eyebrow">
+Kaffee für Unternehmen
+</span>
+
+<h2>
+Snacks für die Pause.<br>
+Und dazu den passenden Kaffee.
+</h2>
+
+<p>
+Sie möchten Ihre Snack- und Getränkeversorgung in Pforzheim um Kaffee ergänzen?
+BODA Snacks bietet auch Kaffeelösungen für Unternehmen. Gemeinsam stimmen wir
+Gerät, Getränkeauswahl und Service auf Ihren Standort und Ihr Team ab.
+</p>
+
+<div class="coffee-actions">
+
+<a
+  href="https://boda-snacks.de/kaffeevollautomat-fuer-unternehmen.html"
+  class="btn btn-primary"
+  aria-label="BODA Kaffeelösungen für Unternehmen öffnen"
+>
+Kaffeelösungen entdecken ↗
+</a>
+
+<a href="#standort-check" class="btn btn-secondary">
+Snack &amp; Kaffee gemeinsam prüfen
+</a>
+
+</div>
+
+</div>
+
+<div class="coffee-points">
+
+<div class="coffee-point">
+<span class="coffee-point-icon">✓</span>
+<div>
+<strong>Passend zur Teamgröße</strong>
+<span>Kaffeelösung und Versorgung werden auf den tatsächlichen Bedarf abgestimmt.</span>
+</div>
+</div>
+
+<div class="coffee-point">
+<span class="coffee-point-icon">✓</span>
+<div>
+<strong>Snack &amp; Kaffee kombinierbar</strong>
+<span>Eine gemeinsame Versorgung kann passend zu Standort und Nutzung geplant werden.</span>
+</div>
+</div>
+
+<div class="coffee-point">
+<span class="coffee-point-icon">✓</span>
+<div>
+<strong>Regional betreut</strong>
+<span>Persönliche Abstimmung durch BODA Snacks aus Pforzheim.</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
 <section class="section">
 
 <div class="wrap">
@@ -3381,6 +3578,10 @@ Startseite
 
 <a href="index.html#loesungen">
 Unsere Lösungen
+</a>
+
+<a href="https://boda-snacks.de/kaffeevollautomat-fuer-unternehmen.html">
+Kaffee für Unternehmen
 </a>
 
 <a href="was-kostet-ein-snackautomat.html">
