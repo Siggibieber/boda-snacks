@@ -1,3665 +1,1701 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<title>BODA Snackshop | Smart, Premium & Business Box</title>
 
-  <!--
-    TESTSTAND:
-    Erst beim echten Verkaufsstart und nach Prüfung
-    aller Pflichtangaben auf index,follow ändern.
-  -->
-  <meta
-    name="robots"
-    content="noindex, nofollow"
-  >
+<meta
+  name="description"
+  content="BODA Snackshop mit 31 Snacks zur Auswahl: BODA Smart Box mit 12 Snacks für 29,95 €, BODA Premium Box mit 15 Snacks für 34,95 € und BODA Business Box mit 18 Snacks für 39,95 €."
+>
 
-  <title>
-    BODA Snackshop | Wunschbox & BODA Box
-  </title>
+<style>
 
-  <meta
-    name="description"
-    content="BODA Snackshop – Wunschbox mit 18 Snacks zur Auswahl oder von BODA zusammengestellte BODA Box. Klein oder groß. 5,99 € Versand, ab 59 € Warenwert versandkostenfrei."
-  >
+:root {
+  --black:#161616;
+  --black-soft:#262626;
 
+  --gold:#caa13a;
+  --gold-dark:#a88022;
+  --gold-soft:#f7f0dc;
 
-  <style>
+  --green:#25806e;
+  --green-dark:#196354;
+  --green-soft:#e9f5f1;
 
-    /* =========================================================
-       BODA SNACKSHOP
-       ALLES IN EINER HTML-DATEI
-    ========================================================= */
+  --cream:#faf8f2;
+  --cream-dark:#f2eee4;
 
-    :root {
+  --white:#ffffff;
 
-      --black: #161616;
-      --black-soft: #262626;
+  --text:#202424;
+  --muted:#697171;
+  --line:#e4e4df;
 
-      --gold: #caa13a;
-      --gold-dark: #a88022;
-      --gold-soft: #f7f0dc;
+  --danger:#a24444;
 
-      --green: #25806e;
-      --green-dark: #196354;
-      --green-soft: #e9f5f1;
+  --shadow:0 18px 50px rgba(0,0,0,.08);
+  --shadow-small:0 8px 28px rgba(0,0,0,.06);
 
-      --cream: #faf8f2;
-      --cream-dark: #f2eee4;
-
-      --white: #ffffff;
-
-      --text: #202424;
-      --muted: #697171;
-
-      --line: #e4e4df;
-
-      --danger: #a24444;
-
-      --shadow:
-        0 18px 50px
-        rgba(0, 0, 0, 0.08);
-
-      --shadow-small:
-        0 8px 28px
-        rgba(0, 0, 0, 0.06);
-
-      --radius: 22px;
-    }
-
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
-    * {
-      box-sizing: border-box;
-    }
-
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
-    body {
-
-      margin: 0;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      color:
-        var(--text);
-
-      background:
-        var(--white);
-
-      line-height:
-        1.55;
-
-      -webkit-font-smoothing:
-        antialiased;
-    }
-
-
-    body.locked {
-      overflow: hidden;
-    }
-
-
-    a {
-
-      color: inherit;
-
-      text-decoration: none;
-    }
-
-
-    button,
-    input,
-    select,
-    textarea {
-
-      font:
-        inherit;
-    }
-
-
-    button {
-      cursor: pointer;
-    }
-
-
-    button:disabled {
-
-      cursor:
-        not-allowed;
-
-      opacity:
-        0.55;
-    }
-
-
-    [hidden] {
-      display: none !important;
-    }
-
-
-    .container {
-
-      width:
-        min(
-          1180px,
-          calc(100% - 40px)
-        );
-
-      margin:
-        0 auto;
-    }
-
-
-    section {
-
-      padding:
-        78px 0;
-    }
-
-
-    /* =========================================================
-       SKIP LINK
-    ========================================================= */
-
-    .skip-link {
-
-      position:
-        fixed;
-
-      left:
-        15px;
-
-      top:
-        -100px;
-
-      z-index:
-        9999;
-
-      padding:
-        12px 16px;
-
-      border-radius:
-        8px;
-
-      background:
-        var(--black);
-
-      color:
-        var(--white);
-
-      font-weight:
-        800;
-    }
-
-
-    .skip-link:focus {
-
-      top:
-        15px;
-    }
-
-
-    /* =========================================================
-       ENDLOS-LAUFBAND
-    ========================================================= */
-
-    .top-marquee {
-
-      width:
-        100%;
-
-      overflow:
-        hidden;
-
-      background:
-        var(--black);
-
-      color:
-        var(--white);
-
-      font-size:
-        11px;
-
-      font-weight:
-        800;
-
-      letter-spacing:
-        0.04em;
-    }
-
-
-    .top-marquee-track {
-
-      display:
-        flex;
-
-      width:
-        max-content;
-
-      animation:
-        boda-marquee
-        30s
-        linear
-        infinite;
-
-      will-change:
-        transform;
-    }
-
-
-    .top-marquee-group {
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      flex-shrink:
-        0;
-
-      gap:
-        36px;
-
-      padding:
-        9px 18px;
-    }
-
-
-    .top-marquee-group span {
-
-      white-space:
-        nowrap;
-    }
-
-
-    .top-marquee-group span::before {
-
-      content:
-        "•";
-
-      margin-right:
-        12px;
-
-      color:
-        var(--gold);
-    }
-
-
-    @keyframes boda-marquee {
-
-      from {
-
-        transform:
-          translateX(0);
-
-      }
-
-      to {
-
-        transform:
-          translateX(-50%);
-
-      }
-
-    }
-
-
-    /* =========================================================
-       HEADER
-    ========================================================= */
-
-    .site-header {
-
-      position:
-        sticky;
-
-      top:
-        0;
-
-      z-index:
-        100;
-
-      background:
-        rgba(255, 255, 255, 0.96);
-
-      backdrop-filter:
-        blur(12px);
-
-      border-bottom:
-        1px solid
-        var(--line);
-    }
-
-
-    .header-row {
-
-      min-height:
-        82px;
-
-      display:
-        grid;
-
-      grid-template-columns:
-        auto
-        minmax(0, 1fr)
-        auto;
-
-      align-items:
-        center;
-
-      gap:
-        30px;
-    }
-
-
-    /* =========================================================
-       BODA BRAND
-       WIE AUF DEN ANDEREN BODA-SEITEN
-    ========================================================= */
-
-    .brand {
-
-      display:
-        flex;
-
-      flex-direction:
-        column;
-
-      text-decoration:
-        none;
-
-      line-height:
-        1;
-    }
-
-
-    .brand-main {
-
-      color:
-        var(--black);
-
-      font-size:
-        1.25rem;
-
-      font-weight:
-        800;
-
-      letter-spacing:
-        0.02em;
-
-      white-space:
-        nowrap;
-    }
-
-
-    .brand-main .snacks {
-
-      color:
-        var(--gold);
-    }
-
-
-    .brand-sub {
-
-      margin-top:
-        8px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        0.78rem;
-
-      font-weight:
-        600;
-    }
-
-
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
-
-    .main-nav {
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      gap:
-        28px;
-    }
-
-
-    .main-nav a {
-
-      position:
-        relative;
-
-      padding:
-        9px 0;
-
-      font-size:
-        0.94rem;
-
-      font-weight:
-        700;
-    }
-
-
-    .main-nav a:hover {
-
-      color:
-        var(--green);
-    }
-
-
-    /* =========================================================
-       WARENKORB BUTTON
-    ========================================================= */
-
-    .cart-btn {
-
-      border:
-        0;
-
-      border-radius:
-        11px;
-
-      padding:
-        12px 16px;
-
-      background:
-        var(--black);
-
-      color:
-        var(--white);
-
-      font-weight:
-        900;
-
-      white-space:
-        nowrap;
-
-      transition:
-        0.2s ease;
-    }
-
-
-    .cart-btn:hover {
-
-      background:
-        var(--black-soft);
-
-      transform:
-        translateY(-1px);
-    }
-
-
-    .cart-count {
-
-      display:
-        inline-grid;
-
-      place-items:
-        center;
-
-      min-width:
-        24px;
-
-      height:
-        24px;
-
-      margin-left:
-        7px;
-
-      padding:
-        0 6px;
-
-      border-radius:
-        999px;
-
-      background:
-        var(--gold);
-
-      color:
-        var(--black);
-
-      font-size:
-        12px;
-
-      font-weight:
-        950;
-    }
-
-
-    /* =========================================================
-       TYPOGRAFIE
-    ========================================================= */
-
-    .eyebrow {
-
-      display:
-        block;
-
-      margin-bottom:
-        14px;
-
-      color:
-        var(--gold-dark);
-
-      font-size:
-        0.79rem;
-
-      font-weight:
-        800;
-
-      letter-spacing:
-        0.12em;
-
-      text-transform:
-        uppercase;
-    }
-
-
-    .section-head {
-
-      display:
-        flex;
-
-      align-items:
-        end;
-
-      justify-content:
-        space-between;
-
-      gap:
-        40px;
-
-      margin-bottom:
-        34px;
-    }
-
-
-    .section-head h2 {
-
-      margin:
-        0;
-
-      color:
-        var(--black);
-
-      font-size:
-        clamp(
-          2.05rem,
-          4vw,
-          3.5rem
-        );
-
-      line-height:
-        1.08;
-
-      letter-spacing:
-        -0.025em;
-    }
-
-
-    .section-head > p {
-
-      max-width:
-        570px;
-
-      margin:
-        0;
-
-      color:
-        var(--muted);
-
-      line-height:
-        1.75;
-    }
-
-
-    /* =========================================================
-       BUTTONS
-    ========================================================= */
-
-    .btn {
-
-      display:
-        inline-flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      gap:
-        8px;
-
-      min-height:
-        48px;
-
-      padding:
-        13px 21px;
-
-      border:
-        1px solid
-        transparent;
-
-      border-radius:
-        9px;
-
-      text-decoration:
-        none;
-
-      font-weight:
-        800;
-
-      font-size:
-        0.94rem;
-
-      transition:
-        0.2s ease;
-    }
-
-
-    .btn:hover:not(:disabled) {
-
-      transform:
-        translateY(-1px);
-    }
-
-
-    .btn-primary {
-
-      background:
-        var(--black);
-
-      color:
-        var(--white);
-    }
-
-
-    .btn-secondary {
-
-      background:
-        transparent;
-
-      color:
-        var(--black);
-
-      border-color:
-        #bcc7bd;
-    }
-
-
-    .btn-secondary:hover {
-
-      border-color:
-        var(--green);
-    }
-
-
-    .btn-gold {
-
-      background:
-        var(--gold);
-
-      color:
-        var(--black);
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-
-      overflow:
-        hidden;
-
-      padding:
-        88px 0 96px;
-
-      background:
-
-        radial-gradient(
-          circle at 85% 20%,
-          rgba(202, 161, 58, 0.14),
-          transparent 32%
-        ),
-
-        linear-gradient(
-          180deg,
-          #ffffff,
-          var(--cream)
-        );
-    }
-
-
-    .hero-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1.05fr
-        0.95fr;
-
-      align-items:
-        center;
-
-      gap:
-        68px;
-    }
-
-
-    .hero-copy h1 {
-
-      margin:
-        0 0 24px;
-
-      color:
-        var(--black);
-
-      font-size:
-        clamp(
-          48px,
-          7vw,
-          80px
-        );
-
-      line-height:
-        0.95;
-
-      letter-spacing:
-        -4px;
-    }
-
-
-    .hero-copy h1 span {
-
-      color:
-        var(--gold-dark);
-    }
-
-
-    .hero-copy > p {
-
-      max-width:
-        650px;
-
-      margin:
-        0 0 28px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        18px;
-
-      line-height:
-        1.75;
-    }
-
-
-    .hero-actions {
-
-      display:
-        flex;
-
-      flex-wrap:
-        wrap;
-
-      gap:
-        12px;
-
-      margin-bottom:
-        26px;
-    }
-
-
-    .trust-row {
-
-      display:
-        flex;
-
-      flex-wrap:
-        wrap;
-
-      gap:
-        10px;
-    }
-
-
-    .trust-row span {
-
-      padding:
-        8px 12px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        999px;
-
-      background:
-        rgba(255,255,255,0.85);
-
-      color:
-        #555c5c;
-
-      font-size:
-        12px;
-
-      font-weight:
-        800;
-    }
-
-
-    /* =========================================================
-       HERO ART
-    ========================================================= */
-
-   .hero-art {
-
-  position:
-    relative;
-
-  min-height:
-    540px;
-
-  width:
-    100%;
+  --radius:22px;
 }
 
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--white);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+
+body.locked {
+  overflow:hidden;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea {
+  font:inherit;
+}
+
+button {
+  cursor:pointer;
+}
+
+button:disabled {
+  cursor:not-allowed;
+  opacity:.55;
+}
+
+[hidden] {
+  display:none !important;
+}
+
+.container {
+  width:min(1180px,calc(100% - 40px));
+  margin:0 auto;
+}
+
+section {
+  padding:78px 0;
+}
+
+
+/* =========================
+   SKIP LINK
+========================= */
+
+.skip-link {
+  position:fixed;
+  left:15px;
+  top:-100px;
+  z-index:9999;
+  padding:12px 16px;
+  border-radius:8px;
+  background:var(--black);
+  color:var(--white);
+  font-weight:800;
+}
+
+.skip-link:focus {
+  top:15px;
+}
+
+
+/* =========================
+   LAUFBAND
+========================= */
+
+.top-marquee {
+  width:100%;
+  overflow:hidden;
+  background:var(--black);
+  color:var(--white);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.top-marquee-track {
+  display:flex;
+  width:max-content;
+  animation:boda-marquee 30s linear infinite;
+  will-change:transform;
+}
+
+.top-marquee-group {
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+  gap:36px;
+  padding:9px 18px;
+}
+
+.top-marquee-group span {
+  white-space:nowrap;
+}
+
+.top-marquee-group span::before {
+  content:"•";
+  margin-right:12px;
+  color:var(--gold);
+}
+
+@keyframes boda-marquee {
+  from { transform:translateX(0); }
+  to { transform:translateX(-50%); }
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.header-row {
+  min-height:82px;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:30px;
+}
+
+.brand {
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.brand-main {
+  color:var(--black);
+  font-size:1.25rem;
+  font-weight:800;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+
+.brand-main .snacks {
+  color:var(--gold);
+}
+
+.brand-sub {
+  margin-top:8px;
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:600;
+}
+
+.main-nav {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+}
+
+.main-nav a {
+  padding:9px 0;
+  font-size:.94rem;
+  font-weight:700;
+}
+
+.main-nav a:hover {
+  color:var(--gold-dark);
+}
+
+
+/* =========================
+   WARENKORB
+========================= */
+
+.cart-btn {
+  border:0;
+  border-radius:11px;
+  padding:12px 16px;
+  background:#d7a53a;
+  color:#1f1a12;
+  font-weight:900;
+  white-space:nowrap;
+  box-shadow:0 10px 24px rgba(215,165,58,.26);
+  transition:.2s ease;
+}
+
+.cart-btn:hover {
+  background:#c8942a;
+  transform:translateY(-1px);
+}
+
+.cart-count {
+  display:inline-grid;
+  place-items:center;
+  min-width:24px;
+  height:24px;
+  margin-left:7px;
+  padding:0 6px;
+  border-radius:999px;
+  background:var(--black);
+  color:var(--white);
+  font-size:12px;
+  font-weight:950;
+}
+
+
+/* =========================
+   TYPOGRAFIE
+========================= */
+
+.eyebrow {
+  display:block;
+  margin-bottom:14px;
+  color:var(--gold-dark);
+  font-size:.79rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.section-head {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:34px;
+}
+
+.section-head h2 {
+  margin:0;
+  color:var(--black);
+  font-size:clamp(2.05rem,4vw,3.5rem);
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.section-head > p {
+  max-width:570px;
+  margin:0;
+  color:var(--muted);
+  line-height:1.75;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:48px;
+  padding:13px 21px;
+  border:1px solid transparent;
+  border-radius:9px;
+  font-weight:800;
+  font-size:.94rem;
+  transition:.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform:translateY(-1px);
+}
+
+.btn-primary {
+  background:#d7a53a;
+  color:#1f1a12;
+  border-color:#d7a53a;
+  box-shadow:0 12px 26px rgba(215,165,58,.24);
+}
+
+.btn-primary:hover {
+  background:#c8942a;
+  border-color:#c8942a;
+}
+
+.btn-secondary {
+  background:#fff7e8;
+  color:#6f5319;
+  border-color:#ead39a;
+}
+
+.btn-secondary:hover {
+  background:#f7ecd1;
+  border-color:#d7a53a;
+}
+
+.btn-gold {
+  background:var(--gold);
+  color:var(--black);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  overflow:hidden;
+  padding:88px 0 96px;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(202,161,58,.14),
+      transparent 32%
+    ),
+    linear-gradient(
+      180deg,
+      #fff,
+      var(--cream)
+    );
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:68px;
+}
+
+.hero-copy h1 {
+  margin:0 0 24px;
+  color:var(--black);
+  font-size:clamp(48px,7vw,80px);
+  line-height:.95;
+  letter-spacing:-4px;
+}
+
+.hero-copy h1 span {
+  color:var(--gold-dark);
+}
+
+.hero-copy > p {
+  max-width:650px;
+  margin:0 0 28px;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.75;
+}
+
+.hero-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:26px;
+}
+
+.trust-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.trust-row span {
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(255,255,255,.85);
+  color:#555c5c;
+  font-size:12px;
+  font-weight:800;
+}
+
+.hero-art {
+  position:relative;
+  min-height:540px;
+  width:100%;
+}
 
 .hero-pack {
-
-  position:
-    absolute;
-
-  display:
-    flex;
-
-  flex-direction:
-    column;
-
-  justify-content:
-    space-between;
-
-  padding:
-    24px;
-
-  border-radius:
-    15px;
-
-  color:
-    var(--white);
-
-  box-shadow:
-    var(--shadow);
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:24px;
+  border-radius:15px;
+  color:var(--white);
+  box-shadow:var(--shadow);
 }
-
 
 .hero-pack small {
-
-  font-size:
-    10px;
-
-  font-weight:
-    900;
-
-  letter-spacing:
-    1.6px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.6px;
 }
-
 
 .hero-pack strong {
-
-  font-size:
-    39px;
-
-  line-height:
-    0.94;
-
-  letter-spacing:
-    -1.8px;
+  font-size:39px;
+  line-height:.94;
+  letter-spacing:-1.8px;
 }
-
-
-/* GRÜN – etwas weiter nach links/unten */
-.hero-pack.a {
-
-  width:
-    250px;
-
-  height:
-    300px;
-
-  left:
-    10px;
-
-  top:
-    145px;
-
-  z-index:
-    1;
-
-  background:
-    var(--green);
-
-  transform:
-    rotate(-7deg);
-}
-
-
-/* GOLD – etwas höher und weiter nach rechts */
-.hero-pack.b {
-
-  width:
-    290px;
-
-  height:
-    350px;
-
-  right:
-    35px;
-
-  top:
-    25px;
-
-  z-index:
-    2;
-
-  background:
-    var(--gold-dark);
-
-  transform:
-    rotate(5deg);
-}
-
-
-/* SCHWARZ – weiter nach rechts/unten, damit "zur Auswahl" sichtbar bleibt */
-.hero-pack.c {
-
-  width:
-    215px;
-
-  height:
-    250px;
-
-  right:
-    20px;
-
-  bottom:
-    10px;
-
-  z-index:
-    3;
-
-  background:
-    var(--black);
-
-  transform:
-    rotate(-4deg);
-}
-
-    /* =========================================================
-       BOX AUSWAHL
-    ========================================================= */
-
-    .box-offers {
-
-      background:
-        var(--white);
-    }
-
-
-    .box-choice-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(
-          2,
-          minmax(0, 1fr)
-        );
-
-      gap:
-        28px;
-    }
-
-
-    .box-choice {
-
-      position:
-        relative;
-
-      overflow:
-        hidden;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        var(--radius);
-
-      background:
-        var(--white);
-
-      box-shadow:
-        var(--shadow-small);
-    }
-
-
-    .box-choice.featured {
-
-      border-color:
-        rgba(202,161,58,0.6);
-    }
-
-
-    .box-choice-badge {
-
-      position:
-        absolute;
-
-      top:
-        15px;
-
-      right:
-        15px;
-
-      z-index:
-        2;
-
-      padding:
-        8px 10px;
-
-      border-radius:
-        999px;
-
-      background:
-        var(--black);
-
-      color:
-        var(--white);
-
-      font-size:
-        9px;
-
-      font-weight:
-        900;
-
-      letter-spacing:
-        1px;
-    }
-
-
-    .box-choice-art {
-
-      min-height:
-        265px;
-
-      display:
-        grid;
-
-      place-items:
-        center;
-
-      padding:
-        28px;
-
-      background:
-        var(--cream);
-    }
-
-
-    .box-visual {
-
-      width:
-        190px;
-
-      height:
-        185px;
-
-      display:
-        flex;
-
-      flex-direction:
-        column;
-
-      justify-content:
-        space-between;
-
-      padding:
-        21px;
-
-      border-radius:
-        12px;
-
-      color:
-        var(--white);
-
-      box-shadow:
-        0 18px 35px
-        rgba(0,0,0,0.14);
-
-      transform:
-        rotate(-4deg);
-    }
-
-
-    .box-visual.wish {
-
-      background:
-        var(--gold-dark);
-
-      transform:
-        rotate(4deg);
-    }
-
-
-    .box-visual.mystery {
-
-      background:
-        var(--black);
-    }
-
-
-    .box-visual small {
-
-      font-size:
-        9px;
-
-      font-weight:
-        900;
-
-      letter-spacing:
-        1.5px;
-    }
-
-
-    .box-visual strong {
-
-      font-size:
-        31px;
-
-      line-height:
-        0.95;
-    }
-
-
-    .box-choice-body {
-
-      padding:
-        31px;
-    }
-
-
-    .box-kicker {
-
-      margin:
-        0 0 7px;
-
-      color:
-        var(--gold-dark);
-
-      font-size:
-        10px;
-
-      font-weight:
-        950;
-
-      letter-spacing:
-        1.6px;
-    }
-
-
-    .box-choice-body h3 {
-
-      margin:
-        0 0 12px;
-
-      font-size:
-        27px;
-
-      color:
-        var(--black);
-    }
-
-
-    .box-choice-body > p {
-
-      margin:
-        0;
-
-      color:
-        var(--muted);
-
-      line-height:
-        1.72;
-    }
-
-
-    .box-points {
-
-      display:
-        grid;
-
-      gap:
-        10px;
-
-      margin:
-        22px 0 0;
-
-      padding:
-        0;
-
-      list-style:
-        none;
-    }
-
-
-    .box-points li {
-
-      position:
-        relative;
-
-      padding-left:
-        21px;
-
-      color:
-        #4e5555;
-
-      font-size:
-        14px;
-    }
-
-
-    .box-points li::before {
-
-      content:
-        "";
-
-      position:
-        absolute;
-
-      left:
-        0;
-
-      top:
-        9px;
-
-      width:
-        7px;
-
-      height:
-        7px;
-
-      border-radius:
-        50%;
-
-      background:
-        var(--gold);
-    }
-
-
-    .size-picks {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap:
-        12px;
-
-      margin-top:
-        24px;
-    }
-
-
-    .size-pick {
-
-      display:
-        block;
-
-      width:
-        100%;
-
-      padding:
-        17px 15px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        14px;
-
-      background:
-        var(--white);
-
-      color:
-        var(--text);
-
-      text-align:
-        left;
-
-      transition:
-        0.2s ease;
-    }
-
-
-    .size-pick:hover {
-
-      border-color:
-        var(--gold);
-
-      transform:
-        translateY(-1px);
-    }
-
-
-    .size-pick strong {
-
-      display:
-        block;
-
-      font-size:
-        15px;
-    }
-
-
-    .size-pick span {
-
-      display:
-        block;
-
-      margin-top:
-        3px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        12px;
-    }
-
-
-    .size-pick b {
-
-      display:
-        block;
-
-      margin-top:
-        9px;
-
-      color:
-        var(--black);
-
-      font-size:
-        17px;
-    }
-
-
-    .mystery-add-row {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap:
-        12px;
-
-      margin-top:
-        24px;
-    }
-
-
-    /* =========================================================
-       WUNSCHBOX BUILDER
-    ========================================================= */
-
-    .wish-builder-section {
-
-      background:
-        var(--cream);
-    }
-
-
-    .builder-shell {
-
-      padding:
-        28px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        var(--radius);
-
-      background:
-        var(--white);
-
-      box-shadow:
-        var(--shadow-small);
-    }
-
-
-    .builder-size-bar {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1fr auto;
-
-      gap:
-        20px;
-
-      align-items:
-        center;
-
-      margin-bottom:
-        20px;
-
-      padding:
-        18px;
-
-      border-radius:
-        15px;
-
-      background:
-        var(--gold-soft);
-
-      border:
-        1px solid
-        rgba(202,161,58,0.24);
-    }
-
-
-    .builder-size-bar strong {
-
-      display:
-        block;
-
-      font-size:
-        16px;
-    }
-
-
-    .builder-size-bar p {
-
-      margin:
-        4px 0 0;
-
-      color:
-        var(--muted);
-
-      font-size:
-        13px;
-    }
-
-
-    .builder-size-actions {
-
-      display:
-        flex;
-
-      gap:
-        8px;
-
-      flex-wrap:
-        wrap;
-    }
-
-
-    .size-toggle {
-
-      border:
-        1px solid
-        rgba(0,0,0,0.12);
-
-      border-radius:
-        10px;
-
-      padding:
-        10px 13px;
-
-      background:
-        var(--white);
-
-      color:
-        var(--black);
-
-      font-weight:
-        900;
-    }
-
-
-    .size-toggle.active {
-
-      background:
-        var(--black);
-
-      color:
-        var(--white);
-
-      border-color:
-        var(--black);
-    }
-
-
-    .builder-top {
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        space-between;
-
-      gap:
-        20px;
-    }
-
-
-    .builder-top strong {
-
-      font-size:
-        19px;
-    }
-
-
-    .builder-top p {
-
-      margin:
-        4px 0 0;
-
-      color:
-        var(--muted);
-    }
-
-
-    .builder-clear {
-
-      border:
-        0;
-
-      border-radius:
-        9px;
-
-      padding:
-        10px 13px;
-
-      background:
-        var(--cream-dark);
-
-      color:
-        var(--text);
-
-      font-weight:
-        800;
-    }
-
-
-    .builder-progress {
-
-      height:
-        8px;
-
-      margin:
-        18px 0 22px;
-
-      overflow:
-        hidden;
-
-      border-radius:
-        999px;
-
-      background:
-        #ecebe7;
-    }
-
-
-    .builder-progress > div {
-
-      width:
-        0;
-
-      height:
-        100%;
-
-      background:
-        var(--gold);
-
-      transition:
-        width 0.2s ease;
-    }
-
-
-    .builder-filter-row {
-
-      display:
-        flex;
-
-      flex-wrap:
-        wrap;
-
-      gap:
-        9px;
-
-      margin-bottom:
-        20px;
-    }
-
-
-    .builder-filter {
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        999px;
-
-      padding:
-        9px 13px;
-
-      background:
-        var(--white);
-
-      color:
-        #525858;
-
-      font-size:
-        12px;
-
-      font-weight:
-        850;
-    }
-
-
-    .builder-filter.active {
-
-      background:
-        var(--black);
-
-      color:
-        var(--white);
-
-      border-color:
-        var(--black);
-    }
-
-
-    .builder-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(
-          3,
-          minmax(0, 1fr)
-        );
-
-      gap:
-        14px;
-    }
-
-
-    .builder-product {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        72px
-        minmax(0, 1fr)
-        auto;
-
-      align-items:
-        center;
-
-      gap:
-        13px;
-
-      min-height:
-        112px;
-
-      padding:
-        13px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        15px;
-
-      background:
-        var(--white);
-    }
-
-
-    .builder-product-copy h3 {
-
-      margin:
-        2px 0;
-
-      font-size:
-        14px;
-
-      line-height:
-        1.2;
-    }
-
-
-    .builder-product-copy p {
-
-      margin:
-        0;
-
-      color:
-        var(--muted);
-
-      font-size:
-        11px;
-    }
-
-
-    .builder-product-category {
-
-      color:
-        var(--gold-dark) !important;
-
-      font-weight:
-        900;
-
-      letter-spacing:
-        0.7px;
-    }
-
-
-    .mini-pack {
-
-      width:
-        54px;
-
-      height:
-        72px;
-
-      display:
-        flex;
-
-      flex-direction:
-        column;
-
-      justify-content:
-        space-between;
-
-      padding:
-        8px;
-
-      border-radius:
-        7px;
-
-      background:
-        var(--c);
-
-      color:
-        var(--t);
-
-      box-shadow:
-        0 8px 15px
-        rgba(0,0,0,0.12);
-
-      transform:
-        rotate(-3deg);
-    }
-
-
-    .mini-pack span {
-
-      font-size:
-        6px;
-
-      font-weight:
-        900;
-
-      letter-spacing:
-        0.6px;
-    }
-
-
-    .mini-pack strong {
-
-      font-size:
-        9px;
-
-      word-break:
-        break-word;
-
-      line-height:
-        1;
-    }
-
-
-    .builder-qty {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        31px 26px 31px;
-
-      align-items:
-        center;
-
-      gap:
-        4px;
-    }
-
-
-    .builder-qty button {
-
-      width:
-        31px;
-
-      height:
-        31px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        8px;
-
-      background:
-        var(--white);
-
-      color:
-        var(--black);
-
-      font-weight:
-        950;
-    }
-
-
-    .builder-qty strong {
-
-      text-align:
-        center;
-
-      font-size:
-        13px;
-    }
-
-
-    .builder-summary {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1fr auto;
-
-      align-items:
-        center;
-
-      gap:
-        25px;
-
-      margin-top:
-        22px;
-
-      padding-top:
-        22px;
-
-      border-top:
-        1px solid
-        var(--line);
-    }
-
-
-    .builder-summary small {
-
-      color:
-        var(--gold-dark);
-
-      font-weight:
-        900;
-
-      letter-spacing:
-        1.2px;
-    }
-
-
-    .builder-summary p {
-
-      margin:
-        6px 0 0;
-
-      color:
-        var(--muted);
-
-      font-size:
-        13px;
-    }
-
-
-    /* =========================================================
-       SO GEHT'S
-    ========================================================= */
-
-    .delivery {
-
-      background:
-        var(--white);
-    }
-
-
-    .steps {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap:
-        18px;
-    }
-
-
-    .step {
-
-      padding:
-        28px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        17px;
-
-      background:
-        var(--white);
-    }
-
-
-    .step > span {
-
-      display:
-        inline-block;
-
-      margin-bottom:
-        20px;
-
-      color:
-        var(--gold-dark);
-
-      font-weight:
-        950;
-
-      letter-spacing:
-        1.4px;
-    }
-
-
-    .step h3 {
-
-      margin:
-        0 0 9px;
-    }
-
-
-    .step p {
-
-      margin:
-        0;
-
-      color:
-        var(--muted);
-
-      line-height:
-        1.7;
-    }
-
-
-    /* =========================================================
-       ABSCHLUSS
-    ========================================================= */
-
-    .closing {
-
-      background:
-        var(--cream);
-    }
-
-
-    .closing-box {
-
-      padding:
-        60px 32px;
-
-      border-radius:
-        var(--radius);
-
-      background:
-        var(--black);
-
-      color:
-        var(--white);
-
-      text-align:
-        center;
-    }
-
-
-    .closing-box h2 {
-
-      margin:
-        0;
-
-      color:
-        var(--white);
-
-      font-size:
-        clamp(
-          31px,
-          4vw,
-          48px
-        );
-
-      line-height:
-        1.05;
-    }
-
-
-    .closing-box h2 span {
-
-      color:
-        var(--gold);
-    }
-
-
-    .closing-box p {
-
-      max-width:
-        650px;
-
-      margin:
-        18px auto 0;
-
-      color:
-        rgba(255,255,255,0.68);
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-
-      padding:
-        52px 0 28px;
-
-      background:
-        #111111;
-
-      color:
-        var(--white);
-    }
-
-
-    .footer-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1.4fr
-        repeat(3, 1fr);
-
-      gap:
-        38px;
-    }
-
-
-    .footer-brand .brand-main {
-
-      color:
-        var(--white);
-    }
-
-
-    .footer-brand .brand-main .snacks {
-
-      color:
-        var(--gold);
-    }
-
-
-    .footer-brand .brand-sub {
-
-      color:
-        rgba(255,255,255,0.58);
-    }
-
-
-    footer h4 {
-
-      margin:
-        0 0 15px;
-
-      font-size:
-        13px;
-    }
-
-
-    footer p,
-    footer a {
-
-      color:
-        rgba(255,255,255,0.62);
-
-      font-size:
-        13px;
-    }
-
-
-    footer a {
-
-      display:
-        block;
-
-      margin:
-        8px 0;
-    }
-
-
-    footer a:hover {
-
-      color:
-        var(--gold);
-    }
-
-
-    .copyright {
-
-      margin-top:
-        40px;
-
-      padding-top:
-        20px;
-
-      border-top:
-        1px solid
-        rgba(255,255,255,0.1);
-
-      color:
-        rgba(255,255,255,0.42);
-
-      font-size:
-        12px;
-    }
-
-
-    /* =========================================================
-       DIALOG
-    ========================================================= */
-
-    dialog {
-
-      border:
-        0;
-
-      padding:
-        0;
-
-      background:
-        transparent;
-    }
-
-
-    dialog::backdrop {
-
-      background:
-        rgba(0,0,0,0.48);
-
-      backdrop-filter:
-        blur(2px);
-    }
-
-
-    /* =========================================================
-       WARENKORB
-    ========================================================= */
-
-    .cart-panel {
-
-      width:
-        min(
-          520px,
-          calc(100vw - 22px)
-        );
-
-      max-height:
-        min(
-          800px,
-          calc(100vh - 22px)
-        );
-
-      margin:
-        auto;
-
-      border-radius:
-        22px;
-
-      background:
-        var(--white);
-
-      box-shadow:
-        0 30px 90px
-        rgba(0,0,0,0.26);
-
-      overflow:
-        hidden;
-    }
-
-
-    .cart-head {
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        space-between;
-
-      gap:
-        20px;
-
-      padding:
-        20px 22px;
-
-      border-bottom:
-        1px solid
-        var(--line);
-    }
-
-
-    .cart-head h2 {
-
-      margin:
-        0;
-
-      font-size:
-        22px;
-    }
-
-
-    .close {
-
-      width:
-        38px;
-
-      height:
-        38px;
-
-      border:
-        0;
-
-      border-radius:
-        999px;
-
-      background:
-        var(--cream-dark);
-
-      color:
-        var(--black);
-
-      font-size:
-        25px;
-
-      line-height:
-        1;
-    }
-
-
-    .cart-body {
-
-      max-height:
-        410px;
-
-      overflow:
-        auto;
-
-      padding:
-        14px 22px;
-    }
-
-
-    .empty-cart {
-
-      padding:
-        42px 12px;
-
-      text-align:
-        center;
-    }
-
-
-    .empty-cart h3 {
-
-      margin:
-        0 0 7px;
-    }
-
-
-    .empty-cart p {
-
-      margin:
-        0;
-
-      color:
-        var(--muted);
-    }
-
-
-    .cart-item {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        58px
-        minmax(0, 1fr)
-        auto;
-
-      gap:
-        13px;
-
-      align-items:
-        start;
-
-      padding:
-        15px 0;
-
-      border-bottom:
-        1px solid
-        var(--line);
-    }
-
-
-    .cart-item h4 {
-
-      margin:
-        0 0 4px;
-
-      font-size:
-        14px;
-    }
-
-
-    .item-price {
-
-      margin:
-        0;
-
-      color:
-        var(--muted);
-
-      font-size:
-        12px;
-    }
-
-
-    .cart-selection {
-
-      margin:
-        8px 0 0;
-
-      color:
-        var(--muted);
-
-      font-size:
-        11px;
-
-      line-height:
-        1.45;
-    }
-
-
-    .remove {
-
-      margin-top:
-        8px;
-
-      padding:
-        0;
-
-      border:
-        0;
-
-      background:
-        transparent;
-
-      color:
-        var(--danger);
-
-      font-size:
-        11px;
-
-      font-weight:
-        800;
-    }
-
-
-    .cart-foot {
-
-      padding:
-        19px 22px 22px;
-
-      border-top:
-        1px solid
-        var(--line);
-
-      background:
-        #fcfcfa;
-    }
-
-
-    .shipping-progress-label {
-
-      display:
-        flex;
-
-      justify-content:
-        space-between;
-
-      gap:
-        12px;
-
-      margin-bottom:
-        7px;
-
-      font-size:
-        12px;
-
-      font-weight:
-        800;
-    }
-
-
-    .shipping-progress {
-
-      height:
-        7px;
-
-      overflow:
-        hidden;
-
-      border-radius:
-        999px;
-
-      background:
-        #e9e7e1;
-    }
-
-
-    .shipping-progress > div {
-
-      width:
-        0;
-
-      height:
-        100%;
-
-      background:
-        var(--gold);
-
-      transition:
-        width 0.2s ease;
-    }
-
-
-    .summary {
-
-      display:
-        grid;
-
-      gap:
-        9px;
-
-      margin:
-        18px 0;
-    }
-
-
-    .summary-row {
-
-      display:
-        flex;
-
-      justify-content:
-        space-between;
-
-      gap:
-        20px;
-
-      color:
-        #555555;
-
-      font-size:
-        13px;
-    }
-
-
-    .summary-row.total {
-
-      padding-top:
-        10px;
-
-      border-top:
-        1px solid
-        var(--line);
-
-      color:
-        var(--black);
-
-      font-size:
-        16px;
-
-      font-weight:
-        950;
-    }
-
-
-    .checkout-demo {
-
-      width:
-        100%;
-    }
-
-
-    .cart-hint {
-
-      margin:
-        10px 0 0;
-
-      color:
-        var(--muted);
-
-      font-size:
-        10px;
-
-      text-align:
-        center;
-    }
-
-
-    /* =========================================================
-       CHECKOUT
-    ========================================================= */
-
-    .checkout-dialog {
-
-      width:
-        min(
-          1080px,
-          calc(100vw - 22px)
-        );
-
-      max-height:
-        calc(100vh - 22px);
-
-      margin:
-        auto;
-
-      border-radius:
-        22px;
-
-      background:
-        var(--cream);
-
-      box-shadow:
-        0 30px 90px
-        rgba(0,0,0,0.28);
-
-      overflow:
-        auto;
-    }
-
-
-    .checkout-head {
-
-      position:
-        sticky;
-
-      top:
-        0;
-
-      z-index:
-        3;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        space-between;
-
-      gap:
-        20px;
-
-      padding:
-        18px 22px;
-
-      background:
-        rgba(255,255,255,0.97);
-
-      border-bottom:
-        1px solid
-        var(--line);
-    }
-
-
-    .checkout-wrap {
-
-      padding:
-        28px;
-    }
-
-
-    .checkout-intro {
-
-      margin:
-        0 0 22px;
-
-      padding:
-        14px 16px;
-
-      border-radius:
-        12px;
-
-      background:
-        #fff4dc;
-
-      color:
-        #654f17;
-
-      font-size:
-        12px;
-    }
-
-
-    .checkout-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        minmax(0, 1.25fr)
-        minmax(300px, 0.75fr);
-
-      gap:
-        22px;
-
-      align-items:
-        start;
-    }
-
-
-    .checkout-stack {
-
-      display:
-        grid;
-
-      gap:
-        18px;
-    }
-
-
-    .checkout-card {
-
-      padding:
-        22px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        17px;
-
-      background:
-        var(--white);
-    }
-
-
-    .checkout-card h2 {
-
-      margin:
-        0 0 17px;
-
-      font-size:
-        18px;
-    }
-
-
-    .checkout-form-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap:
-        14px;
-    }
-
-
-    .checkout-full {
-
-      grid-column:
-        1 / -1;
-    }
-
-
-    label {
-
-      display:
-        grid;
-
-      gap:
-        6px;
-
-      color:
-        #3f4545;
-
-      font-size:
-        12px;
-
-      font-weight:
-        800;
-    }
-
-
-    input {
-
-      width:
-        100%;
-
-      min-height:
-        45px;
-
-      border:
-        1px solid
-        #d9d8d3;
-
-      border-radius:
-        9px;
-
-      padding:
-        10px 12px;
-
-      background:
-        var(--white);
-
-      color:
-        var(--text);
-    }
-
-
-    input:focus {
-
-      outline:
-        none;
-
-      border-color:
-        var(--gold);
-
-      box-shadow:
-        0 0 0 3px
-        rgba(202,161,58,0.12);
-    }
-
-
-    .checkout-options {
-
-      display:
-        grid;
-
-      gap:
-        10px;
-    }
-
-
-    .checkout-option {
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      gap:
-        11px;
-
-      padding:
-        13px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        11px;
-
-      background:
-        var(--white);
-    }
-
-
-    .checkout-option input {
-
-      width:
-        auto;
-
-      min-height:
-        0;
-    }
-
-
-    .checkout-option span {
-
-      display:
-        grid;
-
-      gap:
-        1px;
-    }
-
-
-    .checkout-option small {
-
-      color:
-        var(--muted);
-
-      font-weight:
-        500;
-    }
-
-
-    .payment-test-info {
-
-      margin-top:
-        12px;
-
-      padding:
-        13px;
-
-      border-radius:
-        10px;
-
-      background:
-        var(--cream);
-
-      color:
-        var(--muted);
-
-      font-size:
-        12px;
-    }
-
-
-    .checkout-summary-card {
-
-      position:
-        sticky;
-
-      top:
-        82px;
-
-      padding:
-        22px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:
-        17px;
-
-      background:
-        var(--white);
-    }
-
-
-    .checkout-summary-card h2 {
-
-      margin:
-        0 0 17px;
-
-      font-size:
-        18px;
-    }
-
-
-    .checkout-items {
-
-      display:
-        grid;
-
-      gap:
-        12px;
-
-      margin-bottom:
-        16px;
-    }
-
-
-    .checkout-item {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1fr auto;
-
-      gap:
-        14px;
-
-      padding-bottom:
-        11px;
-
-      border-bottom:
-        1px solid
-        var(--line);
-
-      font-size:
-        12px;
-    }
-
-
-    .checkout-item small {
-
-      display:
-        block;
-
-      margin-top:
-        2px;
-
-      color:
-        var(--muted);
-    }
-
-
-    .checkout-totals {
-
-      display:
-        grid;
-
-      gap:
-        9px;
-    }
-
-
-    .checkout-totals > div {
-
-      display:
-        flex;
-
-      justify-content:
-        space-between;
-
-      gap:
-        20px;
-
-      font-size:
-        13px;
-    }
-
-
-    .checkout-totals .grand-total {
-
-      margin-top:
-        4px;
-
-      padding-top:
-        12px;
-
-      border-top:
-        1px solid
-        var(--line);
-
-      font-size:
-        18px;
-
-      font-weight:
-        950;
-    }
-
-
-    .checkout-warning {
-
-      min-height:
-        20px;
-
-      margin:
-        12px 0 0;
-
-      color:
-        var(--danger);
-
-      font-size:
-        12px;
-
-      font-weight:
-        800;
-    }
-
-
-    .place-order {
-
-      width:
-        100%;
-
-      margin-top:
-        14px;
-    }
-
-
-    .checkout-legal-hint {
-
-      margin:
-        10px 0 0;
-
-      color:
-        var(--muted);
-
-      font-size:
-        10px;
-
-      line-height:
-        1.5;
-    }
-
-
-    .confirmation {
-
-      padding:
-        45px 28px;
-
-      text-align:
-        center;
-    }
-
-
-    .confirmation-mark {
-
-      width:
-        64px;
-
-      height:
-        64px;
-
-      display:
-        grid;
-
-      place-items:
-        center;
-
-      margin:
-        0 auto 18px;
-
-      border-radius:
-        999px;
-
-      background:
-        var(--green-soft);
-
-      color:
-        var(--green-dark);
-
-      font-size:
-        30px;
-
-      font-weight:
-        950;
-    }
-
-
-    .order-number {
-
-      display:
-        inline-block;
-
-      margin:
-        12px 0 18px;
-
-      padding:
-        8px 12px;
-
-      border-radius:
-        999px;
-
-      background:
-        var(--gold-soft);
-
-      font-weight:
-        900;
-    }
-
-
-    /* =========================================================
-       TOAST
-    ========================================================= */
-
-    .toast {
-
-      position:
-        fixed;
-
-      left:
-        50%;
-
-      bottom:
-        22px;
-
-      z-index:
-        9999;
-
-      transform:
-        translate(-50%, 20px);
-
-      opacity:
-        0;
-
-      pointer-events:
-        none;
-
-      padding:
-        12px 16px;
-
-      border-radius:
-        12px;
-
-      background:
-        var(--black);
-
-      color:
-        var(--white);
-
-      font-size:
-        12px;
-
-      font-weight:
-        800;
-
-      box-shadow:
-        var(--shadow);
-
-      transition:
-        0.2s ease;
-    }
-
-
-    .toast.show {
-
-      transform:
-        translate(-50%, 0);
-
-      opacity:
-        1;
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media (
-      max-width: 980px
-    ) {
-
-      .main-nav {
-        display: none;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-art {
-
-        min-height:
-          410px;
-
-        max-width:
-          610px;
-
-        margin:
-          0 auto;
-      }
-
-      .builder-grid {
-
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .checkout-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-      .checkout-summary-card {
-
-        position:
-          static;
-      }
-
-      .footer-grid {
-
-        grid-template-columns:
-          1fr 1fr;
-      }
-
-    }
-
-
-    @media (
-      max-width: 720px
-    ) {
-
-      .container {
-
-        width:
-          min(
-            100% - 28px,
-            1180px
-          );
-      }
-
-
-      section {
-
-        padding:
-          62px 0;
-      }
-
-
-      .header-row {
-
-        grid-template-columns:
-          auto auto;
-
-        min-height:
-          68px;
-      }
-
-
-      .brand-main {
-
-        font-size:
-          1.12rem;
-      }
-
-
-      .brand-sub {
-
-        font-size:
-          0.72rem;
-      }
-
-
-      .cart-btn {
-
-        padding:
-          10px 12px;
-
-        font-size:
-          12px;
-      }
-
-
-      .hero {
-
-        padding:
-          66px 0;
-      }
-
-
-      .hero-copy h1 {
-
-        font-size:
-          clamp(
-            45px,
-            14vw,
-            64px
-          );
-
-        letter-spacing:
-          -3px;
-      }
-
-
-      .hero-copy > p {
-
-        font-size:
-          16px;
-      }
-
-
-      .box-choice-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .builder-size-bar {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .builder-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .builder-summary {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .steps {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .footer-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .checkout-wrap {
-
-        padding:
-          18px;
-      }
-
-
-      .checkout-form-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .checkout-full {
-
-        grid-column:
-          auto;
-      }
-
-
-      .hero-art {
-
-  min-height:
-    390px;
-}
-
 
 .hero-pack.a {
-
-  width:
-    165px;
-
-  height:
-    210px;
-
-  left:
-    0;
-
-  top:
-    120px;
+  width:250px;
+  height:300px;
+  left:10px;
+  top:145px;
+  z-index:1;
+  background:var(--green);
+  transform:rotate(-7deg);
 }
-
 
 .hero-pack.b {
-
-  width:
-    185px;
-
-  height:
-    240px;
-
-  right:
-    12px;
-
-  top:
-    25px;
+  width:290px;
+  height:350px;
+  right:35px;
+  top:25px;
+  z-index:2;
+  background:var(--gold-dark);
+  transform:rotate(5deg);
 }
-
 
 .hero-pack.c {
-
-  width:
-    145px;
-
-  height:
-    175px;
-
-  right:
-    6px;
-
-  bottom:
-    8px;
+  width:215px;
+  height:250px;
+  right:20px;
+  bottom:10px;
+  z-index:3;
+  background:var(--black);
+  transform:rotate(-4deg);
 }
 
 
-.hero-pack strong {
+/* =========================
+   BOX KARTEN
+========================= */
 
-  font-size:
-    24px;
+.box-offers {
+  background:var(--white);
 }
 
-      .size-picks,
-      .mystery-add-row {
+.box-choice-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px;
+}
 
-        grid-template-columns:
-          1fr;
-      }
+.box-choice {
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--white);
+  box-shadow:var(--shadow-small);
+}
 
-    }
+.box-choice.featured {
+  border-color:rgba(202,161,58,.6);
+  transform:translateY(-8px);
+}
 
-  </style>
+.box-choice-badge {
+  position:absolute;
+  top:15px;
+  right:15px;
+  z-index:2;
+  padding:8px 10px;
+  border-radius:999px;
+  background:var(--black);
+  color:var(--white);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+}
 
+.box-choice-art {
+  min-height:265px;
+  display:grid;
+  place-items:center;
+  padding:28px;
+  background:var(--cream);
+}
+
+.box-visual {
+  width:190px;
+  height:185px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:21px;
+  border-radius:12px;
+  color:var(--white);
+  box-shadow:0 18px 35px rgba(0,0,0,.14);
+  transform:rotate(-4deg);
+}
+
+.box-visual.smart {
+  background:var(--green);
+}
+
+.box-visual.premium {
+  background:var(--gold-dark);
+  transform:rotate(4deg);
+}
+
+.box-visual.business {
+  background:var(--black);
+}
+
+.box-visual small {
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+
+.box-visual strong {
+  font-size:31px;
+  line-height:.95;
+}
+
+.box-choice-body {
+  padding:31px;
+}
+
+.box-kicker {
+  margin:0 0 7px;
+  color:var(--gold-dark);
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:1.6px;
+}
+
+.box-choice-body h3 {
+  margin:0 0 12px;
+  font-size:27px;
+  color:var(--black);
+}
+
+.box-choice-body > p {
+  margin:0;
+  color:var(--muted);
+  line-height:1.72;
+}
+
+.box-points {
+  display:grid;
+  gap:10px;
+  margin:22px 0 0;
+  padding:0;
+  list-style:none;
+}
+
+.box-points li {
+  position:relative;
+  padding-left:21px;
+  color:#4e5555;
+  font-size:14px;
+}
+
+.box-points li::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:9px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--gold);
+}
+
+.size-picks {
+  display:grid;
+  margin-top:24px;
+}
+
+.size-pick {
+  display:block;
+  width:100%;
+  padding:17px 15px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff7e8;
+  color:var(--text);
+  text-align:left;
+  transition:.2s ease;
+}
+
+.size-pick:hover {
+  border-color:var(--gold);
+  background:#f8edcf;
+  transform:translateY(-1px);
+}
+
+.size-pick strong {
+  display:block;
+  font-size:15px;
+}
+
+.size-pick span {
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.size-pick b {
+  display:block;
+  margin-top:9px;
+  color:var(--black);
+  font-size:17px;
+}
+
+
+/* =========================
+   KONFIGURATOR
+========================= */
+
+.wish-builder-section {
+  background:var(--cream);
+}
+
+.builder-shell {
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--white);
+  box-shadow:var(--shadow-small);
+}
+
+.builder-size-bar {
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:20px;
+  align-items:center;
+  margin-bottom:20px;
+  padding:18px;
+  border-radius:15px;
+  background:var(--gold-soft);
+  border:1px solid rgba(202,161,58,.24);
+}
+
+.builder-size-bar strong {
+  display:block;
+  font-size:16px;
+}
+
+.builder-size-bar p {
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.builder-size-actions {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.size-toggle {
+  min-width:118px;
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:10px;
+  padding:10px 13px;
+  background:var(--white);
+  color:var(--black);
+  font-weight:900;
+}
+
+.size-toggle.active {
+  background:var(--gold);
+  color:var(--black);
+  border-color:var(--gold-dark);
+}
+
+.builder-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.builder-top strong {
+  font-size:19px;
+}
+
+.builder-top p {
+  margin:4px 0 0;
+  color:var(--muted);
+}
+
+.builder-clear {
+  border:0;
+  border-radius:9px;
+  padding:10px 13px;
+  background:var(--cream-dark);
+  color:var(--text);
+  font-weight:800;
+}
+
+.builder-progress {
+  height:8px;
+  margin:18px 0 22px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#ecebe7;
+}
+
+.builder-progress > div {
+  width:0;
+  height:100%;
+  background:var(--gold);
+  transition:width .2s ease;
+}
+
+.builder-filter-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:20px;
+}
+
+.builder-filter {
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:9px 13px;
+  background:var(--white);
+  color:#525858;
+  font-size:12px;
+  font-weight:850;
+}
+
+.builder-filter.active {
+  background:var(--gold);
+  color:var(--black);
+  border-color:var(--gold-dark);
+}
+
+.builder-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.builder-product {
+  display:grid;
+  grid-template-columns:82px minmax(0,1fr) auto;
+  align-items:center;
+  gap:13px;
+  min-height:112px;
+  padding:13px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:var(--white);
+}
+
+.builder-product-copy h3 {
+  margin:2px 0;
+  font-size:15px;
+  line-height:1.2;
+}
+
+.builder-product-copy p {
+  margin:0;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.builder-product-category {
+  color:var(--gold-dark) !important;
+  font-weight:900;
+  letter-spacing:.7px;
+}
+
+.product-thumb {
+  width:72px;
+  height:88px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+
+.product-thumb img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:4px;
+}
+
+.product-thumb.placeholder {
+  padding:8px;
+  background:var(--cream);
+  color:var(--black);
+  font-size:8px;
+  font-weight:950;
+  line-height:1.08;
+  text-align:center;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+.builder-qty {
+  display:grid;
+  grid-template-columns:31px 26px 31px;
+  align-items:center;
+  gap:4px;
+}
+
+.builder-qty button {
+  width:31px;
+  height:31px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--white);
+  color:var(--black);
+  font-weight:950;
+}
+
+.builder-qty strong {
+  text-align:center;
+  font-size:13px;
+}
+
+.builder-summary {
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:25px;
+  margin-top:22px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+}
+
+.builder-summary small {
+  color:var(--gold-dark);
+  font-weight:900;
+  letter-spacing:1.2px;
+}
+
+.builder-summary p {
+  margin:6px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+
+/* =========================
+   SO GEHTS
+========================= */
+
+.delivery {
+  background:var(--white);
+}
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.step {
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:var(--white);
+}
+
+.step > span {
+  display:inline-block;
+  margin-bottom:20px;
+  color:var(--gold-dark);
+  font-weight:950;
+  letter-spacing:1.4px;
+}
+
+.step h3 {
+  margin:0 0 9px;
+}
+
+.step p {
+  margin:0;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+
+/* =========================
+   ABSCHLUSS
+========================= */
+
+.closing {
+  background:var(--cream);
+}
+
+.closing-box {
+  padding:60px 32px;
+  border-radius:var(--radius);
+  background:linear-gradient(135deg,#2f342f,#4a4337);
+  color:var(--white);
+  text-align:center;
+}
+
+.closing-box h2 {
+  margin:0;
+  color:var(--white);
+  font-size:clamp(31px,4vw,48px);
+  line-height:1.05;
+}
+
+.closing-box h2 span {
+  color:var(--gold);
+}
+
+.closing-box p {
+  max-width:650px;
+  margin:18px auto 0;
+  color:rgba(255,255,255,.68);
+}
+
+
+/* =========================
+   FOOTER HELL
+========================= */
+
+footer {
+  padding:52px 0 28px;
+  background:#f6f1e7;
+  color:var(--text);
+  border-top:1px solid var(--line);
+}
+
+.footer-grid {
+  display:grid;
+  grid-template-columns:1.4fr repeat(3,1fr);
+  gap:38px;
+}
+
+.footer-brand .brand-main {
+  color:var(--black);
+}
+
+.footer-brand .brand-main .snacks {
+  color:var(--gold);
+}
+
+.footer-brand .brand-sub {
+  color:#6b6b63;
+}
+
+footer h4 {
+  margin:0 0 15px;
+  font-size:13px;
+}
+
+footer p,
+footer a {
+  color:#575f5f;
+  font-size:13px;
+}
+
+footer a {
+  display:block;
+  margin:8px 0;
+}
+
+footer a:hover {
+  color:var(--gold-dark);
+}
+
+.copyright {
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid #ddd8cb;
+  color:#7c7c74;
+  font-size:12px;
+}
+
+
+/* =========================
+   DIALOGE
+========================= */
+
+dialog {
+  border:0;
+  padding:0;
+  background:transparent;
+}
+
+dialog::backdrop {
+  background:rgba(0,0,0,.48);
+  backdrop-filter:blur(2px);
+}
+
+
+/* =========================
+   WARENKORB DIALOG
+========================= */
+
+.cart-panel {
+  width:min(520px,calc(100vw - 22px));
+  max-height:min(800px,calc(100vh - 22px));
+  margin:auto;
+  border-radius:22px;
+  background:var(--white);
+  box-shadow:0 30px 90px rgba(0,0,0,.26);
+  overflow:hidden;
+}
+
+.cart-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:20px 22px;
+  border-bottom:1px solid var(--line);
+}
+
+.cart-head h2 {
+  margin:0;
+  font-size:22px;
+}
+
+.close {
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:999px;
+  background:var(--cream-dark);
+  color:var(--black);
+  font-size:25px;
+  line-height:1;
+}
+
+.cart-body {
+  max-height:410px;
+  overflow:auto;
+  padding:14px 22px;
+}
+
+.empty-cart {
+  padding:42px 12px;
+  text-align:center;
+}
+
+.empty-cart h3 {
+  margin:0 0 7px;
+}
+
+.empty-cart p {
+  margin:0;
+  color:var(--muted);
+}
+
+.cart-item {
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr) auto;
+  gap:13px;
+  align-items:start;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.cart-item h4 {
+  margin:0 0 4px;
+  font-size:14px;
+}
+
+.item-price {
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.cart-selection {
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.45;
+}
+
+.remove {
+  margin-top:8px;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:var(--danger);
+  font-size:11px;
+  font-weight:800;
+}
+
+.cart-foot {
+  padding:19px 22px 22px;
+  border-top:1px solid var(--line);
+  background:#fcfcfa;
+}
+
+.shipping-progress-label {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:7px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.shipping-progress {
+  height:7px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#e9e7e1;
+}
+
+.shipping-progress > div {
+  width:0;
+  height:100%;
+  background:var(--gold);
+  transition:width .2s ease;
+}
+
+.summary {
+  display:grid;
+  gap:9px;
+  margin:18px 0;
+}
+
+.summary-row {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#555;
+  font-size:13px;
+}
+
+.summary-row.total {
+  padding-top:10px;
+  border-top:1px solid var(--line);
+  color:var(--black);
+  font-size:16px;
+  font-weight:950;
+}
+
+.checkout-demo {
+  width:100%;
+}
+
+.cart-hint {
+  margin:10px 0 0;
+  color:var(--muted);
+  font-size:10px;
+  text-align:center;
+}
+
+
+/* =========================
+   CHECKOUT HELLGRÜN
+========================= */
+
+.checkout-dialog {
+  width:min(1080px,calc(100vw - 22px));
+  max-height:calc(100vh - 22px);
+  margin:auto;
+  border-radius:22px;
+  background:#eef7f1;
+  box-shadow:0 30px 90px rgba(0,0,0,.28);
+  overflow:auto;
+}
+
+.checkout-head {
+  position:sticky;
+  top:0;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 22px;
+  background:rgba(247,252,248,.98);
+  border-bottom:1px solid #d3e7d9;
+}
+
+.checkout-wrap {
+  padding:28px;
+}
+
+.checkout-intro {
+  margin:0 0 22px;
+  padding:14px 16px;
+  border-radius:12px;
+  background:#dff1e5;
+  color:#2f5f43;
+  border:1px solid #c9e5d2;
+  font-size:12px;
+}
+
+.checkout-grid {
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);
+  gap:22px;
+  align-items:start;
+}
+
+.checkout-stack {
+  display:grid;
+  gap:18px;
+}
+
+.checkout-card {
+  padding:22px;
+  border:1px solid #d7e8dc;
+  border-radius:17px;
+  background:#fbfefc;
+}
+
+.checkout-card h2 {
+  margin:0 0 17px;
+  font-size:18px;
+}
+
+.checkout-form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.checkout-full {
+  grid-column:1/-1;
+}
+
+label {
+  display:grid;
+  gap:6px;
+  color:#3f4545;
+  font-size:12px;
+  font-weight:800;
+}
+
+input {
+  width:100%;
+  min-height:45px;
+  border:1px solid #d9d8d3;
+  border-radius:9px;
+  padding:10px 12px;
+  background:var(--white);
+  color:var(--text);
+}
+
+input:focus {
+  outline:none;
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(202,161,58,.12);
+}
+
+.checkout-options {
+  display:grid;
+  gap:10px;
+}
+
+.checkout-option {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:13px;
+  border:1px solid #d7e8dc;
+  border-radius:11px;
+  background:#fff;
+}
+
+.checkout-option:has(input:checked) {
+  border-color:#8fbea0;
+  background:#edf8f0;
+}
+
+.checkout-option input {
+  width:auto;
+  min-height:0;
+}
+
+.checkout-option span {
+  display:grid;
+  gap:1px;
+}
+
+.checkout-option small {
+  color:var(--muted);
+  font-weight:500;
+}
+
+.payment-test-info {
+  margin-top:12px;
+  padding:13px;
+  border-radius:10px;
+  background:#e7f4eb;
+  color:#456150;
+  font-size:12px;
+}
+
+.checkout-summary-card {
+  position:sticky;
+  top:82px;
+  padding:22px;
+  border:1px solid #d7e8dc;
+  border-radius:17px;
+  background:#fbfefc;
+}
+
+.checkout-summary-card h2 {
+  margin:0 0 17px;
+  font-size:18px;
+}
+
+.checkout-items {
+  display:grid;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.checkout-item {
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  padding-bottom:11px;
+  border-bottom:1px solid var(--line);
+  font-size:12px;
+}
+
+.checkout-item small {
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+}
+
+.checkout-totals {
+  display:grid;
+  gap:9px;
+}
+
+.checkout-totals > div {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:13px;
+}
+
+.checkout-totals .grand-total {
+  margin-top:4px;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+  font-size:18px;
+  font-weight:950;
+}
+
+.checkout-warning {
+  min-height:20px;
+  margin:12px 0 0;
+  color:var(--danger);
+  font-size:12px;
+  font-weight:800;
+}
+
+.place-order {
+  width:100%;
+  margin-top:14px;
+}
+
+.checkout-legal-hint {
+  margin:10px 0 0;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.5;
+}
+
+.confirmation {
+  padding:45px 28px;
+  text-align:center;
+}
+
+.confirmation-mark {
+  width:64px;
+  height:64px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 18px;
+  border-radius:999px;
+  background:var(--green-soft);
+  color:var(--green-dark);
+  font-size:30px;
+  font-weight:950;
+}
+
+.order-number {
+  display:inline-block;
+  margin:12px 0 18px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:var(--gold-soft);
+  font-weight:900;
+}
+
+.toast {
+  position:fixed;
+  left:50%;
+  bottom:22px;
+  z-index:9999;
+  transform:translate(-50%,20px);
+  opacity:0;
+  pointer-events:none;
+  padding:12px 16px;
+  border-radius:12px;
+  background:var(--black);
+  color:var(--white);
+  font-size:12px;
+  font-weight:800;
+  box-shadow:var(--shadow);
+  transition:.2s ease;
+}
+
+.toast.show {
+  transform:translate(-50%,0);
+  opacity:1;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:1040px) {
+  .box-choice-grid {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .box-choice.featured {
+    transform:none;
+  }
+}
+
+@media (max-width:980px) {
+
+  .main-nav {
+    display:none;
+  }
+
+  .hero-grid {
+    grid-template-columns:1fr;
+  }
+
+  .hero-art {
+    min-height:410px;
+    max-width:610px;
+    margin:0 auto;
+  }
+
+  .builder-grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .checkout-grid {
+    grid-template-columns:1fr;
+  }
+
+  .checkout-summary-card {
+    position:static;
+  }
+
+  .footer-grid {
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width:720px) {
+
+  .container {
+    width:min(100% - 28px,1180px);
+  }
+
+  section {
+    padding:62px 0;
+  }
+
+  .header-row {
+    grid-template-columns:auto auto;
+    min-height:68px;
+  }
+
+  .brand-main {
+    font-size:1.12rem;
+  }
+
+  .brand-sub {
+    font-size:.72rem;
+  }
+
+  .cart-btn {
+    padding:10px 12px;
+    font-size:12px;
+  }
+
+  .hero {
+    padding:66px 0;
+  }
+
+  .hero-copy h1 {
+    font-size:clamp(45px,14vw,64px);
+    letter-spacing:-3px;
+  }
+
+  .hero-copy > p {
+    font-size:16px;
+  }
+
+  .box-choice-grid {
+    grid-template-columns:1fr;
+  }
+
+  .builder-size-bar {
+    grid-template-columns:1fr;
+  }
+
+  .builder-size-actions {
+    justify-content:flex-start;
+  }
+
+  .size-toggle {
+    min-width:0;
+  }
+
+  .builder-grid {
+    grid-template-columns:1fr;
+  }
+
+  .builder-product {
+    grid-template-columns:76px minmax(0,1fr) auto;
+  }
+
+  .product-thumb {
+    width:66px;
+    height:82px;
+  }
+
+  .builder-summary {
+    grid-template-columns:1fr;
+  }
+
+  .steps {
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns:1fr;
+  }
+
+  .checkout-wrap {
+    padding:18px;
+  }
+
+  .checkout-form-grid {
+    grid-template-columns:1fr;
+  }
+
+  .checkout-full {
+    grid-column:auto;
+  }
+
+  .hero-art {
+    min-height:390px;
+  }
+
+  .hero-pack.a {
+    width:165px;
+    height:210px;
+    left:0;
+    top:120px;
+  }
+
+  .hero-pack.b {
+    width:185px;
+    height:240px;
+    right:12px;
+    top:25px;
+  }
+
+  .hero-pack.c {
+    width:145px;
+    height:175px;
+    right:6px;
+    bottom:8px;
+  }
+
+  .hero-pack strong {
+    font-size:24px;
+  }
+}
+
+</style>
 </head>
-
 
 <body>
 
-
-<a
-  class="skip-link"
-  href="#mainContent"
->
+<a class="skip-link" href="#mainContent">
   Zum Inhalt
 </a>
 
 
-<!-- =========================================================
-     ENDLOS-LAUFBAND
-========================================================= -->
-
-<div
-  class="top-marquee"
-  aria-label="BODA Snackshop Hinweise"
->
-
+<div class="top-marquee" aria-label="BODA Snackshop Hinweise">
   <div class="top-marquee-track">
 
-
     <div class="top-marquee-group">
-
       <span>BODA Snackshop</span>
-
+      <span>31 Snacks zur Auswahl</span>
+      <span>BODA Smart Box · 12 Snacks · 29,95 €</span>
+      <span>BODA Premium Box · 15 Snacks · 34,95 €</span>
+      <span>BODA Business Box · 18 Snacks · 39,95 €</span>
       <span>5,99 € Versand</span>
-
-      <span>
-        Ab 59 € Warenwert versandkostenfrei
-      </span>
-
-      <span>
-        18 Snacks zur Auswahl
-      </span>
-
-      <span>
-        Wunschbox klein · 12 Snacks
-      </span>
-
-      <span>
-        Wunschbox groß · 18 Snacks
-      </span>
-
-      <span>
-        BODA Box klein oder groß
-      </span>
-
-      <span>
-        Du hast den Hunger, wir die Snacks.
-      </span>
-
+      <span>Ab 59 € Warenwert versandkostenfrei</span>
+      <span>Du hast den Hunger, wir die Snacks.</span>
     </div>
 
-
-    <div
-      class="top-marquee-group"
-      aria-hidden="true"
-    >
-
+    <div class="top-marquee-group" aria-hidden="true">
       <span>BODA Snackshop</span>
-
+      <span>31 Snacks zur Auswahl</span>
+      <span>BODA Smart Box · 12 Snacks · 29,95 €</span>
+      <span>BODA Premium Box · 15 Snacks · 34,95 €</span>
+      <span>BODA Business Box · 18 Snacks · 39,95 €</span>
       <span>5,99 € Versand</span>
-
-      <span>
-        Ab 59 € Warenwert versandkostenfrei
-      </span>
-
-      <span>
-        18 Snacks zur Auswahl
-      </span>
-
-      <span>
-        Wunschbox klein · 12 Snacks
-      </span>
-
-      <span>
-        Wunschbox groß · 18 Snacks
-      </span>
-
-      <span>
-        BODA Box klein oder groß
-      </span>
-
-      <span>
-        Du hast den Hunger, wir die Snacks.
-      </span>
-
+      <span>Ab 59 € Warenwert versandkostenfrei</span>
+      <span>Du hast den Hunger, wir die Snacks.</span>
     </div>
-
 
   </div>
-
 </div>
 
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
 
 <header class="site-header">
 
   <div class="container header-row">
 
-
-    <a
-      href="/"
-      class="brand"
-      aria-label="BODA Snacks Startseite"
-    >
+    <a href="/" class="brand" aria-label="BODA Snacks Startseite">
 
       <span class="brand-main">
-
         BODA
-
-        <span class="snacks">
-          SNACKS
-        </span>
-
+        <span class="snacks">SNACKS</span>
       </span>
-
 
       <span class="brand-sub">
         Snackshop
@@ -3668,23 +1704,10 @@
     </a>
 
 
-    <nav
-      class="main-nav"
-      aria-label="Hauptnavigation"
-    >
-
-      <a href="#boxen">
-        Boxen
-      </a>
-
-      <a href="#wunschbox">
-        Wunschbox bauen
-      </a>
-
-      <a href="#so-gehts">
-        So geht's
-      </a>
-
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="#boxen">Boxen</a>
+      <a href="#wunschbox">Box zusammenstellen</a>
+      <a href="#so-gehts">So geht's</a>
     </nav>
 
 
@@ -3693,18 +1716,9 @@
       id="openCart"
       type="button"
     >
-
       🛒 Warenkorb
-
-      <span
-        class="cart-count"
-        id="cartCount"
-      >
-        0
-      </span>
-
+      <span class="cart-count" id="cartCount">0</span>
     </button>
-
 
   </div>
 
@@ -3714,10 +1728,6 @@
 <main id="mainContent">
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
-
 <section class="hero">
 
   <div class="container hero-grid">
@@ -3725,149 +1735,87 @@
 
     <div class="hero-copy">
 
-
       <div class="eyebrow">
         BODA SNACKSHOP
       </div>
 
-
       <h1>
-
-        Deine Snacks.
-
-        <br>
-
-        <span>
-          Deine Box.
-        </span>
-
+        Deine Snacks.<br>
+        <span>Deine Box.</span>
       </h1>
 
-
       <p>
-
-        Du entscheidest:
-
-        Stell dir deine Wunschbox aus
-        18 verschiedenen Snacks selbst zusammen
-
-        oder lass dich von unserer
-        BODA Box überraschen.
-
-        Beide Varianten gibt es
-        klein und groß.
-
+        Wähle zuerst deine Boxgröße und stelle sie anschließend selbst aus
+        <strong>31 Snacks</strong> zusammen.
+        Drei klare Größen, ein einfaches Prinzip:
+        Du entscheidest, was in deine BODA Box kommt.
       </p>
 
 
       <div class="hero-actions">
 
+        <a
+          href="#boxen"
+          class="btn btn-primary"
+          id="heroChooseBox"
+        >
+          Zur Auswahl
+        </a>
 
         <a
           href="#wunschbox"
-          class="btn btn-primary"
-        >
-          Wunschbox bauen
-        </a>
-
-
-        <a
-          href="#boda-box"
           class="btn btn-secondary"
+          id="heroBuildBox"
         >
-          BODA Box ansehen
+          Box erstellen
         </a>
-
 
       </div>
 
 
       <div class="trust-row">
 
-        <span>
-          18 Snacks zur Auswahl
-        </span>
-
-        <span>
-          Klein · 12 Snacks
-        </span>
-
-        <span>
-          Groß · 18 Snacks
-        </span>
-
-        <span>
-          Ab 59 € versandkostenfrei
-        </span>
+        <span>31 Snacks zur Auswahl</span>
+        <span>Smart · 12 Snacks</span>
+        <span>Premium · 15 Snacks</span>
+        <span>Business · 18 Snacks</span>
+        <span>Ab 59 € versandkostenfrei</span>
 
       </div>
-
 
     </div>
 
 
-    <div
-      class="hero-art"
-      aria-hidden="true"
-    >
-
+    <div class="hero-art" aria-hidden="true">
 
       <div class="hero-pack a">
-
-        <small>
-          BODA SNACKS
-        </small>
-
+        <small>BODA SNACKS</small>
         <strong>
-          WUNSCH
-          <br>
+          SMART<br>
           BOX
         </strong>
-
-        <small>
-          DU ENTSCHEIDEST
-        </small>
-
+        <small>12 SNACKS</small>
       </div>
 
 
       <div class="hero-pack b">
-
-        <small>
-          BODA SNACKS
-        </small>
-
+        <small>BODA SNACKS</small>
         <strong>
-          18
-          <br>
-          SNACKS
+          PREMIUM<br>
+          BOX
         </strong>
-
-        <small>
-          ZUR AUSWAHL
-        </small>
-
+        <small>15 SNACKS</small>
       </div>
 
 
       <div class="hero-pack c">
-
-        <small>
-          BODA SNACKS
-        </small>
-
+        <small>BODA SNACKS</small>
         <strong>
-          BODA
-          <br>
+          BUSINESS<br>
           BOX
         </strong>
-
-        <small>
-          ÜBERRASCH MICH
-        </small>
-
+        <small>18 SNACKS</small>
       </div>
-
 
     </div>
 
@@ -3877,9 +1825,6 @@
 </section>
 
 
-<!-- =========================================================
-     BOX-TYPEN
-========================================================= -->
 
 <section
   class="box-offers"
@@ -3891,68 +1836,46 @@
 
     <div class="section-head">
 
-
       <div>
 
         <div class="eyebrow">
-          ZWEI WEGE. ZWEI GRÖSSEN.
+          DREI BODA BOXEN
         </div>
 
         <h2>
-          Wie willst du snacken?
+          Welche Größe passt zu dir?
         </h2>
 
       </div>
 
 
       <p>
-
-        Wunschbox:
-        Du suchst selbst aus.
-
-        BODA Box:
-        Wir stellen die Mischung für dich zusammen.
-
-        Klein bedeutet 12 Snacks,
-        groß bedeutet 18 Snacks.
-
+        Bei jeder Box wählst du die Snacks selbst aus dem verfügbaren Sortiment.
+        Der Unterschied liegt nur in der Anzahl der Snack-Plätze.
       </p>
 
-
     </div>
+
 
 
     <div class="box-choice-grid">
 
 
-      <!-- =====================================================
-           WUNSCHBOX
-      ===================================================== -->
-
-      <article class="box-choice featured">
-
-
-        <div class="box-choice-badge">
-          SELBST ZUSAMMENSTELLEN
-        </div>
-
+      <article class="box-choice">
 
         <div class="box-choice-art">
 
-          <div class="box-visual wish">
+          <div class="box-visual smart">
 
-            <small>
-              BODA SNACKS
-            </small>
+            <small>BODA SNACKS</small>
 
             <strong>
-              WUNSCH
-              <br>
+              SMART<br>
               BOX
             </strong>
 
             <small>
-              DU ENTSCHEIDEST
+              12 SNACKS
             </small>
 
           </div>
@@ -3962,59 +1885,46 @@
 
         <div class="box-choice-body">
 
-
           <p class="box-kicker">
-            DEINE AUSWAHL
+            KOMPAKT & KLAR
           </p>
 
-
           <h3>
-            BODA Wunschbox
+            BODA Smart Box
           </h3>
 
-
           <p>
-
-            Wähle aus 18 verschiedenen Snacks
-            deine Favoriten aus.
-
-            Mehrfachauswahl ist möglich,
-            wenn du von einem Snack mehr möchtest.
-
+            12 Snack-Plätze für deinen persönlichen Mix.
           </p>
 
 
           <ul class="box-points">
 
             <li>
-              Klein: 12 Snacks selbst auswählen
+              12 Snacks selbst auswählen
             </li>
 
             <li>
-              Groß: 18 Snacks selbst auswählen
+              Mehrfachauswahl möglich
             </li>
 
             <li>
-              18 verschiedene Snacks zur Auswahl
+              31 Produkte im Sortiment
             </li>
 
           </ul>
 
 
-          <div
-            class="size-picks"
-            aria-label="Wunschbox Größen"
-          >
-
+          <div class="size-picks">
 
             <button
               class="size-pick wish-jump"
               type="button"
-              data-wish-size="small"
+              data-wish-size="smart"
             >
 
               <strong>
-                Klein
+                Smart Box
               </strong>
 
               <span>
@@ -4022,67 +1932,39 @@
               </span>
 
               <b>
-                29,90 € · Testpreis
+                29,95 €
               </b>
 
             </button>
-
-
-            <button
-              class="size-pick wish-jump"
-              type="button"
-              data-wish-size="large"
-            >
-
-              <strong>
-                Groß
-              </strong>
-
-              <span>
-                18 Snacks auswählen
-              </span>
-
-              <b>
-                44,90 € · Testpreis
-              </b>
-
-            </button>
-
 
           </div>
-
 
         </div>
 
       </article>
 
 
-      <!-- =====================================================
-           BODA BOX
-      ===================================================== -->
 
-      <article
-        class="box-choice"
-        id="boda-box"
-      >
+      <article class="box-choice featured">
+
+        <div class="box-choice-badge">
+          MITTLERE GRÖSSE
+        </div>
 
 
         <div class="box-choice-art">
 
-          <div class="box-visual mystery">
+          <div class="box-visual premium">
 
-            <small>
-              BODA SNACKS
-            </small>
+            <small>BODA SNACKS</small>
 
             <strong>
-              BODA
-              <br>
+              PREMIUM<br>
               BOX
             </strong>
 
             <small>
-              ÜBERRASCH MICH
+              15 SNACKS
             </small>
 
           </div>
@@ -4092,72 +1974,143 @@
 
         <div class="box-choice-body">
 
-
           <p class="box-kicker">
-            WIR STELLEN SIE ZUSAMMEN
+            MEHR VON DEINEN FAVORITEN
           </p>
 
-
           <h3>
-            BODA Box
+            BODA Premium Box
           </h3>
 
-
           <p>
-
-            Du wählst nur die Größe.
-
-            BODA stellt dir eine
-            abwechslungsreiche Mischung
-            aus süßen und salzigen Snacks zusammen.
-
+            15 Snack-Plätze – der Mittelweg zwischen kompakt und groß.
           </p>
 
 
           <ul class="box-points">
 
             <li>
-              Kein Zusammenklicken nötig
+              15 Snacks selbst auswählen
             </li>
 
             <li>
-              Klein mit 12 Snacks
+              Mehrfachauswahl möglich
             </li>
 
             <li>
-              Groß mit 18 Snacks
-            </li>
-
-            <li>
-              Inhalt kann je nach Sortiment variieren
+              31 Produkte im Sortiment
             </li>
 
           </ul>
 
 
-          <div class="mystery-add-row">
-
-
-            <button
-              class="btn btn-secondary add-mystery"
-              type="button"
-              data-product-id="mystery-small"
-            >
-              Klein · 12 Snacks · 24,90 €
-            </button>
-
+          <div class="size-picks">
 
             <button
-              class="btn btn-primary add-mystery"
+              class="size-pick wish-jump"
               type="button"
-              data-product-id="mystery-large"
+              data-wish-size="premium"
             >
-              Groß · 18 Snacks · 39,90 €
-            </button>
 
+              <strong>
+                Premium Box
+              </strong>
+
+              <span>
+                15 Snacks auswählen
+              </span>
+
+              <b>
+                34,95 €
+              </b>
+
+            </button>
 
           </div>
 
+        </div>
+
+      </article>
+
+
+
+      <article class="box-choice">
+
+        <div class="box-choice-art">
+
+          <div class="box-visual business">
+
+            <small>BODA SNACKS</small>
+
+            <strong>
+              BUSINESS<br>
+              BOX
+            </strong>
+
+            <small>
+              18 SNACKS
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="box-choice-body">
+
+          <p class="box-kicker">
+            DIE GROSSE BOX
+          </p>
+
+          <h3>
+            BODA Business Box
+          </h3>
+
+          <p>
+            18 Snack-Plätze für Büro, Team, Vorrat oder einfach mehr Auswahl.
+          </p>
+
+
+          <ul class="box-points">
+
+            <li>
+              18 Snacks selbst auswählen
+            </li>
+
+            <li>
+              Mehrfachauswahl möglich
+            </li>
+
+            <li>
+              31 Produkte im Sortiment
+            </li>
+
+          </ul>
+
+
+          <div class="size-picks">
+
+            <button
+              class="size-pick wish-jump"
+              type="button"
+              data-wish-size="business"
+            >
+
+              <strong>
+                Business Box
+              </strong>
+
+              <span>
+                18 Snacks auswählen
+              </span>
+
+              <b>
+                39,95 €
+              </b>
+
+            </button>
+
+          </div>
 
         </div>
 
@@ -4166,15 +2119,11 @@
 
     </div>
 
-
   </div>
 
 </section>
 
 
-<!-- =========================================================
-     WUNSCHBOX KONFIGURATOR
-========================================================= -->
 
 <section
   class="wish-builder-section"
@@ -4186,35 +2135,27 @@
 
     <div class="section-head">
 
-
       <div>
 
         <div class="eyebrow">
-          BODA WUNSCHBOX
+          DEINE BODA BOX
         </div>
 
         <h2>
-          18 Snacks stehen zur Auswahl.
+          31 Snacks. Du stellst sie zusammen.
         </h2>
 
       </div>
 
 
       <p>
-
-        Entscheide zuerst zwischen
-        klein und groß.
-
-        Danach füllst du deine Box
-        mit 12 oder 18 Snack-Plätzen.
-
-        Einen Lieblingssnack kannst
-        du auch mehrfach auswählen.
-
+        Wähle Smart, Premium oder Business und fülle anschließend genau
+        12, 15 oder 18 Snack-Plätze.
+        Lieblingsprodukte darfst du mehrfach auswählen.
       </p>
 
-
     </div>
+
 
 
     <div class="builder-shell">
@@ -4222,16 +2163,14 @@
 
       <div class="builder-size-bar">
 
-
         <div>
 
           <strong>
-            Welche Wunschbox möchtest du bauen?
+            Welche BODA Box möchtest du bauen?
           </strong>
 
           <p>
-            Klein = 12 Snack-Plätze ·
-            Groß = 18 Snack-Plätze
+            Smart = 12 · Premium = 15 · Business = 18 Snack-Plätze
           </p>
 
         </div>
@@ -4239,33 +2178,37 @@
 
         <div class="builder-size-actions">
 
-
           <button
             class="size-toggle active"
             type="button"
-            data-builder-size="small"
+            data-builder-size="smart"
           >
-            Klein · 12
+            Smart · 12
           </button>
-
 
           <button
             class="size-toggle"
             type="button"
-            data-builder-size="large"
+            data-builder-size="premium"
           >
-            Groß · 18
+            Premium · 15
           </button>
 
+          <button
+            class="size-toggle"
+            type="button"
+            data-builder-size="business"
+          >
+            Business · 18
+          </button>
 
         </div>
-
 
       </div>
 
 
-      <div class="builder-top">
 
+      <div class="builder-top">
 
         <div>
 
@@ -4288,25 +2231,23 @@
           Auswahl leeren
         </button>
 
-
       </div>
+
 
 
       <div
         class="builder-progress"
         aria-hidden="true"
       >
-
         <div id="builderProgress"></div>
-
       </div>
+
 
 
       <div
         class="builder-filter-row"
         aria-label="Snack-Kategorien"
       >
-
 
         <button
           type="button"
@@ -4316,6 +2257,13 @@
           Alle
         </button>
 
+        <button
+          type="button"
+          class="builder-filter"
+          data-category="getraenke"
+        >
+          Getränke
+        </button>
 
         <button
           type="button"
@@ -4325,7 +2273,6 @@
           Salzig
         </button>
 
-
         <button
           type="button"
           class="builder-filter"
@@ -4333,7 +2280,6 @@
         >
           Süß
         </button>
-
 
         <button
           type="button"
@@ -4343,19 +2289,19 @@
           Schokolade
         </button>
 
-
       </div>
+
 
 
       <div
         class="builder-grid"
         id="builderGrid"
-        aria-label="18 Snacks für deine Wunschbox"
+        aria-label="31 Snacks für deine BODA Box"
       ></div>
 
 
-      <div class="builder-summary">
 
+      <div class="builder-summary">
 
         <div>
 
@@ -4379,21 +2325,16 @@
           Erst 12 Snacks auswählen
         </button>
 
-
       </div>
 
 
     </div>
-
 
   </div>
 
 </section>
 
 
-<!-- =========================================================
-     SO GEHT'S
-========================================================= -->
 
 <section
   class="delivery"
@@ -4401,7 +2342,6 @@
 >
 
   <div class="container">
-
 
     <div class="section-head">
 
@@ -4422,7 +2362,6 @@
 
     <div class="steps">
 
-
       <article class="step">
 
         <span>
@@ -4430,14 +2369,11 @@
         </span>
 
         <h3>
-          Box-Typ wählen
+          Boxgröße wählen
         </h3>
 
         <p>
-
-          Wunschbox zum Selbstaussuchen
-          oder BODA Box als Überraschungsmix.
-
+          Smart mit 12, Premium mit 15 oder Business mit 18 Snacks.
         </p>
 
       </article>
@@ -4450,14 +2386,11 @@
         </span>
 
         <h3>
-          Größe wählen
+          Snacks auswählen
         </h3>
 
         <p>
-
-          Klein mit 12 Snacks
-          oder groß mit 18 Snacks.
-
+          Stelle deine Box aus dem verfügbaren Sortiment selbst zusammen.
         </p>
 
       </article>
@@ -4470,77 +2403,48 @@
         </span>
 
         <h3>
-          Warenkorb & Checkout
+          Warenkorb prüfen
         </h3>
 
         <p>
-
-          Warenkorb prüfen
-          und den integrierten Test-Checkout öffnen.
-
+          Auswahl, Versand und Gesamtpreis im Test-Checkout kontrollieren.
         </p>
 
       </article>
 
-
     </div>
-
 
   </div>
 
 </section>
 
 
-<!-- =========================================================
-     ABSCHLUSS
-========================================================= -->
 
 <section class="closing">
 
   <div class="container">
 
-
     <div class="closing-box">
-
 
       <div class="eyebrow">
         BODA SNACKSHOP
       </div>
 
-
       <h2>
-
         DU HAST DEN
-
-        <span>
-          HUNGER.
-        </span>
-
+        <span>HUNGER.</span>
         <br>
-
         WIR DIE
-
-        <span>
-          SNACKS.
-        </span>
-
+        <span>SNACKS.</span>
       </h2>
 
-
       <p>
-
-        Selbst aussuchen oder überraschen lassen.
-
-        Klein oder groß.
-
-        5,99 € Versand und
-        ab 59 € Warenwert versandkostenfrei.
-
+        Smart, Premium oder Business.
+        Du wählst die Snacks selbst.
+        5,99 € Versand und ab 59 € Warenwert versandkostenfrei.
       </p>
 
-
     </div>
-
 
   </div>
 
@@ -4550,9 +2454,6 @@
 </main>
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
 
 <footer>
 
@@ -4564,7 +2465,6 @@
 
       <div class="footer-brand">
 
-
         <a
           href="/"
           class="brand"
@@ -4572,15 +2472,11 @@
         >
 
           <span class="brand-main">
-
             BODA
-
             <span class="snacks">
               SNACKS
             </span>
-
           </span>
-
 
           <span class="brand-sub">
             Snackshop
@@ -4588,34 +2484,38 @@
 
         </a>
 
-
         <p>
           Du hast den Hunger, wir die Snacks.
         </p>
 
-
       </div>
+
 
 
       <div>
 
         <h4>
-          Snackshop
+          Snackboxen
         </h4>
 
+        <a href="#boxen">
+          BODA Smart Box
+        </a>
+
+        <a href="#boxen">
+          BODA Premium Box
+        </a>
+
+        <a href="#boxen">
+          BODA Business Box
+        </a>
+
         <a href="#wunschbox">
-          Wunschbox
-        </a>
-
-        <a href="#boda-box">
-          BODA Box
-        </a>
-
-        <a href="#so-gehts">
-          So geht's
+          Box zusammenstellen
         </a>
 
       </div>
+
 
 
       <div>
@@ -4641,6 +2541,7 @@
         </a>
 
       </div>
+
 
 
       <div>
@@ -4671,12 +2572,9 @@
     </div>
 
 
+
     <div class="copyright">
-
-      © 2026 BODA Snacks GbR ·
-      Testversion ·
-      Keine echte Bestellung oder Zahlung
-
+      © 2026 BODA Snacks GbR · Testversion · Keine echte Bestellung oder Zahlung
     </div>
 
 
@@ -4685,16 +2583,12 @@
 </footer>
 
 
-<!-- =========================================================
-     WARENKORB
-========================================================= -->
 
 <dialog
   class="cart-panel"
   id="cartPanel"
   aria-label="Dein Warenkorb"
 >
-
 
   <div class="cart-head">
 
@@ -4737,14 +2631,11 @@
 
 
     <div class="shipping-progress">
-
       <div id="shippingProgress"></div>
-
     </div>
 
 
     <div class="summary">
-
 
       <div class="summary-row">
 
@@ -4784,7 +2675,6 @@
 
       </div>
 
-
     </div>
 
 
@@ -4798,31 +2688,24 @@
 
 
     <p class="cart-hint">
-
       TESTMODUS ·
       5,99 € Versand ·
       ab 59 € versandkostenfrei ·
       keine echte Zahlung
-
     </p>
 
 
   </div>
 
-
 </dialog>
 
 
-<!-- =========================================================
-     CHECKOUT
-========================================================= -->
 
 <dialog
   class="checkout-dialog"
   id="checkoutDialog"
   aria-label="BODA Test-Checkout"
 >
-
 
   <div class="checkout-head">
 
@@ -4842,6 +2725,7 @@
   </div>
 
 
+
   <div
     class="checkout-wrap"
     id="checkoutFormView"
@@ -4854,14 +2738,13 @@
         TESTMODUS:
       </strong>
 
-      Dieser Checkout übermittelt
-      keine echte Bestellung
+      Dieser Checkout übermittelt keine echte Bestellung
       und führt keine Zahlung aus.
 
-      Bitte keine echten
-      Kreditkartendaten eingeben.
+      Bitte keine echten Kreditkartendaten eingeben.
 
     </p>
+
 
 
     <form
@@ -4876,10 +2759,7 @@
         <div class="checkout-stack">
 
 
-          <!-- DATEN -->
-
           <section class="checkout-card">
-
 
             <h2>
               1. Deine Daten
@@ -4946,14 +2826,11 @@
 
             </div>
 
-
           </section>
 
 
-          <!-- ADRESSE -->
 
           <section class="checkout-card">
-
 
             <h2>
               2. Lieferadresse
@@ -5009,14 +2886,11 @@
 
             </div>
 
-
           </section>
 
 
-          <!-- LIEFERUNG -->
 
           <section class="checkout-card">
-
 
             <h2>
               3. Lieferung
@@ -5028,14 +2902,12 @@
 
               <label class="checkout-option">
 
-
                 <input
                   type="radio"
                   name="delivery"
                   value="standard"
                   checked
                 >
-
 
                 <span>
 
@@ -5049,20 +2921,16 @@
 
                 </span>
 
-
               </label>
 
 
             </div>
 
-
           </section>
 
 
-          <!-- ZAHLUNG -->
 
           <section class="checkout-card">
-
 
             <h2>
               4. Zahlungsart – Simulation
@@ -5074,14 +2942,12 @@
 
               <label class="checkout-option">
 
-
                 <input
                   type="radio"
                   name="payment"
                   value="paypal"
                   checked
                 >
-
 
                 <span>
 
@@ -5095,19 +2961,17 @@
 
                 </span>
 
-
               </label>
 
 
-              <label class="checkout-option">
 
+              <label class="checkout-option">
 
                 <input
                   type="radio"
                   name="payment"
                   value="card"
                 >
-
 
                 <span>
 
@@ -5121,11 +2985,11 @@
 
                 </span>
 
-
               </label>
 
 
             </div>
+
 
 
             <div
@@ -5133,11 +2997,11 @@
               class="payment-test-info"
             >
 
-              Im echten Shop würde hier
-              die Weiterleitung zu PayPal
-              bzw. einem Zahlungsdienst erfolgen.
+              Im echten Shop würde hier die Weiterleitung
+              zu PayPal bzw. einem Zahlungsdienst erfolgen.
 
             </div>
+
 
 
             <div
@@ -5145,7 +3009,6 @@
               class="payment-test-info"
               hidden
             >
-
 
               <strong>
                 Testfelder
@@ -5217,7 +3080,6 @@
 
               </div>
 
-
             </div>
 
 
@@ -5227,10 +3089,8 @@
         </div>
 
 
-        <!-- CHECKOUT SUMMARY -->
 
         <aside class="checkout-summary-card">
-
 
           <h2>
             Zusammenfassung
@@ -5288,10 +3148,12 @@
           </div>
 
 
+
           <p
             class="checkout-warning"
             id="checkoutWarning"
           ></p>
+
 
 
           <button
@@ -5303,12 +3165,12 @@
           </button>
 
 
+
           <p class="checkout-legal-hint">
 
             Testfunktion.
 
-            Vor dem echten Verkaufsstart
-            müssen insbesondere
+            Vor dem echten Verkaufsstart müssen insbesondere
             Lebensmittel-Pflichtinformationen,
             Rechtstexte,
             Lieferinformationen
@@ -5330,14 +3192,12 @@
   </div>
 
 
-  <!-- BESTÄTIGUNG -->
 
   <section
     class="confirmation"
     id="orderConfirmation"
     hidden
   >
-
 
     <div class="confirmation-mark">
       ✓
@@ -5358,19 +3218,15 @@
 
 
     <p>
-
       Es wurde keine echte Bestellung versendet,
       kein Vertrag geschlossen
       und kein Geld abgebucht.
-
     </p>
 
 
     <p>
-
       Du hast den Hunger,
       wir die Snacks.
-
     </p>
 
 
@@ -5385,8 +3241,8 @@
 
   </section>
 
-
 </dialog>
+
 
 
 <div
@@ -5399,2894 +3255,2367 @@
 </div>
 
 
-<script>
 
-/* =========================================================
-   BODA SNACKSHOP
-   PRODUKTE · WARENKORB · BUILDER · CHECKOUT
-========================================================= */
+<script>
 
 (() => {
 
-  "use strict";
+"use strict";
 
 
-  /* =====================================================
-     KONFIGURATION
-  ===================================================== */
+const CONFIG = Object.freeze({
 
-  const CONFIG = Object.freeze({
+  storageKey:"bodaSnackshopCartV4",
 
-    storageKey:
-      "bodaSnackshopCartV3",
+  freeShippingCents:5900,
 
-    freeShippingCents:
-      5900,
+  shippingCents:599,
 
-    shippingCents:
-      599,
+  wishSizes:{
 
-    wishSizes: {
+    smart:{
+      count:12,
+      productId:"smart"
+    },
 
-      small: {
+    premium:{
+      count:15,
+      productId:"premium"
+    },
 
-        count:
-          12,
+    business:{
+      count:18,
+      productId:"business"
+    }
 
-        productId:
-          "wish-small"
+  }
 
-      },
+});
 
-      large: {
 
-        count:
-          18,
 
-        productId:
-          "wish-large"
+const SNACKS = [
+
+{
+  id:1,
+  name:"meinT Orange 0,5 l",
+  category:"getraenke",
+  size:"500 ml",
+  image:"images/products/meint-orange.png",
+  color:"#f39c34",
+  textColor:"#202424",
+  packText:"ORANGE"
+},
+
+{
+  id:2,
+  name:"meinT Zitrone 0,5 l",
+  category:"getraenke",
+  size:"500 ml",
+  image:"images/products/meint-zitrone.png",
+  color:"#f0d25d",
+  textColor:"#202424",
+  packText:"ZITRONE"
+},
+
+{
+  id:3,
+  name:"meinT Pfirsich 0,5 l",
+  category:"getraenke",
+  size:"500 ml",
+  image:"images/products/meint-pfirsich.png",
+  color:"#f3a76f",
+  textColor:"#202424",
+  packText:"PFIRSICH"
+},
+
+{
+  id:4,
+  name:"Milka Tender",
+  category:"schokolade",
+  size:"1 Stück",
+  image:"",
+  color:"#7952a8",
+  textColor:"#ffffff",
+  packText:"MILKA TENDER"
+},
+
+{
+  id:5,
+  name:"Oreo Wafer Roll",
+  category:"suess",
+  size:"1 Packung",
+  image:"",
+  color:"#2464a8",
+  textColor:"#ffffff",
+  packText:"OREO WAFER"
+},
+
+{
+  id:6,
+  name:"Griesson Cookies Classic",
+  category:"suess",
+  size:"1 Packung",
+  image:"images/products/griesson-cookies-classic.png",
+  color:"#2f5ba8",
+  textColor:"#ffffff",
+  packText:"COOKIES"
+},
+
+{
+  id:7,
+  name:"Oreo Double",
+  category:"suess",
+  size:"1 Packung",
+  image:"",
+  color:"#1d4f91",
+  textColor:"#ffffff",
+  packText:"OREO DOUBLE"
+},
+
+{
+  id:8,
+  name:"Mars",
+  category:"schokolade",
+  size:"1 Riegel",
+  image:"images/products/mars.png",
+  color:"#251a18",
+  textColor:"#ffffff",
+  packText:"MARS"
+},
+
+{
+  id:9,
+  name:"Snickers",
+  category:"schokolade",
+  size:"1 Riegel",
+  image:"images/products/snickers.png",
+  color:"#483225",
+  textColor:"#ffffff",
+  packText:"SNICKERS"
+},
+
+{
+  id:10,
+  name:"Twix",
+  category:"schokolade",
+  size:"1 Riegel",
+  image:"images/products/twix.png",
+  color:"#d9a53d",
+  textColor:"#202424",
+  packText:"TWIX"
+},
+
+{
+  id:11,
+  name:"Bahlsen Brezeln",
+  category:"salzig",
+  size:"1 Packung",
+  image:"",
+  color:"#b98752",
+  textColor:"#ffffff",
+  packText:"BREZELN"
+},
+
+{
+  id:12,
+  name:"Lorenz Saltletts",
+  category:"salzig",
+  size:"1 Packung",
+  image:"",
+  color:"#c24635",
+  textColor:"#ffffff",
+  packText:"SALTLETTS"
+},
+
+{
+  id:13,
+  name:"TUC Bake Rolls Meersalz",
+  category:"salzig",
+  size:"1 Packung",
+  image:"images/products/tuc-bake-rolls-meersalz.png",
+  color:"#e6c535",
+  textColor:"#20383b",
+  packText:"TUC SALZ"
+},
+
+{
+  id:14,
+  name:"funny-frisch Chipsfrisch Ungarisch",
+  category:"salzig",
+  size:"1 Packung",
+  image:"images/products/funny-frisch-chipsfrisch-ungarisch.png",
+  color:"#337247",
+  textColor:"#ffffff",
+  packText:"CHIPSFRISCH"
+},
+
+{
+  id:15,
+  name:"funny-frisch Chipsfrisch – weitere Sorte",
+  category:"salzig",
+  size:"1 Packung",
+  image:"",
+  color:"#4f814f",
+  textColor:"#ffffff",
+  packText:"CHIPSFRISCH"
+},
+
+{
+  id:16,
+  name:"Haribo Primavera Erdbeeren",
+  category:"suess",
+  size:"1 Beutel",
+  image:"images/products/haribo-primavera-erdbeeren.png",
+  color:"#ef7e93",
+  textColor:"#ffffff",
+  packText:"PRIMAVERA"
+},
+
+{
+  id:17,
+  name:"Haribo Pommes Sauer",
+  category:"suess",
+  size:"1 Beutel",
+  image:"images/products/haribo-pommes-sauer.png",
+  color:"#f6c545",
+  textColor:"#202424",
+  packText:"POMMES SAUER"
+},
+
+{
+  id:18,
+  name:"Haribo Konfekt",
+  category:"suess",
+  size:"1 Beutel",
+  image:"images/products/haribo-konfekt.png",
+  color:"#4ca5da",
+  textColor:"#ffffff",
+  packText:"KONFEKT"
+},
+
+{
+  id:19,
+  name:"Haribo Goldbären",
+  category:"suess",
+  size:"1 Beutel",
+  image:"images/products/haribo-goldbaeren.png",
+  color:"#d7b84b",
+  textColor:"#202424",
+  packText:"GOLDBÄREN"
+},
+
+{
+  id:20,
+  name:"Haribo Happy Cola",
+  category:"suess",
+  size:"1 Beutel",
+  image:"",
+  color:"#7a4a34",
+  textColor:"#ffffff",
+  packText:"HAPPY COLA"
+},
+
+{
+  id:21,
+  name:"Haribo Berries",
+  category:"suess",
+  size:"1 Beutel",
+  image:"images/products/haribo-berries.png",
+  color:"#1f1f1f",
+  textColor:"#ffffff",
+  packText:"BERRIES"
+},
+
+{
+  id:22,
+  name:"Ültje Studentenfutter",
+  category:"salzig",
+  size:"1 Packung",
+  image:"",
+  color:"#31539b",
+  textColor:"#ffffff",
+  packText:"STUDENTENFUTTER"
+},
+
+{
+  id:23,
+  name:"M&M's Peanut",
+  category:"schokolade",
+  size:"1 Packung",
+  image:"images/products/mms-peanut.png",
+  color:"#f2c73c",
+  textColor:"#202424",
+  packText:"M&M'S"
+},
+
+{
+  id:24,
+  name:"TUC Bake Rolls Tomato & Olive",
+  category:"salzig",
+  size:"1 Packung",
+  image:"images/products/tuc-bake-rolls-tomato-olive.png",
+  color:"#d9c435",
+  textColor:"#20383b",
+  packText:"TUC TOMATO"
+},
+
+{
+  id:25,
+  name:"Lorenz NicNac's Double Crunch Peanuts",
+  category:"salzig",
+  size:"1 Packung",
+  image:"images/products/lorenz-nik-naks.png",
+  color:"#d1392f",
+  textColor:"#ffffff",
+  packText:"NICNAC'S"
+},
+
+{
+  id:26,
+  name:"Ültje Erdnüsse",
+  category:"salzig",
+  size:"1 Dose",
+  image:"images/products/ueltje-erdnuesse.png",
+  color:"#2d69a5",
+  textColor:"#ffffff",
+  packText:"ERDNÜSSE"
+},
+
+{
+  id:27,
+  name:"funny-frisch Chipsfrisch Mini",
+  category:"salzig",
+  size:"1 kleine Packung",
+  image:"images/products/funny-frisch-chipsfrisch-ungarisch.png",
+  color:"#3e7a4a",
+  textColor:"#ffffff",
+  packText:"CHIPS MINI"
+},
+
+{
+  id:28,
+  name:"Crunchips Stackers Chili & Melty Cheese",
+  category:"salzig",
+  size:"1 Dose",
+  image:"images/products/crunchips-stackers-chili-cheese.png",
+  color:"#222222",
+  textColor:"#ffffff",
+  packText:"STACKERS CHILI"
+},
+
+{
+  id:29,
+  name:"Manner Snack Minis",
+  category:"suess",
+  size:"1 Packung",
+  image:"images/products/manner-snack-minis.png",
+  color:"#ef93ab",
+  textColor:"#20383b",
+  packText:"MANNER MINIS"
+},
+
+{
+  id:30,
+  name:"Manner Original Neapolitaner",
+  category:"suess",
+  size:"1 Packung",
+  image:"images/products/manner-neapolitaner.png",
+  color:"#ed9d83",
+  textColor:"#20383b",
+  packText:"MANNER"
+},
+
+{
+  id:31,
+  name:"Crunchips Stackers Cheese & Onion",
+  category:"salzig",
+  size:"1 Dose",
+  image:"images/products/crunchips-stackers-cheese-onion.png",
+  color:"#e8c83d",
+  textColor:"#20383b",
+  packText:"STACKERS CHEESE"
+}
+
+];
+
+
+
+const BOX_PRODUCTS = Object.freeze({
+
+  smart:{
+    id:"smart",
+    name:"BODA Smart Box",
+    priceCents:2995,
+    snackCount:12,
+    type:"wish",
+    packText:"SMART 12",
+    color:"#25806e",
+    textColor:"#ffffff"
+  },
+
+  premium:{
+    id:"premium",
+    name:"BODA Premium Box",
+    priceCents:3495,
+    snackCount:15,
+    type:"wish",
+    packText:"PREMIUM 15",
+    color:"#a88022",
+    textColor:"#ffffff"
+  },
+
+  business:{
+    id:"business",
+    name:"BODA Business Box",
+    priceCents:3995,
+    snackCount:18,
+    type:"wish",
+    packText:"BUSINESS 18",
+    color:"#161616",
+    textColor:"#ffffff"
+  }
+
+});
+
+
+
+const $ = (selector,root=document) =>
+  root.querySelector(selector);
+
+const $$ = (selector,root=document) =>
+  [...root.querySelectorAll(selector)];
+
+
+
+const money = cents => {
+
+  return new Intl.NumberFormat(
+    "de-DE",
+    {
+      style:"currency",
+      currency:"EUR"
+    }
+  ).format(cents / 100);
+
+};
+
+
+
+const escapeHtml = value => {
+
+  return String(value ?? "")
+    .replace(
+      /[&<>"']/g,
+      character => {
+
+        const replacements = {
+          "&":"&amp;",
+          "<":"&lt;",
+          ">":"&gt;",
+          '"':"&quot;",
+          "'":"&#39;"
+        };
+
+        return replacements[character];
 
       }
+    );
 
-    }
+};
 
-  });
 
 
-  /* =====================================================
-     18 SNACKS
-     NOCH TESTPRODUKTE
-  ===================================================== */
+function miniPack(product) {
 
-  const SNACKS = [
-
-    {
-      id: 1,
-      name: "Chips Paprika",
-      category: "salzig",
-      size: "150 g",
-      color: "#df5b63",
-      textColor: "#ffffff",
-      packText: "PAPRIKA"
-    },
-
-    {
-      id: 2,
-      name: "Chips Gesalzen",
-      category: "salzig",
-      size: "150 g",
-      color: "#e5bd4b",
-      textColor: "#20383b",
-      packText: "SALTED"
-    },
-
-    {
-      id: 3,
-      name: "Salzstangen",
-      category: "salzig",
-      size: "250 g",
-      color: "#168b87",
-      textColor: "#ffffff",
-      packText: "STICKS"
-    },
-
-    {
-      id: 4,
-      name: "Erdnüsse geröstet",
-      category: "salzig",
-      size: "200 g",
-      color: "#c98752",
-      textColor: "#ffffff",
-      packText: "NUTS"
-    },
-
-    {
-      id: 5,
-      name: "Fruchtgummi Mix",
-      category: "suess",
-      size: "175 g",
-      color: "#e95e76",
-      textColor: "#ffffff",
-      packText: "SWEET"
-    },
-
-    {
-      id: 6,
-      name: "Saure Fruchtgummis",
-      category: "suess",
-      size: "175 g",
-      color: "#70b96a",
-      textColor: "#20383b",
-      packText: "SOUR"
-    },
-
-    {
-      id: 7,
-      name: "Schoko Riegel",
-      category: "schokolade",
-      size: "50 g",
-      color: "#714737",
-      textColor: "#ffffff",
-      packText: "CHOCO"
-    },
-
-    {
-      id: 8,
-      name: "Vollmilch Schokolade",
-      category: "schokolade",
-      size: "100 g",
-      color: "#8a5a47",
-      textColor: "#ffffff",
-      packText: "MILK"
-    },
-
-    {
-      id: 9,
-      name: "Butterkekse",
-      category: "suess",
-      size: "200 g",
-      color: "#d7ae66",
-      textColor: "#20383b",
-      packText: "COOKIES"
-    },
-
-    {
-      id: 10,
-      name: "Waffel Snack",
-      category: "suess",
-      size: "100 g",
-      color: "#e6c6a0",
-      textColor: "#20383b",
-      packText: "WAFER"
-    },
-
-    {
-      id: 11,
-      name: "Popcorn",
-      category: "salzig",
-      size: "100 g",
-      color: "#f0cf64",
-      textColor: "#20383b",
-      packText: "POPCORN"
-    },
-
-    {
-      id: 12,
-      name: "Cracker",
-      category: "salzig",
-      size: "150 g",
-      color: "#dcae72",
-      textColor: "#20383b",
-      packText: "CRACKER"
-    },
-
-    {
-      id: 13,
-      name: "Tortilla Chips",
-      category: "salzig",
-      size: "125 g",
-      color: "#d66f3f",
-      textColor: "#ffffff",
-      packText: "TORTILLA"
-    },
-
-    {
-      id: 14,
-      name: "Mini Brezeln",
-      category: "salzig",
-      size: "150 g",
-      color: "#b78049",
-      textColor: "#ffffff",
-      packText: "PRETZEL"
-    },
-
-    {
-      id: 15,
-      name: "Kaubonbon Mix",
-      category: "suess",
-      size: "150 g",
-      color: "#e17db1",
-      textColor: "#ffffff",
-      packText: "CHEWY"
-    },
-
-    {
-      id: 16,
-      name: "Schoko Waffel",
-      category: "schokolade",
-      size: "45 g",
-      color: "#93654f",
-      textColor: "#ffffff",
-      packText: "CRUNCH"
-    },
-
-    {
-      id: 17,
-      name: "Nuss Riegel",
-      category: "schokolade",
-      size: "50 g",
-      color: "#9b6a42",
-      textColor: "#ffffff",
-      packText: "NUT BAR"
-    },
-
-    {
-      id: 18,
-      name: "Cookie Snack",
-      category: "suess",
-      size: "120 g",
-      color: "#c99763",
-      textColor: "#20383b",
-      packText: "COOKIE"
-    }
-
-  ];
-
-
-  /* =====================================================
-     BOX-PRODUKTE
-     TESTPREISE
-  ===================================================== */
-
-  const BOX_PRODUCTS = Object.freeze({
-
-    "wish-small": {
-
-      id:
-        "wish-small",
-
-      name:
-        "BODA Wunschbox Klein",
-
-      priceCents:
-        2990,
-
-      snackCount:
-        12,
-
-      type:
-        "wish",
-
-      packText:
-        "WUNSCH 12",
-
-      color:
-        "#a88022",
-
-      textColor:
-        "#ffffff"
-
-    },
-
-
-    "wish-large": {
-
-      id:
-        "wish-large",
-
-      name:
-        "BODA Wunschbox Groß",
-
-      priceCents:
-        4490,
-
-      snackCount:
-        18,
-
-      type:
-        "wish",
-
-      packText:
-        "WUNSCH 18",
-
-      color:
-        "#caa13a",
-
-      textColor:
-        "#161616"
-
-    },
-
-
-    "mystery-small": {
-
-      id:
-        "mystery-small",
-
-      name:
-        "BODA Box Klein",
-
-      priceCents:
-        2490,
-
-      snackCount:
-        12,
-
-      type:
-        "mystery",
-
-      packText:
-        "BODA 12",
-
-      color:
-        "#25806e",
-
-      textColor:
-        "#ffffff"
-
-    },
-
-
-    "mystery-large": {
-
-      id:
-        "mystery-large",
-
-      name:
-        "BODA Box Groß",
-
-      priceCents:
-        3990,
-
-      snackCount:
-        18,
-
-      type:
-        "mystery",
-
-      packText:
-        "BODA 18",
-
-      color:
-        "#161616",
-
-      textColor:
-        "#ffffff"
-
-    }
-
-  });
-
-
-  /* =====================================================
-     HELFER
-  ===================================================== */
-
-  const $ =
-    (
-      selector,
-      root = document
-    ) =>
-      root.querySelector(
-        selector
-      );
-
-
-  const $$ =
-    (
-      selector,
-      root = document
-    ) =>
-      [
-        ...root.querySelectorAll(
-          selector
-        )
-      ];
-
-
-  const money =
-    cents => {
-
-      return new Intl.NumberFormat(
-
-        "de-DE",
-
-        {
-
-          style:
-            "currency",
-
-          currency:
-            "EUR"
-
-        }
-
-      ).format(
-        cents / 100
-      );
-
-    };
-
-
-  const escapeHtml =
-    value => {
-
-      return String(
-        value ?? ""
-      ).replace(
-
-        /[&<>"']/g,
-
-        character => {
-
-          const replacements = {
-
-            "&":
-              "&amp;",
-
-            "<":
-              "&lt;",
-
-            ">":
-              "&gt;",
-
-            '"':
-              "&quot;",
-
-            "'":
-              "&#39;"
-
-          };
-
-          return replacements[
-            character
-          ];
-
-        }
-
-      );
-
-    };
-
-
-  function miniPack(product) {
+  if(product.image) {
 
     return `
-
-      <div
-        class="mini-pack"
-        style="
-          --c:${product.color};
-          --t:${product.textColor};
-        "
-        aria-hidden="true"
-      >
-
-        <span>
-          BODA
-        </span>
-
-        <strong>
-          ${escapeHtml(
-            product.packText
-          )}
-        </strong>
-
+      <div class="product-thumb">
+        <img
+          src="${escapeHtml(product.image)}"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
       </div>
-
     `;
 
   }
 
+  return `
+    <div class="product-thumb placeholder" aria-hidden="true">
+      <span>
+        ${escapeHtml(product.packText)}
+      </span>
+    </div>
+  `;
 
-  /* =====================================================
-     TOAST
-  ===================================================== */
-
-  let toastTimer;
-
-
-  function toast(message) {
-
-    const element =
-      $("#toast");
+}
 
 
-    clearTimeout(
-      toastTimer
-    );
+
+let toastTimer;
 
 
-    element.textContent =
-      message;
+
+function toast(message) {
+
+  const element = $("#toast");
+
+  clearTimeout(toastTimer);
+
+  element.textContent = message;
+
+  element.classList.add("show");
+
+  toastTimer = setTimeout(
+    () => {
+      element.classList.remove("show");
+    },
+    2800
+  );
+
+}
 
 
-    element.classList.add(
-      "show"
-    );
 
+function normalizeCart(value) {
 
-    toastTimer =
-      setTimeout(
-        () => {
-
-          element.classList.remove(
-            "show"
-          );
-
-        },
-        2800
-      );
-
+  if(!Array.isArray(value)) {
+    return [];
   }
 
-
-  /* =====================================================
-     WARENKORB
-  ===================================================== */
-
-  function normalizeCart(value) {
-
-    if (
-      !Array.isArray(
-        value
-      )
-    ) {
-
-      return [];
-
-    }
-
-
-    return value
-
-      .filter(
-        row => {
-
-          return (
-
-            row &&
-
-            BOX_PRODUCTS[
-              row.productId
-            ] &&
-
-            Number.isInteger(
-              row.quantity
-            ) &&
-
-            row.quantity > 0
-
-          );
-
-        }
-      )
-
-      .map(
-        row => {
-
-          return {
-
-            uid:
-              String(
-                row.uid ||
-                `${row.productId}-${Date.now()}-${Math.random()}`
-              ),
-
-            productId:
-              row.productId,
-
-            quantity:
-              Math.min(
-                20,
-                row.quantity
-              ),
-
-            selection:
-              Array.isArray(
-                row.selection
-              )
-
-                ? row.selection
-                    .map(
-                      Number
-                    )
-                    .filter(
-                      id =>
-                        SNACKS.some(
-                          snack =>
-                            snack.id === id
-                        )
-                    )
-
-                : []
-
-          };
-
-        }
-      );
-
-  }
-
-
-  function loadCart() {
-
-    try {
-
-      return normalizeCart(
-
-        JSON.parse(
-
-          localStorage.getItem(
-            CONFIG.storageKey
-          ) || "[]"
-
-        )
-
-      );
-
-    }
-
-    catch {
-
-      return [];
-
-    }
-
-  }
-
-
-  let cart =
-    loadCart();
-
-
-  function saveCart() {
-
-    try {
-
-      localStorage.setItem(
-
-        CONFIG.storageKey,
-
-        JSON.stringify(
-          cart
-        )
-
-      );
-
-    }
-
-    catch {
-
-      /* localStorage nicht verfügbar */
-
-    }
-
-
-    renderCart();
-
-  }
-
-
-  function totals() {
-
-    const subtotal =
-
-      cart.reduce(
-
-        (
-          sum,
-          row
-        ) => {
-
-          const product =
-            BOX_PRODUCTS[
-              row.productId
-            ];
-
-
-          return (
-
-            sum +
-
-            product.priceCents *
-            row.quantity
-
-          );
-
-        },
-
-        0
-
-      );
-
-
-    const shipping =
-
-      subtotal > 0 &&
-      subtotal <
-        CONFIG.freeShippingCents
-
-        ? CONFIG.shippingCents
-
-        : 0;
-
-
-    const count =
-
-      cart.reduce(
-
-        (
-          sum,
-          row
-        ) =>
-          sum +
-          row.quantity,
-
-        0
-
-      );
-
-
-    return {
-
-      subtotal,
-      shipping,
-
-      total:
-        subtotal +
-        shipping,
-
-      count
-
-    };
-
-  }
-
-
-  /* =====================================================
-     WUNSCHBOX AUSWAHL LESBAR
-  ===================================================== */
-
-  function selectionSummary(
-    selection
-  ) {
-
-    if (
-      !selection ||
-      !selection.length
-    ) {
-
-      return "";
-
-    }
-
-
-    const grouped =
-      new Map();
-
-
-    selection.forEach(
-      id => {
-
-        grouped.set(
-
-          id,
-
-          (
-            grouped.get(
-              id
-            ) || 0
-          ) + 1
-
+  return value
+
+    .filter(
+      row => {
+
+        return (
+          row &&
+          BOX_PRODUCTS[row.productId] &&
+          Number.isInteger(row.quantity) &&
+          row.quantity > 0
         );
+
+      }
+    )
+
+    .map(
+      row => {
+
+        return {
+
+          uid:String(
+            row.uid ||
+            `${row.productId}-${Date.now()}-${Math.random()}`
+          ),
+
+          productId:row.productId,
+
+          quantity:Math.min(
+            20,
+            row.quantity
+          ),
+
+          selection:
+            Array.isArray(row.selection)
+            ? row.selection
+                .map(Number)
+                .filter(
+                  id =>
+                    SNACKS.some(
+                      snack =>
+                        snack.id === id
+                    )
+                )
+            : []
+
+        };
 
       }
     );
 
-
-    return [
-
-      ...grouped.entries()
-
-    ]
-
-      .map(
-        (
-          [
-            id,
-            quantity
-          ]
-        ) => {
-
-          const product =
-            SNACKS.find(
-              snack =>
-                snack.id === id
-            );
+}
 
 
-          return product
 
-            ? `${quantity}× ${product.name}`
+function loadCart() {
 
-            : "";
+  try {
 
-        }
+    return normalizeCart(
+      JSON.parse(
+        localStorage.getItem(
+          CONFIG.storageKey
+        ) || "[]"
       )
+    );
 
-      .filter(
-        Boolean
-      )
+  }
 
-      .join(
-        " · "
+  catch {
+
+    return [];
+
+  }
+
+}
+
+
+
+let cart = loadCart();
+
+
+
+function saveCart() {
+
+  try {
+
+    localStorage.setItem(
+      CONFIG.storageKey,
+      JSON.stringify(cart)
+    );
+
+  }
+
+  catch {}
+
+  renderCart();
+
+}
+
+
+
+function totals() {
+
+  const subtotal = cart.reduce(
+    (sum,row) => {
+
+      const product =
+        BOX_PRODUCTS[row.productId];
+
+      return (
+        sum +
+        product.priceCents *
+        row.quantity
       );
+
+    },
+    0
+  );
+
+
+  const shipping =
+
+    subtotal > 0 &&
+    subtotal < CONFIG.freeShippingCents
+
+    ? CONFIG.shippingCents
+    : 0;
+
+
+  const count = cart.reduce(
+    (sum,row) =>
+      sum + row.quantity,
+    0
+  );
+
+
+  return {
+    subtotal,
+    shipping,
+    total:subtotal + shipping,
+    count
+  };
+
+}
+
+
+
+function selectionSummary(selection) {
+
+  if(
+    !selection ||
+    !selection.length
+  ) {
+
+    return "";
 
   }
 
 
-  /* =====================================================
-     BODA BOX IN DEN WARENKORB
-  ===================================================== */
-
-  function addMystery(
-    productId
-  ) {
-
-    const product =
-      BOX_PRODUCTS[
-        productId
-      ];
+  const grouped = new Map();
 
 
-    if (
-      !product ||
-      product.type !==
-        "mystery"
-    ) {
+  selection.forEach(
+    id => {
 
-      return;
-
-    }
-
-
-    const existing =
-
-      cart.find(
-        row => {
-
-          return (
-
-            row.productId ===
-              productId &&
-
-            !row.selection.length
-
-          );
-
-        }
+      grouped.set(
+        id,
+        (
+          grouped.get(id) || 0
+        ) + 1
       );
 
+    }
+  );
 
-    if (
-      existing
-    ) {
 
-      existing.quantity =
-        Math.min(
+  return [
 
-          20,
+    ...grouped.entries()
 
-          existing.quantity +
-          1
+  ]
 
+  .map(
+    ([id,quantity]) => {
+
+      const product =
+        SNACKS.find(
+          snack =>
+            snack.id === id
         );
 
-    }
-
-    else {
-
-      cart.push({
-
-        uid:
-          `${productId}-${Date.now()}`,
-
-        productId,
-
-        quantity:
-          1,
-
-        selection:
-          []
-
-      });
+      return product
+        ? `${quantity}× ${product.name}`
+        : "";
 
     }
+  )
+
+  .filter(Boolean)
+
+  .join(" · ");
+
+}
 
 
-    saveCart();
+
+function addWish(
+  productId,
+  selection
+) {
+
+  const product =
+    BOX_PRODUCTS[productId];
 
 
-    toast(
-      `${product.name} im Warenkorb.`
-    );
+  if(
+    !product ||
+    product.type !== "wish"
+  ) {
+
+    return;
 
   }
 
 
-  /* =====================================================
-     WUNSCHBOX IN DEN WARENKORB
-  ===================================================== */
+  if(
+    selection.length !==
+    product.snackCount
+  ) {
 
-  function addWish(
+    toast(
+      `Bitte genau ${product.snackCount} Snacks auswählen.`
+    );
+
+    return;
+
+  }
+
+
+  cart.push({
+
+    uid:
+      `${productId}-` +
+      `${Date.now()}-` +
+      `${Math.random().toString(16).slice(2)}`,
+
     productId,
-    selection
-  ) {
 
-    const product =
-      BOX_PRODUCTS[
-        productId
-      ];
+    quantity:1,
 
+    selection:[
+      ...selection
+    ]
 
-    if (
-      !product ||
-      product.type !==
-        "wish"
-    ) {
-
-      return;
-
-    }
+  });
 
 
-    if (
-      selection.length !==
-      product.snackCount
-    ) {
-
-      toast(
-
-        `Bitte genau ` +
-        `${product.snackCount} ` +
-        `Snacks auswählen.`
-
-      );
-
-      return;
-
-    }
+  saveCart();
 
 
-    cart.push({
+  toast(
+    `${product.name} im Warenkorb.`
+  );
 
-      uid:
-
-        `${productId}-` +
-        `${Date.now()}-` +
-        `${Math.random()
-          .toString(16)
-          .slice(2)}`,
-
-      productId,
-
-      quantity:
-        1,
-
-      selection:
-        [
-          ...selection
-        ]
-
-    });
+}
 
 
-    saveCart();
 
+function removeRow(uid) {
 
-    toast(
-      `${product.name} im Warenkorb.`
+  cart =
+    cart.filter(
+      row =>
+        row.uid !== uid
     );
 
+  saveCart();
+
+}
+
+
+
+const cartDialog =
+  $("#cartPanel");
+
+const checkoutDialog =
+  $("#checkoutDialog");
+
+
+
+function openDialog(dialog) {
+
+  if(!dialog.open) {
+
+    dialog.showModal();
+
   }
 
+  document.body.classList.add(
+    "locked"
+  );
 
-  function removeRow(
-    uid
-  ) {
-
-    cart =
-      cart.filter(
-        row =>
-          row.uid !== uid
-      );
+}
 
 
-    saveCart();
 
-  }
+function closeDialog(dialog) {
 
+  if(dialog.open) {
 
-  function changeQuantity(
-    uid,
-    delta
-  ) {
-
-    const row =
-      cart.find(
-        item =>
-          item.uid === uid
-      );
-
-
-    if (
-      !row
-    ) {
-
-      return;
-
-    }
-
-
-    const product =
-      BOX_PRODUCTS[
-        row.productId
-      ];
-
-
-    if (
-      product.type ===
-      "wish"
-    ) {
-
-      return;
-
-    }
-
-
-    row.quantity =
-      Math.max(
-
-        0,
-
-        Math.min(
-
-          20,
-
-          row.quantity +
-          delta
-
-        )
-
-      );
-
-
-    if (
-      row.quantity === 0
-    ) {
-
-      removeRow(
-        uid
-      );
-
-    }
-
-    else {
-
-      saveCart();
-
-    }
+    dialog.close();
 
   }
 
 
-  /* =====================================================
-     DIALOGE
-  ===================================================== */
-
-  const cartDialog =
-    $("#cartPanel");
-
-
-  const checkoutDialog =
-    $("#checkoutDialog");
-
-
-  function openDialog(
-    dialog
+  if(
+    !cartDialog.open &&
+    !checkoutDialog.open
   ) {
 
-    if (
-      !dialog.open
-    ) {
-
-      dialog.showModal();
-
-    }
-
-
-    document.body.classList.add(
+    document.body.classList.remove(
       "locked"
     );
 
   }
 
-
-  function closeDialog(
-    dialog
-  ) {
-
-    if (
-      dialog.open
-    ) {
-
-      dialog.close();
-
-    }
+}
 
 
-    if (
-      !cartDialog.open &&
-      !checkoutDialog.open
-    ) {
 
-      document.body.classList.remove(
-        "locked"
-      );
+function renderCart() {
 
-    }
+  const items =
+    $("#cartItems");
+
+  const sum =
+    totals();
+
+
+  $("#cartCount").textContent =
+    sum.count;
+
+
+  $("#cartSubtotal").textContent =
+    money(sum.subtotal);
+
+
+  $("#shippingCost").textContent =
+
+    sum.shipping
+
+      ? money(sum.shipping)
+
+      : (
+          sum.subtotal
+            ? "Kostenlos"
+            : money(0)
+        );
+
+
+  $("#cartTotal").textContent =
+    money(sum.total);
+
+
+  const progress =
+    Math.min(
+      100,
+      (
+        sum.subtotal /
+        CONFIG.freeShippingCents
+      ) * 100
+    );
+
+
+  $("#shippingProgress")
+    .style.width =
+    `${progress}%`;
+
+
+  $("#shippingProgressText")
+    .textContent =
+
+    sum.subtotal >=
+    CONFIG.freeShippingCents
+
+      ? "Versandkostenfrei erreicht"
+
+      : `Noch ${
+          money(
+            CONFIG.freeShippingCents -
+            sum.subtotal
+          )
+        }`;
+
+
+  $("#checkoutButton").disabled =
+    !sum.count;
+
+
+  if(!cart.length) {
+
+    items.innerHTML = `
+
+      <div class="empty-cart">
+
+        <h3>
+          Dein Warenkorb ist leer
+        </h3>
+
+        <p>
+          Wähle eine BODA Smart,
+          Premium oder Business Box aus.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
 
   }
 
 
-  /* =====================================================
-     WARENKORB RENDERN
-  ===================================================== */
 
-  function renderCart() {
+  items.innerHTML =
 
-    const items =
-      $("#cartItems");
+    cart
 
+      .map(
+        row => {
 
-    const sum =
-      totals();
+          const product =
+            BOX_PRODUCTS[row.productId];
 
 
-    $("#cartCount").textContent =
-      sum.count;
+          const selection = `
 
+            <p class="cart-selection">
 
-    $("#cartSubtotal").textContent =
-      money(
-        sum.subtotal
-      );
+              <strong>
+                Deine ${product.snackCount} Snacks:
+              </strong>
 
+              <br>
 
-    $("#shippingCost").textContent =
+              ${escapeHtml(
+                selectionSummary(
+                  row.selection
+                )
+              )}
 
-      sum.shipping
+            </p>
 
-        ? money(
-            sum.shipping
-          )
+          `;
 
-        : (
-            sum.subtotal
-              ? "Kostenlos"
-              : money(0)
-          );
 
+          return `
 
-    $("#cartTotal").textContent =
-      money(
-        sum.total
-      );
+            <div class="cart-item">
 
 
-    const progress =
+              <div class="cart-thumb">
 
-      Math.min(
+                ${miniPack(product)}
 
-        100,
+              </div>
 
-        (
-          sum.subtotal /
-          CONFIG.freeShippingCents
-        ) *
-        100
 
-      );
+              <div>
 
+                <h4>
+                  ${escapeHtml(product.name)}
+                </h4>
 
-    $("#shippingProgress")
-      .style.width =
-        `${progress}%`;
 
+                <p class="item-price">
 
-    $("#shippingProgressText")
-      .textContent =
+                  ${product.snackCount} Snacks ·
+                  ${money(product.priceCents)}
 
-        sum.subtotal >=
-        CONFIG.freeShippingCents
+                </p>
 
-          ? "Versandkostenfrei erreicht"
 
-          : `Noch ${
-              money(
-                CONFIG.freeShippingCents -
-                sum.subtotal
-              )
-            }`;
+                ${selection}
 
 
-    $("#checkoutButton").disabled =
-      !sum.count;
-
-
-    if (
-      !cart.length
-    ) {
-
-      items.innerHTML = `
-
-        <div class="empty-cart">
-
-          <h3>
-            Dein Warenkorb ist leer
-          </h3>
-
-          <p>
-            Wähle eine Wunschbox
-            oder BODA Box aus.
-          </p>
-
-        </div>
-
-      `;
-
-
-      return;
-
-    }
-
-
-    items.innerHTML =
-
-      cart
-
-        .map(
-          row => {
-
-            const product =
-              BOX_PRODUCTS[
-                row.productId
-              ];
-
-
-            const selection =
-
-              product.type ===
-              "wish"
-
-                ? `
-
-                  <p class="cart-selection">
-
-                    <strong>
-                      Deine ${product.snackCount} Snacks:
-                    </strong>
-
-                    <br>
-
-                    ${escapeHtml(
-                      selectionSummary(
-                        row.selection
-                      )
-                    )}
-
-                  </p>
-
-                `
-
-                : `
-
-                  <p class="cart-selection">
-                    Von BODA zusammengestellt.
-                  </p>
-
-                `;
-
-
-            const quantityControls =
-
-              product.type ===
-              "mystery"
-
-                ? `
-
-                  <div
-                    style="
-                      display:flex;
-                      gap:6px;
-                      align-items:center;
-                      margin-top:8px;
-                    "
-                  >
-
-                    <button
-                      type="button"
-                      class="builder-clear"
-                      data-cart-minus="${escapeHtml(row.uid)}"
-                    >
-                      −
-                    </button>
-
-                    <strong
-                      style="font-size:12px"
-                    >
-                      ${row.quantity}
-                    </strong>
-
-                    <button
-                      type="button"
-                      class="builder-clear"
-                      data-cart-plus="${escapeHtml(row.uid)}"
-                    >
-                      +
-                    </button>
-
-                  </div>
-
-                `
-
-                : "";
-
-
-            return `
-
-              <div class="cart-item">
-
-
-                <div class="cart-thumb">
-
-                  ${miniPack(
-                    product
-                  )}
-
-                </div>
-
-
-                <div>
-
-
-                  <h4>
-                    ${escapeHtml(
-                      product.name
-                    )}
-                  </h4>
-
-
-                  <p class="item-price">
-
-                    ${product.snackCount} Snacks ·
-
-                    ${money(
-                      product.priceCents
-                    )}
-
-                  </p>
-
-
-                  ${selection}
-
-                  ${quantityControls}
-
-
-                  <button
-                    class="remove"
-                    type="button"
-                    data-cart-remove="${escapeHtml(row.uid)}"
-                  >
-                    Entfernen
-                  </button>
-
-
-                </div>
-
-
-                <strong>
-
-                  ${money(
-                    product.priceCents *
-                    row.quantity
-                  )}
-
-                </strong>
+                <button
+                  class="remove"
+                  type="button"
+                  data-cart-remove="${escapeHtml(row.uid)}"
+                >
+                  Entfernen
+                </button>
 
 
               </div>
 
-            `;
 
-          }
-        )
+              <strong>
 
-        .join("");
+                ${
+                  money(
+                    product.priceCents *
+                    row.quantity
+                  )
+                }
 
-  }
-
-
-  /* =====================================================
-     WARENKORB EVENTS
-  ===================================================== */
-
-  $("#openCart")
-    .addEventListener(
-      "click",
-      () => {
-
-        renderCart();
-
-        openDialog(
-          cartDialog
-        );
-
-      }
-    );
+              </strong>
 
 
-  $("#closeCart")
-    .addEventListener(
-      "click",
-      () => {
+            </div>
+
+          `;
+
+        }
+      )
+
+      .join("");
+
+}
+
+
+
+$("#openCart")
+  .addEventListener(
+    "click",
+    () => {
+
+      renderCart();
+
+      openDialog(
+        cartDialog
+      );
+
+    }
+  );
+
+
+
+$("#closeCart")
+  .addEventListener(
+    "click",
+    () => {
+
+      closeDialog(
+        cartDialog
+      );
+
+    }
+  );
+
+
+
+cartDialog
+  .addEventListener(
+    "click",
+    event => {
+
+
+      if(
+        event.target ===
+        cartDialog
+      ) {
 
         closeDialog(
           cartDialog
         );
 
       }
-    );
 
 
-  cartDialog
-    .addEventListener(
-      "click",
-      event => {
-
-        if (
-          event.target ===
-          cartDialog
-        ) {
-
-          closeDialog(
-            cartDialog
-          );
-
-        }
+      const remove =
+        event.target.closest(
+          "[data-cart-remove]"
+        );
 
 
-        const remove =
-          event.target.closest(
-            "[data-cart-remove]"
-          );
+      if(remove) {
 
-
-        const plus =
-          event.target.closest(
-            "[data-cart-plus]"
-          );
-
-
-        const minus =
-          event.target.closest(
-            "[data-cart-minus]"
-          );
-
-
-        if (
-          remove
-        ) {
-
-          removeRow(
-            remove.dataset
-              .cartRemove
-          );
-
-        }
-
-
-        if (
-          plus
-        ) {
-
-          changeQuantity(
-
-            plus.dataset
-              .cartPlus,
-
-            1
-
-          );
-
-        }
-
-
-        if (
-          minus
-        ) {
-
-          changeQuantity(
-
-            minus.dataset
-              .cartMinus,
-
-            -1
-
-          );
-
-        }
+        removeRow(
+          remove.dataset.cartRemove
+        );
 
       }
-    );
 
 
-  $$(".add-mystery")
+    }
+  );
+
+
+
+let builderSize =
+  "smart";
+
+let builderSelection =
+  [];
+
+let builderCategory =
+  "alle";
+
+
+
+function builderLimit() {
+
+  return CONFIG
+    .wishSizes[
+      builderSize
+    ]
+    .count;
+
+}
+
+
+
+function builderProductId() {
+
+  return CONFIG
+    .wishSizes[
+      builderSize
+    ]
+    .productId;
+
+}
+
+
+
+function groupedSelection() {
+
+  const map =
+    new Map();
+
+
+  builderSelection
     .forEach(
-      button => {
+      id => {
 
-        button.addEventListener(
-
-          "click",
-
-          () => {
-
-            addMystery(
-              button.dataset
-                .productId
-            );
-
-          }
-
+        map.set(
+          id,
+          (
+            map.get(id) ||
+            0
+          ) + 1
         );
 
       }
     );
 
 
-  /* =====================================================
-     WUNSCHBOX BUILDER
-  ===================================================== */
+  return map;
 
-  let builderSize =
-    "small";
+}
 
 
-  let builderSelection =
-    [];
 
+function categoryLabel(category) {
 
-  let builderCategory =
-    "alle";
-
-
-  function builderLimit() {
-
-    return CONFIG
-      .wishSizes[
-        builderSize
-      ]
-      .count;
-
+  if(category === "salzig") {
+    return "SALZIG";
   }
 
-
-  function builderProductId() {
-
-    return CONFIG
-      .wishSizes[
-        builderSize
-      ]
-      .productId;
-
+  if(category === "schokolade") {
+    return "SCHOKOLADE";
   }
 
-
-  function groupedSelection() {
-
-    const map =
-      new Map();
-
-
-    builderSelection
-      .forEach(
-        id => {
-
-          map.set(
-
-            id,
-
-            (
-              map.get(
-                id
-              ) || 0
-            ) + 1
-
-          );
-
-        }
-      );
-
-
-    return map;
-
+  if(category === "getraenke") {
+    return "GETRÄNKE";
   }
 
+  return "SÜSS";
 
-  function categoryLabel(
-    category
+}
+
+
+
+function setBuilderSize(
+  size,
+  scroll = false
+) {
+
+  if(
+    !CONFIG.wishSizes[size]
   ) {
 
-    if (
-      category ===
-      "salzig"
-    ) {
-
-      return "SALZIG";
-
-    }
-
-
-    if (
-      category ===
-      "schokolade"
-    ) {
-
-      return "SCHOKOLADE";
-
-    }
-
-
-    return "SÜSS";
+    return;
 
   }
 
 
-  function setBuilderSize(
-    size,
-    scroll = false
+  builderSize =
+    size;
+
+
+  const limit =
+    builderLimit();
+
+
+  if(
+    builderSelection.length >
+    limit
   ) {
 
-    if (
-      !CONFIG.wishSizes[
-        size
-      ]
-    ) {
-
-      return;
-
-    }
-
-
-    builderSize =
-      size;
-
-
-    const limit =
-      builderLimit();
-
-
-    if (
-      builderSelection.length >
-      limit
-    ) {
-
-      builderSelection =
-        builderSelection.slice(
-          0,
-          limit
-        );
-
-
-      toast(
-        `Auswahl auf ${limit} Snacks gekürzt.`
-      );
-
-    }
-
-
-    $$(
-      "[data-builder-size]"
-    )
-      .forEach(
-        button => {
-
-          button.classList.toggle(
-
-            "active",
-
-            button.dataset
-              .builderSize ===
-              size
-
-          );
-
-        }
+    builderSelection =
+      builderSelection.slice(
+        0,
+        limit
       );
 
 
-    renderBuilder();
-
-
-    if (
-      scroll
-    ) {
-
-      $("#wunschbox")
-        .scrollIntoView({
-
-          behavior:
-            "smooth",
-
-          block:
-            "start"
-
-        });
-
-    }
+    toast(
+      `Auswahl auf ${limit} Snacks gekürzt.`
+    );
 
   }
-
-
-  $$(".wish-jump")
-    .forEach(
-      button => {
-
-        button.addEventListener(
-
-          "click",
-
-          () => {
-
-            setBuilderSize(
-
-              button.dataset
-                .wishSize,
-
-              true
-
-            );
-
-          }
-
-        );
-
-      }
-    );
 
 
   $$(
     "[data-builder-size]"
   )
-    .forEach(
-      button => {
+  .forEach(
+    button => {
 
-        button.addEventListener(
-
-          "click",
-
-          () => {
-
-            setBuilderSize(
-              button.dataset
-                .builderSize
-            );
-
-          }
-
-        );
-
-      }
-    );
-
-
-  /* =====================================================
-     BUILDER RENDERN
-  ===================================================== */
-
-  function renderBuilder() {
-
-    const grid =
-      $("#builderGrid");
-
-
-    const grouped =
-      groupedSelection();
-
-
-    const limit =
-      builderLimit();
-
-
-    const filtered =
-
-      SNACKS.filter(
-        product => {
-
-          return (
-
-            builderCategory ===
-              "alle" ||
-
-            product.category ===
-              builderCategory
-
-          );
-
-        }
+      button.classList.toggle(
+        "active",
+        button.dataset.builderSize === size
       );
 
-
-    grid.innerHTML =
-
-      filtered
-
-        .map(
-          product => {
-
-            const count =
-              grouped.get(
-                product.id
-              ) || 0;
-
-
-            const full =
-
-              builderSelection.length >=
-              limit;
-
-
-            return `
-
-              <article class="builder-product">
-
-
-                <div>
-
-                  ${miniPack(
-                    product
-                  )}
-
-                </div>
-
-
-                <div class="builder-product-copy">
-
-
-                  <p class="builder-product-category">
-
-                    ${categoryLabel(
-                      product.category
-                    )}
-
-                  </p>
-
-
-                  <h3>
-
-                    ${escapeHtml(
-                      product.name
-                    )}
-
-                  </h3>
-
-
-                  <p>
-
-                    ${escapeHtml(
-                      product.size
-                    )}
-
-                    · Testprodukt
-
-                  </p>
-
-
-                </div>
-
-
-                <div class="builder-qty">
-
-
-                  <button
-                    type="button"
-                    data-builder-minus="${product.id}"
-                    ${count ? "" : "disabled"}
-                    aria-label="${escapeHtml(product.name)} entfernen"
-                  >
-                    −
-                  </button>
-
-
-                  <strong>
-                    ${count}
-                  </strong>
-
-
-                  <button
-                    type="button"
-                    data-builder-plus="${product.id}"
-                    ${full ? "disabled" : ""}
-                    aria-label="${escapeHtml(product.name)} hinzufügen"
-                  >
-                    +
-                  </button>
-
-
-                </div>
-
-
-              </article>
-
-            `;
-
-          }
-        )
-
-        .join("");
-
-
-    const current =
-      builderSelection.length;
-
-
-    const missing =
-      limit -
-      current;
-
-
-    $("#builderCount")
-      .textContent =
-        `${current} von ${limit} ausgewählt`;
-
-
-    $("#builderProgress")
-      .style.width =
-        `${
-          Math.min(
-            100,
-            (
-              current /
-              limit
-            ) *
-            100
-          )
-        }%`;
-
-
-    if (
-      current === 0
-    ) {
-
-      $("#builderStatus")
-        .textContent =
-          "Wähle deine ersten Snacks aus.";
-
     }
+  );
 
-    else if (
-      missing > 0
-    ) {
-
-      $("#builderStatus")
-        .textContent =
-
-          `Noch ${missing} ` +
-
-          `${
-            missing === 1
-              ? "Snack"
-              : "Snacks"
-          } ` +
-
-          `bis deine Wunschbox voll ist.`;
-
-    }
-
-    else {
-
-      $("#builderStatus")
-        .textContent =
-          "Deine Wunschbox ist komplett. 😎";
-
-    }
-
-
-    $("#builderSummary")
-      .textContent =
-
-        current
-
-          ? selectionSummary(
-              builderSelection
-            )
-
-          : "Noch keine Snacks ausgewählt.";
-
-
-    const addButton =
-      $("#addWishBox");
-
-
-    addButton.disabled =
-      current !==
-      limit;
-
-
-    addButton.textContent =
-
-      current ===
-      limit
-
-        ? `${
-            builderSize ===
-            "small"
-
-              ? "Kleine"
-
-              : "Große"
-          } Wunschbox in den Warenkorb`
-
-        : `Erst ${missing} ${
-            missing === 1
-              ? "Snack"
-              : "Snacks"
-          } auswählen`;
-
-  }
-
-
-  /* =====================================================
-     BUILDER + / -
-  ===================================================== */
-
-  $("#builderGrid")
-    .addEventListener(
-      "click",
-      event => {
-
-
-        const plus =
-          event.target.closest(
-            "[data-builder-plus]"
-          );
-
-
-        const minus =
-          event.target.closest(
-            "[data-builder-minus]"
-          );
-
-
-        if (
-          plus &&
-          builderSelection.length <
-            builderLimit()
-        ) {
-
-          builderSelection.push(
-
-            Number(
-              plus.dataset
-                .builderPlus
-            )
-
-          );
-
-
-          renderBuilder();
-
-        }
-
-
-        if (
-          minus
-        ) {
-
-          const id =
-            Number(
-              minus.dataset
-                .builderMinus
-            );
-
-
-          const index =
-            builderSelection
-              .lastIndexOf(
-                id
-              );
-
-
-          if (
-            index >= 0
-          ) {
-
-            builderSelection.splice(
-              index,
-              1
-            );
-
-          }
-
-
-          renderBuilder();
-
-        }
-
-      }
-    );
-
-
-  $("#clearWishBox")
-    .addEventListener(
-      "click",
-      () => {
-
-        builderSelection =
-          [];
-
-
-        renderBuilder();
-
-
-        toast(
-          "Wunschbox-Auswahl geleert."
-        );
-
-      }
-    );
-
-
-  /* =====================================================
-     FILTER
-  ===================================================== */
-
-  $$(
-    "[data-category]"
-  )
-    .forEach(
-      button => {
-
-        button.addEventListener(
-
-          "click",
-
-          () => {
-
-            builderCategory =
-              button.dataset
-                .category;
-
-
-            $$(
-              "[data-category]"
-            )
-              .forEach(
-                item => {
-
-                  item.classList.toggle(
-
-                    "active",
-
-                    item ===
-                    button
-
-                  );
-
-                }
-              );
-
-
-            renderBuilder();
-
-          }
-
-        );
-
-      }
-    );
-
-
-  /* =====================================================
-     WUNSCHBOX ABSCHLIESSEN
-  ===================================================== */
-
-  $("#addWishBox")
-    .addEventListener(
-      "click",
-      () => {
-
-        const limit =
-          builderLimit();
-
-
-        if (
-          builderSelection.length !==
-          limit
-        ) {
-
-          return;
-
-        }
-
-
-        addWish(
-
-          builderProductId(),
-
-          builderSelection
-
-        );
-
-
-        builderSelection =
-          [];
-
-
-        renderBuilder();
-
-      }
-    );
-
-
-  /* =====================================================
-     CHECKOUT RENDERN
-  ===================================================== */
-
-  function renderCheckout() {
-
-    const sum =
-      totals();
-
-
-    $("#checkoutSubtotal")
-      .textContent =
-        money(
-          sum.subtotal
-        );
-
-
-    $("#checkoutShipping")
-      .textContent =
-
-        sum.shipping
-
-          ? money(
-              sum.shipping
-            )
-
-          : (
-              sum.subtotal
-                ? "Kostenlos"
-                : money(0)
-            );
-
-
-    $("#checkoutTotal")
-      .textContent =
-        money(
-          sum.total
-        );
-
-
-    $("#placeOrderButton")
-      .disabled =
-        !sum.count;
-
-
-    $("#checkoutWarning")
-      .textContent =
-
-        sum.count
-
-          ? ""
-
-          : "Dein Warenkorb ist leer.";
-
-
-    $("#checkoutItems")
-      .innerHTML =
-
-        cart.length
-
-          ? cart
-
-              .map(
-                row => {
-
-                  const product =
-                    BOX_PRODUCTS[
-                      row.productId
-                    ];
-
-
-                  const text =
-
-                    product.type ===
-                    "wish"
-
-                      ? `${product.snackCount} Snacks · ${
-                          escapeHtml(
-                            selectionSummary(
-                              row.selection
-                            )
-                          )
-                        }`
-
-                      : `${product.snackCount} Snacks · von BODA zusammengestellt`;
-
-
-                  return `
-
-                    <div class="checkout-item">
-
-
-                      <div>
-
-                        <strong>
-                          ${escapeHtml(
-                            product.name
-                          )}
-                        </strong>
-
-                        <small>
-                          ${text}
-                        </small>
-
-                      </div>
-
-
-                      <strong>
-
-                        ${money(
-                          product.priceCents *
-                          row.quantity
-                        )}
-
-                      </strong>
-
-
-                    </div>
-
-                  `;
-
-                }
-              )
-
-              .join("")
-
-          : `
-
-              <p>
-                Dein Warenkorb ist leer.
-              </p>
-
-            `;
-
-  }
-
-
-  /* =====================================================
-     CHECKOUT ÖFFNEN
-  ===================================================== */
-
-  $("#checkoutButton")
-    .addEventListener(
-      "click",
-      () => {
-
-        if (
-          !totals().count
-        ) {
-
-          return;
-
-        }
-
-
-        closeDialog(
-          cartDialog
-        );
-
-
-        renderCheckout();
-
-
-        $("#checkoutFormView")
-          .hidden =
-            false;
-
-
-        $("#orderConfirmation")
-          .hidden =
-            true;
-
-
-        openDialog(
-          checkoutDialog
-        );
-
-      }
-    );
-
-
-  $("#closeCheckout")
-    .addEventListener(
-      "click",
-      () => {
-
-        closeDialog(
-          checkoutDialog
-        );
-
-      }
-    );
-
-
-  checkoutDialog
-    .addEventListener(
-      "click",
-      event => {
-
-        if (
-          event.target ===
-          checkoutDialog
-        ) {
-
-          closeDialog(
-            checkoutDialog
-          );
-
-        }
-
-      }
-    );
-
-
-  /* =====================================================
-     ZAHLUNG
-  ===================================================== */
-
-  $$(
-    "input[name='payment']"
-  )
-    .forEach(
-      input => {
-
-        input.addEventListener(
-
-          "change",
-
-          () => {
-
-            const payment =
-              $(
-                "input[name='payment']:checked"
-              ).value;
-
-
-            $("#cardFields")
-              .hidden =
-                payment !==
-                "card";
-
-
-            $("#paypalInfo")
-              .hidden =
-                payment !==
-                "paypal";
-
-          }
-
-        );
-
-      }
-    );
-
-
-  /* =====================================================
-     FORMULAR FORMATIERUNG
-  ===================================================== */
-
-  $("#shipZip")
-    .addEventListener(
-      "input",
-      event => {
-
-        event.target.value =
-
-          event.target.value
-
-            .replace(
-              /\D/g,
-              ""
-            )
-
-            .slice(
-              0,
-              5
-            );
-
-      }
-    );
-
-
-  $("#cardNumber")
-    .addEventListener(
-      "input",
-      event => {
-
-        let value =
-
-          event.target.value
-
-            .replace(
-              /\D/g,
-              ""
-            )
-
-            .slice(
-              0,
-              16
-            );
-
-
-        event.target.value =
-
-          value
-
-            .replace(
-              /(.{4})/g,
-              "$1 "
-            )
-
-            .trim();
-
-      }
-    );
-
-
-  $("#cardExpiry")
-    .addEventListener(
-      "input",
-      event => {
-
-        let value =
-
-          event.target.value
-
-            .replace(
-              /\D/g,
-              ""
-            )
-
-            .slice(
-              0,
-              4
-            );
-
-
-        if (
-          value.length >
-          2
-        ) {
-
-          value =
-
-            value.slice(
-              0,
-              2
-            ) +
-
-            "/" +
-
-            value.slice(
-              2
-            );
-
-        }
-
-
-        event.target.value =
-          value;
-
-      }
-    );
-
-
-  $("#cardCvc")
-    .addEventListener(
-      "input",
-      event => {
-
-        event.target.value =
-
-          event.target.value
-
-            .replace(
-              /\D/g,
-              ""
-            )
-
-            .slice(
-              0,
-              3
-            );
-
-      }
-    );
-
-
-  /* =====================================================
-     VALIDIERUNG
-  ===================================================== */
-
-  function validEmail(
-    email
-  ) {
-
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      .test(
-        email
-      );
-
-  }
-
-
-  function validZip(
-    zip
-  ) {
-
-    return /^\d{5}$/
-      .test(
-        zip
-      );
-
-  }
-
-
-  function orderNumber() {
-
-    const now =
-      new Date();
-
-
-    const date =
-
-      String(
-        now.getFullYear()
-      )
-        .slice(-2) +
-
-      String(
-        now.getMonth() + 1
-      )
-        .padStart(
-          2,
-          "0"
-        ) +
-
-      String(
-        now.getDate()
-      )
-        .padStart(
-          2,
-          "0"
-        );
-
-
-    return (
-
-      "BODA-" +
-
-      date +
-
-      "-" +
-
-      Math.floor(
-        1000 +
-        Math.random() *
-        9000
-      )
-
-    );
-
-  }
-
-
-  /* =====================================================
-     TESTBESTELLUNG
-  ===================================================== */
-
-  $("#demoCheckoutForm")
-    .addEventListener(
-      "submit",
-      event => {
-
-        event.preventDefault();
-
-
-        const warning =
-          $("#checkoutWarning");
-
-
-        warning.textContent =
-          "";
-
-
-        const requiredFields = [
-
-          "#firstName",
-          "#lastName",
-          "#email",
-          "#shipStreet",
-          "#shipZip",
-          "#shipCity"
-
-        ];
-
-
-        const missing =
-
-          requiredFields.some(
-            selector => {
-
-              return !$(selector)
-                .value
-                .trim();
-
-            }
-          );
-
-
-        if (
-          missing
-        ) {
-
-          warning.textContent =
-            "Bitte alle Pflichtfelder ausfüllen.";
-
-          return;
-
-        }
-
-
-        if (
-          !validEmail(
-            $("#email")
-              .value
-              .trim()
-          )
-        ) {
-
-          warning.textContent =
-            "Bitte eine gültige E-Mail-Adresse eingeben.";
-
-          return;
-
-        }
-
-
-        if (
-          !validZip(
-            $("#shipZip")
-              .value
-              .trim()
-          )
-        ) {
-
-          warning.textContent =
-            "Bitte eine fünfstellige PLZ eingeben.";
-
-          return;
-
-        }
-
-
-        if (
-          !totals().count
-        ) {
-
-          warning.textContent =
-            "Dein Warenkorb ist leer.";
-
-          return;
-
-        }
-
-
-        $("#orderNumber")
-          .textContent =
-            orderNumber();
-
-
-        $("#checkoutFormView")
-          .hidden =
-            true;
-
-
-        $("#orderConfirmation")
-          .hidden =
-            false;
-
-
-        cart =
-          [];
-
-
-        saveCart();
-
-      }
-    );
-
-
-  $("#newTestOrder")
-    .addEventListener(
-      "click",
-      () => {
-
-        $("#demoCheckoutForm")
-          .reset();
-
-
-        $("#checkoutFormView")
-          .hidden =
-            false;
-
-
-        $("#orderConfirmation")
-          .hidden =
-            true;
-
-
-        closeDialog(
-          checkoutDialog
-        );
-
-
-        toast(
-          "Testbestellung zurückgesetzt."
-        );
-
-      }
-    );
-
-
-  /* =====================================================
-     START
-  ===================================================== */
 
   renderBuilder();
 
-  renderCart();
+
+  if(scroll) {
+
+    $("#wunschbox")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+  }
+
+}
+
+
+
+$$(".wish-jump")
+  .forEach(
+    button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          setBuilderSize(
+            button.dataset.wishSize,
+            true
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+
+$$("[data-builder-size]")
+  .forEach(
+    button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          setBuilderSize(
+            button.dataset.builderSize
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+
+function renderBuilder() {
+
+  const grid =
+    $("#builderGrid");
+
+
+  const grouped =
+    groupedSelection();
+
+
+  const limit =
+    builderLimit();
+
+
+  const filtered =
+
+    SNACKS.filter(
+      product => {
+
+        return (
+
+          builderCategory === "alle" ||
+
+          product.category ===
+          builderCategory
+
+        );
+
+      }
+    );
+
+
+  grid.innerHTML =
+
+    filtered
+
+      .map(
+        product => {
+
+
+          const count =
+            grouped.get(product.id) ||
+            0;
+
+
+          const full =
+            builderSelection.length >=
+            limit;
+
+
+          return `
+
+            <article class="builder-product">
+
+
+              <div>
+
+                ${miniPack(product)}
+
+              </div>
+
+
+              <div class="builder-product-copy">
+
+
+                <p class="builder-product-category">
+
+                  ${categoryLabel(
+                    product.category
+                  )}
+
+                </p>
+
+
+                <h3>
+
+                  ${escapeHtml(
+                    product.name
+                  )}
+
+                </h3>
+
+
+                <p>
+
+                  ${escapeHtml(
+                    product.size
+                  )}
+
+                </p>
+
+
+              </div>
+
+
+              <div class="builder-qty">
+
+
+                <button
+                  type="button"
+                  data-builder-minus="${product.id}"
+                  ${count ? "" : "disabled"}
+                  aria-label="${escapeHtml(product.name)} entfernen"
+                >
+                  −
+                </button>
+
+
+                <strong>
+                  ${count}
+                </strong>
+
+
+                <button
+                  type="button"
+                  data-builder-plus="${product.id}"
+                  ${full ? "disabled" : ""}
+                  aria-label="${escapeHtml(product.name)} hinzufügen"
+                >
+                  +
+                </button>
+
+
+              </div>
+
+
+            </article>
+
+          `;
+
+        }
+      )
+
+      .join("");
+
+
+  const current =
+    builderSelection.length;
+
+
+  const missing =
+    limit - current;
+
+
+  $("#builderCount")
+    .textContent =
+    `${current} von ${limit} ausgewählt`;
+
+
+  $("#builderProgress")
+    .style.width =
+    `${
+      Math.min(
+        100,
+        (
+          current /
+          limit
+        ) * 100
+      )
+    }%`;
+
+
+  if(current === 0) {
+
+    $("#builderStatus")
+      .textContent =
+      "Wähle deine ersten Snacks aus.";
+
+  }
+
+  else if(missing > 0) {
+
+    $("#builderStatus")
+      .textContent =
+
+      `Noch ${missing} ` +
+
+      `${
+        missing === 1
+          ? "Snack"
+          : "Snacks"
+      } ` +
+
+      `bis deine BODA Box voll ist.`;
+
+  }
+
+  else {
+
+    $("#builderStatus")
+      .textContent =
+      "Deine BODA Box ist komplett. 😎";
+
+  }
+
+
+  $("#builderSummary")
+    .textContent =
+
+    current
+
+      ? selectionSummary(
+          builderSelection
+        )
+
+      : "Noch keine Snacks ausgewählt.";
+
+
+
+  const addButton =
+    $("#addWishBox");
+
+
+  addButton.disabled =
+    current !== limit;
+
+
+  addButton.textContent =
+
+    current === limit
+
+      ? `${BOX_PRODUCTS[builderProductId()].name} in den Warenkorb`
+
+      : `Erst ${missing} ${
+          missing === 1
+            ? "Snack"
+            : "Snacks"
+        } auswählen`;
+
+}
+
+
+
+$("#builderGrid")
+  .addEventListener(
+    "click",
+    event => {
+
+
+      const plus =
+        event.target.closest(
+          "[data-builder-plus]"
+        );
+
+
+      const minus =
+        event.target.closest(
+          "[data-builder-minus]"
+        );
+
+
+      if(
+        plus &&
+        builderSelection.length <
+        builderLimit()
+      ) {
+
+        builderSelection.push(
+          Number(
+            plus.dataset.builderPlus
+          )
+        );
+
+        renderBuilder();
+
+      }
+
+
+      if(minus) {
+
+        const id =
+          Number(
+            minus.dataset.builderMinus
+          );
+
+
+        const index =
+          builderSelection
+            .lastIndexOf(id);
+
+
+        if(index >= 0) {
+
+          builderSelection.splice(
+            index,
+            1
+          );
+
+        }
+
+
+        renderBuilder();
+
+      }
+
+
+    }
+  );
+
+
+
+$("#clearWishBox")
+  .addEventListener(
+    "click",
+    () => {
+
+      builderSelection = [];
+
+      renderBuilder();
+
+      toast(
+        "Box-Auswahl geleert."
+      );
+
+    }
+  );
+
+
+
+$$("[data-category]")
+  .forEach(
+    button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+
+          builderCategory =
+            button.dataset.category;
+
+
+          $$("[data-category]")
+            .forEach(
+              item => {
+
+                item.classList.toggle(
+                  "active",
+                  item === button
+                );
+
+              }
+            );
+
+
+          renderBuilder();
+
+
+        }
+      );
+
+    }
+  );
+
+
+
+$("#addWishBox")
+  .addEventListener(
+    "click",
+    () => {
+
+
+      const limit =
+        builderLimit();
+
+
+      if(
+        builderSelection.length !==
+        limit
+      ) {
+
+        return;
+
+      }
+
+
+      addWish(
+        builderProductId(),
+        builderSelection
+      );
+
+
+      builderSelection = [];
+
+
+      renderBuilder();
+
+
+    }
+  );
+
+
+
+function renderCheckout() {
+
+  const sum =
+    totals();
+
+
+  $("#checkoutSubtotal")
+    .textContent =
+    money(sum.subtotal);
+
+
+  $("#checkoutShipping")
+    .textContent =
+
+    sum.shipping
+
+      ? money(sum.shipping)
+
+      : (
+          sum.subtotal
+            ? "Kostenlos"
+            : money(0)
+        );
+
+
+  $("#checkoutTotal")
+    .textContent =
+    money(sum.total);
+
+
+  $("#placeOrderButton")
+    .disabled =
+    !sum.count;
+
+
+  $("#checkoutWarning")
+    .textContent =
+
+    sum.count
+
+      ? ""
+
+      : "Dein Warenkorb ist leer.";
+
+
+  $("#checkoutItems")
+    .innerHTML =
+
+    cart.length
+
+      ? cart
+
+          .map(
+            row => {
+
+
+              const product =
+                BOX_PRODUCTS[
+                  row.productId
+                ];
+
+
+              const text =
+
+                `${product.snackCount} Snacks · ` +
+
+                `${escapeHtml(
+                  selectionSummary(
+                    row.selection
+                  )
+                )}`;
+
+
+              return `
+
+                <div class="checkout-item">
+
+
+                  <div>
+
+                    <strong>
+
+                      ${escapeHtml(
+                        product.name
+                      )}
+
+                    </strong>
+
+
+                    <small>
+
+                      ${text}
+
+                    </small>
+
+                  </div>
+
+
+                  <strong>
+
+                    ${
+                      money(
+                        product.priceCents *
+                        row.quantity
+                      )
+                    }
+
+                  </strong>
+
+
+                </div>
+
+              `;
+
+            }
+          )
+
+          .join("")
+
+      : `
+
+          <p>
+            Dein Warenkorb ist leer.
+          </p>
+
+        `;
+
+}
+
+
+
+$("#checkoutButton")
+  .addEventListener(
+    "click",
+    () => {
+
+
+      if(
+        !totals().count
+      ) {
+
+        return;
+
+      }
+
+
+      closeDialog(
+        cartDialog
+      );
+
+
+      renderCheckout();
+
+
+      $("#checkoutFormView")
+        .hidden =
+        false;
+
+
+      $("#orderConfirmation")
+        .hidden =
+        true;
+
+
+      openDialog(
+        checkoutDialog
+      );
+
+
+    }
+  );
+
+
+
+$("#closeCheckout")
+  .addEventListener(
+    "click",
+    () => {
+
+      closeDialog(
+        checkoutDialog
+      );
+
+    }
+  );
+
+
+
+checkoutDialog
+  .addEventListener(
+    "click",
+    event => {
+
+      if(
+        event.target ===
+        checkoutDialog
+      ) {
+
+        closeDialog(
+          checkoutDialog
+        );
+
+      }
+
+    }
+  );
+
+
+
+$$("input[name='payment']")
+  .forEach(
+    input => {
+
+      input.addEventListener(
+        "change",
+        () => {
+
+
+          const payment =
+            $(
+              "input[name='payment']:checked"
+            ).value;
+
+
+          $("#cardFields")
+            .hidden =
+            payment !== "card";
+
+
+          $("#paypalInfo")
+            .hidden =
+            payment !== "paypal";
+
+
+        }
+      );
+
+    }
+  );
+
+
+
+$("#shipZip")
+  .addEventListener(
+    "input",
+    event => {
+
+      event.target.value =
+
+        event.target.value
+
+          .replace(
+            /\D/g,
+            ""
+          )
+
+          .slice(
+            0,
+            5
+          );
+
+    }
+  );
+
+
+
+$("#cardNumber")
+  .addEventListener(
+    "input",
+    event => {
+
+
+      let value =
+
+        event.target.value
+
+          .replace(
+            /\D/g,
+            ""
+          )
+
+          .slice(
+            0,
+            16
+          );
+
+
+      event.target.value =
+
+        value
+
+          .replace(
+            /(.{4})/g,
+            "$1 "
+          )
+
+          .trim();
+
+
+    }
+  );
+
+
+
+$("#cardExpiry")
+  .addEventListener(
+    "input",
+    event => {
+
+
+      let value =
+
+        event.target.value
+
+          .replace(
+            /\D/g,
+            ""
+          )
+
+          .slice(
+            0,
+            4
+          );
+
+
+      if(
+        value.length > 2
+      ) {
+
+        value =
+
+          value.slice(
+            0,
+            2
+          ) +
+
+          "/" +
+
+          value.slice(2);
+
+      }
+
+
+      event.target.value =
+        value;
+
+
+    }
+  );
+
+
+
+$("#cardCvc")
+  .addEventListener(
+    "input",
+    event => {
+
+      event.target.value =
+
+        event.target.value
+
+          .replace(
+            /\D/g,
+            ""
+          )
+
+          .slice(
+            0,
+            3
+          );
+
+    }
+  );
+
+
+
+function validEmail(email) {
+
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    .test(email);
+
+}
+
+
+
+function validZip(zip) {
+
+  return /^\d{5}$/
+    .test(zip);
+
+}
+
+
+
+function orderNumber() {
+
+  const now =
+    new Date();
+
+
+  const date =
+
+    String(
+      now.getFullYear()
+    ).slice(-2)
+
+    +
+
+    String(
+      now.getMonth() + 1
+    ).padStart(
+      2,
+      "0"
+    )
+
+    +
+
+    String(
+      now.getDate()
+    ).padStart(
+      2,
+      "0"
+    );
+
+
+  return (
+
+    "BODA-" +
+
+    date +
+
+    "-" +
+
+    Math.floor(
+      1000 +
+      Math.random() *
+      9000
+    )
+
+  );
+
+}
+
+
+
+$("#demoCheckoutForm")
+  .addEventListener(
+    "submit",
+    event => {
+
+
+      event.preventDefault();
+
+
+      const warning =
+        $("#checkoutWarning");
+
+
+      warning.textContent =
+        "";
+
+
+      const requiredFields = [
+
+        "#firstName",
+        "#lastName",
+        "#email",
+        "#shipStreet",
+        "#shipZip",
+        "#shipCity"
+
+      ];
+
+
+      const missing =
+
+        requiredFields.some(
+          selector => {
+
+            return !$(selector)
+              .value
+              .trim();
+
+          }
+        );
+
+
+      if(missing) {
+
+        warning.textContent =
+          "Bitte alle Pflichtfelder ausfüllen.";
+
+        return;
+
+      }
+
+
+      if(
+        !validEmail(
+          $("#email")
+            .value
+            .trim()
+        )
+      ) {
+
+        warning.textContent =
+          "Bitte eine gültige E-Mail-Adresse eingeben.";
+
+        return;
+
+      }
+
+
+      if(
+        !validZip(
+          $("#shipZip")
+            .value
+            .trim()
+        )
+      ) {
+
+        warning.textContent =
+          "Bitte eine fünfstellige PLZ eingeben.";
+
+        return;
+
+      }
+
+
+      if(
+        !totals().count
+      ) {
+
+        warning.textContent =
+          "Dein Warenkorb ist leer.";
+
+        return;
+
+      }
+
+
+      $("#orderNumber")
+        .textContent =
+        orderNumber();
+
+
+      $("#checkoutFormView")
+        .hidden =
+        true;
+
+
+      $("#orderConfirmation")
+        .hidden =
+        false;
+
+
+      cart = [];
+
+
+      saveCart();
+
+
+    }
+  );
+
+
+
+$("#newTestOrder")
+  .addEventListener(
+    "click",
+    () => {
+
+
+      $("#demoCheckoutForm")
+        .reset();
+
+
+      $("#checkoutFormView")
+        .hidden =
+        false;
+
+
+      $("#orderConfirmation")
+        .hidden =
+        true;
+
+
+      closeDialog(
+        checkoutDialog
+      );
+
+
+      toast(
+        "Testbestellung zurückgesetzt."
+      );
+
+
+    }
+  );
+
+
+
+$("#heroChooseBox")
+  ?.addEventListener(
+    "click",
+    event => {
+
+      event.preventDefault();
+
+      $("#boxen")
+        ?.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
+
+    }
+  );
+
+
+
+$("#heroBuildBox")
+  ?.addEventListener(
+    "click",
+    event => {
+
+      event.preventDefault();
+
+      setBuilderSize(
+        "smart"
+      );
+
+      $("#wunschbox")
+        ?.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
+
+    }
+  );
+
+
+
+renderBuilder();
+renderCart();
 
 
 })();
 
 </script>
 
-
 </body>
-
 </html>
