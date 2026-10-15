@@ -1695,6 +1695,7 @@ a:focus-visible {
 /* Herstellerreferenzen im Produkt-Dialog: klare Nährwertübersicht */
 .product-info-dialog {overflow-y:auto;}
 .product-info-body {max-height:calc(100vh - 125px);overflow-y:auto;}
+.product-info-audit {font-size:12px;line-height:1.55;color:#626a64;background:#f8faf7;padding:9px 11px;border:1px solid #e4e4df;border-radius:8px;}
 .product-info-reference {padding:10px 12px;background:#f7f0dc;border-left:3px solid #caa13a;border-radius:7px;font-weight:800;}
 .product-info-meta {margin:18px 0;display:grid;gap:12px;}
 .product-info-meta > div {display:grid;gap:4px;border-bottom:1px solid #e4e4df;padding-bottom:10px;}
@@ -3176,16 +3177,17 @@ a:focus-visible {
     <p id="productInfoCategory"></p>
     <div id="productInfoDetails" hidden>
       <p class="product-info-reference" id="productInfoReference"></p>
+      <p class="product-info-audit" id="productInfoAudit"></p>
       <dl class="product-info-meta">
         <div><dt>Referenz-Füllmenge</dt><dd id="productInfoAmount"></dd></div>
         <div><dt>Allergene und Spuren</dt><dd id="productInfoAllergens"></dd></div>
         <div><dt>Wesentliche Zutaten (Auswahl)</dt><dd id="productInfoIngredients"></dd></div>
       </dl>
-      <p class="product-info-heading">Durchschnittliche Nährwerte je 100 g</p>
+      <p class="product-info-heading" id="productInfoNutritionHeading">Durchschnittliche Nährwerte je 100 g</p>
       <table class="product-nutrition" aria-label="Nährwertangaben der Herstellerreferenz">
         <tbody id="productInfoNutrition"></tbody>
       </table>
-      <p class="product-info-source"><a id="productInfoSource" href="#" target="_blank" rel="noopener noreferrer">Originalangaben beim Hersteller prüfen ↗</a></p>
+      <p class="product-info-source"><a id="productInfoSource" href="#" target="_blank" rel="noopener noreferrer">Quelle öffnen ↗</a></p>
     </div>
     <div class="product-info-warning" id="productInfoWarning" role="note">
       <strong id="productInfoWarningTitle">Lebensmittelangaben in Vorbereitung.</strong>
@@ -4785,6 +4787,50 @@ $("#builderGrid").addEventListener("error", event => {
 // Herstellerinformationen vom 15.10.2026: Referenzdaten, KEINE geprüften Verkaufs-Etiketten.
 // Die vollständige rechtsverbindliche Zutatenliste wird erst nach Festlegung der EAN/Packungsgröße ergänzt.
 const MANUFACTURER_REFERENCES = Object.freeze({
+  "1": {
+    "ref": "meinT OrangenT 0,5 l – Händlerhinweis, Etikett offen",
+    "amount": "500 ml (vorläufig)",
+    "source": "https://www.supermarktcheck.de/product/283361-meint-orangent-05-l",
+    "sourceType": "Drittanbieter, keine Herstellerquelle",
+    "status": "Prüfung erforderlich",
+    "notes": "Die Shopbezeichnung „Orange“ ist noch nicht mit einer EAN abgeglichen. Für OrangenT wurde keine aktuelle offizielle Hersteller-Nährwertseite gefunden. Deshalb werden hier keine Zahlen übernommen.",
+    "allergens": "Nicht herstellerseitig verifiziert.",
+    "ingredients": "Hersteller-Zutatenliste noch nicht verifiziert."
+  },
+  "2": {
+    "ref": "MeinT ZitronenT 0,5 l – REWE-Produktreferenz",
+    "amount": "500 ml",
+    "source": "https://www.rewe.de/shop/p/meint-zitronent-0-5l/1363014",
+    "sourceType": "Händlerdaten (REWE)",
+    "status": "Packung/EAN prüfen",
+    "energy": "189 kJ / 44 kcal",
+    "fat": "<0,5 g",
+    "sat": "<0,1 g",
+    "carbs": "11 g",
+    "sugar": "11 g",
+    "protein": "<0,5 g",
+    "salt": "<0,01 g",
+    "unit": "ml",
+    "allergens": "Im Händler-Zutatentext sind keine der 14 kennzeichnungspflichtigen Allergengruppen hervorgehoben; keine Allergiefrei-Zusage.",
+    "ingredients": "Laut Händler: Wasser, Zucker, Zitronensaftkonzentrat, Traubenzucker, Orangensaftkonzentrat und Tee-Extrakt (Auswahl)."
+  },
+  "3": {
+    "ref": "MeinT PfirsichT 0,5 l – REWE-Produktreferenz",
+    "amount": "500 ml",
+    "source": "https://www.rewe.de/shop/p/meint-pfirsicht-0-5l/1363012",
+    "sourceType": "Händlerdaten (REWE)",
+    "status": "Packung/EAN prüfen",
+    "energy": "175 kJ / 41 kcal",
+    "fat": "<0,5 g",
+    "sat": "<0,1 g",
+    "carbs": "10 g",
+    "sugar": "10 g",
+    "protein": "<0,5 g",
+    "salt": "<0,01 g",
+    "unit": "ml",
+    "allergens": "Im Händler-Zutatentext sind keine der 14 kennzeichnungspflichtigen Allergengruppen hervorgehoben; keine Allergiefrei-Zusage.",
+    "ingredients": "Laut Händler: Wasser, Zucker, Traubenzucker, Pfirsichsaftkonzentrat, Säuerungsmittel, Tee-Extrakt (Auswahl)."
+  },
   "4": {
     "ref": "Milka Tender Milch · 37 g",
     "amount": "37 g",
@@ -4799,6 +4845,71 @@ const MANUFACTURER_REFERENCES = Object.freeze({
     "allergens": "Enthält Weizen (Gluten), Ei, Milch und Soja. Kann Nüsse enthalten.",
     "ingredients": "Biskuit mit Milchcreme und Alpenmilchschokolade; unter anderem Weizenmehl, Ei, Milchbestandteile und Sojalecithin."
   },
+  "5": {
+    "ref": "Oreo Wafer Roll Vanilla (China-Import) – mögliche Variante",
+    "amount": "54 g (mögliche Variante)",
+    "source": "https://www.worldofsweets.de/Oreo-Wafer-Roll-Vanilla-China-54g.321268.html",
+    "sourceType": "Händler-/Importreferenz, nicht Hersteller",
+    "status": "Sorte, Importkennzeichnung und EAN offen",
+    "energy": "1.996 kJ / 477 kcal",
+    "fat": "17,4 g",
+    "sat": "9,1 g",
+    "carbs": "74,7 g",
+    "sugar": "49,3 g",
+    "protein": "5,4 g",
+    "salt": "0,16 g",
+    "allergens": "Enthält Weizen und Soja; Milch kann enthalten sein (gemäß Handelsreferenz).",
+    "ingredients": "Waffelröllchen mit Vanillecremefüllung; unter anderem Weizenmehl, Zucker, Pflanzenfett, Kakao, Sojalecithin.",
+    "notes": "Importprodukt mit möglicher abweichender EU-Pflichtkennzeichnung; erst nach Identifizierung der tatsächlich gelieferten Importpackung freigeben."
+  },
+  "6": {
+    "ref": "Griesson Chocolate Mountain Cookies Classic",
+    "amount": "150 g Herstellerpackung",
+    "source": "https://www.griesson-debeukelaer.de/de/de/marken/griesson/chocolate-mountain-cookies/classic.html",
+    "sourceType": "Hersteller (Griesson)",
+    "status": "Etikett/EAN prüfen",
+    "energy": "2.077 kJ / 497 kcal",
+    "fat": "26 g",
+    "sat": "14 g",
+    "carbs": "57 g",
+    "sugar": "32 g",
+    "protein": "6,3 g",
+    "salt": "0,75 g",
+    "allergens": "Enthält Weizen; Spurenhinweise auf der Originalpackung prüfen.",
+    "ingredients": "Mürbegebäck mit Schokoladenstückchen; u. a. Weizenmehl, Zucker, Kakaomasse, Palmfett, Glukosesirup, Kakaobutter."
+  },
+  "7": {
+    "ref": "Oreo Double Creme – Herstellerreferenz",
+    "amount": "157 g Rolle als Referenz (auch andere Formate)",
+    "source": "https://www.oreo.de/produkte/index.html?p=n1",
+    "sourceType": "Hersteller/Marke (OREO)",
+    "status": "Etikett/EAN prüfen",
+    "energy": "2.062 kJ / 492 kcal",
+    "fat": "22 g",
+    "sat": "7,4 g",
+    "carbs": "67 g",
+    "sugar": "40 g",
+    "protein": "4,3 g",
+    "salt": "0,59 g",
+    "allergens": "Enthält Weizen und Soja; kann Milch enthalten.",
+    "ingredients": "Kakaokekse mit doppelter Cremefüllung; u. a. Zucker, Weizenmehl, Pflanzenöle, Weizenstärke, Kakao, Sojalecithin."
+  },
+  "8": {
+    "ref": "Mars Schokoriegel (Single) – REWE-Referenz",
+    "amount": "51 g",
+    "source": "https://www.rewe.de/shop/p/mars-schokoriegel-51g/7603046",
+    "sourceType": "Händlerdaten (REWE)",
+    "status": "Etikett/EAN prüfen",
+    "energy": "1.862 kJ / 443 kcal",
+    "fat": "16 g",
+    "sat": "7,4 g",
+    "carbs": "70 g",
+    "sugar": "62 g",
+    "protein": "4,4 g",
+    "salt": "0,67 g",
+    "allergens": "Enthält Milch, Gerste (Gluten), Soja und Ei; kann Erdnüsse und andere Nüsse enthalten.",
+    "ingredients": "Riegel mit Karamell, Candy-Creme und Milchschokolade; unter anderem Zucker, Glukosesirup, Milchbestandteile, Kakao, Gerstenmalzextrakt und Eiklar."
+  },
   "9": {
     "ref": "SNICKERS Single · 50 g",
     "amount": "50 g",
@@ -4812,6 +4923,97 @@ const MANUFACTURER_REFERENCES = Object.freeze({
     "salt": "0,64 g",
     "allergens": "Enthält Erdnüsse, Milch, Soja und Ei. Kann Haselnüsse enthalten.",
     "ingredients": "Schokoriegel mit Erdnüssen, Karamell und Nougat; enthält unter anderem Zucker, Glukosesirup und Milchbestandteile."
+  },
+  "10": {
+    "ref": "TWIX Doppelriegel 50 g – Original",
+    "amount": "50 g",
+    "source": "https://www.twix.com/de/products/chocolate/twix-doppelriegel-50g-bars",
+    "sourceType": "Hersteller/Marke (TWIX)",
+    "status": "Etikett/EAN prüfen",
+    "energy": "2.065 kJ / 493 kcal",
+    "fat": "24 g",
+    "sat": "14 g",
+    "carbs": "65 g",
+    "sugar": "48 g",
+    "protein": "4,6 g",
+    "salt": "0,39 g",
+    "allergens": "Enthält Weizen, Milch und Soja; kann Nüsse und andere glutenhaltige Getreide enthalten.",
+    "ingredients": "Keks, Karamell und Milchschokolade; unter anderem Zucker, Glukosesirup, Weizenmehl, Milchpulver, Kakao und Sojalecithin."
+  },
+  "11": {
+    "ref": "„Bahlsen Brezeln“ – Artikel nicht eindeutig",
+    "amount": "Noch nicht festgelegt",
+    "source": "https://www.bahlsen.com/de/produkte/blaetterbrezeln/",
+    "sourceType": "Herstellerseite nur für andere mögliche Sorte",
+    "status": "Nicht zuordenbar",
+    "allergens": "Nicht bestimmbar ohne exakte Sorte.",
+    "ingredients": "Bahlsen vertreibt unter anderem süße Blätterbrezeln. Das ist nicht dasselbe wie klassische Salzbrezeln. Ohne Herstellerartikel und EAN keine Zuordnung.",
+    "notes": "Artikelbezeichnung im Shop und Kategorie „salzig“ überprüfen. Keine Daten der süßen Blätterbrezeln als Salzbrezel verwenden."
+  },
+  "12": {
+    "ref": "Lorenz Saltletts Brezel (nicht Sticks)",
+    "amount": "Verkaufspackung noch wählen",
+    "source": "https://lorenz-snacks.de/saltletts",
+    "sourceType": "Hersteller (Lorenz)",
+    "status": "Brezel/Sticks und Packung abgleichen",
+    "energy": "1.670 kJ / 395 kcal",
+    "fat": "7,2 g",
+    "sat": "0,8 g",
+    "carbs": "69 g",
+    "sugar": "2,0 g",
+    "protein": "12 g",
+    "salt": "3,5 g",
+    "allergens": "Enthält Weizen und Gerste; kann Milch, Ei und Sesam enthalten.",
+    "ingredients": "Salzbrezeln; unter anderem Weizenmehl, Rapsöl, Salz, Meersalz, Hefe und Gerstenmalzextrakt."
+  },
+  "13": {
+    "ref": "TUC Bake Rolls Meersalz",
+    "amount": "Packungsgröße offen",
+    "source": "https://tuc.eu/produkte_de/",
+    "sourceType": "Hersteller/Marke (TUC)",
+    "status": "Etikett/EAN prüfen",
+    "energy": "1.862 kJ / 443 kcal",
+    "fat": "15 g",
+    "sat": "1,6 g",
+    "carbs": "63 g",
+    "sugar": "3,4 g",
+    "protein": "12 g",
+    "salt": "1,50 g",
+    "allergens": "Enthält Weizen/Gluten; kann Milch enthalten.",
+    "ingredients": "Dünne Brotchips mit Meersalz; unter anderem Weizenmehl, Sonnenblumenöl, Weizengluten, Zucker, jodiertes Meersalz und Hefe."
+  },
+  "14": {
+    "ref": "funny-frisch Chipsfrisch Ungarisch",
+    "amount": "40 g, 150 g, 215 g oder 4 × 40 g laut Hersteller; Größe wählen",
+    "source": "https://www.funny-frisch.de/produkte/chipsfrisch/chipsfrisch-ungarisch.html",
+    "sourceType": "Hersteller (funny-frisch)",
+    "status": "Packungsgröße/EAN festlegen",
+    "energy": "2.221 kJ / 533 kcal",
+    "fat": "33 g",
+    "sat": "2,8 g",
+    "carbs": "49 g",
+    "sugar": "2,5 g",
+    "protein": "6,1 g",
+    "salt": "1,5 g",
+    "allergens": "Laut Hersteller als glutenfrei und vegan gekennzeichnet; die tatsächlich verkaufte Verpackung ist maßgeblich.",
+    "ingredients": "Kartoffeln, pflanzliche Öle, Salz, Hefe, Paprika und Gewürze (Auswahl)."
+  },
+  "15": {
+    "ref": "Chipsfrisch gesalzen – Sortenvorschlag anhand des Bilddateinamens",
+    "amount": "150 g oder 4 × 40 g als Herstellerformate",
+    "source": "https://www.funny-frisch.de/produkte/chipsfrisch/chipsfrisch-gesalzen.html",
+    "sourceType": "Hersteller (funny-frisch)",
+    "status": "Vorschlag, Sorte nicht bestätigt",
+    "energy": "2.201 kJ / 528 kcal",
+    "fat": "33 g",
+    "sat": "3,0 g",
+    "carbs": "49 g",
+    "sugar": "0,6 g",
+    "protein": "5,6 g",
+    "salt": "1,6 g",
+    "allergens": "Laut Hersteller für die Sorte gesalzen glutenfrei und vegan; im Shop ist die Sorte nicht bestätigt.",
+    "ingredients": "Nur wenn tatsächlich „gesalzen“ angeboten wird: Kartoffeln, Sonnenblumenöl, Speisesalz.",
+    "notes": "Der Shop heißt noch „weitere Sorte“; diese Daten dürfen nur bei verbindlicher Wahl „gesalzen“ als Produktreferenz verwendet werden."
   },
   "16": {
     "ref": "HARIBO Primavera Erdbeeren · Herstellerdaten (Packungsgröße noch festlegen)",
@@ -4897,6 +5099,131 @@ const MANUFACTURER_REFERENCES = Object.freeze({
     "allergens": "Kann Spuren von Milch und Weizen enthalten.",
     "ingredients": "Fruchtgummi mit Zuckermantel; unter anderem Zucker, Glukosesirup, Gelatine, Agar-Agar und Fruchtkonzentrate."
   },
+  "22": {
+    "ref": "ültje Studentenfutter Original mit Rosinen",
+    "amount": "50 g Riegelbeutel als mögliche Box-Variante; 200-g-Beutel möglich",
+    "source": "https://www.ueltje.de/produkte/nuss-frucht-mixe/studentenfutter-original-mit-rosinen",
+    "sourceType": "Hersteller (ültje)",
+    "status": "Variante/EAN prüfen",
+    "energy": "2.243 kJ / 539 kcal",
+    "fat": "37 g",
+    "sat": "4,5 g",
+    "carbs": "32 g",
+    "sugar": "20 g",
+    "protein": "16 g",
+    "salt": "0,08 g",
+    "allergens": "Enthält Erdnüsse, Cashewkerne und Mandeln; kann andere Schalenfrüchte enthalten.",
+    "ingredients": "30 % Rosinen, Erdnusskerne, Cashewkerne, Mandeln, Sonnenblumenöl."
+  },
+  "23": {
+    "ref": "M&M's Peanut – REWE-Referenz",
+    "amount": "45 g",
+    "source": "https://www.rewe.de/shop/p/m-m-s-peanut-45g/5231736",
+    "sourceType": "Händlerdaten (REWE)",
+    "status": "Etikett/EAN prüfen",
+    "energy": "2.190 kJ / 524 kcal",
+    "fat": "26 g",
+    "sat": "11 g",
+    "carbs": "59 g",
+    "sugar": "53 g",
+    "protein": "9,8 g",
+    "salt": "0,11 g",
+    "allergens": "Enthält Erdnüsse, Milch und Soja; kann Mandeln und Haselnüsse enthalten.",
+    "ingredients": "Schokolinsen mit Erdnüssen, Milchschokolade und Zuckerüberzug; u. a. Zucker, Erdnüsse, Kakaomasse, Milchpulver und Sojalecithin."
+  },
+  "24": {
+    "ref": "TUC Bake Rolls Tomate & Olive",
+    "amount": "Packungsgröße noch bestimmen",
+    "source": "https://tuc.eu/produkte_de/",
+    "sourceType": "Hersteller/Marke (TUC)",
+    "status": "Etikett/EAN prüfen",
+    "energy": "1.854 kJ / 441 kcal",
+    "fat": "15 g",
+    "sat": "1,6 g",
+    "carbs": "63 g",
+    "sugar": "4,2 g",
+    "protein": "13 g",
+    "salt": "1,50 g",
+    "allergens": "Enthält Weizen (Gluten) und Milch; kann Ei, Erdnüsse, Schalenfrüchte, Sesam und Sellerie enthalten.",
+    "ingredients": "Brotchips mit Tomate und Olive; unter anderem Weizenmehl, Sonnenblumenöl, Weizengluten, Tomatenpulver, Oliven und Milchmolkenpulver."
+  },
+  "25": {
+    "ref": "Lorenz NicNac's Original („Double-Crunch“)",
+    "amount": "Verkaufspackung wählen (To-go und weitere Formate)",
+    "source": "https://lorenz-snacks.de/nicnacs",
+    "sourceType": "Hersteller (Lorenz)",
+    "status": "Als Original angenommen, Packung/EAN prüfen",
+    "energy": "2.217 kJ / 533 kcal",
+    "fat": "36 g",
+    "sat": "6,8 g",
+    "carbs": "34 g",
+    "sugar": "5,0 g",
+    "protein": "15 g",
+    "salt": "1,8 g",
+    "allergens": "Enthält Erdnüsse, Weizen (Gluten), Soja und Milch (Käsepulver); kann Schalenfrüchte enthalten.",
+    "ingredients": "Erdnüsse (51 %) im würzigen Teigmantel; unter anderem Weizenmehl, Stärke, Sonnenblumenöl, Zucker, Käsepulver."
+  },
+  "26": {
+    "ref": "ültje Erdnüsse geröstet und gesalzen",
+    "amount": "180-g-Dose laut Hersteller; 50-g-Beutel alternativ",
+    "source": "https://www.ueltje.de/produkte/erdnuesse/erdnuesse-geroestet-gesalzen",
+    "sourceType": "Hersteller (ültje)",
+    "status": "Dose/Packung/EAN festlegen",
+    "energy": "2.562 kJ / 619 kcal",
+    "fat": "51 g",
+    "sat": "7,8 g",
+    "carbs": "11 g",
+    "sugar": "5,2 g",
+    "protein": "24 g",
+    "salt": "1,0 g",
+    "allergens": "Enthält Erdnüsse; kann andere Schalenfrüchte enthalten.",
+    "ingredients": "Erdnusskerne, Sonnenblumenöl, Salz.",
+    "notes": "Die 180-g-Dose ist sperrig. Bitte Boxkosten, Platz und mögliche 50-g-Alternative separat prüfen."
+  },
+  "27": {
+    "ref": "Chipsfrisch Mini – Sorte noch unklar",
+    "amount": "„Kleine Packung“ ist nicht eindeutig",
+    "source": "https://www.funny-frisch.de/produkte/chipsfrisch/chipsfrisch-ungarisch.html",
+    "sourceType": "Herstellerseite für mögliche Sorte, nicht bestätigt",
+    "status": "Sorte offen – keine Nährwerte zuordenbar",
+    "allergens": "Nicht zuordenbar, solange die Sorte fehlt.",
+    "ingredients": "Bei Chipsfrisch gibt es unterschiedliche Geschmacksrichtungen und Formate, etwa Ungarisch 40 g. Die Shopbezeichnung „Mini“ legt die Sorte nicht fest.",
+    "notes": "Erst die konkrete Chipsfrisch-Sorte und EAN festlegen."
+  },
+  "28": {
+    "ref": "Lorenz Crunchips Stackers Chili & Melty Cheese",
+    "amount": "175-g-Dose laut Lorenz-Presseinformation",
+    "source": "https://lorenz-snacks.de/crunchips-stackers-chili-melty-cheese",
+    "sourceType": "Hersteller (Lorenz)",
+    "status": "Dose/EAN prüfen",
+    "energy": "2.316 kJ / 556 kcal",
+    "fat": "35 g",
+    "sat": "3,5 g",
+    "carbs": "55 g",
+    "sugar": "<2,8 g",
+    "protein": "3,4 g",
+    "salt": "1,2 g",
+    "allergens": "Enthält Milchbestandteile (Süßmolke, Käsepulver, Milch-Aromen).",
+    "ingredients": "Stapelchips mit Kartoffelpulver, Kartoffelstärke, Pflanzenöl, Süßmolkenpulver, Käsepulver und Chili.",
+    "notes": "175-g-Dose ist groß; prüfen, ob diese als einzelner Platz in die BODA Box passt."
+  },
+  "29": {
+    "ref": "Manner Snack Minis Milch-Schoko – Sortenvorschlag",
+    "amount": "25-g-Einzelpackung",
+    "source": "https://www.manner.com/de-DE/sortiment/waffelprodukte/manner-snack-minis-milch-schoko-25g/",
+    "sourceType": "Hersteller (Manner)",
+    "status": "Milch-Schoko nicht bestätigt",
+    "energy": "525 kcal (kJ-Angabe auf Herstellerseite nicht ausgewiesen)",
+    "fat": "30 g",
+    "sat": "25 g",
+    "carbs": "55 g",
+    "sugar": "34 g",
+    "protein": "7,1 g",
+    "salt": "0,34 g",
+    "allergens": "Die Herstellerseite nennt „eifrei“, enthält aber keine vollständige Allergenliste. Für konkrete Packung vollständig prüfen (insbesondere Milch/Weizen und mögliche Spuren).",
+    "ingredients": "Kakaowaffeln mit Milch- und Kakaocreme; eine vollständige Zutatenliste liegt auf der verlinkten Herstellerseite nicht vor.",
+    "notes": "Andere Manner-Snack-Minis-Sorten (z. B. Milch-Haselnuss) haben andere Nährwerte. Nicht ungeprüft übertragen."
+  },
   "30": {
     "ref": "Manner Original Neapolitaner · 4 × 75 g (300-g-Herstellerpackung)",
     "amount": "4 × 75 g (Gesamtpackung 300 g)",
@@ -4910,44 +5237,64 @@ const MANUFACTURER_REFERENCES = Object.freeze({
     "salt": "0,15 g",
     "allergens": "Enthält Weizen (Gluten), Haselnüsse und Soja. Kann Spuren von Milch sowie weiteren Schalenfrüchten enthalten.",
     "ingredients": "Waffeln mit Haselnusscreme; unter anderem Zucker, Weizenmehl, pflanzliche Fette, Haselnüsse und Kakaopulver."
+  },
+  "31": {
+    "ref": "Crunchips Stackers Cheese & Onion – Herstellerprodukt nicht bestätigt",
+    "amount": "Nicht zuordenbar",
+    "source": "https://lorenz-snacks.de/crunchips-stackers",
+    "sourceType": "Hersteller-Sortimentsübersicht, Sorte nicht nachgewiesen",
+    "status": "Artikelname klären",
+    "allergens": "Unbekannt, keine Übertragung von ähnlichen Chips.",
+    "ingredients": "Lorenz bietet „Crunchips Cheese & Onion“ als normale Kartoffelchips an. In der verifizierten Stackers-Reihe ist „Cheese & Onion“ bislang nicht eindeutig nachgewiesen.",
+    "notes": "Keine Zutaten und Nährwerte der normalen Crunchips Cheese & Onion auf eine Stackers-Dose übertragen."
   }
 });
 
 function showProductInformation(item) {
   const ref = MANUFACTURER_REFERENCES[item.id];
   $("#productInfoTitle").textContent = item.name;
-  $("#productInfoSize").textContent = `Aktuelle Artikelangabe im Shopentwurf: ${item.size}`;
+  $("#productInfoSize").textContent = `Aktuelle Angabe im Shopentwurf: ${item.size}`;
   $("#productInfoCategory").textContent = `Kategorie: ${categoryLabel(item.category)}`;
   $("#productInfoDetails").hidden = !ref;
-  $("#productInfoWarningTitle").textContent = ref
-    ? "Herstellerreferenz – noch keine vollständige Lebensmittelkennzeichnung."
-    : "Produktdaten stehen noch aus.";
+
+  const incompleteWarning = "Herstellerreferenzen und Händlerdaten sind nur ein Arbeitsstand. Die wirklich gelieferte Variante, EAN, Nettofüllmenge, vollständige Zutatenliste, Allergene und Pfand-/Verpackungsangaben müssen vor Freigabe geprüft werden. Der Shop nimmt keine echten Bestellungen an.";
+  $("#productInfoWarningTitle").textContent = ref?.energy
+    ? "Produktreferenz vorhanden – noch nicht für Verkäufe freigegeben."
+    : "Artikel nicht eindeutig – keine verlässlichen Nährwerte.";
   $("#productInfoWarningText").textContent = ref
-    ? "Die Daten gelten für das oben genannte Referenzprodukt. Das konkrete BODA-Verkaufsprodukt (EAN, Packungsgröße, vollständiges Zutatenverzeichnis und Etikett) ist noch abzugleichen. Die Zutatenübersicht ist NICHT vollständig. Keine echte Bestellung möglich."
-    : "Für dieses Produkt liegen noch keine eindeutig zugeordneten Herstellerdaten vor. Die vollständigen Zutaten, Allergene, Nährwerte und die endgültige Nettofüllmenge müssen vor Verkaufsstart geklärt werden.";
+    ? (ref.notes ? `${ref.notes} ${incompleteWarning}` : incompleteWarning)
+    : incompleteWarning;
 
   if (ref) {
-    $("#productInfoReference").textContent = `Herstellerreferenz: ${ref.ref}`;
-    $("#productInfoAmount").textContent = ref.amount;
-    $("#productInfoAllergens").textContent = ref.allergens;
-    $("#productInfoIngredients").textContent = ref.ingredients;
+    $("#productInfoReference").textContent = `Recherchierte Variante: ${ref.ref}`;
+    $("#productInfoAudit").textContent = `Quelle: ${ref.sourceType || "Herstellerreferenz"} · Status: ${ref.status || "Etikettprüfung offen"}`;
+    $("#productInfoAmount").textContent = ref.amount || "Noch nicht festgelegt";
+    $("#productInfoAllergens").textContent = ref.allergens || "Noch nicht verifiziert";
+    $("#productInfoIngredients").textContent = ref.ingredients || "Noch nicht verifiziert";
+    const unit = ref.unit === "ml" ? "100 ml" : "100 g";
+    $("#productInfoNutritionHeading").textContent = ref.energy
+      ? `Durchschnittliche Nährwerte je ${unit} – Referenzprodukt`
+      : "Nährwertangaben zur konkreten Variante noch ausstehend";
     const labels = [
-      ["Energie", ref.energy],
-      ["Fett", ref.fat],
+      ["Energie", ref.energy], ["Fett", ref.fat],
       ["davon gesättigte Fettsäuren", ref.sat],
-      ["Kohlenhydrate", ref.carbs],
-      ["davon Zucker", ref.sugar],
-      ["Eiweiß", ref.protein],
-      ["Salz", ref.salt]
-    ];
+      ["Kohlenhydrate", ref.carbs], ["davon Zucker", ref.sugar],
+      ["Eiweiß", ref.protein], ["Salz", ref.salt]
+    ].filter(([,value]) => value);
     $("#productInfoNutrition").innerHTML = labels.map(([label,value]) =>
       `<tr><th scope="row">${escapeHtml(label)}</th><td>${escapeHtml(value)}</td></tr>`
     ).join("");
     const source = $("#productInfoSource");
-    source.href = ref.source;
+    source.href = ref.source || "#";
+    source.textContent = (ref.sourceType || "").includes("Händler") ||
+      (ref.sourceType || "").includes("Drittanbieter")
+      ? "Handelsdaten / Referenz öffnen ↗"
+      : "Herstellerseite / Sortimentsreferenz öffnen ↗";
+    source.parentElement.hidden = !ref.source;
   } else {
     $("#productInfoNutrition").replaceChildren();
     $("#productInfoSource").removeAttribute("href");
+    $("#productInfoSource").parentElement.hidden = true;
   }
   $("#productInfoDialog").showModal();
 }
