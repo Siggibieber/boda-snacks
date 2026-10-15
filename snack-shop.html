@@ -1691,6 +1691,26 @@ a:focus-visible {
   line-height:1.65;
 }
 .product-info-warning p {margin-bottom:0;}
+
+/* Herstellerreferenzen im Produkt-Dialog: klare Nährwertübersicht */
+.product-info-dialog {overflow-y:auto;}
+.product-info-body {max-height:calc(100vh - 125px);overflow-y:auto;}
+.product-info-reference {padding:10px 12px;background:#f7f0dc;border-left:3px solid #caa13a;border-radius:7px;font-weight:800;}
+.product-info-meta {margin:18px 0;display:grid;gap:12px;}
+.product-info-meta > div {display:grid;gap:4px;border-bottom:1px solid #e4e4df;padding-bottom:10px;}
+.product-info-meta dt {font-size:12px;color:#696969;font-weight:800;}
+.product-info-meta dd {margin:0;line-height:1.5;}
+.product-info-heading {margin:16px 0 8px;font-weight:800;}
+.product-nutrition {width:100%;border-collapse:collapse;font-size:13px;}
+.product-nutrition th,.product-nutrition td {padding:8px 10px;border-bottom:1px solid #e4e4df;text-align:left;}
+.product-nutrition th {font-weight:600;}
+.product-nutrition td {text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.product-nutrition tr:nth-child(odd) {background:#faf8f2;}
+.product-info-source {margin:16px 0;}
+.product-info-source a {color:#765816;font-weight:800;text-decoration:underline;text-underline-offset:3px;}
+.product-info-warning {margin-top:16px;}
+.product-info-badge {display:inline-block;color:#196354;font-weight:800;font-size:11px;margin:6px 0;}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; }
 }
@@ -3154,11 +3174,22 @@ a:focus-visible {
   <div class="product-info-body">
     <p id="productInfoSize"></p>
     <p id="productInfoCategory"></p>
-    <div class="product-info-warning">
-      <strong>Lebensmittelangaben in Vorbereitung.</strong>
-      <p>Die vollständigen Angaben zu Zutaten, Allergenen, Nährwerten, Nettofüllmenge und dem konkreten Artikel
-      müssen vor der Freischaltung einer echten Bestellung anhand der jeweiligen Herstellerverpackung geprüft werden.
-      Hier werden bewusst keine unbestätigten Angaben veröffentlicht.</p>
+    <div id="productInfoDetails" hidden>
+      <p class="product-info-reference" id="productInfoReference"></p>
+      <dl class="product-info-meta">
+        <div><dt>Referenz-Füllmenge</dt><dd id="productInfoAmount"></dd></div>
+        <div><dt>Allergene und Spuren</dt><dd id="productInfoAllergens"></dd></div>
+        <div><dt>Wesentliche Zutaten (Auswahl)</dt><dd id="productInfoIngredients"></dd></div>
+      </dl>
+      <p class="product-info-heading">Durchschnittliche Nährwerte je 100 g</p>
+      <table class="product-nutrition" aria-label="Nährwertangaben der Herstellerreferenz">
+        <tbody id="productInfoNutrition"></tbody>
+      </table>
+      <p class="product-info-source"><a id="productInfoSource" href="#" target="_blank" rel="noopener noreferrer">Originalangaben beim Hersteller prüfen ↗</a></p>
+    </div>
+    <div class="product-info-warning" id="productInfoWarning" role="note">
+      <strong id="productInfoWarningTitle">Lebensmittelangaben in Vorbereitung.</strong>
+      <p id="productInfoWarningText">Vollständige Pflichtangaben fehlen noch. Es ist kein echter Kauf möglich.</p>
     </div>
   </div>
 </dialog>
@@ -4595,8 +4626,11 @@ function renderBuilder() {
                 <button type="button" class="product-info-link"
                   data-product-info="${product.id}"
                   aria-label="Informationen zu ${escapeHtml(product.name)} anzeigen">
-                  Produktinformationen
+                  Produktinformationen ↗
                 </button>
+                ${MANUFACTURER_REFERENCES[product.id]
+                  ? '<span class="product-info-badge">Herstellerreferenz hinterlegt</span>'
+                  : ''}
               </div>
 
 
@@ -4748,6 +4782,176 @@ $("#builderGrid").addEventListener("error", event => {
   wrapper.textContent = "Produktbild folgt";
 },true);
 
+// Herstellerinformationen vom 15.10.2026: Referenzdaten, KEINE geprüften Verkaufs-Etiketten.
+// Die vollständige rechtsverbindliche Zutatenliste wird erst nach Festlegung der EAN/Packungsgröße ergänzt.
+const MANUFACTURER_REFERENCES = Object.freeze({
+  "4": {
+    "ref": "Milka Tender Milch · 37 g",
+    "amount": "37 g",
+    "source": "https://www.milka.com/de/produkte/milka-tender-milch-37g-30293/",
+    "energy": "1776 kJ / 424 kcal",
+    "fat": "20 g",
+    "sat": "13 g",
+    "carbs": "55 g",
+    "sugar": "38 g",
+    "protein": "5,9 g",
+    "salt": "0,58 g",
+    "allergens": "Enthält Weizen (Gluten), Ei, Milch und Soja. Kann Nüsse enthalten.",
+    "ingredients": "Biskuit mit Milchcreme und Alpenmilchschokolade; unter anderem Weizenmehl, Ei, Milchbestandteile und Sojalecithin."
+  },
+  "9": {
+    "ref": "SNICKERS Single · 50 g",
+    "amount": "50 g",
+    "source": "https://www.snickers.de/products/chocolate/snickers-single-bars",
+    "energy": "2044 kJ / 488 kcal",
+    "fat": "23 g",
+    "sat": "7,8 g",
+    "carbs": "60 g",
+    "sugar": "52 g",
+    "protein": "8,7 g",
+    "salt": "0,64 g",
+    "allergens": "Enthält Erdnüsse, Milch, Soja und Ei. Kann Haselnüsse enthalten.",
+    "ingredients": "Schokoriegel mit Erdnüssen, Karamell und Nougat; enthält unter anderem Zucker, Glukosesirup und Milchbestandteile."
+  },
+  "16": {
+    "ref": "HARIBO Primavera Erdbeeren · Herstellerdaten (Packungsgröße noch festlegen)",
+    "amount": "100 g oder 175 g laut Hersteller",
+    "source": "https://www.haribo.com/de-de/produkte/haribo/primavera-erdbeeren",
+    "energy": "1603 kJ / 377 kcal",
+    "fat": "<0,5 g",
+    "sat": "<0,1 g",
+    "carbs": "91 g",
+    "sugar": "77 g",
+    "protein": "2,9 g",
+    "salt": "0,03 g",
+    "allergens": "Kann Spuren von Milch und Weizen enthalten.",
+    "ingredients": "Schaumzucker mit Erdbeergeschmack; unter anderem Zucker, Glukosesirup, Gelatine, Citronensäure und Aroma."
+  },
+  "17": {
+    "ref": "HARIBO Pommes Sauer · Herstellerdaten (Packungsgröße noch festlegen)",
+    "amount": "100 g oder 175 g laut Hersteller",
+    "source": "https://www.haribo.com/de-de/produkte/haribo/pommes-sauer",
+    "energy": "1434 kJ / 337 kcal",
+    "fat": "<0,5 g",
+    "sat": "<0,1 g",
+    "carbs": "80 g",
+    "sugar": "52 g",
+    "protein": "3,2 g",
+    "salt": "0,05 g",
+    "allergens": "Kann Spuren von Milch und Weizen enthalten.",
+    "ingredients": "Saure Fruchtgummi-Pommes; unter anderem Glukosesirup, Zucker, Stärke, Gelatine und Säuerungsmittel."
+  },
+  "18": {
+    "ref": "HARIBO Konfekt · Herstellerdaten (Packungsgröße noch festlegen)",
+    "amount": "100 g, 175 g oder andere Größe laut Hersteller",
+    "source": "https://www.haribo.com/de-de/produkte/haribo/konfekt",
+    "energy": "1622 kJ / 383 kcal",
+    "fat": "6,5 g",
+    "sat": "4 g",
+    "carbs": "78 g",
+    "sugar": "60 g",
+    "protein": "2,8 g",
+    "salt": "0,52 g",
+    "allergens": "Enthält Weizen (Gluten) und Milchbestandteile (Milchzucker, Magermilchpulver).",
+    "ingredients": "Lakritz-Konfekt mit verschiedenen Ummantelungen; unter anderem Zucker, Weizenmehl, Milchzucker, Kokos und Süßholzextrakt."
+  },
+  "19": {
+    "ref": "HARIBO Goldbären · Einzelbeutel 75 g aus 12er-Multipack",
+    "amount": "75 g pro Einzelbeutel",
+    "source": "https://onlineshop.haribo.com/p/goldbaeren-12x75g-DE10043604.html",
+    "energy": "1459 kJ / 343 kcal",
+    "fat": "<0,5 g",
+    "sat": "0,1 g",
+    "carbs": "77 g",
+    "sugar": "46 g",
+    "protein": "6,9 g",
+    "salt": "0,07 g",
+    "allergens": "Kann Spuren von Milch und Weizen enthalten.",
+    "ingredients": "Fruchtgummi mit Gelatine und Fruchtsaftkonzentraten; unter anderem Glukosesirup, Zucker und Dextrose."
+  },
+  "20": {
+    "ref": "HARIBO Happy-Cola · 100 g",
+    "amount": "100 g",
+    "source": "https://onlineshop.haribo.com/p/happy-cola-100g-DE10002601.html",
+    "energy": "1459 kJ / 343 kcal",
+    "fat": "<0,5 g",
+    "sat": "0,1 g",
+    "carbs": "77 g",
+    "sugar": "46 g",
+    "protein": "6,9 g",
+    "salt": "0,07 g",
+    "allergens": "Kann Spuren von Milch und Weizen enthalten.",
+    "ingredients": "Cola-Fruchtgummi; unter anderem Glukosesirup, Zucker, Gelatine, Dextrose, Citronensäure und Karamellsirup."
+  },
+  "21": {
+    "ref": "HARIBO Berries · 175 g",
+    "amount": "175 g",
+    "source": "https://www.haribo.com/de-de/produkte/haribo/berries",
+    "energy": "1486 kJ / 350 kcal",
+    "fat": "<0,5 g",
+    "sat": "<0,1 g",
+    "carbs": "86 g",
+    "sugar": "70 g",
+    "protein": "1,1 g",
+    "salt": "<0,01 g",
+    "allergens": "Kann Spuren von Milch und Weizen enthalten.",
+    "ingredients": "Fruchtgummi mit Zuckermantel; unter anderem Zucker, Glukosesirup, Gelatine, Agar-Agar und Fruchtkonzentrate."
+  },
+  "30": {
+    "ref": "Manner Original Neapolitaner · 4 × 75 g (300-g-Herstellerpackung)",
+    "amount": "4 × 75 g (Gesamtpackung 300 g)",
+    "source": "https://shop.manner.com/manner-original-neapolitaner-schnitten-4er-packung-300g",
+    "energy": "2038 kJ / 485 kcal",
+    "fat": "22 g",
+    "sat": "13 g",
+    "carbs": "65 g",
+    "sugar": "46 g",
+    "protein": "5,6 g",
+    "salt": "0,15 g",
+    "allergens": "Enthält Weizen (Gluten), Haselnüsse und Soja. Kann Spuren von Milch sowie weiteren Schalenfrüchten enthalten.",
+    "ingredients": "Waffeln mit Haselnusscreme; unter anderem Zucker, Weizenmehl, pflanzliche Fette, Haselnüsse und Kakaopulver."
+  }
+});
+
+function showProductInformation(item) {
+  const ref = MANUFACTURER_REFERENCES[item.id];
+  $("#productInfoTitle").textContent = item.name;
+  $("#productInfoSize").textContent = `Aktuelle Artikelangabe im Shopentwurf: ${item.size}`;
+  $("#productInfoCategory").textContent = `Kategorie: ${categoryLabel(item.category)}`;
+  $("#productInfoDetails").hidden = !ref;
+  $("#productInfoWarningTitle").textContent = ref
+    ? "Herstellerreferenz – noch keine vollständige Lebensmittelkennzeichnung."
+    : "Produktdaten stehen noch aus.";
+  $("#productInfoWarningText").textContent = ref
+    ? "Die Daten gelten für das oben genannte Referenzprodukt. Das konkrete BODA-Verkaufsprodukt (EAN, Packungsgröße, vollständiges Zutatenverzeichnis und Etikett) ist noch abzugleichen. Die Zutatenübersicht ist NICHT vollständig. Keine echte Bestellung möglich."
+    : "Für dieses Produkt liegen noch keine eindeutig zugeordneten Herstellerdaten vor. Die vollständigen Zutaten, Allergene, Nährwerte und die endgültige Nettofüllmenge müssen vor Verkaufsstart geklärt werden.";
+
+  if (ref) {
+    $("#productInfoReference").textContent = `Herstellerreferenz: ${ref.ref}`;
+    $("#productInfoAmount").textContent = ref.amount;
+    $("#productInfoAllergens").textContent = ref.allergens;
+    $("#productInfoIngredients").textContent = ref.ingredients;
+    const labels = [
+      ["Energie", ref.energy],
+      ["Fett", ref.fat],
+      ["davon gesättigte Fettsäuren", ref.sat],
+      ["Kohlenhydrate", ref.carbs],
+      ["davon Zucker", ref.sugar],
+      ["Eiweiß", ref.protein],
+      ["Salz", ref.salt]
+    ];
+    $("#productInfoNutrition").innerHTML = labels.map(([label,value]) =>
+      `<tr><th scope="row">${escapeHtml(label)}</th><td>${escapeHtml(value)}</td></tr>`
+    ).join("");
+    const source = $("#productInfoSource");
+    source.href = ref.source;
+  } else {
+    $("#productInfoNutrition").replaceChildren();
+    $("#productInfoSource").removeAttribute("href");
+  }
+  $("#productInfoDialog").showModal();
+}
+
 $("#builderGrid")
   .addEventListener(
     "click",
@@ -4758,10 +4962,7 @@ $("#builderGrid")
       if (info) {
         const item = SNACK_BY_ID.get(Number(info.dataset.productInfo));
         if (item) {
-          $("#productInfoTitle").textContent = item.name;
-          $("#productInfoSize").textContent = `Packungsangabe im Entwurf: ${item.size}`;
-          $("#productInfoCategory").textContent = `Kategorie: ${categoryLabel(item.category)}`;
-          $("#productInfoDialog").showModal();
+          showProductInformation(item);
         }
         return;
       }
