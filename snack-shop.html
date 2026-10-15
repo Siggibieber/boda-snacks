@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Entwicklungsmodus: erst NACH rechtlicher und technischer Freigabe entfernen. -->
 <meta name="robots" content="noindex, nofollow">
 
 <title>BODA Snackshop | Smart, Premium & Business Box</title>
 
 <meta
   name="description"
-  content="BODA Snackshop mit 31 Snacks zur Auswahl: BODA Smart Box mit 12 Snacks für 29,95 €, BODA Premium Box mit 15 Snacks für 34,95 € und BODA Business Box mit 18 Snacks für 39,95 €."
+  content="BODA Snackshop mit 31 Snacks zur Auswahl: BODA Smart Box mit 12 Snacks für 29,95 €, BODA Premium Box mit 15 Snacks für 39,95 € und BODA Business Box mit 18 Snacks für 44,95 €."
 >
 
 <style>
@@ -1647,6 +1648,52 @@ input:focus {
   }
 }
 
+
+/* Shop-Vorschau und Lebensmittelinfos */
+.preview-notice {
+  padding:12px 0;
+  background:#fff4d9;
+  border-bottom:1px solid #edd69e;
+  color:#513e16;
+  font-size:13px;
+  line-height:1.6;
+}
+.product-info-link {
+  background:transparent;
+  border:0;
+  padding:5px 0;
+  color:#76560f;
+  text-decoration:underline;
+  font-size:11px;
+  font-weight:750;
+  text-align:left;
+}
+.product-info-link:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline:3px solid #a88022;
+  outline-offset:3px;
+}
+.product-info-dialog {
+  width:min(560px,calc(100vw - 24px));
+  max-height:calc(100vh - 24px);
+  margin:auto;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 30px 90px rgba(0,0,0,.24);
+}
+.product-info-body { padding:22px; font-size:14px; }
+.product-info-warning {
+  padding:16px;
+  background:#fff7e8;
+  border:1px solid #eedaa6;
+  border-radius:12px;
+  line-height:1.65;
+}
+.product-info-warning p {margin-bottom:0;}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
 </style>
 </head>
 
@@ -1664,8 +1711,8 @@ input:focus {
       <span>BODA Snackshop</span>
       <span>31 Snacks zur Auswahl</span>
       <span>BODA Smart Box · 12 Snacks · 29,95 €</span>
-      <span>BODA Premium Box · 15 Snacks · 34,95 €</span>
-      <span>BODA Business Box · 18 Snacks · 39,95 €</span>
+      <span>BODA Premium Box · 15 Snacks · 39,95 €</span>
+      <span>BODA Business Box · 18 Snacks · 44,95 €</span>
       <span>5,99 € Versand</span>
       <span>Ab 59 € Warenwert versandkostenfrei</span>
       <span>Du hast den Hunger, wir die Snacks.</span>
@@ -1675,8 +1722,8 @@ input:focus {
       <span>BODA Snackshop</span>
       <span>31 Snacks zur Auswahl</span>
       <span>BODA Smart Box · 12 Snacks · 29,95 €</span>
-      <span>BODA Premium Box · 15 Snacks · 34,95 €</span>
-      <span>BODA Business Box · 18 Snacks · 39,95 €</span>
+      <span>BODA Premium Box · 15 Snacks · 39,95 €</span>
+      <span>BODA Business Box · 18 Snacks · 44,95 €</span>
       <span>5,99 € Versand</span>
       <span>Ab 59 € Warenwert versandkostenfrei</span>
       <span>Du hast den Hunger, wir die Snacks.</span>
@@ -1724,6 +1771,11 @@ input:focus {
 
 </header>
 
+<div class="preview-notice" role="status">
+  <div class="container">
+    <strong>Shop-Vorschau:</strong> Bestellungen und Zahlungen sind derzeit deaktiviert. Preise und Sortiment befinden sich noch in der Prüfung.
+  </div>
+</div>
 
 <main id="mainContent">
 
@@ -2021,7 +2073,7 @@ input:focus {
               </span>
 
               <b>
-                34,95 €
+                39,95 €
               </b>
 
             </button>
@@ -2105,7 +2157,7 @@ input:focus {
               </span>
 
               <b>
-                39,95 €
+                44,95 €
               </b>
 
             </button>
@@ -2151,7 +2203,7 @@ input:focus {
       <p>
         Wähle Smart, Premium oder Business und fülle anschließend genau
         12, 15 oder 18 Snack-Plätze.
-        Lieblingsprodukte darfst du mehrfach auswählen.
+        Lieblingsprodukte darfst du mehrfach auswählen, innerhalb der Mengenlimits.
       </p>
 
     </div>
@@ -2170,7 +2222,8 @@ input:focus {
           </strong>
 
           <p>
-            Smart = 12 · Premium = 15 · Business = 18 Snack-Plätze
+            Smart = 12 · Premium = 15 · Business = 18 Snack-Plätze.
+            Je Sorte maximal 3 Stück; Getränke und große Packungen sind je nach Box begrenzt.
           </p>
 
         </div>
@@ -2407,7 +2460,7 @@ input:focus {
         </h3>
 
         <p>
-          Auswahl, Versand und Gesamtpreis im Test-Checkout kontrollieren.
+          Auswahl und Gesamtpreis in der unverbindlichen Vorschau kontrollieren. Es wird keine Bestellung übertragen.
         </p>
 
       </article>
@@ -2574,7 +2627,7 @@ input:focus {
 
 
     <div class="copyright">
-      © 2026 BODA Snacks GbR · Testversion · Keine echte Bestellung oder Zahlung
+      © 2026 BODA Snacks GbR · Vorschau ohne Kaufmöglichkeit · Gemäß § 19 UStG wird keine Umsatzsteuer berechnet
     </div>
 
 
@@ -2683,15 +2736,12 @@ input:focus {
       id="checkoutButton"
       type="button"
     >
-      Zum Test-Checkout
+      Zur Bestellvorschau
     </button>
 
 
     <p class="cart-hint">
-      TESTMODUS ·
-      5,99 € Versand ·
-      ab 59 € versandkostenfrei ·
-      keine echte Zahlung
+      VORSCHAU · 5,99 € Versand · ab 59 € versandkostenfrei · keine Bestellung oder Zahlung
     </p>
 
 
@@ -2704,13 +2754,13 @@ input:focus {
 <dialog
   class="checkout-dialog"
   id="checkoutDialog"
-  aria-label="BODA Test-Checkout"
+  aria-label="BODA Bestellvorschau"
 >
 
   <div class="checkout-head">
 
     <strong>
-      BODA SNACKS · Checkout
+      BODA SNACKS · Bestellvorschau
     </strong>
 
     <button
@@ -2738,10 +2788,8 @@ input:focus {
         TESTMODUS:
       </strong>
 
-      Dieser Checkout übermittelt keine echte Bestellung
-      und führt keine Zahlung aus.
-
-      Bitte keine echten Kreditkartendaten eingeben.
+      Diese Vorschau übermittelt keine Bestellung und verarbeitet keine Zahlung.
+      Verwende nur erfundene Testdaten und gib keine echten persönlichen Daten ein.
 
     </p>
 
@@ -2931,158 +2979,12 @@ input:focus {
 
 
           <section class="checkout-card">
-
-            <h2>
-              4. Zahlungsart – Simulation
-            </h2>
-
-
-            <div class="checkout-options">
-
-
-              <label class="checkout-option">
-
-                <input
-                  type="radio"
-                  name="payment"
-                  value="paypal"
-                  checked
-                >
-
-                <span>
-
-                  <strong>
-                    PayPal
-                  </strong>
-
-                  <small>
-                    nur Simulation
-                  </small>
-
-                </span>
-
-              </label>
-
-
-
-              <label class="checkout-option">
-
-                <input
-                  type="radio"
-                  name="payment"
-                  value="card"
-                >
-
-                <span>
-
-                  <strong>
-                    Kreditkarte
-                  </strong>
-
-                  <small>
-                    nur Simulation
-                  </small>
-
-                </span>
-
-              </label>
-
-
+            <h2>4. Zahlung – nicht verfügbar</h2>
+            <div class="payment-test-info">
+              <strong>Keine Zahlungsdaten eingeben.</strong>
+              Im Vorschaumodus werden weder PayPal noch Kreditkarten belastet.
+              Vor dem echten Start wird ein externer Zahlungsdienst sicher angebunden.
             </div>
-
-
-
-            <div
-              id="paypalInfo"
-              class="payment-test-info"
-            >
-
-              Im echten Shop würde hier die Weiterleitung
-              zu PayPal bzw. einem Zahlungsdienst erfolgen.
-
-            </div>
-
-
-
-            <div
-              id="cardFields"
-              class="payment-test-info"
-              hidden
-            >
-
-              <strong>
-                Testfelder
-              </strong>
-
-
-              <div
-                class="checkout-form-grid"
-                style="margin-top:10px"
-              >
-
-
-                <label class="checkout-full">
-
-                  Test-Karteninhaber
-
-                  <input
-                    type="text"
-                    id="cardName"
-                    placeholder="Max Mustermann"
-                  >
-
-                </label>
-
-
-                <label class="checkout-full">
-
-                  Test-Kartennummer
-
-                  <input
-                    type="text"
-                    id="cardNumber"
-                    inputmode="numeric"
-                    maxlength="19"
-                    placeholder="4242 4242 4242 4242"
-                  >
-
-                </label>
-
-
-                <label>
-
-                  Gültig bis
-
-                  <input
-                    type="text"
-                    id="cardExpiry"
-                    maxlength="5"
-                    placeholder="12/30"
-                  >
-
-                </label>
-
-
-                <label>
-
-                  Test-CVC
-
-                  <input
-                    type="text"
-                    id="cardCvc"
-                    inputmode="numeric"
-                    maxlength="3"
-                    placeholder="123"
-                  >
-
-                </label>
-
-
-              </div>
-
-            </div>
-
-
           </section>
 
 
@@ -3161,15 +3063,14 @@ input:focus {
             id="placeOrderButton"
             type="submit"
           >
-            Testbestellung abschließen
+            Vorschau abschließen (ohne Kauf)
           </button>
 
 
 
           <p class="checkout-legal-hint">
 
-            Testfunktion.
-
+            Unverbindliche Vorschau. Es wird kein Kaufvertrag geschlossen.
             Vor dem echten Verkaufsstart müssen insbesondere
             Lebensmittel-Pflichtinformationen,
             Rechtstexte,
@@ -3205,7 +3106,7 @@ input:focus {
 
 
     <h2>
-      Testbestellung erstellt.
+      Vorschau erfolgreich geprüft.
     </h2>
 
 
@@ -3235,7 +3136,7 @@ input:focus {
       class="btn btn-primary"
       id="newTestOrder"
     >
-      Neue Testbestellung
+      Neue Vorschau
     </button>
 
 
@@ -3244,6 +3145,23 @@ input:focus {
 </dialog>
 
 
+
+<dialog id="productInfoDialog" class="product-info-dialog" aria-labelledby="productInfoTitle">
+  <div class="cart-head">
+    <h2 id="productInfoTitle">Produktinformationen</h2>
+    <button type="button" class="close" id="closeProductInfo" aria-label="Produktinformationen schließen">×</button>
+  </div>
+  <div class="product-info-body">
+    <p id="productInfoSize"></p>
+    <p id="productInfoCategory"></p>
+    <div class="product-info-warning">
+      <strong>Lebensmittelangaben in Vorbereitung.</strong>
+      <p>Die vollständigen Angaben zu Zutaten, Allergenen, Nährwerten, Nettofüllmenge und dem konkreten Artikel
+      müssen vor der Freischaltung einer echten Bestellung anhand der jeweiligen Herstellerverpackung geprüft werden.
+      Hier werden bewusst keine unbestätigten Angaben veröffentlicht.</p>
+    </div>
+  </div>
+</dialog>
 
 <div
   class="toast"
@@ -3265,11 +3183,13 @@ input:focus {
 
 const CONFIG = Object.freeze({
 
-  storageKey:"bodaSnackshopCartV4",
+  storageKey:"bodaSnackshopCartV5",
 
   freeShippingCents:5900,
 
   shippingCents:599,
+
+  maxBoxesInCart:20,
 
   wishSizes:{
 
@@ -3411,7 +3331,7 @@ const SNACKS = [
   name:"Bahlsen Brezeln",
   category:"salzig",
   size:"1 Packung",
-  image:"images/products/",
+  image:"",
   color:"#b98752",
   textColor:"#ffffff",
   packText:"BREZELN"
@@ -3657,7 +3577,7 @@ const BOX_PRODUCTS = Object.freeze({
   premium:{
     id:"premium",
     name:"BODA Premium Box",
-    priceCents:3495,
+    priceCents:3995,
     snackCount:15,
     type:"wish",
     packText:"PREMIUM 15",
@@ -3668,7 +3588,7 @@ const BOX_PRODUCTS = Object.freeze({
   business:{
     id:"business",
     name:"BODA Business Box",
-    priceCents:3995,
+    priceCents:4495,
     snackCount:18,
     type:"wish",
     packText:"BUSINESS 18",
@@ -3679,6 +3599,59 @@ const BOX_PRODUCTS = Object.freeze({
 });
 
 
+
+// Vorläufige Pack-/Wirtschaftlichkeitsgrenzen (keine Aufpreise ohne EK-Kalkulation).
+// Vor Livegang anhand echter Nettofüllmengen, Gewichte und Wareneinsätze prüfen.
+const SELECTION_LIMITS = Object.freeze({
+  smart:    { drinks:2, bulky:2, sameProduct:3 },
+  premium:  { drinks:3, bulky:3, sameProduct:3 },
+  business: { drinks:4, bulky:4, sameProduct:3 }
+});
+
+// Konservativ als sperrige Packungen geführt, bis exakte Packungsgrößen bekannt sind.
+const BULKY_IDS = new Set([14, 15, 26, 28, 31]);
+const SNACK_BY_ID = new Map(SNACKS.map(item => [item.id,item]));
+
+function selectionCheck(size, selection) {
+  const box = BOX_PRODUCTS[size];
+  const rules = SELECTION_LIMITS[size];
+  if (!box || !rules || !Array.isArray(selection) || selection.length > box.snackCount) {
+    return { valid:false, reason:"Ungültige Box-Zusammenstellung." };
+  }
+
+  const counts = new Map();
+  let drinks = 0;
+  let bulky = 0;
+  for (const id of selection) {
+    const product = SNACK_BY_ID.get(id);
+    if (!product) return { valid:false, reason:"Unbekanntes Produkt." };
+    counts.set(id, (counts.get(id) || 0) + 1);
+    if (counts.get(id) > rules.sameProduct) {
+      return { valid:false, reason:`Maximal ${rules.sameProduct} Stück pro Sorte in dieser Box.` };
+    }
+    if (product.category === "getraenke") drinks++;
+    if (BULKY_IDS.has(id)) bulky++;
+    if (drinks > rules.drinks) {
+      return { valid:false, reason:`Maximal ${rules.drinks} Getränke in dieser Box.` };
+    }
+    if (bulky > rules.bulky) {
+      return { valid:false, reason:`Maximal ${rules.bulky} große Packungen/Dosen in dieser Box.` };
+    }
+  }
+  return { valid:true, reason:"" };
+}
+
+function normalizedSelection(size, input) {
+  const result = [];
+  if (!Array.isArray(input)) return result;
+  for (const originalId of input) {
+    const id = Number(originalId);
+    if (!Number.isInteger(id) || !SNACK_BY_ID.has(id)) continue;
+    if (result.length >= BOX_PRODUCTS[size].snackCount) break;
+    if (selectionCheck(size,[...result,id]).valid) result.push(id);
+  }
+  return result;
+}
 
 const $ = (selector,root=document) =>
   root.querySelector(selector);
@@ -3781,64 +3754,23 @@ function toast(message) {
 
 
 function normalizeCart(value) {
-
-  if(!Array.isArray(value)) {
-    return [];
+  if (!Array.isArray(value)) return [];
+  const cleaned = [];
+  for (const row of value.slice(0,CONFIG.maxBoxesInCart)) {
+    if (!row || !BOX_PRODUCTS[row.productId]) continue;
+    if (row.quantity !== 1 || !Array.isArray(row.selection)) continue;
+    const selection = normalizedSelection(row.productId,row.selection);
+    if (selection.length !== BOX_PRODUCTS[row.productId].snackCount) continue;
+    if (!selectionCheck(row.productId,selection).valid) continue;
+    cleaned.push({
+      uid:String(row.uid || `${row.productId}-${Date.now()}-${cleaned.length}`),
+      productId:row.productId,
+      quantity:1,
+      selection
+    });
   }
-
-  return value
-
-    .filter(
-      row => {
-
-        return (
-          row &&
-          BOX_PRODUCTS[row.productId] &&
-          Number.isInteger(row.quantity) &&
-          row.quantity > 0
-        );
-
-      }
-    )
-
-    .map(
-      row => {
-
-        return {
-
-          uid:String(
-            row.uid ||
-            `${row.productId}-${Date.now()}-${Math.random()}`
-          ),
-
-          productId:row.productId,
-
-          quantity:Math.min(
-            20,
-            row.quantity
-          ),
-
-          selection:
-            Array.isArray(row.selection)
-            ? row.selection
-                .map(Number)
-                .filter(
-                  id =>
-                    SNACKS.some(
-                      snack =>
-                        snack.id === id
-                    )
-                )
-            : []
-
-        };
-
-      }
-    );
-
+  return cleaned;
 }
-
-
 
 function loadCart() {
 
@@ -4024,6 +3956,17 @@ function addWish(
 
   }
 
+
+  const validity = selectionCheck(productId,selection);
+  if (!validity.valid) {
+    toast(validity.reason);
+    return;
+  }
+
+  if (cart.length >= CONFIG.maxBoxesInCart) {
+    toast(`Maximal ${CONFIG.maxBoxesInCart} Boxen im Warenkorb.`);
+    return;
+  }
 
   cart.push({
 
@@ -4482,23 +4425,11 @@ function setBuilderSize(
     builderLimit();
 
 
-  if(
-    builderSelection.length >
-    limit
-  ) {
-
-    builderSelection =
-      builderSelection.slice(
-        0,
-        limit
-      );
-
-
-    toast(
-      `Auswahl auf ${limit} Snacks gekürzt.`
-    );
-
+  const trimmed = normalizedSelection(size,builderSelection);
+  if (trimmed.length !== builderSelection.length) {
+    toast("Auswahl an die Grenzen der gewählten Box angepasst.");
   }
+  builderSelection = trimmed;
 
 
   $$(
@@ -4619,10 +4550,10 @@ function renderBuilder() {
             0;
 
 
-          const full =
-            builderSelection.length >=
-            limit;
-
+          const full = builderSelection.length >= limit;
+          const check = selectionCheck(builderSize,[...builderSelection,product.id]);
+          const blocked = full || !check.valid;
+          const hint = full ? "Box vollständig" : check.reason;
 
           return `
 
@@ -4659,13 +4590,13 @@ function renderBuilder() {
 
                 <p>
 
-                  ${escapeHtml(
-                    product.size
-                  )}
-
+                  ${escapeHtml(product.size)}
                 </p>
-
-
+                <button type="button" class="product-info-link"
+                  data-product-info="${product.id}"
+                  aria-label="Informationen zu ${escapeHtml(product.name)} anzeigen">
+                  Produktinformationen
+                </button>
               </div>
 
 
@@ -4690,7 +4621,8 @@ function renderBuilder() {
                 <button
                   type="button"
                   data-builder-plus="${product.id}"
-                  ${full ? "disabled" : ""}
+                  ${blocked ? "disabled" : ""}
+                  title="${escapeHtml(hint || "Hinzufügen")}" 
                   aria-label="${escapeHtml(product.name)} hinzufügen"
                 >
                   +
@@ -4807,11 +4739,32 @@ function renderBuilder() {
 
 
 
+$("#builderGrid").addEventListener("error", event => {
+  const image = event.target;
+  if (!(image instanceof HTMLImageElement)) return;
+  const wrapper = image.closest(".product-thumb");
+  if (!wrapper) return;
+  wrapper.classList.add("placeholder");
+  wrapper.textContent = "Produktbild folgt";
+},true);
+
 $("#builderGrid")
   .addEventListener(
     "click",
     event => {
 
+
+      const info = event.target.closest("[data-product-info]");
+      if (info) {
+        const item = SNACK_BY_ID.get(Number(info.dataset.productInfo));
+        if (item) {
+          $("#productInfoTitle").textContent = item.name;
+          $("#productInfoSize").textContent = `Packungsangabe im Entwurf: ${item.size}`;
+          $("#productInfoCategory").textContent = `Kategorie: ${categoryLabel(item.category)}`;
+          $("#productInfoDialog").showModal();
+        }
+        return;
+      }
 
       const plus =
         event.target.closest(
@@ -4825,20 +4778,16 @@ $("#builderGrid")
         );
 
 
-      if(
-        plus &&
-        builderSelection.length <
-        builderLimit()
-      ) {
-
-        builderSelection.push(
-          Number(
-            plus.dataset.builderPlus
-          )
-        );
-
+      if (plus) {
+        const id = Number(plus.dataset.builderPlus);
+        if (builderSelection.length >= builderLimit()) {
+          toast("Deine Box ist bereits vollständig.");
+        } else {
+          const check = selectionCheck(builderSize,[...builderSelection,id]);
+          if (!check.valid) toast(check.reason);
+          else builderSelection.push(id);
+        }
         renderBuilder();
-
       }
 
 
@@ -4874,6 +4823,11 @@ $("#builderGrid")
   );
 
 
+
+$("#closeProductInfo").addEventListener("click", () => $("#productInfoDialog").close());
+$("#productInfoDialog").addEventListener("click", event => {
+  if (event.target.id === "productInfoDialog") event.target.close();
+});
 
 $("#clearWishBox")
   .addEventListener(
@@ -5176,173 +5130,6 @@ checkoutDialog
 
 
 
-$$("input[name='payment']")
-  .forEach(
-    input => {
-
-      input.addEventListener(
-        "change",
-        () => {
-
-
-          const payment =
-            $(
-              "input[name='payment']:checked"
-            ).value;
-
-
-          $("#cardFields")
-            .hidden =
-            payment !== "card";
-
-
-          $("#paypalInfo")
-            .hidden =
-            payment !== "paypal";
-
-
-        }
-      );
-
-    }
-  );
-
-
-
-$("#shipZip")
-  .addEventListener(
-    "input",
-    event => {
-
-      event.target.value =
-
-        event.target.value
-
-          .replace(
-            /\D/g,
-            ""
-          )
-
-          .slice(
-            0,
-            5
-          );
-
-    }
-  );
-
-
-
-$("#cardNumber")
-  .addEventListener(
-    "input",
-    event => {
-
-
-      let value =
-
-        event.target.value
-
-          .replace(
-            /\D/g,
-            ""
-          )
-
-          .slice(
-            0,
-            16
-          );
-
-
-      event.target.value =
-
-        value
-
-          .replace(
-            /(.{4})/g,
-            "$1 "
-          )
-
-          .trim();
-
-
-    }
-  );
-
-
-
-$("#cardExpiry")
-  .addEventListener(
-    "input",
-    event => {
-
-
-      let value =
-
-        event.target.value
-
-          .replace(
-            /\D/g,
-            ""
-          )
-
-          .slice(
-            0,
-            4
-          );
-
-
-      if(
-        value.length > 2
-      ) {
-
-        value =
-
-          value.slice(
-            0,
-            2
-          ) +
-
-          "/" +
-
-          value.slice(2);
-
-      }
-
-
-      event.target.value =
-        value;
-
-
-    }
-  );
-
-
-
-$("#cardCvc")
-  .addEventListener(
-    "input",
-    event => {
-
-      event.target.value =
-
-        event.target.value
-
-          .replace(
-            /\D/g,
-            ""
-          )
-
-          .slice(
-            0,
-            3
-          );
-
-    }
-  );
-
-
-
 function validEmail(email) {
 
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -5394,7 +5181,7 @@ function orderNumber() {
 
   return (
 
-    "BODA-" +
+    "BODA-DEMO-" +
 
     date +
 
@@ -5560,7 +5347,7 @@ $("#newTestOrder")
 
 
       toast(
-        "Testbestellung zurückgesetzt."
+        "Vorschau zurückgesetzt."
       );
 
 
