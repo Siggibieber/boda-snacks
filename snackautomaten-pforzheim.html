@@ -260,6 +260,23 @@ p{color:var(--muted)}
   font-size:1.1rem;
 }
 
+/* Suchbegriff klar sichtbar, Slogan als unterstützende Zeile */
+.hero-title{
+  font-size:clamp(2.35rem,4.3vw,3.75rem);
+  line-height:1.08;
+  margin-bottom:16px;
+  overflow-wrap:normal;
+  hyphens:auto;
+}
+
+.hero-tagline{
+  margin:0 0 22px;
+  color:var(--green);
+  font-size:clamp(1.2rem,2.1vw,1.5rem);
+  font-weight:800;
+  line-height:1.3;
+}
+
 .hero-copy strong{color:var(--green)}
 
 .hero-actions{
@@ -1372,6 +1389,8 @@ p{color:var(--muted)}
 
   .hero{padding:55px 0}
 
+  .hero-title{font-size:clamp(2.1rem,8.6vw,3.15rem)}
+
   .hero-actions{display:grid}
 
   .hero-actions .btn{width:100%}
@@ -1601,13 +1620,14 @@ Standort prüfen ↗
 <div>
 
 <span class="eyebrow">
-Snackautomaten für Unternehmen in Pforzheim
+BODA Snacks · Direkt aus Pforzheim
 </span>
 
-<h1>
-Gute Pausen.<br>
-Direkt im Betrieb.
+<h1 class="hero-title">
+Snackautomaten für Unternehmen in Pforzheim
 </h1>
+
+<p class="hero-tagline">Gute Pausen. Direkt im Betrieb.</p>
 
 <p class="lead hero-copy">
 
