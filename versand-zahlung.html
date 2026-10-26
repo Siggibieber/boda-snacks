@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="BODA Snacks Versand und Zahlung: Lieferung in Deutschland innerhalb von 5–7 Werktagen, Versand 5,99 Euro, versandkostenfrei ab 59 Euro und vier geplante Zahlungsarten.">
+  <title>Versand &amp; Zahlung | BODA Snacks</title>
+  <!--
+    BODA Snack-Shop · Versand und Zahlung · Testfassung vom 26.10.2026.
+    NICHT als vollständige Verkaufsfreigabe verwenden.
+    Vor Livegang: Umsetzbarkeit der Lieferfrist 5–7 Werktage und Fristbeginn, Lieferbeschränkungen,
+    etwaige Getränkepfandbeträge, tatsächlich aktivierte Zahlarten/Provider,
+    Kontodatenübermittlung bei Vorkasse und Checkout-Ablauf finalisieren.
+    Informationsseite ersetzt nicht die unmittelbar im Checkout erforderlichen Angaben.
+    Rechtliche Orientierung (Stand der Erstellung):
+    https://www.gesetze-im-internet.de/bgb/__312j.html
+    https://www.gesetze-im-internet.de/pangv_2022/__6.html
+  -->
+  <style>
+    :root {
+      --ink:#171717;--gold:#cfab51;--gold-dark:#806018;--paper:#f8f7f3;
+      --white:#ffffff;--soft:#f7f0df;--muted:#5f625d;--line:#e6e3d9;
+      --radius:18px;--max:1140px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:1.5rem}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:var(--gold-dark);text-underline-offset:.2em}
+    a:hover{text-decoration-thickness:2px}
+    a:focus-visible,summary:focus-visible{outline:3px solid #276ba5;outline-offset:4px;border-radius:4px}
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .skip{position:absolute;top:0;left:14px;z-index:100;background:#fff;padding:12px 18px;transform:translateY(-160%)}
+    .skip:focus{transform:translateY(0)}
+    .header{background:var(--ink);border-bottom:4px solid var(--gold);color:#fff}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:22px 0}
+    .logo{text-decoration:none;color:#fff;font-weight:900;letter-spacing:.045em;font-size:clamp(23px,3vw,29px);line-height:1.12}
+    .logo .accent{color:var(--gold)}
+    .logo small{display:block;color:#c5c5c2;font-weight:500;font-size:10px;letter-spacing:.17em;margin-top:7px}
+    nav[aria-label="Hauptnavigation"]{display:flex;gap:11px;align-items:center;flex-wrap:wrap}
+    nav[aria-label="Hauptnavigation"] a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;min-height:44px;padding:8px 12px;font-size:14px;font-weight:700;border-radius:9px}
+    nav[aria-label="Hauptnavigation"] a:hover{background:#303030}
+    nav[aria-label="Hauptnavigation"] a.primary{color:var(--ink);background:var(--gold)}
+    nav[aria-label="Hauptnavigation"] a.primary:hover{background:#e7c776}
+    .hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:76px 0 81px}
+    .hero::after{content:"";position:absolute;width:440px;height:440px;right:-150px;top:-135px;border:1px solid #62532c;border-radius:50%;box-shadow:0 0 0 55px #ffffff06,0 0 0 110px #ffffff05;pointer-events:none}
+    .eyebrow{display:block;font-weight:800;color:var(--gold);font-size:12px;letter-spacing:.19em;text-transform:uppercase;margin:0 0 15px}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(39px,6vw,70px);line-height:1.03;letter-spacing:-.055em;max-width:12ch;margin:0 0 19px}
+    h1 span{color:var(--gold)}
+    .hero p{color:#dddcd7;font-size:clamp(16px,1.7vw,19px);max-width:62ch;margin-bottom:0}
+    .notice{position:relative;margin:-35px auto 0;border:1px solid #d8c48b;border-left:5px solid var(--gold);background:#fffaf0;border-radius:12px;padding:18px 22px;box-shadow:0 12px 30px #0000000c}
+    .notice strong{display:block;margin-bottom:4px}
+    .notice p{margin-bottom:0;font-size:14px;color:#4c4a44}
+    .quick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:35px}
+    .metric{border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:25px}
+    .metric span{color:var(--muted);display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}
+    .metric strong{display:block;font-size:clamp(22px,3vw,31px);line-height:1.2;letter-spacing:-.035em}
+    .metric small{display:block;color:var(--muted);font-size:13px;margin-top:10px}
+    .main-layout{display:grid;grid-template-columns:minmax(0,1fr) 302px;align-items:start;gap:24px;padding:42px 0 70px}
+    .stack{min-width:0;display:grid;gap:24px}
+    .section{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:31px;min-width:0}
+    .section h2{font-size:clamp(23px,3vw,30px);letter-spacing:-.04em;line-height:1.2;margin-bottom:15px}
+    .section h3{font-size:17px;margin:23px 0 9px;line-height:1.3}
+    .section p{color:#454741;margin-bottom:14px}
+    .section p:last-child{margin-bottom:0}
+    .section-kicker{display:block;color:var(--gold-dark);font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+    .divider{border:0;border-top:1px solid var(--line);margin:24px 0}
+    .price-table{width:100%;border-collapse:collapse;margin:19px 0 7px;text-align:left;font-size:15px}
+    .price-table th,.price-table td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+    .price-table th{background:#f8f7f3;font-size:13px;color:#4a4c45}
+    .price-table td:last-child,.price-table th:last-child{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+    .example{background:var(--soft);border-radius:12px;padding:17px 19px;margin-top:20px}
+    .example .line{display:flex;gap:15px;align-items:baseline;justify-content:space-between;padding:4px 0}
+    .example .total{padding-top:13px;margin-top:8px;border-top:1px solid #d8cba9;font-weight:900}
+    .example strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+    .payment-list{display:grid;gap:12px;margin-top:21px}
+    .payment{border:1px solid var(--line);border-radius:13px;padding:17px 19px;display:grid;grid-template-columns:47px 1fr;gap:16px;align-items:start}
+    .symbol{height:44px;width:44px;border-radius:11px;background:var(--soft);display:grid;place-items:center;color:#73561b;font-weight:900;font-size:21px;flex-shrink:0}
+    .payment h3{margin:0 0 4px;font-size:17px}
+    .payment p{margin:0;font-size:14px}
+    .callout{border-left:3px solid var(--gold);padding:13px 17px;background:#fcf8ee;border-radius:0 8px 8px 0;margin-top:20px;color:#34342e}
+    .callout strong{display:block;margin-bottom:6px}
+    .callout p{font-size:14px;margin:0}
+    .steps{counter-reset:step;list-style:none;padding:0;margin:18px 0 0;display:grid;gap:17px}
+    .steps li{counter-increment:step;display:grid;grid-template-columns:37px minmax(0,1fr);gap:13px;align-items:start}
+    .steps li::before{content:counter(step,decimal-leading-zero);background:#1a1a1a;color:var(--gold);font-weight:900;font-size:13px;display:grid;place-items:center;width:36px;height:36px;border-radius:10px}
+    .steps strong{display:block;margin:0 0 2px}
+    .steps p{margin:0;font-size:14px}
+    .side{position:sticky;top:24px;display:grid;gap:17px}
+    .side-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+    .side-box h2{font-size:15px;margin:0 0 13px}
+    .side-box a{display:block;padding:9px 0;color:#34352f;border-bottom:1px solid var(--line);text-decoration:none;font-size:14px}
+    .side-box a:last-child{border-bottom:0}
+    .side-box a:hover{color:var(--gold-dark);text-decoration:underline}
+    .side-dark{background:var(--ink);border-color:var(--ink);color:#fff}
+    .side-dark h2{color:var(--gold)}
+    .side-dark p{font-size:14px;color:#dddcd7;margin:0 0 13px}
+    .side-dark a{border:0;background:var(--gold);color:var(--ink);font-weight:800;padding:11px 13px;border-radius:9px;text-align:center}
+    details{border-top:1px solid var(--line);padding:15px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{font-weight:800;cursor:pointer;padding:2px 0}
+    details p{font-size:14px;margin:11px 0 0}
+    .footer{background:var(--ink);color:#dededb;padding:42px 0 24px}
+    .footer-inner{display:flex;justify-content:space-between;gap:30px;align-items:start;flex-wrap:wrap}
+    .footer .wordmark{font-size:22px;font-weight:900;letter-spacing:.03em;color:#fff}
+    .footer .wordmark span{color:var(--gold)}
+    .footer p{font-size:13px;margin:6px 0 0;color:#ccc}
+    .footer-links{display:flex;gap:6px 21px;flex-wrap:wrap;align-items:center}
+    .footer-links a{color:#fff;display:inline-flex;align-items:center;min-height:44px;font-size:14px}
+    .footer-bottom{font-size:12px;border-top:1px solid #474747;padding-top:18px;margin-top:24px;color:#ccc}
+    @media(max-width:920px){.main-layout{grid-template-columns:1fr}.side{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}.quick{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+    @media(max-width:620px){.container{width:calc(100% - 30px)}.header-inner{flex-direction:column;align-items:flex-start;gap:12px}.header-inner nav{gap:5px}.hero{padding:53px 0 76px}.hero::after{width:280px;height:280px}.quick{grid-template-columns:1fr}.metric{padding:19px}.section{padding:23px 19px}.main-layout{padding-top:26px}.side{grid-template-columns:1fr}.payment{grid-template-columns:39px 1fr;padding:15px}.symbol{height:37px;width:37px;font-size:18px}.price-table{font-size:13px}.price-table th,.price-table td{padding:10px 5px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @media print{body{background:#fff;color:#000;font-size:10pt}.header,.side,.footer,.notice{display:none!important}.hero{background:#fff;color:#000;padding:8px 0 10px}.hero h1{font-size:28pt}.hero h1 span{color:#000}.hero p{color:#333}.container{width:100%}.quick{grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}.metric{border:1px solid #aaa;padding:12px}.metric strong{font-size:16pt}.main-layout{display:block;padding:15px 0}.section{border:0;border-top:1px solid #bbb;border-radius:0;padding:17px 0;break-inside:avoid}.payment{break-inside:avoid}.section h2{break-after:avoid}}
+  </style>
+</head>
+<body>
+  <a href="#inhalt" class="skip">Zum Inhalt springen</a>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="BODA Snacks – Startseite">BODA <span class="accent">SNACKS</span><small>DU HAST DEN HUNGER, WIR DIE SNACKS.</small></a>
+      <nav aria-label="Hauptnavigation">
+        <a href="index.html">Startseite</a>
+        <a href="agb.html">AGB</a>
+        <a href="snack-shop.html" class="primary">Zum Snack-Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="hero" aria-labelledby="seitentitel">
+      <div class="container">
+        <span class="eyebrow">BODA SNACKSHOP / INFORMATIONEN</span>
+        <h1 id="seitentitel">Versand <span>&amp; Zahlung.</span></h1>
+        <p>Alles zu Versandkosten, Liefergebiet und den geplanten Zahlungsmöglichkeiten für deine individuell zusammengestellte BODA Snackbox.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="notice" role="note">
+        <strong>Shop-Testphase – noch keine Bestellung oder Zahlung möglich</strong>
+        <p>Diese Seite informiert über unser vorgesehenes Angebot. Die vorgesehene Lieferzeit beträgt 5–7 Werktage innerhalb Deutschlands. Die Zahlungsmethoden sind technisch noch nicht freigeschaltet; es können daher keine zahlungspflichtigen Bestellungen abgegeben werden.</p>
+      </div>
+      <div class="quick" aria-label="Versand auf einen Blick">
+        <div class="metric"><span>Standardversand</span><strong>5,99 €</strong><small>Pro Bestellung unter 59 € Warenwert</small></div>
+        <div class="metric"><span>Kostenloser Versand</span><strong>Ab 59 €</strong><small>Warenwert ohne Versandkosten</small></div>
+        <div class="metric"><span>Liefergebiet</span><strong>Deutschland</strong><small>Kein internationaler Versand vorgesehen</small></div>
+        <div class="metric"><span>Lieferzeit</span><strong>5–7 Werktage</strong><small>Montag bis Freitag, Feiertage ausgenommen</small></div>
+      </div>
+    </div>
+
+    <div class="container main-layout">
+      <div class="stack">
+        <section class="section" id="versandkosten" aria-labelledby="versandkosten-titel">
+          <span class="section-kicker">01 / VERSAND</span>
+          <h2 id="versandkosten-titel">Versandkosten im Überblick</h2>
+          <p>Wir planen den Standardversand von BODA Snackboxen innerhalb Deutschlands. Für jede Bestellung berechnen wir einmalig Versandkosten, abhängig vom gesamten Warenwert deiner Bestellung.</p>
+          <table class="price-table">
+            <thead><tr><th scope="col">Warenwert</th><th scope="col">Standardversand</th></tr></thead>
+            <tbody>
+              <tr><td>Unter 59,00 €</td><td>5,99 €</td></tr>
+              <tr><td>Ab 59,00 €</td><td>0,00 €</td></tr>
+            </tbody>
+          </table>
+          <p>Die Versandkosten gelten <strong>pro Bestellung</strong>, nicht pro Snackbox. Der Warenwert ergibt sich aus den Preisen aller bestellten Boxen vor Hinzurechnung der Versandkosten. Die tatsächlich anfallenden Kosten und der zu zahlende Gesamtbetrag werden vor einer verbindlichen Bestellung im Checkout angezeigt.</p>
+          <div class="example" aria-label="Unverbindliches Rechenbeispiel">
+            <div class="line"><span>1 × BODA Smart Box (12 Snacks)</span><strong>29,95 €</strong></div>
+            <div class="line"><span>Standardversand</span><strong>5,99 €</strong></div>
+            <div class="line total"><span>Gesamtbetrag im Beispiel</span><strong>35,94 €</strong></div>
+          </div>
+          <p style="font-size:13px;margin-top:15px">Beispiel bei unverändertem Shoppreis, ohne gegebenenfalls anfallendes Getränkepfand. Eine eventuelle Pfandpflicht und deren Darstellung für die tatsächlich angebotenen Getränke wird vor dem Verkaufsstart geprüft.</p>
+          <div class="callout"><strong>Preise und Umsatzsteuer</strong><p>Die angegebenen Beträge sind Endpreise für die angebotenen Leistungen. Aufgrund der Kleinunternehmerregelung nach § 19 UStG wird keine Umsatzsteuer gesondert ausgewiesen.</p></div>
+        </section>
+
+        <section class="section" id="lieferung" aria-labelledby="lieferung-titel">
+          <span class="section-kicker">02 / LIEFERUNG</span>
+          <h2 id="lieferung-titel">Liefergebiet und Lieferzeit</h2>
+          <p>Die Lieferung ist ausschließlich an Lieferadressen <strong>innerhalb Deutschlands</strong> vorgesehen. Lieferungen ins Ausland sind derzeit nicht geplant.</p>
+          <h3>Wann wird meine Snackbox geliefert?</h3>
+          <p><strong>Lieferzeit: 5–7 Werktage.</strong> Diese Frist gilt für die Zustellung innerhalb Deutschlands. Als Werktage im Sinne unserer Lieferfrist zählen Montag bis Freitag, ausgenommen gesetzliche Feiertage am Versand- oder Empfangsort.</p>
+          <p>Bei PayPal, Klarna und Kreditkarte beginnt die Lieferfrist am ersten Werktag nach dem Vertragsschluss, sofern die Zahlung autorisiert ist. Eine abweichende Lieferfrist für einzelne Produkte würde vor der Bestellung ausdrücklich angezeigt.</p>
+          <h3>Was gilt bei Banküberweisung?</h3>
+          <p>Bei Zahlung per Banküberweisung (Vorkasse) beginnt die Lieferfrist am ersten Werktag nach Erteilung deines Zahlungsauftrags an die Bank, jedoch nicht vor Vertragsschluss. Der Versand erfolgt nach Gutschrift des Betrags auf unserem Konto. Banklaufzeiten sind in der angegebenen Lieferfrist von 5–7 Werktagen berücksichtigt.</p>
+          <h3>Wie wird verpackt?</h3>
+          <p>Die ausgewählten Snacks und Getränke werden für den Versand in einer BODA Snackbox zusammengestellt. Die tatsächlich gelieferten Packungsgrößen, Sorten und Mengen richten sich nach der bestätigten Bestellung. Ein Austausch von Produkten gegen andere Artikel erfolgt nicht ohne deine Zustimmung.</p>
+          <div class="callout"><strong>Vor dem Verkaufsstart noch zu prüfen</strong><p>Der Versanddienstleister, die Zustellung an Packstationen und etwaige Zustellbeschränkungen sind noch festzulegen. Wir müssen außerdem sicherstellen, dass wir die zugesagte Zustellung innerhalb von 5–7 Werktagen einschließlich Zahlungsabwicklung zuverlässig einhalten können.</p></div>
+        </section>
+
+        <section class="section" id="zahlung" aria-labelledby="zahlung-titel">
+          <span class="section-kicker">03 / ZAHLUNGSARTEN</span>
+          <h2 id="zahlung-titel">So kannst du künftig bezahlen</h2>
+          <p>Für den Verkaufsstart sind die folgenden vier Zahlungsmethoden vorgesehen. <strong>Derzeit ist keine davon technisch freigeschaltet.</strong> Welche Zahlungsarten im Einzelfall verfügbar sind, wird später vor der Bestellung im Checkout angezeigt.</p>
+          <div class="payment-list">
+            <div class="payment"><div class="symbol" aria-hidden="true">€</div><div><h3>Banküberweisung (Vorkasse)</h3><p>Nach dem Vertragsschluss erhältst du die für deine Bestellung geltenden Zahlungsinformationen. Du überweist den Betrag selbst. Der Versand erfolgt nach Zahlungseingang. Bitte nutze ausschließlich die dann mitgeteilten Kontodaten.</p></div></div>
+            <div class="payment"><div class="symbol" aria-hidden="true">P</div><div><h3>PayPal</h3><p>Bezahlung über den später eingebundenen PayPal-Zahlungsprozess. Ob und zu welchem Zeitpunkt eine Zahlung autorisiert oder abgebucht wird, richtet sich nach der ausgewählten PayPal-Zahlungsart und dem späteren Bestellablauf.</p></div></div>
+            <div class="payment"><div class="symbol" aria-hidden="true">K</div><div><h3>Klarna</h3><p>Geplant sind Zahlungen über Klarna. Die konkret angebotenen Klarna-Zahlungsoptionen hängen von der technischen Freischaltung und gegebenenfalls einer Prüfung durch Klarna ab. Verbindlich ist allein die im Checkout angezeigte Auswahl.</p></div></div>
+            <div class="payment"><div class="symbol" aria-hidden="true">▭</div><div><h3>Kreditkarte</h3><p>Geplant ist die Bezahlung mit Kreditkarte über einen angebundenen Zahlungsdienstleister. Die unterstützten Karten, die Autorisierung und der Belastungszeitpunkt werden im tatsächlichen Zahlungsablauf angezeigt.</p></div></div>
+          </div>
+          <div class="callout"><strong>Keine Zahlung im Vorschaumodus</strong><p>Der aktuelle Snack-Shop nimmt keine Zahlungsdaten entgegen. Bitte gib dort keine echten Bank-, Karten- oder Zugangsdaten ein. Die Freischaltung erfolgt erst zusammen mit dem sicheren Bestellsystem.</p></div>
+        </section>
+
+        <section class="section" id="bestellablauf" aria-labelledby="bestellablauf-titel">
+          <span class="section-kicker">04 / BESTELLABLAUF</span>
+          <h2 id="bestellablauf-titel">So wird deine Bestellung ablaufen</h2>
+          <ol class="steps">
+            <li><div><strong>Snackbox auswählen</strong><p>Smart, Premium oder Business auswählen und mit den gewünschten Produkten zusammenstellen.</p></div></li>
+            <li><div><strong>Warenkorb prüfen</strong><p>Sorten, Mengen, Warenwert und Versandkosten kontrollieren und bei Bedarf ändern.</p></div></li>
+            <li><div><strong>Lieferadresse und Zahlungsart angeben</strong><p>Die verfügbaren Zahlungsmethoden, Lieferbedingungen und unsere Lieferzeit von 5–7 Werktagen werden vor der Bestellung angezeigt.</p></div></li>
+            <li><div><strong>Bestellung verbindlich abschließen</strong><p>Erst im freigeschalteten Shop wird es eine ausdrücklich als zahlungspflichtig gekennzeichnete Bestellfunktion und eine elektronische Eingangsbestätigung geben.</p></div></li>
+          </ol>
+          <p style="font-size:13px;margin-top:20px">Derzeit sind diese Schritte nur eine Vorschau. Ein rechtsverbindlicher Kauf wird nicht ausgelöst.</p>
+        </section>
+
+        <section class="section" id="fragen" aria-labelledby="fragen-titel">
+          <span class="section-kicker">05 / FRAGEN</span>
+          <h2 id="fragen-titel">Häufige Fragen</h2>
+          <details><summary>Gilt die Versandfreigrenze pro Box?</summary><p>Nein. Entscheidend ist der Warenwert der gesamten Bestellung. Ab 59,00 € Warenwert entfällt der Standardversand von 5,99 €.</p></details>
+          <details><summary>Kann ich bereits mit Klarna oder PayPal bezahlen?</summary><p>Nein. Diese Zahlungsarten sind geplant, aber noch nicht freigeschaltet. Im Testshop findet derzeit keine Zahlungsabwicklung statt.</p></details>
+          <details><summary>Wie lange dauert meine Lieferung?</summary><p>Innerhalb Deutschlands beträgt die Lieferzeit 5–7 Werktage (Montag bis Freitag ohne gesetzliche Feiertage). Bei Banküberweisung beginnt die Frist am ersten Werktag nach Erteilung des Zahlungsauftrags, frühestens nach Vertragsschluss; bei den anderen Zahlungsarten am ersten Werktag nach Vertragsschluss, sofern die Zahlung autorisiert ist.</p></details>
+          <details><summary>Kann ich ins Ausland bestellen?</summary><p>Nein. Ein Versand außerhalb Deutschlands ist derzeit nicht vorgesehen.</p></details>
+          <details><summary>Wo finde ich Informationen zur Rücksendung?</summary><p>Bitte lies unsere <a href="widerruf.html">Widerrufsbelehrung</a>. Sie enthält Angaben zum gesetzlichen Widerrufsrecht und das Muster-Widerrufsformular. Die elektronische Widerrufsfunktion wird gesondert technisch angebunden.</p></details>
+          <details><summary>Wie erreiche ich BODA Snacks bei Fragen?</summary><p>Schreibe an <a href="mailto:kontakt@boda-snacks.de">kontakt@boda-snacks.de</a>. Anbieterangaben findest du im <a href="impressum.html">Impressum</a>.</p></details>
+        </section>
+      </div>
+
+      <aside class="side" aria-label="Seitennavigation und Kontakt">
+        <div class="side-box">
+          <h2>Auf dieser Seite</h2>
+          <a href="#versandkosten">Versandkosten</a>
+          <a href="#lieferung">Lieferung &amp; Lieferzeiten</a>
+          <a href="#zahlung">Zahlungsmöglichkeiten</a>
+          <a href="#bestellablauf">Bestellablauf</a>
+          <a href="#fragen">Häufige Fragen</a>
+        </div>
+        <div class="side-box side-dark">
+          <h2>Noch Fragen?</h2>
+          <p>Wir helfen dir bei Fragen zum geplanten Versand und zu deiner Snackbox.</p>
+          <a href="mailto:kontakt@boda-snacks.de?subject=Frage%20zum%20BODA%20Snack-Shop">BODA kontaktieren</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div><div class="wordmark">BODA <span>SNACKS</span></div><p>Du hast den Hunger, wir die Snacks.</p></div>
+        <nav class="footer-links" aria-label="Rechtliche Informationen">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+          <a href="widerruf.html">Widerruf</a>
+          <a href="snack-shop.html">Snack-Shop</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">© 2026 BODA Snacks GbR · Versand &amp; Zahlung · Stand: 26.10.2026 · Testfassung ohne Kaufmöglichkeit</div>
+    </div>
+  </footer>
+</body>
+</html>
