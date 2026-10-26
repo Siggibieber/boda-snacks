@@ -49,6 +49,8 @@
     .header-links a:hover{text-decoration:underline}
     .header-links .shop-link{color:var(--black);background:var(--gold);padding:.5rem 1rem;border-radius:8px;font-weight:700}
     .hero{background:white;border-bottom:1px solid var(--line);padding:3.75rem 0 2.5rem}
+    .back-to-shop{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;margin-top:.6rem;padding:.75rem 1.15rem;background:var(--gold);color:var(--black);font-weight:700;text-decoration:none;border-radius:9px;min-height:44px;transition:background .15s ease}
+    .back-to-shop:hover{background:#e0b652;text-decoration:underline}
     .eyebrow{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-text);font-weight:700;margin-bottom:1rem}
     .intro{font-size:1.12rem;max-width:66ch;color:var(--muted)}
     .meta{display:flex;flex-wrap:wrap;gap:.65rem 1.5rem;align-items:center;font-size:.82rem;color:var(--muted);margin-top:1.6rem}
@@ -107,7 +109,7 @@
       <a class="brand" href="https://boda-snacks.de/index.html" aria-label="BODA Snacks – Startseite">BODA <span>SNACKS</span><small>Deine Snacks. Deine Box.</small></a>
       <nav class="header-links" aria-label="Hauptnavigation">
         <a href="https://boda-snacks.de/index.html">Startseite</a>
-        <a class="shop-link" href="https://boda-snacks.de/snack-shop.html">Zum Snackshop <span aria-hidden="true">&nbsp;↗</span></a>
+        <a class="shop-link" href="snack-shop.html">Zum Snackshop <span aria-hidden="true">&nbsp;↗</span></a>
       </nav>
     </div>
   </header>
@@ -118,6 +120,7 @@
         <p class="eyebrow">BODA Snackshop · Rechtliches</p>
         <h1>Allgemeine Geschäfts&shy;bedingungen</h1>
         <p class="intro">Bedingungen für den geplanten Verkauf selbst zusammengestellter Snackboxen durch die BODA Snacks GbR.</p>
+        <a class="back-to-shop" href="snack-shop.html">← Zurück zum Snack-Shop</a>
         <div class="meta"><span class="badge">Prüffassung · nicht für den Verkaufsstart freigegeben</span><span>Stand: <time datetime="2026-10-26">26. Oktober 2026</time></span></div>
         <aside class="status" aria-label="Hinweis zum Testmodus">
           <strong>Der Shop befindet sich im Testmodus.</strong>
@@ -302,7 +305,8 @@
 
         <div class="end-note">
           <p><strong>Versionshinweis:</strong> Prüffassung vom 26. Oktober 2026. Die markierten Prüfpunkte sind redaktionelle Hinweise für die Vorbereitung des Verkaufsstarts, keine zusätzlichen Kundenpflichten. Vor produktivem Einsatz sind die offenen Angaben zu klären und AGB, Widerrufsbelehrung und tatsächlicher Bestellablauf abschließend qualifiziert rechtlich zu prüfen.</p>
-          <a href="#seitenanfang">Zurück zum Seitenanfang ↑</a>
+          <a class="back-to-shop" href="snack-shop.html">← Zurück zum Snack-Shop</a>
+          <p><a href="#seitenanfang">Zurück zum Seitenanfang ↑</a></p>
         </div>
       </div>
     </div>
