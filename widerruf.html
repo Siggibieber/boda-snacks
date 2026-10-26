@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Widerrufsbelehrung und Muster-Widerrufsformular für den BODA Snack-Shop. Prüffassung vor dem Verkaufsstart.">
+  <meta name="color-scheme" content="light">
+  <title>Widerruf & Musterformular | BODA Snacks</title>
+  <!--
+    BODA SNACKS · WIDERRUF · PRÜFFASSUNG · 26.10.2026
+    VOR VERKAUFSSTART PRÜFEN:
+    (1) Retourenkosten: Diese Fassung sieht Kostenübernahme durch den Kunden vor.
+        Mit AGB/Checkout abstimmen und Unternehmerentscheidung bestätigen.
+    (2) § 356a BGB: Zweistufige elektronische Widerrufsfunktion mit echter
+        Übermittlung, serverseitigem Zeitstempel und unverzüglicher Bestätigung
+        auf einem dauerhaften Datenträger implementieren. GitHub Pages ist statisch.
+    (3) Online-Funktion samt Ort in Belehrung aufnehmen, sobald sie aktiv ist.
+    (4) Bei produktbezogenen Widerrufsausnahmen fachkundige Prüfung durchführen.
+    (5) Bei Livegang noindex entfernen, falls Indexierung erwünscht.
+    Diese Datei übermittelt NICHT selbständig Widerrufe über einen Server.
+  -->
+  <style>
+    :root{
+      --ink:#191919;--gold:#c9a047;--gold-dark:#785710;--white:#fff;
+      --paper:#f8f7f3;--line:#e4e1d9;--muted:#66665f;--soft:#fff8e8;
+      --shadow:0 12px 36px rgba(20,20,20,.055)
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:24px}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+    a{color:var(--gold-dark);text-underline-offset:3px}
+    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #1767b5;outline-offset:3px}
+    .container{width:min(1120px,calc(100% - 36px));margin-inline:auto}
+    .skip{position:absolute;left:16px;top:-90px;background:#fff;padding:10px;z-index:5}
+    .skip:focus{top:12px}
+    .top{background:var(--ink);color:#fff;border-bottom:4px solid var(--gold)}
+    .top-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:21px 0}
+    .brand{font-size:24px;font-weight:900;letter-spacing:.03em;white-space:nowrap;color:white;text-decoration:none;line-height:1.15}
+    .brand b{color:var(--gold)}
+    .brand small{display:block;font-size:11px;letter-spacing:.17em;color:#d9d8d0;font-weight:500;margin-top:7px}
+    .topnav{display:flex;align-items:center;flex-wrap:wrap;gap:10px 25px}
+    .topnav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600}
+    .topnav a:hover{text-decoration:underline}
+    .topnav .shop{background:var(--gold);color:#171717;padding:10px 16px;border-radius:9px}
+    .hero{background:#fff;border-bottom:1px solid var(--line);padding:54px 0 44px}
+    .kicker{margin:0 0 11px;color:var(--gold-dark);font-size:12px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+    h1{font-size:clamp(32px,5.2vw,58px);line-height:1.12;letter-spacing:-.045em;margin:0 0 16px}
+    h2{font-size:clamp(22px,2.6vw,28px);line-height:1.3;letter-spacing:-.025em;margin:0 0 19px}
+    h3{font-size:18px;line-height:1.4;margin:24px 0 12px}
+    p{margin:0 0 17px} p:last-child{margin-bottom:0}
+    .intro{max-width:780px;color:#575751;font-size:17px}
+    .metadata{font-size:13px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:22px}
+    .tag{padding:4px 10px;border:1px solid #ddc27f;color:#5b430d;background:var(--soft);border-radius:6px;font-weight:700}
+    .notice{padding:17px 21px;border-left:4px solid var(--gold);background:var(--soft);border-radius:0 11px 11px 0;margin-top:25px;max-width:850px}
+    .notice p{margin:6px 0 0;font-size:14px}
+    .layout{display:grid;grid-template-columns:232px minmax(0,1fr);gap:26px;padding:38px 0 68px;align-items:start}
+    .side{position:sticky;top:25px;display:grid;gap:16px}
+    .toc,.side-help,.paper{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+    .toc,.side-help{padding:19px}
+    .toc-title{font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:#686860;margin:0 0 14px}
+    .toc a{display:block;font-size:14px;color:#333;text-decoration:none;padding:11px 0;border-top:1px solid #f0eee9;line-height:1.4}
+    .toc a:hover{text-decoration:underline;color:var(--gold-dark)}
+    .side-help{font-size:13px;color:var(--muted)}
+    .side-help strong{color:var(--ink);display:block;margin-bottom:7px}
+    .content{min-width:0;display:grid;gap:18px}
+    .paper{padding:32px 38px}
+    .number{display:block;text-transform:uppercase;font-weight:800;font-size:11px;letter-spacing:.13em;color:var(--gold-dark);margin-bottom:9px}
+    .business{padding:17px 20px;margin:18px 0;background:#faf9f6;border-left:3px solid var(--gold);font-style:normal}
+    .business strong{display:block}
+    .business a{display:inline-block;margin-top:3px}
+    .bullet{padding-left:22px;margin:15px 0}.bullet li{margin:8px 0}
+    .small{color:var(--muted);font-size:14px}
+    .legal-note{background:var(--soft);border:1px solid #e4d2a5;border-radius:11px;padding:17px 19px;font-size:14px;margin-top:22px}
+    .buttons{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
+    .button{appearance:none;border:0;cursor:pointer;background:var(--ink);color:#fff;border-radius:9px;font:700 14px/1.3 inherit;font-weight:750;min-height:47px;padding:13px 19px;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .button:hover{background:#343434;color:white;text-decoration:none}
+    .button.gold{background:var(--gold);color:#161616}
+    .button.gold:hover{background:#dab05b;color:#111}
+    .button.ghost{background:#fff;color:var(--ink);border:1px solid #d5d2cb}
+    .button.ghost:hover{background:#f3f0e9}
+    .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:22px}
+    .field{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:700}
+    .field.wide{grid-column:1/-1}
+    .field span{font-weight:400;color:var(--muted)}
+    input,textarea,select{display:block;width:100%;padding:12px 13px;min-height:45px;font:inherit;font-size:15px;border:1px solid #cbc9c2;border-radius:9px;background:#fff;color:#202020}
+    textarea{min-height:105px;resize:vertical}
+    .fine-print{font-size:13px;line-height:1.55;color:var(--muted);margin-top:17px}
+    .form-info{margin:20px 0 5px;background:#f6f7f8;border:1px solid #e1e5e9;padding:16px;border-radius:10px;font-size:14px}
+    .foot{background:var(--ink);color:#e3e2dd;padding:33px 0}
+    .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+    .foot b{color:var(--gold)} .foot a{color:#fff;margin-left:16px;font-size:14px}
+    .foot small{font-size:12px;color:#c8c7c0}
+    #printSheet{display:none}
+    @media(max-width:800px){.layout{grid-template-columns:1fr;gap:18px}.side{position:static;display:block}.side-help{display:none}.toc{padding:15px 19px}.toc-links{display:flex;gap:5px 20px;flex-wrap:wrap}.toc a{border:0}.paper{padding:27px 24px}}
+    @media(max-width:530px){.hero{padding:38px 0}.top-inner{flex-direction:column;align-items:flex-start}.topnav{gap:16px}.layout{padding-top:21px}.paper{padding:23px 17px}.fields{grid-template-columns:1fr}.foot a{display:inline-block;margin:0 16px 0 0}}
+    @page{size:A4;margin:17mm}
+    @media print{
+      html{scroll-behavior:auto}
+      body{background:#fff;color:#000;font:10pt/1.45 Arial,Helvetica,sans-serif}
+      .top,.side,.buttons,.notice,.foot,.form-info,.fine-print,.skip,.no-print{display:none!important}
+      .container{width:100%;max-width:none}
+      .hero{padding:0 0 10mm;border:none}
+      h1{font-size:25pt}h2{font-size:15pt;break-after:avoid}
+      .layout{display:block;padding:0}
+      .content{display:block}
+      .paper{padding:7mm 0;border:0;box-shadow:none;break-inside:auto;border-radius:0}
+      .paper + .paper{border-top:1px solid #aaa}
+      .paper:has(#withdrawForm){display:none}
+      .metadata,.tag{display:none}
+      .business,.legal-note{break-inside:avoid;background:white;border-color:#aaa}
+      a{color:#000;text-decoration:none}
+      body.print-form .hero, body.print-form .layout{display:none!important}
+      body.print-form #printSheet{display:block!important}
+      #printSheet{font:11pt/1.6 Arial,Helvetica,sans-serif;color:#000}
+      #printSheet h1{font-size:21pt;margin:0 0 10mm}
+      #printSheet .print-meta{margin-top:22mm}
+      #printSheet .print-row{margin:0 0 7mm}
+      #printSheet .print-subtitle{font-size:11pt;color:#222;font-weight:bold;margin-bottom:8mm}
+      #printSheet .print-sig{margin-top:22mm;display:flex;justify-content:space-between;gap:15mm}
+      #printSheet .print-line{border-bottom:1px solid #222;height:10mm;min-width:64mm}
+      #printSheet .print-footer{font-size:9pt;margin-top:15mm;color:#444}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <div class="page-shell">
+    <header class="top">
+      <div class="container top-inner">
+        <a class="brand" href="index.html" aria-label="BODA Snacks Startseite">BODA <b>SNACKS</b><small>Deine Snacks. Deine Box.</small></a>
+        <nav class="topnav" aria-label="Hauptnavigation">
+          <a href="index.html">Startseite</a>
+          <a href="agb.html">AGB</a>
+          <a class="shop" href="snack-shop.html">Zum Snack-Shop</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inhalt">
+      <section class="hero">
+        <div class="container">
+          <p class="kicker">BODA Snack-Shop · Kundenservice</p>
+          <h1>Widerruf & Rückgabe</h1>
+          <p class="intro">Hier findest du Informationen zum gesetzlichen Widerrufsrecht sowie ein Muster-Widerrufsformular, das du ausfüllen und ausdrucken oder als PDF speichern kannst.</p>
+          <div class="metadata"><span class="tag">Prüffassung · Shop im Testmodus</span><span>Stand: <time datetime="2026-10-26">26. Oktober 2026</time></span></div>
+          <div class="notice" role="note"><strong>Der Online-Shop ist noch nicht für Bestellungen freigeschaltet.</strong><p>Ein vollständig elektronischer Widerruf mit automatischer Eingangsbestätigung wird vor dem Verkaufsstart eingerichtet. Das Musterformular unten erstellt derzeit lediglich eine Druckfassung oder einen E-Mail-Entwurf. Das ist <strong>noch keine</strong> elektronische Widerrufsfunktion im Sinne von § 356a BGB.</p></div>
+        </div>
+      </section>
+
+      <div class="container layout">
+        <aside class="side" aria-label="Inhaltsnavigation">
+          <nav class="toc" aria-label="Auf dieser Seite"><p class="toc-title">Auf dieser Seite</p><div class="toc-links">
+            <a href="#belehrung">Widerrufsbelehrung</a>
+            <a href="#ausnahmen">Besonderheiten bei Lebensmitteln</a>
+            <a href="#formular">Muster-Widerrufsformular</a>
+            <a href="#online">Online-Funktion</a>
+          </div></nav>
+          <div class="side-help"><strong>Fragen zum Widerruf?</strong>kontakt@boda-snacks.de<br>+49 7231 7703719</div>
+        </aside>
+
+        <div class="content">
+          <section class="paper" id="belehrung" aria-labelledby="belehrung-h">
+            <span class="number">01 / Gesetzliche Informationen</span>
+            <h2 id="belehrung-h">Widerrufsbelehrung</h2>
+            <h3>Widerrufsrecht</h3>
+            <p>Als Verbraucher kannst du einen im Fernabsatz geschlossenen Kaufvertrag grundsätzlich innerhalb von 14 Tagen ohne Angabe von Gründen widerrufen.</p>
+            <p>Die Widerrufsfrist beträgt 14 Tage ab dem Tag, an dem du oder ein von dir benannter Dritter, der nicht das Transportunternehmen ist, die Ware erhalten hat. Werden im Rahmen einer einheitlichen Bestellung mehrere Waren getrennt geliefert, beginnt die Frist mit dem Erhalt der letzten Ware.</p>
+            <p>Zur Ausübung des Widerrufsrechts musst du uns durch eine eindeutige Erklärung (zum Beispiel per Brief oder E-Mail) über deinen Entschluss informieren:</p>
+            <address class="business"><strong>BODA Snacks GbR</strong>Andreas Boda und Sandra Boda<br>Erlenweg 34<br>75175 Pforzheim<br>Deutschland<br>Telefon: <a href="tel:+4972317703719">+49 7231 7703719</a><br>E-Mail: <a href="mailto:kontakt@boda-snacks.de">kontakt@boda-snacks.de</a></address>
+            <p>Du kannst dafür das Muster-Widerrufsformular auf dieser Seite nutzen. Es ist jedoch nicht vorgeschrieben. Es genügt, deine eindeutige Widerrufserklärung vor dem Ablauf der Widerrufsfrist abzusenden.</p>
+            <h3>Folgen des Widerrufs</h3>
+            <p>Wenn du den Vertrag wirksam widerrufst, erstatten wir dir die erhaltenen Zahlungen einschließlich der Kosten der günstigsten von uns angebotenen Standardlieferung unverzüglich, spätestens jedoch innerhalb von 14 Tagen nach Eingang deines Widerrufs. Mehrkosten einer von dir gewählten teureren Versandart werden nicht erstattet.</p>
+            <p>Die Rückzahlung erfolgt grundsätzlich über dasselbe Zahlungsmittel, das du bei der ursprünglichen Zahlung eingesetzt hast, sofern nichts anderes ausdrücklich vereinbart wurde. Dafür berechnen wir dir keine Gebühren.</p>
+            <p>Wir dürfen die Rückzahlung verweigern, bis wir die Ware wieder erhalten haben oder du nachgewiesen hast, dass du sie zurückgesendet hast – je nachdem, welcher Zeitpunkt früher eintritt.</p>
+            <p>Du musst die Ware unverzüglich, spätestens aber innerhalb von 14 Tagen ab dem Tag, an dem du uns über den Widerruf informierst, an unsere oben genannte Anschrift zurücksenden oder übergeben. Die Frist ist eingehalten, wenn du die Ware vor Ablauf der 14 Tage absendest.</p>
+            <p><strong>Die unmittelbaren Kosten der Rücksendung trägst du.</strong></p>
+            <p>Für einen Wertverlust der Ware musst du nur aufkommen, wenn dieser auf einen Umgang mit ihr zurückzuführen ist, der zur Prüfung ihrer Beschaffenheit, Eigenschaften und Funktionsweise nicht erforderlich war.</p>
+            <div class="legal-note"><strong>Hinweis für die Freigabe:</strong> Die Regelung über die Rücksendekosten setzt voraus, dass BODA Snacks diese Kostenübernahme durch den Kunden verbindlich festlegt und korrekt vor Vertragsschluss darüber informiert. Sie muss mit den AGB und dem Checkout übereinstimmen.</div>
+          </section>
+
+          <section class="paper" id="ausnahmen" aria-labelledby="ausnahmen-h">
+            <span class="number">02 / Lebensmittel</span>
+            <h2 id="ausnahmen-h">Besonderheiten bei Snacks und Getränken</h2>
+            <p>Auch für eine aus vorgefertigten Snacks selbst zusammengestellte BODA Box besteht grundsätzlich ein Widerrufsrecht. Die freie Kombination angebotener Artikel führt nicht automatisch zu einem Ausschluss.</p>
+            <p>Gesetzliche Ausnahmen können einzelne Produkte betreffen, zum Beispiel Waren, die schnell verderben können oder deren Verfallsdatum schnell überschritten würde. Eine weitere mögliche Ausnahme betrifft bestimmte versiegelte Waren, die aus Gesundheits- oder Hygienegründen für eine Rückgabe ungeeignet sind, wenn ihre Versiegelung nach der Lieferung entfernt wurde.</p>
+            <p>Ob eine Ausnahme tatsächlich greift, ist für den jeweiligen Artikel zu prüfen. Das bloße Öffnen des Versandkartons führt nicht automatisch zum Verlust des Widerrufsrechts. Unabhängig davon bleiben die gesetzlichen Mängelrechte bestehen.</p>
+          </section>
+
+          <section class="paper" id="formular" aria-labelledby="formular-h">
+            <span class="number">03 / Formular zum Ausfüllen</span>
+            <h2 id="formular-h">Muster-Widerrufsformular</h2>
+            <p>Wenn du den Vertrag widerrufen möchtest, kannst du die folgenden Angaben eintragen und anschließend das Formular als PDF speichern, drucken oder einen E-Mail-Entwurf erzeugen. Ein Widerruf ist auch ohne dieses Formular möglich.</p>
+            <form id="withdrawForm" autocomplete="on">
+              <div class="fields">
+                <label class="field">Vor- und Nachname<input type="text" id="customerName" name="customerName" autocomplete="name" placeholder="Vorname Nachname"></label>
+                <label class="field">E-Mail-Adresse <span>(für die Rückmeldung)</span><input type="email" id="customerEmail" name="customerEmail" autocomplete="email" placeholder="name@beispiel.de"></label>
+                <label class="field">Bestellnummer <span>(falls vorhanden)</span><input type="text" id="orderNumber" name="orderNumber" placeholder="z. B. BODA-2026-123"></label>
+                <label class="field">Bestellt am / erhalten am<input type="text" id="orderDate" name="orderDate" placeholder="TT.MM.JJJJ / TT.MM.JJJJ"></label>
+                <label class="field wide">Anschrift<textarea id="customerAddress" name="customerAddress" rows="2" placeholder="Straße und Hausnummer, Postleitzahl und Ort"></textarea></label>
+                <label class="field wide">Folgende Ware(n) bzw. folgende Bestellung widerrufe ich<textarea id="items" name="items" rows="3" placeholder="z. B. Smart Box, bestellt am … (vollständiger oder teilweiser Widerruf)"></textarea></label>
+              </div>
+              <div class="form-info"><strong>Wichtig:</strong> Die Daten bleiben beim Ausfüllen zunächst in deinem Browser. Durch „E-Mail-Entwurf erstellen“ wird dein E-Mail-Programm geöffnet; du musst die Nachricht dort selbst absenden. Das PDF-Drucken übermittelt nichts an BODA Snacks.</div>
+              <div class="buttons">
+                <button type="button" class="button gold" id="pdfButton">Formular drucken / als PDF speichern</button>
+                <button type="button" class="button" id="emailButton">E-Mail-Entwurf erstellen</button>
+                <button type="reset" class="button ghost">Eingaben löschen</button>
+              </div>
+              <p class="fine-print">Für den PDF-Export wählst du im Druckdialog deines Browsers „Als PDF sichern“ oder „Als PDF speichern“. Eine Unterschrift ist bei Widerruf per E-Mail nicht erforderlich. Der E-Mail-Entwurf ist kein Ersatz für die gesetzlich erforderliche Online-Widerrufsfunktion.</p>
+            </form>
+          </section>
+
+          <section class="paper" id="online" aria-labelledby="online-h">
+            <span class="number">04 / Geplante Funktion</span>
+            <h2 id="online-h">Widerruf direkt über die Website</h2>
+            <p>Vor Freischaltung echter Bestellungen wird ein gut erreichbarer Einstieg <strong>„Vertrag widerrufen“</strong> auf der BODA-Website ergänzt. Die künftige Funktion wird eine eindeutige Zuordnung der Bestellung, die Angabe einer Kontaktadresse für die Bestätigung und einen zweiten Schritt <strong>„Widerruf bestätigen“</strong> ermöglichen.</p>
+            <p>Nach erfolgreichem Eingang wird automatisch eine Bestätigung auf einem dauerhaften Datenträger, beispielsweise per E-Mail, mit Inhalt sowie Eingangsdatum und Uhrzeit versandt.</p>
+            <div class="legal-note"><strong>Technischer Stand:</strong> Diese elektronische Übermittlung ist noch nicht angeschlossen. Eine statische HTML-Seite auf GitHub Pages kann ohne zusätzlichen Dienst oder Backend weder Widerrufe zuverlässig entgegennehmen noch automatische Eingangsbestätigungen versenden. Die Funktion wird erst als aktiv bezeichnet, wenn Übermittlung und Bestätigung erfolgreich getestet wurden.</div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="foot"><div class="container foot-inner"><div><strong>BODA <b>SNACKS</b></strong><br><small>© 2026 BODA Snacks GbR · Widerruf · Prüffassung</small></div><nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="snack-shop.html">Snack-Shop</a></nav></div></footer>
+  </div>
+
+  <article id="printSheet" aria-label="Druckbares Muster-Widerrufsformular">
+    <h1>Muster-Widerrufsformular</h1>
+    <p class="print-subtitle">Wenn Sie den Vertrag widerrufen möchten, füllen Sie dieses Formular aus und senden Sie es zurück.</p>
+    <div class="print-row"><strong>An:</strong><br>BODA Snacks GbR<br>Andreas Boda und Sandra Boda<br>Erlenweg 34<br>75175 Pforzheim<br>E-Mail: kontakt@boda-snacks.de</div>
+    <p>Hiermit widerrufe ich / widerrufen wir den von mir / uns abgeschlossenen Vertrag über den Kauf der folgenden Waren:</p>
+    <p id="printItems" class="print-row">____________________________</p>
+    <div class="print-meta">
+      <p class="print-row"><strong>Bestellt am / erhalten am:</strong> <span id="printDate"></span></p>
+      <p class="print-row"><strong>Bestellnummer (falls vorhanden):</strong> <span id="printOrder"></span></p>
+      <p class="print-row"><strong>Name des / der Verbraucher(s):</strong> <span id="printName"></span></p>
+      <p class="print-row"><strong>Anschrift des / der Verbraucher(s):</strong><br><span id="printAddress"></span></p>
+      <p class="print-row"><strong>E-Mail (freiwillig):</strong> <span id="printEmail"></span></p>
+    </div>
+    <div class="print-sig"><div><div class="print-line"></div><small>Ort, Datum</small></div><div><div class="print-line"></div><small>Unterschrift (nur bei Mitteilung auf Papier)</small></div></div>
+    <p class="print-footer">Das Musterformular ist freiwillig. Eine eindeutige Widerrufserklärung per Brief oder E-Mail genügt ebenfalls.</p>
+  </article>
+
+  <script>
+    (() => {
+      'use strict';
+      const $ = id => document.getElementById(id);
+      const get = id => $(id).value.trim();
+      const line = id => get(id) || '________________________________';
+      $('pdfButton').addEventListener('click', () => {
+        const pairs = [
+          ['printItems','items'],['printDate','orderDate'],['printOrder','orderNumber'],
+          ['printName','customerName'],['printAddress','customerAddress'],['printEmail','customerEmail']
+        ];
+        for (const [target,source] of pairs) $(target).textContent = line(source);
+        document.body.classList.add('print-form');
+        // Print dialog offers "Als PDF sichern" on macOS and "Als PDF speichern" on other platforms.
+        requestAnimationFrame(() => window.print());
+      });
+      window.addEventListener('afterprint', () => document.body.classList.remove('print-form'));
+      $('emailButton').addEventListener('click', () => {
+        const items = get('items') || '(Waren/Bestellung bitte ergänzen)';
+        const name = get('customerName') || '(Name bitte ergänzen)';
+        const order = get('orderNumber') || '(falls vorhanden)';
+        const date = get('orderDate') || '(falls bekannt)';
+        const address = get('customerAddress') || '(Anschrift bitte ergänzen)';
+        const email = get('customerEmail') || '(E-Mail-Adresse bitte ergänzen)';
+        const subject = 'Widerruf meiner BODA Snacks Bestellung' + (get('orderNumber') ? ' ' + get('orderNumber') : '');
+        const body = 'Hallo BODA Snacks,\n\nhiermit widerrufe ich den von mir abgeschlossenen Kaufvertrag über die folgende Bestellung / die folgenden Waren:\n\n'
+          + items + '\n\nBestellnummer: ' + order + '\nBestellt am / erhalten am: ' + date
+          + '\nName: ' + name + '\nAnschrift: ' + address + '\nE-Mail: ' + email
+          + '\n\nBitte bestätigen Sie mir den Eingang dieses Widerrufs.\n\nMit freundlichen Grüßen\n' + name;
+        window.location.href = 'mailto:kontakt@boda-snacks.de?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
+</body>
+</html>
