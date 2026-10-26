@@ -1649,6 +1649,30 @@ input:focus {
 }
 
 
+/* Produktsuche und lokaler Box-Entwurf */
+.builder-tools {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  margin:2px 0 8px;
+}
+.builder-search-label {flex:1 1 300px;max-width:510px;color:var(--text);font-size:13px;font-weight:800;}
+.builder-search-label input {width:100%;margin-top:6px;background:#fff;font-weight:500;}
+.builder-only-selected {display:flex;flex:0 1 auto;align-items:center;gap:9px;padding:11px 0;font-size:13px;font-weight:750;cursor:pointer;}
+.builder-only-selected input {width:18px;height:18px;min-height:18px;accent-color:var(--gold-dark);cursor:pointer;}
+.builder-results {margin:4px 0 16px;color:var(--muted);font-size:12px;}
+.builder-no-results {padding:26px;border:1px dashed var(--line);border-radius:14px;background:var(--cream);margin-bottom:18px;}
+.builder-no-results strong {font-size:15px;}
+.builder-no-results p {margin:5px 0 12px;color:var(--muted);font-size:13px;}
+.builder-draft-note {font-size:11px !important;margin-top:8px !important;}
+@media (max-width:720px) {
+  .builder-tools {display:grid;grid-template-columns:1fr;align-items:stretch;gap:5px;}
+  .builder-search-label {max-width:none;}
+  .builder-only-selected {padding:8px 0;}
+}
+
 /* Shop-Vorschau und Lebensmittelinfos */
 .preview-notice {
   padding:12px 0;
@@ -2367,6 +2391,31 @@ a:focus-visible {
 
 
 
+      <div class="builder-tools">
+        <label class="builder-search-label" for="builderSearch">
+          Snack suchen
+          <input
+            id="builderSearch"
+            type="search"
+            placeholder="z. B. Snickers, HARIBO oder Chips"
+            autocomplete="off"
+            spellcheck="false"
+          >
+        </label>
+        <label class="builder-only-selected" for="builderOnlySelected">
+          <input id="builderOnlySelected" type="checkbox">
+          Nur meine ausgewählten Snacks anzeigen
+        </label>
+      </div>
+      <p class="builder-results" id="builderResults" role="status" aria-live="polite">
+        31 Produkte angezeigt
+      </p>
+      <div class="builder-no-results" id="builderNoResults" hidden>
+        <strong>Keine passenden Produkte gefunden.</strong>
+        <p>Ändere deine Suche oder setze die Filter zurück.</p>
+        <button type="button" id="builderResetFilters" class="btn btn-secondary">Filter zurücksetzen</button>
+      </div>
+
       <div
         class="builder-grid"
         id="builderGrid"
@@ -2386,6 +2435,7 @@ a:focus-visible {
           <p id="builderSummary">
             Noch keine Snacks ausgewählt.
           </p>
+          <p class="builder-draft-note">Deine Zusammenstellung wird auf diesem Gerät gespeichert, sofern dein Browser das zulässt. Es wird keine Bestellung ausgelöst.</p>
 
         </div>
 
@@ -3286,7 +3336,7 @@ const SNACKS = [
   id:4,
   name:"Milka Tender Milch",
   category:"schokolade",
-  size:"1 Stück",
+  size:"37 g je Stück",
   image:"images/products/milka-tender.png",
   color:"#7952a8",
   textColor:"#ffffff",
@@ -3517,7 +3567,7 @@ const SNACKS = [
   id:25,
   name:"Lorenz NicNac's Original",
   category:"salzig",
-  size:"1 Packung",
+  size:"110 g",
   image:"images/products/lorenz-nik-naks.png",
   color:"#d1392f",
   textColor:"#ffffff",
@@ -3572,7 +3622,7 @@ const SNACKS = [
   id:30,
   name:"Manner Original Neapolitaner",
   category:"suess",
-  size:"1 Packung",
+  size:"75 g",
   image:"images/products/manner-neapolitaner.png",
   color:"#ed9d83",
   textColor:"#20383b",
@@ -3583,7 +3633,7 @@ const SNACKS = [
   id:31,
   name:"Crunchips Stackers Cheese & Onion",
   category:"salzig",
-  size:"1 Dose",
+  size:"175 g",
   image:"images/products/crunchips-stackers-cheese-onion.png",
   color:"#e8c83d",
   textColor:"#20383b",
@@ -4353,14 +4403,36 @@ cartDialog
 
 
 
-let builderSize =
-  "smart";
+// Nur Produkt-IDs und Boxgroesse; keine Kundendaten werden im Browser gespeichert.
+const BUILDER_DRAFT_KEY = "bodaSnackshopBuilderDraftV1";
+function loadBuilderDraft() {
+  try {
+    const draft = JSON.parse(localStorage.getItem(BUILDER_DRAFT_KEY) || "null");
+    const size = draft && CONFIG.wishSizes[draft.size] ? draft.size : "smart";
+    return {size, selection:normalizedSelection(size,draft?.selection)};
+  } catch {
+    return {size:"smart",selection:[]};
+  }
+}
+const initialBuilderDraft = loadBuilderDraft();
+let builderSize = initialBuilderDraft.size;
+let builderSelection = initialBuilderDraft.selection;
+let builderCategory = "alle";
 
-let builderSelection =
-  [];
+function storeBuilderDraft() {
+  try {
+    localStorage.setItem(BUILDER_DRAFT_KEY, JSON.stringify({
+      size:builderSize,
+      selection:builderSelection
+    }));
+  } catch { /* Privater Modus oder Browser-Sperre: der Shop bleibt nutzbar. */ }
+}
 
-let builderCategory =
-  "alle";
+function normalizeSearch(value) {
+  return String(value || "").toLocaleLowerCase("de-DE")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/ß/g,"ss").trim();
+}
 
 
 
@@ -4470,12 +4542,9 @@ function setBuilderSize(
   )
   .forEach(
     button => {
-
-      button.classList.toggle(
-        "active",
-        button.dataset.builderSize === size
-      );
-
+      const active = button.dataset.builderSize === size;
+      button.classList.toggle("active",active);
+      button.setAttribute("aria-pressed",String(active));
     }
   );
 
@@ -4552,22 +4621,17 @@ function renderBuilder() {
     builderLimit();
 
 
-  const filtered =
-
-    SNACKS.filter(
-      product => {
-
-        return (
-
-          builderCategory === "alle" ||
-
-          product.category ===
-          builderCategory
-
-        );
-
-      }
-    );
+  const query = normalizeSearch($("#builderSearch").value);
+  const selectedOnly = $("#builderOnlySelected").checked;
+  const filtered = SNACKS.filter(product => {
+    const categoryMatch = builderCategory === "alle" || product.category === builderCategory;
+    const selectedMatch = !selectedOnly || grouped.has(product.id);
+    const searchable = normalizeSearch(`${product.name} ${product.size} ${categoryLabel(product.category)}`);
+    return categoryMatch && selectedMatch && (!query || searchable.includes(query));
+  });
+  $("#builderResults").textContent = `${filtered.length} von ${SNACKS.length} Produkten angezeigt`;
+  $("#builderNoResults").hidden = filtered.length !== 0;
+  storeBuilderDraft();
 
 
   grid.innerHTML =
@@ -4631,7 +4695,7 @@ function renderBuilder() {
                   Produktinformationen ↗
                 </button>
                 ${MANUFACTURER_REFERENCES[product.id]
-                  ? '<span class="product-info-badge">Herstellerreferenz hinterlegt</span>'
+                  ? '<span class="product-info-badge">Produktdaten in Prüfung</span>'
                   : ''}
               </div>
 
@@ -5352,10 +5416,12 @@ function showProductInformation(item) {
     ).join("");
     const source = $("#productInfoSource");
     source.href = ref.source || "#";
-    source.textContent = (ref.sourceType || "").includes("Händler") ||
-      (ref.sourceType || "").includes("Drittanbieter")
-      ? "Handelsdaten / Referenz öffnen ↗"
-      : "Herstellerseite / Sortimentsreferenz öffnen ↗";
+    source.textContent = isPhoto
+      ? "Ergänzender externer Produktlink (nicht die fotografierte Verpackung) ↗"
+      : ((ref.sourceType || "").includes("Händler") ||
+         (ref.sourceType || "").includes("Drittanbieter")
+         ? "Handelsdaten / Referenz öffnen ↗"
+         : "Herstellerseite / Sortimentsreferenz öffnen ↗");
     source.parentElement.hidden = !ref.source;
   } else {
     $("#productInfoNutrition").replaceChildren();
@@ -5482,6 +5548,7 @@ $$("[data-category]")
                   "active",
                   item === button
                 );
+                item.setAttribute("aria-pressed",String(item === button));
 
               }
             );
@@ -5497,6 +5564,22 @@ $$("[data-category]")
   );
 
 
+
+// Suche filtert ausschliesslich die Anzeige, nicht die gewaehlte Box-Zusammenstellung.
+$("#builderSearch").addEventListener("input", renderBuilder);
+$("#builderOnlySelected").addEventListener("change", renderBuilder);
+$("#builderResetFilters").addEventListener("click", () => {
+  $("#builderSearch").value = "";
+  $("#builderOnlySelected").checked = false;
+  builderCategory = "alle";
+  $$('[data-category]').forEach(button => {
+    const active = button.dataset.category === "alle";
+    button.classList.toggle("active",active);
+    button.setAttribute("aria-pressed",String(active));
+  });
+  renderBuilder();
+  $("#builderSearch").focus();
+});
 
 $("#addWishBox")
   .addEventListener(
@@ -6010,7 +6093,8 @@ $("#heroBuildBox")
 
 
 
-renderBuilder();
+// Auch nach einem Neuladen die gespeicherte Boxgroesse sichtbar markieren.
+setBuilderSize(builderSize);
 renderCart();
 
 
