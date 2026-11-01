@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Snackautomaten Böblingen für Unternehmen | BODA Snacks</title>
+  <title>Snackautomaten Böblingen | Aufstellung &amp; Service – BODA Snacks</title>
 
   <meta
     name="description"
-    content="Snack- und Getränkeautomaten für Unternehmen in Böblingen und Umgebung. BODA Snacks plant die passende Versorgung und übernimmt auf Wunsch Aufstellung, Befüllung, Reinigung und Betreuung."
+    content="Snackautomaten für Unternehmen in Böblingen, Sindelfingen und Holzgerlingen: BODA Snacks plant Aufstellung, Befüllung und Betreuung. Standort prüfen."
   >
 
   <meta name="robots" content="index,follow">
@@ -22,12 +22,12 @@
 
   <meta
     property="og:title"
-    content="Snackautomaten Böblingen für Unternehmen | BODA Snacks"
+    content="Snackautomaten Böblingen | Aufstellung &amp; Service – BODA Snacks"
   >
 
   <meta
     property="og:description"
-    content="Snack- und Getränkeversorgung für Unternehmen in Böblingen – persönlich geplant und regional betreut."
+    content="Snackautomaten für Unternehmen in Böblingen, Sindelfingen und Holzgerlingen – individuelle Standortprüfung und Service nach Vereinbarung."
   >
 
   <meta property="og:type" content="website">
@@ -151,6 +151,13 @@
         );
 
       line-height: 0.99;
+    }
+
+    /* Lokale SEO-Überschrift im bestehenden Hero, auch mobil sauber lesbar */
+    .hero h1 {
+      font-size: clamp(2.12rem, 7.8vw, 4.45rem);
+      line-height: 1.04;
+      overflow-wrap: break-word;
     }
 
 
@@ -2228,6 +2235,15 @@
     }
 
 
+    /* Verhindert Überlauf langer Fachbegriffe auf kleinen Displays */
+    @media (max-width: 400px) {
+      .section-head h2 {
+        hyphens: auto;
+        overflow-wrap: break-word;
+      }
+    }
+
+
     /* =========================================================
        MOBILE
        ========================================================= */
@@ -2425,7 +2441,105 @@
 .boda-x-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:25px}
 @media(max-width:680px){.boda-x-section{padding:56px 0}.boda-x-section .boda-x-wrap{width:calc(100% - 36px)}.boda-x-grid{grid-template-columns:1fr;gap:12px}.boda-x-card{padding:21px}.boda-x-section h2{font-size:clamp(1.8rem,7vw,2.3rem)}.boda-x-btn{width:100%}.boda-x-inline{margin:6px 0 0;width:100%;text-align:center}}
 
-</style>
+
+
+    /* ================================================================
+       BODA CI 11/2026 – Cremeweiss statt gruener Flaechen
+       Die bestehende Seitenstruktur und JavaScript bleiben unveraendert.
+       ================================================================ */
+    :root {
+      --green: #80643d;          /* bisher gruene Akzent-Texte: warmes Braun */
+      --green-dark: #6b502e;
+      --positive: #8a6530;       /* Ergebnis- und Haken-Akzent */
+      --soft: #fbf8f2;
+      --soft-2: #f7f3e8;
+      --line: #e5ddd0;
+    }
+
+    /* Grosse ehemals dunkelgruene Flaechen */
+    .local-box,
+    .service-box {
+      background: #f7f3e8;
+      color: #292820;
+      border: 1px solid #e3d5bc;
+      box-shadow: 0 14px 36px rgba(74, 58, 35, .045);
+    }
+    .local-box h2,
+    .service-box h2,
+    .local-point strong,
+    .service-item strong { color: #292820; }
+    .local-box p,
+    .service-box > p,
+    .service-item span { color: #615a4e; }
+    .local-box .eyebrow,
+    .service-box .eyebrow { color: #88601f; }
+    .local-points,
+    .local-point,
+    .service-grid,
+    .service-item + .service-item {
+      border-color: #dfd3bd;
+    }
+
+    /* Wirtschaftlichkeit/Preiskasten: warme Cremeflaeche statt Gruen */
+    .check-price-box {
+      background: #f4ecdc;
+      border: 1px solid #dcc9a6;
+    }
+    .check-price-box > strong { color: #634924; }
+    .check-price-box p { color: #5c5549; }
+    .check-price-box summary { color: #745424; }
+    .check-price-details { border-color: #dac8ac; }
+
+    /* Zarte helle Creme-Hintergruende statt Gruenschimmer */
+    .section-contact { background: #f7f3e8; }
+    .standort-check-section {
+      background: linear-gradient(135deg,#fbf8f2 0%,#ffffff 76%);
+    }
+    .hero-visual { background: #f4eee1; }
+    .people-image { background: #f1e8d9; }
+    .boda-x-section.boda-x-soft { background: #fbf8f2; }
+    .boda-x-card { border-color: #e5ddd0; }
+
+    /* Neutrale, gut sichtbare Formularelemente */
+    .standort-check-card { border-color: #e4d9c8; box-shadow: 0 15px 40px rgba(74,58,35,.055); }
+    .check-trust-icon,
+    .check-result-card.positive .check-result-icon {
+      background: #f2e8d4;
+      color: #80643d;
+    }
+    .check-result-card.positive {
+      border-color: #ddcba8;
+      background: linear-gradient(145deg,#faf4e7,#fff);
+    }
+    .check-field input:focus,
+    .check-field textarea:focus {
+      border-color: #a78752;
+      box-shadow: 0 0 0 3px rgba(167,135,82,.15);
+    }
+    .check-progress-track { background: #efe7da; }
+    .check-choice span,
+    .check-radio-grid span { border-color: #d9cdbb; }
+    .check-privacy a,
+    .boda-x-card em,
+    .boda-x-inline { color: #80643d !important; }
+
+    /* Positiver Standortcheck: goldfarbener Aktionsbutton statt Gruen */
+    .btn-result-positive,
+    .btn-result-positive:hover {
+      background: #dbb86e !important;
+      border-color: #bc9653 !important;
+      color: #292820 !important;
+    }
+    .btn-result-positive:hover { background: #ecd092 !important; }
+
+    /* Kontakthinweise und Trennlinien warm neutralisieren */
+    .contact-link { border-color: #e0d4c3; }
+    .check-result-extra { background: #fffaf1; }
+    .check-submit-note { background: #faf6ef; }
+
+    /* Das offizielle WhatsApp-Grün bleibt zur Wiedererkennung erhalten. */
+
+  </style>
 
 
   <script type="application/ld+json">
@@ -2439,11 +2553,12 @@
       "name": "BODA Snacks GbR",
       "url": "https://boda-snacks.de/"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Böblingen"
-    },
-    "description": "Planung und Betreuung von Snack- und Getränkeautomaten für Unternehmen in Böblingen und Umgebung."
+    "areaServed": [
+      { "@type": "City", "name": "Böblingen" },
+      { "@type": "City", "name": "Sindelfingen" },
+      { "@type": "City", "name": "Holzgerlingen" }
+    ],
+    "description": "Individuelle Planung, Aufstellung und Betreuung von Snack- und Getränkeautomaten für Unternehmen in Böblingen, Sindelfingen und Holzgerlingen nach Standortprüfung."
   }
   </script>
 
@@ -2453,32 +2568,40 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Was kostet ein Snackautomat für Unternehmen in Böblingen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Die laufende Servicepauschale beginnt bei BODA Snacks ab 98 Euro im Monat. Die konkrete Kondition hängt von Standort, Nutzung, Ausstattung und Serviceumfang ab."
+        {
+            "@type": "Question",
+            "name": "Was kostet ein Snackautomat für Unternehmen in Böblingen?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Die laufende Servicepauschale beginnt bei BODA Snacks ab 98 Euro im Monat. Die konkrete Kondition hängt von Standort, Nutzung, Ausstattung und Serviceumfang ab."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Ab wie vielen Mitarbeitern ist ein Snackautomat sinnvoll?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bis etwa 25 regelmäßig anwesende Personen prüfen wir besonders kritisch. Zwischen 26 und 39 Personen ist eine individuelle Prüfung sinnvoll. Ab etwa 40 regelmäßig anwesenden Personen sehen wir grundsätzlich eine gute Ausgangslage. Schichtbetrieb, Besucher und tatsächliche Nutzung können die Einschätzung verändern."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Übernimmt BODA Snacks Befüllung und Betreuung?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Je nach vereinbartem Versorgungskonzept kann BODA Snacks Aufstellung, Befüllung, Reinigung und technische Betreuung übernehmen."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Sind auch Unternehmen in Sindelfingen und Holzgerlingen möglich?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Unternehmen aus Sindelfingen, Holzgerlingen und der Umgebung können ihren Standort unverbindlich prüfen lassen. Ob BODA Snacks die Betreuung selbst übernehmen kann, hängt von Nutzung, Entfernung und dem vereinbarten Serviceumfang ab."
+            }
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Ab wie vielen Mitarbeitern ist ein Snackautomat sinnvoll?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Bis etwa 25 regelmäßig anwesende Personen prüfen wir besonders kritisch. Zwischen 26 und 39 Personen ist eine individuelle Prüfung sinnvoll. Ab etwa 40 regelmäßig anwesenden Personen sehen wir grundsätzlich eine gute Ausgangslage. Schichtbetrieb, Besucher und tatsächliche Nutzung können die Einschätzung verändern."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Übernimmt BODA Snacks Befüllung und Betreuung?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Je nach vereinbartem Versorgungskonzept kann BODA Snacks Aufstellung, Befüllung, Reinigung und technische Betreuung übernehmen."
-        }
-      }
     ]
-  }
+}
   </script>
 
 
@@ -2594,24 +2717,25 @@
 
 
           <span class="eyebrow">
-            Snackautomaten für Unternehmen in Böblingen
+            Für Unternehmen in Böblingen, Sindelfingen &amp; Holzgerlingen
           </span>
 
 
           <h1>
-            Gute Pausen.<br>
-            Direkt am Standort.
+            Snackautomaten<br>
+            in Böblingen.
           </h1>
 
 
           <p class="lead hero-copy">
 
-            Sie suchen eine unkomplizierte Snack- und Getränkeversorgung
-            für Ihren Betrieb in Böblingen?
+            Gute Pausen direkt am Standort: Sie suchen eine zuverlässige
+            Snack- und Getränkeversorgung für Ihr Team in Böblingen,
+            Sindelfingen oder Holzgerlingen?
 
             <strong>
-              BODA Snacks plant die passende Automatenlösung
-              und übernimmt auf Wunsch auch den laufenden Service.
+              BODA Snacks prüft Ihren Bedarf, plant die passende Automatenlösung
+              und übernimmt auf Wunsch Aufstellung, Befüllung und Betreuung.
             </strong>
 
           </p>
@@ -2722,7 +2846,7 @@
         <div>
 
           <span class="eyebrow">
-            Böblingen
+            Böblingen · Sindelfingen · Holzgerlingen
           </span>
 
           <h2>
@@ -2739,12 +2863,13 @@
 
           <p>
 
-            Büro, Produktion, Lager, Werkstatt oder Kundenbereich:
-            Die Anforderungen an eine Automatenversorgung
-            können sehr unterschiedlich sein.
+            Ob Büro in Böblingen, Produktionsstandort in Sindelfingen,
+            Werkstatt in Holzgerlingen oder Lager im Landkreis:
+            Die Anforderungen an eine Automatenversorgung unterscheiden sich.
 
-            Deshalb prüfen wir Ihren konkreten Standort,
-            bevor wir eine Lösung empfehlen.
+            Wir prüfen Mitarbeiterzahl, Pausenzeiten und Nutzung an Ihrem
+            konkreten Standort, bevor wir eine Lösung empfehlen.
+            So passt die Versorgung zum Betrieb und nicht umgekehrt.
 
           </p>
 
@@ -3846,6 +3971,8 @@
 
           Der eigentliche Mehrwert entsteht nicht durch den Automaten selbst,
           sondern durch eine unkomplizierte Versorgung direkt im Betrieb.
+          Mehr dazu lesen Sie auf unserer Seite zur
+          <a href="mitarbeiterverpflegung-unternehmen.html">Mitarbeiterverpflegung für Unternehmen</a>.
 
         </p>
 
@@ -4428,6 +4555,11 @@
 
 
       <div class="faq-list">
+
+        <details>
+          <summary>Sind auch Unternehmen in Sindelfingen und Holzgerlingen möglich?</summary>
+          <p>Ja. Unternehmen aus Sindelfingen, Holzgerlingen und der Umgebung können ihren Standort unverbindlich prüfen lassen. Ob wir die Betreuung selbst übernehmen können, hängt von Nutzung, Entfernung und dem vereinbarten Serviceumfang ab.</p>
+        </details>
 
 
         <details open>
