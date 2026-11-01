@@ -1196,6 +1196,30 @@
 @media(max-width:950px){.check-layout{grid-template-columns:1fr}.check-copy{position:static}}
 @media(max-width:650px){.check-card{padding:23px 19px}.choice-grid,.two-cols{grid-template-columns:1fr}.choice.wide{grid-column:auto}.radio-grid{grid-template-columns:1fr}.check-nav{flex-direction:column}.check-nav .btn,.direct-links .btn{width:100%}.direct-links{flex-direction:column}}
 
+
+/* ===========================================================
+   BODA Erweiterung 11/2026 – Wirtschaftlichkeit und Netzwerk
+   Eigenständige Klassen vermeiden Konflikte mit bestehendem CSS.
+   =========================================================== */
+.boda-x-section{padding:76px 0;background:#fff;color:#202821}
+.boda-x-section.boda-x-soft{background:#f5f7f5}
+.boda-x-section .boda-x-wrap{width:min(1130px,calc(100% - 48px));margin-inline:auto}
+.boda-x-section .boda-x-kicker{display:block;color:#88601f;letter-spacing:.13em;font-size:.77rem;font-weight:800;text-transform:uppercase;margin-bottom:12px}
+.boda-x-section h2{font-family:Arial,Helvetica,sans-serif;color:#202821;font-size:clamp(1.85rem,3.2vw,2.75rem);letter-spacing:-.035em;line-height:1.14;margin:0 0 16px}
+.boda-x-section p{color:#596159;font-size:1.01rem;line-height:1.75;margin:0 0 16px}
+.boda-x-section .boda-x-lead{max-width:810px;margin-bottom:27px}
+.boda-x-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}
+.boda-x-card{border:1px solid #dce2dc;border-radius:17px;background:white;padding:26px;min-width:0}
+.boda-x-card h3{color:#202821;font-size:1.17rem;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.boda-x-card p{margin:0;font-size:.96rem}
+.boda-x-card em{font-style:normal;color:#244b39;font-weight:700}
+.boda-x-note{border-left:3px solid #dbb86e;padding:12px 0 12px 18px;margin-top:23px;color:#596159;font-size:.88rem;line-height:1.65;background:transparent}
+.boda-x-btn{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:12px 21px;border:1px solid #dbb86e;border-radius:9px;background:#dbb86e;color:#202821!important;font-size:.93rem;font-weight:800;text-decoration:none!important;text-align:center;line-height:1.35;transition:background .15s ease}
+.boda-x-btn:hover{background:#cda456}
+.boda-x-inline{display:inline-block;margin-left:17px;color:#244b39!important;font-weight:750;text-decoration:underline!important;text-underline-offset:4px}
+.boda-x-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:25px}
+@media(max-width:680px){.boda-x-section{padding:56px 0}.boda-x-section .boda-x-wrap{width:calc(100% - 36px)}.boda-x-grid{grid-template-columns:1fr;gap:12px}.boda-x-card{padding:21px}.boda-x-section h2{font-size:clamp(1.8rem,7vw,2.3rem)}.boda-x-btn{width:100%}.boda-x-inline{margin:6px 0 0;width:100%;text-align:center}}
+
 </style>
 </head>
 
@@ -1697,7 +1721,21 @@
 
 
     <!-- FAQ -->
-    <section class="section soft" id="fragen" aria-labelledby="fragen-title">
+    
+<section class="boda-x-section boda-x-soft" id="boda-weitere-standorte" aria-labelledby="boda-weitere-standorte-titel">
+<div class="boda-x-wrap">
+ <span class="boda-x-kicker">Regional zuverlässig · überregional vernetzt</span>
+ <h2 id="boda-weitere-standorte-titel">Auch außerhalb unserer Region eine Anfrage wert.</h2>
+ <p class="boda-x-lead">Unser eigener Full-Service konzentriert sich auf passende regionale Standorte. Unternehmen aus anderen Bundesländern oder aus dem Ausland können uns ihren Versorgungsbedarf ebenfalls schildern. Wir prüfen individuell, ob wir passende Betreiber vermitteln oder bei der Beschaffung eines eigenen Automaten unterstützen können.</p>
+ <div class="boda-x-grid">
+  <article class="boda-x-card"><h3>Betreuungsservice und Betriebsausgaben</h3><p>Eine betrieblich veranlasste Servicepauschale kann grundsätzlich steuerlich berücksichtigt werden (§ 4 Abs. 4 EStG). Sie wird dadurch aber nicht kostenlos. Die tatsächliche steuerliche Behandlung sollte Ihr Unternehmen individuell prüfen lassen.</p></article>
+  <article class="boda-x-card"><h3>Partner statt falscher Versprechen</h3><p>Außerhalb unseres eigenen Servicegebiets prüfen wir passende Ansprechpartner. Eine erfolgreiche Vermittlung oder Versorgung an jedem Standort können wir nicht garantieren; mögliche Partner übernehmen Leistungen nach eigenständiger Vereinbarung.</p></article>
+ </div>
+ <div class="boda-x-actions"><a class="boda-x-btn" href="automatenvermittlung-deutschlandweit.html">Bundesweite Anfrage stellen</a><a class="boda-x-inline" href="automaten-kaufen.html">Eigenen Automaten finden →</a></div>
+</div>
+</section>
+
+<section class="section soft" id="fragen" aria-labelledby="fragen-title">
       <div class="wrap faq-layout">
 
         <div class="section-head">
@@ -2260,7 +2298,10 @@ Standortprüfung anfragen ↗
           <a href="#service">Full-Service</a>
           <a href="#ablauf">Standortprüfung</a>
           <a href="was-kostet-ein-snackautomat.html">Kosten &amp; Planung</a>
-        </nav>
+        <a href="automatenvermittlung-deutschlandweit.html">Deutschlandweite Vermittlung</a>
+<a href="automaten-kaufen.html">Automaten kaufen</a>
+<a href="automatenpartner-werden.html">Partner werden</a>
+</nav>
 
       </div>
 
