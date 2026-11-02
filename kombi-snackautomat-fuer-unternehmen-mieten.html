@@ -5,15 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 
-<title>Snack- & Getränkeautomat für Unternehmen | BODA Snacks</title>
+<title>Snack- &amp; Getränkeautomaten für Unternehmen | BODA Snacks</title>
 
 <meta
   name="description"
-  content="Snack- und Getränkeautomaten für Unternehmen mit persönlichem Rundum-Service. BODA Snacks übernimmt Planung, Aufstellung, Befüllung, Reinigung und Betreuung. Standort kostenlos prüfen."
+  content="Snack- und Getränkeautomaten für Unternehmen im Raum Pforzheim: Planung, Aufstellung, Befüllung und Betreuung mit BODA Snacks. Standort kostenlos prüfen."
 >
 
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#F7F3E8">
+<link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
 <link
   rel="canonical"
@@ -25,12 +26,12 @@
 
 <meta
   property="og:title"
-  content="Snack- & Getränkeautomat für Unternehmen | BODA Snacks"
+  content="Snack- &amp; Getränkeautomaten für Unternehmen | BODA Snacks"
 >
 
 <meta
   property="og:description"
-  content="Snacks und gekühlte Getränke direkt im Unternehmen – mit persönlicher Betreuung und Rundum-Service durch BODA Snacks."
+  content="Snack- und Getränkeautomaten mit regionalem Rundum-Service: Aufstellung, Befüllung, Reinigung und Betreuung durch BODA Snacks."
 >
 
 <meta
@@ -2185,6 +2186,82 @@ p{
   }
 
 }
+
+
+/* BODA 11/2026: sanftes Cremeweiß, Gold und Babyblau für die Preisangaben */
+:root {
+  --soft: #F7F3E8;
+  --soft-green: #F7F3E8;
+  --line: #E4E0D7;
+}
+.hero { background:#F7F3E8; }
+.hero-title-accent, .hero-copy strong { color:#292820; }
+.hero-visual { background:#EEE8DB; }
+.check-section { background:linear-gradient(135deg,#F7F3E8 0%,#FFFFFF 88%); }
+.price-box {
+  background:#E9F5FF;
+  border:1px solid #C6DEEF;
+  box-shadow:0 10px 28px rgba(23,62,95,.055);
+}
+.price-box > strong { color:#173E5F; }
+.price-box p { color:#34556D; }
+.price-box summary { color:#173E5F; }
+.price-details { border-top-color:#C9DFEE; }
+.why-box { background:#F7F3E8; border:1px solid #E4DCCA; }
+.why-box h2, .why-item strong { color:var(--ink); }
+.why-box .eyebrow { color:var(--gold); }
+.why-box > p, .why-item span { color:var(--muted); }
+.why-grid { border-top-color:#DFD5C2; }
+.why-item + .why-item { border-left-color:#DFD5C2; }
+.privacy {
+  padding:16px 18px;
+  background:#E9F5FF;
+  border:1px solid #C6DEEF;
+  border-radius:12px;
+  color:#173E5F;
+  line-height:1.65;
+}
+.privacy input { accent-color:#88601F; }
+.privacy a { color:#173E5F; text-decoration-thickness:1px; font-weight:800; }
+.privacy-detail { display:block; margin-top:6px; color:#45657B; font-size:.77rem; }
+.boda-tax-note {
+  margin:20px 0;
+  padding:16px 18px;
+  border-left:3px solid #DBB86E;
+  background:#F7F3E8;
+  border-radius:0 10px 10px 0;
+  font-size:.93rem;
+}
+.boda-tax-note strong { color:var(--ink); }
+.boda-more { background:#F7F3E8; }
+.boda-more .section-head { max-width:840px; }
+.boda-more .section-head p { margin-bottom:0; }
+.boda-more-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.boda-more-card {
+  display:flex; flex-direction:column; min-width:0; padding:28px;
+  border:1px solid #E3DBCC; border-radius:18px;
+  background:#fff; text-decoration:none;
+  transition:border-color .2s, transform .2s;
+}
+.boda-more-card:hover { transform:translateY(-2px); border-color:#CDA456; }
+.boda-more-card h3 { overflow-wrap:anywhere; }
+.boda-more-card p { flex:1; margin:5px 0 22px; font-size:.94rem; }
+.boda-more-label { color:#88601F; font-size:.76rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; margin-bottom:15px; }
+.boda-more-link { color:#765518; font-weight:800; font-size:.91rem; }
+.boda-more-foot { margin:20px 0 0; font-size:.86rem; }
+@media(max-width:950px) {
+  .boda-more-grid { grid-template-columns:1fr; }
+  .why-item + .why-item { border-left:0; border-bottom:1px solid #DFD5C2; }
+}
+@media(max-width:650px) {
+  h1 { font-size:clamp(2.2rem,10vw,3.1rem); overflow-wrap:anywhere; }
+  h2,h3 { overflow-wrap:break-word; hyphens:auto; }
+  .fit-copy,.fit-list { min-width:0; }
+  .fit-item { grid-template-columns:30px minmax(0,1fr); gap:13px; }
+  .fit-item > div { min-width:0; overflow-wrap:anywhere; }
+  .privacy { padding:14px 12px; }
+  .boda-more-card { padding:23px; }
+}
 </style>
 
 </head>
@@ -2294,10 +2371,10 @@ p{
 
 <h1>
 
-Gute Pausen.<br>
+Snackautomaten<br>
 
 <span class="hero-title-accent">
-  Direkt im Betrieb.
+  für Unternehmen.
 </span>
 
 </h1>
@@ -2305,8 +2382,8 @@ Gute Pausen.<br>
 
 <p class="lead">
 
-Snacks und gekühlte Getränke
-direkt dort,
+Snack- und Getränkeautomaten bringen Snacks und gekühlte Getränke
+direkt dorthin,
 wo Ihre Mitarbeiter arbeiten.
 
 <strong>
@@ -3283,32 +3360,28 @@ Weitere Angaben
 </div>
 
 
-<label class="privacy">
+<label class="privacy" for="privacy-confirm-versorgung">
 
 <input
   type="checkbox"
-  name="Datenschutzerklärung gelesen"
+  id="privacy-confirm-versorgung"
+  name="Datenschutzhinweise zur Kenntnis genommen"
   value="Ja"
   required
 >
 
 <span>
-
-Ich habe die
-
-<a
-  href="datenschutz.html"
-  target="_blank"
-  rel="noopener"
->
-  Datenschutzerklärung
-</a>
-
-gelesen.
-
-Meine Angaben werden
-zur Bearbeitung meiner Anfrage übermittelt. *
-
+  Ich habe die
+  <a
+    href="https://boda-snacks.de/datenschutz.html"
+    target="_blank"
+    rel="noopener noreferrer"
+  >Datenschutzerklärung von BODA Snacks</a>
+  zur Kenntnis genommen. Meine Angaben werden zur Prüfung und
+  Beantwortung meiner Anfrage verarbeitet. <strong>*</strong>
+  <small class="privacy-detail">Für die technische Übermittlung dieser Standortanfrage
+  nutzen wir weiterhin FormSubmit. Einzelheiten stehen in der Datenschutzerklärung.
+  </small>
 </span>
 
 </label>
@@ -4234,6 +4307,13 @@ im Angebot festgehalten.
 
 </p>
 
+<p class="boda-tax-note">
+  <strong>Hinweis für Unternehmen:</strong>
+  Betrieblich veranlasste Servicekosten können nach den steuerlichen
+  Voraussetzungen als Betriebsausgaben berücksichtigt werden.
+  Die konkrete steuerliche Behandlung klären Sie bitte mit Ihrer Steuerberatung.
+</p>
+
 
 <a
   href="#standort-check"
@@ -4987,6 +5067,43 @@ Ausstattung und Konditionen beeinflussen.
 </section>
 
 
+
+<!-- =========================================================
+     WEITERE BODA ANGEBOTE / INTERNES LINKNETZ
+     ========================================================= -->
+<section class="section boda-more" id="weitere-automatenloesungen" aria-labelledby="boda-more-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Weitere Wege mit BODA</span>
+      <h2 id="boda-more-title">Sie möchten einen Automaten kaufen oder einen Betreiber finden?</h2>
+      <p>Unser regionaler Rundum-Service ist nur eine Möglichkeit. Für andere Standorte und
+      Anforderungen prüfen wir auf Anfrage auch Lösungen über geeignete Geschäftspartner.
+      Eine deutschlandweite Betreuung durch BODA selbst wird damit nicht zugesagt.</p>
+    </div>
+    <div class="boda-more-grid">
+      <a class="boda-more-card" href="automaten-kaufen.html">
+        <span class="boda-more-label">01 / Beschaffung</span>
+        <h3>Automaten kaufen, mieten oder leasen</h3>
+        <p>Eigene Verkaufsautomaten gesucht? Beschreiben Sie Ihren Bedarf und wir prüfen passende Anbieter und Möglichkeiten.</p>
+        <span class="boda-more-link">Automatenanfrage stellen →</span>
+      </a>
+      <a class="boda-more-card" href="automatenvermittlung-deutschlandweit.html">
+        <span class="boda-more-label">02 / Vermittlung</span>
+        <h3>Einen Automatenbetreiber finden</h3>
+        <p>Sie suchen eine Automatenversorgung außerhalb unserer regionalen Betreuung? Wir prüfen eine passende Partnervermittlung.</p>
+        <span class="boda-more-link">Betreiber anfragen →</span>
+      </a>
+      <a class="boda-more-card" href="automatenpartner-werden.html">
+        <span class="boda-more-label">03 / Kooperation</span>
+        <h3>Partner im BODA-Netzwerk werden</h3>
+        <p>Sie betreiben, verkaufen oder warten Automaten? Bewerben Sie sich als möglicher Kooperationspartner.</p>
+        <span class="boda-more-link">Als Partner bewerben →</span>
+      </a>
+    </div>
+    <p class="boda-more-foot">Jede Anfrage wird persönlich geprüft. Es erfolgt weder eine automatische Partneraufnahme noch eine ungeprüfte Weitergabe Ihrer Kontaktdaten.</p>
+  </div>
+</section>
+
 </main>
 
 
@@ -5054,6 +5171,14 @@ Ihr Automatenservice aus Pforzheim.
 
 <a href="automatenservice-pforzheim.html">
   Automatenservice
+</a>
+
+<a href="automatenvermittlung-deutschlandweit.html">
+  Vermittlung deutschlandweit
+</a>
+
+<a href="automaten-kaufen.html">
+  Automaten kaufen
 </a>
 
 <a href="was-kostet-ein-snackautomat.html">
