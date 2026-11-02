@@ -9,554 +9,181 @@
 <meta name="description" content="Als Automatenbetreiber, Händler, Hersteller oder Servicedienstleister BODA-Partner werden. Jetzt unverbindlich für das Partnernetzwerk bewerben.">
 <link rel="canonical" href="https://boda-snacks.de/automatenpartner-werden.html">
 <link rel="icon" href="favicon.jpg" type="image/jpeg">
-
 <style>
-:root {
-  --cream: #F7F3E8;
-  --gold: #DBB86E;
-  --gold-dark: #88601F;
-  --ink: #202821;
-  --text: #596159;
-  --blue: #E9F5FF;
-  --line: #E2DED4;
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.65 Arial,Helvetica,sans-serif; }
-.wrap { width: min(1140px,calc(100% - 40px)); margin: auto; }
-a { color: inherit; text-underline-offset: 3px; }
-h1,h2,h3,p { margin-top: 0; }
-h1,h2,h3 { line-height: 1.15; }
-h1 { font-size: clamp(2.3rem,5vw,4.2rem); }
-h2 { font-size: clamp(1.9rem,3.3vw,2.8rem); }
-h3 { font-size: 1.22rem; }
-p { color: var(--text); }
-
-.top {
-  position: sticky; top: 0; z-index: 20;
-  background: #fffffff5;
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(10px);
-}
-.navbox {
-  min-height: 78px; display: flex;
-  align-items: center; justify-content: space-between; gap: 18px;
-}
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; line-height: 1.25; }
-.brand img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
-.brand b { display: block; }
-.brand b span { color: var(--gold-dark); }
-.brand small { color: var(--text); font-size: .74rem; }
-.nav { display: flex; align-items: center; gap: 20px; }
-.nav a { text-decoration: none; font-weight: 700; font-size: .9rem; }
-.menu { display: none; background: white; border: 1px solid var(--line); padding: 9px 13px; border-radius: 8px; font: inherit; }
-
-.btn,.submit {
-  display: inline-flex; justify-content: center; align-items: center;
-  min-height: 49px; padding: 12px 22px;
-  background: var(--gold); border: 1px solid var(--gold);
-  border-radius: 9px; color: var(--ink);
-  font-weight: 800; text-decoration: none;
-  cursor: pointer; font-size: .95rem;
-}
-.btn:hover,.submit:hover { background: #CDA456; }
-.btn.secondary { background: white; border-color: #C6C8C0; }
-.btn.secondary:hover { background: #faf6ed; }
-
-.hero { background: var(--cream); padding: 78px 0; border-bottom: 1px solid #E6DECB; }
-.hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 46px; align-items: center; }
-.eyebrow {
-  display: block; margin-bottom: 15px; color: var(--gold-dark);
-  letter-spacing: .12em; font-size: .78rem;
-  font-weight: 800; text-transform: uppercase;
-}
-.hero h1 { max-width: 760px; margin-bottom: 22px; }
-.hero h1 span { color: var(--gold-dark); }
-.hero p { max-width: 660px; font-size: 1.08rem; }
-.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
-.hero-card {
-  background: #fffdf8; border: 1px solid #E2D6BF;
-  border-radius: 18px; padding: 30px;
-  box-shadow: 0 12px 35px #20282110;
-}
-.hero-card strong { font-size: 1.14rem; }
-.hero-card p {
-  margin: 14px 0 0; font-size: .94rem;
-  border-top: 1px solid var(--line); padding-top: 12px;
-}
-
-.section { padding: 78px 0; }
-.soft { background: #FAF9F6; }
-.section-intro { max-width: 780px; font-size: 1.06rem; }
-.cards {
-  display: grid; grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 18px; margin-top: 30px;
-}
-.card {
-  border: 1px solid var(--line); border-radius: 15px;
-  padding: 25px; background: white;
-}
-.card small { display: block; margin-bottom: 12px; color: var(--gold-dark); font-weight: 800; }
-.card p { margin-bottom: 0; }
-.notice {
-  background: #FFF8E8; border-left: 4px solid var(--gold);
-  padding: 17px 20px; margin-top: 25px; color: var(--text);
-}
-
-.register { background: var(--cream); padding: 78px 0; }
-.reg-head { max-width: 780px; margin-bottom: 30px; }
-.reg-grid {
-  display: grid;
-  grid-template-columns: minmax(230px,.68fr) minmax(0,1.32fr);
-  align-items: start; gap: 26px;
-}
-.aside,.form-card {
-  border: 1px solid #E5D9BF; border-radius: 18px;
-  padding: 26px; background: #fff;
-}
-.aside { background: #FFFBF3; }
-.aside ul { color: var(--text); padding-left: 20px; line-height: 1.9; }
-.form-card { padding: 30px; box-shadow: 0 14px 35px #2028210C; }
-.fields {
-  display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 18px;
-}
-.field { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
-.field.wide { grid-column: 1/-1; }
-label,legend { font-size: .89rem; font-weight: 700; }
-
-input:not([type="checkbox"]):not([type="hidden"]),select,textarea {
-  width: 100%; min-width: 0; min-height: 46px;
-  padding: 11px 12px; border: 1px solid #BCC6C2;
-  border-radius: 9px; background: white;
-  color: var(--ink); font: inherit;
-}
-textarea { min-height: 110px; resize: vertical; }
-fieldset { grid-column: 1/-1; margin: 0; padding: 0; border: 0; }
-legend { margin-bottom: 10px; }
-.checks { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-.checks label {
-  display: flex; gap: 9px; align-items: flex-start;
-  background: #FFFCF7; border: 1px solid var(--line);
-  padding: 9px 10px; border-radius: 8px; font-weight: 500;
-}
-.checks input { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--gold-dark); }
-.privacy {
-  background: var(--blue); border: 1px solid #C7DEEF;
-  border-radius: 10px; padding: 16px; margin: 22px 0;
-}
-.privacy p { margin: 0; color: #173E5F; font-size: .89rem; }
-.privacy a { font-weight: 800; }
-.submit { width: 100%; font-family: inherit; }
-.footnote { font-size: .81rem; margin: 12px 0 0; }
-
-.contact { padding: 60px 0; background: #FAF9F6; }
-.contact p { max-width: 730px; }
-.contact a { font-weight: 700; }
-footer { background: #202821; color: #fff; padding: 42px 0 24px; }
-footer p { color: #C9D0C9; }
-.footer-inner { display: flex; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
-footer nav { display: flex; flex-wrap: wrap; gap: 10px 20px; }
-footer a { color: #fff; font-size: .9rem; }
-.footer-bottom {
-  margin-top: 28px; padding-top: 18px;
-  border-top: 1px solid #ffffff30; display: flex;
-  gap: 12px; justify-content: space-between;
-  flex-wrap: wrap; font-size: .85rem;
-}
-.cookie {
-  position: fixed; z-index: 90; bottom: 18px; left: 18px;
-  width: min(450px,calc(100% - 36px));
-  padding: 20px; border: 1px solid var(--line);
-  border-radius: 13px; background: white;
-  box-shadow: 0 9px 36px #0003;
-}
-.cookie h2 { font-size: 1.16rem; }
-.cookie p { font-size: .87rem; }
-.cookie-buttons { display: flex; gap: 10px; }
-.cookie button,.cookie-settings { font: inherit; cursor: pointer; }
-.cookie button { padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: #F7F3E8; }
-.cookie[hidden] { display: none; }
-.cookie-settings { border: 0; background: transparent; color: white; text-decoration: underline; padding: 0; }
-:focus-visible { outline: 3px solid var(--gold-dark); outline-offset: 3px; }
-
-@media(max-width:920px) {
-  .nav { gap: 12px; }
-  .nav a { font-size: .82rem; }
-  .hero-grid { gap: 25px; }
-}
-@media(max-width:780px) {
-  .menu { display: block; }
-  .nav {
-    display: none; position: absolute; top: 100%; left: 0; right: 0;
-    background: white; padding: 20px; flex-direction: column;
-    align-items: stretch; box-shadow: 0 12px 20px #0002;
-  }
-  .nav.open { display: flex; }
-  .nav a { font-size: 1rem; padding: 6px; }
-  .hero-grid,.reg-grid { grid-template-columns: 1fr; }
-  .hero { padding: 55px 0; }
-  .section,.register { padding: 55px 0; }
-  .cards { grid-template-columns: 1fr; }
-}
-@media(max-width:540px) {
-  .brand small { font-size: .65rem; }
-  .brand img { width: 40px; height: 40px; }
-  .hero h1 { overflow-wrap: anywhere; }
-  .actions .btn { width: 100%; }
-  .fields,.checks { grid-template-columns: 1fr; }
-  .form-card { padding: 20px; }
-  .wrap { width: calc(100% - 32px); }
-}
-@media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior: auto; }
-}
+:root{--cream:#F7F3E8;--gold:#DBB86E;--gold-dark:#88601F;--ink:#202821;--text:#596159;--blue:#E9F5FF;--line:#E2DED4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}
+.wrap{width:min(1140px,calc(100% - 40px));margin:auto}
+a{color:inherit;text-underline-offset:3px}
+h1,h2,h3,p{margin-top:0}h1,h2,h3{line-height:1.15}h1{font-size:clamp(2.3rem,5vw,4.2rem)}h2{font-size:clamp(1.9rem,3.3vw,2.8rem)}h3{font-size:1.22rem}p{color:var(--text)}
+.top{position:sticky;top:0;z-index:20;background:#fffffff5;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.navbox{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;line-height:1.25}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.brand b{display:block}.brand b span{color:var(--gold-dark)}.brand small{color:var(--text);font-size:.74rem}
+.nav{display:flex;align-items:center;gap:20px}.nav a{text-decoration:none;font-weight:700;font-size:.9rem}
+.menu{display:none;background:white;border:1px solid var(--line);padding:9px 13px;border-radius:8px;font:inherit}
+.btn,.submit{display:inline-flex;justify-content:center;align-items:center;min-height:49px;padding:12px 22px;background:var(--gold);border:1px solid var(--gold);border-radius:9px;color:var(--ink);font-weight:800;text-decoration:none;cursor:pointer;font-size:.95rem}
+.btn:hover,.submit:hover{background:#CDA456}.btn.secondary{background:white;border-color:#C6C8C0}.btn.secondary:hover{background:#faf6ed}
+.hero{background:var(--cream);padding:78px 0;border-bottom:1px solid #E6DECB}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:46px;align-items:center}
+.eyebrow{display:block;margin-bottom:15px;color:var(--gold-dark);letter-spacing:.12em;font-size:.78rem;font-weight:800;text-transform:uppercase}
+.hero h1{max-width:760px;margin-bottom:22px}.hero h1 span{color:var(--gold-dark)}.hero p{max-width:660px;font-size:1.08rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-card{background:#fffdf8;border:1px solid #E2D6BF;border-radius:18px;padding:30px;box-shadow:0 12px 35px #20282110}
+.hero-card strong{font-size:1.14rem}.hero-card p{margin:14px 0 0;font-size:.94rem;border-top:1px solid var(--line);padding-top:12px}
+.section{padding:78px 0}.soft{background:#FAF9F6}
+.section-intro{max-width:780px;font-size:1.06rem}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+.card{border:1px solid var(--line);border-radius:15px;padding:25px;background:white}
+.card small{display:block;margin-bottom:12px;color:var(--gold-dark);font-weight:800}
+.card p{margin-bottom:0}
+.notice{background:#FFF8E8;border-left:4px solid var(--gold);padding:17px 20px;margin-top:25px;color:var(--text)}
+.register{background:var(--cream);padding:78px 0}
+.reg-head{max-width:780px;margin-bottom:30px}
+.reg-grid{display:grid;grid-template-columns:minmax(230px,.68fr) minmax(0,1.32fr);align-items:start;gap:26px}
+.aside,.form-card{border:1px solid #E5D9BF;border-radius:18px;padding:26px;background:#fff}
+.aside{background:#FFFBF3}.aside ul{color:var(--text);padding-left:20px;line-height:1.9}
+.form-card{padding:30px;box-shadow:0 14px 35px #2028210C}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.field{min-width:0;display:flex;flex-direction:column;gap:6px}.field.wide{grid-column:1/-1}
+label,legend{font-size:.89rem;font-weight:700}
+input:not([type="checkbox"]):not([type="hidden"]),select,textarea{width:100%;min-width:0;min-height:46px;padding:11px 12px;border:1px solid #BCC6C2;border-radius:9px;background:white;color:var(--ink);font:inherit}
+textarea{min-height:110px;resize:vertical}
+fieldset{grid-column:1/-1;margin:0;padding:0;border:0}
+legend{margin-bottom:10px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.checks label{display:flex;gap:9px;align-items:flex-start;background:#FFFCF7;border:1px solid var(--line);padding:9px 10px;border-radius:8px;font-weight:500}
+.checks input{width:18px;height:18px;flex-shrink:0;accent-color:var(--gold-dark)}
+.privacy{background:var(--blue);border:1px solid #C7DEEF;border-radius:10px;padding:16px;margin:22px 0}
+.privacy p{margin:0;color:#173E5F;font-size:.89rem}.privacy a{font-weight:800}
+.privacy-confirm{display:flex;align-items:flex-start;gap:11px;margin-top:16px;font-size:.91rem;font-weight:600;color:#173E5F;cursor:pointer}
+.privacy-confirm input{flex:0 0 20px;width:20px;height:20px;margin:2px 0 0;accent-color:#88601F;cursor:pointer}
+.privacy-confirm span{flex:1;min-width:0;line-height:1.5}
+.privacy-confirm a{color:#173E5F;text-decoration:underline;text-underline-offset:3px}
+.privacy-confirm a:hover{color:#0D2F4B;text-decoration-thickness:2px}
+.privacy .privacy-hint{margin:10px 0 0 31px;color:#415D74;font-size:.77rem;line-height:1.45}
+.privacy-confirm input:focus-visible{outline:3px solid #88601F;outline-offset:3px}
+.submit{width:100%;font-family:inherit}.footnote{font-size:.81rem;margin:12px 0 0}
+.contact{padding:60px 0;background:#FAF9F6}.contact p{max-width:730px}.contact a{font-weight:700}
+footer{background:#202821;color:#fff;padding:42px 0 24px}footer p{color:#C9D0C9}
+.footer-inner{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}footer nav{display:flex;flex-wrap:wrap;gap:10px 20px}footer a{color:#fff;font-size:.9rem}
+.footer-bottom{margin-top:28px;padding-top:18px;border-top:1px solid #ffffff30;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;font-size:.85rem}
+.cookie{position:fixed;z-index:90;bottom:18px;left:18px;width:min(450px,calc(100% - 36px));padding:20px;border:1px solid var(--line);border-radius:13px;background:white;box-shadow:0 9px 36px #0003}
+.cookie h2{font-size:1.16rem}.cookie p{font-size:.87rem}.cookie-buttons{display:flex;gap:10px}.cookie button,.cookie-settings{font:inherit;cursor:pointer}.cookie button{padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:#F7F3E8}.cookie[hidden]{display:none}
+.cookie-settings{border:0;background:transparent;color:white;text-decoration:underline;padding:0}
+:focus-visible{outline:3px solid var(--gold-dark);outline-offset:3px}
+@media(max-width:920px){.nav{gap:12px}.nav a{font-size:.82rem}.hero-grid{gap:25px}}
+@media(max-width:780px){.menu{display:block}.nav{display:none;position:absolute;top:100%;left:0;right:0;background:white;padding:20px;flex-direction:column;align-items:stretch;box-shadow:0 12px 20px #0002}.nav.open{display:flex}.nav a{font-size:1rem;padding:6px}.hero-grid,.reg-grid{grid-template-columns:1fr}.hero{padding:55px 0}.section,.register{padding:55px 0}.cards{grid-template-columns:1fr}}
+@media(max-width:540px){.brand small{font-size:.65rem}.brand img{width:40px;height:40px}.hero h1{overflow-wrap:anywhere}.actions .btn{width:100%}.fields,.checks{grid-template-columns:1fr}.form-card{padding:20px}.wrap{width:calc(100% - 32px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
-
 <body>
 <header class="top">
-  <div class="wrap navbox">
-    <a class="brand" href="index.html">
-      <img src="boda-logo-web.webp" alt="" width="48" height="48">
-      <span>
-        <b>BODA <span>SNACKS</span></b>
-        <small>Automatenservice &amp; Partnernetzwerk</small>
-      </span>
-    </a>
-    <button class="menu" id="menuToggle" type="button" aria-controls="mainNav" aria-expanded="false">Menü ☰</button>
-    <nav class="nav" id="mainNav" aria-label="Hauptnavigation">
-      <a href="index.html">Startseite</a>
-      <a href="mitarbeiterverpflegung-unternehmen.html">Mitarbeiterverpflegung</a>
-      <a href="automatenvermittlung-deutschlandweit.html">Vermittlung</a>
-      <a href="automaten-kaufen.html">Automaten kaufen</a>
-      <a class="btn" href="#anmelden">Partner werden</a>
-    </nav>
-  </div>
+ <div class="wrap navbox">
+  <a class="brand" href="index.html"><img src="boda-logo-web.webp" alt="" width="48" height="48"><span><b>BODA <span>SNACKS</span></b><small>Automatenservice &amp; Partnernetzwerk</small></span></a>
+  <button class="menu" id="menuToggle" type="button" aria-controls="mainNav" aria-expanded="false">Menü ☰</button>
+  <nav class="nav" id="mainNav" aria-label="Hauptnavigation">
+   <a href="index.html">Startseite</a>
+   <a href="mitarbeiterverpflegung-unternehmen.html">Mitarbeiterverpflegung</a>
+   <a href="automatenvermittlung-deutschlandweit.html">Vermittlung</a>
+   <a href="automaten-kaufen.html">Automaten kaufen</a>
+   <a class="btn" href="#anmelden">Partner werden</a>
+  </nav>
+ </div>
 </header>
-
 <main>
-<section class="hero">
+ <section class="hero">
   <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">BODA Partnernetzwerk</span>
-      <h1>Sie betreiben Automaten? <span>Wir sollten sprechen.</span></h1>
-      <p>BODA Snacks prüft passende Kooperationsmöglichkeiten mit Automatenbetreibern, Händlern, Herstellern und technischen Dienstleistern – regional und überregional.</p>
-      <div class="actions">
-        <a class="btn" href="#anmelden">Als Partner bewerben →</a>
-        <a class="btn secondary" href="automatenvermittlung-deutschlandweit.html">Unsere Vermittlung</a>
-      </div>
-    </div>
-    <aside class="hero-card">
-      <strong>Das erwartet Sie bei BODA</strong>
-      <p>Persönliche Prüfung Ihrer Bewerbung</p>
-      <p>Klare Absprachen über Regionen und Leistungen</p>
-      <p>Keine automatische Aufnahme oder garantierten Vermittlungsaufträge</p>
-    </aside>
+   <div>
+    <span class="eyebrow">BODA Partnernetzwerk</span>
+    <h1>Sie betreiben Automaten? <span>Wir sollten sprechen.</span></h1>
+    <p>BODA Snacks prüft passende Kooperationsmöglichkeiten mit Automatenbetreibern, Händlern, Herstellern und technischen Dienstleistern – regional und überregional.</p>
+    <div class="actions"><a class="btn" href="#anmelden">Als Partner bewerben →</a><a class="btn secondary" href="automatenvermittlung-deutschlandweit.html">Unsere Vermittlung</a></div>
+   </div>
+   <aside class="hero-card"><strong>Das erwartet Sie bei BODA</strong>
+    <p>Persönliche Prüfung Ihrer Bewerbung</p><p>Klare Absprachen über Regionen und Leistungen</p><p>Keine automatische Aufnahme oder garantierten Vermittlungsaufträge</p>
+   </aside>
   </div>
-</section>
-
-<section class="section soft">
-  <div class="wrap">
-    <span class="eyebrow">Zusammenarbeit mit BODA</span>
-    <h2>Gemeinsam passende Lösungen ermöglichen.</h2>
-    <p class="section-intro">Wenn eine Anfrage außerhalb unseres eigenen Servicegebiets liegt oder ein Unternehmen einen Automaten kaufen möchte, können geeignete Geschäftspartner interessant sein. BODA prüft jeden Fall individuell.</p>
-    <div class="cards">
-      <article class="card">
-        <small>01 / Einsatzgebiet</small>
-        <h3>Wo sind Sie tätig?</h3>
-        <p>Nennen Sie Ihre PLZ-Gebiete, betreuten Regionen und verfügbaren Kapazitäten.</p>
-      </article>
-      <article class="card">
-        <small>02 / Leistungen</small>
-        <h3>Was bieten Sie an?</h3>
-        <p>Aufstellung, Befüllung, Automatenverkauf, Miete, Leasing oder technischen Service.</p>
-      </article>
-      <article class="card">
-        <small>03 / Vereinbarung</small>
-        <h3>Klare Bedingungen</h3>
-        <p>Eine Zusammenarbeit und etwaige Provisionen werden vorher gesondert schriftlich vereinbart.</p>
-      </article>
-    </div>
-    <div class="notice">Die Bewerbung ist unverbindlich. Sie begründet keinen Anspruch auf Aufnahme in das BODA-Netzwerk, Vermittlungen oder Provisionen.</div>
+ </section>
+ <section class="section soft"><div class="wrap">
+  <span class="eyebrow">Zusammenarbeit mit BODA</span>
+  <h2>Gemeinsam passende Lösungen ermöglichen.</h2>
+  <p class="section-intro">Wenn eine Anfrage außerhalb unseres eigenen Servicegebiets liegt oder ein Unternehmen einen Automaten kaufen möchte, können geeignete Geschäftspartner interessant sein. BODA prüft jeden Fall individuell.</p>
+  <div class="cards">
+   <article class="card"><small>01 / Einsatzgebiet</small><h3>Wo sind Sie tätig?</h3><p>Nennen Sie Ihre PLZ-Gebiete, betreuten Regionen und verfügbaren Kapazitäten.</p></article>
+   <article class="card"><small>02 / Leistungen</small><h3>Was bieten Sie an?</h3><p>Aufstellung, Befüllung, Automatenverkauf, Miete, Leasing oder technischen Service.</p></article>
+   <article class="card"><small>03 / Vereinbarung</small><h3>Klare Bedingungen</h3><p>Eine Zusammenarbeit und etwaige Provisionen werden vorher gesondert schriftlich vereinbart.</p></article>
   </div>
-</section>
-
-<section class="register" id="anmelden">
-  <div class="wrap">
-    <div class="reg-head">
-      <span class="eyebrow">Partnerbewerbung</span>
-      <h2>Als BODA-Partner bewerben.</h2>
-      <p>Stellen Sie uns Ihr Unternehmen kurz vor. Wir prüfen Ihre Angaben persönlich und melden uns bei Interesse.</p>
+  <div class="notice">Die Bewerbung ist unverbindlich. Sie begründet keinen Anspruch auf Aufnahme in das BODA-Netzwerk, Vermittlungen oder Provisionen.</div>
+ </div></section>
+ <section class="register" id="anmelden"><div class="wrap">
+  <div class="reg-head"><span class="eyebrow">Partnerbewerbung</span><h2>Als BODA-Partner bewerben.</h2><p>Stellen Sie uns Ihr Unternehmen kurz vor. Wir prüfen Ihre Angaben persönlich und melden uns bei Interesse.</p></div>
+  <div class="reg-grid">
+   <aside class="aside"><strong>So läuft es ab</strong><ul><li>Formular ausfüllen</li><li>BODA prüft die Angaben</li><li>Persönliches Kennenlernen</li><li>Schriftliche Vereinbarung bei Zusammenarbeit</li></ul></aside>
+   <form class="form-card" action="https://form.taxi/s/x6tb5csf" method="POST" accept-charset="UTF-8">
+    <input type="hidden" name="_subject" value="BODA Snacks – neue Partnerbewerbung">
+    <input type="hidden" name="_redirect" value="https://boda-snacks.de/partner-danke.html">
+    <input type="hidden" name="Anfragequelle" value="BODA Partneranmeldung">
+    <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Bitte leer lassen<input type="text" name="_honeypot" tabindex="-1" autocomplete="off"></label></div>
+    <div class="fields">
+     <div class="field"><label for="typ">Art des Unternehmens *</label><select id="typ" name="Unternehmensart" required><option value="">Bitte auswählen</option><option>Automatenbetreiber</option><option>Automatenhändler</option><option>Automatenhersteller</option><option>Technischer Servicedienstleister</option><option>Sonstiger Kooperationspartner</option></select></div>
+     <div class="field"><label for="firma">Unternehmensname *</label><input id="firma" type="text" name="Firma" autocomplete="organization" required></div>
+     <div class="field"><label for="name">Ansprechpartner *</label><input id="name" type="text" name="Ansprechpartner" autocomplete="name" required></div>
+     <div class="field"><label for="email">Geschäftliche E-Mail *</label><input id="email" type="email" name="E-Mail" autocomplete="email" required></div>
+     <div class="field"><label for="phone">Telefon (freiwillig)</label><input id="phone" type="tel" name="Telefon" autocomplete="tel"></div>
+     <div class="field"><label for="web">Website (freiwillig)</label><input id="web" type="url" name="Website" placeholder="https://"></div>
+     <div class="field wide"><label for="gebiet">Einsatzregion / PLZ-Gebiete *</label><input id="gebiet" type="text" name="Einsatzregion" placeholder="z. B. Region Stuttgart, PLZ 70–75" required></div>
+     <div class="field wide"><label for="land">Länder, in denen Sie tätig sind</label><input id="land" type="text" name="Einsatzlaender" placeholder="z. B. Deutschland"></div>
+     <fieldset><legend>Ihre Leistungen</legend><div class="checks">
+      <label><input type="checkbox" name="Leistung_Aufstellung" value="Ja">Aufstellung</label>
+      <label><input type="checkbox" name="Leistung_Befuellung" value="Ja">Befüllung</label>
+      <label><input type="checkbox" name="Leistung_Wartung" value="Ja">Wartung und Reparatur</label>
+      <label><input type="checkbox" name="Leistung_Verkauf" value="Ja">Automatenverkauf</label>
+      <label><input type="checkbox" name="Leistung_Miete_Leasing" value="Ja">Miete / Leasing</label>
+      <label><input type="checkbox" name="Leistung_FullService" value="Ja">Komplettbetrieb</label>
+     </div></fieldset>
+     <fieldset><legend>Automatenarten</legend><div class="checks">
+      <label><input type="checkbox" name="Art_Snacks" value="Ja">Snackautomaten</label>
+      <label><input type="checkbox" name="Art_Getraenke" value="Ja">Getränkeautomaten</label>
+      <label><input type="checkbox" name="Art_Kombi" value="Ja">Kombiautomaten</label>
+      <label><input type="checkbox" name="Art_Kaffee" value="Ja">Kaffeeautomaten</label>
+      <label><input type="checkbox" name="Art_Sonstige" value="Ja">Sonstige Automaten</label>
+     </div></fieldset>
+     <div class="field wide"><label for="details">Kapazitäten und weitere Hinweise (freiwillig)</label><textarea id="details" name="Weitere_Hinweise" rows="4" placeholder="Welche Standorte können Sie betreuen? Haben Sie Mindestanforderungen?"></textarea></div>
     </div>
-
-    <div class="reg-grid">
-      <aside class="aside">
-        <strong>So läuft es ab</strong>
-        <ul>
-          <li>Formular ausfüllen</li>
-          <li>BODA prüft die Angaben</li>
-          <li>Persönliches Kennenlernen</li>
-          <li>Schriftliche Vereinbarung bei Zusammenarbeit</li>
-        </ul>
-      </aside>
-
-      <!-- FORM.TAXI: PARTNERBEWERBUNG -->
-      <form class="form-card"
-            action="https://form.taxi/s/x6tb5csf"
-            method="POST"
-            accept-charset="UTF-8">
-
-        <input type="hidden" name="_subject" value="BODA Snacks – neue Partnerbewerbung">
-        <input type="hidden" name="Anfragequelle" value="BODA Partneranmeldung">
-
-        <!-- Unsichtbarer Spam-Schutz -->
-        <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
-          <label>Bitte leer lassen
-            <input type="text" name="_honeypot" tabindex="-1" autocomplete="off">
-          </label>
-        </div>
-
-        <div class="fields">
-          <div class="field">
-            <label for="typ">Art des Unternehmens *</label>
-            <select id="typ" name="Unternehmensart" required>
-              <option value="">Bitte auswählen</option>
-              <option>Automatenbetreiber</option>
-              <option>Automatenhändler</option>
-              <option>Automatenhersteller</option>
-              <option>Technischer Servicedienstleister</option>
-              <option>Sonstiger Kooperationspartner</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="firma">Unternehmensname *</label>
-            <input id="firma" type="text" name="Firma" autocomplete="organization" required>
-          </div>
-
-          <div class="field">
-            <label for="name">Ansprechpartner *</label>
-            <input id="name" type="text" name="Ansprechpartner" autocomplete="name" required>
-          </div>
-
-          <div class="field">
-            <label for="email">Geschäftliche E-Mail *</label>
-            <input id="email" type="email" name="E-Mail" autocomplete="email" required>
-          </div>
-
-          <div class="field">
-            <label for="phone">Telefon (freiwillig)</label>
-            <input id="phone" type="tel" name="Telefon" autocomplete="tel">
-          </div>
-
-          <div class="field">
-            <label for="web">Website (freiwillig)</label>
-            <input id="web" type="url" name="Website" placeholder="https://">
-          </div>
-
-          <div class="field wide">
-            <label for="gebiet">Einsatzregion / PLZ-Gebiete *</label>
-            <input id="gebiet" type="text" name="Einsatzregion"
-                   placeholder="z. B. Region Stuttgart, PLZ 70–75" required>
-          </div>
-
-          <div class="field wide">
-            <label for="land">Länder, in denen Sie tätig sind</label>
-            <input id="land" type="text" name="Einsatzlaender"
-                   placeholder="z. B. Deutschland">
-          </div>
-
-          <fieldset>
-            <legend>Ihre Leistungen</legend>
-            <div class="checks">
-              <label><input type="checkbox" name="Leistung_Aufstellung" value="Ja">Aufstellung</label>
-              <label><input type="checkbox" name="Leistung_Befuellung" value="Ja">Befüllung</label>
-              <label><input type="checkbox" name="Leistung_Wartung" value="Ja">Wartung und Reparatur</label>
-              <label><input type="checkbox" name="Leistung_Verkauf" value="Ja">Automatenverkauf</label>
-              <label><input type="checkbox" name="Leistung_Miete_Leasing" value="Ja">Miete / Leasing</label>
-              <label><input type="checkbox" name="Leistung_FullService" value="Ja">Komplettbetrieb</label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Automatenarten</legend>
-            <div class="checks">
-              <label><input type="checkbox" name="Art_Snacks" value="Ja">Snackautomaten</label>
-              <label><input type="checkbox" name="Art_Getraenke" value="Ja">Getränkeautomaten</label>
-              <label><input type="checkbox" name="Art_Kombi" value="Ja">Kombiautomaten</label>
-              <label><input type="checkbox" name="Art_Kaffee" value="Ja">Kaffeeautomaten</label>
-              <label><input type="checkbox" name="Art_Sonstige" value="Ja">Sonstige Automaten</label>
-            </div>
-          </fieldset>
-
-          <div class="field wide">
-            <label for="details">Kapazitäten und weitere Hinweise (freiwillig)</label>
-            <textarea id="details" name="Weitere_Hinweise" rows="4"
-              placeholder="Welche Standorte können Sie betreuen? Haben Sie Mindestanforderungen?"></textarea>
-          </div>
-        </div>
-
-        <div class="privacy">
-          <p><strong>Datenschutz:</strong> Wir verwenden Ihre Angaben zur Prüfung Ihrer Partnerbewerbung. Die technische Formularübermittlung erfolgt über Form.taxi. Ihre Daten werden nicht automatisch an andere Partner weitergegeben. Weitere Informationen: <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-        </div>
-
-        <button class="submit" type="submit">Partnerbewerbung absenden →</button>
-        <p class="footnote">* Pflichtfelder. Keine automatische Partneraufnahme oder Vertragsbindung. Nach erfolgreicher Übermittlung werden Sie auf unsere BODA-Dankeseite weitergeleitet.</p>
-
-      </form>
+    <!-- Datenschutz: Pflichtbestaetigung vor dem Absenden -->
+    <div class="privacy">
+      <p><strong>Datenschutz:</strong> Wir verwenden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Partnerbewerbung. Die technische Übermittlung erfolgt über Form.taxi. Ihre Daten werden nicht automatisch an andere Netzwerkpartner weitergegeben.</p>
+      <label class="privacy-confirm" for="privacy-ack">
+        <input type="checkbox" id="privacy-ack" name="Datenschutzhinweise zur Kenntnis genommen" value="Ja" required aria-required="true">
+        <span>Ich habe die <a href="https://boda-snacks.de/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von BODA Snacks</a> gelesen und zur Kenntnis genommen. <strong aria-label="Pflichtfeld">*</strong></span>
+      </label>
+      <p class="privacy-hint">* Pflichtfeld – ohne Bestätigung kann die Partnerbewerbung nicht abgesendet werden.</p>
     </div>
+    <button class="submit" type="submit">Partnerbewerbung absenden →</button>
+    <p class="footnote">* Pflichtfelder. Keine automatische Partneraufnahme oder Vertragsbindung. Nach erfolgreicher Übermittlung werden Sie auf unsere BODA-Dankeseite weitergeleitet.</p>
+   </form>
   </div>
-</section>
-
-<section class="contact">
-  <div class="wrap">
-    <span class="eyebrow">Persönlicher Kontakt</span>
-    <h2>Fragen zur Zusammenarbeit?</h2>
-    <p>Sie erreichen uns auch direkt unter
-      <a href="mailto:kontakt@boda-snacks.de">kontakt@boda-snacks.de</a>
-      oder telefonisch unter
-      <a href="tel:+4972317703719">07231 7703719</a>.
-    </p>
-  </div>
-</section>
+ </div></section>
+ <section class="contact"><div class="wrap"><span class="eyebrow">Persönlicher Kontakt</span><h2>Fragen zur Zusammenarbeit?</h2><p>Sie erreichen uns auch direkt unter <a href="mailto:kontakt@boda-snacks.de">kontakt@boda-snacks.de</a> oder telefonisch unter <a href="tel:+4972317703719">07231 7703719</a>.</p></div></section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-inner">
-      <div>
-        <strong>BODA SNACKS GbR</strong>
-        <p>Automatenservice, Vermittlung und Partnernetzwerk.</p>
-      </div>
-      <nav aria-label="Fußnavigation">
-        <a href="index.html">Startseite</a>
-        <a href="automatenvermittlung-deutschlandweit.html">Vermittlung</a>
-        <a href="automaten-kaufen.html">Automaten kaufen</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 BODA Snacks GbR</span>
-      <button class="cookie-settings" id="cookie-settings" type="button">Cookie-Einstellungen</button>
-    </div>
-  </div>
-</footer>
-
-<div class="cookie" id="cookie" hidden>
-  <h2>Datenschutzeinstellungen</h2>
-  <p>Mit Ihrer Zustimmung verwenden wir Google Analytics zur Auswertung der Websitenutzung. Ohne Zustimmung bleibt die Analyse deaktiviert.
-    <a href="datenschutz.html">Datenschutz</a>
-  </p>
-  <div class="cookie-buttons">
-    <button type="button" id="cookie-no">Ohne Analyse</button>
-    <button type="button" id="cookie-yes">Analyse erlauben</button>
-  </div>
-</div>
-
+<footer><div class="wrap"><div class="footer-inner"><div><strong>BODA SNACKS GbR</strong><p>Automatenservice, Vermittlung und Partnernetzwerk.</p></div><nav aria-label="Fußnavigation"><a href="index.html">Startseite</a><a href="automatenvermittlung-deutschlandweit.html">Vermittlung</a><a href="automaten-kaufen.html">Automaten kaufen</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav></div><div class="footer-bottom"><span>© 2026 BODA Snacks GbR</span><button class="cookie-settings" id="cookie-settings" type="button">Cookie-Einstellungen</button></div></div></footer>
+<div class="cookie" id="cookie" hidden><h2>Datenschutzeinstellungen</h2><p>Mit Ihrer Zustimmung verwenden wir Google Analytics zur Auswertung der Websitenutzung. Ohne Zustimmung bleibt die Analyse deaktiviert. <a href="datenschutz.html">Datenschutz</a></p><div class="cookie-buttons"><button type="button" id="cookie-no">Ohne Analyse</button><button type="button" id="cookie-yes">Analyse erlauben</button></div></div>
 <script>
-const menu = document.getElementById('menuToggle');
-const nav = document.getElementById('mainNav');
-
-menu.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  menu.setAttribute('aria-expanded', String(open));
-});
-
-nav.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded', 'false');
-  })
-);
-
-(() => {
-  const key = 'boda-consent-v2';
-  const ga = 'G-6RJ6RX8XWZ';
-  const box = document.getElementById('cookie');
-  const preview = location.protocol === 'file:';
-  let loaded = false;
-
-  function analytics() {
-    if (loaded || preview) return;
-    loaded = true;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function() {
-      dataLayer.push(arguments);
-    };
-    gtag('js', new Date());
-    gtag('config', ga, {
-      allow_google_signals: false,
-      allow_ad_personalization_signals: false
-    });
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga;
-    document.head.appendChild(s);
-  }
-
-  function off() {
-    window['ga-disable-' + ga] = true;
-
-    for (const item of document.cookie.split(';')) {
-      const n = item.split('=')[0].trim();
-
-      if (n === '_ga' || n.startsWith('_ga_') || n === '_gid') {
-        for (const d of ['', location.hostname, '.' + location.hostname, '.boda-snacks.de']) {
-          document.cookie = n + '=;Max-Age=0;path=/' +
-            (d ? ';domain=' + d : '') + ';SameSite=Lax';
-        }
-      }
-    }
-  }
-
-  function save(v) {
-    try {
-      localStorage.setItem(key, JSON.stringify({
-        analytics: v,
-        at: Date.now()
-      }));
-    } catch (e) {}
-
-    box.hidden = true;
-
-    if (v) analytics();
-    else off();
-  }
-
-  document.getElementById('cookie-no')
-    .addEventListener('click', () => save(false));
-
-  document.getElementById('cookie-yes')
-    .addEventListener('click', () => save(true));
-
-  document.getElementById('cookie-settings')
-    .addEventListener('click', () => {
-      box.hidden = false;
-    });
-
-  if (!preview) {
-    let c = null;
-
-    try {
-      c = JSON.parse(localStorage.getItem(key));
-    } catch (e) {}
-
-    if (
-      c &&
-      typeof c.analytics === 'boolean' &&
-      Date.now() - c.at < 180 * 86400000
-    ) {
-      if (c.analytics) analytics();
-      else off();
-    } else {
-      box.hidden = false;
-    }
-  }
+const menu=document.getElementById('menuToggle'),nav=document.getElementById('mainNav');
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+(()=>{
+ const key='boda-consent-v2',ga='G-6RJ6RX8XWZ',box=document.getElementById('cookie');
+ const preview=location.protocol==='file:';let loaded=false;
+ function analytics(){if(loaded||preview)return;loaded=true;window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config',ga,{allow_google_signals:false,allow_ad_personalization_signals:false});const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ga;document.head.appendChild(s);}
+ function off(){window['ga-disable-'+ga]=true;for(const item of document.cookie.split(';')){const n=item.split('=')[0].trim();if(n==='_ga'||n.startsWith('_ga_')||n==='_gid'){for(const d of ['',location.hostname,'.'+location.hostname,'.boda-snacks.de'])document.cookie=n+'=;Max-Age=0;path=/'+(d?';domain='+d:'')+';SameSite=Lax';}}}
+ function save(v){try{localStorage.setItem(key,JSON.stringify({analytics:v,at:Date.now()}));}catch(e){}box.hidden=true;if(v)analytics();else off();}
+ document.getElementById('cookie-no').addEventListener('click',()=>save(false));document.getElementById('cookie-yes').addEventListener('click',()=>save(true));document.getElementById('cookie-settings').addEventListener('click',()=>{box.hidden=false;});
+ if(!preview){let c=null;try{c=JSON.parse(localStorage.getItem(key));}catch(e){}if(c&&typeof c.analytics==='boolean'&&Date.now()-c.at<180*86400000){if(c.analytics)analytics();else off();}else box.hidden=false;}
 })();
 </script>
-
 </body>
 </html>
