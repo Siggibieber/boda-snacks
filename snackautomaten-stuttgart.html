@@ -1566,6 +1566,58 @@ body { background:#fff; }
   .hero-note { line-height:1.6; }
 }
 
+
+/* =============================================================
+   BODA Stuttgart – Abstimmung auf die aktuelle Hauptseite (11/2026)
+   Cremeweiss / Gold / Babyblau; keine Eingriffe in Formular-Logik
+   ============================================================= */
+h1{font-size:clamp(2.5rem,4.8vw,4.25rem);letter-spacing:-.045em;line-height:1.1}
+h2{font-size:clamp(2rem,3.3vw,2.8rem);letter-spacing:-.035em;line-height:1.14}
+.brand{flex-direction:row;align-items:center;gap:12px}
+.brand-logo{width:52px;height:52px;object-fit:cover;border-radius:50%;flex-shrink:0}
+.brand-copy{min-width:0;display:flex;flex-direction:column;gap:5px}
+.brand-main{color:var(--ink)}
+.brand-sub{margin-top:0}
+.hero-visual{padding:12px;background:#EFE8D8;min-height:480px}
+.hero-visual img{width:100%;height:455px;max-height:none;object-fit:cover;object-position:55% 48%;border-radius:16px}
+/* Steuerlicher Kurz-Hinweis unter dem babyblauen Preiskasten */
+.tax-note{margin-top:16px;padding:19px 21px;background:#FFFCF6;
+  border:1px solid #E4D7BD;border-left:4px solid var(--gold-fill);
+  border-radius:12px;box-shadow:0 8px 25px rgba(56,46,28,.03)}
+.tax-note-label{display:block;margin-bottom:7px;color:var(--gold);font-size:.72rem;
+  font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+.tax-note strong{display:block;color:var(--ink);font-size:1rem;line-height:1.4}
+.tax-note p{margin:8px 0 0;color:var(--muted);font-size:.84rem;line-height:1.65}
+.tax-note a{color:#765813;text-decoration:underline;font-weight:700}
+.section-head h2{overflow-wrap:anywhere}
+/* Wirtschaftlichkeitsbereich, bewusst analog zur Startseite */
+.stuttgart-economics{background:#fff}
+.stuttgart-economics-panel{display:grid;grid-template-columns: .9fr 1.1fr;gap:46px;
+   padding:45px;background:#F7F3E8;border:1px solid #E6DCC8;border-radius:22px;align-items:start}
+.stuttgart-economics-copy h2{margin:0 0 23px}
+.stuttgart-economics-copy p{margin:0 0 16px}
+.stuttgart-economics-copy p strong{color:var(--ink)}
+.stuttgart-economics-copy .btn{margin-top:12px}
+.stuttgart-economics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.stuttgart-economics-card{background:#FFFEFA;border:1px solid #DFD4BE;border-radius:14px;padding:21px;min-width:0}
+.stuttgart-economics-card>span{display:block;color:var(--gold);font-size:.77rem;font-weight:800;letter-spacing:.08em;margin-bottom:12px}
+.stuttgart-economics-card h3{font-size:1.07rem;line-height:1.28;margin:0 0 10px}
+.stuttgart-economics-card p{font-size:.86rem;line-height:1.55;margin:0}
+.stuttgart-economics-note{margin:17px 0 0;font-size:.78rem;line-height:1.55;color:#665E4C}
+@media(max-width:950px){.stuttgart-economics-panel{grid-template-columns:1fr;gap:25px;padding:31px}}
+@media(max-width:650px){
+  .brand-logo{width:42px;height:42px}
+  .brand-main{font-size:1.07rem}
+  .hero-visual{min-height:338px}
+  .hero-visual img{height:315px}
+  .tax-note{padding:17px 16px}
+  .stuttgart-economics-panel{padding:23px 17px}
+  .stuttgart-economics-grid{grid-template-columns:1fr}
+  .stuttgart-economics-card{padding:19px}
+  .stuttgart-economics-copy .btn{width:100%}
+}
+@media(max-width:360px){.hero h1{font-size:clamp(2.2rem,10vw,2.6rem);overflow-wrap:anywhere}}
+
 </style>
 
 
@@ -1591,31 +1643,39 @@ body { background:#fff; }
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@type":"Question",
-      "name":"Was kostet ein Snackautomat für Unternehmen in Stuttgart?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Die Servicepauschale beginnt bei BODA Snacks ab 98 Euro im Monat. Die konkrete Kondition hängt von Standort, Nutzung, Ausstattung und Serviceumfang ab."
+      "@type": "Question",
+      "name": "Was kostet ein Snackautomat für Unternehmen in Stuttgart?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Servicepauschale beginnt bei BODA Snacks ab 98 Euro im Monat. Die konkrete Kondition hängt von Standort, Nutzung, Ausstattung und Serviceumfang ab."
       }
     },
     {
-      "@type":"Question",
-      "name":"Ab wie vielen Mitarbeitern ist ein Snackautomat sinnvoll?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Für Snack- und Getränkeautomaten ist die Personenanzahl eine erste Orientierung. Bis etwa 25 regelmäßig anwesende Personen prüfen wir besonders kritisch. Zwischen 26 und 39 Personen ist eine individuelle Prüfung sinnvoll. Ab etwa 40 regelmäßig anwesenden Personen sehen wir grundsätzlich eine gute Ausgangslage. Schichtbetrieb, Besucherfrequenz und tatsächliche Nutzung können die Einschätzung verändern. Für reine Kaffeelösungen gelten andere Kriterien wie Tassenmenge und Stoßzeiten."
+      "@type": "Question",
+      "name": "Ab wie vielen Mitarbeitern ist ein Snackautomat sinnvoll?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für Snack- und Getränkeautomaten ist die Personenanzahl eine erste Orientierung. Bis etwa 25 regelmäßig anwesende Personen prüfen wir besonders kritisch. Zwischen 26 und 39 Personen ist eine individuelle Prüfung sinnvoll. Ab etwa 40 regelmäßig anwesenden Personen sehen wir grundsätzlich eine gute Ausgangslage. Schichtbetrieb, Besucherfrequenz und tatsächliche Nutzung können die Einschätzung verändern. Für reine Kaffeelösungen gelten andere Kriterien wie Tassenmenge und Stoßzeiten."
       }
     },
     {
-      "@type":"Question",
-      "name":"Übernimmt BODA Snacks Befüllung und Betreuung?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"BODA Snacks kann je nach vereinbartem Versorgungskonzept Aufstellung, Befüllung, Reinigung und technische Betreuung übernehmen."
+      "@type": "Question",
+      "name": "Übernimmt BODA Snacks Befüllung und Betreuung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BODA Snacks kann je nach vereinbartem Versorgungskonzept Aufstellung, Befüllung, Reinigung und technische Betreuung übernehmen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann man die BODA-Servicepauschale steuerlich berücksichtigen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bei betrieblicher Veranlassung kann die vereinbarte Servicepauschale grundsätzlich als Betriebsausgabe nach § 4 Abs. 4 EStG berücksichtigt werden. Die Kosten werden dadurch nicht vollständig erstattet; die konkrete Behandlung sollte die Steuerberatung prüfen."
       }
     }
   ]
@@ -1659,6 +1719,8 @@ body { background:#fff; }
   class="brand"
   aria-label="BODA Snacks Startseite"
 >
+<img class="brand-logo" src="boda-logo-web.webp" width="52" height="52" alt="" loading="eager">
+<div class="brand-copy">
 
 <span class="brand-main">
 BODA <span class="snacks">SNACKS</span>
@@ -1668,6 +1730,7 @@ BODA <span class="snacks">SNACKS</span>
 Ihr Automatenservice aus Pforzheim
 </span>
 
+</div>
 </a>
 
 
@@ -1696,8 +1759,8 @@ Für wen geeignet?
 Service
 </a>
 
-<a href="#faq">
-FAQ
+<a href="#wirtschaftlichkeit">
+Kosten &amp; Steuern
 </a>
 
 <a
@@ -1780,7 +1843,7 @@ Standortprüfung kostenlos · Servicepauschale ab 98 € im Monat · unverbindli
 <div class="hero-visual">
 
 <img
-  src="boda-automat.jpg"
+  src="boda-automat-web.webp"
   alt="Snack- und Getränkeautomat von BODA Snacks"
   fetchpriority="high"
 >
@@ -1974,6 +2037,17 @@ abweichende Vereinbarungen persönlich abgestimmt werden.
 </details>
 
 </div>
+<!-- Steuerliche Einordnung: keine pauschale Steuerersparnis -->
+<aside class="tax-note" aria-label="Steuerlicher Hinweis für Unternehmen">
+  <span class="tax-note-label">Für Unternehmen interessant</span>
+  <strong>Servicepauschale als Betriebsausgabe berücksichtigen</strong>
+  <p>Ist unsere Servicepauschale betrieblich veranlasst, kann sie grundsätzlich als
+    Betriebsausgabe nach <a href="https://www.gesetze-im-internet.de/estg/__4.html" target="_blank" rel="noopener noreferrer">§ 4 Abs. 4 EStG</a>
+    steuerlich berücksichtigt werden. Dadurch kann sich der steuerpflichtige Gewinn
+    mindern – die Kosten werden jedoch nicht vollständig erstattet.
+    Die steuerliche Beurteilung im Einzelfall übernimmt Ihre Steuerberatung.</p>
+</aside>
+
 
 
 
@@ -3099,6 +3173,45 @@ Reinigung und technische Betreuung nach Vereinbarung.
 </section>
 
 
+<!-- BODA WIRTSCHAFTLICHKEIT: Stuttgart -->
+<section class="section stuttgart-economics" id="wirtschaftlichkeit" aria-labelledby="stuttgart-economics-heading">
+  <div class="wrap">
+    <div class="stuttgart-economics-panel">
+      <div class="stuttgart-economics-copy">
+        <span class="eyebrow">Mehrwert für Arbeitgeber in Stuttgart</span>
+        <h2 id="stuttgart-economics-heading">Gute Pausen für Ihr Team.<br>Planbare Kosten für Ihren Betrieb.</h2>
+        <p>Eine Versorgung mit Snacks und Getränken direkt am Arbeitsplatz entlastet Ihr Team.
+          Sie müssen dafür nicht zwingend selbst einen Automaten kaufen oder die Befüllung organisieren.</p>
+        <p><strong>Auch steuerlich kann die Betreuung relevant sein:</strong> Eine betrieblich veranlasste
+          Servicepauschale ist grundsätzlich als Betriebsausgabe berücksichtigungsfähig.
+          Das mindert gegebenenfalls den steuerpflichtigen Gewinn, ersetzt aber nicht die tatsächlichen Kosten.</p>
+        <a class="btn btn-primary" href="#standort-check">Standort in Stuttgart prüfen ↗</a>
+      </div>
+      <div>
+        <div class="stuttgart-economics-grid">
+          <article class="stuttgart-economics-card"><span aria-hidden="true">01</span>
+            <h3>Keine eigene Automatenanschaffung</h3>
+            <p>Im vereinbarten Versorgungskonzept übernehmen wir die Organisation der Automatenlösung.</p></article>
+          <article class="stuttgart-economics-card"><span aria-hidden="true">02</span>
+            <h3>Planbare Servicekosten</h3>
+            <p>Leistungsumfang und monatliche Pauschale werden vor einer Beauftragung klar vereinbart.</p></article>
+          <article class="stuttgart-economics-card"><span aria-hidden="true">03</span>
+            <h3>Steuerliche Berücksichtigung</h3>
+            <p>Betrieblich veranlasste Kosten können nach § 4 Abs. 4 EStG grundsätzlich abziehbar sein.</p></article>
+          <article class="stuttgart-economics-card"><span aria-hidden="true">04</span>
+            <h3>Mehr Komfort in der Pause</h3>
+            <p>Snacks und Getränke direkt im Betrieb – auch bei Schichtbetrieb und versetzten Pausenzeiten.</p></article>
+        </div>
+        <p class="stuttgart-economics-note">Steuerlicher Hinweis, keine individuelle Steuerberatung:
+          Ob und in welcher Höhe ein Abzug zulässig ist, hängt von Ihrem Unternehmen ab.
+          Arbeitgeberzuschüsse und mögliche lohnsteuerliche Folgen sind gesondert zu beurteilen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 <section class="section soft">
 
@@ -3293,6 +3406,15 @@ Die wichtigsten Fragen vor Ihrer Standortprüfung.
 
 
 <div class="faq-list">
+
+<details>
+  <summary>Kann unser Unternehmen die Servicepauschale steuerlich absetzen?</summary>
+  <p>Bei betrieblicher Veranlassung kann die vereinbarte Servicepauschale grundsätzlich
+     als Betriebsausgabe berücksichtigt werden (§ 4 Abs. 4 EStG). Die mögliche
+     Steuerentlastung ist keine vollständige Kostenerstattung. Bitte klären Sie die
+     steuerliche Behandlung für Ihr Unternehmen mit Ihrer Steuerberatung.</p>
+</details>
+
 
 
 <details open>
