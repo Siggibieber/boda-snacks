@@ -12,7 +12,7 @@
 >
 
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#244b39">
+<meta name="theme-color" content="#F7F3E8">
 
 <link
   rel="canonical"
@@ -1485,6 +1485,87 @@ p{
   }
 
 }
+
+/* =============================================================
+   BODA DESIGN 11/2026 · Cremeweiss / Gold / Babyblau
+   Bestehende Funktionalitaet, Standort-Check und SEO bleiben erhalten.
+   ============================================================= */
+:root {
+  --cream:#F7F3E8;
+  --cream-light:#FCFAF5;
+  --cream-line:#E7DDCB;
+  --baby-blue:#E9F5FF;
+  --blue-ink:#173E5F;
+  --soft:#FAF8F3;
+  --soft-green:#F7F3E8;
+  --line:#E7E0D4;
+}
+/* Sanftes, helles Gesamtbild */
+body { background:#fff; }
+.hero { background:var(--cream); border-bottom:1px solid var(--cream-line); }
+.hero-visual { background:#EFE8D8; border:1px solid #E3D8C3; }
+.hero-copy strong { color:var(--ink); }
+.hero-badge { background:#FFFCF6; border-color:var(--cream-line); }
+.soft { background:var(--cream-light); }
+.contact-section { background:var(--cream); }
+.check-section {
+  background:linear-gradient(140deg,#F7F3E8 0%,#FFFEFB 74%);
+  border-color:var(--cream-line);
+}
+.check-card { border-color:#DED7C9; box-shadow:0 16px 48px rgba(56,46,28,.065); }
+.card,.related-card,.contact-link { border-color:var(--cream-line); }
+.choice input:checked+span, .radio-grid input:checked+span { background:#FFF6E5; }
+/* Regionalkasten: statt dunklem Gruen warmes Cremeweiss */
+.local-box {
+  background:var(--cream);
+  color:var(--ink);
+  border:1px solid #E2D6BD;
+  box-shadow:0 12px 35px rgba(56,46,28,.045);
+}
+.local-box h2 { color:var(--ink); }
+.local-box .eyebrow { color:var(--gold); }
+.local-box p { color:var(--muted); }
+.local-points,.local-point { border-color:#DCD0BB; }
+.local-point strong { color:var(--ink); }
+/* Full-Service: cremeweisse Leistungsflaeche */
+.service-box {
+  background:var(--cream);
+  border:1px solid #E2D6BD;
+}
+.service-box h2,.service-item strong { color:var(--ink); }
+.service-box .eyebrow { color:var(--gold); }
+.service-box>p,.service-item span { color:var(--muted); }
+.service-grid,.service-item+.service-item { border-color:#DCD0BB; }
+/* Preiskasten: Babyblau bewusst nur fuer sachliche Preisinfos */
+.price-box {
+  background:var(--baby-blue);
+  border:1px solid #BCD8EA;
+  box-shadow:0 10px 30px rgba(23,62,95,.045);
+}
+.price-box>strong { color:var(--blue-ink); }
+.price-box p { color:#31546B; }
+.price-box summary { color:#15577C; }
+.price-details { border-color:#C8DFEC; }
+.price-details strong { color:var(--blue-ink); }
+/* Dezenter Informations-Look, ohne Ergebnisfarben zu verfaelschen */
+.result-card.neutral { background:linear-gradient(145deg,#F8F5ED,#fff); }
+.result-card.positive { background:linear-gradient(145deg,#F1F8F3,#fff); }
+.check-trust-icon { background:#EEE6D4; color:#72511B; }
+.hero-actions .btn-secondary { background:#FFFEFA; border-color:#CFC5B1; }
+.hero-actions .btn-secondary:hover { background:#fff; border-color:#88601f; }
+.contact-link:hover, .related-card:hover { background:#FFFCF6; }
+.privacy a { color:#15577C; }
+@media(max-width:950px) {
+  .local-box { gap:20px; }
+}
+@media(max-width:650px) {
+  h1 { font-size:clamp(2.35rem,10vw,3.15rem); overflow-wrap:break-word; line-height:1.05; }
+  .hero-visual { min-height:320px; }
+  .local-point { border-color:#DCD0BB; }
+  .service-item,.service-item+.service-item { border-color:#DCD0BB; }
+  .hero-note { line-height:1.6; }
+}
+
 </style>
 
 
@@ -2600,7 +2681,7 @@ Ich habe die
 <a
   href="datenschutz.html"
   target="_blank"
-  rel="noopener"
+  rel="noopener noreferrer"
 >
 Datenschutzerklärung
 </a>
