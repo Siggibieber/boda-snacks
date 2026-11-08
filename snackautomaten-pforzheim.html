@@ -29,6 +29,9 @@
   --gold:#88601f;
   --gold-fill:#dbb86e;
   --gold-hover:#cda456;
+  --lightgreen:#c1e8ae;
+  --lightgreen-hover:#acd995;
+  --lightgreen-ink:#193e26;
   --white:#fff;
   --soft:#f6fafd;
   --soft-blue:#ecf6fc;
@@ -235,14 +238,15 @@ p{color:var(--muted)}
 /* Freiwilliger WhatsApp-Kontakt ohne eingebettetes Chat-Widget */
 
 .btn-whatsapp{
-  background:var(--blue);
-  border-color:var(--blue);
-  color:var(--blue-ink);
+  background:var(--lightgreen);
+  border-color:var(--lightgreen);
+  color:var(--lightgreen-ink);
 }
 
-.btn-whatsapp:hover{
-  background:var(--blue-hover);
-  border-color:var(--blue-hover);
+.btn-whatsapp:hover,
+.btn-whatsapp:focus-visible{
+  background:var(--lightgreen-hover);
+  border-color:var(--lightgreen-hover);
 }
 
 .contact-privacy-note{
@@ -1284,11 +1288,18 @@ p{color:var(--muted)}
   display:grid;
   place-items:center;
   border-radius:50%;
-  background:#bedff2;
-  color:var(--blue-ink);
+  background:var(--lightgreen);
+  color:var(--lightgreen-ink);
   text-decoration:none;
   font-size:24px;
   box-shadow:0 8px 25px rgba(0,0,0,.16);
+  transition:background .2s ease,transform .2s ease;
+}
+
+.whatsapp-btn:hover,
+.whatsapp-btn:focus-visible{
+  background:var(--lightgreen-hover);
+  transform:translateY(-2px);
 }
 
 /* COOKIE-HINWEIS */
@@ -2953,7 +2964,10 @@ p{color:var(--muted)}
   aria-label="WhatsApp-Anfrage an BODA Snacks: 0177 6901863 (öffnet WhatsApp)"
   aria-describedby="whatsapp-datenschutz"
 >
-  💬
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <path d="M20.1 11.5a8.1 8.1 0 0 1-8.2 8.1 8.1 8.1 0 0 1-3.6-.8L4 20l1.2-4.1a8.1 8.1 0 1 1 14.9-4.4Z"/>
+    <path d="m9.1 8.3 1.1 1.5-.6 1.1c.7 1.4 1.6 2.3 3.1 3.1l1.1-.6 1.5 1.1"/>
+  </svg>
 </a>
 
 <div id="cookie-banner">
