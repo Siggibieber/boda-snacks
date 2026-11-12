@@ -305,6 +305,15 @@ z-index:2;
 
 
 </style>
+
+<script defer src="boda-consent.js?v=20261111-1"></script>
+
+<style id="boda-consent-repair-style">
+[data-boda-consent-panel][hidden]{display:none!important}
+[data-boda-consent-panel]{max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain}
+[data-boda-consent-panel] button:focus-visible{outline:3px solid #244b39;outline-offset:3px}
+</style>
+<meta name="robots" content="noindex,follow">
 </head>
 <body>
 
@@ -1243,7 +1252,7 @@ UNSERE LÖSUNGEN
          Snacks und Getränke in einem Automaten – die perfekte Lösung für
          Unternehmen jeder Größe.
        </p>
-       <a href="snack-und-getraenkeautomat-fuer-unternehmen-mieten.html" class="btn-primary">
+       <a href="kombi-snackautomat-fuer-unternehmen-mieten.html" class="btn-primary">
          Mehr erfahren
        </a>
      </div>
@@ -1266,7 +1275,7 @@ UNSERE LÖSUNGEN
          Wir übernehmen Befüllung, Wartung und den kompletten Service-
          zuverlässig und Regional.
        </p>
-       <a href="verpflegungsautomat-fuer-unternehmen.html" class="btn-primary">
+       <a href="lebensmittelautomat-fuer-unternehmen.html" class="btn-primary">
          Mehr erfahren
        </a>
      </div>
@@ -1794,11 +1803,11 @@ Kombi-Snackautomat für Unternehmen mieten
 Lebensmittelautomat für Unternehmen
 </a>
 
-<a href="snack-und-getraenkeautomat-fuer-unternehmen-mieten.html">
+<a href="kombi-snackautomat-fuer-unternehmen-mieten.html">
 Snack- & Getränkeautomat für Unternehmen
 </a>
 
-<a href="verpflegungsautomat-fuer-unternehmen.html">
+<a href="lebensmittelautomat-fuer-unternehmen.html">
 Verpflegungsautomat für Unternehmen
 </a>
 
@@ -1844,11 +1853,12 @@ datenschutz
 © 2026 BODA Snacks GbR · Alle Rechte vorbehalten
 </p>
 </div>
+<button id="cookie-settings" type="button" style="background:none;border:0;padding:12px;color:inherit;font:inherit;text-decoration:underline;cursor:pointer">Cookie-Einstellungen</button>
 </footer>
 <!-- =====================================
 WHATSAPP BUTTON
 ===================================== -->
-<a href="https://wa.me/491778675852"
+<a href="https://wa.me/491776901863"
 target="_blank"
 class="whatsapp-btn">
 <span>💬</span>
@@ -1878,87 +1888,7 @@ Ablehnen
 <!-- =====================================
 SCRIPTS
 ===================================== -->
-<script>
-
-/* COOKIE */
-
-function loadAnalytics(){
-
-const script=document.createElement('script');
-
-script.async=true;
-
-script.src='https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ';
-
-document.head.appendChild(script);
-
-script.onload=function(){
-
-window.dataLayer=window.dataLayer||[];
-
-function gtag(){
-dataLayer.push(arguments);
-}
-
-window.gtag=gtag;
-
-gtag('js',new Date());
-
-gtag('config','G-6RJ6RX8XWZ');
-
-};
-
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-
-const banner=document.getElementById('cookie-banner');
-
-const saved=localStorage.getItem('bodaCookiesAccepted');
-
-if(saved==='true'){
-
-banner.style.display='none';
-
-loadAnalytics();
-
-}
-
-if(saved==='false'){
-
-banner.style.display='none';
-
-}
-
-document.getElementById('cookie-accept')
-.addEventListener('click',()=>{
-
-localStorage.setItem(
-'bodaCookiesAccepted',
-'true'
-);
-
-banner.style.display='none';
-
-loadAnalytics();
-
-});
-
-document.getElementById('cookie-decline')
-.addEventListener('click',()=>{
-
-localStorage.setItem(
-'bodaCookiesAccepted',
-'false'
-);
-
-banner.style.display='none';
-
-});
-
-});
-
-/* SCROLL ANIMATION */
+<script>/* SCROLL ANIMATION */
 
 const observer=
 new IntersectionObserver((entries)=>{
