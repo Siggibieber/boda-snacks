@@ -256,6 +256,14 @@
     }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
   </style>
+
+<script defer src="boda-consent.js?v=20261111-1"></script>
+
+<style id="boda-consent-repair-style">
+[data-boda-consent-panel][hidden]{display:none!important}
+[data-boda-consent-panel]{max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain}
+[data-boda-consent-panel] button:focus-visible{outline:3px solid #244b39;outline-offset:3px}
+</style>
 </head>
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -455,67 +463,8 @@
         }
       });
     }
-
-    // Gleiches Analytics-Einwilligungsschema wie auf den bestehenden Betreiberseiten.
-    const key = 'boda-consent-v2';
-    const ga = 'G-6RJ6RX8XWZ';
-    const panel = document.getElementById('cookie-panel');
-    const prefs = document.getElementById('cookie-settings');
-    const localPreview = location.protocol === 'file:';
-    let loaded = false;
-    function consent() {
-      try {
-        const stored = JSON.parse(localStorage.getItem(key));
-        return stored && typeof stored.analytics === 'boolean' && Number.isFinite(stored.at) && Date.now() - stored.at < 180 * 86400000 ? stored : null;
-      } catch (_) { return null; }
-    }
-    function loadAnalytics() {
-      if (localPreview || loaded) return;
-      loaded = true;
-      window['ga-disable-' + ga] = false;
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      window.gtag('config', ga, { allow_google_signals: false, allow_ad_personalization_signals: false });
-      const script = document.createElement('script');
-      script.async = true;
-      script.id = 'boda-analytics';
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga;
-      document.head.appendChild(script);
-    }
-    function clearAnalyticsCookies() {
-      document.cookie.split(';').forEach(cookie => {
-        const name = cookie.split('=')[0].trim();
-        if (name === '_ga' || name.startsWith('_ga_') || name === '_gid' || name.startsWith('_gat')) {
-          ['', location.hostname, '.' + location.hostname, 'boda-snacks.de', '.boda-snacks.de'].forEach(domain => {
-            document.cookie = name + '=; Max-Age=0; path=/' + (domain ? '; domain=' + domain : '') + '; SameSite=Lax';
-          });
-        }
-      });
-    }
-    function choose(enabled) {
-      try { localStorage.setItem(key, JSON.stringify({ analytics: enabled, at: Date.now() })); } catch (_) {}
-      panel.hidden = true;
-      if (enabled) loadAnalytics();
-      else {
-        window['ga-disable-' + ga] = true;
-        document.getElementById('boda-analytics')?.remove();
-        clearAnalyticsCookies();
-      }
-    }
-    if (panel && prefs) {
-      prefs.hidden = localPreview;
-      if (!localPreview) {
-        const current = consent();
-        if (!current) panel.hidden = false;
-        else if (current.analytics) loadAnalytics();
-      }
-      document.getElementById('cookie-accept').addEventListener('click', () => choose(true));
-      document.getElementById('cookie-decline').addEventListener('click', () => choose(false));
-      prefs.addEventListener('click', () => { panel.hidden = false; });
-      document.getElementById('cookie-close').addEventListener('click', () => { panel.hidden = true; });
-    }
-  })();
-  </script>
+/* Einwilligung zentral in boda-consent.js. */
+})();
+</script>
 </body>
 </html>

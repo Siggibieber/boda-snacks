@@ -78,6 +78,14 @@ footer{background:#202821;color:#fff;padding:42px 0 24px}footer p{color:#C9D0C9}
 @media(max-width:540px){.brand small{font-size:.65rem}.brand img{width:40px;height:40px}.hero h1{overflow-wrap:anywhere}.actions .btn{width:100%}.fields,.checks{grid-template-columns:1fr}.form-card{padding:20px}.wrap{width:calc(100% - 32px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
+
+<script defer src="boda-consent.js?v=20261111-1"></script>
+
+<style id="boda-consent-repair-style">
+[data-boda-consent-panel][hidden]{display:none!important}
+[data-boda-consent-panel]{max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain}
+[data-boda-consent-panel] button:focus-visible{outline:3px solid #244b39;outline-offset:3px}
+</style>
 </head>
 <body>
 <header class="top">
@@ -175,15 +183,7 @@ footer{background:#202821;color:#fff;padding:42px 0 24px}footer p{color:#C9D0C9}
 const menu=document.getElementById('menuToggle'),nav=document.getElementById('mainNav');
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
-(()=>{
- const key='boda-consent-v2',ga='G-6RJ6RX8XWZ',box=document.getElementById('cookie');
- const preview=location.protocol==='file:';let loaded=false;
- function analytics(){if(loaded||preview)return;loaded=true;window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config',ga,{allow_google_signals:false,allow_ad_personalization_signals:false});const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ga;document.head.appendChild(s);}
- function off(){window['ga-disable-'+ga]=true;for(const item of document.cookie.split(';')){const n=item.split('=')[0].trim();if(n==='_ga'||n.startsWith('_ga_')||n==='_gid'){for(const d of ['',location.hostname,'.'+location.hostname,'.boda-snacks.de'])document.cookie=n+'=;Max-Age=0;path=/'+(d?';domain='+d:'')+';SameSite=Lax';}}}
- function save(v){try{localStorage.setItem(key,JSON.stringify({analytics:v,at:Date.now()}));}catch(e){}box.hidden=true;if(v)analytics();else off();}
- document.getElementById('cookie-no').addEventListener('click',()=>save(false));document.getElementById('cookie-yes').addEventListener('click',()=>save(true));document.getElementById('cookie-settings').addEventListener('click',()=>{box.hidden=false;});
- if(!preview){let c=null;try{c=JSON.parse(localStorage.getItem(key));}catch(e){}if(c&&typeof c.analytics==='boolean'&&Date.now()-c.at<180*86400000){if(c.analytics)analytics();else off();}else box.hidden=false;}
-})();
+/* Einwilligung zentral in boda-consent.js. */
 </script>
 </body>
 </html>

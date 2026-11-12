@@ -2626,6 +2626,14 @@
   }
   </script>
 
+
+<script defer src="boda-consent.js?v=20261111-1"></script>
+
+<style id="boda-consent-repair-style">
+[data-boda-consent-panel][hidden]{display:none!important}
+[data-boda-consent-panel]{max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain}
+[data-boda-consent-panel] button:focus-visible{outline:3px solid #244b39;outline-offset:3px}
+</style>
 </head>
 
 
@@ -5057,7 +5065,7 @@
 
 
 <a
-  href="https://wa.me/491778675852"
+  href="https://wa.me/491776901863"
   target="_blank"
   rel="noopener"
   class="whatsapp-btn"
@@ -5171,212 +5179,7 @@
 
 
 <script>
-
-  (function () {
-
-    "use strict";
-
-
-    const consentKey =
-      "bodaCookiesAccepted";
-
-
-    const banner =
-      document.getElementById("cookie-banner");
-
-
-    const accept =
-      document.getElementById("cookie-accept");
-
-
-    const decline =
-      document.getElementById("cookie-decline");
-
-
-    const settings =
-      document.getElementById("cookieSettings");
-
-
-    let analyticsLoaded =
-      false;
-
-
-
-    function loadAnalytics() {
-
-
-      if (analyticsLoaded) {
-        return;
-      }
-
-
-      analyticsLoaded =
-        true;
-
-
-      window.dataLayer =
-        window.dataLayer || [];
-
-
-      window.gtag =
-        function () {
-
-          window.dataLayer.push(arguments);
-
-        };
-
-
-      window.gtag(
-        "js",
-        new Date()
-      );
-
-
-      window.gtag(
-        "config",
-        "G-6RJ6RX8XWZ"
-      );
-
-
-      const script =
-        document.createElement("script");
-
-
-      script.async =
-        true;
-
-
-      script.src =
-        "https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ";
-
-
-      document.head.appendChild(script);
-
-
-    }
-
-
-
-    function getChoice() {
-
-
-      try {
-
-        return localStorage.getItem(
-          consentKey
-        );
-
-      }
-
-
-      catch (error) {
-
-        return null;
-
-      }
-
-
-    }
-
-
-
-    function saveChoice(value) {
-
-
-      try {
-
-        localStorage.setItem(
-          consentKey,
-          value
-        );
-
-      }
-
-
-      catch (error) {
-
-      }
-
-
-      banner.style.display =
-        "none";
-
-
-    }
-
-
-
-    const savedChoice =
-      getChoice();
-
-
-    if (
-      savedChoice ===
-      "true"
-    ) {
-
-      loadAnalytics();
-
-    }
-
-
-    else if (
-      savedChoice !==
-      "false"
-    ) {
-
-      banner.style.display =
-        "block";
-
-    }
-
-
-
-    accept.addEventListener(
-      "click",
-      function () {
-
-        saveChoice("true");
-
-        loadAnalytics();
-
-      }
-    );
-
-
-
-    decline.addEventListener(
-      "click",
-      function () {
-
-        saveChoice("false");
-
-      }
-    );
-
-
-
-    if (settings) {
-
-
-      settings.addEventListener(
-        "click",
-        function (event) {
-
-          event.preventDefault();
-
-          banner.style.display =
-            "block";
-
-        }
-      );
-
-
-    }
-
-
-  }());
-
+/* Einwilligung zentral in boda-consent.js. */
 </script>
 
 

@@ -29,6 +29,14 @@
 .boda-cookie-panel[hidden]{display:none!important}
 @media(max-width:550px){.boda-cookie-panel{left:12px;bottom:12px;width:calc(100% - 24px);padding:18px}.boda-cookie-panel button{flex:1}}
 </style>
+
+<script defer src="boda-consent.js?v=20261111-1"></script>
+
+<style id="boda-consent-repair-style">
+[data-boda-consent-panel][hidden]{display:none!important}
+[data-boda-consent-panel]{max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain}
+[data-boda-consent-panel] button:focus-visible{outline:3px solid #244b39;outline-offset:3px}
+</style>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -54,57 +62,6 @@
 <div class="boda-cookie-actions"><button type="button" id="boda-cookie-decline">Ohne Analyse</button><button type="button" class="agree" id="boda-cookie-accept">Analyse erlauben</button></div>
 </aside>
 <script>
-(()=>{
-  'use strict';
-  const consentKey='boda-consent-v2';
-  const analyticsId='G-6RJ6RX8XWZ';
-  const panel=document.getElementById('boda-cookie-panel');
-  const settings=document.getElementById('boda-cookie-settings');
-  const isPreview=location.protocol==='file:'||document.documentElement.dataset.preview==='true';
-  let isLoaded=false;
-  function getConsent(){
-    try{
-      const v=JSON.parse(localStorage.getItem(consentKey));
-      if(v && typeof v.analytics==='boolean' && Number.isFinite(v.at) && Date.now()-v.at<180*86400000)return v;
-    }catch(e){}
-    return null;
-  }
-  function analyticsOn(){
-    if(isPreview||isLoaded)return;
-    isLoaded=true;
-    window['ga-disable-'+analyticsId]=false;
-    window.dataLayer=window.dataLayer||[];
-    window.gtag=function(){window.dataLayer.push(arguments);};
-    window.gtag('js',new Date());
-    window.gtag('config',analyticsId,{allow_google_signals:false,allow_ad_personalization_signals:false});
-    const s=document.createElement('script');s.async=true;s.id='boda-analytics';s.src='https://www.googletagmanager.com/gtag/js?id='+analyticsId;
-    document.head.appendChild(s);
-  }
-  function analyticsOff(){
-    window['ga-disable-'+analyticsId]=true;
-    document.getElementById('boda-analytics')?.remove();
-    const domains=['',location.hostname,'.'+location.hostname,'boda-snacks.de','.boda-snacks.de'];
-    for(const cookie of document.cookie.split(';')){
-      const n=cookie.split('=')[0].trim();
-      if(n==='_ga'||n.startsWith('_ga_')||n==='_gid'||n.startsWith('_gat')){
-        for(const d of domains){document.cookie=n+'=; Max-Age=0; path=/'+(d?'; domain='+d:'')+'; SameSite=Lax';}
-      }
-    }
-  }
-  function setConsent(value){
-    try{localStorage.setItem(consentKey,JSON.stringify({analytics:value,at:Date.now()}));localStorage.removeItem('bodaCookiesAccepted');}catch(e){}
-    panel.hidden=true;
-    if(value)analyticsOn();else analyticsOff();
-  }
-  document.getElementById('boda-cookie-decline').addEventListener('click',()=>setConsent(false));
-  document.getElementById('boda-cookie-accept').addEventListener('click',()=>setConsent(true));
-  settings.addEventListener('click',()=>{panel.hidden=false;});
-  if(!isPreview){
-    const consent=getConsent();
-    if(!consent)panel.hidden=false;
-    else if(consent.analytics)analyticsOn();
-    else analyticsOff();
-  }
-})();
+/* Einwilligung zentral in boda-consent.js. */
 </script>
 </body></html>

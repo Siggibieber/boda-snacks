@@ -1221,6 +1221,14 @@
 @media(max-width:680px){.boda-x-section{padding:56px 0}.boda-x-section .boda-x-wrap{width:calc(100% - 36px)}.boda-x-grid{grid-template-columns:1fr;gap:12px}.boda-x-card{padding:21px}.boda-x-section h2{font-size:clamp(1.8rem,7vw,2.3rem)}.boda-x-btn{width:100%}.boda-x-inline{margin:6px 0 0;width:100%;text-align:center}}
 
 </style>
+
+<script defer src="boda-consent.js?v=20261111-1"></script>
+
+<style id="boda-consent-repair-style">
+[data-boda-consent-panel][hidden]{display:none!important}
+[data-boda-consent-panel]{max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain}
+[data-boda-consent-panel] button:focus-visible{outline:3px solid #244b39;outline-offset:3px}
+</style>
 </head>
 
 <body>
@@ -2245,7 +2253,7 @@ Standortprüfung anfragen ↗
               Startseite
             </a>
 
-            <a href="snack-und-getraenkeautomat-fuer-unternehmen-mieten.html">
+            <a href="kombi-snackautomat-fuer-unternehmen-mieten.html">
               Snack- &amp; Getränkeautomat
             </a>
 
@@ -2257,7 +2265,7 @@ Standortprüfung anfragen ↗
               Lebensmittelautomat
             </a>
 
-            <a href="verpflegungsautomat-fuer-unternehmen.html">
+            <a href="lebensmittelautomat-fuer-unternehmen.html">
               Verpflegungsautomat
             </a>
 
@@ -2423,152 +2431,9 @@ Standortprüfung anfragen ↗
         toggle.focus();
       }
     });
-
-    const analyticsId = 'G-6RJ6RX8XWZ';
-    const consentKey = 'boda-consent-v2';
-    const panel = document.getElementById('cookie-panel');
-    const settings = document.getElementById('cookie-settings');
-    const close = document.getElementById('cookie-close');
-
-    let consent = null;
-    let analyticsLoaded = false;
-    let reopened = false;
-
-    const readConsent = () => {
-      try {
-        const saved = JSON.parse(localStorage.getItem(consentKey));
-
-        if (
-          saved &&
-          typeof saved.analytics === 'boolean' &&
-          Number.isFinite(saved.at) &&
-          Date.now() - saved.at < 180 * 86400000
-        ) {
-          return saved;
-        }
-      } catch (_) {}
-
-      return null;
-    };
-
-    const loadAnalytics = () => {
-      if (preview || analyticsLoaded) return;
-
-      analyticsLoaded = true;
-      window['ga-disable-' + analyticsId] = false;
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { window.dataLayer.push(arguments); };
-
-      window.gtag('js', new Date());
-
-      window.gtag('config', analyticsId, {
-        allow_google_signals:false,
-        allow_ad_personalization_signals:false
-      });
-
-      const script = document.createElement('script');
-      script.async = true;
-      script.id = 'boda-analytics';
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + analyticsId;
-      document.head.appendChild(script);
-    };
-
-    const eraseAnalyticsCookies = () => {
-      const hostname = location.hostname;
-
-      const domains = [
-        '',
-        hostname,
-        '.' + hostname,
-        'boda-snacks.de',
-        '.boda-snacks.de'
-      ];
-
-      document.cookie.split(';').forEach(cookie => {
-        const name = cookie.split('=')[0].trim();
-
-        if (
-          name === '_ga' ||
-          name.startsWith('_ga_') ||
-          name === '_gid' ||
-          name.startsWith('_gat')
-        ) {
-          domains.forEach(domain => {
-            document.cookie =
-              name +
-              '=; Max-Age=0; path=/' +
-              (domain ? '; domain=' + domain : '') +
-              '; SameSite=Lax';
-          });
-        }
-      });
-    };
-
-    const choose = analytics => {
-      consent = {
-        analytics,
-        at:Date.now()
-      };
-
-      try {
-        localStorage.setItem(consentKey, JSON.stringify(consent));
-        localStorage.removeItem('bodaCookiesAccepted');
-      } catch (_) {}
-
-      panel.hidden = true;
-
-      if (reopened) settings.focus();
-
-      if (analytics) {
-        loadAnalytics();
-      } else {
-        window['ga-disable-' + analyticsId] = true;
-
-        const hadAnalytics = analyticsLoaded;
-
-        document.getElementById('boda-analytics')?.remove();
-        eraseAnalyticsCookies();
-
-        if (hadAnalytics) location.reload();
-      }
-    };
-
-    document
-      .getElementById('cookie-accept')
-      .addEventListener('click', () => choose(true));
-
-    document
-      .getElementById('cookie-decline')
-      .addEventListener('click', () => choose(false));
-
-    settings.addEventListener('click', () => {
-      reopened = true;
-      panel.hidden = false;
-      close.hidden = !consent;
-      document.getElementById('cookie-decline').focus();
-    });
-
-    close.addEventListener('click', () => {
-      panel.hidden = true;
-      settings.focus();
-    });
-
-    if (!preview) {
-      settings.hidden = false;
-      consent = readConsent();
-
-      if (!consent) {
-        panel.hidden = false;
-      } else if (consent.analytics) {
-        loadAnalytics();
-      } else {
-        window['ga-disable-' + analyticsId] = true;
-        eraseAnalyticsCookies();
-      }
-    }
-  })();
-  
-  </script>
+/* Einwilligung zentral in boda-consent.js. */
+})();
+</script>
 
 <script>
 

@@ -627,6 +627,14 @@ details p { margin:16px 0 0; }
   }
 }
 </style>
+
+<script defer src="boda-consent.js?v=20261111-1"></script>
+
+<style id="boda-consent-repair-style">
+[data-boda-consent-panel][hidden]{display:none!important}
+[data-boda-consent-panel]{max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain}
+[data-boda-consent-panel] button:focus-visible{outline:3px solid #244b39;outline-offset:3px}
+</style>
 </head>
 
 <body>
@@ -1091,107 +1099,7 @@ details p { margin:16px 0 0; }
       menu.setAttribute("aria-expanded", "false");
     }
   });
-
-  const panel = document.getElementById("consent");
-  const settings = document.getElementById("privacy-settings");
-  const key = "boda-consent-v2";
-  const gaId = "G-6RJ6RX8XWZ";
-  const preview = location.protocol === "file:";
-  let loaded = false;
-
-  function savedConsent() {
-    try {
-      const value = JSON.parse(localStorage.getItem(key));
-      return value &&
-        typeof value.analytics === "boolean" &&
-        Number.isFinite(value.at) &&
-        Date.now() - value.at < 180 * 86400000
-        ? value : null;
-    } catch (error) {
-      return null;
-    }
-  }
-
-  function enableAnalytics() {
-    if (preview || loaded) return;
-    loaded = true;
-
-    window["ga-disable-" + gaId] = false;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function() {
-      window.dataLayer.push(arguments);
-    };
-
-    window.gtag("js", new Date());
-    window.gtag("config", gaId, {
-      allow_google_signals: false,
-      allow_ad_personalization_signals: false
-    });
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.id = "boda-analytics";
-    script.src =
-      "https://www.googletagmanager.com/gtag/js?id=" + gaId;
-    document.head.appendChild(script);
-  }
-
-  function disableAnalytics() {
-    window["ga-disable-" + gaId] = true;
-    document.getElementById("boda-analytics")?.remove();
-
-    for (const cookie of document.cookie.split(";")) {
-      const name = cookie.split("=")[0].trim();
-      if (
-        name === "_ga" ||
-        name.startsWith("_ga_") ||
-        name === "_gid"
-      ) {
-        for (const domain of [
-          "",
-          location.hostname,
-          "." + location.hostname
-        ]) {
-          document.cookie =
-            name + "=; Max-Age=0; path=/" +
-            (domain ? "; domain=" + domain : "") +
-            "; SameSite=Lax";
-        }
-      }
-    }
-  }
-
-  function choose(analytics) {
-    try {
-      localStorage.setItem(key, JSON.stringify({
-        analytics,
-        at: Date.now()
-      }));
-    } catch (error) {}
-
-    panel.hidden = true;
-
-    if (analytics) enableAnalytics();
-    else disableAnalytics();
-  }
-
-  if (!preview) {
-    settings.hidden = false;
-
-    const consent = savedConsent();
-    if (!consent) panel.hidden = false;
-    else if (consent.analytics) enableAnalytics();
-  }
-
-  settings.addEventListener("click", () => {
-    panel.hidden = false;
-  });
-
-  document.getElementById("yes-analytics")
-    .addEventListener("click", () => choose(true));
-
-  document.getElementById("no-analytics")
-    .addEventListener("click", () => choose(false));
+/* Einwilligung zentral in boda-consent.js. */
 })();
 </script>
 

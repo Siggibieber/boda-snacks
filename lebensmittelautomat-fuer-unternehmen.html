@@ -1515,6 +1515,14 @@ p{color:var(--muted)}
 }
 </style>
 
+
+<script defer src="boda-consent.js?v=20261111-1"></script>
+
+<style id="boda-consent-repair-style">
+[data-boda-consent-panel][hidden]{display:none!important}
+[data-boda-consent-panel]{max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain}
+[data-boda-consent-panel] button:focus-visible{outline:3px solid #244b39;outline-offset:3px}
+</style>
 </head>
 
 <body>
@@ -3570,7 +3578,7 @@ und Getränkeversorgung sinnvoller sein.
 <div class="related-grid">
 
 <a
-  href="snack-und-getraenkeautomat-fuer-unternehmen-mieten.html"
+  href="kombi-snackautomat-fuer-unternehmen-mieten.html"
   class="related-card"
 >
 
@@ -3814,7 +3822,7 @@ Ihr Automatenservice aus Pforzheim.
 </footer>
 
 <a
-  href="https://wa.me/491778675852"
+  href="https://wa.me/491776901863"
   target="_blank"
   rel="noopener noreferrer"
   class="whatsapp-btn"
@@ -4901,280 +4909,7 @@ form.addEventListener(
 showStep(0);
 
 }
-
-
-/* COOKIE + GA4 */
-
-const cookieBanner =
-  document.getElementById("cookieBanner");
-
-
-const cookieAccept =
-  document.getElementById("cookieAccept");
-
-
-const cookieDecline =
-  document.getElementById("cookieDecline");
-
-
-const cookieSettingsButton =
-  document.getElementById("cookieSettingsButton");
-
-
-const CONSENT_KEY =
-  "boda-consent-v2";
-
-
-const CONSENT_DAYS =
-  180;
-
-
-let analyticsLoaded =
-  false;
-
-
-function loadAnalytics(){
-
-  if(analyticsLoaded){
-
-    return;
-
-  }
-
-
-  analyticsLoaded =
-    true;
-
-
-  window.dataLayer =
-    window.dataLayer || [];
-
-
-  window.gtag =
-    function(){
-
-      window.dataLayer.push(
-        arguments
-      );
-
-    };
-
-
-  window.gtag(
-    "js",
-    new Date()
-  );
-
-
-  window.gtag(
-    "config",
-    "G-6RJ6RX8XWZ",
-    {
-      allow_google_signals:false,
-      allow_ad_personalization_signals:false
-    }
-  );
-
-
-  const script =
-    document.createElement(
-      "script"
-    );
-
-
-  script.async =
-    true;
-
-
-  script.src =
-    "https://www.googletagmanager.com/gtag/js?id=G-6RJ6RX8XWZ";
-
-
-  document.head.appendChild(
-    script
-  );
-
-}
-
-
-function saveConsent(status){
-
-  const data = {
-
-    analytics:status,
-
-    timestamp:
-    Date.now()
-
-  };
-
-
-  localStorage.setItem(
-    CONSENT_KEY,
-    JSON.stringify(data)
-  );
-
-}
-
-
-function getConsent(){
-
-  const stored =
-    localStorage.getItem(
-      CONSENT_KEY
-    );
-
-
-  if(!stored){
-
-    return null;
-
-  }
-
-
-  try{
-
-    const data =
-      JSON.parse(stored);
-
-
-    const maxAge =
-      CONSENT_DAYS *
-      24 *
-      60 *
-      60 *
-      1000;
-
-
-    if(
-      !data.timestamp ||
-      Date.now() -
-      data.timestamp >
-      maxAge
-    ){
-
-      localStorage.removeItem(
-        CONSENT_KEY
-      );
-
-
-      return null;
-
-    }
-
-
-    return data;
-
-  }
-
-
-  catch(error){
-
-    localStorage.removeItem(
-      CONSENT_KEY
-    );
-
-
-    return null;
-
-  }
-
-}
-
-
-function showCookieBanner(){
-
-  if(cookieBanner){
-
-    cookieBanner.classList.add(
-      "open"
-    );
-
-  }
-
-}
-
-
-function hideCookieBanner(){
-
-  if(cookieBanner){
-
-    cookieBanner.classList.remove(
-      "open"
-    );
-
-  }
-
-}
-
-
-const currentConsent =
-  getConsent();
-
-
-if(!currentConsent){
-
-  showCookieBanner();
-
-}
-
-
-else if(
-  currentConsent.analytics === true
-){
-
-  loadAnalytics();
-
-}
-
-
-if(cookieAccept){
-
-  cookieAccept.addEventListener(
-    "click",
-    function(){
-
-      saveConsent(true);
-
-      hideCookieBanner();
-
-      loadAnalytics();
-
-    }
-  );
-
-}
-
-
-if(cookieDecline){
-
-  cookieDecline.addEventListener(
-    "click",
-    function(){
-
-      saveConsent(false);
-
-      hideCookieBanner();
-
-    }
-  );
-
-}
-
-
-if(cookieSettingsButton){
-
-  cookieSettingsButton.addEventListener(
-    "click",
-    function(){
-
-      showCookieBanner();
-
-    }
-  );
-
-}
-
+/* Einwilligung zentral in boda-consent.js. */
 })();
 </script>
 
