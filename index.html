@@ -2504,6 +2504,22 @@
 }
 
   </style>
+
+<script defer src="boda-consent.js?v=20261111-1"></script>
+
+<style id="boda-consent-repair-style">
+[data-boda-consent-panel][hidden]{display:none!important}
+[data-boda-consent-panel]{max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain}
+[data-boda-consent-panel] button:focus-visible{outline:3px solid #244b39;outline-offset:3px}
+</style>
+
+<style id="boda-home-hotel-style">
+@media(max-width:850px){.nav-bar{flex-wrap:wrap;gap:12px}.navigation{flex-basis:100%;min-width:0}.brand{min-width:0}.brand img,.menu-toggle{flex-shrink:0}.menu-toggle{white-space:nowrap}}
+@media(max-width:360px){.boda-x-section h2{overflow-wrap:anywhere}}
+.boda-hotel-entry{max-width:570px;margin-top:22px;padding:15px 18px;border-left:3px solid #DBB86E;border-radius:0 9px 9px 0;background:#f7f5ed}
+.boda-hotel-entry span{display:block;margin-bottom:4px;font-size:.76rem;font-weight:750;color:#58645c}
+.boda-hotel-entry a{display:inline-block;font-size:.93rem;line-height:1.5;font-weight:750;color:#70521d;text-underline-offset:4px}
+</style>
 </head>
 
 
@@ -2572,7 +2588,7 @@
 
       <a href="#boda-netzwerk">Weitere Angebote</a>
 
-      <a href="fuer-betreiber.html" class="nav-betreiber">Für Betreiber</a>
+      <a href="hotelshop-befuellservice.html" class="nav-betreiber">Hotelshops</a>
 
       <a
         href="#standort-check"
@@ -2660,6 +2676,8 @@
             Die Standortprüfung ist kostenlos und unverbindlich.
 
           </p>
+
+          <p class="boda-hotel-entry"><span>Für Hotelbetreiber</span><a href="hotelshop-befuellservice.html">Befüllung &amp; Warenlogistik für Ihren Hotelshop →</a></p>
 
         </div>
 
@@ -3919,6 +3937,42 @@
   </section>
 
   <!-- BODA · Regionale Betreuung, Automatenbeschaffung und Partnernetzwerk -->
+  <section class="boda-operator-section" id="fuer-betreiber" aria-labelledby="boda-operator-title">
+    <div class="boda-operator-wrap">
+      <div class="boda-operator-head">
+        <span class="boda-operator-kicker">Hotelversorgung &amp; regionale Warenlogistik</span>
+        <h2 id="boda-operator-title">Hotelshops befüllen.<br>Hotelteams entlasten.</h2>
+        <p>BODA Snacks übernimmt die vereinbarte Befüllung, Bestandskontrolle und Warenlogistik für Ihren Hotelshop. Ihr Hotel oder Auftraggeber stellt Ware, Shop und Kassensystem bereit. Wir prüfen den passenden Service für einzelne Hotels und mehrere Standorte in Pforzheim, Böblingen, Stuttgart und Calw.</p>
+      </div>
+      <div class="boda-operator-grid">
+        <article class="boda-operator-card">
+          <span class="boda-op-number">01 / HOTELLERIE</span>
+          <h3>Hotelshops befüllen</h3>
+          <p>Regale auffüllen, Bestände kontrollieren und vereinbarte Leistungen dokumentieren – mit abgestimmten Besuchszeiten.</p>
+          <a href="hotelshop-befuellservice.html">Hotelshop-Befüllservice ansehen →</a>
+        </article>
+        <article class="boda-operator-card">
+          <span class="boda-op-number">02 / SMART STORES</span>
+          <h3>Micromarkets betreuen</h3>
+          <p>Individuell organisierte Versorgung für Micromarkets, Smart Stores und 24/7-Verkaufsflächen.</p>
+          <a href="micromarket-befuellservice.html">Micromarket-Service entdecken →</a>
+        </article>
+        <article class="boda-operator-card">
+          <span class="boda-op-number">03 / REGIONALE LOGISTIK</span>
+          <h3>Warenlogistik &amp; Touren</h3>
+          <p>Warenannahme, Lagerung, Kommissionierung und regionale Transporte nach gemeinsamer Prüfung der Anforderungen und Kapazitäten.</p>
+          <a href="warenlogistik-befuellservice.html">Warenlogistik ansehen →</a>
+        </article>
+      </div>
+      <div class="boda-operator-actions">
+        <a class="btn" href="hotelshop-befuellservice.html#kontakt">Hotelversorgung unverbindlich anfragen →</a>
+        <a class="text-link" href="fuer-betreiber.html">Alle Leistungen für Betreiber →</a>
+      </div>
+      <p class="boda-operator-note">Sie erhalten ein individuelles Angebot für die Hotelversorgung. Besuchsrhythmus, Fahrwege und zusätzliche Leistungen stimmen wir vor einer Zusage mit Ihnen ab.</p>
+    </div>
+  </section>
+
+
   <section class="boda-x-section boda-network-hub" id="boda-netzwerk" aria-labelledby="boda-network-head">
     <div class="boda-x-wrap">
       <span class="boda-x-kicker">BODA Snacks · Unsere erweiterten Leistungen</span>
@@ -3989,50 +4043,7 @@
        NEU: SERVICE FÜR BETREIBER
        Hotelshops · Micromarkets · Warenlogistik
   ==================================================== -->
-  <section class="boda-operator-section" id="fuer-betreiber" aria-labelledby="boda-operator-title">
-    <div class="boda-operator-wrap">
-      <div class="boda-operator-head">
-        <span class="boda-operator-kicker">BODA Snacks · Für gewerbliche Betreiber</span>
-        <h2 id="boda-operator-title">Sie betreiben die Standorte.<br>Wir denken die Versorgung mit.</h2>
-        <p>
-          Sie betreiben Hotelshops, Micromarkets oder weitere Selbstbedienungsstandorte
-          und suchen Unterstützung bei der regionalen Befüllung? Wir entwickeln mit
-          Ihnen eine passende Zusammenarbeit – vom einzelnen Standort bis zu
-          einer gemeinsam geplanten Tourenstruktur.
-        </p>
-      </div>
 
-      <div class="boda-operator-grid">
-        <article class="boda-operator-card">
-          <span class="boda-op-number">01 / HOTELLERIE</span>
-          <h3>Hotelshops befüllen</h3>
-          <p>Warenversorgung, Regalpflege und planbare Befüllungsintervalle für unbemannte Hotelshops.</p>
-          <a href="hotelshop-befuellservice.html">Hotelshop-Service entdecken →</a>
-        </article>
-        <article class="boda-operator-card">
-          <span class="boda-op-number">02 / SMART STORES</span>
-          <h3>Micromarkets betreuen</h3>
-          <p>Individuell organisierte Versorgung für Micromarkets, Smart Stores und 24/7-Verkaufsflächen.</p>
-          <a href="micromarket-befuellservice.html">Micromarket-Service entdecken →</a>
-        </article>
-        <article class="boda-operator-card">
-          <span class="boda-op-number">03 / REGIONALE PARTNER</span>
-          <h3>Warenlogistik &amp; Touren</h3>
-          <p>Warenannahme, Kommissionierung und regionale Liefertouren – nach gemeinsamer Kapazitätsprüfung.</p>
-          <a href="fuer-betreiber.html">Alle Betreiberleistungen ansehen →</a>
-        </article>
-      </div>
-
-      <div class="boda-operator-actions">
-        <a class="btn" href="fuer-betreiber.html">Alle Leistungen für Betreiber ansehen →</a>
-        <a class="text-link" href="fuer-betreiber.html#kontakt">Kooperation unverbindlich anfragen →</a>
-      </div>
-      <p class="boda-operator-note">
-        Neue Servicekooperationen vereinbaren wir erst nach Prüfung von Standort,
-        Leistungsumfang und erforderlichen Kapazitäten.
-      </p>
-    </div>
-  </section>
 
   <!-- ===================================================
        KOSTEN
@@ -5877,7 +5888,7 @@
 
         window.gtag(
           'event',
-          'standort_anfrage_abgesendet',
+          'form_submit_attempt',
           {
             form_id:
               'standort-form'
@@ -5891,377 +5902,8 @@
 
 
   showStep(0);
-
-
-  /* =====================================================
-     COOKIE / ANALYTICS
-  ===================================================== */
-
-
-  const consentKey =
-    'boda-consent-v2';
-
-
-  const cookiePanel =
-    document.getElementById(
-      'cookie-panel'
-    );
-
-
-  const cookieSettings =
-    document.getElementById(
-      'cookie-settings'
-    );
-
-
-  const cookieClose =
-    document.getElementById(
-      'cookie-close'
-    );
-
-
-  let analyticsLoaded =
-    false;
-
-
-  let consent =
-    null;
-
-
-  function readConsent() {
-
-    try {
-
-      const saved =
-        JSON.parse(
-          localStorage.getItem(
-            consentKey
-          )
-        );
-
-
-      if (
-        saved &&
-        typeof saved.analytics ===
-          'boolean' &&
-        Number.isFinite(saved.at) &&
-        Date.now() - saved.at <
-          180 * 86400000
-      ) {
-
-        return saved;
-
-      }
-
-    }
-
-    catch (_) {}
-
-
-    return null;
-
-  }
-
-
-  function loadAnalytics() {
-
-    if (
-      preview ||
-      analyticsLoaded
-    ) {
-
-      return;
-
-    }
-
-
-    analyticsLoaded =
-      true;
-
-
-    window[
-      'ga-disable-' +
-      analyticsId
-    ] =
-      false;
-
-
-    window.dataLayer =
-      window.dataLayer || [];
-
-
-    window.gtag =
-      function () {
-
-        window.dataLayer.push(
-          arguments
-        );
-
-      };
-
-
-    window.gtag(
-      'js',
-      new Date()
-    );
-
-
-    window.gtag(
-      'config',
-      analyticsId,
-      {
-        allow_google_signals:
-          false,
-
-        allow_ad_personalization_signals:
-          false
-      }
-    );
-
-
-    const script =
-      document.createElement(
-        'script'
-      );
-
-
-    script.async =
-      true;
-
-
-    script.id =
-      'boda-analytics';
-
-
-    script.src =
-      'https://www.googletagmanager.com/gtag/js?id=' +
-      analyticsId;
-
-
-    document.head.appendChild(
-      script
-    );
-
-  }
-
-
-  function eraseAnalyticsCookies() {
-
-    const hostname =
-      location.hostname;
-
-
-    const domains = [
-      '',
-      hostname,
-      '.' + hostname,
-      'boda-snacks.de',
-      '.boda-snacks.de'
-    ];
-
-
-    document.cookie
-      .split(';')
-      .forEach(
-        cookie => {
-
-          const name =
-            cookie
-              .split('=')[0]
-              .trim();
-
-
-          if (
-            name === '_ga' ||
-            name.startsWith('_ga_') ||
-            name === '_gid' ||
-            name.startsWith('_gat')
-          ) {
-
-            domains.forEach(
-              domain => {
-
-                document.cookie =
-                  name +
-                  '=; Max-Age=0; path=/' +
-                  (
-                    domain
-                      ? '; domain=' +
-                        domain
-                      : ''
-                  ) +
-                  '; SameSite=Lax';
-
-              }
-            );
-
-          }
-
-        }
-      );
-
-  }
-
-
-  function chooseConsent(
-    analytics
-  ) {
-
-    consent = {
-      analytics,
-      at: Date.now()
-    };
-
-
-    try {
-
-      localStorage.setItem(
-        consentKey,
-        JSON.stringify(consent)
-      );
-
-
-      localStorage.removeItem(
-        'bodaCookiesAccepted'
-      );
-
-    }
-
-    catch (_) {}
-
-
-    cookiePanel.hidden =
-      true;
-
-
-    if (analytics) {
-
-      loadAnalytics();
-
-    }
-
-    else {
-
-      window[
-        'ga-disable-' +
-        analyticsId
-      ] =
-        true;
-
-
-      document
-        .getElementById(
-          'boda-analytics'
-        )
-        ?.remove();
-
-
-      eraseAnalyticsCookies();
-
-    }
-
-  }
-
-
-  document
-    .getElementById(
-      'cookie-accept'
-    )
-    .addEventListener(
-      'click',
-      () => {
-
-        chooseConsent(true);
-
-      }
-    );
-
-
-  document
-    .getElementById(
-      'cookie-decline'
-    )
-    .addEventListener(
-      'click',
-      () => {
-
-        chooseConsent(false);
-
-      }
-    );
-
-
-  cookieSettings.addEventListener(
-    'click',
-    () => {
-
-      cookiePanel.hidden =
-        false;
-
-
-      cookieClose.hidden =
-        false;
-
-    }
-  );
-
-
-  cookieClose.addEventListener(
-    'click',
-    () => {
-
-      cookiePanel.hidden =
-        true;
-
-    }
-  );
-
-
-  if (!preview) {
-
-    cookieSettings.hidden =
-      false;
-
-
-    consent =
-      readConsent();
-
-
-    if (!consent) {
-
-      cookiePanel.hidden =
-        false;
-
-    }
-
-
-    else if (
-      consent.analytics
-    ) {
-
-      loadAnalytics();
-
-    }
-
-
-    else {
-
-      window[
-        'ga-disable-' +
-        analyticsId
-      ] =
-        true;
-
-
-      eraseAnalyticsCookies();
-
-    }
-
-  }
-
-
+/* Einwilligung zentral in boda-consent.js. */
 })();
-
 </script>
 
 
