@@ -147,10 +147,13 @@
   <loc>https://boda-snacks.de/warenlogistik-befuellservice.html</loc>
 </url>
 
-<!-- Servicepartner für Automatenbetreiber -->
 <url>
   <loc>https://boda-snacks.de/servicepartner-vending.html</loc>
 </url>
 
+<url>
+  <loc>https://boda-snacks.de/rundum-versorgt.html</loc>
+  <lastmod>2026-11-19</lastmod>
+</url>
 
 </urlset>
